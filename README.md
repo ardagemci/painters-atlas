@@ -1,15 +1,15 @@
 # Pigment — An Atlas of Painters
 
-An interactive, zero-dependency atlas of **107 painters from the 16th century to today**, cross-linked by movement, technique, era and nation — with every cover artwork generated in the browser, in the spirit of each painter's style.
+An interactive, zero-dependency atlas of **200 painters from the 16th century to today**, cross-linked by movement, technique, era and nation — with every cover artwork generated in the browser, in the spirit of each painter's style. Dark gallery and light paper themes included.
 
 **Live site:** https://ardagemci.github.io/painters-atlas/
 
 ## What's inside
 
-- **107 artist pages** — major works, movements, techniques, and essays on each painter's life, career, life beyond the easel, and fun facts
-- **48 movements** with branches and sub-branches (Renaissance → Mannerism, Abstract Expressionism → Action Painting → …)
-- **33 techniques**, also branched (Gestural Abstraction → Dripping / Soak-Stain / Squeegee)
-- **6 era pages** with clickable birth-year timelines, and **24 nation pages**
+- **200 artist pages** — major works, movements, techniques, and essays on each painter's life, career, life beyond the easel, and fun facts
+- **60 movements** with branches and sub-branches (Renaissance → Mannerism, Abstract Expressionism → Action Painting, Dada → Neo-Dada, Ottoman Miniature, Young Poland, Op Art …)
+- **36 techniques**, also branched (Gestural Abstraction → Dripping / Soak-Stain / Squeegee; Miniature Painting; Photomontage)
+- **6 era pages** with clickable birth-year timelines, and **35 nation pages** from Türkiye to Australia
 - Instant grouped search, era filters, and chips everywhere — every name, card and dot is a link
 - **Generative covers:** 27 canvas algorithms paint each artist's card from their palette and style — drips for Pollock, grids for Mondrian, gold mosaic for Klimt — freshly mixed on every visit
 

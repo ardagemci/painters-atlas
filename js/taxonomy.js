@@ -216,7 +216,57 @@ window.MOVEMENTS = [
   { id:"superflat", name:"Superflat", parent:"contemporary-art", period:"2000–today", style:"pop",
     palette:["#e0427a","#7ac4e8","#f0c82e","#2e8a5e","#f4f1e8"],
     blurb:"Anime meets art history — Murakami's theory of Japan's flattened image world.",
-    desc:"Coined by Murakami in 2001, Superflat links Edo-period flatness, anime and otaku culture, and consumer society into one lineage — then erases the wall between fine art and merchandise on purpose. Smiling flowers on museum walls and handbags alike: that's the argument." }
+    desc:"Coined by Murakami in 2001, Superflat links Edo-period flatness, anime and otaku culture, and consumer society into one lineage — then erases the wall between fine art and merchandise on purpose. Smiling flowers on museum walls and handbags alike: that's the argument." },
+
+  // ---- expansion: new schools & branches ----
+  { id:"ottoman-miniature", name:"Ottoman Miniature", parent:null, period:"c. 1450–1800", style:"ornament",
+    palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
+    blurb:"The sultan's picture-workshops — history, festivals and cities painted jewel-bright on paper.",
+    desc:"In the nakkaşhane, the palace workshop, teams of miniaturists illustrated chronicles, campaign routes and forty-day festivals in flat, luminous colour — art meant for the turning page, not the wall. From Matrakçı Nasuh's figure-less city portraits to Levni's tulip-era elegance, it is one of painting's great parallel traditions, with its own rules of space, time and gold." },
+  { id:"orientalism", name:"Orientalism", parent:null, period:"c. 1820–1910", style:"metaphysical",
+    palette:["#1f6e8a","#d9a83e","#b05e32","#3e4a6e","#e8d9b4"],
+    blurb:"Europe paints the 'East' — and Osman Hamdi Bey paints back.",
+    desc:"Academic Europe filled the Salons with imagined harems and bazaars: technically dazzling, often fantasy. The movement's most interesting painter worked from inside it — Osman Hamdi Bey, Ottoman archaeologist and museum founder, used Orientalist technique to show his own culture reading, debating and thinking, quietly correcting the genre from within." },
+  { id:"pre-raphaelites", name:"Pre-Raphaelites", parent:null, period:"1848–c. 1900", style:"renaissance",
+    palette:["#2e6e5e","#a83a4e","#caa43e","#3b5a8a","#e8dcc4"],
+    blurb:"The brotherhood that rewound painting to before Raphael — jewel colour, medieval longing.",
+    desc:"Three young Londoners founded a secret 'Brotherhood' in 1848 to overthrow academic convention with truth to nature, blazing colour on wet white ground, and subjects from Dante, Shakespeare and Arthurian legend. Scandalous, then beloved, the Pre-Raphaelites became Victorian Britain's defining image-makers — and, through Morris and Burne-Jones, godparents of Art Nouveau." },
+  { id:"hudson-river-school", name:"Hudson River School", parent:"romanticism", period:"c. 1825–1880", style:"romantic",
+    palette:["#7a9a6e","#e8c87a","#5e4a32","#a8c4d9","#3e5238"],
+    blurb:"America's first art movement — wilderness as cathedral, canvas as panorama.",
+    desc:"Painting the Hudson Valley, the Rockies and beyond at theatrical scale, these artists made landscape the young republic's national epic. Bierstadt toured his giant canvases like blockbuster films, complete with curtains and ticket sales — sublime nature as both worship and entertainment." },
+  { id:"les-nabis", name:"Les Nabis", parent:"post-impressionism", period:"1888–1900", style:"fauvist",
+    palette:["#8a5e3e","#d9a8b8","#5e7250","#caa45c","#e8dcc8"],
+    blurb:"'The prophets' — Gauguin's lesson turned into wallpapered, intimate magic.",
+    desc:"A secret society of young Paris painters took Gauguin's flat colour and turned it inward: interiors, gardens, mothers and lamplight, patterned like the wallpaper they loved. Bonnard and Vuillard made domesticity radiant — 'a picture, before being a battle horse or a nude, is essentially a flat surface covered with colours,' as member Maurice Denis famously decreed." },
+  { id:"young-poland", name:"Young Poland", parent:"symbolism", period:"c. 1890–1918", style:"ornament",
+    palette:["#5e7250","#a83a4e","#caa45c","#3e3a52","#e8dcc4"],
+    blurb:"Młoda Polska — a partitioned nation dreams itself in symbol, pastel and stained glass.",
+    desc:"With Poland erased from the map, its artists painted the nation into being: Malczewski's fauns and chained Polonias, Wyspiański's stained-glass visions and pastel children, Boznańska's misty portraits. Centred on Kraków, Young Poland fused Symbolism, folk art and Art Nouveau into one of Europe's most distinctive fin-de-siècle schools." },
+  { id:"orphism", name:"Orphism", parent:"cubism", period:"c. 1912–1920", style:"abstract",
+    palette:["#c4302a","#2e50c4","#f0c82e","#2e8a5e","#f4f1e8"],
+    blurb:"Cubism set spinning — pure colour discs named after the poet of music.",
+    desc:"Apollinaire coined 'Orphism' for the Delaunays' rainbow-wheeled abstraction: Cubism's structure flooded with prismatic 'simultaneous contrasts' of colour. Sonia Delaunay carried it off the canvas entirely — onto quilts, dresses, cars and book bindings — decades before anyone said 'design crossover.'" },
+  { id:"new-objectivity", name:"New Objectivity", parent:"expressionism", period:"c. 1920–1933", style:"expressionist",
+    palette:["#3e4a52","#8a3a32","#caa45c","#1d1c22","#d9cdb8"],
+    blurb:"Weimar Germany in a cold mirror — satire sharpened to a surgical edge.",
+    desc:"After Expressionism's scream came the icy stare: war profiteers, maimed veterans and cabaret nights painted with deliberate, unforgiving precision. Otto Dix and George Grosz made the style a moral instrument; the Nazis, recognising themselves, burned what they could find of it." },
+  { id:"regionalism", name:"Regionalism", parent:"american-realism", period:"c. 1928–1945", style:"naive",
+    palette:["#7a9a5e","#d9c890","#8a5e3a","#3e5238","#e8e0c8"],
+    blurb:"American Gothic and the painted Midwest — homegrown art for hard times.",
+    desc:"In the Depression, a group of painters turned from Paris to the prairie: rolling Iowa fields, threshing crews, small-town faces. Grant Wood's stern farm couple became the most parodied image in American art — proof that a region painted honestly becomes universal." },
+  { id:"minimalism", name:"Minimalism", parent:null, period:"c. 1960–1975", style:"geometric",
+    palette:["#d9d3c4","#a8b4b8","#8a9bb0","#e8e4d8","#5e6e7a"],
+    blurb:"Nothing extra — the grid, the field, the almost-nothing that holds everything.",
+    desc:"Minimalism stripped art to elemental order: repeated units, bare surfaces, the object itself. In painting, Agnes Martin's hand-drawn grids showed the style's secret — what looks like geometry from afar dissolves, up close, into tremulous, human pencil lines and washes 'about innocence of mind.'" },
+  { id:"op-art", name:"Op Art", parent:"abstract-art", period:"c. 1960–1975", style:"geometric",
+    palette:["#1a1a1a","#f4f1e8","#2e50c4","#e0427a","#f0c82e"],
+    blurb:"Painting that attacks the eye — grids that bulge, vibrate and refuse to sit still.",
+    desc:"Optical art weaponised perception: precisely calculated patterns that shimmer, warp and move while hanging perfectly still. Vasarely, its grand engineer, dreamed of an art reproducible as an alphabet — multiples for every home — and briefly, in the mid-sixties, op patterns swallowed fashion, album covers and an entire decade's look." },
+  { id:"art-informel", name:"Art Informel & Tachisme", parent:"abstract-art", period:"c. 1945–1965", style:"gestural",
+    palette:["#1d1c22","#3e5570","#caa45c","#8a2634","#e8e0d0"],
+    blurb:"Europe's answer to Action Painting — the stain, the scratch, the lightning stroke.",
+    desc:"In post-war Paris, painters abandoned geometry for raw matter and gesture: tachisme ('stain-ism'), lyrical abstraction, matter painting. Hans Hartung's whiplash black strokes — some made with garden sprayers and rakes — gave the movement its signature: energy itself, recorded at the speed of a nervous system." }
 ];
 
 window.TECHNIQUES = [
@@ -351,7 +401,21 @@ window.TECHNIQUES = [
   { id:"spray-paint", name:"Spray & Stencil", parent:null, style:"street",
     palette:["#1a1a1a","#c4302a","#8a8a8a","#e8e4d8","#3e3e3e"],
     blurb:"The aerosol line — fast, illegal, and built for walls.",
-    desc:"Spray paint covers metres in seconds and never drips twice the same way; stencils add precision and speed for artists who may have ninety seconds before the police arrive. Basquiat's SAMO tags, Haring's radiant figures and Banksy's stencilled satire took it from vandalism's toolbox to the auction block." }
+    desc:"Spray paint covers metres in seconds and never drips twice the same way; stencils add precision and speed for artists who may have ninety seconds before the police arrive. Basquiat's SAMO tags, Haring's radiant figures and Banksy's stencilled satire took it from vandalism's toolbox to the auction block." },
+
+  // ---- expansion ----
+  { id:"miniature-painting", name:"Miniature Painting", parent:null, style:"ornament",
+    palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
+    blurb:"Painting at whisper scale — books, lockets and worlds a hand-span wide.",
+    desc:"From the Ottoman nakkaşhane's illustrated chronicles to Hilliard's Elizabethan portrait-jewels, miniature painting demands single-hair brushes, burnished gold and total control. Held in the hand rather than hung on the wall, it is painting at its most intimate — and, per square centimetre, its most demanding." },
+  { id:"gouache", name:"Gouache", parent:"watercolor", style:"fauvist",
+    palette:["#c4302a","#2e5eaa","#e8c43e","#2e8a5e","#f0e8d8"],
+    blurb:"Opaque watercolour — matte, velvety, and fast as thought.",
+    desc:"Watercolour's opaque sibling dries flat and chalky-bright, covers mistakes, and loves paper. Miniaturists ground it with gum for manuscript pages; centuries later Fikret Mualla filled Paris café nights with it, proving a humble medium can hold a whole city's electricity." },
+  { id:"photomontage", name:"Photomontage", parent:"collage", style:"cubist",
+    palette:["#1a1a1a","#c4302a","#8a9bb0","#e8e0d0","#caa43e"],
+    blurb:"Scissors versus the press — new truths cut from newspaper photographs.",
+    desc:"Berlin Dada discovered that mass-printed photographs could be re-edited into argument: Hannah Höch's kitchen knife sliced through Weimar politics and gender alike. Photomontage became the activist's medium of the century — its grammar lives on in every meme." }
 ];
 
 window.ERAS = [
@@ -429,5 +493,29 @@ window.NATIONS = [
   { id:"south-africa", name:"South Africa", flag:"🇿🇦", palette:["#2e8a5e","#f0c82e","#c4302a","#2e3e8a","#1a1a1a"],
     blurb:"Marlene Dumas left apartheid-era Cape Town to paint the human face at its most exposed." },
   { id:"ethiopia", name:"Ethiopia", flag:"🇪🇹", palette:["#2e8a5e","#f0c82e","#c4302a","#3e4a5e","#d9d3c4"],
-    blurb:"Addis-born Julie Mehretu layers maps, riots and weather into abstraction's biggest storms." }
+    blurb:"Addis-born Julie Mehretu layers maps, riots and weather into abstraction's biggest storms." },
+
+  // ---- expansion ----
+  { id:"turkey", name:"Türkiye", flag:"🇹🇷", palette:["#c4302a","#e8e4d8","#1f6e8a","#caa43e","#2e4a3e"],
+    blurb:"From the sultan's miniature workshops to Paris gouaches and New York walls — five centuries of painting between two continents." },
+  { id:"denmark", name:"Denmark", flag:"🇩🇰", palette:["#c4302a","#e8e4d8","#8a9bb0","#5e6e7a","#d9d3c4"],
+    blurb:"Hammershøi's grey rooms — Copenhagen silence turned into some of painting's quietest poetry." },
+  { id:"finland", name:"Finland", flag:"🇫🇮", palette:["#2e50c4","#e8e4d8","#5e8a96","#3e5238","#caa45c"],
+    blurb:"Gallen-Kallela painted the Kalevala into being — a nation's epic, illustrated before its independence." },
+  { id:"brazil", name:"Brazil", flag:"🇧🇷", palette:["#2e8a5e","#f0c82e","#2e50c4","#e8e4d8","#b0703a"],
+    blurb:"Tarsila's Abaporu swallowed Europe whole and made modernism speak Portuguese — antropofagia!" },
+  { id:"cuba", name:"Cuba", flag:"🇨🇺", palette:["#2e50c4","#e8e4d8","#c4302a","#2e6e5a","#caa43e"],
+    blurb:"Wifredo Lam brought the jungle and the orishas into modernism's living room." },
+  { id:"china", name:"China", flag:"🇨🇳", palette:["#c4302a","#f0c82e","#3e3a36","#e8e0d0","#5e6e5a"],
+    blurb:"Qi Baishi's shrimp swim on a thousand years of ink — tradition renewed one brushstroke at a time." },
+  { id:"canada", name:"Canada", flag:"🇨🇦", palette:["#c4302a","#e8e4d8","#2e6e5a","#5e4a32","#8aa7c4"],
+    blurb:"Emily Carr painted the rainforest and totem poles of the Pacific coast into Canadian memory." },
+  { id:"armenia", name:"Armenia", flag:"🇦🇲", palette:["#c4302a","#2e50c4","#e8a82e","#3e3a36","#d9cdb8"],
+    blurb:"Aivazovsky's seas and Gorky's exiled abstractions — Armenian painting between empire and diaspora." },
+  { id:"czechia", name:"Czechia", flag:"🇨🇿", palette:["#2e50c4","#e8e4d8","#c4302a","#5e3450","#caa43e"],
+    blurb:"Kupka painted pure abstraction in 1912 Prague-to-Paris — fugues in colour before the word existed." },
+  { id:"hungary", name:"Hungary", flag:"🇭🇺", palette:["#c4302a","#e8e4d8","#2e6e5a","#1a1a1a","#f0c82e"],
+    blurb:"From Pécs came Vasarely, who set the world's eyes vibrating — op art's grand engineer." },
+  { id:"australia", name:"Australia", flag:"🇦🇺", palette:["#b0502e","#e8a85e","#2e3e8a","#e8dcc0","#5e3424"],
+    blurb:"Nolan's black-helmeted outlaw and Kngwarreye's desert dreamings — two Australias, both painted from memory of country." }
 ];

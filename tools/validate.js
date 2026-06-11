@@ -3,7 +3,8 @@ const fs = require("fs"), path = require("path"), vm = require("vm");
 const root = path.join(__dirname, "..");
 const window = {};
 const ctx = vm.createContext({ window });
-["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js"]
+["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
+ "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js"]
   .forEach(f => vm.runInContext(fs.readFileSync(path.join(root,"js",f),"utf8"), ctx, { filename:f }));
 
 const { ARTISTS:A, MOVEMENTS:M, TECHNIQUES:T, ERAS:E, NATIONS:N } = window;

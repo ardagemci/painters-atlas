@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+/* restore saved theme before first paint to avoid flash */
+try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-theme") || "dark"; }catch(e){}
+</script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -30,6 +34,7 @@
     <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" aria-label="Search artists, movements, techniques, eras and nations">
     <div id="search-results" class="search-results" hidden></div>
   </div>
+  <button id="theme-toggle" aria-label="Switch between dark and light mode" title="Dark / light mode">☀</button>
 </header>
 
 <main id="app" class="view-enter" aria-live="polite"></main>
@@ -55,6 +60,12 @@
 <script src="js/artists-5.js"></script>
 <script src="js/artists-6.js"></script>
 <script src="js/artists-7.js"></script>
+<script src="js/artists-8.js"></script>
+<script src="js/artists-9.js"></script>
+<script src="js/artists-10.js"></script>
+<script src="js/artists-11.js"></script>
+<script src="js/artists-12.js"></script>
+<script src="js/artists-13.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

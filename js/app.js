@@ -1135,43 +1135,90 @@ searchResults.addEventListener("click", () => { searchInput.value = ""; hideSear
 document.addEventListener("click", e => { if(!e.target.closest(".search-wrap")) hideSearch(); });
 
 /* ============================================================
-   AMBIENT BACKGROUND — drifting pigment blobs
+   THEME — dark gallery / light paper, persisted
+   ============================================================ */
+const themeBtn = document.getElementById("theme-toggle");
+function currentTheme(){ return document.documentElement.dataset.theme === "light" ? "light" : "dark"; }
+function applyTheme(t){
+  document.documentElement.dataset.theme = t;
+  try{ localStorage.setItem("pigment-theme", t); }catch(e){}
+  themeBtn.textContent = t === "light" ? "☾" : "☀";
+  if(window.__bgInit) window.__bgInit();
+}
+themeBtn.addEventListener("click", () => applyTheme(currentTheme() === "light" ? "dark" : "light"));
+themeBtn.textContent = currentTheme() === "light" ? "☾" : "☀";
+
+/* ============================================================
+   AMBIENT BACKGROUND — drifting pigment blobs & flowing ribbons
    ============================================================ */
 (function bg(){
   const cv = document.getElementById("bg-canvas");
   const ctx = cv.getContext("2d");
-  const COLORS = ["#c9a45c","#7b3b43","#3e5570","#3e5a46","#6e3a5e"];
-  let blobs = [], W, H;
-  function size(){
+  const SETS = {
+    dark:  { blobs:["#c9a45c","#7b3b43","#3e5570","#3e5a46","#6e3a5e"],
+             ribbons:["#c9a45c","#6fb3a8","#c97b6a"], blobA:0.16, ribA:0.07, comp:"lighter" },
+    light: { blobs:["#a8813c","#a85544","#4a6e9e","#3e7a5e","#6e3a5e"],
+             ribbons:["#a8813c","#2e7a6e","#a85544"], blobA:0.10, ribA:0.10, comp:"source-over" }
+  };
+  let blobs = [], ribbons = [], W, H, set = SETS.dark;
+  function init(){
+    set = SETS[currentTheme()] || SETS.dark;
     W = cv.width = Math.round(innerWidth * 0.55);
     H = cv.height = Math.round(innerHeight * 0.55);
-  }
-  function init(){
-    size();
-    blobs = COLORS.map((c, i) => ({
+    blobs = set.blobs.map(c => ({
       c, r: (0.22 + Math.random()*0.16) * Math.max(W,H),
-      x: Math.random()*W, y: Math.random()*H,
       dx: 0.18 + Math.random()*0.4, dy: 0.14 + Math.random()*0.36,
       px: Math.random()*1000, py: Math.random()*1000
     }));
+    ribbons = set.ribbons.map((c, i) => ({
+      c, base: 0.18 + i*0.28 + Math.random()*0.08,
+      amp: 0.05 + Math.random()*0.07,
+      freq: 1.1 + Math.random()*1.6,
+      speed: 0.00012 + Math.random()*0.00012,
+      ph: Math.random()*Math.PI*2,
+      w: Math.max(6, H*0.012) + Math.random()*10
+    }));
+    if(reducedMotion) frame(0);
+  }
+  function ribbonPath(rb, t){                     /* a brushstroke that breathes */
+    ctx.beginPath();
+    for(let i=0;i<=72;i++){
+      const u = i/72;
+      const x = u*W;
+      const y = (rb.base + Math.sin(u*rb.freq*Math.PI*2 + t*rb.speed + rb.ph)*rb.amp
+                + Math.sin(u*5.3 + t*rb.speed*0.55 + rb.ph*2)*rb.amp*0.4) * H;
+      i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+    }
   }
   function frame(t){
     ctx.clearRect(0,0,W,H);
-    ctx.globalCompositeOperation = "lighter";
+    ctx.globalCompositeOperation = set.comp;
     blobs.forEach(b => {
       const x = (Math.sin(t*0.00004*b.dx + b.px) * 0.5 + 0.5) * W;
       const y = (Math.cos(t*0.00005*b.dy + b.py) * 0.5 + 0.5) * H;
       const g = ctx.createRadialGradient(x,y,1, x,y,b.r);
-      g.addColorStop(0, rgba(b.c, 0.16)); g.addColorStop(1, "rgba(0,0,0,0)");
+      g.addColorStop(0, rgba(b.c, set.blobA)); g.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = g;
       ctx.fillRect(x-b.r, y-b.r, b.r*2, b.r*2);
+    });
+    ctx.lineCap = "round";
+    ribbons.forEach(rb => {
+      ribbonPath(rb, t);
+      ctx.strokeStyle = rgba(rb.c, set.ribA);     /* soft halo pass */
+      ctx.lineWidth = rb.w * 2.6;
+      ctx.stroke();
+      ribbonPath(rb, t);
+      ctx.strokeStyle = rgba(rb.c, set.ribA * 1.8); /* brighter core */
+      ctx.lineWidth = rb.w;
+      ctx.stroke();
     });
     ctx.globalCompositeOperation = "source-over";
     if(!reducedMotion) requestAnimationFrame(frame);
   }
-  window.addEventListener("resize", () => { init(); if(reducedMotion) frame(0); });
+  window.__bgInit = init;
+  window.addEventListener("resize", init);
   init();
-  if(reducedMotion) frame(0); else requestAnimationFrame(frame);
+  if(!reducedMotion) requestAnimationFrame(frame);
 })();
 
 /* go */
