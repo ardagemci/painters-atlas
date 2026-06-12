@@ -764,27 +764,79 @@ function treeView(list, type){
     <div class="tree-wrap">${svg}</div>`;
 }
 
-/* ---------- world map (nations) ---------- */
-function worldMapView(){
-  if(!window.WORLD_PATH || !window.NATION_COORDS) return "";
-  const W = 1000, H = 420;
-  const proj = (lat, lon) => [ (lon + 180) / 360 * 1000, (90 - lat) / 180 * 500 ];
-  let dots = "";
+/* ---------- world map (nations) with zoomable Europe inset ---------- */
+const MAP_REGIONS = {
+  world:  { vb: [0, 0, 1000, 420], mag: 1 },
+  europe: { vb: [464, 62, 172, 96], mag: 4.6 }            /* lon ≈ -13…49, lat ≈ 33…68 */
+};
+let mapZoom = "world";
+const mapProj = (lat, lon) => [ (lon + 180) / 360 * 1000, (90 - lat) / 180 * 500 ];
+
+function isEuropean(n){
+  const ll = window.NATION_COORDS[n.id];
+  return ll && ll[0] > 33 && ll[0] < 67 && ll[1] > -13 && ll[1] < 49;
+}
+
+function mapDotsSVG(region){
+  const mag = MAP_REGIONS[region].mag;
+  let out = "";
   [...N].map(n => [n, artistsOfNation(n.id).length])
-    .filter(([n]) => window.NATION_COORDS[n.id])
+    .filter(([n]) => window.NATION_COORDS[n.id] && (region === "world" || isEuropean(n)))
     .sort((a, b) => b[1] - a[1])                          /* big circles behind small */
     .forEach(([n, c]) => {
-      const [x, y] = proj(...window.NATION_COORDS[n.id]);
-      const r = 5 + Math.sqrt(c) * 3;
-      dots += `<a href="#/nation/${n.id}" class="map-dot">
-        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"/>
-        <text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}">${n.flag}</text>
-        <title>${esc(n.name)} — ${c} painter${c === 1 ? "" : "s"}</title>
-      </a>`;
+      const [x, y] = mapProj(...window.NATION_COORDS[n.id]);
+      const r  = region === "world" ? 5 + Math.sqrt(c) * 3 : (6 + Math.sqrt(c) * 1.9) / mag;
+      const fs = region === "world" ? 13 : 10.5 / mag;
+      const name = region === "europe"
+        ? `<text class="md-name" style="font-size:${(9.5 / mag).toFixed(2)}px" x="${x.toFixed(1)}" y="${(y + r + 11 / mag).toFixed(2)}">${esc(n.name)} · ${c}</text>`
+        : "";
+      out += `<a href="#/nation/${n.id}" class="map-dot">
+        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" vector-effect="non-scaling-stroke"/>
+        <text class="md-flag" style="font-size:${fs.toFixed(2)}px" x="${x.toFixed(1)}" y="${(y + fs * 0.34).toFixed(2)}">${n.flag}</text>
+        <title>${esc(n.name)} — ${c} painter${c === 1 ? "" : "s"}</title>${name}</a>`;
     });
-  return `<div class="map-wrap"><svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map of painters by nation">
-      <path class="map-land" d="${window.WORLD_PATH}"/>${dots}
-    </svg><p class="map-hint">Circle size = painters in the atlas · click a circle to visit the nation</p></div>`;
+  if(region === "world"){
+    const [ex, ey, ew, eh] = MAP_REGIONS.europe.vb;       /* clickable Europe frame */
+    out += `<rect class="eu-frame" data-zoom="europe" x="${ex}" y="${ey}" width="${ew}" height="${eh}" rx="6" vector-effect="non-scaling-stroke"><title>Zoom into Europe</title></rect>`;
+  }
+  return out;
+}
+
+function setMapZoom(target){
+  if(target === mapZoom || !MAP_REGIONS[target]) return;
+  const svg = document.getElementById("atlas-map");
+  mapZoom = target;
+  if(!svg) return;
+  document.querySelectorAll(".map-zoom").forEach(b => b.classList.toggle("on", b.dataset.zoom === target));
+  const dots = svg.querySelector("#map-dots");
+  const from = svg.getAttribute("viewBox").split(/\s+/).map(Number);
+  const to = MAP_REGIONS[target].vb;
+  const finish = () => { dots.innerHTML = mapDotsSVG(target); dots.style.opacity = 1; };
+  if(reducedMotion){ svg.setAttribute("viewBox", to.join(" ")); finish(); return; }
+  dots.style.opacity = 0;
+  const t0 = performance.now(), dur = 750;
+  (function step(t){
+    const p = Math.min(1, (t - t0) / dur);
+    const e = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;     /* easeInOutCubic */
+    svg.setAttribute("viewBox", from.map((v, i) => (v + (to[i] - v) * e).toFixed(2)).join(" "));
+    if(p < 1) requestAnimationFrame(step); else finish();
+  })(t0);
+}
+
+function worldMapView(){
+  if(!window.WORLD_PATH || !window.NATION_COORDS) return "";
+  return `<div class="map-wrap">
+    <div class="map-toolbar">
+      <span class="f-label">Zoom</span>
+      <button class="f-btn map-zoom ${mapZoom === "world" ? "on" : ""}" data-zoom="world">World</button>
+      <button class="f-btn map-zoom ${mapZoom === "europe" ? "on" : ""}" data-zoom="europe">Europe</button>
+    </div>
+    <svg id="atlas-map" viewBox="${MAP_REGIONS[mapZoom].vb.join(" ")}" style="aspect-ratio:1000/420"
+         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map of painters by nation">
+      <path class="map-land" d="${window.WORLD_PATH}" vector-effect="non-scaling-stroke"/>
+      <g id="map-dots">${mapDotsSVG(mapZoom)}</g>
+    </svg>
+    <p class="map-hint">Circle size = painters in the atlas · click a circle to visit the nation · click the dashed frame (or Europe) to zoom in</p></div>`;
 }
 
 function viewHome(){
@@ -1144,6 +1196,8 @@ function animateCounters(){
 
 /* clicks: cards navigate; filter buttons re-render */
 app.addEventListener("click", e => {
+  const zoomEl = e.target.closest("[data-zoom]");
+  if(zoomEl){ setMapZoom(zoomEl.dataset.zoom); return; }   /* map zoom: animate, don't re-render */
   const fbtn = e.target.closest(".f-btn");
   if(fbtn){
     if(fbtn.dataset.era) artistFilter.era = fbtn.dataset.era;

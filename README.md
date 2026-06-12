@@ -9,7 +9,7 @@ An interactive, zero-dependency atlas of **206 painters from the 15th century to
 - **206 artist pages** — major works, movements, techniques, and essays on each painter's life, career, life beyond the easel, and fun facts
 - **64 movements** with branches and sub-branches (Modernism → American Modernism / Harlem Renaissance / Art Deco; Postmodernism → Neo-Expressionism; Renaissance → Early Netherlandish / Mannerism …), plus a clickable **genealogical family-tree view**
 - **36 techniques**, also branched and tree-viewable (Gestural Abstraction → Dripping / Soak-Stain / Squeegee; Miniature Painting; Photomontage)
-- **7 era pages** (15th century → today) with clickable birth-year timelines, and **35 nation pages** with a clickable **world map**
+- **7 era pages** (15th century → today) with clickable birth-year timelines, and **35 nation pages** with a clickable **world map** — including an animated, zoomable Europe inset
 - Instant grouped search, era filters, and chips everywhere — every name, card and dot is a link
 - **Generative covers:** 27 canvas algorithms paint each artist's card from their palette and style — drips for Pollock, grids for Mondrian, gold mosaic for Klimt — freshly mixed on every visit
 

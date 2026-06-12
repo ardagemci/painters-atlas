@@ -463,7 +463,16 @@ section{margin:46px 0}
 }
 .map-dot:hover circle{fill:rgba(201,164,92,.75)}
 .map-dot text{font-size:13px;text-anchor:middle;pointer-events:none}
+.map-dot .md-name{fill:var(--muted);font-family:var(--sans)}
 .map-hint{font-size:.74rem;color:var(--faint);font-style:italic;text-align:center;margin:8px 0 4px}
+.map-toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+#map-dots{transition:opacity .3s ease}
+.eu-frame{
+  fill:rgba(201,164,92,.05);stroke:var(--gold);stroke-width:1.2;
+  stroke-dasharray:5 4;cursor:zoom-in;
+  transition:fill .25s;
+}
+.eu-frame:hover{fill:rgba(201,164,92,.18)}
 
 /* ---------- 404 ---------- */
 .lost{text-align:center;padding:90px 20px}
