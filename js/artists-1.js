@@ -2,7 +2,7 @@
 window.ARTISTS = window.ARTISTS || [];
 window.ARTISTS.push(
 { id:"leonardo-da-vinci", name:"Leonardo da Vinci", years:"1452–1519", born:1452, died:1519,
-  nation:"italy", eras:["16th-century"], movements:["high-renaissance"],
+  nation:"italy", eras:["15th-century","16th-century"], movements:["high-renaissance"],
   techniques:["oil-painting","sfumato","fresco","tempera"], style:"renaissance",
   palette:["#3b2f1e","#6b5635","#a08552","#d6c39a","#5a6b5d"],
   tagline:"The universal mind who painted the world's most famous smile",
@@ -119,7 +119,7 @@ window.ARTISTS.push(
     "On his deathbed he reportedly told his wife to burn drawings too biting to be safe."] },
 
 { id:"hieronymus-bosch", name:"Hieronymus Bosch", years:"c. 1450–1516", born:1450, died:1516,
-  nation:"netherlands", eras:["16th-century"], movements:["northern-renaissance"],
+  nation:"netherlands", eras:["15th-century","16th-century"], movements:["northern-renaissance"],
   techniques:["oil-painting","alla-prima"], style:"surreal",
   palette:["#26424e","#c4663a","#a7b06a","#5e3450","#e3d3a8"],
   tagline:"Hell's most inventive travel agent, five centuries early",

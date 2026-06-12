@@ -7,6 +7,14 @@ window.MOVEMENTS = [
     palette:["#7a2419","#caa45c","#2b3a52","#e8dcc3","#3e3a30"],
     blurb:"The rebirth of classical learning that re-founded European painting on perspective, anatomy and humanism.",
     desc:"Beginning in the Italian city-states and spreading north, the Renaissance replaced medieval flatness with mathematical perspective, observed anatomy and a new confidence in human dignity. Painters became scholars: dissecting bodies, studying optics and antiquity, and elevating their craft from guild trade to liberal art. Its branches range from the grandeur of Rome and Florence to the oil-glazed precision of the North." },
+  { id:"early-renaissance", name:"Early Renaissance", parent:"renaissance", period:"c. 1400–1490", style:"renaissance",
+    palette:["#b06a4a","#5e7250","#d9b27c","#2e3440","#e8dcc3"],
+    blurb:"Florence invents the rules — perspective, anatomy and painted light, first drafts.",
+    desc:"In quattrocento Florence, painting became a science with a soul: Masaccio's perspective made walls open into space, Fra Angelico annealed the new realism to devotion, Piero della Francesca ran it through geometry, and Botticelli spun it into pagan grace. The High Renaissance merely perfected what these decades dared first." },
+  { id:"early-netherlandish", name:"Early Netherlandish", parent:"renaissance", period:"c. 1420–1500", style:"renaissance",
+    palette:["#7a1f2b","#1f3a5f","#caa43e","#2e4a3e","#e8dcc4"],
+    blurb:"The oil revolution — Flemish panels so detailed they seem dreamed through a lens.",
+    desc:"While Florence measured space, Bruges and Brussels perfected substance: oil glazes built jewel-light layer by layer, mirrors reflecting whole rooms, brocade you can almost rustle. Van Eyck made painting an instrument of total observation; van der Weyden gave it tears. Northern Europe's entire tradition — and arguably photography's ideal — starts on these panels." },
   { id:"high-renaissance", name:"High Renaissance", parent:"renaissance", period:"c. 1490–1527", style:"renaissance",
     palette:["#7a1f2b","#1f3a5f","#d9b46a","#e9ddc8","#5b7a5e"],
     blurb:"The brief, blazing summit — Leonardo, Michelangelo and Raphael working at once.",
@@ -160,8 +168,18 @@ window.MOVEMENTS = [
     blurb:"The dream made flesh — painting dictated by the unconscious.",
     desc:"Founded by poet André Breton on Freud's couch, Surrealism set out to liberate the unconscious: dream imagery rendered with hallucinatory precision (Dalí, Magritte) or coaxed out by automatic techniques and chance (Ernst, Miró). Its images escaped the gallery long ago — advertising, cinema and the word 'surreal' itself are its monuments." },
 
+  // ---- the modern umbrella ----
+  { id:"modernism", name:"Modernism", parent:null, period:"c. 1860–1970", style:"abstract",
+    palette:["#c4302a","#2e50c4","#f0c82e","#1a1a1a","#f4f1e8"],
+    blurb:"The century-long break with tradition — make it new, in every direction at once.",
+    desc:"Modernism is less a movement than the weather all the movements happened inside: the conviction, from Manet onward, that a changed world demanded changed forms. Impressionism, Cubism, abstraction and Surrealism are its loudest chapters; gathered here are its regional dialects — America finding its own modern voice, Harlem claiming the idiom, Deco styling it for the street." },
+  { id:"postmodernism", name:"Postmodernism", parent:null, period:"c. 1970–today", style:"contemporary",
+    palette:["#e0427a","#7ac4e8","#f0c82e","#1a1a1a","#e8e4d8"],
+    blurb:"After the new — irony, quotation and the death (and resale) of originality.",
+    desc:"When 'make it new' itself grew old, painting turned self-aware: borrowing styles like costumes, mixing high and low without apology, treating originality as one more myth to sample. Richter's style-switching, Murakami's brand-art and the Neo-Expressionist return of the brush all answer modernism's earnestness with a raised eyebrow — and a quotation." },
+
   // ---- Between the wars ----
-  { id:"art-deco", name:"Art Deco", parent:null, period:"c. 1920–1939", style:"artdeco",
+  { id:"art-deco", name:"Art Deco", parent:"modernism", period:"c. 1920–1939", style:"artdeco",
     palette:["#9aa8b8","#c43e4e","#2a3440","#e8d9c0","#5e7286"],
     blurb:"Machine-age glamour — chrome curves, sharp suits and cocktail speed.",
     desc:"Named for the 1925 Paris exposition, Art Deco streamlined Cubism's angles into luxury: skyscrapers, ocean liners, jewellery and Lempicka's polished, perfumed portraits. It is modernism with lipstick — geometry in the service of glamour." },
@@ -173,11 +191,11 @@ window.MOVEMENTS = [
     palette:["#b0703a","#6e8a5a","#c4423e","#e8cd9a","#3e3a30"],
     blurb:"History painted wall-sized — art for the people, in fresco and fury.",
     desc:"After the Mexican Revolution, the state commissioned painters to tell the nation's story on public walls. Rivera, Orozco and Siqueiros revived Renaissance fresco at industrial scale, fusing indigenous heritage, labour and politics into art that needed no museum — only a wall and a passer-by." },
-  { id:"harlem-renaissance", name:"Harlem Renaissance", parent:null, period:"c. 1920–1945", style:"fauvist",
+  { id:"harlem-renaissance", name:"Harlem Renaissance", parent:"modernism", period:"c. 1920–1945", style:"fauvist",
     palette:["#c4302a","#f0c82e","#2e50c4","#1a1a1a","#e8dcc4"],
     blurb:"Black modernism in full voice — rhythm, migration and pride on canvas.",
     desc:"Centred in 1920s–30s Harlem, this flowering of Black literature, music and art claimed modernism on its own terms. In painting, Jacob Lawrence's flat, syncopated panel cycles gave the Great Migration its definitive visual epic — history painting reinvented in tempera and rhythm." },
-  { id:"american-modernism", name:"American Modernism", parent:null, period:"c. 1910–1950", style:"postimpressionist",
+  { id:"american-modernism", name:"American Modernism", parent:"modernism", period:"c. 1910–1950", style:"postimpressionist",
     palette:["#e8c8d4","#d97a8a","#f0e4d0","#a8c4b8","#8a4a52"],
     blurb:"A new world's new forms — skyscrapers, deserts and O'Keeffe's monumental flowers.",
     desc:"American painters absorbed European modernism and turned it on native ground: Manhattan's geometry, New Mexico's bones and mesas, the close-up forms of nature enlarged to billboard scale. O'Keeffe's flowers and skulls made the style's case: abstraction and the real need not be enemies." },
@@ -201,7 +219,7 @@ window.MOVEMENTS = [
     palette:["#e0427a","#f0c82e","#2e8a8a","#c4302a","#1a1a1a"],
     blurb:"Soup cans and comic strips — mass culture promoted to museum walls.",
     desc:"Pop turned painting's eye from the soul to the supermarket: advertising, celebrity, comics and packaging rendered with commercial techniques like silkscreen and Ben-Day dots. Warhol's deadpan and Lichtenstein's romance panels asked the era's sharpest question — in a world of images, what exactly is an original?" },
-  { id:"neo-expressionism", name:"Neo-Expressionism", parent:null, period:"c. 1978–1990", style:"expressionist",
+  { id:"neo-expressionism", name:"Neo-Expressionism", parent:"postmodernism", period:"c. 1978–1990", style:"expressionist",
     palette:["#1a1a1a","#e8c43e","#c4302a","#2e8a8a","#f0ece0"],
     blurb:"The return of the brush — raw, mythic, big painting after minimalism's silence.",
     desc:"At the end of the 1970s, painting came roaring back: huge, urgent, figurative and unashamedly emotional. Kiefer excavated German memory in lead and ash; Basquiat fused graffiti, anatomy and jazz into crowned heads. Critics called it regression; the public called it alive." },
@@ -419,6 +437,10 @@ window.TECHNIQUES = [
 ];
 
 window.ERAS = [
+  { id:"15th-century", name:"15th Century", range:"1400–1499", start:1400, end:1499, style:"renaissance",
+    palette:["#7a1f2b","#caa43e","#9ab8d9","#e8dcc4","#2e4a3e"],
+    blurb:"The toolkit century — oil paint perfected in Flanders, perspective invented in Florence.",
+    desc:"Everything later painting takes for granted was forged here: Masaccio constructs the first rigorous perspective, Fra Angelico fills convent cells with painted prayer, Piero measures light like a geometer — while in Bruges, Jan van Eyck pushes oil glazing to a brilliance that still defies explanation. Two laboratories, one revolution." },
   { id:"16th-century", name:"16th Century", range:"1500–1599", start:1500, end:1599, style:"renaissance",
     palette:["#7a2419","#caa45c","#2b3a52","#e8dcc3","#3e3a30"],
     blurb:"The High Renaissance and its aftershocks — perfection achieved, then gleefully bent.",
@@ -519,3 +541,16 @@ window.NATIONS = [
   { id:"australia", name:"Australia", flag:"🇦🇺", palette:["#b0502e","#e8a85e","#2e3e8a","#e8dcc0","#5e3424"],
     blurb:"Nolan's black-helmeted outlaw and Kngwarreye's desert dreamings — two Australias, both painted from memory of country." }
 ];
+
+/* approximate [lat, lon] anchors for the world map */
+window.NATION_COORDS = {
+  italy:[42.8,12.5], spain:[40.2,-3.7], france:[46.6,2.4], netherlands:[52.4,5.3],
+  belgium:[50.6,4.5], germany:[51.2,10.4], austria:[47.6,14.1], switzerland:[46.8,8.2],
+  britain:[53.0,-1.5], greece:[39.0,22.0], norway:[61.0,9.0], sweden:[62.0,15.0],
+  poland:[52.1,19.4], russia:[56.0,38.0], ukraine:[49.0,31.5], belarus:[53.7,27.9],
+  japan:[36.2,138.2], mexico:[23.6,-102.5], usa:[39.8,-98.5], colombia:[4.6,-74.1],
+  india:[22.0,79.0], nigeria:[9.1,8.7], "south-africa":[-29.0,24.0], ethiopia:[9.1,40.5],
+  turkey:[39.0,35.2], denmark:[56.0,9.5], finland:[62.9,26.0], brazil:[-10.8,-52.9],
+  cuba:[21.5,-79.5], china:[35.0,103.0], canada:[56.1,-106.3], armenia:[40.3,45.0],
+  czechia:[49.8,15.5], hungary:[47.2,19.5], australia:[-25.3,133.8]
+};

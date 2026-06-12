@@ -1,7 +1,7 @@
 /* PIGMENT — artists 8/13 : Renaissance reinforcements & the 17th century */
 window.ARTISTS.push(
 { id:"sandro-botticelli", name:"Sandro Botticelli", years:"c. 1445–1510", born:1445, died:1510,
-  nation:"italy", eras:["16th-century"], movements:["renaissance"],
+  nation:"italy", eras:["15th-century","16th-century"], movements:["early-renaissance"],
   techniques:["tempera","glazing"], style:"renaissance",
   palette:["#7da26e","#e8c4a8","#d9b46a","#3b5a8a","#f0e8d4"],
   tagline:"Venus on a shell — grace itself, then the bonfire",

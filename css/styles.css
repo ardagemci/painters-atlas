@@ -432,6 +432,39 @@ section{margin:46px 0}
 .branch-chip:hover{color:var(--ink);border-style:solid;border-color:var(--gold);transform:translateY(-2px)}
 .branch-chip::before{content:"↳";color:var(--gold);font-size:.7rem}
 
+/* ---------- genealogical trees ---------- */
+.tree-wrap{
+  overflow-x:auto;padding:18px 6px;
+  background:var(--panel);border:1px solid var(--line2);border-radius:18px;
+}
+.tree-svg{display:block}
+.tree-svg .tree-link{fill:none;stroke:var(--gold);stroke-opacity:.4;stroke-width:1.5}
+.tree-svg.technique .tree-link{stroke:var(--teal)}
+.tree-svg .tree-node rect{
+  fill:var(--panel2);stroke:var(--line2);
+  transition:fill .25s,stroke .25s;
+}
+.tree-svg a{text-decoration:none}
+.tree-svg .tree-node:hover rect{fill:rgba(201,164,92,.16);stroke:var(--gold)}
+.tree-svg.technique .tree-node:hover rect{fill:rgba(111,179,168,.16);stroke:var(--teal)}
+.tree-svg .tn-name{fill:var(--ink);font:500 13px var(--sans)}
+.tree-svg .tn-count{fill:var(--faint);font:400 11px var(--sans)}
+
+/* ---------- world map ---------- */
+.map-wrap{
+  margin-bottom:34px;padding:14px 14px 8px;
+  background:var(--panel);border:1px solid var(--line2);border-radius:18px;
+}
+.map-wrap svg{display:block;width:100%;height:auto}
+.map-land{fill:var(--panel2);stroke:var(--line);stroke-width:.6}
+.map-dot circle{
+  fill:rgba(201,164,92,.4);stroke:var(--gold);stroke-width:1.2;
+  transition:fill .25s;
+}
+.map-dot:hover circle{fill:rgba(201,164,92,.75)}
+.map-dot text{font-size:13px;text-anchor:middle;pointer-events:none}
+.map-hint{font-size:.74rem;color:var(--faint);font-style:italic;text-align:center;margin:8px 0 4px}
+
 /* ---------- 404 ---------- */
 .lost{text-align:center;padding:90px 20px}
 .lost h1{font-size:3rem}

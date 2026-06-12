@@ -715,6 +715,77 @@ function hero(opts){
    ============================================================ */
 const app = document.getElementById("app");
 let artistFilter = { era: "all", sort: "chrono" };
+let taxView = { movement: "cards", technique: "cards" };
+
+/* ---------- genealogical tree (movements / techniques) ---------- */
+function treeView(list, type){
+  const byParent = {};
+  list.forEach(x => { (byParent[x.parent || ""] = byParent[x.parent || ""] || []).push(x); });
+  const mk = x => ({ item: x, kids: (byParent[x.id] || []).map(mk) });
+  const roots = (byParent[""] || []).map(mk);
+  const countFn = type === "movement" ? artistsOfMovement : artistsOfTechnique;
+  const nodeW = n => Math.min(252, n.item.name.length * 7.4 + 52);
+
+  const ROW = 38, COL = 280;
+  let row = 0;
+  const nodes = [], links = [];
+  (function placeAll(){
+    function place(n, depth){
+      let y;
+      if(!n.kids.length){ y = row * ROW; row += 1; }
+      else {
+        const ys = n.kids.map(k => place(k, depth + 1));
+        y = (Math.min(...ys) + Math.max(...ys)) / 2;
+      }
+      n.x = depth * COL; n.y = y;
+      nodes.push(n);
+      n.kids.forEach(k => links.push([n, k]));
+      return y;
+    }
+    roots.forEach(r => { place(r, 0); row += 0.35; });   /* breathing room between families */
+  })();
+
+  const H = row * ROW + 16, W = COL * 2 + 300;
+  let svg = `<svg class="tree-svg ${type}" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">`;
+  links.forEach(([a, b]) => {
+    const x1 = a.x + nodeW(a), y1 = a.y + 14, x2 = b.x, y2 = b.y + 14;
+    svg += `<path class="tree-link" d="M${x1},${y1} C${x1 + 44},${y1} ${x2 - 44},${y2} ${x2},${y2}"/>`;
+  });
+  nodes.forEach(n => {
+    const w = nodeW(n), cnt = countFn(n.item.id).length;
+    svg += `<a href="#/${type}/${n.item.id}"><g class="tree-node">
+      <rect x="${n.x}" y="${n.y}" rx="14" width="${w}" height="28"/>
+      <text class="tn-name" x="${n.x + 13}" y="${n.y + 19}">${esc(n.item.name)}</text>
+      <text class="tn-count" x="${n.x + w - 11}" y="${n.y + 19}" text-anchor="end">${cnt}</text>
+    </g><title>${esc(n.item.name)} — ${cnt} painter${cnt === 1 ? "" : "s"}</title></a>`;
+  });
+  svg += `</svg>`;
+  return `<p class="page-lede" style="margin-bottom:14px">Every node is a page — branches read left to right, the number counts its painters (including sub-branches).</p>
+    <div class="tree-wrap">${svg}</div>`;
+}
+
+/* ---------- world map (nations) ---------- */
+function worldMapView(){
+  if(!window.WORLD_PATH || !window.NATION_COORDS) return "";
+  const W = 1000, H = 420;
+  const proj = (lat, lon) => [ (lon + 180) / 360 * 1000, (90 - lat) / 180 * 500 ];
+  let dots = "";
+  [...N].map(n => [n, artistsOfNation(n.id).length])
+    .filter(([n]) => window.NATION_COORDS[n.id])
+    .sort((a, b) => b[1] - a[1])                          /* big circles behind small */
+    .forEach(([n, c]) => {
+      const [x, y] = proj(...window.NATION_COORDS[n.id]);
+      const r = 5 + Math.sqrt(c) * 3;
+      dots += `<a href="#/nation/${n.id}" class="map-dot">
+        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"/>
+        <text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}">${n.flag}</text>
+        <title>${esc(n.name)} — ${c} painter${c === 1 ? "" : "s"}</title>
+      </a>`;
+    });
+  return `<div class="map-wrap"><svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map of painters by nation">
+      <path class="map-land" d="${window.WORLD_PATH}"/>${dots}
+    </svg><p class="map-hint">Circle size = painters in the atlas · click a circle to visit the nation</p></div>`;
+}
 
 function viewHome(){
   const muse = A[Math.floor(Math.random()*A.length)];
@@ -727,9 +798,9 @@ function viewHome(){
     ${canvasTag(muse.style, muse.palette, muse.id, true, String(Date.now()%100000))}
     <div class="hero-shade"></div>
     <div class="home-hero-content">
-      <div class="kicker">Five centuries · one atlas</div>
+      <div class="kicker">Seven centuries · one atlas</div>
       <h1>Pigment</h1>
-      <p class="lede">${A.length} painters from the High Renaissance to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
+      <p class="lede">${A.length} painters from Jan van Eyck to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
       <div class="btn-row">
         <a class="btn" href="#/artists">Meet the painters</a>
         <a class="btn ghost" href="#/movements">Browse movements</a>
@@ -844,13 +915,21 @@ function taxIndexView(list, type, title, kicker, lede){
   document.title = title + " — Pigment";
   const roots = list.filter(x => !x.parent);
   const countFn = type === "movement" ? artistsOfMovement : artistsOfTechnique;
+  const view = taxView[type];
   return `
   <div class="page-head">
     <div class="page-kicker">${kicker}</div>
     <h1 class="display">${title}</h1>
     <p class="page-lede">${lede}</p>
   </div>
-  <div class="tree-grid">${roots.map(r => taxCard(r, type, countFn(r.id).length)).join("")}</div>`;
+  <div class="filter-bar">
+    <span class="f-label">View</span>
+    <button class="f-btn ${view === "cards" ? "on" : ""}" data-vtype="${type}" data-view="cards">Cards</button>
+    <button class="f-btn ${view === "tree" ? "on" : ""}" data-vtype="${type}" data-view="tree">Family tree</button>
+  </div>
+  ${view === "tree"
+    ? treeView(list, type)
+    : `<div class="tree-grid">${roots.map(r => taxCard(r, type, countFn(r.id).length)).join("")}</div>`}`;
 }
 
 function taxDetailView(item, type){
@@ -899,8 +978,8 @@ function viewEras(){
   return `
   <div class="page-head">
     <div class="page-kicker">Time</div>
-    <h1 class="display">Six centuries of painting</h1>
-    <p class="page-lede">From the workshop of Leonardo to the studio livestream — each era gathers its painters, and every painter links onward.</p>
+    <h1 class="display">Seven centuries of painting</h1>
+    <p class="page-lede">From van Eyck's oil revolution to the studio livestream — each era gathers its painters, and every painter links onward.</p>
   </div>
   <div class="cards wide">
     ${E.map(e => {
@@ -964,6 +1043,7 @@ function viewNations(){
     <h1 class="display">Painting's map</h1>
     <p class="page-lede">Where the painters came from — though most of them, as you'll read, refused to stay put.</p>
   </div>
+  ${worldMapView()}
   <div class="cards">
     ${sorted.map(([n,c]) => `<article class="card tax-card" data-href="#/nation/${n.id}">
         <div class="card-art">${canvasTag("fauvist", n.palette, n.id)}</div>
@@ -1068,6 +1148,7 @@ app.addEventListener("click", e => {
   if(fbtn){
     if(fbtn.dataset.era) artistFilter.era = fbtn.dataset.era;
     if(fbtn.dataset.sort) artistFilter.sort = fbtn.dataset.sort;
+    if(fbtn.dataset.view) taxView[fbtn.dataset.vtype] = fbtn.dataset.view;
     route(); return;
   }
   if(e.target.closest("a")) return;
