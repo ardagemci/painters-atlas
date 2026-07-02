@@ -40,8 +40,8 @@ window.ARTISTS.push(
     "He tattooed a watch on his wrist 'to always have time' — Montparnasse's first wearable."] },
 
 { id:"qi-baishi", name:"Qi Baishi", years:"1864–1957", born:1864, died:1957,
-  nation:"china", eras:["19th-century","20th-century"], movements:["realism"],
-  techniques:["watercolor","gouache"], style:"tonal",
+  nation:"china", eras:["19th-century","20th-century"], movements:["literati-painting","realism"],
+  techniques:["ink-wash","watercolor","gouache"], style:"tonal",
   palette:["#e8e0d0","#3e3a36","#c4302a","#8a9bb0","#1d1a18"],
   tagline:"Shrimp in ink — a carpenter who became China's most beloved brush",
   works:[{t:"Shrimp (countless versions)",y:"1920s–50s"},{t:"Eagle Standing on Pine Tree",y:"1946"},{t:"Twelve Landscape Screens",y:"1925"}],

@@ -40,7 +40,7 @@ window.ARTISTS.push(
     "He painted into his final day; The Explosion of the Turkish Flagship stood unfinished on the easel."] },
 
 { id:"ilya-repin", name:"Ilya Repin", years:"1844–1930", born:1844, died:1930,
-  nation:"ukraine", eras:["19th-century","20th-century"], movements:["realism"],
+  nation:"ukraine", eras:["19th-century","20th-century"], movements:["realism","peredvizhniki"],
   techniques:["oil-painting","alla-prima","chiaroscuro"], style:"tonal",
   palette:["#3e3a2a","#8a6e46","#d9c49a","#5e2a2a","#a8b09a"],
   tagline:"Russia's conscience on canvas — barge haulers, Cossacks, a tsar's bloody panic",

@@ -183,7 +183,7 @@ window.ARTISTS.push(
     "She was among Time's 100 most influential people in 2020 — rare air for an abstract painter."] },
 
 { id:"takashi-murakami", name:"Takashi Murakami", years:"b. 1962", born:1962, died:null,
-  nation:"japan", eras:["20th-century","21st-century"], movements:["superflat","pop-art","contemporary-art","postmodernism"],
+  nation:"japan", eras:["20th-century","21st-century"], movements:["superflat","pop-art","contemporary-art","postmodernism","nihonga"],
   techniques:["acrylic-painting","flat-color","silkscreen"], style:"pop",
   palette:["#e0427a","#7ac4e8","#f0c82e","#2e8a5e","#f4f1e8"],
   tagline:"Superflat — smiling flowers from a PhD in traditional painting",

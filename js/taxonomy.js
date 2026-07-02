@@ -277,6 +277,46 @@ window.MOVEMENTS = [
     palette:["#d9d3c4","#a8b4b8","#8a9bb0","#e8e4d8","#5e6e7a"],
     blurb:"Nothing extra — the grid, the field, the almost-nothing that holds everything.",
     desc:"Minimalism stripped art to elemental order: repeated units, bare surfaces, the object itself. In painting, Agnes Martin's hand-drawn grids showed the style's secret — what looks like geometry from afar dissolves, up close, into tremulous, human pencil lines and washes 'about innocence of mind.'" },
+  // ---- Russia: icons to avant-garde ----
+  { id:"icon-painting", name:"Icon Painting", parent:null, period:"c. 600–1700", style:"ornament",
+    palette:["#caa43e","#8a2620","#2e4a6e","#3e3a30","#e8d9b4"],
+    blurb:"Windows onto heaven — the sacred image, written rather than painted.",
+    desc:"Orthodox icons obey their own optics: gold grounds outside time, reverse perspective opening toward the viewer, faces built from dark to light as theology demands. Icon painters spoke of 'writing' an image, and at the tradition's summit — Rublev's Trinity — a thousand years of prayer condenses into three quiet angels around a cup." },
+  { id:"peredvizhniki", name:"The Peredvizhniki", parent:"realism", period:"1870–1923", style:"tonal",
+    palette:["#3e3a2a","#8a6e46","#a8b09a","#5e2a2a","#d9c49a"],
+    blurb:"The Wanderers — Russian realism that packed its bags and went to the people.",
+    desc:"Fourteen students walked out of the St Petersburg Academy in 1863 rather than paint Norse gods; the travelling exhibition society they founded carried art to provincial towns for fifty years. Repin's barge haulers, Shishkin's forests and Levitan's twilights made the Russian land and its burdens the national subject — and the Tretyakov collection their cathedral." },
+  { id:"rayonism", name:"Rayonism", parent:"abstract-art", period:"1912–1914", style:"artdeco",
+    palette:["#c4302a","#e8a82e","#2e50c4","#1d1c22","#e8dcc4"],
+    blurb:"Painting the rays between things — Russia's own road to abstraction.",
+    desc:"Goncharova and Larionov reasoned that since we see only reflected light, painting should depict the rays themselves: images splintered into sheaves of coloured beams. Rayonism lasted barely two years before its inventors left for Diaghilev's ballets, but it declared Russian art's independence — 'we go hand in hand with house-painters' — a decade of -isms before the West noticed." },
+  { id:"constructivism", name:"Constructivism", parent:"abstract-art", period:"c. 1915–1934", style:"geometric",
+    palette:["#c4302a","#1a1a1a","#e8e0d0","#3e3a36","#caa43e"],
+    blurb:"Art into production — geometry rolled up its sleeves for the Revolution.",
+    desc:"After 1917, Russia's abstractionists declared the easel obsolete: art should construct the new world literally — textiles, posters, stage sets, workers' clubs. Popova's painterly architectonics slid off the canvas and onto fabric by the metre; the movement's diagonal energy still powers graphic design a century on, long after the state that commissioned it turned against it." },
+
+  // ---- Asia: ink, gold and modern hybrids ----
+  { id:"literati-painting", name:"Literati Painting", parent:null, period:"c. 1000–1900", style:"tonal",
+    palette:["#3e3a36","#8a8276","#d9d0bc","#5e6e5a","#e8e4d8"],
+    blurb:"Wenrenhua — scholars painting for each other, amateurism as the highest art.",
+    desc:"China's scholar-officials held that painting, like poetry and calligraphy, should express character rather than skill for hire: ink bamboo and mountains brushed between government duties, exchanged among friends, annotated with poems and collectors' seals for centuries. From Shen Zhou's Suzhou circle to Bada Shanren's eccentric birds, it is the world's longest continuous art conversation." },
+  { id:"zen-painting", name:"Zen Ink Painting", parent:null, period:"c. 1200–1600", style:"tonal",
+    palette:["#2a2c30","#8a8276","#b0b8b4","#5e6e5a","#ece8dc"],
+    blurb:"Enlightenment in one stroke — emptiness given just enough form.",
+    desc:"Japanese monk-painters made ink painting a spiritual exercise: a landscape flung down in seconds of total concentration, mist standing for everything the brush declines to say. Sesshū carried the discipline to Ming China and back, and his splashed-ink mountains — barely a dozen strokes — remain the tradition's koan: how little can a picture be and still be the world?" },
+  { id:"rinpa", name:"Rinpa School", parent:null, period:"c. 1600–1900", style:"ornament",
+    palette:["#caa43e","#2e4a8a","#2e6e5a","#e8cd7a","#8a2620"],
+    blurb:"Gold screens and floating irises — Japan's most luxurious design language.",
+    desc:"Revived across generations by artists who never met, Rinpa stylised nature into shimmering pattern: irises marching across gold leaf, plum branches in pooled pigment, waves curled like lacquer. Kōrin gave the school its name and its peak; its DNA runs forward into Art Nouveau, Klimt's gold and the entire grammar of Japanese design." },
+  { id:"nihonga", name:"Nihonga", parent:null, period:"c. 1880–today", style:"rococo",
+    palette:["#d9b4be","#8aa7c4","#e8dcc4","#5e6e5a","#caa45c"],
+    blurb:"'Japanese painting' — tradition modernised in mineral pigment and silk.",
+    desc:"When Meiji Japan opened to Western oil painting, nihonga answered: traditional materials — ground minerals, shell-white, ink on silk — addressing modern life and feeling. Uemura Shōen's dignified women carried it to its lyric height, and the lineage runs, by his own PhD, straight to Murakami's Superflat." },
+  { id:"persian-miniature", name:"Persian Miniature", parent:null, period:"c. 1300–1700", style:"ornament",
+    palette:["#1f6e8a","#c4663a","#caa43e","#5e3450","#e8dcc0"],
+    blurb:"Paradise at arm's length — the Persian book arts at their jewelled summit.",
+    desc:"In Herat, Tabriz and Isfahan, manuscript workshops perfected a painting of pure colour and winding line: gardens, battles and lovers stacked in tilted space where every tile and tulip counts. Reza Abbasi loosened the tradition into single-page portraits of dreaming youths and dervishes — drawings collectors bound into albums like jazz solos from a classical orchestra." },
+
   { id:"op-art", name:"Op Art", parent:"abstract-art", period:"c. 1960–1975", style:"geometric",
     palette:["#1a1a1a","#f4f1e8","#2e50c4","#e0427a","#f0c82e"],
     blurb:"Painting that attacks the eye — grids that bulge, vibrate and refuse to sit still.",
@@ -422,6 +462,18 @@ window.TECHNIQUES = [
     desc:"Spray paint covers metres in seconds and never drips twice the same way; stencils add precision and speed for artists who may have ninety seconds before the police arrive. Basquiat's SAMO tags, Haring's radiant figures and Banksy's stencilled satire took it from vandalism's toolbox to the auction block." },
 
   // ---- expansion ----
+  { id:"ink-wash", name:"Ink Wash", parent:null, style:"tonal",
+    palette:["#2a2c30","#8a8276","#b0b8b4","#5e6e5a","#ece8dc"],
+    blurb:"Sumi-e / shuǐmò — one ink, infinite greys, no second chances.",
+    desc:"East Asia's central painting technique grinds a single ink stick into tones from smoke to lacquer, brushed onto absorbent paper or silk where every hesitation records forever. Calligraphy's discipline carries the image: Qi Baishi's shrimp, Sesshū's mountains and Xu Beihong's horses all live or die by the loaded brush's first touch." },
+  { id:"splashed-ink", name:"Splashed Ink", parent:"ink-wash", style:"gestural",
+    palette:["#2a2c30","#2e6e8a","#5e8a6e","#caa43e","#ece8dc"],
+    blurb:"Haboku / pōmò — the landscape thrown, then found.",
+    desc:"Ink flung, pooled and tilted until mountains emerge from accident — a fifteenth-century Zen practice that is also, five centuries early, action painting. Sesshū's 1495 Haboku Landscape is its national-treasure summit; Zhang Daqian revived it in the 1960s with azure and malachite poured at mural scale, half tradition, half abstract expressionism." },
+  { id:"silk-painting", name:"Painting on Silk", parent:null, style:"rococo",
+    palette:["#d9b4be","#8aa7c4","#e8dcc4","#caa45c","#5e6e5a"],
+    blurb:"Pigment on woven light — the support that glows from within.",
+    desc:"Sized silk takes mineral colour with a soft luminosity no paper or canvas matches, rewarding patience and punishing correction. From Persian album leaves to Korean court portraits and Uemura Shōen's nihonga beauties, silk is where East Asian painting put its most ceremonial faces." },
   { id:"miniature-painting", name:"Miniature Painting", parent:null, style:"ornament",
     palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
     blurb:"Painting at whisper scale — books, lockets and worlds a hand-span wide.",
@@ -539,7 +591,11 @@ window.NATIONS = [
   { id:"hungary", name:"Hungary", flag:"🇭🇺", palette:["#c4302a","#e8e4d8","#2e6e5a","#1a1a1a","#f0c82e"],
     blurb:"From Pécs came Vasarely, who set the world's eyes vibrating — op art's grand engineer." },
   { id:"australia", name:"Australia", flag:"🇦🇺", palette:["#b0502e","#e8a85e","#2e3e8a","#e8dcc0","#5e3424"],
-    blurb:"Nolan's black-helmeted outlaw and Kngwarreye's desert dreamings — two Australias, both painted from memory of country." }
+    blurb:"Nolan's black-helmeted outlaw and Kngwarreye's desert dreamings — two Australias, both painted from memory of country." },
+  { id:"korea", name:"Korea", flag:"🇰🇷", palette:["#e8e4d8","#c4302a","#2e50c4","#3e3a36","#caa45c"],
+    blurb:"From Kim Hong-do's wrestling matches to Park Soo-keun's granite-textured streets — Joseon wit and modern grit." },
+  { id:"iran", name:"Iran (Persia)", flag:"🇮🇷", palette:["#1f6e8a","#c4663a","#caa43e","#2e6e5a","#e8dcc0"],
+    blurb:"The Persian miniature's garden of kings and dervishes — Reza Abbasi drew its dreamers one album page at a time." }
 ];
 
 /* approximate [lat, lon] anchors for the world map */
@@ -552,5 +608,6 @@ window.NATION_COORDS = {
   india:[22.0,79.0], nigeria:[9.1,8.7], "south-africa":[-29.0,24.0], ethiopia:[9.1,40.5],
   turkey:[39.0,35.2], denmark:[56.0,9.5], finland:[62.9,26.0], brazil:[-10.8,-52.9],
   cuba:[21.5,-79.5], china:[35.0,103.0], canada:[56.1,-106.3], armenia:[40.3,45.0],
-  czechia:[49.8,15.5], hungary:[47.2,19.5], australia:[-25.3,133.8]
+  czechia:[49.8,15.5], hungary:[47.2,19.5], australia:[-25.3,133.8],
+  korea:[36.5,127.8], iran:[32.5,53.5]
 };
