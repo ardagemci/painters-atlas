@@ -850,9 +850,9 @@ function viewHome(){
     ${canvasTag(muse.style, muse.palette, muse.id, true, String(Date.now()%100000))}
     <div class="hero-shade"></div>
     <div class="home-hero-content">
-      <div class="kicker">Seven centuries · one atlas</div>
+      <div class="kicker">Eight centuries · one atlas</div>
       <h1>Pigment</h1>
-      <p class="lede">${A.length} painters from Jan van Eyck to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
+      <p class="lede">${A.length} painters from Giotto to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
       <div class="btn-row">
         <a class="btn" href="#/artists">Meet the painters</a>
         <a class="btn ghost" href="#/movements">Browse movements</a>
@@ -1030,8 +1030,8 @@ function viewEras(){
   return `
   <div class="page-head">
     <div class="page-kicker">Time</div>
-    <h1 class="display">Seven centuries of painting</h1>
-    <p class="page-lede">From van Eyck's oil revolution to the studio livestream — each era gathers its painters, and every painter links onward.</p>
+    <h1 class="display">Eight centuries of painting</h1>
+    <p class="page-lede">From Giotto's Padua chapel to the studio livestream — each era gathers its painters, and every painter links onward.</p>
   </div>
   <div class="cards wide">
     ${E.map(e => {

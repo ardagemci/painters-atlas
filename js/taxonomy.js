@@ -7,6 +7,10 @@ window.MOVEMENTS = [
     palette:["#7a2419","#caa45c","#2b3a52","#e8dcc3","#3e3a30"],
     blurb:"The rebirth of classical learning that re-founded European painting on perspective, anatomy and humanism.",
     desc:"Beginning in the Italian city-states and spreading north, the Renaissance replaced medieval flatness with mathematical perspective, observed anatomy and a new confidence in human dignity. Painters became scholars: dissecting bodies, studying optics and antiquity, and elevating their craft from guild trade to liberal art. Its branches range from the grandeur of Rome and Florence to the oil-glazed precision of the North." },
+  { id:"proto-renaissance", name:"Proto-Renaissance", parent:"renaissance", period:"c. 1290–1400", style:"renaissance",
+    palette:["#2e4a8a","#b06a4a","#d9b27c","#caa43e","#e8dcc3"],
+    blurb:"Before the Renaissance had a name — Giotto's gravity, Siena's golden line.",
+    desc:"A century ahead of Masaccio, Giotto broke the Byzantine spell: figures that turn, weep and stand on the ground, painted for a Paduan chapel like theatre in the round. Duccio and the Sienese answered with a rival vision — icon gold bent toward human tenderness. Vasari's whole story of 'rebirth' begins here, with painters Dante was already quoting." },
   { id:"early-renaissance", name:"Early Renaissance", parent:"renaissance", period:"c. 1400–1490", style:"renaissance",
     palette:["#b06a4a","#5e7250","#d9b27c","#2e3440","#e8dcc3"],
     blurb:"Florence invents the rules — perspective, anatomy and painted light, first drafts.",
@@ -489,6 +493,10 @@ window.TECHNIQUES = [
 ];
 
 window.ERAS = [
+  { id:"14th-century", name:"14th Century", range:"1300–1399", start:1300, end:1399, style:"renaissance",
+    palette:["#2e4a8a","#caa43e","#8a2620","#e8d9b4","#3e3a30"],
+    blurb:"Painting wakes up — Giotto gives figures weight, Siena gives gold a soul.",
+    desc:"Out of Byzantine gold two futures open at once: in Padua, Giotto's frescoed mourners grieve with real bodies under real gravity — the founding shock of European painting — while Duccio's Siena refines icon splendour into aching human tenderness. Far to the north-east, Theophanes the Greek carries Constantinople's lightning into Russian churches. Everything the Renaissance builds stands on this century's shoulders." },
   { id:"15th-century", name:"15th Century", range:"1400–1499", start:1400, end:1499, style:"renaissance",
     palette:["#7a1f2b","#caa43e","#9ab8d9","#e8dcc4","#2e4a3e"],
     blurb:"The toolkit century — oil paint perfected in Flanders, perspective invented in Florence.",
@@ -539,7 +547,7 @@ window.NATIONS = [
   { id:"britain", name:"Britain & Ireland", flag:"🇬🇧", palette:["#2e3e8a","#c4302a","#e8e4d8","#5b7a9e","#3e5238"],
     blurb:"Turner's light, Constable's clouds, Bacon's screams, Hockney's pools — and one anonymous Bristolian with a stencil." },
   { id:"greece", name:"Greece", flag:"🇬🇷", palette:["#2b3a52","#7b8fb0","#bfc8d8","#5e2430","#cfa44e"],
-    blurb:"Birthplace of Doménikos Theotokópoulos — who signed his blazing Spanish canvases in Greek to the end." },
+    blurb:"Two Greeks who transformed other nations' art — Theophanes lit Novgorod's churches, El Greco set Toledo aflame." },
   { id:"norway", name:"Norway", flag:"🇳🇴", palette:["#c4302a","#2e3e8a","#e8e4d8","#d96e2e","#1d1c22"],
     blurb:"Long winters, long shadows — Munch turned Nordic light and dread into modern art's loudest scream." },
   { id:"sweden", name:"Sweden", flag:"🇸🇪", palette:["#2e50c4","#f0c82e","#e8b4c8","#9ab8d9","#5e5648"],
