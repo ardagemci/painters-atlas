@@ -764,6 +764,89 @@ function treeView(list, type){
     <div class="tree-wrap">${svg}</div>`;
 }
 
+/* ---------- the grand timeline ---------- */
+let tlZoom = 6;                                            /* pixels per year */
+const TL_Y0 = 1240;
+
+function vivid(P){                                         /* pick the punchiest palette colour */
+  let best = P[0], bs = -Infinity;
+  P.forEach(hx => {
+    const [r, g, b] = hex2rgb(hx);
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+    const v = mx / 255, c = (mx - mn) / 255;
+    let s = c * 2.4 + v * 0.8;
+    if(v > 0.82 && c < 0.2) s -= 1.0;                      /* not near-white */
+    if(v < 0.28) s -= 0.8;                                 /* not near-black */
+    if(s > bs){ bs = s; best = hx; }
+  });
+  return best;
+}
+const luma = hx => { const [r, g, b] = hex2rgb(hx); return (0.299*r + 0.587*g + 0.114*b) / 255; };
+
+function viewTimeline(){
+  document.title = "Timeline — Pigment";
+  const Y1 = 2030, pxy = tlZoom, W = (Y1 - TL_Y0) * pxy;
+  const LANE = 24, BARH = 18, TOP = 34, BOT = 30;
+
+  /* greedy lane packing, chronological */
+  const sorted = [...A].sort((a, b) => a.born - b.born || a.name.localeCompare(b.name));
+  const laneEnds = [], bars = [];
+  sorted.forEach(a => {
+    const end = a.died || 2026;
+    let li = laneEnds.findIndex(e => e + 3 <= a.born);
+    if(li === -1){ li = laneEnds.length; laneEnds.push(0); }
+    laneEnds[li] = end;
+    bars.push([a, li, end]);
+  });
+  const H = TOP + laneEnds.length * LANE + BOT;
+
+  let grid = "";
+  for(let y = 1300; y <= 2000; y += 50){
+    const x = (y - TL_Y0) * pxy, cent = y % 100 === 0;
+    grid += `<div class="tl2-grid ${cent ? "c" : ""}" style="left:${x}px"></div>`;
+    if(cent) grid += `<div class="tl2-year t" style="left:${x}px">${y}</div><div class="tl2-year b" style="left:${x}px">${y}</div>`;
+  }
+  grid += `<div class="tl2-grid now" style="left:${(2026 - TL_Y0) * pxy}px"></div>
+           <div class="tl2-year t now" style="left:${(2026 - TL_Y0) * pxy}px">today</div>`;
+
+  const barHtml = bars.map(([a, li, end]) => {
+    const mov = Mx[a.movements[0]];
+    const c = vivid(mov ? mov.palette : a.palette);
+    const living = !a.died;
+    const x = (a.born - TL_Y0) * pxy, w = Math.max(24, (end - a.born) * pxy);
+    const bg = living ? `linear-gradient(90deg, ${c} 70%, ${rgba(c, 0.08)})` : c;
+    return `<a class="tl2-bar" data-mov="${a.movements[0]}" href="#/artist/${a.id}"
+      title="${esc(a.name)} · ${esc(a.years)} · ${mov ? esc(mov.name) : ""}"
+      style="left:${x}px;top:${TOP + li * LANE}px;width:${w}px;height:${BARH}px;background:${bg};color:${luma(c) > 0.62 ? "#1d1a14" : "#f6f1e6"}">
+      <span>${esc(a.name)}</span></a>`;
+  }).join("");
+
+  /* legend: most-populous primary movements */
+  const counts = {};
+  A.forEach(a => counts[a.movements[0]] = (counts[a.movements[0]] || 0) + 1);
+  const legend = Object.entries(counts).sort((x, y) => y[1] - x[1]).slice(0, 14)
+    .map(([mid, c]) => Mx[mid] ? `<button class="tl2-leg" data-tlmov="${mid}"><i style="background:${vivid(Mx[mid].palette)}"></i>${esc(Mx[mid].name)} · ${c}</button>` : "")
+    .join("");
+
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Eight centuries at a glance</div>
+    <h1 class="display">The grand timeline</h1>
+    <p class="page-lede">Every painter in the atlas as a lifespan, coloured by movement. Picasso overlaps both Monet and Basquiat — see for yourself. Click any bar to visit; click a movement to isolate its painters.</p>
+  </div>
+  <div class="tl2-toolbar">
+    <span class="f-label">Zoom</span>
+    ${[["3","Compact"],["6","Standard"],["12","Detail"]].map(([z, l]) =>
+      `<button class="f-btn ${tlZoom === +z ? "on" : ""}" data-tlzoom="${z}">${l}</button>`).join("")}
+    <span class="f-spacer"></span>
+    <span class="f-label">Jump to</span>
+    ${E.map(e => `<button class="f-btn" data-tljump="${(e.start - TL_Y0) * pxy}">${esc(e.name.split(" ")[0])}</button>`).join("")}
+  </div>
+  <div class="tl2-legend"><button class="tl2-leg" data-tlmov=""><i style="background:var(--gold)"></i>All</button>${legend}</div>
+  <div class="tl2-wrap" id="tl2"><div class="tl2-inner" style="width:${W}px;height:${H}px">${grid}${barHtml}</div></div>
+  <p class="map-hint">${A.length} painters · ${laneEnds.length} lanes · fading bars are still painting</p>`;
+}
+
 /* ---------- world map (nations) with zoomable Europe inset ---------- */
 const MAP_REGIONS = {
   world:  { vb: [0, 0, 1000, 420], mag: 1 },
@@ -855,6 +938,7 @@ function viewHome(){
       <p class="lede">${A.length} painters from Giotto to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
       <div class="btn-row">
         <a class="btn" href="#/artists">Meet the painters</a>
+        <a class="btn ghost" href="#/timeline">The grand timeline</a>
         <a class="btn ghost" href="#/movements">Browse movements</a>
       </div>
       <p class="footer-note" style="margin-top:22px">Tonight's cover: mixed after <a href="#/artist/${muse.id}">${esc(muse.name)}</a></p>
@@ -1149,6 +1233,7 @@ function route(){
   switch(page){
     case "":            html = viewHome(); break;
     case "artists":     html = viewArtists(); break;
+    case "timeline":    html = viewTimeline(); break;
     case "artist":      html = viewArtist(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
                           "Every -ism with its branches and sub-branches — from the Renaissance workshop to Superflat. Open one to find its painters, techniques and offspring."); break;
@@ -1177,7 +1262,7 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", timeline:"timeline", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));
@@ -1198,6 +1283,31 @@ function animateCounters(){
 app.addEventListener("click", e => {
   const zoomEl = e.target.closest("[data-zoom]");
   if(zoomEl){ setMapZoom(zoomEl.dataset.zoom); return; }   /* map zoom: animate, don't re-render */
+  const tz = e.target.closest("[data-tlzoom]");
+  if(tz){                                                  /* timeline zoom: keep centre in view */
+    const wrap = document.getElementById("tl2");
+    const fr = wrap ? (wrap.scrollLeft + wrap.clientWidth / 2) / wrap.scrollWidth : 0;
+    tlZoom = +tz.dataset.tlzoom;
+    route();
+    const w2 = document.getElementById("tl2");
+    if(w2) w2.scrollLeft = fr * w2.scrollWidth - w2.clientWidth / 2;
+    return;
+  }
+  const tj = e.target.closest("[data-tljump]");
+  if(tj){
+    const wrap = document.getElementById("tl2");
+    if(wrap) wrap.scrollTo({ left: Math.max(0, +tj.dataset.tljump - 30), behavior: reducedMotion ? "auto" : "smooth" });
+    return;
+  }
+  const tm = e.target.closest("[data-tlmov]");
+  if(tm){                                                  /* movement isolation, no re-render */
+    const wasOn = tm.classList.contains("on");
+    document.querySelectorAll("[data-tlmov]").forEach(b => b.classList.remove("on"));
+    const mid = !wasOn ? tm.dataset.tlmov : "";
+    if(!wasOn) tm.classList.add("on");
+    document.querySelectorAll(".tl2-bar").forEach(b => b.classList.toggle("dim", !!mid && b.dataset.mov !== mid));
+    return;
+  }
   const fbtn = e.target.closest(".f-btn");
   if(fbtn){
     if(fbtn.dataset.era) artistFilter.era = fbtn.dataset.era;
