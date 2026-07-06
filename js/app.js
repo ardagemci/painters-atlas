@@ -1024,7 +1024,18 @@ function viewArtist(id){
     <aside class="side-panel">
       <div class="panel">
         <h3>Major works</h3>
-        ${a.works.map(wk => `<div class="work"><span class="w-year">${esc(wk.y)}</span><span class="w-title">${esc(wk.t)}</span></div>`).join("")}
+        ${a.works.map(wk => {
+          const art = window.ARTWORKS && window.ARTWORKS[a.id] && window.ARTWORKS[a.id][wk.t];
+          return art
+            ? `<div class="work has-img" data-lb-img="${art.img}" data-lb-cap="${esc(wk.t)} (${esc(wk.y)}) — ${esc(a.name)}" data-lb-link="${art.page}">
+                 <img class="w-thumb" loading="lazy" src="${art.img}" alt="${esc(wk.t)} by ${esc(a.name)}"
+                      onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
+                 <div><span class="w-year">${esc(wk.y)}</span><span class="w-title">${esc(wk.t)}</span></div>
+               </div>`
+            : `<div class="work"><span class="w-year">${esc(wk.y)}</span><span class="w-title">${esc(wk.t)}</span></div>`;
+        }).join("")}
+        ${window.ARTWORKS && window.ARTWORKS[a.id]
+          ? `<div class="chip-label" style="margin-top:12px">tap a work to enlarge · images via Wikimedia Commons</div>` : ""}
       </div>
       ${kindred.length ? `<div class="panel">
         <h3>Kindred spirits</h3>
@@ -1280,7 +1291,30 @@ function animateCounters(){
 }
 
 /* clicks: cards navigate; filter buttons re-render */
+/* ---------- lightbox for real artworks ---------- */
+function openLightbox(img, caption, link){
+  let lb = document.getElementById("lightbox");
+  if(!lb){
+    lb = document.createElement("div");
+    lb.id = "lightbox";
+    document.body.appendChild(lb);
+    lb.addEventListener("click", e => {
+      if(e.target === lb || e.target.classList.contains("lb-close")) lb.classList.remove("open");
+    });
+    document.addEventListener("keydown", e => { if(e.key === "Escape") lb.classList.remove("open"); });
+  }
+  const big = img.replace(/\/(\d+)px-/, "/1280px-");
+  lb.innerHTML = `<figure>
+    <button class="lb-close" aria-label="Close">×</button>
+    <img src="${big}" onerror="if(this.src!=='${img}')this.src='${img}'" alt="">
+    <figcaption>${caption}${link ? ` · <a href="${link}" target="_blank" rel="noopener">source</a>` : ""}</figcaption>
+  </figure>`;
+  lb.classList.add("open");
+}
+
 app.addEventListener("click", e => {
+  const lbEl = e.target.closest("[data-lb-img]");
+  if(lbEl){ openLightbox(lbEl.dataset.lbImg, lbEl.dataset.lbCap, lbEl.dataset.lbLink); return; }
   const zoomEl = e.target.closest("[data-zoom]");
   if(zoomEl){ setMapZoom(zoomEl.dataset.zoom); return; }   /* map zoom: animate, don't re-render */
   const tz = e.target.closest("[data-tlzoom]");

@@ -309,6 +309,38 @@ section{margin:46px 0}
   font-family:var(--serif);font-size:.85rem;color:var(--gold);min-width:44px;text-align:right;
 }
 .work .w-title{font-size:.93rem;color:var(--body-ink);font-style:italic}
+.work.has-img{display:block;cursor:zoom-in;padding:12px 0}
+.work.has-img .w-year{margin-right:10px}
+.work .w-thumb{
+  width:100%;display:block;border-radius:10px;margin-bottom:9px;
+  border:1px solid var(--line2);
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.work.has-img:hover .w-thumb{transform:scale(1.02);box-shadow:0 8px 26px rgba(0,0,0,.4)}
+
+/* ---------- lightbox ---------- */
+#lightbox{
+  position:fixed;inset:0;z-index:120;display:none;
+  align-items:center;justify-content:center;padding:28px;
+  background:rgba(10,8,6,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+#lightbox.open{display:flex;animation:viewIn .3s var(--ease) both}
+#lightbox figure{margin:0;position:relative;text-align:center;max-width:94vw}
+#lightbox img{
+  max-width:92vw;max-height:80vh;border-radius:8px;
+  box-shadow:0 30px 90px rgba(0,0,0,.75);
+  background:#111;
+}
+#lightbox figcaption{margin-top:14px;color:#e9e3d5;font-size:.92rem;font-style:italic}
+#lightbox figcaption a{color:var(--gold2)}
+.lb-close{
+  position:absolute;top:-16px;right:-14px;z-index:2;
+  width:36px;height:36px;border-radius:50%;border:1px solid rgba(233,227,213,.3);
+  background:#1d1a14;color:#e9e3d5;font-size:1.3rem;line-height:1;cursor:pointer;
+  transition:transform .25s var(--ease),border-color .25s;
+}
+.lb-close:hover{transform:rotate(90deg);border-color:var(--gold)}
 .mini-cards{display:flex;flex-direction:column;gap:8px}
 .mini-card{
   display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:11px;

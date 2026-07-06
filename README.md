@@ -11,6 +11,7 @@ An interactive, zero-dependency atlas of **230 painters from Giotto to today**, 
 - **39 techniques**, also branched and tree-viewable (Ink Wash → Splashed Ink; Gestural Abstraction → Dripping / Soak-Stain / Squeegee; Painting on Silk; Miniature Painting; Photomontage)
 - **8 era pages** (14th century → today) with clickable birth-year timelines, and **37 nation pages** (including Korea and Iran) with a clickable **world map** — including an animated, zoomable Europe inset
 - Instant grouped search, era filters, and chips everywhere — every name, card and dot is a link
+- **Real artworks** for painters in the public domain (died ≤ 1955): major works resolved at build time to images hosted on Wikimedia Commons, shown in each artist's works panel with a full-screen lightbox. Painters still under copyright keep generative covers — a legal constraint worn as a design principle
 - **Generative covers:** 27 canvas algorithms paint each artist's card from their palette and style — drips for Pollock, grids for Mondrian, gold mosaic for Klimt — freshly mixed on every visit
 
 ## Running locally
@@ -25,6 +26,13 @@ python3 -m http.server 8421
 ## Editing the data
 
 Artists live in `js/artists-1.js` … `js/artists-7.js`; movements, techniques, eras and nations in `js/taxonomy.js`. Every id an artist references must exist in the taxonomy, and each `style` must match a painter function in `js/app.js`.
+
+To refresh the public-domain artwork images (after adding painters or works):
+
+```sh
+osascript -l JavaScript tools/dump-artists.jxa.js > /tmp/pigment-artists.json
+python3 tools/fetch_artworks.py     # writes js/artworks.js
+```
 
 Check data integrity after edits:
 
