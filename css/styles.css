@@ -519,6 +519,33 @@ section{margin:46px 0}
 .tl2-bar:hover{box-shadow:0 2px 16px rgba(0,0,0,.5);filter:brightness(1.15);z-index:5}
 .tl2-bar.dim{opacity:.1;pointer-events:none}
 
+/* ---------- influence graph ---------- */
+.ig-wrap{
+  overflow:auto;max-height:76vh;
+  border:1px solid var(--line2);border-radius:18px;background:var(--panel);
+}
+#ig-svg{display:block}
+.ig-edge{stroke-width:1.3;stroke-opacity:.5;transition:stroke-opacity .25s,stroke-width .25s}
+.ig-edge.hid{display:none}
+.ig-node{cursor:pointer}
+.ig-node circle{stroke:rgba(0,0,0,.35);stroke-width:1;transition:opacity .25s,filter .2s}
+.ig-node text{
+  fill:var(--muted);font-family:var(--sans);font-size:10.5px;
+  text-anchor:middle;pointer-events:none;transition:opacity .25s;
+}
+.ig-node:hover circle{filter:brightness(1.25)}
+#ig-svg.focused .ig-node:not(.lit){opacity:.07}
+#ig-svg.focused .ig-edge:not(.lit){stroke-opacity:.04}
+#ig-svg.focused .ig-edge.lit{stroke-opacity:.95;stroke-width:2.2}
+#ig-svg.focused .ig-node.lit text{fill:var(--ink)}
+.ig-node.sel circle{stroke:var(--gold2);stroke-width:3}
+.ig-info{
+  margin-top:16px;padding:18px 22px;
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  animation:viewIn .3s var(--ease) both;
+}
+.ig-info strong{font-family:var(--serif);font-size:1.15rem}
+
 /* ---------- world map ---------- */
 .map-wrap{
   margin-bottom:34px;padding:14px 14px 8px;

@@ -847,6 +847,139 @@ function viewTimeline(){
   <p class="map-hint">${A.length} painters · ${laneEnds.length} lanes · fading bars are still painting</p>`;
 }
 
+/* ---------- the influence graph ---------- */
+const IG_WORDS = {
+  taught: ["taught by", "taught"], influenced: ["influenced by", "influenced"],
+  befriended: ["friend of", "friend of"], rivaled: ["rival of", "rival of"],
+  partners: ["partner of", "partner of"]
+};
+const EDGE_STYLE = {
+  taught:     { label:"taught",      color:"#c9a45c", dash:"",      arrow:true  },
+  influenced: { label:"influenced",  color:"#6fb3a8", dash:"5 4",   arrow:true  },
+  befriended: { label:"friends",     color:"#c97b6a", dash:"",      arrow:false },
+  rivaled:    { label:"rivals",      color:"#c4536a", dash:"2 4",   arrow:false },
+  partners:   { label:"partners",    color:"#d98ab0", dash:"",      arrow:false }
+};
+
+function influenceLayout(W, H){
+  const deg = {};
+  window.INFLUENCES.forEach(([a, b]) => { deg[a] = (deg[a]||0)+1; deg[b] = (deg[b]||0)+1; });
+  const nodes = A.filter(a => deg[a.id]).map(a => ({ a, d: deg[a.id], x:0, y:0, dx:0, dy:0 }));
+  const idx = Object.fromEntries(nodes.map((n, i) => [n.a.id, i]));
+  const edges = window.INFLUENCES.map(([f, t, ty]) => ({ s: nodes[idx[f]], t: nodes[idx[t]], ty }));
+
+  const R = mulberry(hashStr("pigment-constellation"));
+  nodes.forEach(n => {                                    /* seed roughly by birth year → x */
+    n.x = W * 0.06 + ((n.a.born - 1240) / 790) * W * 0.88 + (R() - 0.5) * 60;
+    n.y = H * 0.12 + R() * H * 0.76;
+  });
+  const k = Math.sqrt(W * H / nodes.length) * 0.62;
+  for(let it = 0; it < 300; it++){
+    const cool = 1 - it / 300, step = 16 * cool + 0.6;
+    nodes.forEach(n => { n.dx = 0; n.dy = 0; });
+    for(let i = 0; i < nodes.length; i++)
+      for(let j = i + 1; j < nodes.length; j++){
+        const a = nodes[i], b = nodes[j];
+        let dx = a.x - b.x, dy = a.y - b.y;
+        let d2 = dx*dx + dy*dy || 0.01;
+        if(d2 < k*k*10){ const f = (k*k) / d2; a.dx += dx*f; a.dy += dy*f; b.dx -= dx*f; b.dy -= dy*f; }
+      }
+    edges.forEach(e => {
+      let dx = e.s.x - e.t.x, dy = e.s.y - e.t.y;
+      const d = Math.sqrt(dx*dx + dy*dy) || 1, f = (d - k) / d * 0.08;
+      e.s.dx -= dx*f*d/k; e.s.dy -= dy*f*d/k; e.t.dx += dx*f*d/k; e.t.dy += dy*f*d/k;
+    });
+    nodes.forEach(n => {
+      n.dx += (W/2 - n.x) * 0.012; n.dy += (H/2 - n.y) * 0.03;   /* gentle gravity */
+      const m = Math.sqrt(n.dx*n.dx + n.dy*n.dy) || 1, s = Math.min(m, step) / m;
+      n.x = Math.max(30, Math.min(W - 30, n.x + n.dx * s));
+      n.y = Math.max(26, Math.min(H - 26, n.y + n.dy * s));
+    });
+  }
+  return { nodes, edges };
+}
+
+let graphCache = null;
+function viewInfluences(){
+  document.title = "Influences — Pigment";
+  const W = 1500, H = 1150;
+  if(!graphCache) graphCache = influenceLayout(W, H);
+  const { nodes, edges } = graphCache;
+
+  let defs = `<defs>`;
+  Object.entries(EDGE_STYLE).forEach(([ty, st]) => {
+    if(st.arrow) defs += `<marker id="arr-${ty}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="${st.color}"/></marker>`;
+  });
+  defs += `</defs>`;
+
+  const edgeSvg = edges.map((e, i) => {
+    const st = EDGE_STYLE[e.ty];
+    /* shorten line so arrowheads sit outside the node circle */
+    const r2 = 6 + Math.min(e.t.d, 9) * 1.4 + 3;
+    const dx = e.t.x - e.s.x, dy = e.t.y - e.s.y, d = Math.sqrt(dx*dx + dy*dy) || 1;
+    const tx = e.t.x - dx / d * r2, ty2 = e.t.y - dy / d * r2;
+    return `<line class="ig-edge" data-etype="${e.ty}" data-a="${e.s.a.id}" data-b="${e.t.a.id}"
+      x1="${e.s.x.toFixed(1)}" y1="${e.s.y.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty2.toFixed(1)}"
+      stroke="${st.color}" ${st.dash ? `stroke-dasharray="${st.dash}"` : ""} ${st.arrow ? `marker-end="url(#arr-${e.ty})"` : ""}/>`;
+  }).join("");
+
+  const nodeSvg = nodes.map(n => {
+    const mov = Mx[n.a.movements[0]];
+    const c = vivid(mov ? mov.palette : n.a.palette);
+    const r = 6 + Math.min(n.d, 9) * 1.4;
+    return `<g class="ig-node" data-nid="${n.a.id}" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
+      <circle r="${r.toFixed(1)}" fill="${c}"/>
+      <text y="${(r + 12).toFixed(1)}">${esc(n.a.name)}</text>
+      <title>${esc(n.a.name)} · ${esc(n.a.years)} — ${n.d} connection${n.d === 1 ? "" : "s"}</title>
+    </g>`;
+  }).join("");
+
+  const legend = Object.entries(EDGE_STYLE).map(([ty, st]) =>
+    `<button class="tl2-leg" data-etype-btn="${ty}"><i style="background:${st.color}"></i>${st.label} · ${edges.filter(e => e.ty === ty).length}</button>`).join("");
+
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Who taught whom, who changed whom</div>
+    <h1 class="display">The influence graph</h1>
+    <p class="page-lede">${nodes.length} painters joined by ${edges.length} documented relationships — teachers, disciples, friends, rivals and partners. Click a painter to light up their circle; click again to visit their page. Chains run from Theophanes teaching Rublev to Warhol sparring with Kusama.</p>
+  </div>
+  <div class="tl2-legend"><button class="tl2-leg" data-etype-btn=""><i style="background:var(--gold)"></i>all types</button>${legend}</div>
+  <div class="ig-wrap" id="ig-wrap">
+    <svg id="ig-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${defs}${edgeSvg}${nodeSvg}</svg>
+  </div>
+  <div class="ig-info" id="ig-info" hidden></div>
+  <p class="map-hint">nodes sized by connections, coloured by movement · solitary painters (Hilma af Klint kept her circle a séance) aren't shown</p>`;
+}
+
+function igFocus(nid){
+  const svg = document.getElementById("ig-svg"), info = document.getElementById("ig-info");
+  if(!svg) return;
+  const nbs = new Set([nid]);
+  const rels = [];
+  window.INFLUENCES.forEach(([f, t, ty]) => {
+    if(f === nid){ nbs.add(t); rels.push([t, ty, "out"]); }
+    if(t === nid){ nbs.add(f); rels.push([f, ty, "in"]); }
+  });
+  svg.classList.add("focused");
+  svg.querySelectorAll(".ig-node").forEach(g => g.classList.toggle("lit", nbs.has(g.dataset.nid)));
+  svg.querySelectorAll(".ig-node").forEach(g => g.classList.toggle("sel", g.dataset.nid === nid));
+  svg.querySelectorAll(".ig-edge").forEach(l => l.classList.toggle("lit", l.dataset.a === nid || l.dataset.b === nid));
+  const a = Ax[nid];
+  info.hidden = false;
+  info.innerHTML = `<strong>${esc(a.name)}</strong> <span class="mc-meta">${esc(a.years)}</span>
+    <div class="chips" style="margin-top:8px">${rels.map(([oid, ty, dir]) =>
+      Ax[oid] ? `<a class="chip a" href="#/artist/${oid}"><b style="color:${EDGE_STYLE[ty].color};font-weight:500">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>` : "").join("")}</div>
+    <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(a.name.split(" ")[0])}'s page →</a>`;
+}
+function igClear(){
+  const svg = document.getElementById("ig-svg"), info = document.getElementById("ig-info");
+  if(!svg) return;
+  svg.classList.remove("focused");
+  svg.querySelectorAll(".lit, .sel").forEach(el => el.classList.remove("lit", "sel"));
+  if(info){ info.hidden = true; info.innerHTML = ""; }
+}
+
 /* ---------- world map (nations) with zoomable Europe inset ---------- */
 const MAP_REGIONS = {
   world:  { vb: [0, 0, 1000, 420], mag: 1 },
@@ -1046,6 +1179,19 @@ function viewArtist(id){
             </a>`).join("")}
         </div>
       </div>` : ""}
+      ${(() => {
+        const rels = [];
+        (window.INFLUENCES || []).forEach(([f, t, ty]) => {
+          if(f === a.id && Ax[t]) rels.push([t, ty, "out"]);
+          if(t === a.id && Ax[f]) rels.push([f, ty, "in"]);
+        });
+        return rels.length ? `<div class="panel">
+          <h3>Lineage & circle</h3>
+          <div class="chips">${rels.map(([oid, ty, dir]) =>
+            `<a class="chip a" href="#/artist/${oid}"><b style="color:${EDGE_STYLE[ty].color};font-weight:500">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>`).join("")}</div>
+          <a href="#/influences" class="chip-label" style="display:block;margin-top:12px">see the full influence graph →</a>
+        </div>` : "";
+      })()}
       <div class="panel">
         <h3>Keep exploring</h3>
         <div class="chips">
@@ -1245,6 +1391,7 @@ function route(){
     case "":            html = viewHome(); break;
     case "artists":     html = viewArtists(); break;
     case "timeline":    html = viewTimeline(); break;
+    case "influences":  html = viewInfluences(); break;
     case "artist":      html = viewArtist(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
                           "Every -ism with its branches and sub-branches — from the Renaissance workshop to Superflat. Open one to find its painters, techniques and offspring."); break;
@@ -1273,7 +1420,7 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", timeline:"timeline", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));
@@ -1315,6 +1462,20 @@ function openLightbox(img, caption, link){
 app.addEventListener("click", e => {
   const lbEl = e.target.closest("[data-lb-img]");
   if(lbEl){ openLightbox(lbEl.dataset.lbImg, lbEl.dataset.lbCap, lbEl.dataset.lbLink); return; }
+  const ign = e.target.closest(".ig-node");
+  if(ign){                                                 /* first click: focus; second: visit */
+    if(ign.classList.contains("sel")) location.hash = "#/artist/" + ign.dataset.nid;
+    else igFocus(ign.dataset.nid);
+    return;
+  }
+  const etb = e.target.closest("[data-etype-btn]");
+  if(etb){                                                 /* edge-type filter */
+    const ty = etb.dataset.etypeBtn;
+    document.querySelectorAll("[data-etype-btn]").forEach(b => b.classList.toggle("on", b === etb));
+    document.querySelectorAll(".ig-edge").forEach(l => l.classList.toggle("hid", !!ty && l.dataset.etype !== ty));
+    return;
+  }
+  if(e.target.closest("#ig-svg")){ igClear(); return; }    /* background click clears focus */
   const zoomEl = e.target.closest("[data-zoom]");
   if(zoomEl){ setMapZoom(zoomEl.dataset.zoom); return; }   /* map zoom: animate, don't re-render */
   const tz = e.target.closest("[data-tlzoom]");

@@ -60,6 +60,20 @@ A.forEach(a => {
   if(!a.facts || a.facts.length < 3) errs.push("artist " + a.id + ": <3 facts");
 });
 
+// influence graph integrity
+try { eval(read(base + "js/influences.js")); } catch(e){ out.push("influences.js ERROR: " + e.message); }
+const aIds = ids(A), EDGE_TYPES = { taught:1, influenced:1, befriended:1, rivaled:1, partners:1 };
+const seenEdges = {};
+(window.INFLUENCES || []).forEach(function(e, i){
+  if(!aIds[e[0]]) errs.push("influence " + i + ": unknown artist " + e[0]);
+  if(!aIds[e[1]]) errs.push("influence " + i + ": unknown artist " + e[1]);
+  if(!EDGE_TYPES[e[2]]) errs.push("influence " + i + ": unknown type " + e[2]);
+  if(e[0] === e[1]) errs.push("influence " + i + ": self-loop " + e[0]);
+  const key = [e[0], e[1]].sort().join("|");
+  if(seenEdges[key]) errs.push("influence " + i + ": duplicate pair " + key);
+  seenEdges[key] = 1;
+});
+
 const warns = [];
 M.forEach(x => { if(!A.some(a => a.movements.includes(x.id)) && !M.some(c => c.parent === x.id)) warns.push("movement " + x.id + " has no artists"); });
 T.forEach(x => { if(!A.some(a => a.techniques.includes(x.id)) && !T.some(c => c.parent === x.id)) warns.push("technique " + x.id + " has no artists"); });
@@ -67,7 +81,8 @@ N.forEach(x => { if(!A.some(a => a.nation === x.id)) warns.push("nation " + x.id
 E.forEach(x => { if(!A.some(a => a.eras.includes(x.id))) warns.push("era " + x.id + " has no artists"); });
 
 out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " + T.length +
-  ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length);
+  ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length +
+  ", influence edges: " + (window.INFLUENCES || []).length);
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
 out.push(errs.length ? "ERRORS:\n  " + errs.join("\n  ") : "ALL REFERENCES VALID");
 out.join("\n");
