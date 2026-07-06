@@ -864,18 +864,35 @@ const EDGE_STYLE = {
 function influenceLayout(W, H){
   const deg = {};
   window.INFLUENCES.forEach(([a, b]) => { deg[a] = (deg[a]||0)+1; deg[b] = (deg[b]||0)+1; });
-  const nodes = A.filter(a => deg[a.id]).map(a => ({ a, d: deg[a.id], x:0, y:0, dx:0, dy:0 }));
+  const nodes = A.filter(a => deg[a.id]).map(a => ({
+    a, d: deg[a.id], x:0, y:0, dx:0, dy:0,
+    r: 6 + Math.min(deg[a.id], 9) * 1.4,
+    hw: Math.min(110, a.name.length * 3.1) + 8            /* half label width, for margins */
+  }));
   const idx = Object.fromEntries(nodes.map((n, i) => [n.a.id, i]));
   const edges = window.INFLUENCES.map(([f, t, ty]) => ({ s: nodes[idx[f]], t: nodes[idx[t]], ty }));
 
   const R = mulberry(hashStr("pigment-constellation"));
   nodes.forEach(n => {                                    /* seed roughly by birth year → x */
-    n.x = W * 0.06 + ((n.a.born - 1240) / 790) * W * 0.88 + (R() - 0.5) * 60;
+    n.x = W * 0.08 + ((n.a.born - 1240) / 790) * W * 0.84 + (R() - 0.5) * 60;
     n.y = H * 0.12 + R() * H * 0.76;
   });
-  const k = Math.sqrt(W * H / nodes.length) * 0.62;
-  for(let it = 0; it < 300; it++){
-    const cool = 1 - it / 300, step = 16 * cool + 0.6;
+  const k = Math.sqrt(W * H / nodes.length) * 0.6;
+  const clamp = n => {
+    n.x = Math.max(n.hw + 8, Math.min(W - n.hw - 8, n.x));
+    n.y = Math.max(44, Math.min(H - 48, n.y));            /* room for the label below */
+  };
+  /* squared distance from point p to segment ab */
+  const segDist2 = (p, a, b) => {
+    const abx = b.x - a.x, aby = b.y - a.y;
+    const t = Math.max(0, Math.min(1, ((p.x - a.x) * abx + (p.y - a.y) * aby) / (abx*abx + aby*aby || 1)));
+    const qx = a.x + abx * t - p.x, qy = a.y + aby * t - p.y;
+    return { d2: qx*qx + qy*qy, qx, qy };
+  };
+
+  const IT = 380;
+  for(let it = 0; it < IT; it++){
+    const cool = 1 - it / IT, step = 15 * cool + 0.6;
     nodes.forEach(n => { n.dx = 0; n.dy = 0; });
     for(let i = 0; i < nodes.length; i++)
       for(let j = i + 1; j < nodes.length; j++){
@@ -883,18 +900,68 @@ function influenceLayout(W, H){
         let dx = a.x - b.x, dy = a.y - b.y;
         let d2 = dx*dx + dy*dy || 0.01;
         if(d2 < k*k*10){ const f = (k*k) / d2; a.dx += dx*f; a.dy += dy*f; b.dx -= dx*f; b.dy -= dy*f; }
+        if(it > IT * 0.6){                                /* label boxes repel in the endgame */
+          const ox = a.hw + b.hw - Math.abs(dx), oy = 30 - Math.abs(dy);
+          if(ox > 0 && oy > 0){
+            const push = Math.min(ox, oy) * 0.5, sx = dx < 0 ? -1 : 1, sy = dy < 0 ? -1 : 1;
+            if(ox < oy){ a.dx += sx * push; b.dx -= sx * push; }
+            else { a.dy += sy * push; b.dy -= sy * push; }
+          }
+        }
       }
-    edges.forEach(e => {
+    edges.forEach(e => {                                  /* springs */
       let dx = e.s.x - e.t.x, dy = e.s.y - e.t.y;
       const d = Math.sqrt(dx*dx + dy*dy) || 1, f = (d - k) / d * 0.08;
       e.s.dx -= dx*f*d/k; e.s.dy -= dy*f*d/k; e.t.dx += dx*f*d/k; e.t.dy += dy*f*d/k;
     });
-    nodes.forEach(n => {
-      n.dx += (W/2 - n.x) * 0.012; n.dy += (H/2 - n.y) * 0.03;   /* gentle gravity */
-      const m = Math.sqrt(n.dx*n.dx + n.dy*n.dy) || 1, s = Math.min(m, step) / m;
-      n.x = Math.max(30, Math.min(W - 30, n.x + n.dx * s));
-      n.y = Math.max(26, Math.min(H - 26, n.y + n.dy * s));
+    const ER = 38;                                        /* keep bystanders off other people's edges */
+    edges.forEach(e => {
+      nodes.forEach(n => {
+        if(n === e.s || n === e.t) return;
+        const { d2, qx, qy } = segDist2(n, e.s, e.t);
+        const lim = ER + n.r;
+        if(d2 < lim * lim){
+          const d = Math.sqrt(d2) || 0.5, push = (lim - d) * 0.8;
+          n.dx -= qx / d * push; n.dy -= qy / d * push;
+          e.s.dx += qx / d * push * 0.15; e.s.dy += qy / d * push * 0.15;
+          e.t.dx += qx / d * push * 0.15; e.t.dy += qy / d * push * 0.15;
+        }
+      });
     });
+    nodes.forEach(n => {
+      n.dx += (W/2 - n.x) * 0.010; n.dy += (H/2 - n.y) * 0.028;  /* gentle gravity */
+      const m = Math.sqrt(n.dx*n.dx + n.dy*n.dy) || 1, s = Math.min(m, step) / m;
+      n.x += n.dx * s; n.y += n.dy * s;
+      clamp(n);
+    });
+  }
+  /* final discrete passes: alternate edge-clearance and label de-overlap */
+  for(let pass = 0; pass < 36; pass++){
+    let moved = false;
+    edges.forEach(e => {                                  /* shove bystanders clear of lines */
+      nodes.forEach(n => {
+        if(n === e.s || n === e.t) return;
+        const { d2, qx, qy } = segDist2(n, e.s, e.t);
+        const lim = n.r + 15;
+        if(d2 < lim * lim){
+          const d = Math.sqrt(d2) || 0.5, push = (lim - d) * 0.9;
+          n.x -= qx / d * push; n.y -= qy / d * push;
+          clamp(n); moved = true;
+        }
+      });
+    });
+    for(let i = 0; i < nodes.length; i++)                 /* labels apart, vertically */
+      for(let j = i + 1; j < nodes.length; j++){
+        const a = nodes[i], b = nodes[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const ox = a.hw + b.hw - Math.abs(dx), oy = 26 - Math.abs(dy);
+        if(ox > 0 && oy > 0){
+          const push = (oy + 1) / 2, sy = dy < 0 ? -1 : 1;
+          a.y += sy * push; b.y -= sy * push;
+          clamp(a); clamp(b); moved = true;
+        }
+      }
+    if(!moved) break;
   }
   return { nodes, edges };
 }
@@ -902,7 +969,7 @@ function influenceLayout(W, H){
 let graphCache = null;
 function viewInfluences(){
   document.title = "Influences — Pigment";
-  const W = 1500, H = 1150;
+  const W = 1900, H = 1500;
   if(!graphCache) graphCache = influenceLayout(W, H);
   const { nodes, edges } = graphCache;
 
@@ -916,7 +983,7 @@ function viewInfluences(){
   const edgeSvg = edges.map((e, i) => {
     const st = EDGE_STYLE[e.ty];
     /* shorten line so arrowheads sit outside the node circle */
-    const r2 = 6 + Math.min(e.t.d, 9) * 1.4 + 3;
+    const r2 = e.t.r + 3;
     const dx = e.t.x - e.s.x, dy = e.t.y - e.s.y, d = Math.sqrt(dx*dx + dy*dy) || 1;
     const tx = e.t.x - dx / d * r2, ty2 = e.t.y - dy / d * r2;
     return `<line class="ig-edge" data-etype="${e.ty}" data-a="${e.s.a.id}" data-b="${e.t.a.id}"
@@ -927,7 +994,7 @@ function viewInfluences(){
   const nodeSvg = nodes.map(n => {
     const mov = Mx[n.a.movements[0]];
     const c = vivid(mov ? mov.palette : n.a.palette);
-    const r = 6 + Math.min(n.d, 9) * 1.4;
+    const r = n.r;
     return `<g class="ig-node" data-nid="${n.a.id}" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
       <circle r="${r.toFixed(1)}" fill="${c}"/>
       <text y="${(r + 12).toFixed(1)}">${esc(n.a.name)}</text>
