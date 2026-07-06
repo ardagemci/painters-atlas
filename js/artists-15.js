@@ -310,5 +310,18 @@ window.ARTISTS.push(
   outside:"Epiphanius' letter is effectively art history's first studio profile, five centuries before art journalism. The pairing of master and pupil — Theophanes' storm beside Rublev's calm — remains Russian art's founding dialogue: severity and mercy sharing one scaffold.",
   facts:["He is one of the very few medieval painters described at work by a named eyewitness.",
     "Only the Novgorod frescoes survive as documented work — one church holding an entire reputation.",
-    "Greece and Russia share his legacy: Constantinople trained the hand, Novgorod kept the walls."] }
+    "Greece and Russia share his legacy: Constantinople trained the hand, Novgorod kept the walls."] },
+
+{ id:"gustave-dore", name:"Gustave Doré", years:"1832–1883", born:1832, died:1883,
+  nation:"france", eras:["19th-century"], movements:["romanticism"],
+  techniques:["woodblock","lithography","oil-painting","watercolor"], style:"romantic",
+  palette:["#2c2620","#8a8276","#d9cdb8","#5e6e7a","#1d1a16"],
+  tagline:"The illustrator of the century — Dante, Quixote and London, engraved into every imagination",
+  works:[{t:"Dante's Divine Comedy illustrations",y:"1861"},{t:"Don Quixote illustrations",y:"1863"},{t:"London: A Pilgrimage",y:"1872"},{t:"The Enigma",y:"1871"}],
+  life:"A Strasbourg prodigy who never took a drawing lesson, Doré was hired at fifteen by the Paris caricature press as its youngest paid artist and simply never stopped: over a hundred illustrated books, vast salon canvases, watercolours and late sculpture. He lived his whole life with his mother in Paris, never married, and died of a heart attack at fifty-one, mid-way through illustrating Shakespeare.",
+  career:"When publishers balked at his deluxe Dante Inferno folio in 1861, he financed it himself — it sold out within weeks, and the begging letters followed. His Don Quixote fixed the knight's gaunt image more firmly than Cervantes' own prose; his Bible plates hung in parlours on four continents; and London: A Pilgrimage descended into Victorian slums with a reporter's nerve, scandalising the city it documented. Teams of engravers cut his drawings — a one-man image industry before photography could compete.",
+  outside:"France filed him under 'illustrator' and it stung: he built enormous religious paintings and a London gallery to prove otherwise, and sculpted the Alexandre Dumas monument in Paris. A famous amateur acrobat, he entertained salons with handstands between projects; his deathbed portrait of his friend Rossini closed one of the century's great artistic friendships.",
+  facts:["Van Gogh's The Prisoners' Round is painted directly after Doré's Newgate exercise-yard plate from London: A Pilgrimage.",
+    "Filmmakers from Cecil B. DeMille to Peter Jackson and Terry Gilliam cite Doré plates as their visual source for the epic and the infernal.",
+    "His Don Quixote and Inferno images remain the default mental pictures of both books — 160 years on."] }
 );

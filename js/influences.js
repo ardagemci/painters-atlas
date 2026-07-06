@@ -152,6 +152,7 @@ window.INFLUENCES = [
   ["raja-ravi-varma","mf-husain","influenced"],
   ["amrita-sher-gil","mf-husain","influenced"],
   ["aaron-douglas","jacob-lawrence","influenced"],
+  ["gustave-dore","vincent-van-gogh","influenced"],
   ["william-blake","odilon-redon","influenced"],
   ["william-blake","dante-gabriel-rossetti","influenced"],
 

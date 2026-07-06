@@ -20,7 +20,13 @@ NOT_ART = ("cathedral in", "church in", "museum in", "building in", "is a museum
 OVERRIDES = {
     "leonardo-da-vinci::Salvator Mundi": ["Salvator Mundi (Leonardo)"],
     "claude-monet::Rouen Cathedral series": ["Rouen Cathedral (Monet series)", "Rouen Cathedral Series (Monet)"],
-    "claude-monet::Water Lilies (Grandes Décorations)": ["Water Lilies (Monet series)", "Nymphéas (Monet)"],
+}
+
+# artist-id::work-title -> exact Commons file, hand-curated; never re-searched
+PINNED = {
+    "michelangelo::Sistine Chapel Ceiling": "Sistine Chapel ceiling 02 (brightened).jpg",
+    "michelangelo::The Last Judgment": "Last Judgement (Michelangelo).jpg",
+    "claude-monet::Water Lilies (Grandes Décorations)": "Claude Monet - The Water Lilies - Setting Sun - Google Art Project.jpg",
 }
 
 def get_json(url):
@@ -117,6 +123,18 @@ def main():
         name_toks = tokens(a["name"], 4)
         for title in list(works):
             key = f"{aid}::{title}"
+            if key in PINNED:                              # hand-curated: resolve exact file, skip search
+                u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo"
+                     "&iiprop=url&iiurlwidth=500&titles=" + urllib.parse.quote("File:" + PINNED[key]))
+                try:
+                    p = list(get_json(u)["query"]["pages"].values())[0]
+                    ii = p["imageinfo"][0]
+                    works[title] = {"img": ii["thumburl"], "page": ii["descriptionurl"]}
+                    print(f"  {key} -> PINNED", flush=True)
+                except Exception as ex:
+                    print(f"  {key} -> PIN FAILED ({ex}), kept", flush=True)
+                time.sleep(0.2)
+                continue
             entry = works[title]
             title_toks = tokens(re.sub(r"\(.*?\)", "", title), 5)
             page_l = urllib.parse.unquote(entry.get("page", "")).lower().replace("_", " ")
