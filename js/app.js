@@ -11,6 +11,12 @@ const A = window.ARTISTS, M = window.MOVEMENTS, T = window.TECHNIQUES,
 const byId = list => Object.fromEntries(list.map(x => [x.id, x]));
 const Mx = byId(M), Tx = byId(T), Ex = byId(E), Nx = byId(N), Ax = byId(A);
 
+const CAT = window.CATALOG || [];
+const CatX = byId(CAT);
+const Vx = byId(window.VENUES || []);
+const catByArtist = {};
+CAT.forEach(w => (catByArtist[w.artistId] = catByArtist[w.artistId] || []).push(w));
+
 const movChildren = id => M.filter(m => m.parent === id);
 const tecChildren = id => T.filter(t => t.parent === id);
 function descendants(id, list){ // id + all sub-branch ids
@@ -31,6 +37,46 @@ function hex2rgb(hx){ const v = hx.replace("#",""); return [parseInt(v.slice(0,2
 function rgba(hx, a){ const [r,g,b] = hex2rgb(hx); return `rgba(${r},${g},${b},${a})`; }
 function shade(hx, f){ const [r,g,b] = hex2rgb(hx); const m = v => Math.max(0, Math.min(255, Math.round(v*f))); return `rgb(${m(r)},${m(g)},${m(b)})`; }
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- taste distance (TASTE_MATH §1.3) ---------- */
+const AXW = { F: 1.5, D: 1.5, E: 1, C: 1, M: 1 };
+function tasteDist(a, b){
+  let s = 0;
+  for(const k in AXW){ const d = (a[k] || 0) - (b[k] || 0); s += AXW[k] * d * d; }
+  return Math.sqrt(s);
+}
+
+/* ---------- the Taste Passport (ADMIRE_SPEC §10) ---------- */
+const PASSPORT_KEY = "pigment.taste.v1";
+function getPassport(){
+  try{ return JSON.parse(localStorage.getItem(PASSPORT_KEY)); }catch(e){ return null; }
+}
+function newPassport(){
+  const now = new Date().toISOString();
+  return { version: 1, createdAt: now, updatedAt: now,
+    admirations: [], notForMe: [], seen: [], wantToSee: [], saved: [], probes: [],
+    quiz: null, palette: null,
+    persona: { adopted: null, candidates: [], adoptedAt: null, hidden: false },
+    tasteVector: null, milestones: { onboarded: false, confidence: "sketch" } };
+}
+function passportHas(field, id){
+  const p = getPassport();
+  return !!p && Array.isArray(p[field]) && p[field].some(e => e.id === id);
+}
+function passportToggle(field, id){
+  const p = getPassport() || newPassport();
+  const arr = p[field];
+  const i = arr.findIndex(e => e.id === id);
+  if(i >= 0) arr.splice(i, 1); else arr.push({ id, at: new Date().toISOString() });
+  p.updatedAt = new Date().toISOString();
+  try{ localStorage.setItem(PASSPORT_KEY, JSON.stringify(p)); }catch(e){}
+  return i < 0;
+}
+const PP_LABELS = {
+  admirations: ["Admire", "Admired ✓"],
+  seen: ["Seen in person", "Seen in person ✓"],
+  saved: ["Save for later", "Saved ✓"]
+};
 
 /* ============================================================
    GENERATIVE COVER PAINTERS — one per style family
@@ -679,6 +725,20 @@ function artistCard(a){
   </article>`;
 }
 
+function artworkCard(w){
+  const a = Ax[w.artistId];
+  const img = w.image && w.image.src && w.image.status === "pd";
+  return `<article class="card aw-card" data-href="#/artwork/${w.id}">
+    <div class="card-art">${img
+      ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
+      : canvasTag(a.style, a.palette, w.id)}</div>
+    <div class="card-body">
+      <h3><a href="#/artwork/${w.id}">${esc(w.title)}</a></h3>
+      <div class="card-meta">${esc(a.name)} · ${esc(w.year.display)}</div>
+    </div>
+  </article>`;
+}
+
 function taxCard(item, type, count){
   const kids = (type === "movement" ? movChildren(item.id) : tecChildren(item.id));
   return `<article class="card tax-card" data-href="#/${type}/${item.id}">
@@ -1224,16 +1284,22 @@ function viewArtist(id){
     <aside class="side-panel">
       <div class="panel">
         <h3>Major works</h3>
-        ${a.works.map(wk => {
-          const art = window.ARTWORKS && window.ARTWORKS[a.id] && window.ARTWORKS[a.id][wk.t];
-          return art
-            ? `<div class="work has-img" data-lb-img="${art.img}" data-lb-cap="${esc(wk.t)} (${esc(wk.y)}) — ${esc(a.name)}" data-lb-link="${art.page}">
-                 <img class="w-thumb" loading="lazy" src="${art.img}" alt="${esc(wk.t)} by ${esc(a.name)}"
-                      onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
-                 <div><span class="w-year">${esc(wk.y)}</span><span class="w-title">${esc(wk.t)}</span></div>
-               </div>`
-            : `<div class="work"><span class="w-year">${esc(wk.y)}</span><span class="w-title">${esc(wk.t)}</span></div>`;
-        }).join("")}
+        ${(() => {
+          const catFor = {};
+          (catByArtist[a.id] || []).forEach(cw => { catFor[cw.worksKey || cw.title] = cw.id; });
+          return a.works.map(wk => {
+            const art = window.ARTWORKS && window.ARTWORKS[a.id] && window.ARTWORKS[a.id][wk.t];
+            const cid = catFor[wk.t];
+            const titleHtml = cid ? `<a href="#/artwork/${cid}">${esc(wk.t)}</a>` : esc(wk.t);
+            return art
+              ? `<div class="work has-img" data-lb-img="${art.img}" data-lb-cap="${esc(wk.t)} (${esc(wk.y)}) — ${esc(a.name)}" data-lb-link="${art.page}">
+                   <img class="w-thumb" loading="lazy" src="${art.img}" alt="${esc(wk.t)} by ${esc(a.name)}"
+                        onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
+                   <div><span class="w-year">${esc(wk.y)}</span><span class="w-title">${titleHtml}</span></div>
+                 </div>`
+              : `<div class="work"><span class="w-year">${esc(wk.y)}</span><span class="w-title">${titleHtml}</span></div>`;
+          }).join("");
+        })()}
         ${window.ARTWORKS && window.ARTWORKS[a.id]
           ? `<div class="chip-label" style="margin-top:12px">tap a work to enlarge · images via Wikimedia Commons</div>` : ""}
       </div>
@@ -1267,6 +1333,63 @@ function viewArtist(id){
           ${Ex[a.eras[0]] ? chip("e","era/"+a.eras[0], "The "+Ex[a.eras[0]].name) : ""}
         </div>
       </div>
+    </aside>
+  </div>`;
+}
+
+function viewArtwork(id){
+  const w = CatX[id]; if(!w) return view404();
+  const a = Ax[w.artistId]; if(!a) return view404();
+  document.title = `${w.title} — ${a.name} — Pigment`;
+  const venue = w.museum || null;
+  const venueEntry = venue && venue.id ? Vx[venue.id] : null;
+  const hasImg = w.image && w.image.src && w.image.status === "pd";
+
+  const actions = ["admirations", "seen", "saved"].map((f, i) => {
+    const on = passportHas(f, w.id);
+    return `<button class="aw-btn ${i === 0 ? "primary" : ""} ${on ? "on" : ""}" data-pp="${f}" data-ppid="${w.id}">${PP_LABELS[f][on ? 1 : 0]}</button>`;
+  }).join("");
+
+  const moreBy = (catByArtist[a.id] || []).filter(o => o.id !== w.id);
+  const near = w.coords
+    ? CAT.filter(o => o.id !== w.id && o.artistId !== w.artistId && o.coords)
+        .sort((x, y) => tasteDist(x.coords, w.coords) - tasteDist(y.coords, w.coords)).slice(0, 4)
+    : [];
+
+  return `
+  ${crumbs([["Atlas",""],[a.name, "artist/" + a.id],[w.title]])}
+  <div class="aw-hero" ${hasImg ? `data-lb-img="${w.image.src}" data-lb-cap="${esc(w.title)} (${esc(w.year.display)}) — ${esc(a.name)}" data-lb-link="${w.image.page}"` : ""}>
+    ${hasImg
+      ? `<img src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
+      : `<div class="aw-hero-gen">${canvasTag(a.style, a.palette, w.id, true)}<span class="map-hint">an interpretation painted in the browser — the original is under copyright or unphotographed</span></div>`}
+  </div>
+  <div class="page-head" style="margin-top:22px">
+    <h1 class="display" style="font-size:clamp(1.7rem,3.6vw,2.6rem)">${esc(w.title)}</h1>
+    <div class="hero-sub"><a href="#/artist/${a.id}">${esc(a.name)}</a><span>${esc(w.year.display)}</span></div>
+  </div>
+  <div class="aw-actions">${actions}</div>
+  <div class="chips" style="margin-bottom:26px">
+    ${(w.movements || []).map(m => Mx[m] ? chip("m", "movement/" + m, Mx[m].name) : "").join("")}
+    ${(w.techniques || []).map(t => Tx[t] ? chip("t", "technique/" + t, Tx[t].name) : "").join("")}
+    ${w.nation && Nx[w.nation] ? chip("n", "nation/" + w.nation, Nx[w.nation].flag + " " + Nx[w.nation].name) : ""}
+  </div>
+  <div class="artist-cols">
+    <div class="bio-block">
+      ${w.description
+        ? `<h2>The picture</h2><p>${esc(w.description)}</p>
+           <h2>What to notice</h2><ul class="facts">${w.notice.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`
+        : `<p class="aw-empty">Not written about yet — the atlas is still being painted. The image, meanwhile, speaks for itself.</p>`}
+      <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? esc(venue.name) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>` : ""}</p>
+    </div>
+    <aside class="side-panel">
+      ${moreBy.length ? `<div class="panel"><h3>More by ${esc(a.name.split(" ")[0])}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
+        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(a.style, a.palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(o.year.display)}</span></span></a>`).join("")}</div></div>` : ""}
+      ${near.length ? `<div class="panel"><h3>Near it in the atlas</h3><div class="mini-cards">${near.map(o =>
+        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(Ax[o.artistId].style, Ax[o.artistId].palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(Ax[o.artistId].name)}</span></span></a>`).join("")}</div></div>` : ""}
+      <div class="panel"><h3>Go next</h3><div class="chips">
+        ${chip("a", "artist/" + a.id, "All of " + a.name.split(" ").pop())}
+        ${w.movements && w.movements[0] && Mx[w.movements[0]] ? chip("m", "movement/" + w.movements[0], "More " + Mx[w.movements[0]].name) : ""}
+      </div></div>
     </aside>
   </div>`;
 }
@@ -1460,6 +1583,7 @@ function route(){
     case "timeline":    html = viewTimeline(); break;
     case "influences":  html = viewInfluences(); break;
     case "artist":      html = viewArtist(id); break;
+    case "artwork":     html = viewArtwork(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
                           "Every -ism with its branches and sub-branches — from the Renaissance workshop to Superflat. Open one to find its painters, techniques and offspring."); break;
     case "movement":    html = Mx[id] ? taxDetailView(Mx[id], "movement") : view404(); break;
@@ -1487,7 +1611,7 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));
@@ -1527,8 +1651,15 @@ function openLightbox(img, caption, link){
 }
 
 app.addEventListener("click", e => {
+  const ppBtn = e.target.closest("[data-pp]");
+  if(ppBtn){                                               /* Admire / Seen / Save → Taste Passport */
+    const on = passportToggle(ppBtn.dataset.pp, ppBtn.dataset.ppid);
+    ppBtn.classList.toggle("on", on);
+    ppBtn.textContent = PP_LABELS[ppBtn.dataset.pp][on ? 1 : 0];
+    return;
+  }
   const lbEl = e.target.closest("[data-lb-img]");
-  if(lbEl){ openLightbox(lbEl.dataset.lbImg, lbEl.dataset.lbCap, lbEl.dataset.lbLink); return; }
+  if(lbEl && !e.target.closest("a")){ openLightbox(lbEl.dataset.lbImg, lbEl.dataset.lbCap, lbEl.dataset.lbLink); return; }
   const ign = e.target.closest(".ig-node");
   if(ign){                                                 /* first click: focus; second: visit */
     if(ign.classList.contains("sel")) location.hash = "#/artist/" + ign.dataset.nid;
@@ -1591,6 +1722,7 @@ const searchInput = document.getElementById("search");
 const searchResults = document.getElementById("search-results");
 const INDEX = [
   ...A.map(a => ({ type:"Artists",    href:"artist/"+a.id,    name:a.name, meta:a.years })),
+  ...CAT.map(w => ({ type:"Artworks", href:"artwork/"+w.id,  name:w.title, meta:Ax[w.artistId] ? Ax[w.artistId].name : "" })),
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),
