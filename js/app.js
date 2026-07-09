@@ -1187,23 +1187,59 @@ function viewHome(){
   const featured = [...A].sort(() => Math.random()-0.5).slice(0,8);
   const topMovs = M.filter(m => !m.parent)
     .map(m => [m, artistsOfMovement(m.id).length]).sort((x,y) => y[1]-x[1]).slice(0,6);
-  document.title = "Pigment — An Atlas of Painters";
+  const stripWorks = [...CAT].filter(w => w.image && w.image.src)
+    .sort(() => Math.random()-0.5);
+  const stripItems = stripWorks.map(w =>
+    `<a href="#/artwork/${w.id}" title="${esc(w.title)} — ${Ax[w.artistId] ? esc(Ax[w.artistId].name) : ""}"><img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}"></a>`).join("");
+  document.title = "Pigment — Find your place in the history of art";
   return `
   <header class="home-hero">
     ${canvasTag(muse.style, muse.palette, muse.id, true, String(Date.now()%100000))}
     <div class="hero-shade"></div>
     <div class="home-hero-content">
-      <div class="kicker">Eight centuries · one atlas</div>
-      <h1>Pigment</h1>
-      <p class="lede">${A.length} painters from Giotto to right now — cross-linked by movement, technique, era and nation. Click anything; everything connects.</p>
-      <div class="btn-row">
-        <a class="btn" href="#/artists">Meet the painters</a>
-        <a class="btn ghost" href="#/timeline">The grand timeline</a>
-        <a class="btn ghost" href="#/movements">Browse movements</a>
-      </div>
-      <p class="footer-note" style="margin-top:22px">Tonight's cover: mixed after <a href="#/artist/${muse.id}">${esc(muse.name)}</a></p>
+      <div class="kicker">Pigment · a taste atlas of painting</div>
+      <h1 class="home-title">Find your place in the history of art.</h1>
+      <p class="lede">Eight centuries of painters, the masterpieces between them, and every connection that made them. Explore the atlas, admire what speaks to you — and begin your map of taste.</p>
+      <p class="footer-note" style="margin-top:18px">Tonight's cover: mixed after <a href="#/artist/${muse.id}">${esc(muse.name)}</a></p>
     </div>
   </header>
+
+  <div class="entry-cards">
+    <a class="entry-card" href="#/artists" style="--ec:var(--gold)">
+      <div class="ec-kicker">Begin</div>
+      <h3>Start with an artist</h3>
+      <p>Pick a painter and follow the threads — teachers, rivals, movements, and the works that made them matter.</p>
+      <button class="ec-surprise" data-random-artist>or surprise me →</button>
+      <span class="ec-arrow">→</span>
+    </a>
+    <a class="entry-card" href="#/artwork/the-starry-night" style="--ec:var(--teal)">
+      <div class="ec-kicker">React</div>
+      <h3>Discover your taste <span class="badge-soon">begun</span></h3>
+      <p>Admire the artworks that speak to you. Your Taste Passport is already recording — Personas and the taste map arrive next.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+    <a class="entry-card" href="#/timeline" style="--ec:var(--wine)">
+      <div class="ec-kicker">Wander</div>
+      <h3>Explore the atlas</h3>
+      <p>Eight centuries on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="strip" aria-label="Masterpieces in the atlas">
+    <div class="strip-track">${stripItems}${stripItems}</div>
+  </div>
+
+  <section>
+    <h2 class="sec-title">How Pigment works</h2>
+    <div class="hpw">
+      <div class="hpw-step"><span class="n">1</span><b>Discover</b><p>Wander artists, artworks, movements, eras and nations — everything links onward.</p></div>
+      <div class="hpw-step"><span class="n">2</span><b>Admire</b><p>One button, on every artwork. Press it on what speaks to you.</p></div>
+      <div class="hpw-step"><span class="n">3</span><b>Map</b> <span class="badge-soon">soon</span><p>Pigment finds the centre of gravity of your taste.</p></div>
+      <div class="hpw-step"><span class="n">4</span><b>Become</b> <span class="badge-soon">soon</span><p>Unlock your Pigment Persona and your palette.</p></div>
+      <div class="hpw-step"><span class="n">5</span><b>Share</b> <span class="badge-soon">soon</span><p>Send your Taste Passport into the world.</p></div>
+    </div>
+  </section>
 
   <div class="stats-row">
     ${[[A.length,"Painters","artists"],[M.length,"Movements","movements"],[T.length,"Techniques","techniques"],[E.length,"Centuries","eras"],[N.length,"Nations","nations"]]
@@ -1651,6 +1687,12 @@ function openLightbox(img, caption, link){
 }
 
 app.addEventListener("click", e => {
+  const rnd = e.target.closest("[data-random-artist]");
+  if(rnd){
+    e.preventDefault();
+    location.hash = "#/artist/" + A[Math.floor(Math.random() * A.length)].id;
+    return;
+  }
   const ppBtn = e.target.closest("[data-pp]");
   if(ppBtn){                                               /* Admire / Seen / Save → Taste Passport */
     const on = passportToggle(ppBtn.dataset.pp, ppBtn.dataset.ppid);

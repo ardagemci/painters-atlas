@@ -305,5 +305,21 @@ window.CATALOG = (window.CATALOG || []).concat([
           "The horizon on the left sits lower than the right",
           "No eyebrows — fashion, over-cleaning, or both; the debate lives"],
   tags:["portrait","quiet","tender","landscape"],
-  related:["girl-with-a-pearl-earring","las-meninas"] }
+  related:["girl-with-a-pearl-earring","las-meninas"] },
+
+{ id:"the-naked-maja", tier:1,
+  title:"The Naked Maja",
+  artistId:"francisco-goya", year:{ display:"c. 1797–1800", sort:1797 },
+  movements:["romanticism"], techniques:["oil-painting"], nation:"spain",
+  museum:{ id:"prado", name:"Museo del Prado", city:"Madrid" },
+  dims:"97 × 190 cm",
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Goya_Maja_naga2.jpg/500px-Goya_Maja_naga2.jpg",
+          page:"https://en.wikipedia.org/wiki/La_maja_desnuda", status:"pd" },
+  coords:{ F:-90, D:5, E:25, C:-70, M:-30 }, coordsSource:"override",
+  description:"No goddess, no myth, no fig-leaf of allegory — just a woman on a divan, arms behind her head, meeting your stare before you've finished arriving. Painted for a private cabinet (likely Godoy's, who kept a clothed twin to swap over it for visitors), it earned Goya an Inquisition summons in 1815. He never named who she is. Two centuries on, she still looks less embarrassed than you do.",
+  notice:["Her gaze lands first — the body is the second thing you see",
+          "Reportedly the first Western nude to show actual body hair",
+          "The satin gets looser, faster brushwork than her skin does"],
+  tags:["nude","portrait","interior","tender"],
+  related:["the-kiss","girl-with-a-pearl-earring"] }
 ]);
