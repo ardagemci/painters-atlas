@@ -33,8 +33,8 @@
   techniques: ["oil-painting","tenebrism"], // I: subset of artist's, overridable
   nation: "italy",                          // I: artist's, overridable (work-specific culture)
 
-  museum: {                                 // E/A — future museumId links here
-    id: null,                               // reserved: "san-luigi-dei-francesi" | museums section later
+  museum: {                                 // E/A — venue registry reference (§5b)
+    id: "san-luigi-dei-francesi",           // stable slug from the venue registry, or a sentinel
     name: "Contarelli Chapel, San Luigi dei Francesi",
     city: "Rome"
   },
@@ -73,12 +73,14 @@
 
 ## 4. Requirements by tier
 
-| Field | Tier 1 | Tier 2 |
+**Decision (Arda, July 2026): Tier 2 artworks get thin canonical pages — every admirable artwork has a real URL.** A thin page renders hero, identity line, action bar, provenance and the derived rails; description/notice are replaced by a single styled empty-state line (STYLE_GUIDE §4.10). Tier 2 → Tier 1 promotion is purely additive (write description + notice + coords override); the URL never changes.
+
+| Field | Tier 1 (full page) | Tier 2 (thin page) |
 |---|---|---|
 | id, title, artistId, year | required | required |
-| image | required (`pd` or explicit `generative`) | required (may be `none` → generative card) |
+| image | required (`pd` or explicit `generative`) | required (may be `none` → generative hero) |
 | coords | **explicit** (validator-enforced) | inherited allowed |
-| description + notice | required, on-budget | absent (card only) |
+| description + notice | required, on-budget | absent → empty-state line |
 | museum, dims | required-if-known | optional |
 | tags | ≥ 3 | ≥ 1 |
 | related | authored 2–4 | derived |
@@ -91,9 +93,21 @@ One flat list, grouped for humans; additions require a PR to this file — no fr
 - **Mood:** quiet · tender · unsettling · ecstatic · lonely · theatrical · playful · mourning
 - **Light & palette:** nocturne · candlelit · golden · fog · storm · blue · red · pastel · monochrome
 - **Form:** pattern · geometry · gesture · miniature-scale · monumental-scale · flatness · texture
-- **Use (product):** october-mood · rain-mood · would-hang · fever-dream *(list-fuel tags; editorial team only)*
+- **Use (product):** october-mood · rain-mood · would-hang · fever-dream *(list-fuel tags)*
+
+**Decision (Arda, July 2026): list-fuel tags stay.** They power lists, onboarding, Personas and early recommendations before any user data exists — they *are* the cold-start engine. Governance: (a) the Use group is **editorial-only, permanently** — user-generated tagging (Phase 4+, if ever) may never write into this namespace; (b) every new Use tag must power a concrete list or feature at the moment it's added; (c) once real admire data exists, these tags become testable hypotheses (do `would-hang` works out-admire the rest?) and are pruned by evidence.
 
 Tags power: list assembly, mood search (medium backlog), deck bucket seasoning, "similar artworks" tie-breaking, Wrapped stats later.
+
+## 5b. Venue registry (museum slugs, reserved now)
+
+**Decision (Arda, July 2026): museum slugs/IDs are reserved immediately** — artwork identity, future museum pages, seen-in-person logs and museum matching all depend on stable references. The registry is a **venue registry, not strictly museums**: our artworks live in churches, chapels and palaces too, and "seen in person" applies to the Sistine Chapel as much as to MoMA.
+
+- Entry shape: `{ id, name, city, country, type }` where `type: "museum" | "church" | "palace" | "site"`.
+- Slug convention: kebab-case common English short name — `louvre`, `musee-dorsay`, `prado`, `uffizi`, `rijksmuseum`, `met`, `moma`, `mauritshuis`, `tretyakov`, `orangerie`, `belvedere`, `neue-galerie`, `reina-sofia`, `pera-museum`, `istanbul-modern`, `sakip-sabanci`, `phillips-collection`, `art-institute-chicago`, `national-gallery-london`, `van-gogh-museum`, `hermitage`, `vatican-museums`, `munch-museum`, `nasjonalmuseet-oslo`, `alte-pinakothek`, `kunsthistorisches`, `galleria-borghese`, `centre-pompidou`, `tate-modern`, `national-gallery-dc`, `mfa-boston`, `getty` … plus non-museum venues: `sistine-chapel`, `scrovegni-chapel`, `san-luigi-dei-francesi`, `santa-maria-delle-grazie`, `st-bavo-cathedral`, `museo-civico-sansepolcro`.
+- **Sentinel ids** (always valid): `private-collection`, `lost` (e.g. The Stone Breakers, destroyed 1945), `unknown`.
+- Registry lives in `js/venues.js` (`window.VENUES`) from the first catalog commit; museum *pages* arrive with the Museums deliverable, but references are stable from day one. Validator: every `museum.id` must resolve to the registry or a sentinel; `null` is allowed only for Tier 2.
+- Registry additions are cheap and unreviewed; **slug renames are forbidden** (same alias rule as artwork slugs).
 
 ## 6. Page anatomy — route `#/artwork/{id}`
 
@@ -136,8 +150,8 @@ Target: **~160 at launch, ceiling 250.** Every Tier 1 page therefore ships with 
 - `related` ids resolve; no self-reference; `image.src` contains `/wikipedia/commons/` when `status:"pd"`
 - warn: Tier 1 record with zero inbound links (list/essential/daily/deck)
 
-## 10. Open questions
+## 10. Resolved decisions (Arda, July 2026)
 
-1. Do Tier 2 records get thin pages (identity + image + actions only) or cards-only with no route? *(Lean: thin pages — admiring from a real URL beats a dead-end card.)*
-2. `would-hang` etc. as editorial tags vs deriving them later from actual admire data — keep or drop the "Use" tag group?
-3. Museum `id` reservation: adopt museum slugs now (empty section) or wait for the Museums template deliverable?
+1. **Tier 2 artworks get thin canonical pages** — every admirable artwork needs a real URL (§4).
+2. **Editorial list-fuel tags stay** — they power lists, onboarding, Personas and early recommendations before user data exists (§5, with governance rules).
+3. **Museum slugs/IDs reserved now** — via the venue registry (§5b), because artwork identity, museum pages, seen-in-person logs and museum matching all depend on stable references.
