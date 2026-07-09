@@ -1309,6 +1309,15 @@ function viewArtist(id){
   <div class="chip-label">Movements · Techniques · Era · Nation — click to travel</div>
   <div class="chips" style="margin-bottom:30px">${chipsFor(a)}</div>
 
+  ${(() => {
+    const t1 = window.TIER1 && window.TIER1[a.id];
+    if(!t1) return "";
+    return `<div class="why-card">
+      <div class="why-kicker">Why ${esc(a.name.split(" ").pop())} matters</div>
+      <p>${esc(t1.why)}</p>
+      <div class="traits">${t1.lookFor.map(t => `<span class="trait">${esc(t)}</span>`).join("")}</div>
+    </div>`;
+  })()}
   <div class="artist-cols">
     <div class="bio-block">
       <h2>The life</h2><p>${esc(a.life)}</p>
@@ -1361,14 +1370,32 @@ function viewArtist(id){
           <a href="#/influences" class="chip-label" style="display:block;margin-top:12px">see the full influence graph →</a>
         </div>` : "";
       })()}
-      <div class="panel">
-        <h3>Keep exploring</h3>
-        <div class="chips">
-          ${a.movements[0] && Mx[a.movements[0]] ? chip("m","movement/"+a.movements[0], "More "+Mx[a.movements[0]].name) : ""}
-          ${nation ? chip("n","nation/"+a.nation, "Painters of "+nation.name) : ""}
-          ${Ex[a.eras[0]] ? chip("e","era/"+a.eras[0], "The "+Ex[a.eras[0]].name) : ""}
-        </div>
-      </div>
+      ${(() => {
+        const t1 = window.TIER1 && window.TIER1[a.id];
+        if(!t1) return `<div class="panel">
+          <h3>Keep exploring</h3>
+          <div class="chips">
+            ${a.movements[0] && Mx[a.movements[0]] ? chip("m","movement/"+a.movements[0], "More "+Mx[a.movements[0]].name) : ""}
+            ${nation ? chip("n","nation/"+a.nation, "Painters of "+nation.name) : ""}
+            ${Ex[a.eras[0]] ? chip("e","era/"+a.eras[0], "The "+Ex[a.eras[0]].name) : ""}
+          </div>
+        </div>`;
+        const gnName = g => {
+          if(g.t === "artist") return Ax[g.id] && Ax[g.id].name;
+          if(g.t === "movement") return Mx[g.id] && Mx[g.id].name;
+          if(g.t === "technique") return Tx[g.id] && Tx[g.id].name;
+          if(g.t === "work") return CatX[g.id] && CatX[g.id].title;
+          return null;
+        };
+        const gnHref = g => (g.t === "work" ? "artwork" : g.t) + "/" + g.id;
+        return `<div class="panel">
+          <h3>Go next</h3>
+          ${t1.goNext.map(g => {
+            const n = gnName(g);
+            return n ? `<a class="gonext-item" href="#/${gnHref(g)}"><b>${esc(n)}</b><span> — ${esc(g.why)}</span></a>` : "";
+          }).join("")}
+        </div>`;
+      })()}
     </aside>
   </div>`;
 }

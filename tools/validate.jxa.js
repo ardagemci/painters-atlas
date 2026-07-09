@@ -109,6 +109,31 @@ CAT.forEach(function(w){
   }
 });
 
+// Tier 1 artist overlay integrity
+try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
+const T1 = window.TIER1 || {};
+const GN_TYPES = { artist:1, movement:1, technique:1, work:1 };
+Object.keys(T1).forEach(function(aid){
+  const tag = "tier1 " + aid, t = T1[aid];
+  if(!aIdsMap[aid]) errs.push(tag + ": unknown artist");
+  const words = (t.why || "").split(/\s+/).filter(Boolean).length;
+  if(words < 25 || words > 75) errs.push(tag + ": why is " + words + " words (25–75)");
+  if(!t.lookFor || t.lookFor.length < 3 || t.lookFor.length > 5) errs.push(tag + ": lookFor needs 3–5 traits");
+  (t.lookFor || []).forEach(function(s){ if(s.length > 60) errs.push(tag + ": trait too long: " + s.slice(0, 30) + "…"); });
+  if(!t.goNext || t.goNext.length < 2 || t.goNext.length > 5) errs.push(tag + ": goNext needs 2–5 entries");
+  (t.goNext || []).forEach(function(g){
+    if(!GN_TYPES[g.t]) errs.push(tag + ": goNext bad type " + g.t);
+    const ok = (g.t === "artist" && aIdsMap[g.id]) || (g.t === "movement" && mIds[g.id]) ||
+               (g.t === "technique" && tIds[g.id]) || (g.t === "work" && catIds[g.id]);
+    if(!ok) errs.push(tag + ": goNext unresolved " + g.t + "/" + g.id);
+    if(!g.why) errs.push(tag + ": goNext " + g.id + " missing why");
+  });
+  const c = t.coords || {};
+  ["F","D","E","C","M"].forEach(function(k){
+    if(typeof c[k] !== "number" || c[k] < -100 || c[k] > 100) errs.push(tag + ": coords." + k + " missing/out of range");
+  });
+});
+
 // influence graph integrity
 try { eval(read(base + "js/influences.js")); } catch(e){ out.push("influences.js ERROR: " + e.message); }
 const aIds = ids(A), EDGE_TYPES = { taught:1, influenced:1, befriended:1, rivaled:1, partners:1 };
@@ -130,7 +155,8 @@ E.forEach(x => { if(!A.some(a => a.eras.includes(x.id))) warns.push("era " + x.i
 out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " + T.length +
   ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length +
   ", influence edges: " + (window.INFLUENCES || []).length +
-  ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")");
+  ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
+  ", tier1 artists: " + Object.keys(window.TIER1 || {}).length);
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
 out.push(errs.length ? "ERRORS:\n  " + errs.join("\n  ") : "ALL REFERENCES VALID");
 out.join("\n");

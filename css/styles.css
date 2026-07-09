@@ -281,6 +281,39 @@ section{margin:46px 0}
 .hero-sub a{color:var(--gold2)}
 .hero-tagline{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--body-ink);margin-top:6px}
 
+/* ---------- Tier 1 artist overlay ---------- */
+.why-card{
+  position:relative;margin-bottom:30px;padding:24px 28px;
+  background:linear-gradient(130deg,rgba(201,164,92,.09),transparent 55%),var(--panel);
+  border:1px solid var(--line);border-radius:18px;
+}
+.why-card::before{
+  content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;
+  background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:2px;
+}
+.why-kicker{
+  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:10px;
+}
+.why-card p{
+  font-family:var(--serif);font-size:1.12rem;line-height:1.6;color:var(--ink);margin:0;
+}
+.traits{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.trait{
+  display:inline-flex;align-items:center;padding:5px 14px;border-radius:999px;
+  font-family:var(--sans);font-size:.78rem;color:var(--body-ink);
+  border:1px solid rgba(111,179,168,.35);background:rgba(111,179,168,.07);
+}
+.trait::before{content:"✦";color:var(--teal);margin-right:8px;font-size:.7rem}
+.gonext-item{
+  display:block;padding:9px 0;border-bottom:1px dashed var(--line2);
+  font-size:.9rem;line-height:1.45;
+}
+.gonext-item:last-child{border-bottom:none}
+.gonext-item b{color:var(--gold2);font-weight:500}
+.gonext-item span{color:var(--muted);font-size:.82rem}
+.gonext-item:hover b{color:#fff}
+
 /* ---------- artist page ---------- */
 .artist-cols{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start}
 .bio-block h2{font-size:1.4rem;display:flex;align-items:center;gap:13px;margin-top:34px}
