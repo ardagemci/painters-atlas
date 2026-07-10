@@ -101,7 +101,7 @@ CAT.forEach(function(w){
     if(!w.tags || w.tags.length < 3) errs.push(tag + ": needs ≥3 tags");
     if(!w.image || w.image.status === "none") errs.push(tag + ": tier 1 needs an image");
   }
-  if(w.worksKey || w.title){
+  if(w.tier === 1 && (w.worksKey || w.title)){
     const key = w.worksKey || w.title;
     const artist = A.filter(function(x){ return x.id === w.artistId; })[0];
     if(artist && !artist.works.some(function(wk){ return wk.t === key; }))
@@ -132,6 +132,18 @@ Object.keys(T1).forEach(function(aid){
   ["F","D","E","C","M"].forEach(function(k){
     if(typeof c[k] !== "number" || c[k] < -100 || c[k] > 100) errs.push(tag + ": coords." + k + " missing/out of range");
   });
+  if(t.arc){
+    if(t.arc.length < 5 || t.arc.length > 12) errs.push(tag + ": arc needs 5–12 acts, has " + t.arc.length);
+    t.arc.forEach(function(act, i){
+      const atag = tag + " act " + (i + 1);
+      if(!act.y || !act.t) errs.push(atag + ": missing year or title");
+      if((act.t || "").length > 48) errs.push(atag + ": title over 48 chars");
+      const aw = (act.text || "").split(/\s+/).filter(Boolean).length;
+      if(aw < 20 || aw > 80) errs.push(atag + ": text " + aw + " words (20–80)");
+      if((act.works || []).length > 4) errs.push(atag + ": max 4 work chips");
+      (act.works || []).forEach(function(wid){ if(!catIds[wid]) errs.push(atag + ": work not in catalog: " + wid); });
+    });
+  }
 });
 
 // influence graph integrity
@@ -156,7 +168,8 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length +
   ", influence edges: " + (window.INFLUENCES || []).length +
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
-  ", tier1 artists: " + Object.keys(window.TIER1 || {}).length);
+  ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
+  " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
 out.push(errs.length ? "ERRORS:\n  " + errs.join("\n  ") : "ALL REFERENCES VALID");
 out.join("\n");

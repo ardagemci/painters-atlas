@@ -40,6 +40,8 @@ window.VENUES = [
   { id:"tretyakov", name:"Tretyakov Gallery", city:"Moscow", country:"Russia", type:"museum" },
   { id:"nasjonalmuseet-oslo", name:"Nasjonalmuseet", city:"Oslo", country:"Norway", type:"museum" },
   { id:"munch-museum", name:"Munch Museum", city:"Oslo", country:"Norway", type:"museum" },
+  { id:"oslo-university-aula", name:"University of Oslo Aula", city:"Oslo", country:"Norway", type:"site" },
+  { id:"kode-bergen", name:"KODE Bergen Art Museum", city:"Bergen", country:"Norway", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },

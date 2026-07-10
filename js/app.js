@@ -1290,6 +1290,37 @@ function viewArtists(){
   <div class="cards">${list.map(artistCard).join("")}</div>`;
 }
 
+/* ——— Tier 1 exhibition template: the career arc ——— */
+const ARC_NUMS = ["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"];
+
+function arcWorkChips(ids){
+  const items = (ids || []).map(x => CatX[x]).filter(Boolean);
+  if(!items.length) return "";
+  return `<div class="arc-works">${items.map(w => {
+    const img = w.image && w.image.src && w.image.status === "pd";
+    return `<a class="arc-work" href="#/artwork/${w.id}">${img
+      ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">` : ""}
+      <span class="arc-work-t">${esc(w.title)}<em>${esc(w.year.display)}</em></span>
+    </a>`;
+  }).join("")}</div>`;
+}
+
+function arcSection(arc){
+  return `<section class="arc">
+    <h2>The life, in ${ARC_NUMS[arc.length] || arc.length} acts</h2>
+    <div class="arc-rail">
+      ${arc.map(act => `<div class="arc-act">
+        <div class="arc-when">${esc(act.y)}</div>
+        <div class="arc-body">
+          <h3>${esc(act.t)}</h3>
+          <p>${esc(act.text)}</p>
+          ${arcWorkChips(act.works)}
+        </div>
+      </div>`).join("")}
+    </div>
+  </section>`;
+}
+
 function viewArtist(id){
   const a = Ax[id]; if(!a) return view404();
   document.title = a.name + " — Pigment";
@@ -1297,6 +1328,9 @@ function viewArtist(id){
     .map(o => [o, o.movements.filter(m => a.movements.includes(m)).length])
     .filter(([,c]) => c > 0).sort((x,y) => y[1]-x[1]).slice(0,6).map(([o]) => o);
   const nation = Nx[a.nation];
+  const t1 = window.TIER1 && window.TIER1[a.id];
+  const arc = (t1 && t1.arc) || null;
+  const galleryWorks = arc ? (catByArtist[a.id] || []).slice().sort((x,y) => x.year.sort - y.year.sort) : [];
   return `
   ${hero({
     style:a.style, palette:a.palette, seed:a.id, salt:"hero",
@@ -1320,14 +1354,17 @@ function viewArtist(id){
   })()}
   <div class="artist-cols">
     <div class="bio-block">
-      <h2>The life</h2><p>${esc(a.life)}</p>
-      <h2>The career</h2><p>${esc(a.career)}</p>
+      ${arc ? arcSection(arc) : `<h2>The life</h2><p>${esc(a.life)}</p>
+      <h2>The career</h2><p>${esc(a.career)}</p>`}
+      ${galleryWorks.length ? `<h2>The gallery</h2>
+      <div class="chip-label">${galleryWorks.length} works in the atlas — every one opens its own page</div>
+      <div class="cards gallery-cards">${galleryWorks.map(artworkCard).join("")}</div>` : ""}
       <h2>Beyond the easel</h2><p>${esc(a.outside)}</p>
       <h2>Fun facts</h2>
       <ul class="facts">${a.facts.map(f => `<li>${esc(f)}</li>`).join("")}</ul>
     </div>
     <aside class="side-panel">
-      <div class="panel">
+      ${arc ? "" : `<div class="panel">
         <h3>Major works</h3>
         ${(() => {
           const catFor = {};
@@ -1347,7 +1384,7 @@ function viewArtist(id){
         })()}
         ${window.ARTWORKS && window.ARTWORKS[a.id]
           ? `<div class="chip-label" style="margin-top:12px">tap a work to enlarge · images via Wikimedia Commons</div>` : ""}
-      </div>
+      </div>`}
       ${kindred.length ? `<div class="panel">
         <h3>Kindred spirits</h3>
         <div class="mini-cards">

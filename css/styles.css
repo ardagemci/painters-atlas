@@ -314,6 +314,51 @@ section{margin:46px 0}
 .gonext-item span{color:var(--muted);font-size:.82rem}
 .gonext-item:hover b{color:#fff}
 
+/* ---------- Tier 1 career arc — "the life, in acts" ---------- */
+.arc{margin-bottom:6px}
+.arc h2{margin-top:0}
+.arc-rail{position:relative;margin-top:22px;padding-left:4px}
+.arc-rail::before{
+  content:"";position:absolute;left:96px;top:8px;bottom:8px;width:1px;
+  background:linear-gradient(180deg,var(--gold) 0%,var(--line) 30%,var(--line) 70%,transparent 100%);
+}
+.arc-act{
+  position:relative;display:grid;grid-template-columns:76px 1fr;gap:42px;
+  padding-bottom:34px;
+}
+.arc-act:last-child{padding-bottom:8px}
+.arc-act::before{
+  content:"";position:absolute;left:92.5px;top:7px;width:8px;height:8px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(201,164,92,.12);
+}
+.arc-when{
+  font-family:var(--serif);font-size:1.02rem;color:var(--gold2);
+  text-align:right;line-height:1.4;padding-top:1px;
+}
+.arc-body h3{
+  font-family:var(--serif);font-size:1.18rem;margin:0 0 8px;color:var(--ink);letter-spacing:.01em;
+}
+.arc-body p{color:var(--body-ink);font-size:.95rem;line-height:1.75;max-width:60ch;margin:0}
+.arc-works{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.arc-work{
+  display:inline-flex;align-items:center;gap:10px;padding:5px 14px 5px 5px;
+  border:1px solid var(--line);border-radius:12px;background:var(--panel);
+  transition:border-color .25s var(--ease),transform .25s var(--ease);
+}
+.arc-work:hover{border-color:var(--gold);transform:translateY(-2px)}
+.arc-work img{width:46px;height:46px;object-fit:cover;border-radius:8px;display:block}
+.arc-work-t{font-size:.82rem;color:var(--ink);line-height:1.3}
+.arc-work-t em{display:block;font-style:normal;font-size:.7rem;color:var(--muted)}
+@media (max-width:700px){
+  .arc-rail::before{left:8px}
+  .arc-act{grid-template-columns:1fr;gap:6px;padding-left:28px}
+  .arc-act::before{left:4.5px}
+  .arc-when{text-align:left}
+}
+
+/* the gallery grid inside the bio column */
+.bio-block .gallery-cards{margin-top:18px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+
 /* ---------- artist page ---------- */
 .artist-cols{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start}
 .bio-block h2{font-size:1.4rem;display:flex;align-items:center;gap:13px;margin-top:34px}
