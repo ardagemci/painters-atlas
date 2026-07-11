@@ -175,7 +175,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","tenebrism","chiaroscuro","alla-prima"], style:"baroque",
   palette:["#0e0c0a","#5e1f1a","#b06a32","#d9b27c","#3a2e22"],
   tagline:"Saints with dirty feet, painted by a man on the run",
-  works:[{t:"The Calling of St Matthew",y:"1599–1600"},{t:"Judith Beheading Holofernes",y:"c. 1599"},{t:"David with the Head of Goliath",y:"c. 1610"}],
+  works:[{t:"The Calling of St Matthew",y:"1599–1600"},{t:"Judith Beheading Holofernes",y:"c. 1599"},{t:"David with the Head of Goliath",y:"c. 1610"},{t:"The Beheading of Saint John the Baptist",y:"1608"}],
   life:"Michelangelo Merisi from Caravaggio, near Milan, arrived in Rome penniless and left it a fugitive: in 1606 he killed Ranuccio Tomassoni in a duel over — depending on the source — a tennis wager, a woman, or both. Sentenced to death, he fled through Naples, Malta (knighted, then jailed, then escaped) and Sicily, dying of fever at thirty-eight while sailing toward a papal pardon.",
   career:"Caravaggio detonated European painting in a single decade: street kids as angels, pilgrims with filthy soles, biblical violence staged in cellar darkness under one brutal shaft of light. He painted directly from the model without preparatory drawings — none survive — and his tenebrism spawned imitators from Naples to Utrecht, the 'Caravaggisti', within years.",
   outside:"Police archives document his other career: sword-carrying, libellous poems, a waiter assaulted with an artichoke plate. He painted his own face onto Goliath's severed head — held by a pensive young David — and sent it, scholars believe, to Rome as a plea for mercy.",

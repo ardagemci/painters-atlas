@@ -31,7 +31,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","impasto","chiaroscuro","etching"], style:"baroque",
   palette:["#1a140e","#4a3520","#9c6b2f","#d9aa4e","#e8d9b0"],
   tagline:"Gold out of gloom — the painter of the human soul",
-  works:[{t:"The Night Watch",y:"1642"},{t:"Self-Portrait with Two Circles",y:"c. 1665–69"},{t:"The Jewish Bride",y:"c. 1665"},{t:"The Anatomy Lesson of Dr Tulp",y:"1632"}],
+  works:[{t:"The Night Watch",y:"1642"},{t:"Self-Portrait with Two Circles",y:"c. 1665–69"},{t:"The Jewish Bride",y:"c. 1665"},{t:"The Anatomy Lesson of Dr Tulp",y:"1632"},{t:"The Return of the Prodigal Son",y:"c. 1661–69"}],
   life:"A Leiden miller's son, Rembrandt conquered Amsterdam in his twenties, married the patrician Saskia van Uylenburgh, and bought a house far beyond his means. Then the long fall: Saskia's death in 1642, bankruptcy in 1656, the deaths of his companion Hendrickje and his son Titus — until he was buried in 1669 in a rented, unmarked church grave.",
   career:"Across portraits, biblical scenes and some eighty self-portraits, Rembrandt traded Baroque theatre for inner weather: light that seems to come from inside the people. The Night Watch turned a routine militia portrait into a thunderclap of movement. His late style — paint troweled, scraped and dragged into almost abstract crusts — was called unfinished by contemporaries and is called miraculous now.",
   outside:"He compulsively collected — armour, shells, Mughal miniatures, busts, exotic stuffed creatures — a hoard that helped bankrupt him and was auctioned off in lots. As an etcher he was equally revolutionary, reworking plates state by state; collectors across Europe prized his prints even as Amsterdam's portrait market cooled toward him.",

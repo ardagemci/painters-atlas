@@ -42,6 +42,17 @@ window.VENUES = [
   { id:"munch-museum", name:"Munch Museum", city:"Oslo", country:"Norway", type:"museum" },
   { id:"oslo-university-aula", name:"University of Oslo Aula", city:"Oslo", country:"Norway", type:"site" },
   { id:"kode-bergen", name:"KODE Bergen Art Museum", city:"Bergen", country:"Norway", type:"museum" },
+  { id:"palazzo-barberini", name:"Palazzo Barberini (Gallerie Nazionali)", city:"Rome", country:"Italy", type:"palace" },
+  { id:"pio-monte-della-misericordia", name:"Pio Monte della Misericordia", city:"Naples", country:"Italy", type:"church" },
+  { id:"st-johns-co-cathedral", name:"St John's Co-Cathedral", city:"Valletta", country:"Malta", type:"church" },
+  { id:"kenwood-house", name:"Kenwood House", city:"London", country:"United Kingdom", type:"palace" },
+  { id:"courtauld-gallery", name:"The Courtauld Gallery", city:"London", country:"United Kingdom", type:"museum" },
+  { id:"kroller-muller", name:"Kröller-Müller Museum", city:"Otterlo", country:"Netherlands", type:"museum" },
+  { id:"lazaro-galdiano", name:"Museo Lázaro Galdiano", city:"Madrid", country:"Spain", type:"museum" },
+  { id:"kimbell-art-museum", name:"Kimbell Art Museum", city:"Fort Worth", country:"United States", type:"museum" },
+  { id:"isabella-stewart-gardner", name:"Isabella Stewart Gardner Museum", city:"Boston", country:"United States", type:"museum" },
+  { id:"yale-university-art-gallery", name:"Yale University Art Gallery", city:"New Haven", country:"United States", type:"museum" },
+  { id:"minneapolis-institute-of-art", name:"Minneapolis Institute of Art", city:"Minneapolis", country:"United States", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },

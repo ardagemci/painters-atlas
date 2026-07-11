@@ -31,7 +31,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","etching","fresco","alla-prima"], style:"romantic",
   palette:["#191512","#6e5a3a","#b0884a","#8a2e26","#d9cba8"],
   tagline:"From royal tapestries to the Black Paintings — reason's sleep, documented",
-  works:[{t:"The Third of May 1808",y:"1814"},{t:"Saturn Devouring His Son",y:"c. 1820–23"},{t:"The Naked Maja",y:"c. 1797–1800"},{t:"Los Caprichos",y:"1799"}],
+  works:[{t:"The Third of May 1808",y:"1814"},{t:"Saturn Devouring His Son",y:"c. 1820–23"},{t:"The Naked Maja",y:"c. 1797–1800"},{t:"Los Caprichos",y:"1799"},{t:"The Dog",y:"c. 1820–23"}],
   life:"An Aragonese gilder's son, Goya climbed slowly to First Court Painter — then, at forty-six, a mysterious illness left him permanently deaf. Through war, famine and the Inquisition's attention he kept painting; at seventy-three he covered the walls of his farmhouse with the Black Paintings, and died in voluntary exile in Bordeaux at eighty-two.",
   career:"No artist ever travelled further within one lifetime: sunny Rococo tapestry cartoons, glittering royal portraits that flatter no one, then the Caprichos' donkey-doctors and witches, the unflinching Disasters of War etchings, and finally Saturn eating his child on his own dining-room wall. The Third of May — a man in a white shirt before a firing squad — is the modern war picture, sixty years early.",
   outside:"Deafness sealed him into an inner world he charted in albums of private drawings. His relationship with the Duchess of Alba fuelled two centuries of gossip; his loyal companion Leocadia Weiss shared the Quinta del Sordo — the Deaf Man's Villa — where the Black Paintings were never meant to be seen by anyone.",
