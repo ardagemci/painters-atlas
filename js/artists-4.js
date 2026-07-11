@@ -109,7 +109,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","watercolor","broken-color"], style:"fauvist",
   palette:["#6e8a5a","#d9a05e","#5b7a9e","#e8dcc0","#8a5e3e"],
   tagline:"'The father of us all' — apples that toppled five centuries of perspective",
-  works:[{t:"Mont Sainte-Victoire series",y:"1880s–1906"},{t:"The Card Players",y:"1890–95"},{t:"The Large Bathers",y:"1898–1905"}],
+  works:[{t:"Mont Sainte-Victoire series",y:"1880s–1906"},{t:"The Card Players",y:"1890–95"},{t:"The Large Bathers",y:"1898–1905"},{t:"The Basket of Apples",y:"c. 1893"}],
   life:"Son of an Aix-en-Provence banker whose money he resented and relied on, Cézanne was the school friend of Émile Zola — a bond broken when Zola's novel L'Œuvre portrayed a failed painter both recognised. Gruff, devout and pathologically thin-skinned, he withdrew to Aix and painted; caught in a storm at his easel in 1906, he died of pneumonia days later.",
   career:"Cézanne wanted to make of Impressionism 'something solid and durable, like the art of the museums': form built from patches of colour, perspective bent so a table tilts toward you, apples weightier than mountains, the same Mont Sainte-Victoire reconstructed dozens of times. The 1907 memorial retrospective stunned Picasso, Braque and Matisse — Cubism walked out of it, and 'the father of us all' (the phrase passes between Matisse and Picasso) stuck.",
   outside:"He sat models into agony — over a hundred sittings for a single portrait, with the warning 'Does an apple move?' He read Virgil in Latin, feared being 'hooked' by people touching him, and signed letters to friends 'pictor semper virens' — the ever-green painter.",

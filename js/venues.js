@@ -60,6 +60,14 @@ window.VENUES = [
   { id:"royal-collection", name:"Royal Collection, Windsor Castle", city:"Windsor", country:"United Kingdom", type:"palace" },
   { id:"detroit-institute-of-arts", name:"Detroit Institute of Arts", city:"Detroit", country:"United States", type:"museum" },
   { id:"philadelphia-museum-of-art", name:"Philadelphia Museum of Art", city:"Philadelphia", country:"United States", type:"museum" },
+  { id:"czartoryski", name:"Czartoryski Museum", city:"Kraków", country:"Poland", type:"museum" },
+  { id:"accademia-venice", name:"Gallerie dell'Accademia", city:"Venice", country:"Italy", type:"museum" },
+  { id:"accademia-florence", name:"Galleria dell'Accademia", city:"Florence", country:"Italy", type:"museum" },
+  { id:"st-peters-basilica", name:"St Peter's Basilica", city:"Vatican City", country:"Italy", type:"church" },
+  { id:"mnaa-lisbon", name:"Museu Nacional de Arte Antiga", city:"Lisbon", country:"Portugal", type:"museum" },
+  { id:"groeningemuseum", name:"Groeningemuseum", city:"Bruges", country:"Belgium", type:"museum" },
+  { id:"gemaldegalerie-berlin", name:"Gemäldegalerie", city:"Berlin", country:"Germany", type:"museum" },
+  { id:"baltimore-museum-of-art", name:"Baltimore Museum of Art", city:"Baltimore", country:"United States", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },

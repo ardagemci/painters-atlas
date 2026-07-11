@@ -19,7 +19,7 @@ window.ARTISTS.push(
   techniques:["fresco","tempera"], style:"renaissance",
   palette:["#2e4a62","#b06a4a","#d9b27c","#7a8e66","#e8dcc3"],
   tagline:"The sculptor who, under protest, painted heaven itself",
-  works:[{t:"Sistine Chapel Ceiling",y:"1508–12"},{t:"The Last Judgment",y:"1536–41"},{t:"Doni Tondo",y:"c. 1507"}],
+  works:[{t:"Sistine Chapel Ceiling",y:"1508–12"},{t:"The Last Judgment",y:"1536–41"},{t:"Doni Tondo",y:"c. 1507"},{t:"The Creation of Adam",y:"1511–12"}],
   life:"Born near Arezzo and raised in Florence, Michelangelo insisted to his dying day that he was a sculptor, not a painter. Irascible, devout and famously unwashed, he outlived all his great rivals, working until days before his death at eighty-eight — by then so revered that Italians simply called him Il Divino, the divine one.",
   career:"Bullied by Pope Julius II into frescoing the Sistine ceiling, he spent four years on scaffolding painting some 500 square metres of prophets and the famous touch of Adam — then returned decades later to fill the altar wall with the swirling, terrifying Last Judgment. His muscular figures and twisting poses became the grammar of Mannerism and the obsession of every artist who followed.",
   outside:"He wrote some 300 sonnets and madrigals, many of them love poems of startling tenderness, and ended his life as chief architect of St Peter's Basilica — refusing payment for it. Despite a miser's habits, he died one of the richest artists who had ever lived.",
