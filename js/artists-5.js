@@ -31,7 +31,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","watercolor","woodblock"], style:"abstract",
   palette:["#2e5eaa","#e8c43e","#c4302a","#2e8a5e","#1d1a20"],
   tagline:"Painting as music — abstraction's loudest prophet",
-  works:[{t:"Composition VII",y:"1913"},{t:"Improvisation 28",y:"1912"},{t:"Several Circles",y:"1926"},{t:"Yellow-Red-Blue",y:"1925"}],
+  works:[{t:"Composition VII",y:"1913"},{t:"Improvisation 28",y:"1912"},{t:"Composition VIII",y:"1923"},{t:"Several Circles",y:"1926"},{t:"Yellow-Red-Blue",y:"1925"}],
   life:"A Moscow tea merchant's son, Kandinsky was a thirty-year-old law lecturer offered a professorship when a Monet haystack and a Wagner opera convinced him to paint instead. He taught at Munich, revolutionary Moscow and the Bauhaus, fled the Nazis to Paris, and died a French citizen in 1944, still painting biomorphic constellations.",
   career:"Kandinsky claimed the first abstract painting (a 1910 watercolour, though Hilma af Klint had quietly beaten everyone) and wrote abstraction's scripture, Concerning the Spiritual in Art: colour as vibration striking the soul. With Franz Marc he founded Der Blaue Reiter; his pre-war Compositions are apocalypses of colour, his Bauhaus geometry their cooled, precise afterlife.",
   outside:"He experienced synesthesia — hearing colours, seeing sounds — and named paintings like concert programmes: improvisations, compositions. Trained as an ethnographer, he traced his colour-mysticism partly to painted peasant houses in Vologda that felt like 'walking into a painting.'",

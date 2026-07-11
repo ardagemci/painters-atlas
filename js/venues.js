@@ -68,6 +68,12 @@ window.VENUES = [
   { id:"groeningemuseum", name:"Groeningemuseum", city:"Bruges", country:"Belgium", type:"museum" },
   { id:"gemaldegalerie-berlin", name:"Gemäldegalerie", city:"Berlin", country:"Germany", type:"museum" },
   { id:"baltimore-museum-of-art", name:"Baltimore Museum of Art", city:"Baltimore", country:"United States", type:"museum" },
+  { id:"secession-vienna", name:"Secession Building", city:"Vienna", country:"Austria", type:"site" },
+  { id:"mak-vienna", name:"MAK — Museum of Applied Arts", city:"Vienna", country:"Austria", type:"museum" },
+  { id:"wien-museum", name:"Wien Museum", city:"Vienna", country:"Austria", type:"museum" },
+  { id:"leopold-museum", name:"Leopold Museum", city:"Vienna", country:"Austria", type:"museum" },
+  { id:"guggenheim-ny", name:"Solomon R. Guggenheim Museum", city:"New York", country:"United States", type:"museum" },
+  { id:"k20-dusseldorf", name:"Kunstsammlung Nordrhein-Westfalen (K20)", city:"Düsseldorf", country:"Germany", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },
