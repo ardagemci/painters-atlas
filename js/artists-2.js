@@ -70,7 +70,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","alla-prima","chiaroscuro"], style:"baroque",
   palette:["#2a2622","#7a4a3a","#b89a6a","#46586a","#e3d8c4"],
   tagline:"The painter's painter — truth at court, mirrors within mirrors",
-  works:[{t:"Las Meninas",y:"1656"},{t:"Portrait of Innocent X",y:"1650"},{t:"The Surrender of Breda",y:"1634–35"},{t:"Rokeby Venus",y:"c. 1647–51"}],
+  works:[{t:"Las Meninas",y:"1656"},{t:"Portrait of Innocent X",y:"1650"},{t:"The Surrender of Breda",y:"1634–35"},{t:"Rokeby Venus",y:"c. 1647–51"},{t:"Portrait of Juan de Pareja",y:"1650"}],
   life:"A Seville prodigy who married his teacher's daughter, Velázquez became court painter to Philip IV at twenty-four and spent his life inside the Spanish palace, rising through courtly offices to knighthood in the Order of Santiago. He died at sixty-one, weeks after exhausting himself organising a royal wedding on the French border.",
   career:"From bodegón kitchen scenes to popes and kings, Velázquez painted what was actually there — air included. Innocent X muttered 'troppo vero' (too true) of his portrait; Las Meninas, the infanta and her court caught mid-moment with the painter himself at his easel, remains painting's supreme riddle about looking. His feathery late brushwork, dissolving at close range, made Manet call him 'the painter of painters.'",
   outside:"Court duties consumed him — decorating, ceremonies, quarters assignments — leaving perhaps 120 paintings from a forty-year career. In Rome he painted his enslaved assistant Juan de Pareja, then freed him; Pareja became a painter in his own right.",

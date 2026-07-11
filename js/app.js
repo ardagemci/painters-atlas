@@ -826,6 +826,7 @@ function treeView(list, type){
 
 /* ---------- the grand timeline ---------- */
 let tlZoom = 6;                                            /* pixels per year */
+let tlLegendAll = false;                                   /* legend collapsed to top 14 by default */
 const TL_Y0 = 1240;
 
 function vivid(P){                                         /* pick the punchiest palette colour */
@@ -881,12 +882,15 @@ function viewTimeline(){
       <span>${esc(a.name)}</span></a>`;
   }).join("");
 
-  /* legend: most-populous primary movements */
+  /* legend: every primary movement in use (collapsed to the top 14 by default) */
   const counts = {};
   A.forEach(a => counts[a.movements[0]] = (counts[a.movements[0]] || 0) + 1);
-  const legend = Object.entries(counts).sort((x, y) => y[1] - x[1]).slice(0, 14)
-    .map(([mid, c]) => Mx[mid] ? `<button class="tl2-leg" data-tlmov="${mid}"><i style="background:${vivid(Mx[mid].palette)}"></i>${esc(Mx[mid].name)} · ${c}</button>` : "")
+  const legEntries = Object.entries(counts).sort((x, y) => y[1] - x[1]).filter(([mid]) => Mx[mid]);
+  const legend = (tlLegendAll ? legEntries : legEntries.slice(0, 14))
+    .map(([mid, c]) => `<button class="tl2-leg" data-tlmov="${mid}"><i style="background:${vivid(Mx[mid].palette)}"></i>${esc(Mx[mid].name)} · ${c}</button>`)
     .join("");
+  const legMore = legEntries.length > 14
+    ? `<button class="tl2-leg tl2-leg-more" data-tlleg>${tlLegendAll ? "show fewer −" : "+ " + (legEntries.length - 14) + " more movements"}</button>` : "";
 
   return `
   <div class="page-head">
@@ -902,7 +906,7 @@ function viewTimeline(){
     <span class="f-label">Jump to</span>
     ${E.map(e => `<button class="f-btn" data-tljump="${(e.start - TL_Y0) * pxy}">${esc(e.name.split(" ")[0])}</button>`).join("")}
   </div>
-  <div class="tl2-legend"><button class="tl2-leg" data-tlmov=""><i style="background:var(--gold)"></i>All</button>${legend}</div>
+  <div class="tl2-legend"><button class="tl2-leg" data-tlmov=""><i style="background:var(--gold)"></i>All</button>${legend}${legMore}</div>
   <div class="tl2-wrap" id="tl2"><div class="tl2-inner" style="width:${W}px;height:${H}px">${grid}${barHtml}</div></div>
   <p class="map-hint">${A.length} painters · ${laneEnds.length} lanes · fading bars are still painting</p>`;
 }
@@ -1796,6 +1800,16 @@ app.addEventListener("click", e => {
   if(tj){
     const wrap = document.getElementById("tl2");
     if(wrap) wrap.scrollTo({ left: Math.max(0, +tj.dataset.tljump - 30), behavior: reducedMotion ? "auto" : "smooth" });
+    return;
+  }
+  const tl = e.target.closest("[data-tlleg]");
+  if(tl){                                                  /* expand/collapse the movement legend */
+    tlLegendAll = !tlLegendAll;
+    const wrap = document.getElementById("tl2");
+    const sl = wrap ? wrap.scrollLeft : 0;
+    route();
+    const w2 = document.getElementById("tl2");
+    if(w2) w2.scrollLeft = sl;
     return;
   }
   const tm = e.target.closest("[data-tlmov]");

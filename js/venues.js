@@ -53,6 +53,13 @@ window.VENUES = [
   { id:"isabella-stewart-gardner", name:"Isabella Stewart Gardner Museum", city:"Boston", country:"United States", type:"museum" },
   { id:"yale-university-art-gallery", name:"Yale University Art Gallery", city:"New Haven", country:"United States", type:"museum" },
   { id:"minneapolis-institute-of-art", name:"Minneapolis Institute of Art", city:"Minneapolis", country:"United States", type:"museum" },
+  { id:"scottish-national-gallery", name:"Scottish National Gallery", city:"Edinburgh", country:"United Kingdom", type:"museum" },
+  { id:"doria-pamphilj", name:"Galleria Doria Pamphilj", city:"Rome", country:"Italy", type:"palace" },
+  { id:"capodimonte", name:"Museo di Capodimonte", city:"Naples", country:"Italy", type:"museum" },
+  { id:"schloss-weissenstein", name:"Schloss Weißenstein", city:"Pommersfelden", country:"Germany", type:"palace" },
+  { id:"royal-collection", name:"Royal Collection, Windsor Castle", city:"Windsor", country:"United Kingdom", type:"palace" },
+  { id:"detroit-institute-of-arts", name:"Detroit Institute of Arts", city:"Detroit", country:"United States", type:"museum" },
+  { id:"philadelphia-museum-of-art", name:"Philadelphia Museum of Art", city:"Philadelphia", country:"United States", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },

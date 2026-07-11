@@ -660,6 +660,7 @@ section{margin:46px 0}
 .tl2-leg i{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0}
 .tl2-leg:hover{color:var(--ink);border-color:var(--line);transform:translateY(-1px)}
 .tl2-leg.on{color:var(--ink);border-color:var(--gold);background:rgba(201,164,92,.14)}
+.tl2-leg-more{font-style:italic;color:var(--gold);border-style:dashed}
 .tl2-wrap{
   overflow:auto;max-height:74vh;position:relative;
   border:1px solid var(--line2);border-radius:18px;background:var(--panel);
