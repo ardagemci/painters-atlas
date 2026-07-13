@@ -1813,8 +1813,8 @@ window.CATALOG = (window.CATALOG || []).concat([
   movements:["early-netherlandish"], techniques:["oil-painting","glazing"], nation:"belgium",
   museum:{ id:"national-gallery-london", name:"The National Gallery", city:"London" },
   dims:"26 × 19 cm",
-  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Jan_van_Eyck_-_Portrait_of_a_Man_%28Self_Portrait%3F%29_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_-_Portrait_of_a_Man_%28Self_Portrait%3F%29_-_Google_Art_Project.jpg",
-          page:"https://en.wikipedia.org/wiki/Portrait_of_a_Man_(Self_Portrait%3F)", status:"pd" },
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Jan_van_Eyck_-_Portrait_of_a_Man_%28Self_Portrait%3F%29_1433.jpg/960px-Jan_van_Eyck_-_Portrait_of_a_Man_%28Self_Portrait%3F%29_1433.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:Jan_van_Eyck_-_Portrait_of_a_Man_%28Self_Portrait%3F%29_1433.jpg", status:"pd" },
   tags:["portrait","red","quiet"] },
 
 { id:"annunciation-van-eyck", tier:2,

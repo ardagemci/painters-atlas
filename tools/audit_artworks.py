@@ -27,6 +27,8 @@ PINNED = {
     "michelangelo::Sistine Chapel Ceiling": "Sistine Chapel ceiling 02 (brightened).jpg",
     "michelangelo::The Last Judgment": "Last Judgement (Michelangelo).jpg",
     "claude-monet::Water Lilies (Grandes Décorations)": "Claude Monet - The Water Lilies - Setting Sun - Google Art Project.jpg",
+    "jan-van-eyck::Man in a Red Turban": "Jan van Eyck - Portrait of a Man (Self Portrait?) 1433.jpg",
+    "jacek-malczewski::The Vicious Circle": "Bledne kolo.jpg",
 }
 
 def get_json(url):
