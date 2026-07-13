@@ -77,6 +77,12 @@ const PP_LABELS = {
   seen: ["Seen in person", "Seen in person ✓"],
   saved: ["Save for later", "Saved ✓"]
 };
+function passportActions(w){
+  return ["admirations", "seen", "saved"].map((field, i) => {
+    const on = passportHas(field, w.id);
+    return `<button class="aw-btn ${i === 0 ? "primary" : ""} ${on ? "on" : ""}" data-pp="${field}" data-ppid="${w.id}">${PP_LABELS[field][on ? 1 : 0]}</button>`;
+  }).join("");
+}
 
 /* ============================================================
    GENERATIVE COVER PAINTERS — one per style family
@@ -1186,8 +1192,57 @@ function worldMapView(){
     <p class="map-hint">Circle size = painters in the atlas · click a circle to visit the nation · click the dashed frame (or Europe) to zoom in</p></div>`;
 }
 
+/* ---------- Painting of the Day ---------- */
+const DAILY_POOL = CAT.filter(w => w.tier === 1 && w.description && w.notice && w.notice.length &&
+    w.image && w.image.status === "pd" && w.image.src && Ax[w.artistId])
+  .slice().sort((a, b) => a.id.localeCompare(b.id));
+
+function gcd(a, b){
+  while(b){ const next = a % b; a = b; b = next; }
+  return a;
+}
+
+function dailyState(date = new Date()){
+  if(!DAILY_POOL.length) return null;
+  const y = date.getFullYear(), m = date.getMonth(), d = date.getDate();
+  const key = `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  const ordinal = Math.floor(Date.UTC(y, m, d) / 86400000);
+  const n = DAILY_POOL.length;
+  let step = 31;
+  while(gcd(step, n) !== 1) step += 2;                   /* visit the full pool before repeating */
+  const index = (hashStr("pigment-daily-v1") + ordinal * step) % n;
+  const work = DAILY_POOL[index], artist = Ax[work.artistId];
+  const detail = work.notice[hashStr(key + work.id) % work.notice.length];
+  const label = new Intl.DateTimeFormat("en", {
+    weekday:"long", month:"long", day:"numeric", year:"numeric"
+  }).format(date);
+  return { work, artist, key, label, detail, index, poolSize:n };
+}
+
+function dailyHome(daily){
+  const w = daily.work, a = daily.artist;
+  const movement = w.movements && w.movements[0] && Mx[w.movements[0]];
+  return `<section class="daily-home" aria-labelledby="daily-home-title">
+    <div class="daily-copy">
+      <div class="daily-kicker">Painting of the day <span>· ${esc(daily.label)}</span></div>
+      <h2 id="daily-home-title"><a href="#/daily">${esc(w.title)}</a></h2>
+      <div class="daily-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a><span>${esc(w.year.display)}</span>${movement ? `<a href="#/movement/${movement.id}">${esc(movement.name)}</a>` : ""}</div>
+      <p class="daily-note">${esc(w.description)}</p>
+      <div class="daily-detail"><b>One detail you cannot unsee</b><span>${esc(daily.detail)}</span></div>
+      <div class="aw-actions daily-actions">${passportActions(w)}</div>
+      <a class="daily-enter" href="#/daily">Enter today's painting <span>→</span></a>
+    </div>
+    <a class="daily-media" href="#/daily" aria-label="Open today's painting: ${esc(w.title)}">
+      <img loading="eager" src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}"
+           onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
+      <span>Today in Pigment</span>
+    </a>
+  </section>`;
+}
+
 function viewHome(){
   const muse = A[Math.floor(Math.random()*A.length)];
+  const daily = dailyState();
   const featured = [...A].sort(() => Math.random()-0.5).slice(0,8);
   const topMovs = M.filter(m => !m.parent)
     .map(m => [m, artistsOfMovement(m.id).length]).sort((x,y) => y[1]-x[1]).slice(0,6);
@@ -1230,6 +1285,8 @@ function viewHome(){
     </a>
   </div>
 
+  ${daily ? dailyHome(daily) : ""}
+
   <div class="strip" aria-label="Masterpieces in the atlas">
     <div class="strip-track">${stripItems}${stripItems}</div>
   </div>
@@ -1269,6 +1326,49 @@ function viewHome(){
   <section>
     <h2 class="sec-title">Major movements</h2>
     <div class="tree-grid">${topMovs.map(([m,c]) => taxCard(m,"movement",c)).join("")}</div>
+  </section>`;
+}
+
+function viewDaily(){
+  const daily = dailyState();
+  if(!daily) return view404();
+  const w = daily.work, a = daily.artist;
+  const movement = w.movements && w.movements[0] && Mx[w.movements[0]];
+  const venue = w.museum || null;
+  document.title = `${w.title} — Painting of the Day — Pigment`;
+  return `
+  ${crumbs([["Atlas",""],["Painting of the Day"]])}
+  <div class="daily-page-head">
+    <div>
+      <div class="daily-kicker">Painting of the day <span>· ${esc(daily.label)}</span></div>
+      <h1 class="display">${esc(w.title)}</h1>
+      <div class="daily-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a><span>${esc(w.year.display)}</span>${movement ? `<a href="#/movement/${movement.id}">${esc(movement.name)}</a>` : ""}</div>
+    </div>
+    <div class="daily-sequence"><b>${daily.poolSize}</b><span>works in this<br>daily rotation</span></div>
+  </div>
+  <article class="daily-stage">
+    <div class="daily-stage-media" data-lb-img="${w.image.src}" data-lb-cap="${esc(w.title)} (${esc(w.year.display)}) — ${esc(a.name)}" data-lb-link="${w.image.page}">
+      <img src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}"
+           onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
+      <span>Click to look closer</span>
+    </div>
+    <div class="daily-stage-copy">
+      <p class="daily-note">${esc(w.description)}</p>
+      <div class="daily-detail"><b>One detail you cannot unsee</b><span>${esc(daily.detail)}</span></div>
+      <div class="aw-actions daily-actions">${passportActions(w)}</div>
+      <a class="daily-enter" href="#/artwork/${w.id}">Go deeper into the artwork <span>→</span></a>
+      <p class="daily-return">A new painting enters the atlas at your next local midnight.</p>
+    </div>
+  </article>
+  <section class="daily-threads">
+    <h2 class="sec-title">Follow the threads</h2>
+    <div class="chips">
+      ${chip("a", "artist/" + a.id, a.name)}
+      ${movement ? chip("m", "movement/" + movement.id, movement.name) : ""}
+      ${(w.techniques || []).slice(0, 2).map(t => Tx[t] ? chip("t", "technique/" + t, Tx[t].name) : "").join("")}
+      ${w.nation && Nx[w.nation] ? chip("n", "nation/" + w.nation, Nx[w.nation].flag + " " + Nx[w.nation].name) : ""}
+    </div>
+    ${venue ? `<p class="aw-provenance">On view at ${esc(venue.name)}${venue.city ? `, ${esc(venue.city)}` : ""} · <a href="${w.image.page}" target="_blank" rel="noopener">public-domain image source</a></p>` : ""}
   </section>`;
 }
 
@@ -1452,11 +1552,6 @@ function viewArtwork(id){
   const hasImg = w.image && w.image.src && w.image.status === "pd";
   const held = w.image && w.image.status === "copyright";
 
-  const actions = ["admirations", "seen", "saved"].map((f, i) => {
-    const on = passportHas(f, w.id);
-    return `<button class="aw-btn ${i === 0 ? "primary" : ""} ${on ? "on" : ""}" data-pp="${f}" data-ppid="${w.id}">${PP_LABELS[f][on ? 1 : 0]}</button>`;
-  }).join("");
-
   const moreBy = (catByArtist[a.id] || []).filter(o => o.id !== w.id);
   const near = w.coords
     ? CAT.filter(o => o.id !== w.id && o.artistId !== w.artistId && o.coords)
@@ -1476,7 +1571,7 @@ function viewArtwork(id){
     <h1 class="display" style="font-size:clamp(1.7rem,3.6vw,2.6rem)">${esc(w.title)}</h1>
     <div class="hero-sub"><a href="#/artist/${a.id}">${esc(a.name)}</a><span>${esc(w.year.display)}</span></div>
   </div>
-  <div class="aw-actions">${actions}</div>
+  <div class="aw-actions">${passportActions(w)}</div>
   <div class="chips" style="margin-bottom:26px">
     ${(w.movements || []).map(m => Mx[m] ? chip("m", "movement/" + m, Mx[m].name) : "").join("")}
     ${(w.techniques || []).map(t => Tx[t] ? chip("t", "technique/" + t, Tx[t].name) : "").join("")}
@@ -1693,6 +1788,7 @@ function route(){
     case "artists":     html = viewArtists(); break;
     case "timeline":    html = viewTimeline(); break;
     case "influences":  html = viewInfluences(); break;
+    case "daily":       html = viewDaily(); break;
     case "artist":      html = viewArtist(id); break;
     case "artwork":     html = viewArtwork(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",

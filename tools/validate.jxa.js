@@ -112,6 +112,18 @@ CAT.forEach(function(w){
   }
 });
 
+// Painting of the Day must always have a deep, displayable pool.
+const DAILY = CAT.filter(function(w){
+  return w.tier === 1 && w.description && w.notice && w.notice.length &&
+    w.image && w.image.status === "pd" && w.image.src && aIdsMap[w.artistId];
+});
+if(DAILY.length < 30) errs.push("daily pool too small: " + DAILY.length + " (needs at least 30)");
+DAILY.forEach(function(w){
+  const words = (w.description || "").split(/\s+/).filter(Boolean).length;
+  if(words < 60 || words > 90)
+    errs.push("daily " + w.id + ": description " + words + " words (60–90)");
+});
+
 // Tier 1 artist overlay integrity
 try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
 const T1 = window.TIER1 || {};
@@ -171,6 +183,7 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length +
   ", influence edges: " + (window.INFLUENCES || []).length +
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
+  ", daily pool: " + DAILY.length +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
   " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
