@@ -74,6 +74,12 @@ window.VENUES = [
   { id:"leopold-museum", name:"Leopold Museum", city:"Vienna", country:"Austria", type:"museum" },
   { id:"guggenheim-ny", name:"Solomon R. Guggenheim Museum", city:"New York", country:"United States", type:"museum" },
   { id:"k20-dusseldorf", name:"Kunstsammlung Nordrhein-Westfalen (K20)", city:"Düsseldorf", country:"Germany", type:"museum" },
+  { id:"musee-picasso-paris", name:"Musée Picasso", city:"Paris", country:"France", type:"museum" },
+  { id:"museu-picasso-barcelona", name:"Museu Picasso", city:"Barcelona", country:"Spain", type:"museum" },
+  { id:"thyssen-bornemisza", name:"Museo Nacional Thyssen-Bornemisza", city:"Madrid", country:"Spain", type:"museum" },
+  { id:"kelvingrove", name:"Kelvingrove Art Gallery and Museum", city:"Glasgow", country:"United Kingdom", type:"museum" },
+  { id:"pushkin-museum", name:"Pushkin State Museum of Fine Arts", city:"Moscow", country:"Russia", type:"museum" },
+  { id:"museum-ludwig", name:"Museum Ludwig", city:"Cologne", country:"Germany", type:"museum" },
 
   /* ---- United States ---- */
   { id:"met", name:"The Metropolitan Museum of Art", city:"New York", country:"United States", type:"museum" },
@@ -84,6 +90,16 @@ window.VENUES = [
   { id:"getty", name:"The Getty Center", city:"Los Angeles", country:"United States", type:"museum" },
   { id:"mfa-boston", name:"Museum of Fine Arts", city:"Boston", country:"United States", type:"museum" },
   { id:"phillips-collection", name:"The Phillips Collection", city:"Washington, D.C.", country:"United States", type:"museum" },
+  { id:"sfmoma", name:"San Francisco Museum of Modern Art", city:"San Francisco", country:"United States", type:"museum" },
+  { id:"barnes-foundation", name:"Barnes Foundation", city:"Philadelphia", country:"United States", type:"museum" },
+  { id:"whitney", name:"Whitney Museum of American Art", city:"New York", country:"United States", type:"museum" },
+  { id:"moca-la", name:"Museum of Contemporary Art", city:"Los Angeles", country:"United States", type:"museum" },
+  { id:"buffalo-akg", name:"Buffalo AKG Art Museum", city:"Buffalo", country:"United States", type:"museum" },
+  { id:"dallas-museum-art", name:"Dallas Museum of Art", city:"Dallas", country:"United States", type:"museum" },
+  { id:"stanley-museum-iowa", name:"Stanley Museum of Art", city:"Iowa City", country:"United States", type:"museum" },
+  { id:"harry-ransom-center", name:"Harry Ransom Center", city:"Austin", country:"United States", type:"museum" },
+  { id:"rothko-chapel", name:"Rothko Chapel", city:"Houston", country:"United States", type:"site" },
+  { id:"dali-museum-florida", name:"The Dalí Museum", city:"St Petersburg", country:"United States", type:"museum" },
 
   /* ---- Türkiye ---- */
   { id:"pera-museum", name:"Pera Museum", city:"Istanbul", country:"Türkiye", type:"museum" },
@@ -91,8 +107,14 @@ window.VENUES = [
   { id:"sakip-sabanci", name:"Sakıp Sabancı Museum", city:"Istanbul", country:"Türkiye", type:"museum" },
   { id:"istanbul-resim-heykel", name:"İstanbul Resim ve Heykel Müzesi", city:"Istanbul", country:"Türkiye", type:"museum" },
 
+  /* ---- Mexico ---- */
+  { id:"museo-arte-moderno-mexico", name:"Museo de Arte Moderno", city:"Mexico City", country:"Mexico", type:"museum" },
+  { id:"museo-dolores-olmedo", name:"Museo Dolores Olmedo", city:"Mexico City", country:"Mexico", type:"museum" },
+  { id:"museo-frida-kahlo", name:"Museo Frida Kahlo", city:"Mexico City", country:"Mexico", type:"museum" },
+
   /* ---- rest of the world ---- */
   { id:"nmwa-tokyo", name:"National Museum of Western Art", city:"Tokyo", country:"Japan", type:"museum" },
   { id:"ngv", name:"National Gallery of Victoria", city:"Melbourne", country:"Australia", type:"museum" },
+  { id:"national-gallery-australia", name:"National Gallery of Australia", city:"Canberra", country:"Australia", type:"museum" },
   { id:"masp", name:"São Paulo Museum of Art", city:"São Paulo", country:"Brazil", type:"museum" }
 ];

@@ -65,6 +65,7 @@ const warns = [];
 // venue registry + artwork catalog integrity (ARTWORK_SCHEMA v1)
 try { eval(read(base + "js/venues.js")); } catch(e){ out.push("venues.js ERROR: " + e.message); }
 try { eval(read(base + "js/catalog-1.js")); } catch(e){ out.push("catalog-1.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-2.js")); } catch(e){ out.push("catalog-2.js ERROR: " + e.message); }
 const VEN = window.VENUES || [], CAT = window.CATALOG || [];
 const VENUE_TYPES = { museum:1, church:1, palace:1, site:1 };
 dup(VEN, "venue"); dup(CAT, "artwork");
@@ -89,6 +90,8 @@ CAT.forEach(function(w){
   });
   if(w.image && w.image.status === "pd" && (w.image.src || "").indexOf("/wikipedia/commons/") === -1)
     errs.push(tag + ": pd image not Commons-hosted");
+  if(w.image && ["pd","copyright","none"].indexOf(w.image.status) === -1)
+    errs.push(tag + ": bad image status " + w.image.status);
   if(w.tier === 1){
     const c = w.coords || {};
     ["F","D","E","C","M"].forEach(function(k){

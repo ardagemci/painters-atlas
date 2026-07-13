@@ -1301,9 +1301,11 @@ function arcWorkChips(ids){
   const items = (ids || []).map(x => CatX[x]).filter(Boolean);
   if(!items.length) return "";
   return `<div class="arc-works">${items.map(w => {
+    const artist = Ax[w.artistId];
     const img = w.image && w.image.src && w.image.status === "pd";
     return `<a class="arc-work" href="#/artwork/${w.id}">${img
-      ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">` : ""}
+      ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">`
+      : `<span class="arc-work-gen">${canvasTag(artist.style, artist.palette, w.id)}</span>`}
       <span class="arc-work-t">${esc(w.title)}<em>${esc(w.year.display)}</em></span>
     </a>`;
   }).join("")}</div>`;
@@ -1448,6 +1450,7 @@ function viewArtwork(id){
   const venue = w.museum || null;
   const venueEntry = venue && venue.id ? Vx[venue.id] : null;
   const hasImg = w.image && w.image.src && w.image.status === "pd";
+  const held = w.image && w.image.status === "copyright";
 
   const actions = ["admirations", "seen", "saved"].map((f, i) => {
     const on = passportHas(f, w.id);
@@ -1465,7 +1468,9 @@ function viewArtwork(id){
   <div class="aw-hero" ${hasImg ? `data-lb-img="${w.image.src}" data-lb-cap="${esc(w.title)} (${esc(w.year.display)}) — ${esc(a.name)}" data-lb-link="${w.image.page}"` : ""}>
     ${hasImg
       ? `<img src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
-      : `<div class="aw-hero-gen">${canvasTag(a.style, a.palette, w.id, true)}<span class="map-hint">an interpretation painted in the browser — the original is under copyright or unphotographed</span></div>`}
+      : `<div class="aw-hero-gen">${canvasTag(a.style, a.palette, w.id, true)}<span class="map-hint">${held
+        ? "a seeded Pigment interpretation — the original artwork remains under copyright"
+        : "an interpretation painted in the browser — the original is unphotographed"}</span></div>`}
   </div>
   <div class="page-head" style="margin-top:22px">
     <h1 class="display" style="font-size:clamp(1.7rem,3.6vw,2.6rem)">${esc(w.title)}</h1>
@@ -1483,7 +1488,9 @@ function viewArtwork(id){
         ? `<h2>The picture</h2><p>${esc(w.description)}</p>
            <h2>What to notice</h2><ul class="facts">${w.notice.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`
         : `<p class="aw-empty">Not written about yet — the atlas is still being painted. The image, meanwhile, speaks for itself.</p>`}
-      <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? esc(venue.name) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>` : ""}</p>
+      <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? esc(venue.name) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
+        ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>`
+        : held ? "original image omitted under copyright" : "image not yet available"}</p>
     </div>
     <aside class="side-panel">
       ${moreBy.length ? `<div class="panel"><h3>More by ${esc(a.name.split(" ")[0])}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
