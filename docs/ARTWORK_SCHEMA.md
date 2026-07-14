@@ -155,3 +155,7 @@ Target: **~160 at launch, ceiling 250.** Every Tier 1 page therefore ships with 
 1. **Tier 2 artworks get thin canonical pages** — every admirable artwork needs a real URL (§4).
 2. **Editorial list-fuel tags stay** — they power lists, onboarding, Personas and early recommendations before user data exists (§5, with governance rules).
 3. **Museum slugs/IDs reserved now** — via the venue registry (§5b), because artwork identity, museum pages, seen-in-person logs and museum matching all depend on stable references.
+
+## 11. Editorial lists (v1 — July 2026)
+
+Lists live in `js/lists-1.js` as `window.EDITORIAL_LISTS`. A list is `{ id, title ≤64, lede 15–60 words, cover (artwork id, must be in works), featured (homepage flag), works: [{ id: canonical artwork id, note ≤120 chars }] }`. Lists **reuse canonical artwork pages** — never duplicate artwork data. Works may appear in any number of lists; artwork pages render reverse links ("In lists"). Routes: `#/lists`, `#/list/{id}`. List ids are permanent once shipped, like artwork and venue slugs. Validator enforces all budgets.

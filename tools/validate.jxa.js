@@ -124,6 +124,29 @@ DAILY.forEach(function(w){
     errs.push("daily " + w.id + ": description " + words + " words (60–90)");
 });
 
+// editorial lists integrity
+try { eval(read(base + "js/lists-1.js")); } catch(e){ out.push("lists-1.js ERROR: " + e.message); }
+const LST = window.EDITORIAL_LISTS || [];
+dup(LST, "list");
+LST.forEach(function(l){
+  const tag = "list " + l.id;
+  if(!/^[a-z0-9-]+$/.test(l.id)) errs.push(tag + ": non-kebab id");
+  if(!l.title || l.title.length > 64) errs.push(tag + ": missing or over-64-char title");
+  const lw = (l.lede || "").split(/\s+/).filter(Boolean).length;
+  if(lw < 15 || lw > 60) errs.push(tag + ": lede " + lw + " words (15–60)");
+  if(!l.works || l.works.length < 5 || l.works.length > 14) errs.push(tag + ": needs 5–14 works");
+  const seenW = {};
+  (l.works || []).forEach(function(e){
+    if(!catIds[e.id]) errs.push(tag + ": work not in catalog: " + e.id);
+    if(seenW[e.id]) errs.push(tag + ": duplicate work " + e.id);
+    seenW[e.id] = 1;
+    if(!e.note || e.note.length > 120) errs.push(tag + ": note missing or over 120 chars for " + e.id);
+  });
+  if(!l.cover || !seenW[l.cover]) errs.push(tag + ": cover must be one of the list's own works");
+});
+if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
+  warns.push("fewer than 3 featured lists for the homepage");
+
 // Tier 1 artist overlay integrity
 try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
 const T1 = window.TIER1 || {};
@@ -184,6 +207,8 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", influence edges: " + (window.INFLUENCES || []).length +
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
   ", daily pool: " + DAILY.length +
+  ", lists: " + (window.EDITORIAL_LISTS || []).length +
+  " (featured: " + (window.EDITORIAL_LISTS || []).filter(function(l){ return l.featured; }).length + ")" +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
   " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));

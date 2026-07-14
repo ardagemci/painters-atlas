@@ -16,6 +16,10 @@ const CatX = byId(CAT);
 const Vx = byId(window.VENUES || []);
 const catByArtist = {};
 CAT.forEach(w => (catByArtist[w.artistId] = catByArtist[w.artistId] || []).push(w));
+const LISTS = window.EDITORIAL_LISTS || [];
+const Lsx = byId(LISTS);
+const listsByWork = {};
+LISTS.forEach(l => l.works.forEach(e => (listsByWork[e.id] = listsByWork[e.id] || []).push(l)));
 
 const movChildren = id => M.filter(m => m.parent === id);
 const tecChildren = id => T.filter(t => t.parent === id);
@@ -1240,6 +1244,74 @@ function dailyHome(daily){
   </section>`;
 }
 
+/* ---------- editorial lists ---------- */
+function listCard(l){
+  const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
+  const img = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  return `<article class="card list-card" data-href="#/list/${l.id}">
+    <div class="card-art">${img
+      ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(l.title)}">`
+      : (ca ? canvasTag(ca.style, ca.palette, l.id) : "")}</div>
+    <div class="card-body">
+      <div class="lc-kicker">List · ${l.works.length} works</div>
+      <h3><a href="#/list/${l.id}">${esc(l.title)}</a></h3>
+      <div class="card-tagline">${esc(l.lede)}</div>
+    </div>
+  </article>`;
+}
+
+function viewLists(){
+  document.title = "Lists — Pigment";
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Editorial</div>
+    <h1 class="display">Lists</h1>
+    <p class="page-lede">Guided walks through the atlas — each one a handful of works that talk to each other across the centuries. Follow a thread, admire what stops you, and let one list hand you to the next.</p>
+  </div>
+  <div class="cards wide">${LISTS.map(listCard).join("")}</div>`;
+}
+
+function viewList(id){
+  const l = Lsx[id]; if(!l) return view404();
+  document.title = l.title + " — Pigment";
+  const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
+  const cimg = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  const others = LISTS.filter(o => o.id !== l.id).sort(() => Math.random() - 0.5).slice(0, 3);
+  return `
+  <div class="list-hero">
+    <div class="list-hero-art">${cimg
+      ? `<img src="${cw.image.src}" alt="${esc(cw.title)}">`
+      : (ca ? canvasTag(ca.style, ca.palette, l.id, true) : "")}</div>
+    <div class="list-hero-body">
+      ${crumbs([["Atlas",""],["Lists","lists"],[l.title]])}
+      <h1 class="display">${esc(l.title)}</h1>
+      <p class="page-lede">${esc(l.lede)}</p>
+      <div class="chip-label">${l.works.length} works — every one opens its own page</div>
+    </div>
+  </div>
+  <ol class="list-entries">
+    ${l.works.map((e, i) => {
+      const w = CatX[e.id]; if(!w) return "";
+      const a = Ax[w.artistId];
+      const img = w.image && w.image.src && w.image.status === "pd";
+      const on = passportHas("admirations", w.id);
+      return `<li class="list-entry">
+        <span class="le-num">${i + 1}</span>
+        <a class="le-art" href="#/artwork/${w.id}">${img
+          ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">`
+          : canvasTag(a.style, a.palette, w.id + "-le")}</a>
+        <div class="le-body">
+          <h3><a href="#/artwork/${w.id}">${esc(w.title)}</a></h3>
+          <div class="le-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a> · ${esc(w.year.display)}</div>
+          <p class="le-note">${esc(e.note)}</p>
+        </div>
+        <button class="aw-btn le-adm ${on ? "on" : ""}" data-pp="admirations" data-ppid="${w.id}">${on ? "Admired ✓" : "Admire"}</button>
+      </li>`;
+    }).join("")}
+  </ol>
+  ${others.length ? `<section style="margin-top:40px"><h2 class="sec-title">More lists</h2><div class="cards wide">${others.map(listCard).join("")}</div></section>` : ""}`;
+}
+
 function viewHome(){
   const muse = A[Math.floor(Math.random()*A.length)];
   const daily = dailyState();
@@ -1286,6 +1358,15 @@ function viewHome(){
   </div>
 
   ${daily ? dailyHome(daily) : ""}
+
+  ${(() => {
+    const feat = LISTS.filter(l => l.featured).slice(0, 4);
+    return feat.length ? `<section>
+      <h2 class="sec-title">Lists <span class="count">guided walks through the atlas</span></h2>
+      <div class="cards wide">${feat.map(listCard).join("")}</div>
+      <a class="chip-label" style="display:block;margin-top:14px" href="#/lists">all ${LISTS.length} lists →</a>
+    </section>` : "";
+  })()}
 
   <div class="strip" aria-label="Masterpieces in the atlas">
     <div class="strip-track">${stripItems}${stripItems}</div>
@@ -1586,6 +1667,8 @@ function viewArtwork(id){
       <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? esc(venue.name) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
         ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>`
         : held ? "original image omitted under copyright" : "image not yet available"}</p>
+      ${(listsByWork[w.id] || []).length ? `<div class="aw-lists"><span class="chip-label">In lists:</span> ${listsByWork[w.id].map(l =>
+        `<a class="chip" href="#/list/${l.id}">${esc(l.title)}</a>`).join("")}</div>` : ""}
     </div>
     <aside class="side-panel">
       ${moreBy.length ? `<div class="panel"><h3>More by ${esc(a.name.split(" ")[0])}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
@@ -1789,6 +1872,8 @@ function route(){
     case "timeline":    html = viewTimeline(); break;
     case "influences":  html = viewInfluences(); break;
     case "daily":       html = viewDaily(); break;
+    case "lists":       html = viewLists(); break;
+    case "list":        html = viewList(id); break;
     case "artist":      html = viewArtist(id); break;
     case "artwork":     html = viewArtwork(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
@@ -1818,7 +1903,7 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", lists:"lists", list:"lists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));
@@ -1946,6 +2031,7 @@ const searchResults = document.getElementById("search-results");
 const INDEX = [
   ...A.map(a => ({ type:"Artists",    href:"artist/"+a.id,    name:a.name, meta:a.years })),
   ...CAT.map(w => ({ type:"Artworks", href:"artwork/"+w.id,  name:w.title, meta:Ax[w.artistId] ? Ax[w.artistId].name : "" })),
+  ...LISTS.map(l => ({ type:"Lists",  href:"list/"+l.id,     name:l.title, meta:l.works.length + " works" })),
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),
