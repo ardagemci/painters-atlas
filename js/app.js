@@ -1256,7 +1256,9 @@ function museumCard(v){
   const fa = works[0] && Ax[works[0].artistId];
   const note = MNOTES[v.id];
   return `<article class="card list-card" data-href="#/museum/${v.id}">
-    <div class="card-art">${cw
+    <div class="card-art">${note && note.photo
+      ? `<img loading="lazy" src="${note.photo.src}" alt="${esc(v.name)}">`
+      : cw
       ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(v.name)}">`
       : (fa ? canvasTag(fa.style, fa.palette, v.id) : "")}</div>
     <div class="card-body">
@@ -1291,12 +1293,14 @@ function viewMuseum(id){
     (o.city === v.city || o.country === v.country)).slice(0, 6);
   return `
   <div class="mu-hero">
-    <div class="mu-collage c${collage.length}">${collage.map(w => `<img loading="lazy" src="${w.image.src}" alt="">`).join("")}</div>
+    ${note && note.photo
+      ? `<div class="mu-photo"><img src="${note.photo.src}" alt="${esc(v.name)}"></div>`
+      : `<div class="mu-collage c${collage.length}">${collage.map(w => `<img loading="lazy" src="${w.image.src}" alt="">`).join("")}</div>`}
     <div class="mu-shade"></div>
     <div class="mu-hero-body">
       ${crumbs([["Atlas",""],["Museums","museums"],[v.name]])}
       <h1 class="display">${esc(v.name)}</h1>
-      <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}</div>
+      <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}${note && note.photo ? ` · <a href="${note.photo.page}" target="_blank" rel="noopener">photo via Wikimedia Commons</a>` : ""}</div>
       ${note ? `<div class="mu-hook">${esc(note.hook)}</div>` : ""}
     </div>
   </div>
@@ -1321,6 +1325,31 @@ function viewMuseum(id){
     <h2 class="sec-title">Kindred walls <span class="count">same city or country</span></h2>
     <div class="chips">${kindred.map(o => `<a class="chip m" href="#/museum/${o.id}">${esc(o.name)} · ${esc(o.city)}</a>`).join("")}</div>
   </section>` : ""}`;
+}
+
+/* ---------- explore hub (timeline + influences under one roof) ---------- */
+function viewExplore(){
+  document.title = "Explore — Pigment";
+  return `
+  <div class="page-head">
+    <div class="page-kicker">The big pictures</div>
+    <h1 class="display">Explore</h1>
+    <p class="page-lede">Two instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, and the living web of who taught, rivaled, befriended and influenced whom.</p>
+  </div>
+  <div class="entry-cards">
+    <a class="entry-card" href="#/timeline" style="--ec:var(--gold)">
+      <div class="ec-kicker">Time</div>
+      <h3>The grand timeline</h3>
+      <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Giotto to Banksy and watch the centuries hand each other the brush.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+    <a class="entry-card" href="#/influences" style="--ec:var(--teal)">
+      <div class="ec-kicker">Connection</div>
+      <h3>The influence constellation</h3>
+      <p>${(window.INFLUENCES || []).length} relationships — taught, influenced, befriended, rivaled, partnered — drawn as one force-directed web. Find the hidden hubs.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+  </div>`;
 }
 
 /* ---------- editorial lists ---------- */
@@ -1428,7 +1457,7 @@ function viewHome(){
       <p>Admire the artworks that speak to you. Your Taste Passport is already recording — Personas and the taste map arrive next.</p>
       <span class="ec-arrow">→</span>
     </a>
-    <a class="entry-card" href="#/timeline" style="--ec:var(--wine)">
+    <a class="entry-card" href="#/explore" style="--ec:var(--wine)">
       <div class="ec-kicker">Wander</div>
       <h3>Explore the atlas</h3>
       <p>Eight centuries on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
@@ -1752,6 +1781,17 @@ function viewArtwork(id){
         `<a class="chip" href="#/list/${l.id}">${esc(l.title)}</a>`).join("")}</div>` : ""}
     </div>
     <aside class="side-panel">
+      ${venue && venue.id && Vx[venue.id] && !VENUE_SENTINELS[venue.id] ? (() => {
+        const mv = Vx[venue.id], mn = MNOTES[venue.id], heldHere = (catByVenue[venue.id] || []).length;
+        return `<div class="panel mu-panel">
+          <h3>Where it hangs</h3>
+          ${mn && mn.photo ? `<a class="mu-panel-photo" href="#/museum/${mv.id}"><img loading="lazy" src="${mn.photo.src}" alt="${esc(mv.name)}"></a>` : ""}
+          <a class="mu-panel-name" href="#/museum/${mv.id}">${esc(mv.name)}</a>
+          <div class="mu-panel-meta">${esc(mv.city)}${mv.country ? " · " + esc(mv.country) : ""}${mn && mn.founded ? " · founded " + esc(mn.founded) : ""}</div>
+          ${mn ? `<div class="mu-panel-hook">${esc(mn.hook)}</div>` : ""}
+          <a class="chip-label" style="display:block;margin-top:10px" href="#/museum/${mv.id}">${heldHere} work${heldHere === 1 ? "" : "s"} from these walls in the atlas →</a>
+        </div>`;
+      })() : ""}
       ${moreBy.length ? `<div class="panel"><h3>More by ${esc(a.name.split(" ")[0])}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
         `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(a.style, a.palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(o.year.display)}</span></span></a>`).join("")}</div></div>` : ""}
       ${near.length ? `<div class="panel"><h3>Near it in the atlas</h3><div class="mini-cards">${near.map(o =>
@@ -1957,6 +1997,7 @@ function route(){
     case "list":        html = viewList(id); break;
     case "museums":     html = viewMuseums(); break;
     case "museum":      html = viewMuseum(id); break;
+    case "explore":     html = viewExplore(); break;
     case "artist":      html = viewArtist(id); break;
     case "artwork":     html = viewArtwork(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
@@ -1986,7 +2027,8 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists",
+    explore:"explore", timeline:"explore", influences:"explore", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));

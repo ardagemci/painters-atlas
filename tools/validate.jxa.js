@@ -157,6 +157,9 @@ Object.keys(MN).forEach(function(vid){
   if(!n.founded) errs.push(tag + ": missing founded");
   const ew = (n.essay || "").split(/\s+/).filter(Boolean).length;
   if(ew < 100 || ew > 180) errs.push(tag + ": essay " + ew + " words (100–180)");
+  if(n.photo && (!n.photo.src || n.photo.src.indexOf("https://upload.wikimedia.org/wikipedia/commons/") !== 0))
+    errs.push(tag + ": photo src must be Commons-hosted");
+  if(n.photo && !n.photo.page) errs.push(tag + ": photo missing source page");
 });
 
 // Tier 1 artist overlay integrity
