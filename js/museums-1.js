@@ -519,5 +519,26 @@ window.MUSEUM_NOTES = {
 "alte-pinakothek": {
   hook: "Munich's old masters, under Ludwig's long roof",
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alte_Pinakothek_2009.jpg/960px-Alte_Pinakothek_2009.jpg",
-           page:"https://en.wikipedia.org/wiki/Alte_Pinakothek" } }
+           page:"https://en.wikipedia.org/wiki/Alte_Pinakothek" } },
+
+"musee-pau": {
+  hook: "The first museum anywhere to buy a Degas",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Mus%C3%A9e_des_Beaux-Arts_de_Pau.jpg/960px-Mus%C3%A9e_des_Beaux-Arts_de_Pau.jpg",
+           page:"https://en.wikipedia.org/wiki/Mus%C3%A9e_des_Beaux-Arts_de_Pau" } },
+"ny-carlsberg-glyptotek": {
+  hook: "A brewer's fortune, bottled as art",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ny_Carlsberg_Glyptotek_winter_garden_1.jpg/960px-Ny_Carlsberg_Glyptotek_winter_garden_1.jpg",
+           page:"https://en.wikipedia.org/wiki/Ny_Carlsberg_Glyptotek" } },
+"moderna-museet": {
+  hook: "Stockholm's island of moderns — af Klint's vault",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MODERN_MUSEUM_MODERNA_MUSEET_STOCKHOLM_%2819%29.jpg/960px-MODERN_MUSEUM_MODERNA_MUSEET_STOCKHOLM_%2819%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Moderna_Museet" } },
+"russian-museum": {
+  hook: "Russia's own story, at imperial scale",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80%D0%B5%D1%86%2C_%D0%B4%D0%B2%D0%BE%D1%8003.jpg/960px-%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80%D0%B5%D1%86%2C_%D0%B4%D0%B2%D0%BE%D1%8003.jpg",
+           page:"https://en.wikipedia.org/wiki/Russian_Museum" } },
+"glenstone": {
+  hook: "Art, architecture and landscape, by appointment",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Glenstone-2018-10-13-courtyard-1.jpg/960px-Glenstone-2018-10-13-courtyard-1.jpg",
+           page:"https://en.wikipedia.org/wiki/Glenstone" } }
 };

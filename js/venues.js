@@ -124,5 +124,10 @@ window.VENUES = [
   { id:"kunsthalle-mannheim", name:"Kunsthalle Mannheim", city:"Mannheim", country:"Germany", type:"museum" },
   { id:"gemaldegalerie-dresden", name:"Gemäldegalerie Alte Meister", city:"Dresden", country:"Germany", type:"museum" },
   { id:"brera", name:"Pinacoteca di Brera", city:"Milan", country:"Italy", type:"museum" },
-  { id:"villa-farnesina", name:"Villa Farnesina", city:"Rome", country:"Italy", type:"palace" }
+  { id:"villa-farnesina", name:"Villa Farnesina", city:"Rome", country:"Italy", type:"palace" },
+  { id:"musee-pau", name:"Musée des Beaux-Arts de Pau", city:"Pau", country:"France", type:"museum" },
+  { id:"ny-carlsberg-glyptotek", name:"Ny Carlsberg Glyptotek", city:"Copenhagen", country:"Denmark", type:"museum" },
+  { id:"moderna-museet", name:"Moderna Museet", city:"Stockholm", country:"Sweden", type:"museum" },
+  { id:"russian-museum", name:"State Russian Museum", city:"St Petersburg", country:"Russia", type:"museum" },
+  { id:"glenstone", name:"Glenstone", city:"Potomac", country:"United States", type:"museum" }
 ];

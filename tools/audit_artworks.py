@@ -29,6 +29,8 @@ PINNED = {
     "claude-monet::Water Lilies (Grandes Décorations)": "Claude Monet - The Water Lilies - Setting Sun - Google Art Project.jpg",
     "jan-van-eyck::Man in a Red Turban": "Jan van Eyck - Portrait of a Man (Self Portrait?) 1433.jpg",
     "jacek-malczewski::The Vicious Circle": "Bledne kolo.jpg",
+    "hilma-af-klint::Paintings for the Temple": "Hilma af Klint - Altarpiece No. 1 Group X (13919).jpg",
+    "caravaggio::Judith Beheading Holofernes": "Judith Beheading Holofernes-Caravaggio (c.1598-9).jpg",
 }
 
 def get_json(url):
