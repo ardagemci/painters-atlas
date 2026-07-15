@@ -154,12 +154,21 @@ Object.keys(MN).forEach(function(vid){
   const tag = "museum-note " + vid, n = MN[vid];
   if(!vIds[vid]) errs.push(tag + ": unknown venue id");
   if(!n.hook || n.hook.length > 64) errs.push(tag + ": hook missing or over 64 chars");
-  if(!n.founded) errs.push(tag + ": missing founded");
-  const ew = (n.essay || "").split(/\s+/).filter(Boolean).length;
-  if(ew < 100 || ew > 180) errs.push(tag + ": essay " + ew + " words (100–180)");
+  if(n.essay){                                 /* full note: essay implies founded */
+    if(!n.founded) errs.push(tag + ": has essay but missing founded");
+    const ew = n.essay.split(/\s+/).filter(Boolean).length;
+    if(ew < 100 || ew > 180) errs.push(tag + ": essay " + ew + " words (100–180)");
+  }
   if(n.photo && (!n.photo.src || n.photo.src.indexOf("https://upload.wikimedia.org/wikipedia/commons/") !== 0))
     errs.push(tag + ": photo src must be Commons-hosted");
   if(n.photo && !n.photo.page) errs.push(tag + ": photo missing source page");
+  if(!n.photo) warns.push(tag + ": no building photo (generative cover fallback)");
+});
+// every venue holding catalog works must carry at least a hook
+VEN.forEach(function(v){
+  if(v.id === "private-collection" || v.id === "lost" || v.id === "unknown") return;
+  if(CAT.some(function(w){ return w.museum && w.museum.id === v.id; }) && !MN[v.id])
+    errs.push("venue " + v.id + " holds works but has no museum note (hook required)");
 });
 
 // Tier 1 artist overlay integrity

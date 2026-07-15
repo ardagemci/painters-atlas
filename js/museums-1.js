@@ -112,5 +112,375 @@ window.MUSEUM_NOTES = {
   founded: "1977",
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/L%C3%BCftungsrohre_Place_George_Pompidou_Paris.jpg/960px-L%C3%BCftungsrohre_Place_George_Pompidou_Paris.jpg",
            page:"https://en.wikipedia.org/wiki/Centre_Pompidou" },
-  essay: "President Pompidou wanted Paris back at the centre of modern art; the competition jury picked two unknowns, Renzo Piano and Richard Rogers, who turned the building inside-out — structure, ducts and escalators worn on the facade, color-coded like a diagram: blue for air, green for water, red for people. Paris was scandalized on schedule and converted on schedule. Inside sits Europe's largest modern collection, its abstraction wing anchored by Kandinsky's own estate — Nina's bequest — from the first claimed abstract watercolor to the Bauhaus geometries. The piazza out front, sloped like a beach for fire-eaters and philosophy, may be the building's real masterpiece. Currently the pipes are getting their mid-life overhaul: the museum is closed for a years-long renovation while the collection tours — the inside-out building, briefly turned outside-in." }
+  essay: "President Pompidou wanted Paris back at the centre of modern art; the competition jury picked two unknowns, Renzo Piano and Richard Rogers, who turned the building inside-out — structure, ducts and escalators worn on the facade, color-coded like a diagram: blue for air, green for water, red for people. Paris was scandalized on schedule and converted on schedule. Inside sits Europe's largest modern collection, its abstraction wing anchored by Kandinsky's own estate — Nina's bequest — from the first claimed abstract watercolor to the Bauhaus geometries. The piazza out front, sloped like a beach for fire-eaters and philosophy, may be the building's real masterpiece. Currently the pipes are getting their mid-life overhaul: the museum is closed for a years-long renovation while the collection tours — the inside-out building, briefly turned outside-in." },
+
+/* ——— thin entries: hook + building photo for every holding venue ——— */
+
+"tate-britain": {
+  hook: "Turner's bequest keeps the home fires burning",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Tate_Britain_%285822081512%29_%282%29.jpg/960px-Tate_Britain_%285822081512%29_%282%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Tate_Britain" } },
+
+"mauritshuis": {
+  hook: "A jewel box the size of a townhouse",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mauritshuis_museum_logo.png/960px-Mauritshuis_museum_logo.png",
+           page:"https://en.wikipedia.org/wiki/Mauritshuis" } },
+
+"tretyakov": {
+  hook: "Moscow's merchant gift — Russia, wall to wall",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Moscow_05-2012_TretyakovGallery.jpg/960px-Moscow_05-2012_TretyakovGallery.jpg",
+           page:"https://en.wikipedia.org/wiki/Tretyakov_Gallery" } },
+
+"munch-museum": {
+  hook: "One painter's entire estate, thirteen floors",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/The_new_Munch_Museum_%28white_color_sign%29.jpg/960px-The_new_Munch_Museum_%28white_color_sign%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Munch_Museum" } },
+
+"hermitage": {
+  hook: "An empress's habit that outgrew a palace",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/5174-3._St._Petersburg._Greater_Hermitage.jpg/960px-5174-3._St._Petersburg._Greater_Hermitage.jpg",
+           page:"https://en.wikipedia.org/wiki/Hermitage_Museum" } },
+
+"sistine-chapel": {
+  hook: "The ceiling that redefined ambition",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sistina-interno.jpg/960px-Sistina-interno.jpg",
+           page:"https://en.wikipedia.org/wiki/Sistine_Chapel" } },
+
+"belvedere": {
+  hook: "A prince's summer palace, Vienna's gold vault",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Palacio_Belvedere%2C_Viena%2C_Austria%2C_2020-02-01%2C_DD_93-95_HDR.jpg/960px-Palacio_Belvedere%2C_Viena%2C_Austria%2C_2020-02-01%2C_DD_93-95_HDR.jpg",
+           page:"https://en.wikipedia.org/wiki/Belvedere%2C_Vienna" } },
+
+"galleria-borghese": {
+  hook: "A cardinal's pleasure villa, still showing off",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Galleria_Borghese_-_logo_%28Italy%2C_2022-%29.svg/960px-Galleria_Borghese_-_logo_%28Italy%2C_2022-%29.svg.png",
+           page:"https://en.wikipedia.org/wiki/Galleria_Borghese" } },
+
+"kimbell-art-museum": {
+  hook: "Louis Kahn's silver light over old masters",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Kimbell_Art_Museum_Highsmith.jpg/960px-Kimbell_Art_Museum_Highsmith.jpg",
+           page:"https://en.wikipedia.org/wiki/Kimbell_Art_Museum" } },
+
+"isabella-stewart-gardner": {
+  hook: "A palazzo in Boston; two frames still empty",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/IsabellaStewartGardenerMuseumMainLobby.jpg/960px-IsabellaStewartGardenerMuseumMainLobby.jpg",
+           page:"https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum" } },
+
+"courtauld-gallery": {
+  hook: "A bank of Impressionism in Somerset House",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Coultauld_Galleries.jpg/960px-Coultauld_Galleries.jpg",
+           page:"https://en.wikipedia.org/wiki/Courtauld_Gallery" } },
+
+"getty": {
+  hook: "Oil money on a hilltop, open to all",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Aerial_Getty_Museum.jpg/960px-Aerial_Getty_Museum.jpg",
+           page:"https://en.wikipedia.org/wiki/Getty_Center" } },
+
+"philadelphia-museum-of-art": {
+  hook: "The temple on the hill with the famous steps",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Philadelphia_Museum_of_Art_2005.jpg/960px-Philadelphia_Museum_of_Art_2005.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Philadelphia_Museum_of_Art_2005.jpg" } },
+
+"sfmoma": {
+  hook: "The West Coast's modern engine",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2017_SFMOMA_from_Yerba_Buena_Gardens.jpg/960px-2017_SFMOMA_from_Yerba_Buena_Gardens.jpg",
+           page:"https://en.wikipedia.org/wiki/San_Francisco_Museum_of_Modern_Art" } },
+
+"reina-sofia": {
+  hook: "Guernica's fortress",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_logo.svg/960px-Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_logo.svg.png",
+           page:"https://en.wikipedia.org/wiki/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa" } },
+
+"museo-dolores-olmedo": {
+  hook: "Frida and Diego, among the peacocks",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Museo_Dolores_Olmedo%2C_Xochimilco%2C_Ciudad_de_M%C3%A9xico_-_Entrada.jpg/960px-Museo_Dolores_Olmedo%2C_Xochimilco%2C_Ciudad_de_M%C3%A9xico_-_Entrada.jpg",
+           page:"https://en.wikipedia.org/wiki/Museo_Dolores_Olmedo" } },
+
+"buffalo-akg": {
+  hook: "America's oldest taste for the newest art",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/2024.10.10_AKGCampusExteriorDronePhotos-1001.jpg/960px-2024.10.10_AKGCampusExteriorDronePhotos-1001.jpg",
+           page:"https://en.wikipedia.org/wiki/Buffalo_AKG_Art_Museum" } },
+
+"san-luigi-dei-francesi": {
+  hook: "Drop a coin in the box; Caravaggio lights up",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg/960px-%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg",
+           page:"https://en.wikipedia.org/wiki/San_Luigi_dei_Francesi" } },
+
+"musee-marmottan": {
+  hook: "Where Impression, Sunrise lives up to its name",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Mus%C3%A9e_Marmottan_Monet_logo.svg/960px-Mus%C3%A9e_Marmottan_Monet_logo.svg.png",
+           page:"https://en.wikipedia.org/wiki/Mus%C3%A9e_Marmottan_Monet" } },
+
+"orangerie": {
+  hook: "Two oval rooms, one endless pond",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG/960px-Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG",
+           page:"https://en.wikipedia.org/wiki/Mus%C3%A9e_de_l'Orangerie" } },
+
+"kode-bergen": {
+  hook: "Norway's west-coast salon",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/BERGEN_Norway_Lille_Lungeg%C3%A5rdsvannet_KODE_Art_Museum_Kunsthall_Grieghallen_Foreningsgaten_Nyg%C3%A5rdsg._etc_View_from_Mount_Floyen_2019-08-28_by_Forbes_Johnston_Flickr_Some_rights_reserved.jpg/960px-thumbnail.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:BERGEN_Norway_Lille_Lungeg%C3%A5rdsvannet_KODE_Art_Museum_Kunsthall_Grieghallen_Foreningsgaten_Nyg%C3%A5rdsg._etc_View_from_Mount_Floyen_2019-08-28_by_Forbes_Johnston_Flickr_Some_rights_reserved.jpg" } },
+
+"oslo-university-aula": {
+  hook: "Munch's sunrise over the lecterns" },
+
+"palazzo-barberini": {
+  hook: "Baroque Rome's family palace, now everyone's",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Palazzo_Barberini_-_esterno.jpg/960px-Palazzo_Barberini_-_esterno.jpg",
+           page:"https://en.wikipedia.org/wiki/Palazzo_Barberini" } },
+
+"vatican-museums": {
+  hook: "The popes' collection, nine miles of it",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Musei_vaticani_Coat_of_Arms.svg/960px-Musei_vaticani_Coat_of_Arms.svg.png",
+           page:"https://en.wikipedia.org/wiki/Vatican_Museums" } },
+
+"pio-monte-della-misericordia": {
+  hook: "Mercy, on permanent view since 1607",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Logo_Pio_Monte_della_Misericordia_Napoli.svg/960px-Logo_Pio_Monte_della_Misericordia_Napoli.svg.png",
+           page:"https://en.wikipedia.org/wiki/Pio_Monte_della_Misericordia" } },
+
+"st-johns-co-cathedral": {
+  hook: "Caravaggio's only signature lives here",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/St_John%27s_Co-Cathedral%2C_Valletta_001.jpg/960px-St_John%27s_Co-Cathedral%2C_Valletta_001.jpg",
+           page:"https://en.wikipedia.org/wiki/St_John's_Co-Cathedral" } },
+
+"kenwood-house": {
+  hook: "A country house casually holding a late Rembrandt",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Kenwood_House_2.jpg/960px-Kenwood_House_2.jpg",
+           page:"https://en.wikipedia.org/wiki/Kenwood_House" } },
+
+"lazaro-galdiano": {
+  hook: "A collector's mansion, Goya's witches upstairs",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Museo_L%C3%A1zaro_Galdiano_%28Madrid%29_02.jpg/960px-Museo_L%C3%A1zaro_Galdiano_%28Madrid%29_02.jpg",
+           page:"https://en.wikipedia.org/wiki/L%C3%A1zaro_Galdiano_Museum" } },
+
+"minneapolis-institute-of-art": {
+  hook: "Midwestern marble, free since day one",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Mia_minneapolis_logo.svg/960px-Mia_minneapolis_logo.svg.png",
+           page:"https://en.wikipedia.org/wiki/Minneapolis_Institute_of_Art" } },
+
+"kroller-muller": {
+  hook: "Van Goghs in a national forest",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Entrance_Kr%C3%B6ller-M%C3%BCller_Museum.JPG/960px-Entrance_Kr%C3%B6ller-M%C3%BCller_Museum.JPG",
+           page:"https://en.wikipedia.org/wiki/Kr%C3%B6ller-M%C3%BCller_Museum" } },
+
+"yale-university-art-gallery": {
+  hook: "The campus museum that outgrew the campus",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Yale_University_Art_Gallery_exterior.jpg/960px-Yale_University_Art_Gallery_exterior.jpg",
+           page:"https://en.wikipedia.org/wiki/Yale_University_Art_Gallery" } },
+
+"secession-vienna": {
+  hook: "To every age its art — under the golden cabbage",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Secession_2016%2C_Vienna.jpg/960px-Secession_2016%2C_Vienna.jpg",
+           page:"https://en.wikipedia.org/wiki/Secession_Building" } },
+
+"wien-museum": {
+  hook: "Vienna, explained by Vienna",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Wien_Museum_Neu.jpg/960px-Wien_Museum_Neu.jpg",
+           page:"https://en.wikipedia.org/wiki/Vienna_Museum" } },
+
+"mak-vienna": {
+  hook: "Where ornament was never a crime",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Wien_01_Museum_f%C3%BCr_angewandte_Kunst_a.jpg/960px-Wien_01_Museum_f%C3%BCr_angewandte_Kunst_a.jpg",
+           page:"https://en.wikipedia.org/wiki/Museum_of_Applied_Arts%2C_Vienna" } },
+
+"neue-galerie": {
+  hook: "Vienna 1900, transplanted to Fifth Avenue",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Neue_Galerie_New_York_Logo.jpg/960px-Neue_Galerie_New_York_Logo.jpg",
+           page:"https://en.wikipedia.org/wiki/Neue_Galerie_New_York" } },
+
+"leopold-museum": {
+  hook: "One doctor's Schiele obsession, institutionalized",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Wien_07_Leopold_Museum_a.jpg/960px-Wien_07_Leopold_Museum_a.jpg",
+           page:"https://en.wikipedia.org/wiki/Leopold_Museum" } },
+
+"k20-dusseldorf": {
+  hook: "The Rhineland's black box for modern paint",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bild_K20_aktuell.jpg/960px-Bild_K20_aktuell.jpg",
+           page:"https://en.wikipedia.org/wiki/Kunstsammlung_Nordrhein-Westfalen" } },
+
+"kunsthistorisches": {
+  hook: "The Habsburgs' trophy hall",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg/960px-AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:AT_13763_Exterior_of_the_Kunsthistorisches_Museum,_Vienna-4.jpg" } },
+
+"stadel": {
+  hook: "A merchant's Frankfurt, from Holbein to now",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/St%C3%A4del-Museum.svg/960px-St%C3%A4del-Museum.svg.png",
+           page:"https://en.wikipedia.org/wiki/St%C3%A4del" } },
+
+"scottish-national-gallery": {
+  hook: "Edinburgh's neoclassical treasure chest",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Scottish_National_Gallery_-_aerial_-_2025-04-19_01.jpg/960px-Scottish_National_Gallery_-_aerial_-_2025-04-19_01.jpg",
+           page:"https://en.wikipedia.org/wiki/Scottish_National_Gallery" } },
+
+"doria-pamphilj": {
+  hook: "A pope stares down his family's corridor",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Palazzo_Doria_Pamphilj.jpg/960px-Palazzo_Doria_Pamphilj.jpg",
+           page:"https://en.wikipedia.org/wiki/Galleria_Doria_Pamphilj" } },
+
+"mfa-boston": {
+  hook: "Boston's universal survey, Turner's storm included",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Museum_of_Fine_Arts%2C_Boston_%2854954248311%29.jpg/960px-Museum_of_Fine_Arts%2C_Boston_%2854954248311%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Museum_of_Fine_Arts%2C_Boston" } },
+
+"schloss-weissenstein": {
+  hook: "A baroque palace hiding a teenage Artemisia",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Aerial_image_of_the_Schloss_Wei%C3%9Fenstein.jpg/960px-Aerial_image_of_the_Schloss_Wei%C3%9Fenstein.jpg",
+           page:"https://en.wikipedia.org/wiki/Schloss_Wei%C3%9Fenstein" } },
+
+"capodimonte": {
+  hook: "A Bourbon hunting lodge stuffed with Caravaggisti",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ReggiaCapodimonte.JPG/960px-ReggiaCapodimonte.JPG",
+           page:"https://en.wikipedia.org/wiki/Museo_di_Capodimonte" } },
+
+"detroit-institute-of-arts": {
+  hook: "The museum a city refused to sell",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Detroit_Institute_of_Arts_August_2011_01.jpg/960px-Detroit_Institute_of_Arts_August_2011_01.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Detroit_Institute_of_Arts_August_2011_01.jpg" } },
+
+"czartoryski": {
+  hook: "A Polish princess's Leonardo, against all odds",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Czartoryski_Palace%2C_17-19_%C5%9Bwi%C4%99tego_Jana_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Czartoryski_Palace%2C_17-19_%C5%9Bwi%C4%99tego_Jana_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg",
+           page:"https://en.wikipedia.org/wiki/Czartoryski_Museum" } },
+
+"accademia-venice": {
+  hook: "Venice keeps its own receipts",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Accademia_%28Venice%29.jpg/960px-Accademia_%28Venice%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Gallerie_dell'Accademia" } },
+
+"santa-maria-delle-grazie": {
+  hook: "A refectory wall the world queues for",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Santa_Maria_delle_Grazie_Milan_2013.jpg/960px-Santa_Maria_delle_Grazie_Milan_2013.jpg",
+           page:"https://en.wikipedia.org/wiki/Santa_Maria_delle_Grazie%2C_Milan" } },
+
+"st-peters-basilica": {
+  hook: "The largest church, the tenderest marble",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg/960px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+           page:"https://en.wikipedia.org/wiki/St._Peter's_Basilica" } },
+
+"accademia-florence": {
+  hook: "The hallway where David waits",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/David_at_the_Galleria_dell%27Accademia_%2861351%29.jpg/960px-David_at_the_Galleria_dell%27Accademia_%2861351%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Galleria_dell'Accademia" } },
+
+"mnaa-lisbon": {
+  hook: "Portugal's green-shuttered treasury",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Museu_Nacional_de_Arte_Antiga_logo.png/960px-Museu_Nacional_de_Arte_Antiga_logo.png",
+           page:"https://en.wikipedia.org/wiki/National_Museum_of_Ancient_Art" } },
+
+"st-bavo-cathedral": {
+  hook: "Home of the most-stolen altarpiece on earth",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg/960px-Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg",
+           page:"https://en.wikipedia.org/wiki/Saint_Bavo's_Cathedral%2C_Ghent" } },
+
+"groeningemuseum": {
+  hook: "Bruges' painters, still in Bruges",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Brugge_-_Dijver_12_-Voormalig_poortgebouw_van_de_proosdij_van_Onze-Lieve-Vrouw%2C_heden_ingang_van_het_Groeningemuseum_-_82339.jpg/960px-Brugge_-_Dijver_12_-Voormalig_poortgebouw_van_de_proosdij_van_Onze-Lieve-Vrouw%2C_heden_ingang_van_het_Groeningemuseum_-_82339.jpg",
+           page:"https://en.wikipedia.org/wiki/Groeningemuseum" } },
+
+"gemaldegalerie-berlin": {
+  hook: "Old masters, hung with German rigor",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Berlin_Kulturforum_2002a.jpg/960px-Berlin_Kulturforum_2002a.jpg",
+           page:"https://en.wikipedia.org/wiki/Gem%C3%A4ldegalerie%2C_Berlin" } },
+
+"masp": {
+  hook: "Paintings on glass easels above São Paulo",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Novo_MASP.jpg/960px-Novo_MASP.jpg",
+           page:"https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Museum_of_Art" } },
+
+"baltimore-museum-of-art": {
+  hook: "The Cone sisters' Matisse hoard",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Baltimore_Museum_of_Art_entrance.jpg/960px-Baltimore_Museum_of_Art_entrance.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Baltimore_Museum_of_Art_entrance.jpg" } },
+
+"royal-collection": {
+  hook: "The king's pictures, in a working castle",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Windsor_Castle_at_Sunset_-_Nov_2006.jpg/960px-Windsor_Castle_at_Sunset_-_Nov_2006.jpg",
+           page:"https://en.wikipedia.org/wiki/Windsor_Castle" } },
+
+"barnes-foundation": {
+  hook: "One stubborn doctor's hang, preserved verbatim",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Barnes_Foundation_%2853574516274%29.jpg/960px-Barnes_Foundation_%2853574516274%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Barnes_Foundation" } },
+
+"pushkin-museum": {
+  hook: "Moscow's window on the West",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Gmii.jpg/960px-Gmii.jpg",
+           page:"https://en.wikipedia.org/wiki/Pushkin_Museum" } },
+
+"musee-picasso-paris": {
+  hook: "Paid in paintings: the estate-tax museum",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/H%C3%B4tel_Sal%C3%A9.JPG/960px-H%C3%B4tel_Sal%C3%A9.JPG",
+           page:"https://en.wikipedia.org/wiki/Mus%C3%A9e_Picasso_Paris" } },
+
+"museu-picasso-barcelona": {
+  hook: "The teenage Picasso, kept by his city",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Museu_Picasso_Barcelona.jpg/960px-Museu_Picasso_Barcelona.jpg",
+           page:"https://en.wikipedia.org/wiki/Museu_Picasso" } },
+
+"thyssen-bornemisza": {
+  hook: "Two generations of one family's eye",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Site_of_the_Retiro_and_the_Prado_in_Madrid_49_%2829684554308%29.jpg/960px-Site_of_the_Retiro_and_the_Prado_in_Madrid_49_%2829684554308%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Thyssen-Bornemisza_Museum" } },
+
+"kelvingrove": {
+  hook: "Glasgow's red sandstone cabinet of everything",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Kelvingrove_Art_Gallery_and_Museum_-_aerial_-_2025-04-17.jpg/960px-Kelvingrove_Art_Gallery_and_Museum_-_aerial_-_2025-04-17.jpg",
+           page:"https://en.wikipedia.org/wiki/Kelvingrove_Art_Gallery_and_Museum" } },
+
+"dali-museum-florida": {
+  hook: "Dalí under a geodesic glass eye, in Florida",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/St._Pete_Dali_Museum03.jpg/960px-St._Pete_Dali_Museum03.jpg",
+           page:"https://en.wikipedia.org/wiki/Salvador_Dal%C3%AD_Museum" } },
+
+"museo-arte-moderno-mexico": {
+  hook: "Mexican modernism under Chapultepec trees",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Museo_de_Arte_Moderno_DSC0023_%2835557149325%29.jpg/960px-Museo_de_Arte_Moderno_DSC0023_%2835557149325%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Museo_de_Arte_Moderno" } },
+
+"harry-ransom-center": {
+  hook: "An archive that happens to own Frida",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Harry_ransom_center_2012.jpg/960px-Harry_ransom_center_2012.jpg",
+           page:"https://en.wikipedia.org/wiki/Harry_Ransom_Center" } },
+
+"museo-frida-kahlo": {
+  hook: "The blue house she was born and died in",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Museo_Frida_Kahlo.JPG/960px-Museo_Frida_Kahlo.JPG",
+           page:"https://en.wikipedia.org/wiki/Frida_Kahlo_Museum" } },
+
+"stanley-museum-iowa": {
+  hook: "The university that owns a Pollock mural",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_Drive%2C_Iowa_City%2C_IA.jpg/960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_Drive%2C_Iowa_City%2C_IA.jpg",
+           page:"https://en.wikipedia.org/wiki/University_of_Iowa_Stanley_Museum_of_Art" } },
+
+"dallas-museum-art": {
+  hook: "Texas scale, encyclopedic appetite",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dallas_Museum_of_Art_logo.svg/960px-Dallas_Museum_of_Art_logo.svg.png",
+           page:"https://en.wikipedia.org/wiki/Dallas_Museum_of_Art" } },
+
+"national-gallery-australia": {
+  hook: "Blue Poles, vindicated",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/National_Gallery_from_SW%2C_Canberra_Australia.jpg/960px-National_Gallery_from_SW%2C_Canberra_Australia.jpg",
+           page:"https://en.wikipedia.org/wiki/National_Gallery_of_Australia" } },
+
+"moca-la": {
+  hook: "LA's contemporary conscience",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Moca-exterior.jpg/960px-Moca-exterior.jpg",
+           page:"https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles" } },
+
+"whitney": {
+  hook: "American art, argued about since 1930",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Gansevoort_Whitney_April_2013_jeh.jpg/960px-Gansevoort_Whitney_April_2013_jeh.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Gansevoort_Whitney_April_2013_jeh.jpg" } },
+
+"rothko-chapel": {
+  hook: "Fourteen dark paintings, one octagon of silence",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rothko_Chapel_-_1_August_2010.jpg/960px-Rothko_Chapel_-_1_August_2010.jpg",
+           page:"https://en.wikipedia.org/wiki/Rothko_Chapel" } },
+
+"museum-ludwig": {
+  hook: "Chocolate money, pop art, Cologne",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Museum_Ludwig_002.jpg/960px-Museum_Ludwig_002.jpg",
+           page:"https://en.wikipedia.org/wiki/Museum_Ludwig" } }
 };

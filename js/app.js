@@ -1258,13 +1258,11 @@ function museumCard(v){
   return `<article class="card list-card" data-href="#/museum/${v.id}">
     <div class="card-art">${note && note.photo
       ? `<img loading="lazy" src="${note.photo.src}" alt="${esc(v.name)}">`
-      : cw
-      ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(v.name)}">`
       : (fa ? canvasTag(fa.style, fa.palette, v.id) : "")}</div>
     <div class="card-body">
       <div class="lc-kicker">${esc(v.city)} · ${works.length} work${works.length === 1 ? "" : "s"}</div>
       <h3><a href="#/museum/${v.id}">${esc(v.name)}</a></h3>
-      ${note ? `<div class="card-tagline">${esc(note.hook)}</div>` : ""}
+      ${note && note.hook ? `<div class="card-tagline">${esc(note.hook)}</div>` : ""}
     </div>
   </article>`;
 }
@@ -1293,9 +1291,9 @@ function viewMuseum(id){
     (o.city === v.city || o.country === v.country)).slice(0, 6);
   return `
   <div class="mu-hero">
-    ${note && note.photo
-      ? `<div class="mu-photo"><img src="${note.photo.src}" alt="${esc(v.name)}"></div>`
-      : `<div class="mu-collage c${collage.length}">${collage.map(w => `<img loading="lazy" src="${w.image.src}" alt="">`).join("")}</div>`}
+    ${collage.length
+      ? `<div class="mu-collage c${collage.length}">${collage.map(w => `<img loading="lazy" src="${w.image.src}" alt="">`).join("")}</div>`
+      : note && note.photo ? `<div class="mu-photo"><img src="${note.photo.src}" alt="${esc(v.name)}"></div>` : ""}
     <div class="mu-shade"></div>
     <div class="mu-hero-body">
       ${crumbs([["Atlas",""],["Museums","museums"],[v.name]])}
@@ -1304,7 +1302,7 @@ function viewMuseum(id){
       ${note ? `<div class="mu-hook">${esc(note.hook)}</div>` : ""}
     </div>
   </div>
-  ${note ? `<div class="mu-essay">${note.essay.split("\n\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
+  ${note && note.essay ? `<div class="mu-essay">${note.essay.split("\n\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
   <div class="stats-row">
     <div class="stat"><div class="num">${works.length}</div><div class="lbl">Works in the atlas</div></div>
     <div class="stat"><div class="num">${artists.length}</div><div class="lbl">Artists on these walls</div></div>
