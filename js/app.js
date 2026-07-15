@@ -20,6 +20,11 @@ const LISTS = window.EDITORIAL_LISTS || [];
 const Lsx = byId(LISTS);
 const listsByWork = {};
 LISTS.forEach(l => l.works.forEach(e => (listsByWork[e.id] = listsByWork[e.id] || []).push(l)));
+const VEN = window.VENUES || [];
+const MNOTES = window.MUSEUM_NOTES || {};
+const VENUE_SENTINELS = { "private-collection":1, "lost":1, "unknown":1 };
+const catByVenue = {};
+CAT.forEach(w => { if(w.museum && w.museum.id) (catByVenue[w.museum.id] = catByVenue[w.museum.id] || []).push(w); });
 
 const movChildren = id => M.filter(m => m.parent === id);
 const tecChildren = id => T.filter(t => t.parent === id);
@@ -1244,6 +1249,80 @@ function dailyHome(daily){
   </section>`;
 }
 
+/* ---------- museums ---------- */
+function museumCard(v){
+  const works = catByVenue[v.id] || [];
+  const cw = works.find(w => w.image && w.image.src && w.image.status === "pd");
+  const fa = works[0] && Ax[works[0].artistId];
+  const note = MNOTES[v.id];
+  return `<article class="card list-card" data-href="#/museum/${v.id}">
+    <div class="card-art">${cw
+      ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(v.name)}">`
+      : (fa ? canvasTag(fa.style, fa.palette, v.id) : "")}</div>
+    <div class="card-body">
+      <div class="lc-kicker">${esc(v.city)} · ${works.length} work${works.length === 1 ? "" : "s"}</div>
+      <h3><a href="#/museum/${v.id}">${esc(v.name)}</a></h3>
+      ${note ? `<div class="card-tagline">${esc(note.hook)}</div>` : ""}
+    </div>
+  </article>`;
+}
+
+function viewMuseums(){
+  document.title = "Museums — Pigment";
+  const held = VEN.filter(v => !VENUE_SENTINELS[v.id] && (catByVenue[v.id] || []).length)
+    .sort((a, b) => (catByVenue[b.id] || []).length - (catByVenue[a.id] || []).length);
+  return `
+  <div class="page-head">
+    <div class="page-kicker">The buildings</div>
+    <h1 class="display">Museums</h1>
+    <p class="page-lede">Where the atlas hangs in real life. ${held.length} museums, churches and palaces hold the works catalogued so far — each with its own walls, and the great ones with their own story.</p>
+  </div>
+  <div class="cards wide">${held.map(museumCard).join("")}</div>`;
+}
+
+function viewMuseum(id){
+  const v = Vx[id]; if(!v || VENUE_SENTINELS[id]) return view404();
+  document.title = v.name + " — Pigment";
+  const works = (catByVenue[id] || []).slice().sort((x, y) => x.year.sort - y.year.sort);
+  const note = MNOTES[id];
+  const artists = [...new Set(works.map(w => w.artistId))].map(aid => Ax[aid]).filter(Boolean);
+  const collage = works.filter(w => w.image && w.image.src && w.image.status === "pd").slice(0, 6);
+  const kindred = VEN.filter(o => o.id !== id && !VENUE_SENTINELS[o.id] && (catByVenue[o.id] || []).length &&
+    (o.city === v.city || o.country === v.country)).slice(0, 6);
+  return `
+  <div class="mu-hero">
+    <div class="mu-collage c${collage.length}">${collage.map(w => `<img loading="lazy" src="${w.image.src}" alt="">`).join("")}</div>
+    <div class="mu-shade"></div>
+    <div class="mu-hero-body">
+      ${crumbs([["Atlas",""],["Museums","museums"],[v.name]])}
+      <h1 class="display">${esc(v.name)}</h1>
+      <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}</div>
+      ${note ? `<div class="mu-hook">${esc(note.hook)}</div>` : ""}
+    </div>
+  </div>
+  ${note ? `<div class="mu-essay">${note.essay.split("\n\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
+  <div class="stats-row">
+    <div class="stat"><div class="num">${works.length}</div><div class="lbl">Works in the atlas</div></div>
+    <div class="stat"><div class="num">${artists.length}</div><div class="lbl">Artists on these walls</div></div>
+    ${note && note.founded ? `<div class="stat"><div class="num">${esc(note.founded)}</div><div class="lbl">Founded</div></div>` : ""}
+  </div>
+  <section>
+    <h2 class="sec-title">In the collection <span class="count">every work opens its own page</span></h2>
+    <div class="cards">${works.map(artworkCard).join("")}</div>
+  </section>
+  ${artists.length ? `<section>
+    <h2 class="sec-title">Artists on these walls</h2>
+    <div class="mini-cards mu-artists">${artists.map(p => {
+      const n = works.filter(w => w.artistId === p.id).length;
+      return `<a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id)}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${n} ${n === 1 ? "work" : "works"} here</span></span></a>`;
+    }).join("")}</div>
+  </section>` : ""}
+  ${kindred.length ? `<section>
+    <h2 class="sec-title">Kindred walls <span class="count">same city or country</span></h2>
+    <div class="chips">${kindred.map(o => `<a class="chip m" href="#/museum/${o.id}">${esc(o.name)} · ${esc(o.city)}</a>`).join("")}</div>
+  </section>` : ""}`;
+}
+
 /* ---------- editorial lists ---------- */
 function listCard(l){
   const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
@@ -1449,7 +1528,8 @@ function viewDaily(){
       ${(w.techniques || []).slice(0, 2).map(t => Tx[t] ? chip("t", "technique/" + t, Tx[t].name) : "").join("")}
       ${w.nation && Nx[w.nation] ? chip("n", "nation/" + w.nation, Nx[w.nation].flag + " " + Nx[w.nation].name) : ""}
     </div>
-    ${venue ? `<p class="aw-provenance">On view at ${esc(venue.name)}${venue.city ? `, ${esc(venue.city)}` : ""} · <a href="${w.image.page}" target="_blank" rel="noopener">public-domain image source</a></p>` : ""}
+    ${venue ? `<p class="aw-provenance">On view at ${venue.id && Vx[venue.id] && !VENUE_SENTINELS[venue.id]
+        ? `<a href="#/museum/${venue.id}">${esc(venue.name)}</a>` : esc(venue.name)}${venue.city ? `, ${esc(venue.city)}` : ""} · <a href="${w.image.page}" target="_blank" rel="noopener">public-domain image source</a></p>` : ""}
   </section>`;
 }
 
@@ -1664,7 +1744,8 @@ function viewArtwork(id){
         ? `<h2>The picture</h2><p>${esc(w.description)}</p>
            <h2>What to notice</h2><ul class="facts">${w.notice.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`
         : `<p class="aw-empty">Not written about yet — the atlas is still being painted. The image, meanwhile, speaks for itself.</p>`}
-      <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? esc(venue.name) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
+      <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? (venue.id && Vx[venue.id] && !VENUE_SENTINELS[venue.id]
+          ? `<a href="#/museum/${venue.id}">${esc(venue.name)}</a>` : esc(venue.name)) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
         ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>`
         : held ? "original image omitted under copyright" : "image not yet available"}</p>
       ${(listsByWork[w.id] || []).length ? `<div class="aw-lists"><span class="chip-label">In lists:</span> ${listsByWork[w.id].map(l =>
@@ -1874,6 +1955,8 @@ function route(){
     case "daily":       html = viewDaily(); break;
     case "lists":       html = viewLists(); break;
     case "list":        html = viewList(id); break;
+    case "museums":     html = viewMuseums(); break;
+    case "museum":      html = viewMuseum(id); break;
     case "artist":      html = viewArtist(id); break;
     case "artwork":     html = viewArtwork(id); break;
     case "movements":   html = taxIndexView(M, "movement", "Movements", "Schools & revolutions",
@@ -1903,7 +1986,7 @@ function route(){
 }
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", lists:"lists", list:"lists", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
   document.querySelectorAll("#main-nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.nav === map[page]));
@@ -2032,6 +2115,8 @@ const INDEX = [
   ...A.map(a => ({ type:"Artists",    href:"artist/"+a.id,    name:a.name, meta:a.years })),
   ...CAT.map(w => ({ type:"Artworks", href:"artwork/"+w.id,  name:w.title, meta:Ax[w.artistId] ? Ax[w.artistId].name : "" })),
   ...LISTS.map(l => ({ type:"Lists",  href:"list/"+l.id,     name:l.title, meta:l.works.length + " works" })),
+  ...VEN.filter(v => !VENUE_SENTINELS[v.id] && (catByVenue[v.id] || []).length)
+        .map(v => ({ type:"Museums", href:"museum/"+v.id,    name:v.name, meta:v.city })),
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),

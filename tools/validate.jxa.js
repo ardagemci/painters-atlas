@@ -147,6 +147,18 @@ LST.forEach(function(l){
 if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
   warns.push("fewer than 3 featured lists for the homepage");
 
+// museum notes integrity
+try { eval(read(base + "js/museums-1.js")); } catch(e){ out.push("museums-1.js ERROR: " + e.message); }
+const MN = window.MUSEUM_NOTES || {};
+Object.keys(MN).forEach(function(vid){
+  const tag = "museum-note " + vid, n = MN[vid];
+  if(!vIds[vid]) errs.push(tag + ": unknown venue id");
+  if(!n.hook || n.hook.length > 64) errs.push(tag + ": hook missing or over 64 chars");
+  if(!n.founded) errs.push(tag + ": missing founded");
+  const ew = (n.essay || "").split(/\s+/).filter(Boolean).length;
+  if(ew < 100 || ew > 180) errs.push(tag + ": essay " + ew + " words (100–180)");
+});
+
 // Tier 1 artist overlay integrity
 try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
 const T1 = window.TIER1 || {};
@@ -207,6 +219,7 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", influence edges: " + (window.INFLUENCES || []).length +
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
   ", daily pool: " + DAILY.length +
+  ", museum notes: " + Object.keys(window.MUSEUM_NOTES || {}).length +
   ", lists: " + (window.EDITORIAL_LISTS || []).length +
   " (featured: " + (window.EDITORIAL_LISTS || []).filter(function(l){ return l.featured; }).length + ")" +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +

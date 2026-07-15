@@ -876,3 +876,26 @@ section{margin:46px 0}
   .le-adm{grid-column:3;justify-self:start}
   .le-art{width:92px;height:74px}
 }
+
+/* ---------- museum pages ---------- */
+.mu-hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--panel);margin-bottom:30px;min-height:340px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
+.mu-collage{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:2px}
+.mu-collage.c1,.mu-collage.c2{grid-template-columns:repeat(2,1fr)}
+.mu-collage.c4{grid-template-columns:repeat(2,1fr)}
+.mu-collage img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.mu-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.18),rgba(var(--bg-rgb),.94) 80%)}
+.mu-hero-body{position:relative;padding:34px 38px 26px;width:100%}
+.mu-hero-body h1{margin-bottom:.15em}
+.mu-sub{color:var(--muted);font-size:.95rem;letter-spacing:.04em}
+.mu-hook{font-family:var(--serif);font-style:italic;color:var(--gold2);font-size:1.18rem;margin-top:10px}
+.mu-essay{max-width:74ch;margin:0 0 14px;font-size:1.05rem;line-height:1.85;color:var(--body-ink)}
+.mu-essay p:first-child::first-letter{
+  font-family:var(--serif);font-size:3.3em;float:left;line-height:.82;
+  padding:5px 10px 0 0;color:var(--gold);font-weight:600;
+}
+.mu-artists{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+@media (max-width:700px){
+  .mu-hero{min-height:250px}
+  .mu-hero-body{padding:22px 18px 16px}
+  .mu-collage{grid-template-columns:repeat(2,1fr)}
+}
