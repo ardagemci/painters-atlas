@@ -482,5 +482,42 @@ window.MUSEUM_NOTES = {
 "museum-ludwig": {
   hook: "Chocolate money, pop art, Cologne",
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Museum_Ludwig_002.jpg/960px-Museum_Ludwig_002.jpg",
-           page:"https://en.wikipedia.org/wiki/Museum_Ludwig" } }
+           page:"https://en.wikipedia.org/wiki/Museum_Ludwig" } },
+
+"albertina": {
+  hook: "Dürer's hare lives here, resting in the dark",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wien_-_Albertina.JPG/960px-Wien_-_Albertina.JPG",
+           page:"https://en.wikipedia.org/wiki/Albertina" } },
+"royal-museums-brussels": {
+  hook: "Icarus falls; everyone looks away",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Mus%C3%A9es_Royaux_des_Beaux-Arts_Belgique_1101.jpg/960px-Mus%C3%A9es_Royaux_des_Beaux-Arts_Belgique_1101.jpg",
+           page:"https://en.wikipedia.org/wiki/Royal_Museums_of_Fine_Arts_of_Belgium" } },
+"santo-tome": {
+  hook: "One chapel, one painting, one line out the door",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Iglesia_de_Santo_Tom%C3%A9_%28Toledo%29._Torre.jpg/960px-Iglesia_de_Santo_Tom%C3%A9_%28Toledo%29._Torre.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Tom%C3%A9_(Toledo)._Torre.jpg" } },
+"toledo-cathedral": {
+  hook: "Spain's Gothic heart, El Greco in the sacristy",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/FP_Toledo_Cathedral_2025_-_West_fa%C3%A7ade.jpg/960px-FP_Toledo_Cathedral_2025_-_West_fa%C3%A7ade.jpg",
+           page:"https://en.wikipedia.org/wiki/Toledo_Cathedral" } },
+"kunsthalle-mannheim": {
+  hook: "Manet's firing squad found asylum here",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kunsthalle_Mannheim_Eingangsportal.jpg/960px-Kunsthalle_Mannheim_Eingangsportal.jpg",
+           page:"https://en.wikipedia.org/wiki/Kunsthalle_Mannheim" } },
+"gemaldegalerie-dresden": {
+  hook: "The Zwinger's old masters, cherubs included",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Dresden-Zwinger-Courtyard.11.JPG/960px-Dresden-Zwinger-Courtyard.11.JPG",
+           page:"https://en.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister" } },
+"brera": {
+  hook: "Milan's academy with the Marriage upstairs",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Milan_-_Pinacoth%C3%A8que_de_Brera_-_Cour_int%C3%A9rieure.jpg/960px-Milan_-_Pinacoth%C3%A8que_de_Brera_-_Cour_int%C3%A9rieure.jpg",
+           page:"https://en.wikipedia.org/wiki/Pinacoteca_di_Brera" } },
+"villa-farnesina": {
+  hook: "A banker's pleasure villa, frescoed by Raphael",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/La_villa_Farnesina_%28Rome%29_%2834029492720%29.jpg/960px-La_villa_Farnesina_%28Rome%29_%2834029492720%29.jpg",
+           page:"https://en.wikipedia.org/wiki/Villa_Farnesina" } },
+"alte-pinakothek": {
+  hook: "Munich's old masters, under Ludwig's long roof",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alte_Pinakothek_2009.jpg/960px-Alte_Pinakothek_2009.jpg",
+           page:"https://en.wikipedia.org/wiki/Alte_Pinakothek" } }
 };

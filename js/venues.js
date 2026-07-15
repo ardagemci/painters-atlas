@@ -116,5 +116,13 @@ window.VENUES = [
   { id:"nmwa-tokyo", name:"National Museum of Western Art", city:"Tokyo", country:"Japan", type:"museum" },
   { id:"ngv", name:"National Gallery of Victoria", city:"Melbourne", country:"Australia", type:"museum" },
   { id:"national-gallery-australia", name:"National Gallery of Australia", city:"Canberra", country:"Australia", type:"museum" },
-  { id:"masp", name:"São Paulo Museum of Art", city:"São Paulo", country:"Brazil", type:"museum" }
+  { id:"masp", name:"São Paulo Museum of Art", city:"São Paulo", country:"Brazil", type:"museum" },
+  { id:"albertina", name:"Albertina", city:"Vienna", country:"Austria", type:"museum" },
+  { id:"royal-museums-brussels", name:"Royal Museums of Fine Arts of Belgium", city:"Brussels", country:"Belgium", type:"museum" },
+  { id:"santo-tome", name:"Iglesia de Santo Tomé", city:"Toledo", country:"Spain", type:"church" },
+  { id:"toledo-cathedral", name:"Toledo Cathedral", city:"Toledo", country:"Spain", type:"church" },
+  { id:"kunsthalle-mannheim", name:"Kunsthalle Mannheim", city:"Mannheim", country:"Germany", type:"museum" },
+  { id:"gemaldegalerie-dresden", name:"Gemäldegalerie Alte Meister", city:"Dresden", country:"Germany", type:"museum" },
+  { id:"brera", name:"Pinacoteca di Brera", city:"Milan", country:"Italy", type:"museum" },
+  { id:"villa-farnesina", name:"Villa Farnesina", city:"Rome", country:"Italy", type:"palace" }
 ];

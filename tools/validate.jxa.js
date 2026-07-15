@@ -66,6 +66,7 @@ const warns = [];
 try { eval(read(base + "js/venues.js")); } catch(e){ out.push("venues.js ERROR: " + e.message); }
 try { eval(read(base + "js/catalog-1.js")); } catch(e){ out.push("catalog-1.js ERROR: " + e.message); }
 try { eval(read(base + "js/catalog-2.js")); } catch(e){ out.push("catalog-2.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-3.js")); } catch(e){ out.push("catalog-3.js ERROR: " + e.message); }
 const VEN = window.VENUES || [], CAT = window.CATALOG || [];
 const VENUE_TYPES = { museum:1, church:1, palace:1, site:1 };
 dup(VEN, "venue"); dup(CAT, "artwork");
