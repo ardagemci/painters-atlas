@@ -2302,5 +2302,163 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg/500px-Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg",
    "page": "https://en.wikipedia.org/wiki/Aurora_Borealis_(painting)"
   }
+ },
+ "thomas-cole": {
+  "The Oxbow": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Cole_Thomas_The_Oxbow_%28The_Connecticut_River_near_Northampton_1836%29.jpg/500px-Cole_Thomas_The_Oxbow_%28The_Connecticut_River_near_Northampton_1836%29.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Oxbow_(Cole)"
+  },
+  "The Course of Empire: Destruction": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg/500px-Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg"
+  },
+  "The Voyage of Life: Childhood": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Thomas_Cole_-_The_Voyage_of_Life_Childhood%2C_1842_%28National_Gallery_of_Art%29.jpg/500px-Thomas_Cole_-_The_Voyage_of_Life_Childhood%2C_1842_%28National_Gallery_of_Art%29.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Voyage_of_Life"
+  },
+  "Expulsion from the Garden of Eden": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Cole_Thomas_Expulsion_from_the_Garden_of_Eden_1828.jpg/500px-Cole_Thomas_Expulsion_from_the_Garden_of_Eden_1828.jpg",
+   "page": "https://en.wikipedia.org/wiki/Expulsion_from_the_Garden_of_Eden_(Cole)"
+  }
+ },
+ "andrea-mantegna": {
+  "Lamentation of Christ": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/The_dead_Christ_and_three_mourners%2C_by_Andrea_Mantegna.jpg/500px-The_dead_Christ_and_three_mourners%2C_by_Andrea_Mantegna.jpg",
+   "page": "https://en.wikipedia.org/wiki/Lamentation_of_Christ_(Mantegna)"
+  },
+  "Camera degli Sposi": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mantegna_-_Camera_degli_Sposi.jpg/500px-Mantegna_-_Camera_degli_Sposi.jpg",
+   "page": "https://en.wikipedia.org/wiki/Camera_degli_Sposi"
+  },
+  "Saint Sebastian": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Andrea_Mantegna_089.jpg/500px-Andrea_Mantegna_089.jpg",
+   "page": "https://en.wikipedia.org/wiki/Saint_Sebastian_(Mantegna)"
+  }
+ },
+ "edward-burne-jones": {
+  "The Golden Stairs": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Edward_Burne-Jones_The_Golden_Stairs.jpg/500px-Edward_Burne-Jones_The_Golden_Stairs.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Golden_Stairs"
+  },
+  "King Cophetua and the Beggar Maid": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Burne-Jones_Cophetua_Beggar_Maid_-_GAP_cropped_hard.jpg/500px-Burne-Jones_Cophetua_Beggar_Maid_-_GAP_cropped_hard.jpg",
+   "page": "https://en.wikipedia.org/wiki/King_Cophetua_and_the_Beggar_Maid_(painting)"
+  },
+  "The Beguiling of Merlin": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Beguiling_of_Merlin.jpg/500px-Beguiling_of_Merlin.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Beguiling_of_Merlin"
+  }
+ },
+ "anders-zorn": {
+  "Midsummer Dance": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Anders_Zorn_-_Midsummer_Dance_-_Google_Art_Project.jpg/500px-Anders_Zorn_-_Midsummer_Dance_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Anders_Zorn_-_Midsummer_Dance_-_Google_Art_Project.jpg"
+  },
+  "The Omnibus": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Anders_Zorn_-_The_Omnibus_-_P3e1_-_Isabella_Stewart_Gardner_Museum.jpg/500px-Anders_Zorn_-_The_Omnibus_-_P3e1_-_Isabella_Stewart_Gardner_Museum.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Anders_Zorn_-_The_Omnibus_-_P3e1_-_Isabella_Stewart_Gardner_Museum.jpg"
+  },
+  "Self-Portrait with Model": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Self-_portrait_with_Model_by_Anders_Zorn_1899_-_SMB_280-1906.jpg/500px-Self-_portrait_with_Model_by_Anders_Zorn_1899_-_SMB_280-1906.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Self-_portrait_with_Model_by_Anders_Zorn_1899_-_SMB_280-1906.jpg"
+  }
+ },
+ "peder-severin-kroyer": {
+  "Summer Evening on Skagen's Southern Beach": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/P.S._Kr%C3%B8yer_-_Summer_evening_on_Skagen%27s_Beach._Anna_Ancher_and_Marie_Kr%C3%B8yer_walking_together._-_Google_Art_Project.jpg/500px-P.S._Kr%C3%B8yer_-_Summer_evening_on_Skagen%27s_Beach._Anna_Ancher_and_Marie_Kr%C3%B8yer_walking_together._-_Google_Art_Project.jpg",
+   "page": "https://en.wikipedia.org/wiki/Summer_Evening_on_Skagen%27s_Southern_Beach"
+  },
+  "Hip, Hip, Hurrah!": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Hipp_hipp_hurra%21_Konstn%C3%A4rsfest_p%C3%A5_Skagen_-_Peder_Severin_Kr%C3%B8yer.jpg/500px-Hipp_hipp_hurra%21_Konstn%C3%A4rsfest_p%C3%A5_Skagen_-_Peder_Severin_Kr%C3%B8yer.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hipp_hipp_hurra!_Konstn%C3%A4rsfest_p%C3%A5_Skagen_-_Peder_Severin_Kr%C3%B8yer.jpg"
+  },
+  "The Artist and His Wife on Skagen Beach": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/P_S_Kr%C3%B8yer_1899_-_Sommeraften_ved_Skagens_strand._Kunstneren_og_hans_hustru.jpg/500px-P_S_Kr%C3%B8yer_1899_-_Sommeraften_ved_Skagens_strand._Kunstneren_og_hans_hustru.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:P_S_Kr%C3%B8yer_1899_-_Sommeraften_ved_Skagens_strand._Kunstneren_og_hans_hustru.jpg"
+  }
+ },
+ "anna-ancher": {
+  "Sunlight in the Blue Room": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg/500px-Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg",
+   "page": "https://en.wikipedia.org/wiki/Sunlight_in_the_Blue_Room"
+  },
+  "A Funeral": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Anna_Ancher%2C_En_begravelse%2C_1891%2C_KMS1433%2C_Statens_Museum_for_Kunst.jpg/500px-Anna_Ancher%2C_En_begravelse%2C_1891%2C_KMS1433%2C_Statens_Museum_for_Kunst.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Anna_Ancher,_En_begravelse,_1891,_KMS1433,_Statens_Museum_for_Kunst.jpg"
+  },
+  "Harvesters": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Anna_Ancher_-_Harvesters_-_Google_Art_Project.jpg/500px-Anna_Ancher_-_Harvesters_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Anna_Ancher_-_Harvesters_-_Google_Art_Project.jpg"
+  }
+ },
+ "paula-modersohn-becker": {
+  "Self-Portrait at Sixth Wedding Anniversary": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Paula_Modersohn-Becker_001.jpg/500px-Paula_Modersohn-Becker_001.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paula_Modersohn-Becker_001.jpg"
+  },
+  "Self-Portrait with Amber Necklace": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Paula_Modersohn-Becker_-_Selbstbildnis_als_Halbakt_mit_Bernsteinkette_II.jpg/500px-Paula_Modersohn-Becker_-_Selbstbildnis_als_Halbakt_mit_Bernsteinkette_II.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paula_Modersohn-Becker_-_Selbstbildnis_als_Halbakt_mit_Bernsteinkette_II.jpg"
+  },
+  "Old Poorhouse Woman with Glass Ball and Poppies": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Paula_Moderson-Becker_-_Alte_Armenh%C3%A4uslerin_mit_Glaskugel_und_Mohnblumen_%281907%29.jpg/500px-Paula_Moderson-Becker_-_Alte_Armenh%C3%A4uslerin_mit_Glaskugel_und_Mohnblumen_%281907%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paula_Moderson-Becker_-_Alte_Armenh%C3%A4uslerin_mit_Glaskugel_und_Mohnblumen_(1907).jpg"
+  }
+ },
+ "chaim-soutine": {
+  "Carcass of Beef": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Carcass_of_Beef_by_Chaim_Soutine%2C_c._1925%2C_Albright-Knox_Art_Gallery.jpg/500px-Carcass_of_Beef_by_Chaim_Soutine%2C_c._1925%2C_Albright-Knox_Art_Gallery.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Carcass_of_Beef_by_Chaim_Soutine,_c._1925,_Albright-Knox_Art_Gallery.jpg"
+  },
+  "Le Petit Pâtissier": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cha%C3%AFm_soutine%2C_il_piccolo_pasticcere%2C_1922-23_ca..JPG/500px-Cha%C3%AFm_soutine%2C_il_piccolo_pasticcere%2C_1922-23_ca..JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Cha%C3%AFm_soutine,_il_piccolo_pasticcere,_1922-23_ca..JPG"
+  },
+  "Landscape with Figures, Céret": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/%27Landscape_with_Figures-C%C3%A9ret%27_by_Cha%C3%AFm_Soutine%2C_1922%2C_High_Museum_of_Art.JPG/500px-%27Landscape_with_Figures-C%C3%A9ret%27_by_Cha%C3%AFm_Soutine%2C_1922%2C_High_Museum_of_Art.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:%27Landscape_with_Figures-C%C3%A9ret%27_by_Cha%C3%AFm_Soutine,_1922,_High_Museum_of_Art.JPG"
+  }
+ },
+ "arkhip-kuindzhi": {
+  "Moonlit Night on the Dnieper": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kuindzhi_Moonlit_night_on_the_Dnieper_1880_grm_x2.jpg/500px-Kuindzhi_Moonlit_night_on_the_Dnieper_1880_grm_x2.jpg",
+   "page": "https://en.wikipedia.org/wiki/Moonlit_Night_on_the_Dnieper"
+  },
+  "Birch Grove": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/0853Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D1%80%D0%BE%D1%89%D0%B0.jpg/500px-0853Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D1%80%D0%BE%D1%89%D0%B0.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:0853Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D1%80%D0%BE%D1%89%D0%B0.jpg"
+  },
+  "Red Sunset on the Dnieper": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Red_Sunset_on_the_Dnieper_MET_DT2557.jpg/500px-Red_Sunset_on_the_Dnieper_MET_DT2557.jpg",
+   "page": "https://en.wikipedia.org/wiki/Red_Sunset_on_the_Dnipro"
+  }
+ },
+ "vasily-surikov": {
+  "The Morning of the Streltsy Execution": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Surikov_streltsi.jpg/500px-Surikov_streltsi.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Morning_of_the_Streltsy_Execution"
+  },
+  "Boyarynya Morozova": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Vasily_Surikov_-_%D0%91%D0%BE%D1%8F%D1%80%D1%8B%D0%BD%D1%8F_%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D0%B0_-_Google_Art_Project_ed.jpg/500px-Vasily_Surikov_-_%D0%91%D0%BE%D1%8F%D1%80%D1%8B%D0%BD%D1%8F_%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D0%B0_-_Google_Art_Project_ed.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vasily_Surikov_-_%D0%91%D0%BE%D1%8F%D1%80%D1%8B%D0%BD%D1%8F_%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D0%B0_-_Google_Art_Project_ed.jpg"
+  },
+  "Menshikov in Berezovo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/SurikovMenshikovBerezovo.jpg/500px-SurikovMenshikovBerezovo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:SurikovMenshikovBerezovo.jpg"
+  }
+ },
+ "valentin-serov": {
+  "Girl with Peaches": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Walentin_Alexandrowitsch_Serow_Girl_with_Peaches.jpg/500px-Walentin_Alexandrowitsch_Serow_Girl_with_Peaches.jpg",
+   "page": "https://en.wikipedia.org/wiki/Girl_with_Peaches"
+  },
+  "Portrait of Ida Rubinstein": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ida_Rubinstein_by_V._Serov_%28GRM%29_FRAME_by_shakko_01.jpg/500px-Ida_Rubinstein_by_V._Serov_%28GRM%29_FRAME_by_shakko_01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ida_Rubinstein_by_V._Serov_(GRM)_FRAME_by_shakko_01.jpg"
+  },
+  "The Abduction of Europa": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/1910_Serow_Abduction_of_Eurpoa_anagoria.JPG/500px-1910_Serow_Abduction_of_Eurpoa_anagoria.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:1910_Serow_Abduction_of_Eurpoa_anagoria.JPG"
+  }
  }
 };

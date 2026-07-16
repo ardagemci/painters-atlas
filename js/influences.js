@@ -230,5 +230,15 @@ window.INFLUENCES = [
   ["kitagawa-utamaro","mary-cassatt","influenced"],
   ["james-ensor","paul-klee","influenced"],
   ["ferdinand-hodler","gustav-klimt","influenced"],
-  ["jmw-turner","frederic-edwin-church","influenced"]
+  ["jmw-turner","frederic-edwin-church","influenced"],
+  ["thomas-cole","frederic-edwin-church","taught"],
+  ["andrea-mantegna","albrecht-durer","influenced"],
+  ["dante-gabriel-rossetti","edward-burne-jones","taught"],
+  ["john-singer-sargent","anders-zorn","rivaled"],
+  ["peder-severin-kroyer","anna-ancher","befriended"],
+  ["paul-cezanne","paula-modersohn-becker","influenced"],
+  ["amedeo-modigliani","chaim-soutine","befriended"],
+  ["ivan-aivazovsky","arkhip-kuindzhi","taught"],
+  ["ilya-repin","vasily-surikov","befriended"],
+  ["ilya-repin","valentin-serov","taught"]
 ];

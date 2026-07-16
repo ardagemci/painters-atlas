@@ -1136,7 +1136,7 @@ window.TIER1 = {
       works:["place-de-la-concorde"] },
     { y:"1874–79", t:"The ballet, backstage",
       text:"The Opéra becomes his laboratory — not performances but classes, waiting, fatigue. The Dance Class watches girls fidget under old Perrot's stick; L'Étoile catches the bow from above while a black-suited patron waits in the wings, a detail contemporaries knew how to read.",
-      works:["the-dance-class","l-etoile","miss-la-la"] },
+      works:["the-orchestra-at-the-opera","the-dance-class","l-etoile","miss-la-la"] },
     { y:"1876", t:"Modern loneliness, observed",
       text:"In a café on place Pigalle he stages the era's bleakest still life of two humans: L'Absinthe. London later boos it as French degradation; Degas meant no sermon — just the oblique truth about proximity without contact.",
       works:["labsinthe"] },

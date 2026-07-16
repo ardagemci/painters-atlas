@@ -475,5 +475,15 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"203 × 358 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Ilja_Jefimowitsch_Repin_-_Reply_of_the_Zaporozhian_Cossacks_-_Yorck.jpg/500px-Ilja_Jefimowitsch_Repin_-_Reply_of_the_Zaporozhian_Cossacks_-_Yorck.jpg",
           page:"https://en.wikipedia.org/wiki/Reply_of_the_Zaporozhian_Cossacks", status:"pd" },
-  tags:["historical","everyday-life","monumental-scale"] }
+  tags:["historical","everyday-life","monumental-scale"] },
+{ id:"the-orchestra-at-the-opera", tier:2,
+  title:"The Orchestra at the Opera",
+  artistId:"edgar-degas", year:{ display:"c. 1870", sort:1870 },
+  movements:["impressionism"], techniques:["oil-painting"], nation:"france",
+  museum:{ id:"musee-dorsay", name:"Musée d'Orsay", city:"Paris" },
+  dims:"56.5 × 45 cm",
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Degas_l%27orchestre.jpg/500px-Degas_l%27orchestre.jpg",
+          page:"https://en.wikipedia.org/wiki/The_Orchestra_at_the_Opera", status:"pd" },
+  tags:["interior","everyday-life","historical"] }
+
 ]);

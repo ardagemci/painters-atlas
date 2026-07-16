@@ -222,7 +222,9 @@ window.MUSEUM_NOTES = {
            page:"https://commons.wikimedia.org/wiki/File:BERGEN_Norway_Lille_Lungeg%C3%A5rdsvannet_KODE_Art_Museum_Kunsthall_Grieghallen_Foreningsgaten_Nyg%C3%A5rdsg._etc_View_from_Mount_Floyen_2019-08-28_by_Forbes_Johnston_Flickr_Some_rights_reserved.jpg" } },
 
 "oslo-university-aula": {
-  hook: "Munch's sunrise over the lecterns" },
+  hook: "Munch's sunrise over the lecterns" ,
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Festakt._Universitetets_aula._%288612632859%29.jpg/960px-Festakt._Universitetets_aula._%288612632859%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Festakt._Universitetets_aula._(8612632859).jpg" } },
 
 "palazzo-barberini": {
   hook: "Baroque Rome's family palace, now everyone's",
