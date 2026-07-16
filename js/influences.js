@@ -226,5 +226,9 @@ window.INFLUENCES = [
   /* ---- partners in life & art ---- */
   ["diego-rivera","frida-kahlo","partners"],
   ["jackson-pollock","lee-krasner","partners"],
-  ["max-ernst","leonora-carrington","partners"]
+  ["max-ernst","leonora-carrington","partners"],
+  ["kitagawa-utamaro","mary-cassatt","influenced"],
+  ["james-ensor","paul-klee","influenced"],
+  ["ferdinand-hodler","gustav-klimt","influenced"],
+  ["jmw-turner","frederic-edwin-church","influenced"]
 ];

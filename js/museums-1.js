@@ -123,8 +123,8 @@ window.MUSEUM_NOTES = {
 
 "mauritshuis": {
   hook: "A jewel box the size of a townhouse",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mauritshuis_museum_logo.png/960px-Mauritshuis_museum_logo.png",
-           page:"https://en.wikipedia.org/wiki/Mauritshuis" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Den_Haag%2C_het_Mauritshuis_RM17650_foto5_2015-08-05_19.06.jpg/960px-Den_Haag%2C_het_Mauritshuis_RM17650_foto5_2015-08-05_19.06.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Den_Haag,_het_Mauritshuis_RM17650_foto5_2015-08-05_19.06.jpg" } },
 
 "tretyakov": {
   hook: "Moscow's merchant gift — Russia, wall to wall",
@@ -153,8 +153,8 @@ window.MUSEUM_NOTES = {
 
 "galleria-borghese": {
   hook: "A cardinal's pleasure villa, still showing off",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Galleria_Borghese_-_logo_%28Italy%2C_2022-%29.svg/960px-Galleria_Borghese_-_logo_%28Italy%2C_2022-%29.svg.png",
-           page:"https://en.wikipedia.org/wiki/Galleria_Borghese" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Facade_-_Galleria_Borghese_-_Rome_-_Italy_2015.JPG/960px-Facade_-_Galleria_Borghese_-_Rome_-_Italy_2015.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:Facade_-_Galleria_Borghese_-_Rome_-_Italy_2015.JPG" } },
 
 "kimbell-art-museum": {
   hook: "Louis Kahn's silver light over old masters",
@@ -188,8 +188,8 @@ window.MUSEUM_NOTES = {
 
 "reina-sofia": {
   hook: "Guernica's fortress",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_logo.svg/960px-Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_logo.svg.png",
-           page:"https://en.wikipedia.org/wiki/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa%2C_detalles_del_exterior%2C_Madrid%2C_Espa%C3%B1a%2C_2016_01.JPG/960px-Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa%2C_detalles_del_exterior%2C_Madrid%2C_Espa%C3%B1a%2C_2016_01.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa,_detalles_del_exterior,_Madrid,_Espa%C3%B1a,_2016_01.JPG" } },
 
 "museo-dolores-olmedo": {
   hook: "Frida and Diego, among the peacocks",
@@ -208,8 +208,8 @@ window.MUSEUM_NOTES = {
 
 "musee-marmottan": {
   hook: "Where Impression, Sunrise lives up to its name",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Mus%C3%A9e_Marmottan_Monet_logo.svg/960px-Mus%C3%A9e_Marmottan_Monet_logo.svg.png",
-           page:"https://en.wikipedia.org/wiki/Mus%C3%A9e_Marmottan_Monet" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mus%C3%A9e_Marmottan_Monet%2C_Paris%2C_from_street.jpg/960px-Mus%C3%A9e_Marmottan_Monet%2C_Paris%2C_from_street.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Marmottan_Monet,_Paris,_from_street.jpg" } },
 
 "orangerie": {
   hook: "Two oval rooms, one endless pond",
@@ -231,13 +231,13 @@ window.MUSEUM_NOTES = {
 
 "vatican-museums": {
   hook: "The popes' collection, nine miles of it",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Musei_vaticani_Coat_of_Arms.svg/960px-Musei_vaticani_Coat_of_Arms.svg.png",
-           page:"https://en.wikipedia.org/wiki/Vatican_Museums" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Museos_Vaticanos_-_Entrada_-_001.jpg/960px-Museos_Vaticanos_-_Entrada_-_001.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Museos_Vaticanos_-_Entrada_-_001.jpg" } },
 
 "pio-monte-della-misericordia": {
   hook: "Mercy, on permanent view since 1607",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Logo_Pio_Monte_della_Misericordia_Napoli.svg/960px-Logo_Pio_Monte_della_Misericordia_Napoli.svg.png",
-           page:"https://en.wikipedia.org/wiki/Pio_Monte_della_Misericordia" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pio_Monte_della_Misericordia._%288067%29.jpg/960px-Pio_Monte_della_Misericordia._%288067%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Pio_Monte_della_Misericordia._(8067).jpg" } },
 
 "st-johns-co-cathedral": {
   hook: "Caravaggio's only signature lives here",
@@ -256,8 +256,8 @@ window.MUSEUM_NOTES = {
 
 "minneapolis-institute-of-art": {
   hook: "Midwestern marble, free since day one",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Mia_minneapolis_logo.svg/960px-Mia_minneapolis_logo.svg.png",
-           page:"https://en.wikipedia.org/wiki/Minneapolis_Institute_of_Art" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Facade_from_the_East%2C_Minneapolis_Institute_of_Arts_-_DPLA_-_ed3a5aee7eed55bb80f51eb4be6a763b.jpg/960px-Facade_from_the_East%2C_Minneapolis_Institute_of_Arts_-_DPLA_-_ed3a5aee7eed55bb80f51eb4be6a763b.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Facade_from_the_East,_Minneapolis_Institute_of_Arts_-_DPLA_-_ed3a5aee7eed55bb80f51eb4be6a763b.jpg" } },
 
 "kroller-muller": {
   hook: "Van Goghs in a national forest",
@@ -286,8 +286,8 @@ window.MUSEUM_NOTES = {
 
 "neue-galerie": {
   hook: "Vienna 1900, transplanted to Fifth Avenue",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Neue_Galerie_New_York_Logo.jpg/960px-Neue_Galerie_New_York_Logo.jpg",
-           page:"https://en.wikipedia.org/wiki/Neue_Galerie_New_York" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/1048_5th_Avenue_001.JPG/960px-1048_5th_Avenue_001.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:1048_5th_Avenue_001.JPG" } },
 
 "leopold-museum": {
   hook: "One doctor's Schiele obsession, institutionalized",
@@ -306,8 +306,8 @@ window.MUSEUM_NOTES = {
 
 "stadel": {
   hook: "A merchant's Frankfurt, from Holbein to now",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/St%C3%A4del-Museum.svg/960px-St%C3%A4del-Museum.svg.png",
-           page:"https://en.wikipedia.org/wiki/St%C3%A4del" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Frankfurt_Staedel_Museum_dk2243.jpg/960px-Frankfurt_Staedel_Museum_dk2243.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Frankfurt_Staedel_Museum_dk2243.jpg" } },
 
 "scottish-national-gallery": {
   hook: "Edinburgh's neoclassical treasure chest",
@@ -366,8 +366,8 @@ window.MUSEUM_NOTES = {
 
 "mnaa-lisbon": {
   hook: "Portugal's green-shuttered treasury",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Museu_Nacional_de_Arte_Antiga_logo.png/960px-Museu_Nacional_de_Arte_Antiga_logo.png",
-           page:"https://en.wikipedia.org/wiki/National_Museum_of_Ancient_Art" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/MNAA.jpg/960px-MNAA.jpg",
+           page:"https://pt.wikipedia.org/wiki/Museu_Nacional_de_Arte_Antiga" } },
 
 "st-bavo-cathedral": {
   hook: "Home of the most-stolen altarpiece on earth",
@@ -456,8 +456,8 @@ window.MUSEUM_NOTES = {
 
 "dallas-museum-art": {
   hook: "Texas scale, encyclopedic appetite",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dallas_Museum_of_Art_logo.svg/960px-Dallas_Museum_of_Art_logo.svg.png",
-           page:"https://en.wikipedia.org/wiki/Dallas_Museum_of_Art" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Entrance_of_Dallas_Museum_-_Mar_3%2C_2009.jpg/960px-Entrance_of_Dallas_Museum_-_Mar_3%2C_2009.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Entrance_of_Dallas_Museum_-_Mar_3,_2009.jpg" } },
 
 "national-gallery-australia": {
   hook: "Blue Poles, vindicated",
