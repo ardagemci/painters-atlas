@@ -173,6 +173,47 @@ VEN.forEach(function(v){
     errs.push("venue " + v.id + " holds works but has no museum note (hook required)");
 });
 
+// Phase 1.5: personas, onboarding data, deck-pool gates (ADMIRE_SPEC §6.2)
+try { eval(read(base + "js/personas.js")); } catch(e){ out.push("personas.js ERROR: " + e.message); }
+const PS = window.PERSONAS || [];
+dup(PS, "persona");
+if(PS.length < 12 || PS.length > 16) errs.push("personas: launch set must be 12-16, have " + PS.length);
+PS.forEach(function(ps){
+  const tag = "persona " + ps.id;
+  if(!ps.name || !ps.blurb) errs.push(tag + ": missing name/blurb");
+  if(!ps.palette || ps.palette.length !== 4) errs.push(tag + ": palette must be 4 tones");
+  if(ps.kind === "specific"){
+    ["F","D","E","C","M"].forEach(function(a){
+      const c = (ps.coords || {})[a];
+      if(typeof c !== "number" || c < -100 || c > 100) errs.push(tag + ": coords." + a + " missing/range");
+    });
+    if(ps.sig && ps.sig.movement && !mIds[ps.sig.movement]) errs.push(tag + ": bad sig movement");
+  } else if(["contradiction","eclectic","time-traveler"].indexOf(ps.rule) < 0) errs.push(tag + ": bad general rule");
+});
+if((window.TASTE_QUESTIONS || []).length !== 5) errs.push("taste questions: need exactly 5");
+(window.TASTE_QUESTIONS || []).forEach(function(Q){
+  if(!Q.options || Q.options.length !== 4) errs.push("question " + Q.id + ": needs 4 options");
+});
+if((window.TASTE_TONES || []).length < 16) errs.push("taste tones: need at least 16");
+(window.TASTE_TONES || []).forEach(function(t){
+  if(!/^#[0-9a-f]{6}$/i.test(t.hex || "")) errs.push("tone " + t.id + ": bad hex");
+});
+const POOL = CAT.filter(function(w){ return w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src; });
+const NONEU = { japan:1, usa:1, mexico:1 };
+if(POOL.filter(function(w){ return w.coords.F >= 30; }).length < 3) errs.push("deck pool: needs >=3 works with F>=+30");
+if(POOL.filter(function(w){ return NONEU[w.nation]; }).length < 2) errs.push("deck pool: needs >=2 non-European works");
+if(POOL.filter(function(w){ return w.year.sort < 1700; }).length < 3) errs.push("deck pool: needs >=3 pre-1700");
+if(POOL.filter(function(w){ return w.year.sort >= 1800 && w.year.sort < 1880; }).length < 3) errs.push("deck pool: needs >=3 19th-century");
+if(POOL.filter(function(w){ return w.year.sort >= 1880 && w.year.sort <= 1935; }).length < 3) errs.push("deck pool: needs >=3 early-modern");
+["F","D","E","C","M"].forEach(function(a){
+  if(POOL.filter(function(w){ return w.coords[a] >= 40; }).length < 2) warns.push("deck pool: <2 works with " + a + ">=+40");
+  if(POOL.filter(function(w){ return w.coords[a] <= -40; }).length < 2) warns.push("deck pool: <2 works with " + a + "<=-40");
+});
+[[1,1],[1,-1],[-1,-1],[-1,1]].forEach(function(qd){
+  if(!POOL.some(function(w){ return qd[0]*w.coords.F >= 25 && qd[1]*w.coords.D >= 25; }))
+    warns.push("deck pool: empty F×D quadrant " + qd.join(","));
+});
+
 // Tier 1 artist overlay integrity
 try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
 const T1 = window.TIER1 || {};
@@ -234,6 +275,7 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
   ", daily pool: " + DAILY.length +
   ", museum notes: " + Object.keys(window.MUSEUM_NOTES || {}).length +
+  ", personas: " + (window.PERSONAS || []).length +
   ", lists: " + (window.EDITORIAL_LISTS || []).length +
   " (featured: " + (window.EDITORIAL_LISTS || []).filter(function(l){ return l.featured; }).length + ")" +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +

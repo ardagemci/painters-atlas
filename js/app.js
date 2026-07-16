@@ -1449,10 +1449,10 @@ function viewHome(){
       <button class="ec-surprise" data-random-artist>or surprise me →</button>
       <span class="ec-arrow">→</span>
     </a>
-    <a class="entry-card" href="#/artwork/the-starry-night" style="--ec:var(--teal)">
-      <div class="ec-kicker">React</div>
-      <h3>Discover your taste <span class="badge-soon">begun</span></h3>
-      <p>Admire the artworks that speak to you. Your Taste Passport is already recording — Personas and the taste map arrive next.</p>
+    <a class="entry-card" href="#/${(() => { const p = getPassport(); return p && p.milestones && p.milestones.onboarded ? "taste" : "palette"; })()}" style="--ec:var(--teal)">
+      <div class="ec-kicker">Become</div>
+      <h3>Find your palette</h3>
+      <p>Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste, with a Persona to argue about. Under four minutes.</p>
       <span class="ec-arrow">→</span>
     </a>
     <a class="entry-card" href="#/explore" style="--ec:var(--wine)">
@@ -1483,8 +1483,8 @@ function viewHome(){
     <div class="hpw">
       <div class="hpw-step"><span class="n">1</span><b>Discover</b><p>Wander artists, artworks, movements, eras and nations — everything links onward.</p></div>
       <div class="hpw-step"><span class="n">2</span><b>Admire</b><p>One button, on every artwork. Press it on what speaks to you.</p></div>
-      <div class="hpw-step"><span class="n">3</span><b>Map</b> <span class="badge-soon">soon</span><p>Pigment finds the centre of gravity of your taste.</p></div>
-      <div class="hpw-step"><span class="n">4</span><b>Become</b> <span class="badge-soon">soon</span><p>Unlock your Pigment Persona and your palette.</p></div>
+      <div class="hpw-step"><span class="n">3</span><b>Map</b><p>Pigment finds the centre of gravity of your taste — <a href="#/taste">see your map</a>.</p></div>
+      <div class="hpw-step"><span class="n">4</span><b>Become</b><p>Unlock your Pigment Persona and your palette — <a href="#/palette">find yours</a>.</p></div>
       <div class="hpw-step"><span class="n">5</span><b>Share</b> <span class="badge-soon">soon</span><p>Send your Taste Passport into the world.</p></div>
     </div>
   </section>
@@ -1993,6 +1993,9 @@ function route(){
     case "daily":       html = viewDaily(); break;
     case "lists":       html = viewLists(); break;
     case "list":        html = viewList(id); break;
+    case "palette":     html = viewPalette(); break;
+    case "taste":       html = viewTaste(); break;
+    case "passport":    html = viewPassportImport(id); break;
     case "museums":     html = viewMuseums(); break;
     case "museum":      html = viewMuseum(id); break;
     case "explore":     html = viewExplore(); break;
@@ -2293,6 +2296,557 @@ themeBtn.textContent = currentTheme() === "light" ? "☾" : "☀";
   init();
   if(!reducedMotion) requestAnimationFrame(frame);
 })();
+
+/* ============ Phase 1.5: the taste engine (TASTE_MATH.md) ============ */
+const TAXES = ["F","D","E","C","M"];
+const T_POLE = { F:["figurative","abstract"], D:["calm","dramatic"], E:["classical","experimental"], C:["sensual","conceptual"], M:["intimate","monumental"] };
+
+function ppSave(p){
+  p.updatedAt = new Date().toISOString();
+  try{ localStorage.setItem(PASSPORT_KEY, JSON.stringify(p)); }catch(e){}
+}
+function ppFull(){
+  const p = getPassport() || newPassport();
+  p.skipped = p.skipped || []; p.deckSeen = p.deckSeen || [];
+  return p;
+}
+function coordsOfWork(w){
+  if(!w) return null;
+  if(w.coords) return w.coords;
+  const t1 = window.TIER1 && window.TIER1[w.artistId];
+  return (t1 && t1.coords) || null;
+}
+
+/* ---------- the engine (TASTE_MATH §2–5) ---------- */
+function tasteState(p){
+  p = p || ppFull();
+  const items = (p.admirations || []).map(e => CatX[e.id]).filter(Boolean)
+    .map(w => ({ w: 1.0, x: coordsOfWork(w), work: w })).filter(it => it.x);
+  const n = items.length, sw = n * 1.0;
+
+  /* prior: quiz nudges (capped ±60) + whisper palette nudges, re-capped */
+  const q = { F:0, D:0, E:0, C:0, M:0 };
+  const hasQuiz = !!(p.quiz && p.quiz.prior);
+  if(hasQuiz) TAXES.forEach(a => q[a] = p.quiz.prior[a] || 0);
+  if(p.palette && p.palette.tones) p.palette.tones.forEach(tid => {
+    const t = (window.TASTE_TONES || []).find(o => o.id === tid);
+    if(t) Object.keys(t.nudge).forEach(a => q[a] += t.nudge[a]);
+  });
+  TAXES.forEach(a => q[a] = Math.max(-60, Math.min(60, Math.round(q[a]))));
+  const k = hasQuiz ? 6 : 0;
+
+  const u = {};
+  TAXES.forEach(a => u[a] = (sw + k) > 0
+    ? Math.round((items.reduce((s, it) => s + it.w * it.x[a], 0) + k * q[a]) / (sw + k)) : 0);
+
+  /* per-axis confidence (§4) */
+  const nEff = sw + k, conf = {}, informed = {}, sds = {};
+  TAXES.forEach(a => {
+    const sd = nEff ? Math.sqrt(items.reduce((s, it) => s + it.w * Math.pow(it.x[a] - u[a], 2), 0) / nEff) : 0;
+    sds[a] = sd;
+    const sem = nEff ? sd / Math.sqrt(nEff) : 99;
+    conf[a] = Math.max(0, 1 - Math.min(1, sem / 25));
+    informed[a] = items.filter(it => Math.abs(it.x[a]) >= 40).length >= 3;
+  });
+  const axSd = TAXES.reduce((s, a) => s + sds[a], 0) / TAXES.length;   /* per-axis spread, −100…100 scale (§4/§5) */
+
+  /* 1-or-2 component mixture (§3.1) */
+  let components = [{ center: u, items, weight: 1 }], split = false;
+  const meanSd = axSd;                                                  /* §5 eclectic threshold operates on this */
+  if(n >= 6){
+    const S1 = items.reduce((s, it) => s + it.w * Math.pow(tasteDist(it.x, u), 2), 0);
+    let far = [0, 1], fd = -1;
+    for(let i = 0; i < n; i++) for(let j = i + 1; j < n; j++){
+      const d = tasteDist(items[i].x, items[j].x);
+      if(d > fd){ fd = d; far = [i, j]; }
+    }
+    let c1 = Object.assign({}, items[far[0]].x), c2 = Object.assign({}, items[far[1]].x), g1, g2;
+    for(let iter = 0; iter < 5; iter++){
+      g1 = []; g2 = [];
+      items.forEach(it => (tasteDist(it.x, c1) <= tasteDist(it.x, c2) ? g1 : g2).push(it));
+      [ [g1, c1], [g2, c2] ].forEach(([g, c]) => {
+        if(!g.length) return;
+        TAXES.forEach(a => c[a] = Math.round(g.reduce((s, it) => s + it.x[a], 0) / g.length));
+      });
+    }
+    const S2 = g1.reduce((s, it) => s + Math.pow(tasteDist(it.x, c1), 2), 0)
+             + g2.reduce((s, it) => s + Math.pow(tasteDist(it.x, c2), 2), 0);
+    const fd2 = Math.sqrt(1.5 * Math.pow(c1.F - c2.F, 2) + 1.5 * Math.pow(c1.D - c2.D, 2));
+    if(S2 <= 0.6 * S1 && g1.length >= 3 && g2.length >= 3 && fd2 >= 50){
+      split = true;
+      const [big, small] = g1.length >= g2.length ? [[g1, c1], [g2, c2]] : [[g2, c2], [g1, c1]];
+      /* quiz prior attaches to the larger component */
+      const bu = {};
+      TAXES.forEach(a => bu[a] = Math.round((big[0].reduce((s, it) => s + it.x[a], 0) + k * q[a]) / (big[0].length + k)));
+      components = [
+        { center: bu, items: big[0], weight: big[0].length / n },
+        { center: small[1], items: small[0], weight: small[0].length / n }
+      ];
+    }
+  }
+
+  /* confidence tier — the copy layer */
+  const tier = n < 20 ? "provisional" : n < 50 ? "forming" : n < 100 ? "solid" : n < 250 ? "strong" : "deep";
+  /* quiz-vs-evidence disagreement keeps things provisional (§4) */
+  let disagree = false;
+  if(hasQuiz && n) TAXES.forEach(a => {
+    const em = items.reduce((s, it) => s + it.x[a], 0) / n;
+    if(informed[a] && Math.abs(q[a] - em) > 50) disagree = true;
+  });
+  return { p, items, n, q, k, u, conf, informed, components, split, meanSd, tier,
+           provisional: n < 20 || disagree };
+}
+
+function sigMet(sig, items){
+  if(sig.movement) return items.filter(it => (it.work.movements || []).indexOf(sig.movement) >= 0).length >= sig.min;
+  if(sig.tag) return items.filter(it => (it.work.tags || []).indexOf(sig.tag) >= 0).length >= sig.min;
+  return true;
+}
+function generalFired(st){
+  if(st.split && st.components[1].weight >= 0.35) return PERSONAS.find(ps => ps.rule === "contradiction");
+  if(!st.split && st.meanSd >= 45 && st.n >= 8) return PERSONAS.find(ps => ps.rule === "eclectic");
+  if(st.n >= 8){
+    const ys = st.items.map(it => it.work.year.sort);
+    if(Math.max.apply(null, ys) - Math.min.apply(null, ys) >= 400) return PERSONAS.find(ps => ps.rule === "time-traveler");
+  }
+  return null;
+}
+function personaCandidates(st){
+  const score = (ps, center) => {
+    let d = tasteDist(ps.coords, center);
+    if(ps.sig && !sigMet(ps.sig, st.items)) d += 25;
+    return d;
+  };
+  const primary = st.components[0].center;
+  let cands = PERSONAS.filter(ps => ps.kind === "specific")
+    .map(ps => ({ ps, d: score(ps, primary) })).sort((a, b) => a.d - b.d).slice(0, 3).map(o => o.ps);
+  const fired = generalFired(st);
+  if(fired) cands = [fired].concat(cands.slice(0, 2));
+  let secondary = null;
+  if(st.split){
+    secondary = PERSONAS.filter(ps => ps.kind === "specific")
+      .map(ps => ({ ps, d: score(ps, st.components[1].center) })).sort((a, b) => a.d - b.d)[0].ps;
+  }
+  return { cands, secondary };
+}
+
+/* ---------- adaptive deck (§6 + ADMIRE_SPEC §6.2 constraints) ---------- */
+function deckPool(){
+  return CAT.filter(w => w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src);
+}
+const NON_EURO = { japan:1, usa:1, mexico:1 };
+function buildDeck(seed){
+  const R = mulberry(hashStr("deck:" + seed));
+  const pool = deckPool(), used = {}, picked = [];
+  const take = w => { if(w && !used[w.id]){ used[w.id] = 1; picked.push(w); } };
+  const pickFrom = arr => arr.length ? arr[Math.floor(R() * Math.min(3, arr.length))] : null;
+  /* stage 1: one anchor per F×D quadrant, |F|,|D| as extreme as the pool allows */
+  [[1,1],[1,-1],[-1,-1],[-1,1]].forEach(([sf, sd]) => {
+    for(const lim of [50, 25, 1]){
+      const cands = pool.filter(w => !used[w.id] && sf * w.coords.F >= lim && sd * w.coords.D >= lim);
+      if(cands.length){ take(pickFrom(cands)); return; }
+    }
+  });
+  /* §6.2 quotas over the whole deck */
+  const need = [
+    { t: w => w.coords.F >= 30, min: 3 },
+    { t: w => NON_EURO[w.nation], min: 2 },
+    { t: w => w.year.sort < 1700, min: 3 },
+    { t: w => w.year.sort >= 1800 && w.year.sort < 1880, min: 3 },
+    { t: w => w.year.sort >= 1880 && w.year.sort <= 1935, min: 3 }
+  ];
+  /* stages 2–4: probe E, then C, then rotate — quota gaps first, extremes preferred */
+  ["E", "C", "*"].forEach((ax, si) => {
+    for(let i = 0; i < 4 && picked.length < 16; i++){
+      const gap = need.find(nd => picked.filter(nd.t).length < nd.min && pool.some(w => !used[w.id] && nd.t(w)));
+      let cands = pool.filter(w => !used[w.id] && (!gap || gap.t(w)));
+      if(!cands.length) cands = pool.filter(w => !used[w.id]);
+      const axis = ax === "*" ? TAXES[(si + i) % 5] : ax;
+      const pole = i % 2 ? -1 : 1;
+      cands = cands.slice().sort((a, b) => pole * (b.coords[axis] - a.coords[axis]));
+      take(pickFrom(cands));
+    }
+  });
+  while(picked.length < 16){
+    const rest = pool.filter(w => !used[w.id]);
+    if(!rest.length) break;
+    take(rest[Math.floor(R() * rest.length)]);
+  }
+  return picked.slice(0, 16);
+}
+
+/* ---------- discovery rings (§7) ---------- */
+function discoveryBatch(st){
+  const admired = {};
+  (st.p.admirations || []).forEach(e => admired[e.id] = 1);
+  const centers = st.components.map(c => c.center);
+  const scored = deckPool().filter(w => !admired[w.id]).map(w => ({
+    w, d: Math.min.apply(null, centers.map(c => tasteDist(coordsOfWork(w), c)))
+  }));
+  const ring = o => o.d <= 35 ? 0 : o.d <= 65 ? 1 : o.d <= 95 ? 2 : 3;
+  const buckets = [[], [], [], []];
+  scored.sort((a, b) => a.d - b.d).forEach(o => buckets[ring(o)].push(o));
+  const mix = [3, 2, 1, 1], out = [], perArtist = {};
+  const pull = b => {
+    while(b.length){
+      const o = b.shift();
+      if((perArtist[o.w.artistId] || 0) >= 2) continue;
+      perArtist[o.w.artistId] = (perArtist[o.w.artistId] || 0) + 1;
+      return o;
+    }
+    return null;
+  };
+  mix.forEach((count, ri) => {
+    for(let i = 0; i < count; i++){
+      const o = pull(buckets[ri]) || pull(buckets[Math.min(3, ri + 1)]) || pull(buckets[Math.max(0, ri - 1)]);
+      if(o) out.push({ w: o.w, ring: ri });
+    }
+  });
+  return out;
+}
+
+/* ---------- shared render bits ---------- */
+const RING_LABELS = ["Close to your taste", "A little outside your map", "A stretch admiration", "A wildcard from the atlas"];
+function signalWords(u){
+  const sec = ["E","C","M"].map(a => Math.abs(u[a]) >= 15 ? T_POLE[a][u[a] > 0 ? 1 : 0] : null).filter(Boolean);
+  return { primary: T_POLE.F[u.F > 0 ? 1 : 0] + " + " + T_POLE.D[u.D > 0 ? 1 : 0], secondary: sec.join(", ") || "still forming" };
+}
+function tasteMapSVG(st, size){
+  const S = size || 340, pad = 26;
+  const px = v => pad + (v + 100) / 200 * (S - 2 * pad);
+  const py = v => S - pad - (v + 100) / 200 * (S - 2 * pad);
+  const dots = st.items.map(it =>
+    `<circle cx="${px(it.x.F)}" cy="${py(it.x.D)}" r="3.4" class="tm-dot"><title>${esc(it.work.title)}</title></circle>`).join("");
+  const centers = st.components.map((c, i) =>
+    `<circle cx="${px(c.center.F)}" cy="${py(c.center.D)}" r="${i ? 7 : 9}" class="tm-you ${i ? "tm-second" : ""}"/>`).join("");
+  return `<svg viewBox="0 0 ${S} ${S}" class="taste-map" role="img" aria-label="Your position on the taste map">
+    <line x1="${px(0)}" y1="${pad}" x2="${px(0)}" y2="${S - pad}" class="tm-axis"/>
+    <line x1="${pad}" y1="${py(0)}" x2="${S - pad}" y2="${py(0)}" class="tm-axis"/>
+    <text x="${pad}" y="${py(0) - 6}" class="tm-lab">figurative</text>
+    <text x="${S - pad}" y="${py(0) - 6}" text-anchor="end" class="tm-lab">abstract</text>
+    <text x="${px(0) + 6}" y="${pad + 8}" class="tm-lab">dramatic</text>
+    <text x="${px(0) + 6}" y="${S - pad}" class="tm-lab">calm</text>
+    ${dots}${centers}</svg>`;
+}
+function personaCard(ps, opts){
+  opts = opts || {};
+  const g = `linear-gradient(120deg, ${ps.palette.join(", ")})`;
+  return `<div class="persona-card ${opts.adopted ? "adopted" : ""}">
+    <div class="pc-band" style="background:${g}"></div>
+    <div class="pc-body">
+      <div class="pc-kind">${ps.kind === "general" ? "a general persona" : "persona"}${opts.adopted ? " · yours" : ""}</div>
+      <h3>${esc(ps.name)}</h3>
+      <p>${esc(ps.blurb)}</p>
+      ${opts.adoptBtn ? `<button class="aw-btn primary" data-tsx="adopt" data-tsid="${ps.id}">Adopt this Persona</button>` : ""}
+    </div>
+  </div>`;
+}
+
+/* ---------- onboarding state + view (#/palette) ---------- */
+let ob = null;
+function obStart(){
+  ob = { step: 1, tones: [], deck: buildDeck(new Date().toISOString().slice(0, 10) + ":" + Math.floor(Math.random() * 1e6)),
+         di: 0, admired: [], skipped: [], answers: {}, adopted: false };
+}
+function viewPalette(){
+  document.title = "Find your palette — Pigment";
+  if(!ob || ob.step === 0) return `
+    <div class="ob-wrap">
+      <div class="page-kicker">Onboarding · under four minutes</div>
+      <h1 class="display">Find your palette.</h1>
+      <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among eight centuries of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
+      <button class="aw-btn primary ob-cta" data-tsx="start">Begin →</button>
+      ${getPassport() && getPassport().milestones && getPassport().milestones.onboarded
+        ? `<a class="chip-label" style="display:block;margin-top:14px" href="#/taste">or return to your taste page →</a>` : ""}
+    </div>`;
+
+  if(ob.step === 1){
+    return `
+    <div class="ob-wrap">
+      <div class="page-kicker">Step 1 of 3 · the palette</div>
+      <h1 class="display">Pick four tones.</h1>
+      <p class="page-lede">Don't overthink — choose the four you'd want on your walls. They seed your profile palette and whisper (only whisper) to the map.</p>
+      <div class="tone-grid">${TASTE_TONES.map(t => `
+        <button class="tone ${ob.tones.indexOf(t.id) >= 0 ? "on" : ""}" data-tsx="tone" data-tsid="${t.id}" style="--tone:${t.hex}">
+          <i></i><span>${esc(t.name)}</span>
+        </button>`).join("")}</div>
+      <div class="ob-foot">
+        <span class="chip-label">${ob.tones.length} of 4 chosen</span>
+        <button class="aw-btn primary" data-tsx="tones-done" ${ob.tones.length === 4 ? "" : "disabled"}>To the deck →</button>
+      </div>
+    </div>`;
+  }
+
+  if(ob.step === 2){
+    const w = ob.deck[ob.di], a = Ax[w.artistId];
+    return `
+    <div class="ob-wrap ob-deck">
+      <div class="page-kicker">Step 2 of 3 · the deck</div>
+      <div class="deck-progress"><i style="width:${(ob.di / 16) * 100}%"></i></div>
+      <div class="deck-card">
+        <img src="${w.image.src}" alt="${esc(w.title)}">
+        <div class="deck-meta"><b>${esc(w.title)}</b><span>${esc(a.name)} · ${esc(w.year.display)}</span></div>
+      </div>
+      <div class="deck-actions">
+        <button class="aw-btn deck-pass" data-tsx="deck-pass">Pass</button>
+        <button class="aw-btn primary deck-admire" data-tsx="deck-admire">Admire</button>
+      </div>
+      <p class="chip-label">passing is silence, not a dislike · ${ob.di + 1} of 16</p>
+    </div>`;
+  }
+
+  if(ob.step === 3){
+    const qi = Object.keys(ob.answers).length;
+    const Q = TASTE_QUESTIONS[qi];
+    return `
+    <div class="ob-wrap">
+      <div class="page-kicker">Step 3 of 3 · five questions</div>
+      <div class="deck-progress"><i style="width:${(qi / 5) * 100}%"></i></div>
+      <h1 class="ob-q">${esc(Q.text)}</h1>
+      <div class="q-options">${Q.options.map(o => `
+        <button class="q-opt" data-tsx="answer" data-tsid="${Q.id}:${o.id}">${esc(o.text)}</button>`).join("")}</div>
+      <p class="chip-label">question ${qi + 1} of 5 · single tap, no wrong answers</p>
+    </div>`;
+  }
+
+  /* step 4 — the reveal (result computed & saved by obFinish) */
+  const st = tasteState(), pc = personaCandidates(st), sig = signalWords(st.u);
+  const adopted = st.p.persona && st.p.persona.adopted;
+  return `
+  <div class="ob-wrap ob-reveal">
+    <div class="page-kicker">Your first map</div>
+    <h1 class="display">${esc(sig.primary)}.</h1>
+    <p class="page-lede">Secondary signals: ${esc(sig.secondary)}. This map is <b>${st.tier}</b> — it sharpens with every artwork you admire, anywhere in the atlas.</p>
+    <div class="reveal-cols">
+      <div>${tasteMapSVG(st)}
+        <div class="chips" style="margin-top:10px">${(st.p.palette.tones || []).map(tid => {
+          const t = TASTE_TONES.find(o => o.id === tid);
+          return t ? `<span class="chip"><i class="tone-dot" style="background:${t.hex}"></i>${esc(t.name)}</span>` : "";
+        }).join("")}</div>
+      </div>
+      <div class="persona-stack">
+        <div class="chip-label">Three Persona candidates — adopt one, or decide later</div>
+        ${adopted ? personaCard(PERSONAS.find(x => x.id === adopted), { adopted: true })
+                  : pc.cands.map(ps => personaCard(ps, { adoptBtn: true })).join("")}
+        ${pc.secondary && !adopted ? `<p class="chip-label">Your map shows a second island — ${esc(pc.secondary.name)} lives there.</p>` : ""}
+      </div>
+    </div>
+    <div class="ob-foot">
+      <a class="aw-btn primary" href="#/taste">To your taste page →</a>
+      ${adopted ? "" : `<button class="aw-btn" data-tsx="later">Decide later</button>`}
+    </div>
+    ${obHandoff(st)}
+  </div>`;
+}
+function obHandoff(st){
+  const artists = Object.keys(window.TIER1 || {})
+    .map(aid => ({ aid, d: tasteDist(TIER1[aid].coords, st.u) }))
+    .sort((a, b) => a.d - b.d).slice(0, 3).map(o => Ax[o.aid]).filter(Boolean);
+  const list = (LISTS || []).map(l => {
+    const cs = l.works.map(e => coordsOfWork(CatX[e.id])).filter(Boolean);
+    if(!cs.length) return null;
+    const c = {}; TAXES.forEach(a => c[a] = cs.reduce((s, x) => s + x[a], 0) / cs.length);
+    return { l, d: tasteDist(c, st.u) };
+  }).filter(Boolean).sort((a, b) => a.d - b.d)[0];
+  return `<section class="ob-handoff">
+    <h2 class="sec-title">Start here <span class="count">matched to your map</span></h2>
+    <div class="mini-cards mu-artists">${artists.map(p => `
+      <a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id)}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${esc(p.tagline)}</span></span></a>`).join("")}</div>
+    ${list ? `<div class="chips" style="margin-top:12px"><a class="chip m" href="#/list/${list.l.id}">List for you: ${esc(list.l.title)}</a></div>` : ""}
+  </section>`;
+}
+function obFinish(){
+  const p = ppFull(), now = new Date().toISOString();
+  const prior = { F:0, D:0, E:0, C:0, M:0 };
+  TASTE_QUESTIONS.forEach(Q => {
+    const oid = ob.answers[Q.id];
+    const o = Q.options.find(x => x.id === oid);
+    if(o) Object.keys(o.nudge).forEach(a => prior[a] += o.nudge[a]);
+  });
+  TAXES.forEach(a => prior[a] = Math.max(-60, Math.min(60, prior[a])));
+  p.quiz = { answers: ob.answers, prior, at: now };
+  p.palette = { tones: ob.tones.slice(), source: "chosen" };
+  ob.deck.forEach(w => { if(p.deckSeen.indexOf(w.id) < 0) p.deckSeen.push(w.id); });
+  ob.skipped.forEach(id => { if(p.skipped.indexOf(id) < 0) p.skipped.push(id); });
+  ob.admired.forEach(id => {
+    if(!p.admirations.some(e => e.id === id)) p.admirations.push({ id, at: now });
+  });
+  const st = tasteState(p), pc = personaCandidates(st);
+  p.persona = p.persona || { adopted: null, candidates: [], adoptedAt: null, hidden: false };
+  p.persona.candidates = pc.cands.map(ps => ps.id);
+  p.persona.provisional = st.provisional;
+  p.tasteVector = Object.assign({ n: st.n, sd: Math.round(st.meanSd) }, st.u);
+  p.clusters = st.split ? st.components.map(c => ({ center: c.center, weight: +c.weight.toFixed(2), n: c.items.length })) : null;
+  p.milestones = p.milestones || {};
+  p.milestones.onboarded = true;
+  p.milestones.confidence = st.tier;
+  ppSave(p);
+}
+
+/* ---------- the taste page (#/taste) ---------- */
+function viewTaste(){
+  document.title = "Your taste — Pigment";
+  const p = getPassport();
+  if(!p || (!p.admirations.length && !(p.milestones && p.milestones.onboarded))) return `
+    <div class="ob-wrap">
+      <div class="page-kicker">The Taste Passport</div>
+      <h1 class="display">No map yet — let's sketch one.</h1>
+      <p class="page-lede">Admire artworks anywhere in the atlas and your Taste Passport records them locally, on this device. Or take the four-minute onboarding and get a provisional Persona right now.</p>
+      <a class="aw-btn primary ob-cta" href="#/palette">Find your palette →</a>
+    </div>`;
+  const st = tasteState(p), pc = personaCandidates(st), sig = signalWords(st.u);
+  const adopted = p.persona && p.persona.adopted ? PERSONAS.find(x => x.id === p.persona.adopted) : null;
+  const disc = discoveryBatch(st);
+  const admiredWorks = (p.admirations || []).map(e => CatX[e.id]).filter(Boolean);
+  return `
+  <div class="page-head">
+    <div class="page-kicker">The Taste Passport · stored on this device</div>
+    <h1 class="display">${adopted ? esc(adopted.name) : esc(sig.primary)}</h1>
+    <p class="page-lede">Position: <b>${esc(sig.primary)}</b> · secondary signals: ${esc(sig.secondary)} · map is <b>${st.tier}</b>${st.provisional && st.tier !== "provisional" ? " (provisional)" : ""} · ${st.n} admiration${st.n === 1 ? "" : "s"} inform it.</p>
+  </div>
+  <div class="reveal-cols">
+    <div>
+      ${tasteMapSVG(st)}
+      ${st.split ? `<p class="chip-label">Two islands on your map — ${Math.round(st.components[0].weight * 100)}% and ${Math.round(st.components[1].weight * 100)}% of you.</p>` : ""}
+      ${p.palette && p.palette.tones ? `<div class="chips" style="margin-top:10px">${p.palette.tones.map(tid => {
+        const t = TASTE_TONES.find(o => o.id === tid);
+        return t ? `<span class="chip"><i class="tone-dot" style="background:${t.hex}"></i>${esc(t.name)}</span>` : "";
+      }).join("")}</div>` : ""}
+      <div class="chips" style="margin-top:14px">
+        <button class="chip" data-tsx="export">Download passport</button>
+        <button class="chip" data-tsx="share-url">Copy share link</button>
+        <a class="chip" href="#/palette" data-tsx="retake">Retake onboarding</a>
+        <button class="chip" data-tsx="reset">Reset everything</button>
+      </div>
+      <p class="chip-label" id="taste-msg"></p>
+    </div>
+    <div class="persona-stack">
+      ${adopted ? personaCard(adopted, { adopted: true }) + (pc.secondary ? `<p class="chip-label">Second island persona: ${esc(pc.secondary.name)}</p>` : "")
+                : `<div class="chip-label">Persona candidates</div>` + pc.cands.map(ps => personaCard(ps, { adoptBtn: true })).join("")}
+    </div>
+  </div>
+  ${disc.length ? `<section>
+    <h2 class="sec-title">Discovery rings <span class="count">picked for your map — admire to refine it</span></h2>
+    <div class="cards">${disc.map(o => artworkCard(o.w)).join("")}</div>
+    <p class="chip-label">${disc.map(o => RING_LABELS[o.ring]).filter((v, i, a) => a.indexOf(v) === i).join(" · ")}</p>
+  </section>` : ""}
+  ${admiredWorks.length ? `<section>
+    <h2 class="sec-title">Your admirations <span class="count">${admiredWorks.length}</span></h2>
+    <div class="cards">${admiredWorks.slice().reverse().slice(0, 12).map(artworkCard).join("")}</div>
+  </section>` : ""}`;
+}
+
+/* ---------- passport export / import ---------- */
+function passportPayload(){
+  const json = JSON.stringify(getPassport() || newPassport());
+  return btoa(unescape(encodeURIComponent(json))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function decodePayload(s){
+  try{
+    s = s.replace(/-/g, "+").replace(/_/g, "/");
+    while(s.length % 4) s += "=";
+    return JSON.parse(decodeURIComponent(escape(atob(s))));
+  }catch(e){ return null; }
+}
+function mergePassports(mine, theirs){
+  const out = mine || newPassport();
+  ["admirations", "seen", "wantToSee", "saved", "probes"].forEach(f => {
+    const seen = {};
+    (out[f] || []).forEach(e => seen[e.id] = e);
+    (theirs[f] || []).forEach(e => {
+      if(!seen[e.id] || (e.at && seen[e.id].at && e.at < seen[e.id].at)) seen[e.id] = e;
+    });
+    out[f] = Object.values(seen);
+  });
+  ["skipped", "deckSeen", "notForMe"].forEach(f => {
+    out[f] = Array.from(new Set((out[f] || []).concat(theirs[f] || [])));
+  });
+  const newer = (theirs.updatedAt || "") > (out.updatedAt || "");
+  ["quiz", "palette", "persona", "milestones"].forEach(f => {
+    if(theirs[f] && (newer || !out[f])) out[f] = theirs[f];
+  });
+  return out;
+}
+function viewPassportImport(payload){
+  document.title = "Import passport — Pigment";
+  const data = decodePayload(payload || "");
+  if(!data || data.version !== 1) return `
+    <div class="ob-wrap"><h1 class="display">That passport didn't scan.</h1>
+    <p class="page-lede">The link seems damaged. Ask for a fresh one, or start your own map.</p>
+    <a class="aw-btn primary" href="#/palette">Find your palette →</a></div>`;
+  window._ppImport = data;
+  return `
+  <div class="ob-wrap">
+    <div class="page-kicker">Taste Passport · import</div>
+    <h1 class="display">A passport arrived.</h1>
+    <p class="page-lede">${(data.admirations || []).length} admirations · ${(data.seen || []).length} seen in person ·
+      persona: ${data.persona && data.persona.adopted ? esc((PERSONAS.find(x => x.id === data.persona.adopted) || {}).name || data.persona.adopted) : "none adopted"}.
+      Importing merges it with what's already on this device — nothing is dropped.</p>
+    <button class="aw-btn primary ob-cta" data-tsx="import">Merge into my passport</button>
+    <a class="chip-label" style="display:block;margin-top:14px" href="#/">no thanks — take me home</a>
+  </div>`;
+}
+
+/* ---------- interactions ---------- */
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-tsx]");
+  if(!el) return;
+  const act = el.dataset.tsx, id = el.dataset.tsid;
+  if(act === "start"){ obStart(); route(); }
+  else if(act === "tone"){
+    const i = ob.tones.indexOf(id);
+    if(i >= 0) ob.tones.splice(i, 1);
+    else if(ob.tones.length < 4) ob.tones.push(id);
+    route();
+  }
+  else if(act === "tones-done"){ if(ob.tones.length === 4){ ob.step = 2; route(); } }
+  else if(act === "deck-admire" || act === "deck-pass"){
+    const w = ob.deck[ob.di];
+    (act === "deck-admire" ? ob.admired : ob.skipped).push(w.id);
+    ob.di++;
+    if(ob.di >= 16) ob.step = 3;
+    route();
+  }
+  else if(act === "answer"){
+    const [qid, oid] = id.split(":");
+    ob.answers[qid] = oid;
+    if(Object.keys(ob.answers).length >= 5){ ob.step = 4; obFinish(); }
+    route();
+  }
+  else if(act === "adopt"){
+    const p = ppFull();
+    p.persona = p.persona || {};
+    p.persona.adopted = id;
+    p.persona.adoptedAt = new Date().toISOString();
+    ppSave(p);
+    route();
+  }
+  else if(act === "later"){ location.hash = "#/taste"; }
+  else if(act === "retake"){ ob = null; }
+  else if(act === "export"){
+    const a = document.createElement("a");
+    a.href = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(getPassport(), null, 1));
+    a.download = "pigment-passport.json";
+    a.click();
+  }
+  else if(act === "share-url"){
+    const url = location.href.split("#")[0] + "#/passport/" + passportPayload();
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(
+      () => { const m = document.getElementById("taste-msg"); if(m) m.textContent = "Share link copied — your eye, portable."; },
+      () => { const m = document.getElementById("taste-msg"); if(m) m.textContent = url; });
+  }
+  else if(act === "reset"){
+    if(confirm("Erase your Taste Passport from this device? Export it first if you want a copy.")){
+      try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){}
+      ob = null; route();
+    }
+  }
+  else if(act === "import"){
+    const merged = mergePassports(getPassport(), window._ppImport || {});
+    ppSave(merged);
+    location.hash = "#/taste";
+  }
+});
 
 /* go */
 route();
