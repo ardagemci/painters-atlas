@@ -2633,6 +2633,7 @@ function viewPalette(){
     </div>
     <div class="ob-foot">
       <a class="aw-btn primary" href="#/taste">To your taste page →</a>
+      <button class="aw-btn" data-tsx="card">Download your card</button>
       ${adopted ? "" : `<button class="aw-btn" data-tsx="later">Decide later</button>`}
     </div>
     ${obHandoff(st)}
@@ -2683,9 +2684,152 @@ function obFinish(){
   ppSave(p);
 }
 
+/* ---------- the passport card (a painted, shareable PNG) ---------- */
+const CARD_STYLES = ["colorfield", "abstract", "gestural", "ornament", "tonal"];
+function cardPalette(p, adopted){
+  const tones = (p.palette && p.palette.tones || [])
+    .map(tid => (window.TASTE_TONES || []).find(t => t.id === tid)).filter(Boolean);
+  if(tones.length === 4) return tones.map(t => t.hex);
+  if(adopted) return adopted.palette.slice(0, 4);
+  return ["#c9a45c", "#3e5570", "#8a3a3e", "#e8e0cc"];
+}
+async function paintPassportCard(){
+  const p = getPassport(); if(!p) return null;
+  const st = tasteState(p), sig = signalWords(st.u);
+  const adopted = p.persona && p.persona.adopted ? PERSONAS.find(x => x.id === p.persona.adopted) : null;
+  const pal = cardPalette(p, adopted);
+  const tones = (p.palette && p.palette.tones || [])
+    .map(tid => (window.TASTE_TONES || []).find(t => t.id === tid)).filter(Boolean);
+  try{ await document.fonts.load('600 100px "Playfair Display"');
+       await document.fonts.load('400 34px "Inter"');
+       await document.fonts.ready; }catch(e){}
+
+  const W = 1080, H = 1350;
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const ctx = cv.getContext("2d");
+
+  /* 1 — the cover, painted in the browser with the user's own tones */
+  ctx.fillStyle = "#0d0c0a"; ctx.fillRect(0, 0, W, H);
+  const styleName = CARD_STYLES[hashStr("card:" + pal.join() + (adopted ? adopted.id : "")) % CARD_STYLES.length];
+  const painter = PAINTERS[styleName] || PAINTERS.colorfield;
+  try{ painter(ctx, W, H, pal.concat(["#16140f"]), mulberry(hashStr("cover:" + pal.join()))); }catch(e){}
+  const shade = ctx.createLinearGradient(0, 0, 0, H);
+  shade.addColorStop(0, "rgba(13,12,10,.62)"); shade.addColorStop(.42, "rgba(13,12,10,.78)");
+  shade.addColorStop(1, "rgba(13,12,10,.94)");
+  ctx.fillStyle = shade; ctx.fillRect(0, 0, W, H);
+
+  const M = 84;                                   /* margin */
+  const gold = "#c9a45c", gold2 = "#e8c98a", ink = "#ece6d9", muted = "#b0a890";
+  const serif = '"Playfair Display", Georgia, serif', sans = '"Inter", system-ui, sans-serif';
+
+  /* 2 — brand row */
+  ctx.fillStyle = gold;
+  ctx.beginPath(); ctx.arc(M + 14, 120, 14, 0, 7); ctx.fill();
+  ctx.fillStyle = ink; ctx.font = '800 46px ' + serif;
+  ctx.textBaseline = "middle"; ctx.textAlign = "left";
+  ctx.fillText("P I G M E N T", M + 48, 120);
+  ctx.font = '500 24px ' + sans; ctx.fillStyle = muted; ctx.textAlign = "right";
+  ctx.fillText("T A S T E   P A S S P O R T", W - M, 120);
+  ctx.strokeStyle = "rgba(201,164,92,.4)"; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(M, 170); ctx.lineTo(W - M, 170); ctx.stroke();
+
+  /* 3 — persona / position */
+  ctx.textAlign = "left";
+  ctx.fillStyle = gold; ctx.font = '500 26px ' + sans;
+  ctx.fillText((adopted ? "PERSONA" : "POSITION") + "  ·  " + st.tier.toUpperCase() + " MAP", M, 240);
+  const title = adopted ? adopted.name : sig.primary;
+  ctx.fillStyle = ink;
+  let fs = 96; ctx.font = '600 ' + fs + 'px ' + serif;
+  while(ctx.measureText(title).width > W - 2 * M && fs > 54){ fs -= 4; ctx.font = '600 ' + fs + 'px ' + serif; }
+  ctx.fillText(title, M, 320);
+  /* wrapped sub-line */
+  const sub = adopted ? adopted.blurb : ("Secondary signals: " + sig.secondary + ".");
+  ctx.font = '400 33px ' + sans; ctx.fillStyle = muted;
+  const words = sub.split(" "); let line = "", ly = 402;
+  for(const w of words){
+    if(ctx.measureText(line + w).width > W - 2 * M){ ctx.fillText(line.trim(), M, ly); ly += 46; line = ""; if(ly > 402 + 2 * 46) break; }
+    line += w + " ";
+  }
+  if(line.trim() && ly <= 402 + 2 * 46) ctx.fillText(line.trim(), M, ly);
+
+  /* 4 — palette swatches */
+  let sy = 560;
+  pal.forEach((hex, i) => {
+    const sx = M + i * 118;
+    ctx.fillStyle = hex;
+    ctx.beginPath(); ctx.roundRect(sx, sy, 92, 92, 18); ctx.fill();
+    ctx.strokeStyle = "rgba(236,230,217,.25)"; ctx.stroke();
+  });
+  ctx.font = '400 24px ' + sans; ctx.fillStyle = muted;
+  ctx.fillText(tones.length === 4 ? tones.map(t => t.name).join("  ·  ") : "the palette of your persona", M, sy + 134);
+
+  /* 5 — the map */
+  const mp = { x: M, y: 760, s: 470 };
+  ctx.fillStyle = "rgba(22,20,15,.72)";
+  ctx.beginPath(); ctx.roundRect(mp.x, mp.y, mp.s, mp.s, 22); ctx.fill();
+  ctx.strokeStyle = "rgba(201,164,92,.35)"; ctx.stroke();
+  const pad = 42;
+  const px = v => mp.x + pad + (v + 100) / 200 * (mp.s - 2 * pad);
+  const py = v => mp.y + mp.s - pad - (v + 100) / 200 * (mp.s - 2 * pad);
+  ctx.strokeStyle = "rgba(201,164,92,.28)";
+  ctx.beginPath(); ctx.moveTo(px(0), mp.y + pad); ctx.lineTo(px(0), mp.y + mp.s - pad); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(mp.x + pad, py(0)); ctx.lineTo(mp.x + mp.s - pad, py(0)); ctx.stroke();
+  ctx.font = '500 20px ' + sans; ctx.fillStyle = "rgba(176,168,144,.85)";
+  ctx.textAlign = "left";  ctx.fillText("FIGURATIVE", mp.x + pad, py(0) - 14);
+  ctx.textAlign = "right"; ctx.fillText("ABSTRACT", mp.x + mp.s - pad, py(0) - 14);
+  ctx.textAlign = "left";  ctx.fillText("DRAMATIC", px(0) + 12, mp.y + pad + 10);
+  ctx.fillText("CALM", px(0) + 12, mp.y + mp.s - pad - 10);
+  st.items.forEach(it => {
+    ctx.fillStyle = "rgba(111,179,168,.75)";
+    ctx.beginPath(); ctx.arc(px(it.x.F), py(it.x.D), 7, 0, 7); ctx.fill();
+  });
+  st.components.forEach((c, i) => {
+    ctx.fillStyle = i ? "#c97b6a" : gold;
+    ctx.strokeStyle = "#0d0c0a"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(px(c.center.F), py(c.center.D), i ? 14 : 18, 0, 7); ctx.fill(); ctx.stroke();
+  });
+
+  /* 6 — stats beside the map */
+  const rx = mp.x + mp.s + 56;
+  ctx.textAlign = "left"; ctx.fillStyle = ink;
+  const stats = [
+    [String(st.n), "admiration" + (st.n === 1 ? "" : "s")],
+    [String((p.seen || []).length), "seen in person"],
+    [st.split ? "2" : "1", st.split ? "taste islands" : "taste island"]
+  ];
+  let ty = mp.y + 40;
+  stats.forEach(([num, lab]) => {
+    ctx.font = '600 64px ' + serif; ctx.fillStyle = gold2; ctx.fillText(num, rx, ty);
+    ctx.font = '400 26px ' + sans; ctx.fillStyle = muted; ctx.fillText(lab, rx, ty + 42);
+    ty += 132;
+  });
+  ctx.font = '400 24px ' + sans; ctx.fillStyle = muted;
+  ctx.fillText(new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }), rx, mp.y + mp.s - 18);
+
+  /* 7 — footer */
+  ctx.strokeStyle = "rgba(201,164,92,.4)";
+  ctx.beginPath(); ctx.moveTo(M, H - 118); ctx.lineTo(W - M, H - 118); ctx.stroke();
+  ctx.font = 'italic 30px ' + serif; ctx.fillStyle = ink;
+  ctx.fillText("Find your place in the history of art.", M, H - 66);
+  ctx.font = '400 24px ' + sans; ctx.fillStyle = muted; ctx.textAlign = "right";
+  ctx.fillText("ardagemci.github.io/painters-atlas", W - M, H - 66);
+  ctx.textAlign = "left";
+  return cv;
+}
+function drawCardPreview(){
+  const holder = document.getElementById("pp-card-prev");
+  if(!holder) return;
+  paintPassportCard().then(cv => {
+    if(!cv || !document.getElementById("pp-card-prev")) return;
+    cv.className = "pp-card-canvas";
+    holder.innerHTML = ""; holder.appendChild(cv);
+  });
+}
+
 /* ---------- the taste page (#/taste) ---------- */
 function viewTaste(){
   document.title = "Your taste — Pigment";
+  requestAnimationFrame(drawCardPreview);
   const p = getPassport();
   if(!p || (!p.admirations.length && !(p.milestones && p.milestones.onboarded))) return `
     <div class="ob-wrap">
@@ -2713,9 +2857,9 @@ function viewTaste(){
         return t ? `<span class="chip"><i class="tone-dot" style="background:${t.hex}"></i>${esc(t.name)}</span>` : "";
       }).join("")}</div>` : ""}
       <div class="chips" style="margin-top:14px">
-        <button class="chip" data-tsx="export">Download passport</button>
         <button class="chip" data-tsx="share-url">Copy share link</button>
         <a class="chip" href="#/palette" data-tsx="retake">Retake onboarding</a>
+        <button class="chip" data-tsx="export">Back up data (.json)</button>
         <button class="chip" data-tsx="reset">Reset everything</button>
       </div>
       <p class="chip-label" id="taste-msg"></p>
@@ -2725,6 +2869,17 @@ function viewTaste(){
                 : `<div class="chip-label">Persona candidates</div>` + pc.cands.map(ps => personaCard(ps, { adoptBtn: true })).join("")}
     </div>
   </div>
+  <section>
+    <h2 class="sec-title">Your passport card <span class="count">painted in the browser with your own tones</span></h2>
+    <div class="pp-card-row">
+      <div id="pp-card-prev" class="pp-card-prev"><div class="pp-card-loading">mixing pigment…</div></div>
+      <div class="pp-card-side">
+        <p>A card, not a spreadsheet: your Persona, your palette and your position on the map, over a cover painted live from your four tones. Download it, send it, print it — your eye, portable.</p>
+        <button class="aw-btn primary" data-tsx="card">Download the card</button>
+        <p class="chip-label" style="margin-top:10px">PNG · 1080 × 1350 · repaints as your taste sharpens</p>
+      </div>
+    </div>
+  </section>
   ${disc.length ? `<section>
     <h2 class="sec-title">Discovery rings <span class="count">picked for your map — admire to refine it</span></h2>
     <div class="cards">${disc.map(o => artworkCard(o.w)).join("")}</div>
@@ -2823,6 +2978,22 @@ document.addEventListener("click", e => {
   }
   else if(act === "later"){ location.hash = "#/taste"; }
   else if(act === "retake"){ ob = null; }
+  else if(act === "card"){
+    el.disabled = true;
+    paintPassportCard().then(cv => {
+      el.disabled = false;
+      if(!cv) return;
+      cv.toBlob(b => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(b);
+        a.download = "pigment-taste-card.png";
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+        const m = document.getElementById("taste-msg");
+        if(m) m.textContent = "Card downloaded — your eye, portable.";
+      }, "image/png");
+    });
+  }
   else if(act === "export"){
     const a = document.createElement("a");
     a.href = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(getPassport(), null, 1));
