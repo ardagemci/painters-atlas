@@ -1300,6 +1300,7 @@ function viewMuseum(id){
       <h1 class="display">${esc(v.name)}</h1>
       <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}${note && note.photo ? ` · <a href="${note.photo.page}" target="_blank" rel="noopener">photo via Wikimedia Commons</a>` : ""}</div>
       ${note ? `<div class="mu-hook">${esc(note.hook)}</div>` : ""}
+      <div class="chips" style="margin-top:10px">${shareChip("p/museum/" + v.id + ".html")}</div>
     </div>
   </div>
   ${note && note.essay ? `<div class="mu-essay">${note.essay.split("\n\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
@@ -1393,6 +1394,7 @@ function viewList(id){
       <h1 class="display">${esc(l.title)}</h1>
       <p class="page-lede">${esc(l.lede)}</p>
       <div class="chip-label">${l.works.length} works — every one opens its own page</div>
+      <div class="chips" style="margin-top:8px">${shareChip("p/list/" + l.id + ".html")}</div>
     </div>
   </div>
   <ol class="list-entries">
@@ -1635,7 +1637,7 @@ function viewArtist(id){
     tagline:a.tagline
   })}
   <div class="chip-label">Movements · Techniques · Era · Nation — click to travel</div>
-  <div class="chips" style="margin-bottom:30px">${chipsFor(a)}</div>
+  <div class="chips" style="margin-bottom:30px">${chipsFor(a)}${shareChip("p/artist/" + a.id + ".html")}</div>
 
   ${(() => {
     const t1 = window.TIER1 && window.TIER1[a.id];
@@ -1759,7 +1761,7 @@ function viewArtwork(id){
     <h1 class="display" style="font-size:clamp(1.7rem,3.6vw,2.6rem)">${esc(w.title)}</h1>
     <div class="hero-sub"><a href="#/artist/${a.id}">${esc(a.name)}</a><span>${esc(w.year.display)}</span></div>
   </div>
-  <div class="aw-actions">${passportActions(w)}</div>
+  <div class="aw-actions">${passportActions(w)}${shareChip("p/artwork/" + w.id + ".html")}</div>
   <div class="chips" style="margin-bottom:26px">
     ${(w.movements || []).map(m => Mx[m] ? chip("m", "movement/" + m, Mx[m].name) : "").join("")}
     ${(w.techniques || []).map(t => Tx[t] ? chip("t", "technique/" + t, Tx[t].name) : "").join("")}
@@ -3017,6 +3019,20 @@ document.addEventListener("click", e => {
     ppSave(merged);
     location.hash = "#/taste";
   }
+});
+
+/* ---------- share buttons (copy the crawlable stub URLs — tools/build_seo.jxa.js) ---------- */
+const STUB_BASE = "https://ardagemci.github.io/painters-atlas/";
+function shareChip(path){
+  return `<button class="chip" data-share="${path}">Share this page</button>`;
+}
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-share]");
+  if(!el) return;
+  const url = STUB_BASE + el.dataset.share;
+  (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(
+    () => { const t = el.textContent; el.textContent = "Link copied ✓"; setTimeout(() => { el.textContent = t; }, 1600); },
+    () => { prompt("Copy this link:", url); });
 });
 
 /* go */

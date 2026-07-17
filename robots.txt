@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ardagemci.github.io/painters-atlas/sitemap.xml
