@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pigment.local/protocol/analyst-packet-schema.json",
+  "title": "Pigment Liaison Analyst Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id", "project", "round", "analyst_id", "pole", "analysis_mode",
+    "artifact_reviewed", "summary", "semantic_validity", "intended_user_outcome",
+    "essential_principles", "optional_forms", "accepted_counterpole_points",
+    "constraints_or_principles_to_defend", "adaptations", "resolved_issues",
+    "critical_issues", "noncritical_issues", "unsupported_claims", "evidence_gaps",
+    "specialists_recommended", "intent_preserved", "feasibility_supported",
+    "quality_evidence_appears_sufficient", "convergence_recommended",
+    "recommended_action", "recommended_next_state", "human_escalation",
+    "confidence", "rationale", "owner_report", "created_at"
+  ],
+  "properties": {
+    "task_id": {"type": "string", "pattern": "^PIG-[0-9]{3,}$"},
+    "project": {"const": "pigment"},
+    "round": {"type": "integer", "minimum": 1},
+    "analyst_id": {"enum": ["theory-liaison", "synthesis-liaison"]},
+    "pole": {"enum": ["chatgpt-theory", "claude-synthesis-build"]},
+    "analysis_mode": {"enum": ["incoming", "outgoing", "build_review", "convergence_review"]},
+    "artifact_reviewed": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 600},
+    "semantic_validity": {"enum": ["valid", "repairable", "invalid"]},
+    "intended_user_outcome": {"type": "string"},
+    "essential_principles": {"type": "array", "items": {"type": "string"}},
+    "optional_forms": {"type": "array", "items": {"type": "string"}},
+    "accepted_counterpole_points": {"type": "array", "items": {"type": "string"}},
+    "constraints_or_principles_to_defend": {"type": "array", "items": {"type": "string"}},
+    "adaptations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["change", "reason", "constraint", "evidence", "user_consequence", "intent_preserved", "disposition"],
+        "properties": {
+          "change": {"type": "string"}, "reason": {"type": "string"},
+          "constraint": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "user_consequence": {"type": "string"}, "intent_preserved": {"type": "boolean"},
+          "disposition": {"enum": ["accept", "reconsider", "escalate"]}
+        }
+      }
+    },
+    "resolved_issues": {"type": "array", "items": {"type": "string"}},
+    "critical_issues": {"type": "array", "items": {"type": "string"}},
+    "noncritical_issues": {"type": "array", "items": {"type": "string"}},
+    "unsupported_claims": {"type": "array", "items": {"type": "string"}},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "specialists_recommended": {"type": "array", "items": {"type": "string"}},
+    "intent_preserved": {"type": "boolean"},
+    "feasibility_supported": {"type": "boolean"},
+    "quality_evidence_appears_sufficient": {"type": "boolean"},
+    "convergence_recommended": {"type": "boolean"},
+    "recommended_action": {"enum": ["advance", "route_to_chatgpt", "route_to_claude", "return_for_revision", "request_evidence", "hold", "escalate_to_user"]},
+    "recommended_next_state": {"type": "string"},
+    "human_escalation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["recommended", "reason_category", "decision_required", "why_the_teams_cannot_resolve_it"],
+      "properties": {
+        "recommended": {"type": "boolean"}, "reason_category": {"type": "string"},
+        "decision_required": {"type": "string"}, "why_the_teams_cannot_resolve_it": {"type": "string"}
+      }
+    },
+    "confidence": {
+      "type": "object", "additionalProperties": false, "required": ["level", "basis"],
+      "properties": {"level": {"enum": ["low", "medium", "high"]}, "basis": {"type": "string"}}
+    },
+    "rationale": {"type": "string", "minLength": 1},
+    "owner_report": {
+      "type": "object", "additionalProperties": false, "required": ["visibility", "title", "markdown"],
+      "properties": {
+        "visibility": {"enum": ["audit_only", "human_review", "escalation"]},
+        "title": {"type": "string", "minLength": 1}, "markdown": {"type": "string", "minLength": 1}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

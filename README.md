@@ -44,3 +44,11 @@ osascript -l JavaScript tools/validate.jxa.js
 # or with Node
 node tools/validate.js
 ```
+
+## Dipolar development coordinator
+
+Pigment's ChatGPT theory pole and Claude synthesis/build pole are joined by a
+neutral, resumable Coordinator. It validates structured exchanges, freezes a
+converged specification, requires observed QA/browser evidence, and stops for
+human approval without merging or deploying. See
+[`coordinator/README.md`](coordinator/README.md) for setup and operation.

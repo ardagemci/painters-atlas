@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pigment-dipolar-message.schema.json",
+  "title": "Pigment cross-team message envelope",
+  "description": "Every artifact exchanged between the ChatGPT Theory Team and the Claude Synthesis and Build Team via the Pigment Coordinator must carry this envelope (as YAML front matter or a JSON header). See protocol/PROTOCOL.md.",
+  "type": "object",
+  "required": [
+    "task_id", "project", "round", "sender", "recipient", "message_type",
+    "workflow_state", "summary", "assumptions", "accepted_points",
+    "disputed_points", "proposal", "rationale", "evidence",
+    "requested_actions", "acceptance_criteria", "risks", "confidence",
+    "next_state", "created_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "task_id": { "type": "string", "pattern": "^PIG-[0-9]{3,}$", "description": "Stable objective id, e.g. PIG-001" },
+    "project": { "const": "pigment" },
+    "round": { "type": "integer", "minimum": 1 },
+    "sender": { "type": "string", "enum": ["chatgpt-theory", "claude-synthesis-lead", "coordinator"] },
+    "recipient": { "type": "string", "enum": ["chatgpt-theory", "claude-synthesis-lead", "coordinator", "user"] },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "theory_brief", "challenge", "adaptation", "revision", "defense",
+        "final_synthesis", "specification", "implementation_report",
+        "review", "response_to_review", "escalation", "human_review_package"
+      ]
+    },
+    "workflow_state": {
+      "type": "string",
+      "enum": [
+        "intake", "theory", "challenge", "theory_revision", "final_synthesis",
+        "awaiting_build_approval", "approved_for_build", "building",
+        "internal_review", "revision", "human_review_ready", "approved",
+        "rejected", "blocked"
+      ]
+    },
+    "summary": { "type": "string", "maxLength": 600 },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "accepted_points": { "type": "array", "items": { "type": "string" } },
+    "disputed_points": { "type": "array", "items": { "type": "string" } },
+    "proposal": { "type": "string", "description": "The substantive proposal, or a pointer to the body section carrying it" },
+    "rationale": { "type": "string" },
+    "evidence": { "type": "array", "items": { "type": "string" }, "description": "File paths, screenshot names, validator output, citations" },
+    "requested_actions": { "type": "array", "items": { "type": "string" } },
+    "acceptance_criteria": { "type": "array", "items": { "type": "string" } },
+    "risks": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "string", "pattern": "^(low|medium|high)( *[—:-].*)?$" },
+    "next_state": {
+      "type": "string",
+      "enum": [
+        "intake", "theory", "challenge", "theory_revision", "final_synthesis",
+        "awaiting_build_approval", "approved_for_build", "building",
+        "internal_review", "revision", "human_review_ready", "approved",
+        "rejected", "blocked"
+      ]
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}
