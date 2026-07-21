@@ -1,0 +1,146 @@
+{
+  "task_id": "PIG-001",
+  "project": "pigment",
+  "round": 1,
+  "analyst_id": "synthesis-liaison",
+  "pole": "claude-synthesis-build",
+  "analysis_mode": "outgoing",
+  "artifact_reviewed": [
+    "protocol/tasks/PIG-001/challenge-adaptation-report.md (the artifact under audit; challenge, round 1)",
+    "protocol/tasks/PIG-001/intake-baseline.md",
+    "protocol/tasks/PIG-001/liaison-incoming-analysis.json (Duchamp incoming)",
+    "protocol/tasks/PIG-001/challenge-analysis-caravaggio.md",
+    "protocol/tasks/PIG-001/ux-requirements.md",
+    "protocol/tasks/PIG-001/browser-evidence.md (+ evidence/home__{320,390,1280}__dark.png)",
+    "protocol/tasks/PIG-001/data-integrity-report.md",
+    "protocol/tasks/PIG-001/feasibility-assessment.md",
+    "protocol/tasks/PIG-001/decision-record.md (D-001..D-010)",
+    "protocol/tasks/PIG-001/theory-brief.md (THEORY_001 §0 six items)",
+    "protocol/message-schema.json",
+    "repository at commit 3c2e9fa (js/app.js, css/styles.css, index.html) for evidence spot-checks"
+  ],
+  "summary": "Outgoing audit of Claude's Challenge and Adaptation Report. Consolidation fidelity, adaptation accountability (D-001..D-010), objection quality (CH-1..CH-12), and answered-objection coverage (THEORY_001 §0, six items) all hold. Every spot-checked file:line reproduces against 3c2e9fa; evidence PNGs exist and are non-empty; Gate 1 respected (no production file modified). One real envelope violation: summary is 614 chars against the schema's 600 maxLength. Recommend advance to theory_revision after that single mechanical repair; the artifact is otherwise fit for the Kernel.",
+  "semantic_validity": "repairable",
+  "intended_user_outcome": "Let a first-time visitor discover art, admire works, form and recover a local Taste Passport, understand how their actions affect it, and recognize Pigment as an atlas of relationships in art (THEORY_001 §1). The report faithfully carries clauses 1-4 as acceptance-bearing and correctly reclassifies clause 5 (recognition) as design intent judged at design review, since no approved instrument exists to test a stranger's recognition (CH-4). Intent is preserved by the report.",
+  "essential_principles": [
+    "An outgoing artifact must conform to the frozen message contract (protocol/message-schema.json) before the Kernel will transmit it; PROTOCOL.md §3 returns non-conforming messages without processing.",
+    "Consolidation must remove duplication without concealing disagreement: overruled findings and superseded framings must be stated plainly (CLAUDE.md §2; Gate 3).",
+    "Every objection must carry rationale and consequence; every material adaptation must be recorded in the Decision Record with the six required fields.",
+    "Build evidence and challenge evidence differ: a challenge is judged on file:line/measurement grounding, not on Gate-2 quality certification, which is correctly deferred."
+  ],
+  "optional_forms": [
+    "Section numbering and prose framing of the report are presentational and not load-bearing; only the envelope and the recorded decisions bind."
+  ],
+  "accepted_counterpole_points": [
+    "The report's accepted_points (§2) faithfully mirror what the incoming analysis and specialists conceded to THEORY_001 (validator snapshot exact; exclusions §4.4; frozen terms §9.1; epistemic guardrails §3.3; Explore mismatch; deck-pool impact; generic attribution insufficient). No counterpole concession was dropped to make the challenge look stronger."
+  ],
+  "constraints_or_principles_to_defend": [
+    "GENUINE contract constraint: the report's own summary must satisfy maxLength 600. It currently does not (614). This is the single item that keeps the envelope from passing the Kernel and must be repaired before transmission.",
+    "GENUINE governance constraint, satisfied: Gate 1 held — git status --short shows only untracked protocol/tasks/PIG-001/ plus root IVO/MIRA/SOREN/THEORY_001.md; zero production files modified under js/ css/ index.html p/ tools/.",
+    "GENUINE consistency principle, satisfied: the report holds THEORY_001 to the schema in CH-9; it must be held to the same schema itself, which is why the 614-char summary is named rather than waived."
+  ],
+  "adaptations": [
+    {
+      "change": "Duchamp's CRITICAL 4 (canvas-rendered timeline/constellation implies a new parallel rendering path) is overruled on evidence and recorded verbatim as an overruled critical finding (D-005).",
+      "reason": "The timeline is DOM anchors (js/app.js:894, .tl2-bar) and the constellation is inline SVG (:1095 svg, :1077 .ig-node); PIGMENT.md §13 scopes canvas to covers, not instruments. Workstream H's readable alternatives are bounded markup, not a renderer.",
+      "constraint": "Evidence beats assertion (CLAUDE.md §5); CLAUDE.md §2 requires overruled critical findings recorded verbatim.",
+      "evidence": ["challenge-analysis-caravaggio.md finding 9", "ux-requirements.md §4 / item 4", "decision-record.md D-005", "verified: js/app.js:894 anchors, :1095/:1077 inline SVG"],
+      "user_consequence": "Positive — accessibility corrections stay in the stabilization release instead of being deferred as a substantial build.",
+      "intent_preserved": true,
+      "disposition": "accept"
+    },
+    {
+      "change": "Rights-surface size corrected to a measured 783 rendered images (255 pd catalog + 528 artworks.js gallery), superseding BOTH Duchamp's ~786-records framing and Caravaggio's 'not ~786' rebuttal (D-008; CH-2).",
+      "reason": "786 counted prose bios + edges (accuracy risk, not image liability) and excluded the 528 gallery images; the real image-rights surface is the actually-rendered 783. Stated plainly so neither party's error is buried.",
+      "constraint": "Counts must be measured, not argued (Steward verification duty).",
+      "evidence": ["data-integrity-report.md Q2 (255 pd + 528 gallery)", "decision-record.md D-008"],
+      "user_consequence": "None; scopes the rights register honestly.",
+      "intent_preserved": true,
+      "disposition": "accept"
+    },
+    {
+      "change": "Workstream I split three ways (rights register in scope now; claim-level sourcing gated on release positioning; uncertainty UI deferred) with a hybrid container target (D-006; CH-2).",
+      "reason": "Workstream I as written is schema design + corpus migration + audit + new UI, not bounded stabilization; the legal duty is discharged by a rights register over the rendered surface.",
+      "constraint": "No source/license/confidence field exists in any schema; PIGMENT.md §14 wants attribution close to the record (hence hybrid).",
+      "evidence": ["challenge-analysis-caravaggio.md finding 11-13", "data-integrity-report.md Q1-Q2", "decision-record.md D-006"],
+      "user_consequence": "Stabilization release remains shippable; no user-facing change until the authorized build phase.",
+      "intent_preserved": true,
+      "disposition": "reconsider"
+    },
+    {
+      "change": "Acceptance-criteria triage: rescope 10-12 to a rights/disposition register, demote P2 28/30/31/33/34 to adjudicated design review, reword 19 (scrollWidth<=clientWidth) and 29 (regression + owner ratification), bind unbounded criteria to frozen inventories (D-007; CH-1/CH-4).",
+      "reason": "As written, the Release rule plus unpassable P0 criteria closes human_review_ready permanently, and ~10 criteria cannot be objectively adjudicated.",
+      "constraint": "Gate 2 requires criteria the Quality Reviewer can pass/fail without judgment calls.",
+      "evidence": ["ux-requirements.md R1-R18", "challenge-analysis-caravaggio.md findings 14-19", "decision-record.md D-007"],
+      "user_consequence": "None directly; produces an achievable, honest release gate.",
+      "intent_preserved": true,
+      "disposition": "reconsider"
+    },
+    {
+      "change": "THEORY_001 envelope defect (8 schema violations; arrived by direct commit) dispositioned as a recorded process exception with a conforming re-envelope requested; Claude does not rewrite the counterparty's message (D-003; CH-9).",
+      "reason": "Content soundness and envelope validity are separate; waiving teaches that direct commits bypass the Kernel, while discarding sound content is process fetishism.",
+      "constraint": "PROTOCOL.md §3.",
+      "evidence": ["intake-baseline.md §5 C1", "decision-record.md D-003"],
+      "user_consequence": "None directly; preserves the Kernel's enforcement power.",
+      "intent_preserved": true,
+      "disposition": "accept"
+    },
+    {
+      "change": "Matisse/Kahlo (both d.1954) copyright-walled in catalog yet rendered ungated in artworks.js galleries — escalated to the owner as a licensing-policy inconsistency, not resolved internally (D-009; CH row / §7 Q7c).",
+      "reason": "Both satisfy the died<=1955 rule, so this is a policy inconsistency, not a rule breach; licensing ambiguity escalates rather than being assumed away.",
+      "constraint": "CLAUDE.md §5 (legal risk escalates); PIGMENT.md §14.",
+      "evidence": ["data-integrity-report.md Q3 / Risk 3", "decision-record.md D-009"],
+      "user_consequence": "None until decided; galleries currently display these works.",
+      "intent_preserved": true,
+      "disposition": "escalate"
+    }
+  ],
+  "resolved_issues": [
+    "CONSOLIDATION FIDELITY (a): The overrule of Duchamp's own CRITICAL 4 is stated plainly in §4 and recorded verbatim in D-005. Audited dispassionately as my own overruled finding: the evidence in challenge-analysis-caravaggio.md finding 9 and ux-requirements.md §4 is sound — timeline is DOM (js/app.js:894), constellation is inline SVG (:1095/:1077), verified. The overrule is correct and honestly recorded.",
+    "CONSOLIDATION FIDELITY (b): The rights-surface count history is honest about BOTH errors. D-008 and CH-2 state that 783 supersedes Duchamp's ~786 AND Caravaggio's 'not ~786', explaining why each was wrong. Neither party's error is buried.",
+    "CONSOLIDATION FIDELITY (c): Caravaggio's refutations are carried without softening — CH-5 states U5 REFUTED as written (prefix already outranks substring, js/app.js:2175-2181), U6 SPLIT, U7 SPLIT ('false for the surface that matters most').",
+    "CONSOLIDATION FIDELITY (d): Both shipped-code blockers are attributed and evidenced correctly. Verified: mergePassports last-writer-wins at js/app.js:2921-2923; false import copy 'nothing is dropped' at :2941; onboarding memory-only 'let ob = null' at :2548; retake (:2982) discards with no confirm while reset has confirm() (at :3011-3012).",
+    "OBJECTION QUALITY: All twelve challenges CH-1..CH-12 carry both rationale and consequence. CH-11 (name-splitting) carries the lightest consequence but the user-facing defect (e.g. 'More by El') is established in accepted-points and Caravaggio finding 28.",
+    "ADAPTATION ACCOUNTABILITY: All ten ledger entries D-001..D-010 appear in report §4 and the report claims neither more nor less than the ledger holds; statuses (accepted / reconsider / escalated) match decision-record.md exactly.",
+    "EVIDENCE CORRESPONDENCE: All spot-checks reproduce against 3c2e9fa — js/app.js:2921-2923 (last-writer-wins), :2548 (let ob=null), :1447/:1451 (nested button inside anchor), index.html:53 (aria-live polite on #app), css/styles.css:73 (overflow-x:hidden inside body block starting :65, not html), index.html:47 (placeholder 'Search the atlas...' + aria-label naming five of eight indexed types), js/app.js:1463 ('four instruments') vs :1336 ('Two instruments'), and index.html:68-72/78-93 (taxonomy.js/worldmap.js/venues.js/artists-1..16.js carry NO ?v= while 11 other includes do). Evidence PNGs home__{320,390,1280}__dark.png exist and are non-empty (172KB/194KB/442KB). All referenced specialist files exist and are non-empty.",
+    "ANSWERED OBJECTIONS: All six items of THEORY_001 §0 are satisfied — (1) frozen objective restated §1/§2.1; (2) four-way classification §5.2; (3) contradiction identification via intake C1-C4 + CH-1..CH-12 + §6; (4) smallest reversible plan §5.4 (14 units); (5) evidence before human_review_ready §5.5; (6) rollback path to the multi-door baseline §5.5.",
+    "BUILDABILITY/TESTABILITY: §5.4's 14-unit plan is buildable as described (each unit names files, LOC, revert cost, ?v= bump; feasibility-assessment.md F2 backs it) and the revised criteria in §5.3 are objectively testable (bound to Mondrian's 24-route/18-control/24-query inventories; 19 -> scrollWidth<=clientWidth; 12 -> every register entry carries a disposition). Residual dependence on the release-positioning owner decision is disclosed, not hidden.",
+    "GATE COMPLIANCE: git status --short shows only untracked protocol/tasks/PIG-001/ and root IVO/MIRA/SOREN/THEORY_001.md; zero production files modified. The report does not freeze the spec, change workflow state, or claim approvals it lacks — D-006/D-007/D-010 are proposed/reconsider, owner decisions are routed to MIRA, and a conforming re-envelope is requested rather than authored by Claude."
+  ],
+  "critical_issues": [],
+  "noncritical_issues": [
+    "REQUIRED PRE-TRANSMISSION REPAIR (envelope, mechanical): the report's summary field is 614 characters against the frozen schema's maxLength 600 (measured). The Kernel would return this message unprocessed under PROTOCOL.md §3. Fix: trim the summary by >=14 characters. This is the sole reason semantic_validity is 'repairable' rather than 'valid'; no content, fidelity, or evidence problem underlies it. Duchamp cannot perform this edit (Write is limited to his own packet); the Synthesis Lead must trim before the Kernel transmits.",
+    "Trivial citation imprecision, non-material: the report/specialists cite the reset confirm() at js/app.js:3010; the actual lines are 3011-3012 (else-if at 3011, confirm at 3012). The claim (reset confirms, retake does not) is fully correct. Also PP_LABELS is cited at :85-88 in the report vs :84-88 by Caravaggio; the block is real either way. Neither affects any finding."
+  ],
+  "unsupported_claims": [],
+  "evidence_gaps": [
+    "The report honestly discloses (CH-9; §7 Q1; carried from intake C3) that NIKO_001.md, ELARA_001.md, ARGUS_001.md and the VERA review do not exist in the repository, and that five of the twelve §3.3 gaps still rest on them. This is a disclosed limit of THEORY_001's inputs, not a defect of the report — the report does not build any blocker classification on the unmeasured claims and requests the missing reports.",
+    "Effort/LOC figures in §5.4 and the register cost estimates in CH-2 are labeled estimates throughout (confidence line: 'medium on effort figures'); the pilot is proposed to price the register before commitment. Correctly flagged, not overstated."
+  ],
+  "specialists_recommended": [
+    "None additional this round. The report correctly kept Van Eyck (Quality/Accessibility) and Matisse (Visual) out to preserve Gate-2 independence, and Van Gogh (Content) out pending a frozen scope. Vermeer's early invocation was scoped to two deployed-build measurements and recorded (D-004), which does not compromise his later review independence."
+  ],
+  "intent_preserved": true,
+  "feasibility_supported": true,
+  "quality_evidence_appears_sufficient": false,
+  "convergence_recommended": false,
+  "recommended_action": "advance",
+  "recommended_next_state": "theory_revision",
+  "human_escalation": {
+    "recommended": false,
+    "reason_category": "not_yet_ripe — owner decisions are routed to MIRA/the product owner via the challenge itself (§7 Q5-Q7) before they reach Arda",
+    "decision_required": "None from Duchamp this round. Release positioning, the adaptivity fork, first-action ratification, deck re-score authorization, and the Matisse/Kahlo gallery policy are surfaced by the report to the theory pole / owner; none has ripened into a Duchamp escalation, and no active rights exposure was found (0 of 255 pd catalog and 0 of 175 gallery artists died >1955).",
+    "why_the_teams_cannot_resolve_it": "They can. This is round 1; the challenge mechanism has not yet been answered, and the owner decisions sharpen materially once the theory pole revises and the rights-register pilot prices the work."
+  },
+  "confidence": {
+    "level": "high",
+    "basis": "The envelope was validated field-by-field against protocol/message-schema.json (20/20 required keys present, all enums valid, task_id and confidence patterns match, created_at is RFC3339, no unknown keys; the one violation — summary 614>600 — was measured programmatically). Every spot-checked file:line reproduced against commit 3c2e9fa by direct grep/read. Gate 1 was confirmed by git status --short. Consolidation fidelity, adaptation accountability, and §0 coverage were cross-checked against decision-record.md, the specialist reports, and theory-brief.md §0. Lower certainty exists only where the report itself labels estimates as estimates."
+  },
+  "rationale": "This is an outgoing audit for fidelity, evidence correspondence, and contract conformance — not a re-litigation of settled analysis. On all three axes the artifact is sound. Fidelity: the report conceals no disagreement. It states its own liaison's overruled CRITICAL 4 plainly and records it verbatim (D-005), and I audited that overrule dispassionately — the evidence that the timeline is DOM (js/app.js:894) and the constellation inline SVG (:1095/:1077) is correct, so the overrule stands on merit. It is honest that the 783 recount supersedes both Duchamp's ~786 and Caravaggio's 'not ~786' framings (D-008), burying neither error. Caravaggio's refutations reach the report unsoftened (CH-5: U5 refuted, U6/U7 split). The two shipped-code blockers are attributed and evidenced correctly, and I re-verified each in the repository. Evidence correspondence: every file:line I spot-checked reproduced, the three evidence PNGs exist and are non-empty, and every cited specialist file is present and non-empty. Accountability: all ten Decision Record entries appear in §4 with matching statuses, and the report claims neither more nor less than the ledger. Objection quality: CH-1..CH-12 each carry rationale and consequence. Answered objections: all six items of THEORY_001 §0 map to a section. Buildability: the 14-unit plan and the rewritten criteria are objectively testable, with the one genuine external dependency (release positioning) disclosed rather than hidden. Gate compliance: no production file was touched and the report does not overstep Claude's authority. The single defect is mechanical: the summary is 614 characters against a 600 maxLength, which — consistent with the report's own insistence in CH-9 that THEORY_001 conform to the schema — must be repaired before the Kernel transmits. I therefore recommend advance to theory_revision contingent on that one trim; semantic_validity is 'repairable' precisely to signal that the artifact is fit modulo this fix. quality_evidence_appears_sufficient is false because this is a pre-build challenge with no Gate-2 build to certify — the correct state for the round, matching convergence_recommended false.",
+  "owner_report": {
+    "visibility": "audit_only",
+    "title": "Synthesis Liaison Report",
+    "markdown": "# Synthesis Liaison Report\n\n**Task:** PIG-001 · **Round 1** · Outgoing audit of Claude's challenge before it reaches the coordinator · Nothing built; no production file touched.\n\n## Current Position\n\nClaude's team has finished its challenge to the theory handoff and is ready to send it back. My job here was to check that document one last time before it leaves — for honesty, for whether its evidence actually holds up in the code, and for whether it obeys the shared message format. The short version: it is fit to send, with one small mechanical fix first.\n\n## Feasibility\n\nThe challenge's feasibility picture is well supported. It separates genuine stabilization (eight of ten work areas) from the two that are not — the provenance/rights work and part of the accessibility work — and its 14-step build plan is concrete and reversible, each step naming the files it touches and how to undo it. I checked the specific code claims the plan rests on and they are accurate.\n\n## Adaptations Made\n\nEvery material change is recorded in the decision ledger (D-001 to D-010) and mirrored in the report, with none overstated. The notable ones: an earlier internal claim of mine — that the timeline and influence map are drawn on canvas and would need a whole new renderer — was overruled on evidence, and I confirm the overrule is correct: they are ordinary web elements. A disputed head-count for the image-rights work was corrected to a measured 783 images, and the report is candid that this corrects two earlier internal estimates, not just one. The scope split of the provenance work, the criteria rewrites, and the deck re-scoring are all recorded as proposals awaiting the theory team and the owner, not as things Claude has decided or done.\n\n## Product Intent\n\nPreserved. Nothing in the challenge redefines what Pigment is. The stated goal is carried faithfully, including the sensible move of treating the final clause — visitors *recognizing* Pigment as an atlas of relationships — as a design intention rather than a pass/fail test, because there is no approved way to measure it.\n\n## Evidence\n\nStrongest support: every specific code claim I spot-checked reproduces exactly against the current build — the passport-overwrite bug, the memory-only onboarding, the nested button, the search-label wording, the header/footer navigation gap, and the uneven cache-busting across script files. The three browser screenshots referenced exist and are real. No claim I tested failed to hold up.\n\nHonest gaps, disclosed by the report itself: three of the theory team's six source reports still do not exist in the repository, and the report neither hides this nor builds any blocker on the unmeasured claims — it asks for the missing reports instead.\n\n## Remaining Problems\n\nOne, and it is mechanical: the report's one-paragraph summary is 14 characters too long for the agreed message format (614 against a 600 limit). The coordinator would bounce the message until it is trimmed. It is worth noting that the report itself insists the theory team's message meet this same format, so holding Claude's own message to it is only consistent. There is no content, honesty, or evidence problem underneath it.\n\n## Synthesis Assessment\n\nFeasibility of the plan is supported and the challenge is faithful to what the specialists actually found. This is not convergence and does not claim to be — it is a well-grounded round-1 challenge that hands the open decisions back to the theory team and, through them, to you.\n\n## What Happens Next\n\nTrim the summary to the length limit, then let the challenge advance to the theory-revision stage. The theory team is asked for three things: the missing reports, agreement on where image-rights evidence may live, and a decision on how this release is described — the same positioning question flagged last round, which decides whether this is one release or two. None of that needs your attention yet; it is being routed to the theory team first, exactly as intended.\n\n## Attention Required\n\nNo owner attention required.\n"
+  },
+  "created_at": "2026-07-21T17:40:00Z"
+}
