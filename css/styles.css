@@ -542,7 +542,9 @@ section{margin:46px 0}
   transition:transform .3s var(--ease);
 }
 .entry-card:hover .ec-arrow{transform:translateX(7px)}
+.ec-cover{position:absolute;inset:0;z-index:1;border-radius:inherit}
 .ec-surprise{
+  position:relative;z-index:2;
   margin-top:12px;padding:0;border:none;background:none;cursor:pointer;
   font-family:var(--sans);font-size:.8rem;color:var(--gold2);letter-spacing:.04em;
 }

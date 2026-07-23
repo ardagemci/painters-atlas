@@ -1444,13 +1444,14 @@ function viewHome(){
   </header>
 
   <div class="entry-cards">
-    <a class="entry-card" href="#/artists" style="--ec:var(--gold)">
+    <div class="entry-card" style="--ec:var(--gold)">
+      <a class="ec-cover" href="#/artists" aria-label="Start with an artist"></a>
       <div class="ec-kicker">Begin</div>
       <h3>Start with an artist</h3>
       <p>Pick a painter and follow the threads — teachers, rivals, movements, and the works that made them matter.</p>
       <button class="ec-surprise" data-random-artist>or surprise me →</button>
       <span class="ec-arrow">→</span>
-    </a>
+    </div>
     <a class="entry-card" href="#/${(() => { const p = getPassport(); return p && p.milestones && p.milestones.onboarded ? "taste" : "palette"; })()}" style="--ec:var(--teal)">
       <div class="ec-kicker">Become</div>
       <h3>Find your palette</h3>
