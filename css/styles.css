@@ -923,7 +923,8 @@ section{margin:46px 0}
   transition:border-color .2s,transform .2s}
 .tone i{width:26px;height:26px;border-radius:50%;background:var(--tone);flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
 .tone:hover{transform:translateY(-2px)}
-.tone.on{border-color:var(--gold);background:rgba(201,164,92,.12);color:var(--ink)}
+.tone.on{border-color:var(--gold);background:rgba(201,164,92,.12);color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--gold)}
+.tone.on::after{content:"✓";margin-left:auto;color:var(--gold2);font-weight:700;font-size:.95rem;line-height:1}
 .ob-foot{display:flex;align-items:center;gap:18px;margin-top:18px}
 .aw-btn[disabled]{opacity:.4;cursor:not-allowed}
 .deck-progress{height:4px;border-radius:4px;background:var(--line2);margin:18px 0 22px;overflow:hidden}
