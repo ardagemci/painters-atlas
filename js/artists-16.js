@@ -209,5 +209,19 @@ window.ARTISTS = (window.ARTISTS || []).concat([
   facts:["Girl with Peaches was painted at twenty-two and instantly became Russia's most loved portrait.",
     "After witnessing Bloody Sunday from the Academy windows, he resigned and refused all court work.",
     "His Ida Rubinstein scandalized Moscow — bones, angles and green shadow a decade ahead of schedule.",
-    "Sitters begged him to soften; he reportedly replied that the truth had taken him months and would stay."] }
+    "Sitters begged him to soften; he reportedly replied that the truth had taken him months and would stay."] },
+
+{ id:"fitz-henry-lane", name:"Fitz Henry Lane", years:"1804–1865", born:1804, died:1865,
+  nation:"usa", eras:["19th-century"], movements:["luminism","hudson-river-school"],
+  techniques:["oil-painting","glazing"], style:"tonal",
+  palette:["#e8b48a","#c98a5e","#7da8c9","#3e4a5e","#d9c9a0"],
+  tagline:"Stillness, measured in light",
+  works:[{t:"Lumber Schooners at Evening on Penobscot Bay",y:"1863"},{t:"Boston Harbor, Sunset",y:"c. 1850–55"},{t:"Owl's Head, Penobscot Bay, Maine",y:"1862"},{t:"Brace's Rock",y:"1864"}],
+  life:"Born in Gloucester, Massachusetts, and paralyzed in the legs as a small child — family tradition blamed a poisonous seed — he moved on crutches for the rest of his life and saw his harbors mostly from boats and wheeled chairs. Trained as a lithographer in Boston, he came home to Gloucester and built himself a granite house above the working waterfront he would paint for twenty years.",
+  career:"Lane painted the sea with the sound turned off: mirror-still water, rigging drawn to the inch, light banded across evening skies, and not one visible brushstroke. The manner had no name in his lifetime — the term Luminism was coined by a curator in 1954, nearly a century later. Summer cruises to Penobscot Bay with his friend Joseph Stevens produced the Maine pictures; the late Brace's Rock series empties even the ships out, leaving stillness itself.",
+  outside:"He never married, took a documented interest in the spiritualist currents of his day — readers have connected it to his weightless light, cautiously — and stayed a Gloucester civic fixture. His granite house still stands on Duncan's Point, and the Cape Ann Museum around the corner keeps the world's largest collection of his work.",
+  facts:["The word 'Luminism' was invented in 1954 — Lane died ninety years before hearing what he was.",
+    "Paralyzed in childhood, he painted the coast he could reach by boat, crutch and chair.",
+    "He designed his own granite house in 1849; it still overlooks Gloucester harbor.",
+    "The late Brace's Rock canvases, nearly empty of event, are pointed to as proto-modern stillness."] }
 ]);

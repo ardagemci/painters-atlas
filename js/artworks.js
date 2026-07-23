@@ -2460,5 +2460,23 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/1910_Serow_Abduction_of_Eurpoa_anagoria.JPG/500px-1910_Serow_Abduction_of_Eurpoa_anagoria.JPG",
    "page": "https://commons.wikimedia.org/wiki/File:1910_Serow_Abduction_of_Eurpoa_anagoria.JPG"
   }
+ },
+ "fitz-henry-lane": {
+  "Lumber Schooners at Evening on Penobscot Bay": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fitz_Henry_Lane%2C_Lumber_Schooners_at_Evening_on_Penobscot_Bay%2C_1863%2C_NGA_57611.jpg/500px-Fitz_Henry_Lane%2C_Lumber_Schooners_at_Evening_on_Penobscot_Bay%2C_1863%2C_NGA_57611.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fitz_Henry_Lane,_Lumber_Schooners_at_Evening_on_Penobscot_Bay,_1863,_NGA_57611.jpg"
+  },
+  "Boston Harbor, Sunset": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Boston_Harbor%2C_Sunset_LACMA_AC1993.229.1.jpg/500px-Boston_Harbor%2C_Sunset_LACMA_AC1993.229.1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Boston_Harbor,_Sunset_LACMA_AC1993.229.1.jpg"
+  },
+  "Owl's Head, Penobscot Bay, Maine": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Fitz_Henry_Lane_-_Owl%27s_Head%2C_Penobscot_Bay%2C_Maine_-_Google_Art_Project.jpg/500px-Fitz_Henry_Lane_-_Owl%27s_Head%2C_Penobscot_Bay%2C_Maine_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fitz_Henry_Lane_-_Owl%27s_Head,_Penobscot_Bay,_Maine_-_Google_Art_Project.jpg"
+  },
+  "Brace's Rock": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Brace%27s_Rock%2C_by_Fitz_Henry_Lane%2C_1864%2C_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester%2C_MA_-_DSC01239.jpg/500px-Brace%27s_Rock%2C_by_Fitz_Henry_Lane%2C_1864%2C_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester%2C_MA_-_DSC01239.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Brace%27s_Rock,_by_Fitz_Henry_Lane,_1864,_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester,_MA_-_DSC01239.jpg"
+  }
  }
 };
