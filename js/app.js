@@ -1342,7 +1342,7 @@ function viewExplore(){
   <div class="page-head">
     <div class="page-kicker">The big pictures</div>
     <h1 class="display">Explore</h1>
-    <p class="page-lede">Two instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, and the living web of who taught, rivaled, befriended and influenced whom.</p>
+    <p class="page-lede">Four instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
   </div>
   <div class="entry-cards">
     <a class="entry-card" href="#/timeline" style="--ec:var(--gold)">
@@ -1355,6 +1355,18 @@ function viewExplore(){
       <div class="ec-kicker">Connection</div>
       <h3>The influence constellation</h3>
       <p>${(window.INFLUENCES || []).length} relationships — taught, influenced, befriended, rivaled, partnered — drawn as one force-directed web. Find the hidden hubs.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+    <a class="entry-card" href="#/movements" style="--ec:var(--wine)">
+      <div class="ec-kicker">Lineage</div>
+      <h3>Family trees of movements</h3>
+      <p>Switch any movement index to its Family tree view and watch the schools branch from their parents — Post-Impressionism out of Impressionism, and on down the line.</p>
+      <span class="ec-arrow">→</span>
+    </a>
+    <a class="entry-card" href="#/nations" style="--ec:var(--blue)">
+      <div class="ec-kicker">Geography</div>
+      <h3>A world map of painters</h3>
+      <p>Where the painters came from, plotted across the globe with a zoomable Europe inset — though most of them, as you'll read, refused to stay put.</p>
       <span class="ec-arrow">→</span>
     </a>
   </div>`;
