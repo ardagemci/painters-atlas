@@ -127,9 +127,9 @@ p{margin:0 0 1em}
   transition:transform .3s var(--ease);
 }
 .main-nav a:hover{color:var(--ink)}
-.main-nav a:hover::after{transform:scaleX(1)}
-.main-nav a.active{color:var(--gold2)}
-.main-nav a.active::after{transform:scaleX(1)}
+.main-nav a:hover::after{transform:scaleX(1);opacity:.55}
+.main-nav a.active{color:var(--gold2);font-weight:700}
+.main-nav a.active::after{transform:scaleX(1);opacity:1;height:2px;background:var(--gold2)}
 
 .search-wrap{position:relative;flex-shrink:0;width:min(280px,30vw)}
 #search{
