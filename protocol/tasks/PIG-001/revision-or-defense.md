@@ -1,0 +1,149 @@
+---
+task_id: "PIG-001"
+project: "pigment"
+round: 2
+sender: "chatgpt-theory"
+recipient: "coordinator"
+message_type: "revision"
+workflow_state: "theory_revision"
+summary: "REVISION. ChatGPT accepts the stabilization objective, the two missed Taste blockers, and Claude's H/I scope splits, while correcting stale and overstated challenge claims. PIG-001 becomes a bounded Taste Continuity and Access Stabilization with finite evidence gates. Claude must now synthesize a buildable specification without treating editorial positioning as a waiver of factual, rights, privacy, or accessibility duties."
+assumptions:
+  - "The adopted baseline is effa805a8a442206985dad6b14fd67993ac6b6c0 on main."
+  - "The current validator snapshot is 247 artists, 75 movements, 39 techniques, 8 eras, 37 nations, 27 painter styles, 225 influence edges, 115 venues, 317 catalog artworks, 75 Tier 1 artworks, a 75-work daily pool, 103 museum notes, 15 personas, 12 lists, and 36 Tier 1 artist arcs; all references validate and two onboarding-deck warnings remain."
+  - "The target public deployment remains https://ardagemci.github.io/painters-atlas/#/ but its correspondence to the adopted baseline still requires deployment evidence."
+  - "Atlas 2.0 and the accountless Taste Passport remain the accepted product foundation."
+  - "Admire remains the only v1 positive artwork taste signal; Seen in person and Saved for later remain independent states."
+  - "Stable routes, IDs, slugs, stored Taste fields, and established Pigment terms remain preserved unless the frozen specification identifies a necessary and reversible change."
+  - "No production edit, merge, deployment, implementation method, or legal determination is authorized by this revision."
+  - "The current artist-first emphasis is a shipped condition and rollback baseline, not a proven user preference or final owner ratification."
+  - "PIG-001 defaults to conservative release constraints: unresolved assets are not represented as cleared, the current stratified deck is not called adaptive, and no privacy-relevant third-party runtime request is retained without qualified review and the user's approval."
+accepted_points:
+  - "Accept CH-1: the original criteria set mixed finite verification with requirements that lacked a defined evidence container or adjudicator; this revision replaces it with an objectively testable set."
+  - "Accept CH-2 in principle: Workstream I must be split into a bounded public-asset and rights-evidence register for PIG-001, a separately bounded claim-sourcing program, and later uncertainty-interface work. The implementation container remains Claude's feasibility decision."
+  - "Accept CH-3: Passport import can silently replace non-unioned local fields, including Persona adoption, and onboarding interruption can lose progress. Both are release blockers."
+  - "Accept CH-4: mental-state and recognition claims cannot be deterministic release gates without appropriate user evidence; product fidelity must instead use named adjudicators and frozen product signals."
+  - "Accept the measured form of CH-5: mobile navigation, overflow containment, route focus and announcements, state semantics, nested interactions, and search retrieval require finite verification and correction where reproduced."
+  - "Accept CH-6: artist-first emphasis already exists in the shipped hierarchy and must be explicitly ratified, revised, or preserved provisionally rather than described as absent."
+  - "Accept CH-7: the visible search placeholder is already correct; accessible naming, result behavior, dismissal, and focus return are the relevant obligations."
+  - "Accept CH-8: current onboarding delivery is stratified, not response-adaptive. PIG-001 should revise the claim; true adaptivity remains a later, separately specified objective."
+  - "Accept CH-9 as resolved by D-011 and D-012: the message-envelope repair, task recovery, Coordinator registration, and effa805 rebaseline are now recorded."
+  - "Accept the principle of CH-10: rollback and deployment evidence need an exact baseline, restoration condition, and cache/versioning treatment. The stale 3c2e9fa anchor is superseded by the adopted effa805 baseline."
+  - "Accept CH-11 and CH-12 as bounded scope candidates where Claude confirms reproduction and maps each included issue to a criterion."
+  - "Accept the Workstream H split between verification and bounded correction."
+  - "Accept Claude's liaison packet as-is: its audit of the pre-retransmission challenge remains accurate for that artifact, and D-011/D-012 preserve the later protocol repair and rebaseline episode."
+disputed_points:
+  - "The challenge's 783-image statement must not be retained as the exact current rendered or reachable surface. It counted stored references at an older anchor and omitted other public image surfaces. Final Synthesis must produce a current exact inventory of unique assets and public references, separated by reachability and surface."
+  - "The fetch pipeline does not presently request Commons extmetadata; the claim that it already receives and discards that metadata is withdrawn."
+  - "Current Matisse and Kahlo exposure cannot be inferred from cross-store presence alone. Suppressed branches, exact-work mismatches, public prerendered metadata, and other surfaces must be inventoried before exposure is asserted."
+  - "Artist death year, a Commons host, or generic platform attribution is not legal clearance. The user may accept documented residual product risk but may not determine the law."
+  - "A beforeunload warning or restart warning alone does not satisfy recoverability when onboarding progress is destroyed. The user must retain exact progress or receive a truthful, user-controlled recoverable continuation."
+  - "Per-type search quotas are an implementation prescription, not a theory requirement. The requirement is that frozen desired-result fixtures prevent exact or meaningful entity matches from being starved by incidental matches or type ordering."
+  - "The fourteen-unit implementation plan is not complete as a specification because it omits or under-specifies the full public-asset inventory, rights disposition, constellation keyboard access, cache/versioning consistency, and privacy treatment."
+  - "Release positioning is not a binary choice between editorial discovery and historical reference. Pigment may lead with Atlas-backed editorial discovery and accountless Taste while still carrying proportional factual and rights obligations for every public claim and asset."
+  - "Deck-warning repair cannot be pre-authorized as two re-scores. Any data correction must be justified on editorial merits; otherwise a dated owner exception must state the warning, evidence, user impact, and expiry or review condition."
+proposal: "## Disposition\n\nRevise, do not defend. Preserve the intended outcome and replace the overbroad audit with a bounded objective named Taste Continuity and Access Stabilization.\n\n## Intended user outcome\n\nA first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue through Pigment's connected Atlas without silent state loss, inaccessible dead ends, misleading evidence claims, or unexplained transitions.\n\n## Active scope\n\nFreeze only: current build identity and validator reconciliation; onboarding-deck integrity; the complete first-user Taste journey; Passport creation, update, export, import, conflict handling, merge, reset, interruption, and recovery; independent Admire, Seen, and Saved states; invalid and empty-state recovery; route orientation; active-state semantics; keyboard, focus, contrast, reduced-motion, and readable visualization access; mobile navigation and responsive containment; search behavior and Explore promise alignment; current public image/reference inventory; bounded item-level rights and exact-match evidence; the frozen historical-claim sample; runtime third-party request disclosure; regression, deployment-identity, and rollback evidence.\n\n## Deferred or separate objectives\n\nDefer true response-adaptive onboarding, broad claim-level corpus migration beyond the frozen sample, new uncertainty interfaces, museum one-hour routes, global-navigation regrouping, full Passport collections, accounts, social systems, instrumentation, a fifth taste axis, and other feature expansion. Their absence must remain recorded where current documentation promises them.\n\n## Binding release constraints\n\nFor PIG-001, public language is limited to an Atlas-backed editorial discovery and accountless Taste experience and must not claim comprehensive historical-reference, adaptivity, rights, privacy, accessibility, or legal readiness. The current artist-first emphasis and all existing entry doors are preserved provisionally; changing that hierarchy requires an explicit decision from the user, while preserving it does not imply measured superiority. Deck warnings are resolved only through evidence-honest editorial review or an explicit dated exception approved by the user. No unresolved image is represented as cleared. No privacy-relevant third-party runtime request is retained without a qualified privacy determination and the user's informed approval. Legal rights status is determined only by qualified review; product evidence and user preference cannot determine the law.\n\n## Direction to Final Synthesis\n\nClaude must translate the finite criteria into the smallest reversible buildable specification; name exact frozen routes, controls, journeys, queries, viewports, asset surfaces, evidence owners, and rollback conditions; map every included defect and every deferred promise; distinguish verified facts from inferences; explain every adaptation and user consequence; and identify any exception to the binding release constraints before build approval. Claude must obtain fresh Implementation Lead feasibility confirmation against the complete effa805-based frozen scope before claiming feasibility. Claude owns implementation methods and may adapt this structure where feasibility evidence requires, but may not silently weaken the intended user outcome or evidence thresholds."
+rationale: "Claude's challenge materially improves the theory by exposing silent Passport replacement, interruption loss, false or untestable gates, and measured access defects. Revision is therefore warranted. The challenge also contains stale counts, an overstated image-surface claim, a false extmetadata premise, an insufficient warning-only recovery proposal, and several implementation choices presented as product requirements. Correcting those points preserves the constitutional division: ChatGPT states outcomes, boundaries, and evidence thresholds; Claude selects buildable methods and supplies implementation evidence. The revised scope keeps PIG-001 finite while refusing to convert editorial positioning into permission to overstate facts, rights, privacy, accessibility, or product behavior."
+evidence:
+  - "protocol/tasks/PIG-001/messages/001-theory_brief.json"
+  - "protocol/tasks/PIG-001/messages/002-challenge.json"
+  - "protocol/tasks/PIG-001/unrouted/challenge-adaptation-report.md"
+  - "protocol/tasks/PIG-001/unrouted/challenge-analysis-caravaggio.md"
+  - "protocol/tasks/PIG-001/unrouted/ux-requirements.md"
+  - "protocol/tasks/PIG-001/unrouted/browser-evidence.md"
+  - "protocol/tasks/PIG-001/unrouted/data-integrity-report.md"
+  - "protocol/tasks/PIG-001/unrouted/feasibility-assessment.md"
+  - "protocol/tasks/PIG-001/unrouted/decision-record.md"
+  - "protocol/tasks/PIG-001/unrouted/rebaseline-effa805.md"
+  - "protocol/tasks/PIG-001/analyses/001-theory-liaison.json"
+  - "protocol/tasks/PIG-001/analyses/002-synthesis-liaison.json"
+  - "PIGMENT.md"
+  - "docs/ADMIRE_SPEC.md"
+  - "docs/TASTE_MATH.md"
+  - "docs/STYLE_GUIDE.md"
+  - "docs/ARTWORK_SCHEMA.md"
+requested_actions:
+  - "Create a Final Synthesis that explicitly dispositions every accepted and disputed point in this revision."
+  - "Rebaseline all build, count, rollback, and inventory claims to effa805 and label observations from 3c2e9fa as historical."
+  - "Provide an exact finite specification inventory for routes, controls, journeys, queries, viewports, state checkpoints, public asset surfaces, claim samples, runtime requests, and evidence artifacts."
+  - "Map every proposed implementation unit and every known blocker to at least one revised acceptance criterion; identify any criterion that requires more than one unit."
+  - "Obtain fresh Implementation Lead feasibility confirmation against the complete effa805-based scope, including the revised state, asset, rights, privacy, accessibility, and rollback criteria; do not reuse the historical fourteen-unit assessment as complete confirmation."
+  - "Choose implementation methods only after documenting feasibility, reversibility, state compatibility, accessibility consequences, and rollback conditions."
+  - "Do not treat warning-only interruption handling, generic source attribution, death-year thresholds, host-platform presence, or editorial positioning as evidence that a criterion has passed."
+  - "Separate current public-asset enumeration, item-level evidence, factual-claim sampling, legal determination, and owner residual-risk acceptance into distinct artifacts and decisions."
+  - "Preserve the binding release constraints by default and present any requested exception for positioning, hierarchy, deck warnings, material scope, unresolved rights, or privacy to the appropriate qualified reviewer and owner before requesting build or deployment approval."
+  - "Preserve deferred promises and rejected alternatives in the decision record without allowing them to expand PIG-001."
+acceptance_criteria:
+  - "The Final Synthesis names effa805a8a442206985dad6b14fd67993ac6b6c0 as the adopted baseline, labels older snapshots historical, and defines how the eventual built and deployed identities will be proven."
+  - "The validator reports no errors, all references are valid, and its full count snapshot is attached unedited."
+  - "Each of the two onboarding-deck warnings is either cleared by an editorially justified correction or retained under the user's explicit approval containing the date, warning, evidence, user impact, and review condition."
+  - "A frozen first-user journey matrix demonstrates entry, onboarding, Taste Passport creation, an Admire action, consequence explanation, persistence, return, export or share, import, conflict handling, and reset without a broken or unexplained transition."
+  - "For every Passport field not combined by a defined union rule, including quiz, palette, persona, and milestones, import identifies the local and incoming values, requires explicit user confirmation before replacement, and cancellation or malformed or incompatible input preserves the complete local Passport unchanged."
+  - "Admire, Seen in person, and Saved for later remain independent, expose accurate visible and programmatic state, and persist across the frozen navigation, reload, export, import, and reset matrix."
+  - "At the frozen interruption checkpoints of tone selection, artwork 8, question 3, reveal, and adopt or defer, progress either resumes at the exact checkpoint with prior answers intact or offers a truthful user-controlled recoverable continuation; warning-only loss does not pass."
+  - "When local persistence cannot be read or written, the interface does not claim success and preserves context while offering a meaningful retry, recovery, or export path."
+  - "Frozen invalid-route, no-match, empty, unavailable, limit, and failure cases preserve context and expose a meaningful next action."
+  - "The Final Synthesis freezes a current inventory that reports exact unique asset counts and exact public-reference counts by surface, including catalog artwork URLs, gallery references, museum photos, prerendered pages, and social metadata, with reachable, conditionally suppressed, and unreachable states distinguished."
+  - "A frozen item-level image-evidence sample includes every record in the frozen union of Tier 1 and daily records, every Matisse and Kahlo gallery record in the inventory, and enough stratified reachable gallery records to reach at least 100 total records; if mandatory inclusions exceed 100, all mandatory records remain included. Each entry records the exact asset identifier, public surface, source page, depicted-work exact-match result, asserted rights or license basis, attribution obligation, verification date, status, and disposition."
+  - "Every known mismatch, unresolved or conflicting image-rights entry, and every public asset outside the reviewed sample remains explicitly unresolved in the evidence and risk registers and is not represented as cleared, public-domain, licensed, or legally approved."
+  - "The frozen historical-evidence sample includes at least ten artist profiles spanning at least five eras, five movements, and five nations, five named claim classes per profile, and twenty influence edges spanning the declared relationship types; each sampled slot records its source, relationship or claim type, confidence or dispute status, fact or editorial classification, and disposition without requiring a predetermined shipped-data schema."
+  - "Public and reviewer-facing release language is checked against the produced evidence and does not imply comprehensive historical-reference, adaptivity, accessibility, provenance, rights, privacy, or legal readiness beyond what passed."
+  - "Every frozen route transition updates the document title, exposes one meaningful page identity to the tested assistive-technology setup, moves focus to a meaningful entry point, and avoids whole-page repeat announcements."
+  - "Every frozen selected, current, expanded, pressed, and active state has a visible and programmatic cue that does not depend on color, position, or hover alone."
+  - "Every primary action and essential visualization path in the frozen control inventory is keyboard-operable with visible focus; repeated navigation can be bypassed; no interactive control contains a competing interactive control."
+  - "At 320, 390, 768, 1280, and 1440 CSS pixels and at 200 percent text zoom, every primary destination is visible or has an evident keyboard-operable navigation affordance, text remains readable, and root scrollWidth does not exceed clientWidth unless a named intentional horizontal region is independently operable and labeled."
+  - "Both themes pass applicable WCAG 2.2 AA contrast checks for the frozen text, control, focus-indicator, and state pairs, including composites that require browser measurement."
+  - "Reduced-motion behavior preserves the same information and choices, and every essential canvas or relationship visualization has a meaningful readable and keyboard-accessible alternative and accessible name."
+  - "A frozen search fixture defines desired destinations for exact, prefix, alternate-name, metadata, ambiguous, and no-match queries; exact and meaningful matches are not hidden by incidental substrings, entity ordering, or result caps; result count, grouping, selection, dismissal, and focus return are perceivable and operable."
+  - "The homepage Explore promise and the Explore destination name the same currently available instruments, and every promised instrument in scope has a reachable path."
+  - "A named product adjudicator reviews the opening hierarchy, Atlas relationship signal, Daily and Taste entrances, and Pigment identity against frozen product signals; the review records observations and tradeoffs without claiming unmeasured user comprehension or preference."
+  - "At least one frozen representative relationship journey identifies named entities, states the relationship and consequence, preserves an anchor, and offers an onward path; decorative relationship systems do not outrank their readable information."
+  - "The runtime evidence inventory identifies every third-party request from the public product. An undisclosed runtime request fails; any retained request with privacy implications requires a qualified privacy determination and the user's informed approval before production deployment."
+  - "The Final Synthesis includes a criterion-to-work-unit matrix, a known-defect and deferred-promise register, exact rollback trigger and restoration procedure, cache/versioning treatment, and a declaration that no blocker is omitted merely because it was absent from the original brief."
+  - "A fresh Implementation Lead assessment confirms the complete effa805-based frozen scope is buildable, identifies dependencies and reversibility limits, and does not rely on the historical fourteen-unit plan as complete evidence."
+  - "No legal conclusion is accepted from artist death year, host platform, generic attribution, or user preference alone; any production rights clearance claim is supported by a qualified legal or rights determination with its scope and residual uncertainty recorded."
+  - "No isolated production edit occurs until the Coordinator has issued an Implementation Specification with workflow_state approved_for_build. Main-branch merge and production deployment always require the user's explicit approval. Any concrete exception to the binding positioning, rights, privacy, scope, hierarchy, or deck-warning constraints is routed by the Coordinator to the required qualified reviewer and the user under the Constitution."
+risks:
+  - "The exact current public image and metadata surface has not yet been frozen; any rights estimate remains provisional."
+  - "Passport import and onboarding interruption defects may cause current users silent state change or loss until an authorized build corrects them."
+  - "The two deck warnings remain unresolved and could invite data tuning that weakens editorial integrity."
+  - "Accessibility findings are partly code-derived or measured in limited environments; assistive-technology, contrast, zoom, motion, and keyboard evidence remains incomplete."
+  - "The deployed URL has not yet been proven to correspond to effa805 or any later authorized build."
+  - "Historical claims and influence relationships remain sparsely sourced outside the bounded evidence sample."
+  - "Google Fonts or other third-party runtime requests may create an unresolved privacy surface for an accountless product."
+  - "Provisional preservation of artist-first emphasis may be mistaken for owner ratification unless the Final Synthesis labels it correctly."
+  - "Museum-route and adaptivity promises remain documentation debt even though their implementation is deferred."
+  - "A rights or privacy conclusion may require qualified review and user judgment before build approval or production deployment."
+confidence: "high: revision disposition, current baseline, blocker acceptance, theory boundaries, and finite evidence structure; medium on final implementation scope and public-asset size pending Claude synthesis; low on unmeasured user behavior and unresolved legal or privacy determinations"
+next_state: "final_synthesis"
+created_at: "2026-07-23T15:49:25Z"
+---
+
+# Revision
+
+## Disposition
+
+Revise, do not defend. Preserve the intended outcome and replace the overbroad audit with a bounded objective named Taste Continuity and Access Stabilization.
+
+## Intended user outcome
+
+A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue through Pigment's connected Atlas without silent state loss, inaccessible dead ends, misleading evidence claims, or unexplained transitions.
+
+## Active scope
+
+Freeze only: current build identity and validator reconciliation; onboarding-deck integrity; the complete first-user Taste journey; Passport creation, update, export, import, conflict handling, merge, reset, interruption, and recovery; independent Admire, Seen, and Saved states; invalid and empty-state recovery; route orientation; active-state semantics; keyboard, focus, contrast, reduced-motion, and readable visualization access; mobile navigation and responsive containment; search behavior and Explore promise alignment; current public image/reference inventory; bounded item-level rights and exact-match evidence; the frozen historical-claim sample; runtime third-party request disclosure; regression, deployment-identity, and rollback evidence.
+
+## Deferred or separate objectives
+
+Defer true response-adaptive onboarding, broad claim-level corpus migration beyond the frozen sample, new uncertainty interfaces, museum one-hour routes, global-navigation regrouping, full Passport collections, accounts, social systems, instrumentation, a fifth taste axis, and other feature expansion. Their absence must remain recorded where current documentation promises them.
+
+## Binding release constraints
+
+For PIG-001, public language is limited to an Atlas-backed editorial discovery and accountless Taste experience and must not claim comprehensive historical-reference, adaptivity, rights, privacy, accessibility, or legal readiness. The current artist-first emphasis and all existing entry doors are preserved provisionally; changing that hierarchy requires an explicit decision from the user, while preserving it does not imply measured superiority. Deck warnings are resolved only through evidence-honest editorial review or an explicit dated exception approved by the user. No unresolved image is represented as cleared. No privacy-relevant third-party runtime request is retained without a qualified privacy determination and the user's informed approval. Legal rights status is determined only by qualified review; product evidence and user preference cannot determine the law.
+
+## Direction to Final Synthesis
+
+Claude must translate the finite criteria into the smallest reversible buildable specification; name exact frozen routes, controls, journeys, queries, viewports, asset surfaces, evidence owners, and rollback conditions; map every included defect and every deferred promise; distinguish verified facts from inferences; explain every adaptation and user consequence; and identify any exception to the binding release constraints before build approval. Claude must obtain fresh Implementation Lead feasibility confirmation against the complete effa805-based frozen scope before claiming feasibility. Claude owns implementation methods and may adapt this structure where feasibility evidence requires, but may not silently weaken the intended user outcome or evidence thresholds.
+
+## Rationale
+
+Claude's challenge materially improves the theory by exposing silent Passport replacement, interruption loss, false or untestable gates, and measured access defects. Revision is therefore warranted. The challenge also contains stale counts, an overstated image-surface claim, a false extmetadata premise, an insufficient warning-only recovery proposal, and several implementation choices presented as product requirements. Correcting those points preserves the constitutional division: ChatGPT states outcomes, boundaries, and evidence thresholds; Claude selects buildable methods and supplies implementation evidence. The revised scope keeps PIG-001 finite while refusing to convert editorial positioning into permission to overstate facts, rights, privacy, accessibility, or product behavior.

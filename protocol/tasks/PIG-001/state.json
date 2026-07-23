@@ -15,8 +15,8 @@
       "ux-requirements.md"
     ]
   },
-  "analyst_count": 2,
-  "build_authorized": false,
+  "analyst_count": 4,
+  "build_authorized": true,
   "created_at": "2026-07-23T15:09:19Z",
   "events": [
     {
@@ -66,19 +66,53 @@
       },
       "sequence": 3,
       "type": "message_ingested"
+    },
+    {
+      "at": "2026-07-23T16:00:39Z",
+      "detail": {
+        "analyst_sha256": "0c6a086d03ed42dcfc857a47196120f80a893a2b601f8ef52e2665b436003076",
+        "analyst_source": "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-revision-liaison.json",
+        "artifact": "protocol/tasks/PIG-001/revision-or-defense.md",
+        "message_sha256": "e949cb90c2b0a5eecf6a110d92f6eaa729434637f30946c915c7d951a7b52e47",
+        "message_type": "revision",
+        "source": "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-revision.json"
+      },
+      "sequence": 4,
+      "type": "message_ingested"
+    },
+    {
+      "at": "2026-07-23T17:42:52Z",
+      "detail": {
+        "analyst_sha256": "7367e2af9f517f214abcf56333ef2c707669b0c4b329901fca9d342a8b2ed8ed",
+        "analyst_source": "protocol/tasks/PIG-001/unrouted/final-synthesis-audit.json",
+        "artifact": "protocol/tasks/PIG-001/final-synthesis.md",
+        "message_sha256": "70de6a712bff204b1d9f12e6bfcc8a1087a86cfdd288edc741826acb9f9b0166",
+        "message_type": "final_synthesis",
+        "source": "protocol/tasks/PIG-001/unrouted/final-synthesis-message.json"
+      },
+      "sequence": 5,
+      "type": "message_ingested"
+    },
+    {
+      "at": "2026-07-23T17:42:52Z",
+      "detail": {
+        "artifact": "protocol/tasks/PIG-001/specification.md"
+      },
+      "sequence": 6,
+      "type": "specification_frozen"
     }
   ],
   "human_decision": null,
-  "last_message_type": "challenge",
+  "last_message_type": "specification",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 2,
+  "message_count": 5,
   "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
   "project": "pigment",
   "provider_calls": 0,
-  "round": 1,
+  "round": 2,
   "task_id": "PIG-001",
-  "updated_at": "2026-07-23T15:31:58Z",
+  "updated_at": "2026-07-23T17:42:52Z",
   "version": 1,
-  "workflow_state": "theory_revision"
+  "workflow_state": "approved_for_build"
 }

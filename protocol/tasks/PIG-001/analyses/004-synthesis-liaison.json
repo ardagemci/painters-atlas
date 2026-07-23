@@ -1,0 +1,147 @@
+{
+  "accepted_counterpole_points": [
+    "The 783 image figure is superseded; the frozen effa805 inventory reports 799 unique public assets across six surfaces.",
+    "The extmetadata premise is withdrawn: both tools request iiprop=url|mime only; no license metadata is received and discarded.",
+    "Matisse/Kahlo exposure is asserted only from the register, never from cross-store presence, with zero suppressed-branch leakage.",
+    "Legal status is determined only by qualified review; the owner may accept documented residual risk but not determine the law.",
+    "Warning-only interruption recovery is replaced by exact-checkpoint persistence at all five frozen checkpoints.",
+    "Per-type search quotas are withdrawn in favor of frozen fixture outcomes.",
+    "The historical fourteen-unit plan is superseded by a fresh 22-unit feasibility assessment.",
+    "Release positioning carries proportional factual and rights obligations rather than being a binary editorial-vs-reference choice.",
+    "Deck-warning repair is not pre-authorized; corrections require editorial merit or a dated owner exception."
+  ],
+  "adaptations": [
+    {
+      "change": "Onboarding interruption recovery uses a new additive sessionStorage key persisting materialized deck state (ids, answers, progress), not the Math.random seed.",
+      "constraint": "AC7 requires resume at the exact checkpoint with prior answers intact; warning-only handling is rejected.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/evidence/feasibility-assessment-r2.md R2(a)",
+        "js/app.js:2547-2552"
+      ],
+      "intent_preserved": true,
+      "reason": "The deck is Math.random-seeded at js/app.js:2548-2550, so it is not reproducible from a seed; only materialized state can restore the exact checkpoint.",
+      "user_consequence": "Onboarding progress survives reload/back-forward within the tab; the durable Passport schema is untouched."
+    },
+    {
+      "change": "Search fix raises the effective cap ahead of type-fair slicing and tiers exact over prefix over substring instead of reserving per-type quotas.",
+      "constraint": "AC21 requires that exact and meaningful matches are not starved by incidental substrings, ordering, or caps, verified against the frozen fixture.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/evidence/feasibility-assessment-r2.md R2(h)",
+        "protocol/tasks/PIG-001/unrouted/ux-requirements.md F1-F24"
+      ],
+      "intent_preserved": true,
+      "reason": "The revision withdrew the per-type-quota prescription as an implementation choice, not a theory requirement.",
+      "user_consequence": "Exact and meaningful matches surface reliably; acceptance is gated on the frozen fixture rather than a prescribed mechanism."
+    },
+    {
+      "change": "The historical fourteen-unit plan is superseded by a 22-unit plan from a fresh Implementation Lead assessment.",
+      "constraint": "AC27 requires a fresh assessment identifying dependencies and reversibility limits.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/evidence/feasibility-assessment-r2.md R2, R3, R4"
+      ],
+      "intent_preserved": true,
+      "reason": "The revision required fresh feasibility against the complete effa805 scope and forbade reusing the fourteen-unit plan as complete evidence.",
+      "user_consequence": "None directly; a broader, evidence-backed plan reduces the risk of an under-specified build."
+    }
+  ],
+  "analysis_mode": "convergence_review",
+  "analyst_id": "synthesis-liaison",
+  "artifact_reviewed": [
+    "protocol/tasks/PIG-001/unrouted/final-synthesis-message.json",
+    "protocol/tasks/PIG-001/messages/003-revision.json",
+    "protocol/tasks/PIG-001/evidence/feasibility-assessment-r2.md",
+    "protocol/tasks/PIG-001/evidence/asset-inventory-effa805.md",
+    "protocol/tasks/PIG-001/evidence/asset-inventory-effa805.json",
+    "protocol/tasks/PIG-001/unrouted/rebaseline-effa805.md",
+    "protocol/tasks/PIG-001/unrouted/ux-requirements.md",
+    "protocol/tasks/PIG-001/unrouted/browser-evidence.md",
+    "protocol/tasks/PIG-001/unrouted/decision-record.md",
+    "tools/fetch_artworks.py:49",
+    "tools/audit_artworks.py:99",
+    "index.html",
+    "docs/ADMIRE_SPEC.md:100",
+    "pigment_coordinator/gates.py",
+    "pigment_coordinator/analysts.py",
+    "pigment_coordinator/messages.py"
+  ],
+  "confidence": {
+    "basis": "Verbatim carry, evidence correspondence, and both the deterministic convergence gate and the message validator were verified programmatically against files on disk; the only open item is a decision-record ledger append, and build-phase evidence is correctly deferred rather than overclaimed.",
+    "level": "high"
+  },
+  "constraints_or_principles_to_defend": [
+    "Verbatim preservation of the 29 acceptance criteria and the risk register as the frozen evidence thresholds.",
+    "The binding release constraints and conservative release language, including the prohibition on tuning taste data to silence validator warnings.",
+    "Gate 1: no production-path edit, branch, merge, or deployment before approved_for_build and owner approval.",
+    "The five decision-gated items routed to their designated deciders and surfaced to the owner in the Human Review Package.",
+    "The pigment.taste.v1 additive-only, route/ID/slug stability guarantees named as the hardest reversibility limits."
+  ],
+  "convergence_recommended": true,
+  "created_at": "2026-07-23T18:05:00Z",
+  "critical_issues": [],
+  "essential_principles": [
+    "The revision's intended user outcome and its 29 objectively testable acceptance criteria are preserved verbatim, not weakened or paraphrased.",
+    "Editorial positioning never waives factual, rights, privacy, or accessibility duties for any public claim or asset.",
+    "Feasibility must be confirmed by a fresh Implementation Lead assessment against the complete effa805 scope, not inherited from the historical fourteen-unit plan.",
+    "Recovery must restore exact checkpoint state or offer a truthful user-controlled continuation; warning-only handling does not pass.",
+    "No unresolved asset is represented as cleared; no legal conclusion follows from death year, host platform, generic attribution, or user preference.",
+    "No production edit occurs before an Implementation Specification at approved_for_build; main-branch merge and deployment always require the owner's explicit approval."
+  ],
+  "evidence_gaps": [
+    "Build-phase and Gate-2 quality evidence (validator snapshot, journey/persistence/checkpoint transcripts, contrast reports, browser screenshots) does not yet exist; it is correctly deferred to the authorized build and independent Quality Review, not claimed now.",
+    "Item-level rights-register population and any legal/privacy clearance conclusions await owner-authorized effort and qualified reviewers; the register structure and unresolved-by-default discipline are buildable now."
+  ],
+  "feasibility_supported": true,
+  "human_escalation": {
+    "decision_required": "",
+    "reason_category": "",
+    "recommended": false,
+    "why_the_teams_cannot_resolve_it": ""
+  },
+  "intended_user_outcome": "A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue through Pigment's connected Atlas without silent state loss, inaccessible dead ends, misleading evidence claims, or unexplained transitions.",
+  "intent_preserved": true,
+  "noncritical_issues": [
+    "REQUIRED PRE-TRANSMISSION REPAIR: the synthesis cites decision record D-013 (extmetadata correction) in disposition 2 and the rationale, but decision-record.md ends at D-012. The Synthesis Lead must append D-013 before routing so the cited ledger entry exists. This is a dangling reference to repair, not a convergence failure.",
+    "Deployment-identity correspondence between the live GitHub Pages URL and effa805 is asserted as a procedure to run, not yet proven; the synthesis correctly labels it a remaining risk and defines how it will be proven (AC1)."
+  ],
+  "optional_forms": [
+    "The 22-unit build plan ordering and sizing (Claude owns implementation method).",
+    "sessionStorage additive key as the onboarding-checkpoint persistence mechanism.",
+    "The exact-match-tier plus raised-cap search ranking method chosen in place of per-type quotas.",
+    "The Google Fonts disposition among retain-with-approval, remove, and self-host.",
+    "The internal commit granularity of the ARIA-state pass across control families."
+  ],
+  "owner_report": {
+    "markdown": "## Current Position\n\nClaude's Final Synthesis for PIG-001 (Taste Continuity and Access Stabilization) is ready to advance to the Coordinator. It dispositions all nine of the theory pole's Round 2 disputes, carries the 29 acceptance criteria and the full risk register unchanged, and rests on a fresh Implementation Lead feasibility confirmation.\n\n## Feasibility\n\nSupported. A fresh Implementation Lead assessment (feasibility-assessment-r2.md, dated after the revision) confirms the complete effa805-based scope is buildable in a 22-unit plan with zero infeasible criteria and no new dependency, framework, or build step. Five items are gated on decisions rather than technical blockers.\n\n## Adaptations Made\n\nThree material adaptations, each documented and intent-preserving: onboarding recovery persists the actual in-progress state under a new sessionStorage key (the deck is randomly seeded and cannot be rebuilt from a seed); search fairness is achieved by tiering exact matches and raising the cap rather than reserving per-type quotas; and the older fourteen-unit plan is replaced by the fresh 22-unit plan. None changes routes, IDs, slugs, or the stored Passport format.\n\n## Product Intent\n\nPreserved. The intended first-visitor outcome is stated explicitly and the criteria that protect it are carried verbatim. Editorial positioning is not treated as a waiver of factual, rights, privacy, or accessibility duties.\n\n## Evidence\n\nStrongest verified support: the 29 criteria and 10 risks are byte-identical to the revision (checked by program, not by eye); the extmetadata correction, the 799-asset inventory figures, the 18 unversioned scripts, and the five checkpoints all match the files; the deterministic convergence gate returns no failures and the message envelope validates. Gaps, correctly deferred: build-phase quality evidence and browser screenshots do not exist yet, and rights/privacy/legal conclusions await qualified reviewers.\n\n## Remaining Problems\n\nOne pre-transmission repair: the synthesis cites decision-record entry D-013, but the ledger currently stops at D-012. The Synthesis Lead appends D-013 before routing. This is a missing ledger entry, not a convergence failure.\n\n## Synthesis Assessment\n\nConvergence is supported. Every element of the standard holds and the remaining disagreements are decision-routing, not substance.\n\n## What Happens Next\n\nRecommended to the Kernel: advance to awaiting_build_approval, after the Synthesis Lead appends D-013. The Coordinator, not this analyst, freezes the specification and authorizes any build.\n\n## Attention Required\n\nHold for final Human Review Package. Five owner decisions now crystallize for that package: the deck-warning disposition, the rights/legal conclusions, the AC23 adjudication record, the Google Fonts disposition, and the owner's residual-risk acceptance.",
+    "title": "Synthesis Liaison Report",
+    "visibility": "human_review"
+  },
+  "pole": "claude-synthesis-build",
+  "project": "pigment",
+  "quality_evidence_appears_sufficient": false,
+  "rationale": "Every element of the Convergence Standard holds. The intended user outcome is explicit and preserved; the 29 acceptance criteria and the risk register are carried verbatim (Python-verified, not eyeballed); all nine disputes are dispositioned and all ten requested actions satisfied; a fresh Implementation Lead assessment confirms the complete effa805 scope buildable with zero infeasible criteria; the information architecture and five frozen journeys are coherent; the criteria are objectively testable; material adaptations (onboarding persistence mechanism, search ranking method, 22-unit plan) are documented with reason, evidence, and consequence; no critical technical, accessibility, legal, security, or maintenance risk is hidden; and the remaining disagreements are decision-routing (the five decision-gated items) rather than substance. The deterministic gate check_convergence returns no failures and the envelope validates. The single defect is a dangling D-013 reference that the Synthesis Lead appends before routing; it does not weaken convergence and is named as a pre-transmission repair. Honesty is intact: Claude's 783 and extmetadata errors and the theory pole's earlier unpassable criteria are all corrected in the open record.",
+  "recommended_action": "advance",
+  "recommended_next_state": "awaiting_build_approval",
+  "resolved_issues": [
+    "Verbatim carry of the 29 acceptance criteria confirmed by Python equality (syn == rev, order and text identical).",
+    "Verbatim carry of the 10-item risk register confirmed by Python equality.",
+    "All nine revision disputes dispositioned in the proposal's numbered Dispositions section.",
+    "All ten revision requested_actions satisfied: dispositions, effa805 rebaseline, finite inventories, criterion-to-unit matrix, fresh IL confirmation, method-after-feasibility ordering, rejection of warning-only/attribution/death-year passes, separated evidence artifacts, preserved binding constraints, and preserved deferred promises.",
+    "Requested action 5 satisfied: feasibility-assessment-r2.md exists, is non-empty, is dated 2026-07-23 (postdates the 15:49 revision), and ends with an explicit R4 FEASIBILITY CONFIRMED statement covering all 29 criteria with zero infeasible.",
+    "Evidence correspondence: iiprop=url|mime confirmed at tools/fetch_artworks.py:49 and tools/audit_artworks.py:99.",
+    "Evidence correspondence: 799 unique assets = 257 catalog + 529 gallery + 103 museum + 502 prerender-metadata + 1 homepage, and 60 copyright records carry no src, all match asset-inventory-effa805.md.",
+    "Evidence correspondence: exactly 18 unversioned script tags (worldmap.js, venues.js, artists-1..16.js) confirmed in index.html; taxonomy.js is versioned (?v=20260718-luminism1), correcting the prior claim.",
+    "The five interruption checkpoints (tone selection, artwork 8, question 3, reveal, adopt/defer) and Matisse (claude-visual-director) as AC23 adjudicator are correctly stated.",
+    "Deterministic gate check_convergence returns [] (no failures); required user_outcome/information_architecture/principal_flow prefixes and feasibility-confirmed marker present; no critical disputed points or risks.",
+    "validate_message passes against the expected envelope {PIG-001, pigment, round 2, claude-synthesis-lead, coordinator, final_synthesis, final_synthesis -> awaiting_build_approval}.",
+    "Honesty check passes: Claude's 783 figure and extmetadata claim are corrected and attributed; the theory pole's originally unpassable criteria (CH-1) are acknowledged and replaced with a testable set; corrections are recorded, not smoothed over."
+  ],
+  "round": 2,
+  "semantic_validity": "repairable",
+  "specialists_recommended": [],
+  "summary": "Convergence review of the Round 2 Final Synthesis. Verbatim carry of the revision's 29 acceptance criteria and 10 risks verified programmatically (Python equality, byte-identical). All nine revision disputes are dispositioned and all ten requested actions satisfied, including fresh Implementation Lead confirmation in feasibility-assessment-r2.md (non-empty, dated 2026-07-23, postdates the 15:49 revision, ends with an explicit FEASIBILITY CONFIRMED statement). Evidence spot-checks pass: iiprop=url|mime at both tool sites, the 799/257/529/103/502/1 inventory figures, 60 copyright records with no src, exactly 18 unversioned scripts with taxonomy.js versioned, five checkpoints, Matisse named for AC23. The deterministic gate check_convergence returns [] and validate_message passes against the expected envelope. All sides' corrections are visible and none are smoothed over. Convergence is recommended. One required pre-transmission repair: D-013 is cited by the synthesis but the decision record ends at D-012; the Synthesis Lead must append D-013 before routing.",
+  "task_id": "PIG-001",
+  "unsupported_claims": []
+}

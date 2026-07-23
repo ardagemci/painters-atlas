@@ -140,3 +140,14 @@ strike through and supersede instead. -->
 - **Effect on user experience:** None; workflow infrastructure only.
 - **Status:** accepted
 - **Raised by / decided by:** ChatGPT team (via owner relay) / Synthesis Lead. Note: liaison-outgoing-audit.json validates against the kernel analyst schema but audited the pre-retransmission CHALLENGE_001; its findings (including the summary repair it demanded) remain accurate and D-011 records the subsequent YAML episode. Routing it as-is with this note, or refreshing it, is the theory pole's call at step 6.
+
+## D-013
+
+- **Date / round / state:** 2026-07-23 / round 2 / final_synthesis
+- **What changed:** Three challenge-side claims are corrected per the Round 2 revision's disputes, each verified before acceptance. (1) The 783-image rights-surface figure is superseded by the frozen effa805 inventory: **799 unique public assets** across five surfaces (evidence/asset-inventory-effa805.md) — the old figure counted stored references at 3c2e9fa and omitted museum photos, prerender metadata references, and the homepage reference. (2) The claim that the fetch pipeline "already receives and discards" Commons extmetadata was **false**: tools/fetch_artworks.py:49 and tools/audit_artworks.py:99 request `iiprop=url|mime` only; register automation remains feasible as a one-parameter extension, not a recovery of discarded data. (3) The round-1 warning-only interruption remedy is withdrawn: the revision's criterion requires exact-checkpoint recovery, adopted as materialized-state persistence (deck ids + answers, not the Math.random seed). Additionally corrected during the r2 feasibility pass: the revision carries **29** acceptance criteria (not 31 as first briefed); taxonomy.js IS versioned — the unversioned set is exactly worldmap.js, venues.js, and artists-1..16.js (18 files); canvasTag has 19 call sites.
+- **Why it changed:** The counterpole's disputes were verified against the repository and confirmed correct. Recording our own errors plainly is the same standard this team applied to THEORY_001's envelope and claims.
+- **Assumption or constraint that required it:** Gate 3 — an unrecorded deviation is a defect; counts must be measured, not argued.
+- **Supporting evidence:** evidence/asset-inventory-effa805.{md,json}; tools/fetch_artworks.py:49; tools/audit_artworks.py:99; evidence/feasibility-assessment-r2.md; messages/003-revision.json disputed_points 1, 2, 5.
+- **Effect on user experience:** Positive at build time — onboarding interruption recovery is now specified as genuine recovery rather than a warning.
+- **Status:** accepted
+- **Raised by / decided by:** ChatGPT theory pole (disputes 1–2, 5) and Dürer r2 assessment / Synthesis Lead.
