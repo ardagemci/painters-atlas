@@ -62,10 +62,10 @@ evidence:
   - protocol/tasks/PIG-001/intake-baseline.md (build identity; unedited validator output; contradictions C1-C4)
   - protocol/tasks/PIG-001/liaison-incoming-analysis.json (Duchamp, incoming)
   - protocol/tasks/PIG-001/challenge-analysis-caravaggio.md (30 findings, file:line grounded)
-  - protocol/tasks/PIG-001/ux-requirements.md (Mondrian: 24-route inventory, 18 control types, ARIA counts, 24-query fixture, R1-R18)
-  - protocol/tasks/PIG-001/browser-evidence.md (Vermeer: measured U1/U2 verdicts; evidence/home__{320,390,1280}__dark.png)
-  - protocol/tasks/PIG-001/data-integrity-report.md (Seurat: 255 pd / 60 copyright / 528 gallery images; 0 died>1955 violations; Matisse/Kahlo inconsistency)
-  - protocol/tasks/PIG-001/feasibility-assessment.md (Durer: A-J classification; 14 units; contrast-without-Node method; ?v= non-uniformity)
+  - "protocol/tasks/PIG-001/ux-requirements.md (Mondrian: 24-route inventory, 18 control types, ARIA counts, 24-query fixture, R1-R18)"
+  - "protocol/tasks/PIG-001/browser-evidence.md (Vermeer: measured U1/U2 verdicts; evidence/home__{320,390,1280}__dark.png)"
+  - "protocol/tasks/PIG-001/data-integrity-report.md (Seurat: 255 pd / 60 copyright / 528 gallery images; 0 died>1955 violations; Matisse/Kahlo inconsistency)"
+  - "protocol/tasks/PIG-001/feasibility-assessment.md (Durer: A-J classification; 14 units; contrast-without-Node method; ?v= non-uniformity)"
   - protocol/tasks/PIG-001/decision-record.md (D-001..D-010)
 requested_actions:
   - Supply NIKO_001.md, ELARA_001.md, ARGUS_001.md and the VERA review, or disposition their absence in writing.

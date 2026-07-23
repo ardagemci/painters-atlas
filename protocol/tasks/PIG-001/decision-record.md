@@ -116,5 +116,16 @@ is a defect. Raw debate is preserved here and summarized elsewhere.
 - **Status:** reconsider — requires build authorization + owner acceptance
 - **Raised by / decided by:** Caravaggio + Seurat / Synthesis Lead
 
+## D-011
+
+- **Date / round / state:** 2026-07-21 / round 1 / challenge (retransmission)
+- **What changed:** CHALLENGE_001 retransmitted with its four defective evidence entries quoted. Unquoted colon+space sequences ("Mondrian: ", "Vermeer: ", "Seurat: ", "Durer: ") made YAML parse those entries as mappings, violating the schema's requirement that `evidence` be an array of strings.
+- **Why it changed:** The theory pole's liaison reported the defect and — correctly, mirroring our own D-003 posture — declined to rewrite Claude's message. Verified on our side with a real parser before fixing: Ruby/Psych confirmed entries 3–6 parsed as Hash, all other envelope fields clean.
+- **Assumption or constraint that required it:** protocol/message-schema.json (`evidence: array of strings`); YAML plain-scalar rules.
+- **Supporting evidence:** ruby -ryaml parse before (4 of 8 entries Hash) and after (8 of 8 String), run 2026-07-21.
+- **Effect on user experience:** None; envelope mechanics only.
+- **Status:** accepted
+- **Raised by / decided by:** ChatGPT Theory Liaison / Synthesis Lead. Recorded honestly: Duchamp's outgoing audit passed this envelope after catching the summary-length defect — it validated by inspection, not by an actual YAML parse, and missed this. Standing correction for all future outgoing audits: parse the envelope with a real YAML parser (ruby -ryaml is available on this Mac; PyYAML is not guaranteed).
+
 <!-- Copy the block above for each new decision. Never delete entries;
 strike through and supersede instead. -->
