@@ -36,6 +36,82 @@ class Coordinator:
     def status(self, task_id: str) -> Dict[str, Any]:
         return self.store.load(task_id)
 
+    def adopt_task(self, task_id: str, objective: str, baseline: str, max_rounds: int = 3, max_provider_calls: int = 20):
+        return self.store.adopt(task_id, objective, baseline, max_rounds, max_provider_calls)
+
+    def ingest(self, task_id: str, message_path: Path, analyst_path: Path) -> Dict[str, Any]:
+        """Route an externally produced deliberation message (JSON) with its
+        liaison audit packet through full validation, exactly as if a provider
+        had returned it. Deliberation phases only: build and review phases
+        must come from executed work, never from a file."""
+        state = self.store.load(task_id)
+        current = state["workflow_state"]
+        table = {
+            "intake": ("theory_brief", "chatgpt-theory", "chatgpt", "theory", "challenge", 1, ()),
+            "challenge": ("challenge", "claude-synthesis-lead", "claude", "challenge", "theory_revision", state["round"], ()),
+            "theory_revision": ("revision", "chatgpt-theory", "chatgpt", "theory_revision", "final_synthesis", state["round"] + 1, ("revision", "defense")),
+            "final_synthesis": ("final_synthesis", "claude-synthesis-lead", "claude", "final_synthesis", "awaiting_build_approval", state["round"], ()),
+        }
+        if current not in table:
+            raise TransitionError(f"Ingest supports deliberation phases only; task is at {current}")
+        message_type, sender, pole, message_state, next_state, round_number, allowed = table[current]
+        if round_number > state["max_rounds"]:
+            raise GateError("Deliberation round budget exhausted")
+
+        message = read_json(Path(message_path))
+        expected = {
+            "task_id": state["task_id"],
+            "project": "pigment",
+            "round": round_number,
+            "sender": sender,
+            "recipient": "coordinator",
+            "message_type": message_type,
+            "workflow_state": message_state,
+            "next_state": next_state,
+        }
+        if allowed and isinstance(message, dict) and message.get("message_type") in allowed:
+            expected["message_type"] = message["message_type"]
+        validate_message(message, expected)
+
+        packet = read_json(Path(analyst_path))
+        analyst_id = "theory-liaison" if pole == "chatgpt" else "synthesis-liaison"
+        analyst_pole = "chatgpt-theory" if pole == "chatgpt" else "claude-synthesis-build"
+        mode = "convergence_review" if expected["message_type"] == "final_synthesis" else "outgoing"
+        validate_analyst_packet(
+            packet,
+            {
+                "task_id": state["task_id"],
+                "project": "pigment",
+                "round": round_number,
+                "analyst_id": analyst_id,
+                "pole": analyst_pole,
+                "analysis_mode": mode,
+            },
+        )
+
+        state["message_count"] += 1
+        state["last_message_type"] = message["message_type"]
+        state["round"] = message["round"]
+        state["workflow_state"] = message["next_state"]
+        artifact = persist_message(self.store.task_dir(task_id), state["message_count"], message)
+        state["analyst_count"] = state.get("analyst_count", 0) + 1
+        persist_analyst_packet(self.store.task_dir(task_id), state["analyst_count"], packet)
+        self._refresh_decision_record(task_id)
+        self.store.record_event(
+            state,
+            "message_ingested",
+            {
+                "source": str(message_path),
+                "message_sha256": digest(message),
+                "message_type": message["message_type"],
+                "artifact": str(artifact.relative_to(self.repo_root)),
+                "analyst_source": str(analyst_path),
+                "analyst_sha256": digest(packet),
+            },
+        )
+        self.store.save(state)
+        return state
+
     def _expected(self, state: Dict[str, Any], message_type: str, sender: str, recipient: str, current: str, next_state: str, round_number: int) -> Dict[str, Any]:
         return {
             "task_id": state["task_id"],

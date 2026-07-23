@@ -165,6 +165,141 @@ class CoordinatorTest(unittest.TestCase):
         self.assertEqual(captured["body"]["output_config"]["format"]["type"], "json_schema")
         self.assertEqual(captured["body"]["system"], "system")
 
+    def adopt_fixture(self, task_id):
+        task_dir = self.repo / "protocol" / "tasks" / task_id
+        (task_dir / "evidence").mkdir(parents=True)
+        (task_dir / "evidence" / "home__mobile__dark.png").write_bytes(b"png")
+        (task_dir / "round1-report.md").write_text("manual round record", encoding="utf-8")
+        (task_dir / "decision-record.md").write_text("## D-001 manual", encoding="utf-8")
+        return task_dir
+
+    def write_json(self, name, value):
+        path = self.repo / name
+        path.write_text(json.dumps(value), encoding="utf-8")
+        return path
+
+    def deliberation_message(self, task_id, **overrides):
+        message = self.valid_message()
+        message["task_id"] = task_id
+        message.update(overrides)
+        return message
+
+    def analyst_fixture(self, task_id, analyst_id, pole, mode="outgoing", round_number=1):
+        packet = self.valid_analyst_packet()
+        packet.update(
+            {"task_id": task_id, "analyst_id": analyst_id, "pole": pole, "analysis_mode": mode, "round": round_number}
+        )
+        return packet
+
+    def test_adopt_registers_intake_and_preserves_unrouted(self):
+        task_id = "PIG-903"
+        task_dir = self.adopt_fixture(task_id)
+        state = self.coordinator.adopt_task(task_id, "Recover the manual round", "deadbeef")
+        self.assertEqual(state["workflow_state"], "intake")
+        self.assertEqual(state["adopted"]["baseline"], "deadbeef")
+        self.assertEqual(state["adopted"]["preserved_unrouted"], ["decision-record.md", "round1-report.md"])
+        self.assertTrue((task_dir / "unrouted" / "round1-report.md").exists())
+        self.assertTrue((task_dir / "unrouted" / "decision-record.md").exists())
+        self.assertFalse((task_dir / "round1-report.md").exists())
+        self.assertTrue((task_dir / "evidence" / "home__mobile__dark.png").exists())
+        with self.assertRaises(ConfigurationError):
+            self.coordinator.adopt_task(task_id, "again", "deadbeef")
+        with self.assertRaises(ConfigurationError):
+            self.coordinator.create_task(task_id, "again")
+
+    def test_adopt_requires_existing_artifacts(self):
+        with self.assertRaises(ConfigurationError):
+            self.coordinator.adopt_task("PIG-904", "Nothing to recover", "deadbeef")
+
+    def test_ingest_routes_deliberation_messages(self):
+        task_id = "PIG-905"
+        task_dir = self.adopt_fixture(task_id)
+        self.coordinator.adopt_task(task_id, "Recover and replay", "deadbeef")
+
+        brief = self.deliberation_message(
+            task_id,
+            message_type="theory_brief",
+            sender="chatgpt-theory",
+            workflow_state="theory",
+            next_state="challenge",
+        )
+        state = self.coordinator.ingest(
+            task_id,
+            self.write_json("brief.json", brief),
+            self.write_json("brief-audit.json", self.analyst_fixture(task_id, "theory-liaison", "chatgpt-theory")),
+        )
+        self.assertEqual(state["workflow_state"], "challenge")
+        self.assertTrue((task_dir / "theory-brief.md").exists())
+        self.assertTrue((task_dir / "messages" / "001-theory_brief.json").exists())
+        self.assertTrue((task_dir / "analyses" / "001-theory-liaison.json").exists())
+
+        challenge = self.deliberation_message(
+            task_id,
+            message_type="challenge",
+            sender="claude-synthesis-lead",
+            workflow_state="challenge",
+            next_state="theory_revision",
+        )
+        state = self.coordinator.ingest(
+            task_id,
+            self.write_json("challenge.json", challenge),
+            self.write_json(
+                "challenge-audit.json",
+                self.analyst_fixture(task_id, "synthesis-liaison", "claude-synthesis-build"),
+            ),
+        )
+        self.assertEqual(state["workflow_state"], "theory_revision")
+        self.assertEqual(state["message_count"], 2)
+        self.assertEqual(state["analyst_count"], 2)
+        self.assertEqual(state["provider_calls"], 0)
+        self.assertTrue((task_dir / "challenge-adaptation-report.md").exists())
+        record = (task_dir / "decision-record.md").read_text(encoding="utf-8")
+        self.assertIn("challenge", record)
+        self.assertIn("## D-001 manual", (task_dir / "unrouted" / "decision-record.md").read_text(encoding="utf-8"))
+
+    def test_ingest_rejects_wrong_phase_sender_and_invalid_envelope(self):
+        task_id = "PIG-906"
+        self.adopt_fixture(task_id)
+        self.coordinator.adopt_task(task_id, "Recover", "deadbeef")
+
+        wrong_sender = self.deliberation_message(
+            task_id,
+            message_type="theory_brief",
+            sender="claude-synthesis-lead",
+            workflow_state="theory",
+            next_state="challenge",
+        )
+        audit = self.write_json("audit.json", self.analyst_fixture(task_id, "theory-liaison", "chatgpt-theory"))
+        with self.assertRaises(MessageValidationError):
+            self.coordinator.ingest(task_id, self.write_json("wrong-sender.json", wrong_sender), audit)
+
+        invalid = self.deliberation_message(
+            task_id,
+            message_type="theory_brief",
+            sender="chatgpt-theory",
+            workflow_state="theory",
+            next_state="challenge",
+            evidence=[{"not": "a string"}],
+        )
+        with self.assertRaises(MessageValidationError):
+            self.coordinator.ingest(task_id, self.write_json("invalid.json", invalid), audit)
+
+        state = self.coordinator.status(task_id)
+        self.assertEqual(state["workflow_state"], "intake")
+        self.assertEqual(state["message_count"], 0)
+
+        state["workflow_state"] = "building"
+        self.coordinator.store.save(state)
+        valid = self.deliberation_message(
+            task_id,
+            message_type="theory_brief",
+            sender="chatgpt-theory",
+            workflow_state="theory",
+            next_state="challenge",
+        )
+        with self.assertRaises(TransitionError):
+            self.coordinator.ingest(task_id, self.write_json("valid.json", valid), audit)
+
     def provider_request(self):
         return ProviderRequest(
             system_prompt="system",

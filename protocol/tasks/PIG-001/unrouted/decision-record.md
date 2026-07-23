@@ -129,3 +129,14 @@ is a defect. Raw debate is preserved here and summarized elsewhere.
 
 <!-- Copy the block above for each new decision. Never delete entries;
 strike through and supersede instead. -->
+
+## D-012
+
+- **Date / round / state:** 2026-07-21 / round 1 / intake (kernel recovery)
+- **What changed:** PIG-001 was recovered into the executable Coordinator per the theory pole's seven-step direction: `adopt` and `ingest` operations implemented in pigment_coordinator/ (store/engine/cli) with 4 new unit tests (suite 11/11); PIG-001 registered at `intake` with all eleven round-1 manual artifacts preserved under `unrouted/`; rebaselined at effa805 (see rebaseline-effa805.md — counts changed under 2b0e18d); challenge-message.json extracted from CHALLENGE_001 and kernel-validated together with liaison-outgoing-audit.json against the exact ingest expectations.
+- **Why it changed:** The kernel reported "Unknown task: PIG-001" — the manual round ran outside the state machine, so declaring `theory_revision` would fabricate authoritative state, the mirror of our own C1 finding against THEORY_001.
+- **Assumption or constraint that required it:** Kernel authority over workflow state (CLAUDE.md §1, PROTOCOL.md §2); ingest is restricted to deliberation phases so a text file can never claim a build.
+- **Supporting evidence:** tests/test_coordinator.py (11 passing); state.json event `task_adopted`; rebaseline-effa805.md; kernel validation run of both transmission pieces.
+- **Effect on user experience:** None; workflow infrastructure only.
+- **Status:** accepted
+- **Raised by / decided by:** ChatGPT team (via owner relay) / Synthesis Lead. Note: liaison-outgoing-audit.json validates against the kernel analyst schema but audited the pre-retransmission CHALLENGE_001; its findings (including the summary repair it demanded) remain accurate and D-011 records the subsequent YAML episode. Routing it as-is with this note, or refreshing it, is the theory pole's call at step 6.

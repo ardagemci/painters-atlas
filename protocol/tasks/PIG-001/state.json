@@ -1,0 +1,58 @@
+{
+  "adopted": {
+    "baseline": "effa805a8a442206985dad6b14fd67993ac6b6c0",
+    "preserved_unrouted": [
+      "browser-evidence.md",
+      "challenge-adaptation-report.md",
+      "challenge-analysis-caravaggio.md",
+      "data-integrity-report.md",
+      "decision-record.md",
+      "feasibility-assessment.md",
+      "intake-baseline.md",
+      "liaison-incoming-analysis.json",
+      "liaison-outgoing-audit.json",
+      "theory-brief.md",
+      "ux-requirements.md"
+    ]
+  },
+  "analyst_count": 0,
+  "build_authorized": false,
+  "created_at": "2026-07-23T15:09:19Z",
+  "events": [
+    {
+      "at": "2026-07-23T15:09:19Z",
+      "detail": {
+        "baseline": "effa805a8a442206985dad6b14fd67993ac6b6c0",
+        "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
+        "preserved_unrouted": [
+          "browser-evidence.md",
+          "challenge-adaptation-report.md",
+          "challenge-analysis-caravaggio.md",
+          "data-integrity-report.md",
+          "decision-record.md",
+          "feasibility-assessment.md",
+          "intake-baseline.md",
+          "liaison-incoming-analysis.json",
+          "liaison-outgoing-audit.json",
+          "theory-brief.md",
+          "ux-requirements.md"
+        ]
+      },
+      "sequence": 1,
+      "type": "task_adopted"
+    }
+  ],
+  "human_decision": null,
+  "last_message_type": null,
+  "max_provider_calls": 20,
+  "max_rounds": 3,
+  "message_count": 0,
+  "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
+  "project": "pigment",
+  "provider_calls": 0,
+  "round": 1,
+  "task_id": "PIG-001",
+  "updated_at": "2026-07-23T15:09:19Z",
+  "version": 1,
+  "workflow_state": "intake"
+}

@@ -58,6 +58,24 @@ def parser() -> argparse.ArgumentParser:
     create.add_argument("--max-rounds", type=int, default=3)
     create.add_argument("--max-provider-calls", type=int, default=20)
 
+    adopt = commands.add_parser(
+        "adopt",
+        help="Register an existing task directory at intake, preserving its pre-kernel artifacts under unrouted/",
+    )
+    adopt.add_argument("task_id")
+    adopt.add_argument("objective")
+    adopt.add_argument("--baseline", required=True, help="Commit identifier the recovered task is rebaselined against")
+    adopt.add_argument("--max-rounds", type=int, default=3)
+    adopt.add_argument("--max-provider-calls", type=int, default=20)
+
+    ingest = commands.add_parser(
+        "ingest",
+        help="Route an externally produced deliberation message (JSON) with its liaison audit packet",
+    )
+    ingest.add_argument("task_id")
+    ingest.add_argument("message", help="Path to the message JSON file")
+    ingest.add_argument("--analyst", required=True, help="Path to the liaison analyst packet JSON file")
+
     for name, help_text in (
         ("advance", "Run exactly one deterministic transition"),
         ("run", "Run until a human or configuration pause"),
@@ -89,6 +107,16 @@ def main(argv=None) -> int:
                 args.max_rounds,
                 args.max_provider_calls,
             )
+        elif args.command == "adopt":
+            state = coordinator.adopt_task(
+                args.task_id,
+                args.objective,
+                args.baseline,
+                args.max_rounds,
+                args.max_provider_calls,
+            )
+        elif args.command == "ingest":
+            state = coordinator.ingest(args.task_id, Path(args.message), Path(args.analyst))
         elif args.command == "advance":
             state = coordinator.advance(args.task_id)
         elif args.command == "run":
