@@ -1,0 +1,134 @@
+{
+  "accepted_counterpole_points": [],
+  "adaptations": [
+    {
+      "change": "Normalize the preserved legacy handoff into the current Round 1 theory-to-Coordinator message envelope.",
+      "constraint": "message-schema.json and PROTOCOL.md require a complete closed envelope and Coordinator-mediated routing.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/message-schema.json",
+        "protocol/PROTOCOL.md sections 1-4",
+        "protocol/tasks/PIG-001/unrouted/theory-brief.md front matter"
+      ],
+      "intent_preserved": true,
+      "reason": "The preserved theory document predates the current sender, message type, workflow state, and next-state vocabulary.",
+      "user_consequence": "The theory position becomes machine-routable without authorizing implementation or changing product direction."
+    },
+    {
+      "change": "Replace the historical 3c2e9fa inventory snapshot with the effa805 validator snapshot and label earlier counts historical.",
+      "constraint": "Current claims must use the adopted baseline while preserving unrelated content-lane work and evidence dates.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/unrouted/rebaseline-effa805.md",
+        "protocol/tasks/PIG-001/unrouted/theory-brief.md section 3.1"
+      ],
+      "intent_preserved": true,
+      "reason": "Independent content work added one artist, one movement, and two artworks after the preserved synthesis.",
+      "user_consequence": "Claude challenges the adopted inventory rather than stale counts while unchanged deck warnings remain visible."
+    },
+    {
+      "change": "Translate subjective comprehension and brand-recognition criteria into evidence-honest review constraints.",
+      "constraint": "Release gates must be objectively passable with evidence available to the stabilization process.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/unrouted/theory-brief.md sections 7 and 10",
+        "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-theory-brief.json acceptance_criteria"
+      ],
+      "intent_preserved": true,
+      "reason": "The preserved theory warns against inferring comprehension, recognition, retention, or habit from surface presence or one-session inspection.",
+      "user_consequence": "The product can be reviewed against frozen signals without pretending inspection proves user understanding."
+    }
+  ],
+  "analysis_mode": "outgoing",
+  "analyst_id": "theory-liaison",
+  "artifact_reviewed": [
+    "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-theory-brief.json",
+    "protocol/analyst-packet-schema.json",
+    "protocol/message-schema.json",
+    "protocol/PROTOCOL.md",
+    "PIGMENT.md",
+    "protocol/tasks/PIG-001/unrouted/theory-brief.md",
+    "protocol/tasks/PIG-001/unrouted/rebaseline-effa805.md"
+  ],
+  "confidence": {
+    "basis": "The updated message validates against the protocol and aligns with the preserved synthesis, product vision, and effa805 rebaseline on hierarchy, scope, inventory, warnings, governance, provenance threshold, and uncertainty boundaries.",
+    "level": "high"
+  },
+  "constraints_or_principles_to_defend": [
+    "Do not let challenge turn conditional stabilization into broad redesign, feature expansion, implementation authorization, or release clearance.",
+    "Retain the ten-profile provenance sample spanning at least five eras, five movements, and five nations, sampled relationship and image-rights evidence, and aggregate coverage unless a material adaptation explicitly dispositions it.",
+    "Any temporary exception for either onboarding-deck warning requires explicit product-owner approval, dated rationale, and stated user impact.",
+    "Legal uncertainty must be escalated; generic platform attribution and artist death year do not establish item-level rights clearance.",
+    "Behavioral comprehension, recognition, retention, and habit claims cannot become deterministic release gates without suitable user evidence.",
+    "Every material adaptation must record change, reason, forcing constraint, evidence, user consequence, intent effect, and disposition."
+  ],
+  "convergence_recommended": false,
+  "created_at": "2026-07-23T15:29:50Z",
+  "critical_issues": [],
+  "essential_principles": [
+    "Preserve Pigment's north star: help people discover, understand, and express their taste in art.",
+    "Keep Atlas as the durable core, Taste as accountless personal continuity, and Daily and editorial paths as low-choice entrances whose identity-level value remains unproven.",
+    "Treat Round 1 as bounded conditional stabilization and evidence gathering, not redesign or unconditional release recommendation.",
+    "Preserve the multi-door homepage baseline, stable routes, IDs, slugs, stored Taste fields, established terms, and independence of Admire, Seen in person, and Saved for later.",
+    "Protect canonical discovery and Taste journeys through anchor, relationship, consequence, and onward path.",
+    "Make claims proportional to evidence; validator success is not behavioral, accessibility, historical, provenance, rights, or legal clearance.",
+    "Require reproducible evidence for state integrity, recovery, orientation, responsive containment, accessibility, search, provenance, runtime behavior, and deployment identity.",
+    "Honor Gate 1: this brief grants no authority to edit production files, merge, or deploy."
+  ],
+  "evidence_gaps": [
+    "No fresh runtime, browser, keyboard, assistive-technology, responsive, contrast, reduced-motion, search-ranking, or complete Taste-journey evidence accompanies this theory brief; the brief requests it from later phases.",
+    "The public deployment URL and its correspondence to effa805 remain assumptions rather than verified deployment evidence.",
+    "The rights-surface recount after the two added artworks remains pending; the brief does not assert a completed rights inventory.",
+    "No claim-level historical provenance or item-level image-rights clearance is established by the validator snapshot.",
+    "Preferred acquisition hierarchy, global Taste placement, onboarding adaptivity, and first-action effects remain unmeasured and disputed."
+  ],
+  "feasibility_supported": false,
+  "human_escalation": {
+    "decision_required": "No human decision is required before challenge; any proposed deck-warning exception, identity change, legal-risk acceptance, or material scope change must follow owner or escalation rules.",
+    "reason_category": "none at theory-brief routing",
+    "recommended": false,
+    "why_the_teams_cannot_resolve_it": "No present issue exceeds the teams' challenge-and-adaptation remit, and no conditional owner decision has yet been selected or blocked."
+  },
+  "intended_user_outcome": "A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue through Pigment as a connected atlas of artworks, artists, movements, techniques, eras, nations, museums, and editorial paths.",
+  "intent_preserved": true,
+  "noncritical_issues": [],
+  "optional_forms": [
+    "Start with an artist may become the recommended first action after evidence or product-owner ratification.",
+    "Taste may enter persistent global navigation now or during the later Atlas Coherence Pass.",
+    "Top-level navigation may remain multi-door or later be regrouped around product goals.",
+    "Explore alignment may expose promised instruments or narrow the promise to available instruments.",
+    "Mobile navigation may use any evident, keyboard-operable form that keeps all destinations available.",
+    "Broader Passport collections, taxonomy relabeling, instrumentation, accounts, social features, and identity experiments remain deferred unless challenge evidence makes an omission release-blocking."
+  ],
+  "owner_report": {
+    "markdown": "**Verdict:** Advance the corrected Theory Brief to `challenge`.\n\nThe transmission preserves the Atlas-first, Taste-continuity, conditional-stabilization position and rebases inventory claims to `effa805`. Criterion 2 requires product-owner approval, dated rationale, and user impact for any deck-warning exception. Criterion 9 restores the ten-profile provenance sample spanning five eras, five movements, and five nations plus aggregate coverage.\n\nNo liaison issue remains. This audit evaluates no Claude challenge and grants no build authority.",
+    "title": "PIG-001 Round 1 corrected outgoing theory audit",
+    "visibility": "audit_only"
+  },
+  "pole": "chatgpt-theory",
+  "project": "pigment",
+  "quality_evidence_appears_sufficient": false,
+  "rationale": "The corrected brief should advance because it carries the preserved Round 1 theory position into the current protocol without conceptual or governance drift. Atlas remains the core, Taste remains accountless personal continuity, Daily remains a low-choice entrance, and the objective remains bounded stabilization plus evidence. Its inventory matches the effa805 rebaseline. The restored deck-warning and provenance clauses preserve owner authority and the original evidence floor. The brief does not claim runtime, accessibility, historical, provenance, legal, deployment, or release readiness beyond available evidence. Advancing grants no convergence, implementation, merge, deployment, or human-review authority.",
+  "recommended_action": "advance",
+  "recommended_next_state": "challenge",
+  "resolved_issues": [
+    "The current inventory is rebased to effa805 with exact validator counts, unchanged warnings, and all references valid.",
+    "The 3c2e9fa counts are explicitly historical rather than current evidence.",
+    "Legacy vocabulary is normalized to theory_brief, theory, and challenge protocol states.",
+    "Unmeasured comprehension and identity-recognition claims are no longer deterministic release gates.",
+    "Criterion 2 preserves product-owner approval, dated rationale, and user impact for any deck-warning exception.",
+    "Criterion 9 preserves the ten-profile sample spanning five eras, five movements, and five nations plus aggregate coverage.",
+    "The brief separates assumptions, observed evidence, unresolved risks, requested challenge work, and future release evidence."
+  ],
+  "round": 1,
+  "semantic_validity": "valid",
+  "specialists_recommended": [
+    "Implementation Lead for feasibility and reversible-scope classification",
+    "Accessibility specialist for keyboard, focus, contrast, motion, zoom, and visualization-equivalence evidence",
+    "Provenance and image-rights specialist for source coverage, exact-work matching, license status, and legal escalation boundaries",
+    "Independent Quality Reviewer for reproducible acceptance evidence"
+  ],
+  "summary": "The corrected Round 1 brief is conceptually coherent, schema-conformant, evidence-honest, and faithful to the preserved Atlas-first stabilization position. It rebases counts to effa805, preserves product-owner authority over any deck-warning exception, and restores the ten-profile provenance sample across five eras, movements, and nations. No liaison issue remains. Advance to challenge; this is not convergence or build authorization.",
+  "task_id": "PIG-001",
+  "unsupported_claims": []
+}

@@ -15,7 +15,7 @@
       "ux-requirements.md"
     ]
   },
-  "analyst_count": 0,
+  "analyst_count": 2,
   "build_authorized": false,
   "created_at": "2026-07-23T15:09:19Z",
   "events": [
@@ -40,19 +40,45 @@
       },
       "sequence": 1,
       "type": "task_adopted"
+    },
+    {
+      "at": "2026-07-23T15:31:53Z",
+      "detail": {
+        "analyst_sha256": "2420086ec19fcb71fcbec896bf4479f8e1f2239cada5fa16bd9e9b6f98c67753",
+        "analyst_source": "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-theory-liaison.json",
+        "artifact": "protocol/tasks/PIG-001/theory-brief.md",
+        "message_sha256": "22200dcc0d1c91fd0b671a4eebdfb5f876be9296e8ec3bece5bfd58ecd02054b",
+        "message_type": "theory_brief",
+        "source": "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-theory-brief.json"
+      },
+      "sequence": 2,
+      "type": "message_ingested"
+    },
+    {
+      "at": "2026-07-23T15:31:58Z",
+      "detail": {
+        "analyst_sha256": "ab9e90b4f3f7114ea4ecbc2f4b95d6abb1732f7fdd86576a319060828a24d62c",
+        "analyst_source": "protocol/tasks/PIG-001/unrouted/liaison-outgoing-audit.json",
+        "artifact": "protocol/tasks/PIG-001/challenge-adaptation-report.md",
+        "message_sha256": "856b4a1c9d76543a83cd5ea720cb5d83796b7837fd7c9836a84c3ac6f356d63d",
+        "message_type": "challenge",
+        "source": "protocol/tasks/PIG-001/unrouted/challenge-message.json"
+      },
+      "sequence": 3,
+      "type": "message_ingested"
     }
   ],
   "human_decision": null,
-  "last_message_type": null,
+  "last_message_type": "challenge",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 0,
+  "message_count": 2,
   "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
   "project": "pigment",
   "provider_calls": 0,
   "round": 1,
   "task_id": "PIG-001",
-  "updated_at": "2026-07-23T15:09:19Z",
+  "updated_at": "2026-07-23T15:31:58Z",
   "version": 1,
-  "workflow_state": "intake"
+  "workflow_state": "theory_revision"
 }

@@ -1,0 +1,141 @@
+---
+task_id: "PIG-001"
+project: "pigment"
+round: 1
+sender: "chatgpt-theory"
+recipient: "coordinator"
+message_type: "theory_brief"
+workflow_state: "theory"
+summary: "Pigment is a coherent Atlas-first product with an implemented accountless Taste layer. Against the current effa805 baseline, the immediate objective remains a bounded stabilization and evidence pass, not a redesign. Claude should challenge scope, feasibility, evidence quality, and testability before any specification is frozen or implementation begins."
+assumptions:
+  - "The current baseline is effa805a8a442206985dad6b14fd67993ac6b6c0 on main."
+  - "The target public deployment remains https://ardagemci.github.io/painters-atlas/#/."
+  - "Atlas 2.0 and the accountless Taste Passport remain the accepted product foundation."
+  - "Admire remains the only v1 positive artwork taste signal; Seen in person and Saved for later remain independent states."
+  - "Stable routes, IDs, slugs, storage fields, and established Pigment terms are preserved unless a later frozen specification explicitly changes them."
+  - "The current multi-door homepage remains the rollback baseline while hierarchy alternatives are unproven."
+  - "Counts and observations tied to 3c2e9fa are historical evidence and are not represented as the current build snapshot."
+accepted_points:
+  - "user_outcome: A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue into Pigment's connected atlas."
+  - "information_architecture: Atlas is the durable architectural core; Taste is the personal continuity layer; Daily and editorial lists are low-choice entrances."
+  - "principal_flow: Discover -> Admire -> Map -> Become -> Share, supported by the longer Discover -> Save -> Reflect -> Compare -> Learn -> Share loop."
+  - "Pigment's north star is to help people discover, understand, and express their taste in art."
+  - "The editorial visual identity, relationship-rich detail pages, timeline, search, Lists, and multiple legitimate entrances should be preserved."
+  - "The current release should prioritize orientation, state clarity, recoverability, first-user continuity, accessibility, and evidence integrity over feature expansion."
+  - "Deployment readiness is conditional, not unconditional."
+  - "Gate 1 remains in force: this brief authorizes no production edits, merge, or deployment."
+disputed_points:
+  - "Whether Taste belongs in persistent global navigation now or in a later Atlas Coherence Pass."
+  - "Whether top-level navigation should be regrouped immediately or only after first-time and expert retrieval testing."
+  - "Whether Start with an artist should be formally ratified as the recommended first action."
+  - "Whether Eras and Nations require relabeling or clearer definitions and uncertainty language."
+  - "What public historical-reference claims are supportable before claim-level provenance and image-rights coverage are established."
+  - "Whether onboarding should become truly response-adaptive or its current stratified behavior should be described more narrowly."
+  - "What minimum provenance, rights, exact-match, and residual-risk evidence is sufficient for this stabilization objective."
+proposal: "## Intended user outcome\n\nLet a first-time visitor discover art, admire works, form and recover a local Taste Passport, understand how their actions affect it, and recognize that Pigment connects artworks, artists, movements, techniques, eras, nations, museums, and editorial paths.\n\n## Current evidence baseline\n\nThe current baseline is commit effa805a8a442206985dad6b14fd67993ac6b6c0. The dated validator snapshot reports 247 artists, 75 movements, 39 techniques, 8 eras, 37 nations, 27 painter styles, 225 influence edges, 115 venues, 317 catalog artworks, 75 Tier 1 artworks, a 75-work daily pool, 103 museum notes, 15 personas, 12 lists, and 36 Tier 1 artist arcs. All references validate. Two deck warnings remain: fewer than two works with E <= -40, and an empty F x D quadrant 1,-1. These counts describe current scope, not completeness, representativeness, accuracy, or legal clearance.\n\n## Product direction\n\nPreserve Atlas-first architecture, Taste as personal continuity, Daily as a low-choice entrance, the multi-door homepage baseline, Pigment's editorial atmosphere, and the established art-native language. Strengthen orientation, state clarity, persistence, recovery, and trust without gating knowledge. Do not silently choose a new product identity.\n\n## Active stabilization scope\n\nThe active evidence package covers onboarding-deck integrity; the complete first-user Taste journey; Passport creation, persistence, export, import, merge, and reset; independent Admire, Seen, and Saved states; interruption and recovery; route orientation and control semantics; mobile navigation and responsive containment; search and Explore promise alignment; contrast, focus, keyboard use, reduced motion, and readable visualization alternatives; documentation reconciliation; route, link, console, and deployment proof; and a bounded provenance, exact-match, and rights-risk baseline.\n\n## Deferred scope\n\nDefer broad navigation restructuring, Taste-first acquisition, Daily-first identity, accounts, social features, new taste mathematics, full taxonomy redesign, full Passport collection surfaces, museum routes, instrumentation, and corpus-wide uncertainty UI unless Claude demonstrates that a specific omission is release-blocking.\n\n## Canonical journeys\n\nProtect known-artist discovery, artwork-led discovery, editorial-list discovery, the Palette-to-Passport Taste loop, and the Explore loop. Every principal journey should retain an anchor, explain the relationship and consequence, provide a meaningful onward path, and preserve contextual recovery.\n\n## Request to Claude\n\nReturn a Challenge and Adaptation Report that fairly restates this objective, classifies every requested item as release blocker, low-risk inclusion, follow-up backlog, or product-owner decision, identifies contradictions between build and documentation, challenges untestable criteria, proposes the smallest reversible direction, names exact evidence needed before human review, and records every material adaptation. Do not implement until the Coordinator freezes a converged specification."
+rationale: "Pigment has moved beyond a painter reference prototype into a connected art atlas with a meaningful but trust-sensitive Taste layer. The current build has enough product coherence to stabilize rather than redesign, but current counts, deck warnings, accessibility and recovery unknowns, state-integrity risks, search and responsive questions, and incomplete provenance evidence prevent unconditional release confidence. The theory pole therefore preserves product intent while asking Claude to test scope, feasibility, contradictions, and acceptance criteria against the current effa805 baseline."
+evidence:
+  - "PIGMENT.md (north star, product loop, Atlas/Taste hierarchy, terminology, trust and accessibility principles)"
+  - "protocol/tasks/PIG-001/unrouted/rebaseline-effa805.md (current commit, validator output, and deltas from 3c2e9fa)"
+  - "protocol/tasks/PIG-001/unrouted/theory-brief.md (preserved original theory synthesis and detailed workstreams)"
+  - "protocol/tasks/PIG-001/unrouted/intake-baseline.md (historical 3c2e9fa baseline; dated, not current)"
+  - "protocol/tasks/PIG-001/state.json (registered task, intake state, adopted effa805 baseline)"
+  - "docs/ADMIRE_SPEC.md (onboarding, Persona, and Taste Passport contract)"
+  - "docs/TASTE_MATH.md (taste-vector and onboarding prior model)"
+  - "docs/STYLE_GUIDE.md (voice, content, and museum-route promises)"
+  - "docs/ARTWORK_SCHEMA.md (artwork and image record contract)"
+requested_actions:
+  - "Restate the intended user outcome fairly before challenging it."
+  - "Classify each workstream and material finding as release blocker, low-risk inclusion, follow-up backlog, or product-owner decision."
+  - "Identify contradictions among the current effa805 build, authoritative documentation, and this brief."
+  - "Challenge unsupported behavioral, accessibility, historical, provenance, rights, and feasibility claims."
+  - "Propose the smallest reversible synthesis without silently changing product intent or stable terminology."
+  - "Rewrite or disposition acceptance criteria that cannot be objectively passed or failed."
+  - "State the exact evidence package and rollback conditions required before human_review_ready."
+  - "Record every material adaptation in the decision record with rationale, evidence, consequence, and disposition."
+  - "Return the challenge through the Coordinator without editing production files."
+acceptance_criteria:
+  - "The validator reports no errors and all references are valid."
+  - "Both onboarding-deck warnings are resolved or intentionally accepted through explicit product-owner approval with a dated rationale and stated user impact."
+  - "The complete first-user Taste journey finishes without a broken or unexplained transition."
+  - "Passport creation, update, export, share/import, merge, and reset do not silently discard signals."
+  - "Admire, Seen in person, and Saved for later persist across navigation and reload, remain independent, and display accurate state."
+  - "Onboarding interruption and correction consequences are explicit and recoverable."
+  - "Existing invalid-route and no-match recovery remain functional."
+  - "Reviewer-facing documentation no longer contradicts current validator counts without a historical-date label."
+  - "A minimum ten-profile provenance sample spanning at least five eras, five movements, and five nations, plus the aggregate coverage baseline, is complete against a frozen inventory."
+  - "Sampled influence edges carry source, relationship type, and confidence or dispute information in the evidence packet."
+  - "Sampled images carry item-level provenance, depicted-work exactness, and rights or license status in the evidence packet."
+  - "Every enumerated provenance or legal risk carries an explicit disposition; no unresolved item is represented as cleared."
+  - "Release language does not imply historical-reference or rights readiness beyond the evidence produced."
+  - "Every route change identifies the new page once and moves focus to a meaningful entry point."
+  - "The current destination and every active control state are perceivable without color or position alone."
+  - "Repeated navigation can be bypassed; all primary actions remain keyboard-operable with visible focus."
+  - "No interactive surface contains a competing interactive action."
+  - "At 320 to 400 px widths, every primary destination is visible or accompanied by an evident navigation affordance."
+  - "There is no unintended root-level horizontal overflow at the frozen acceptance viewports."
+  - "Both themes meet applicable WCAG 2.2 AA contrast requirements for required text and controls."
+  - "Reduced motion preserves the same information and choices."
+  - "Essential visualization content has a meaningful readable and keyboard-accessible alternative."
+  - "Search results, groups, selection, dismissal, count, and empty states are perceivable and operable."
+  - "Exact and meaningful matches outrank incidental substrings under a frozen query fixture."
+  - "Representative entity queries resolve to correctly typed destinations where matching data exists."
+  - "The homepage Explore promise and Explore destination describe the same available instruments."
+  - "Empty, unavailable, invalid, limit, and failure states preserve context and offer a meaningful next action."
+  - "Opening-experience comprehension claims that require user research are not used as deterministic release gates."
+  - "The approved first-action hierarchy, if ratified, is represented consistently while secondary paths remain available."
+  - "At least one meaningful relationship is demonstrated with named entities, relation, consequence, and onward path."
+  - "Persistent global access and guided first-time entry remain distinguishable."
+  - "Frozen representative journeys preserve an anchor, explain the relationship and consequence, and offer an onward path."
+  - "Pigment identity is reviewed against frozen product signals rather than inferred user recognition."
+  - "Decorative relationship systems never outrank the information they communicate."
+  - "No secondary path loses all frozen entry points without an approved tradeoff and rollback condition."
+risks:
+  - "Passport import, interruption, and recovery behavior may silently damage durable personal state."
+  - "Deck correction could corrupt taste data if validator compliance overrides honest editorial judgment."
+  - "Accessibility and mobile-discoverability claims may be overstated until measured with frozen browser, keyboard, viewport, and assistive-technology inventories."
+  - "Current image and claim provenance are incomplete; generic platform attribution and artist death year are not legal clearance."
+  - "Exact-work mismatches or incomplete rights evidence could undermine trust and create legal exposure."
+  - "Subjective product-fidelity criteria could make the release gate permanently discretionary if not converted into finite review contracts."
+  - "Broad provenance or uncertainty work could turn stabilization into an unbounded second project."
+  - "A stale rollback anchor could remove independent content added after 3c2e9fa."
+  - "Third-party runtime services may create privacy obligations inconsistent with an accountless trust posture."
+  - "A clean validator or console does not prove complete runtime, behavioral, accessibility, historical, or legal readiness."
+confidence: "high: product direction, current effa805 validator snapshot, and the need for conditional stabilization are well supported; medium on preferred hierarchy and bounded evidence scope; low on unmeasured behavior, assistive-technology outcomes, complete historical accuracy, and legal clearance"
+next_state: "challenge"
+created_at: "2026-07-23T15:23:03Z"
+---
+
+# Theory Brief
+
+## Intended user outcome
+
+Let a first-time visitor discover art, admire works, form and recover a local Taste Passport, understand how their actions affect it, and recognize that Pigment connects artworks, artists, movements, techniques, eras, nations, museums, and editorial paths.
+
+## Current evidence baseline
+
+The current baseline is commit effa805a8a442206985dad6b14fd67993ac6b6c0. The dated validator snapshot reports 247 artists, 75 movements, 39 techniques, 8 eras, 37 nations, 27 painter styles, 225 influence edges, 115 venues, 317 catalog artworks, 75 Tier 1 artworks, a 75-work daily pool, 103 museum notes, 15 personas, 12 lists, and 36 Tier 1 artist arcs. All references validate. Two deck warnings remain: fewer than two works with E <= -40, and an empty F x D quadrant 1,-1. These counts describe current scope, not completeness, representativeness, accuracy, or legal clearance.
+
+## Product direction
+
+Preserve Atlas-first architecture, Taste as personal continuity, Daily as a low-choice entrance, the multi-door homepage baseline, Pigment's editorial atmosphere, and the established art-native language. Strengthen orientation, state clarity, persistence, recovery, and trust without gating knowledge. Do not silently choose a new product identity.
+
+## Active stabilization scope
+
+The active evidence package covers onboarding-deck integrity; the complete first-user Taste journey; Passport creation, persistence, export, import, merge, and reset; independent Admire, Seen, and Saved states; interruption and recovery; route orientation and control semantics; mobile navigation and responsive containment; search and Explore promise alignment; contrast, focus, keyboard use, reduced motion, and readable visualization alternatives; documentation reconciliation; route, link, console, and deployment proof; and a bounded provenance, exact-match, and rights-risk baseline.
+
+## Deferred scope
+
+Defer broad navigation restructuring, Taste-first acquisition, Daily-first identity, accounts, social features, new taste mathematics, full taxonomy redesign, full Passport collection surfaces, museum routes, instrumentation, and corpus-wide uncertainty UI unless Claude demonstrates that a specific omission is release-blocking.
+
+## Canonical journeys
+
+Protect known-artist discovery, artwork-led discovery, editorial-list discovery, the Palette-to-Passport Taste loop, and the Explore loop. Every principal journey should retain an anchor, explain the relationship and consequence, provide a meaningful onward path, and preserve contextual recovery.
+
+## Request to Claude
+
+Return a Challenge and Adaptation Report that fairly restates this objective, classifies every requested item as release blocker, low-risk inclusion, follow-up backlog, or product-owner decision, identifies contradictions between build and documentation, challenges untestable criteria, proposes the smallest reversible direction, names exact evidence needed before human review, and records every material adaptation. Do not implement until the Coordinator freezes a converged specification.
+
+## Rationale
+
+Pigment has moved beyond a painter reference prototype into a connected art atlas with a meaningful but trust-sensitive Taste layer. The current build has enough product coherence to stabilize rather than redesign, but current counts, deck warnings, accessibility and recovery unknowns, state-integrity risks, search and responsive questions, and incomplete provenance evidence prevent unconditional release confidence. The theory pole therefore preserves product intent while asking Claude to test scope, feasibility, contradictions, and acceptance criteria against the current effa805 baseline.
