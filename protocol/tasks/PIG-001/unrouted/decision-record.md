@@ -151,3 +151,25 @@ strike through and supersede instead. -->
 - **Effect on user experience:** Positive at build time — onboarding interruption recovery is now specified as genuine recovery rather than a warning.
 - **Status:** accepted
 - **Raised by / decided by:** ChatGPT theory pole (disputes 1–2, 5) and Dürer r2 assessment / Synthesis Lead.
+
+## D-014
+
+- **Date / round / state:** 2026-07-23 / round 2 / approved_for_build
+- **What changed:** The product owner recorded all five decision-gated items ahead of human review (full text in owner-decisions-r2.md): OD-1 positioning = editorial/personalized discovery tool; OD-2 ratify artist-first (with reservation); OD-3 self-host fonts; OD-4 authorize merit-based deck re-scores else dated exception; OD-5 ship on documented residual rights risk with qualified review for clearance claims.
+- **Why it changed:** These are the owner's to decide (CLAUDE.md §5); deciding them now unblocks the build cleanly and lets the evidence package target the chosen posture.
+- **Assumption or constraint that required it:** Owner authority over identity, privacy, legal posture, and hierarchy.
+- **Supporting evidence:** owner-decisions-r2.md; direct owner input 2026-07-23.
+- **Effect on user experience:** Sets font-loading to local (privacy), keeps artist-first entry, and holds public language to editorial/discovery framing.
+- **Status:** accepted
+- **Raised by / decided by:** Synthesis Lead (presented) / Arda (decided).
+
+## D-015
+
+- **Date / round / state:** 2026-07-23 / round 2 / approved_for_build
+- **What changed:** Two owner decisions carry durable product-direction signal beyond PIG-001, recorded as forward direction and explicitly held OUT of this frozen scope: (OD-2) artists presented as "superheroes" users identify with — a Persona/identity-layer refinement; (OD-4) the taste-scoring mathematics elevated to candidate MAIN product ("polish or revolutionize"), warranting a dedicated future objective touching TASTE_MATH.md, ADMIRE_SPEC.md, the coordinate corpus, and the onboarding engine.
+- **Why it changed:** Gate 3 — material intent signal must be recorded even when not acted on, so it is neither lost nor allowed to silently expand the current release.
+- **Assumption or constraint that required it:** No scope expansion without a named uncertainty, frozen scope, and rollback (THEORY_001 §10; revision binding constraints).
+- **Supporting evidence:** owner-decisions-r2.md OD-2, OD-4.
+- **Effect on user experience:** None this release; seeds a likely PIG-002-class taste-math objective.
+- **Status:** accepted (forward direction; not scheduled)
+- **Raised by / decided by:** Arda / Synthesis Lead.
