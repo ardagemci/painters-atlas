@@ -40,6 +40,15 @@ const artistsOfNation = id => A.filter(a => a.nation === id);
 
 /* ---------------- tiny utils ---------------- */
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* short/family name for an artist — keeps leading particles (van/da/de/el…) with the surname */
+const NAME_PARTICLES = new Set(["van","von","der","den","de","del","della","di","da","du","la","le","los","las","dos","ten","ter","of","the","el","al"]);
+function artistShortName(a){
+  const parts = String(a && a.name || "").trim().split(/\s+/);
+  if(parts.length <= 1) return parts[0] || "";
+  let i = parts.length - 1;
+  while(i > 0 && NAME_PARTICLES.has(parts[i - 1].toLowerCase())) i--;
+  return parts.slice(i).join(" ");
+}
 function hashStr(s){ let h = 2166136261; for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 function mulberry(seed){ let a = seed; return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 function hex2rgb(hx){ const v = hx.replace("#",""); return [parseInt(v.slice(0,2),16), parseInt(v.slice(2,4),16), parseInt(v.slice(4,6),16)]; }
@@ -1116,7 +1125,7 @@ function igFocus(nid){
   info.innerHTML = `<strong>${esc(a.name)}</strong> <span class="mc-meta">${esc(a.years)}</span>
     <div class="chips" style="margin-top:8px">${rels.map(([oid, ty, dir]) =>
       Ax[oid] ? `<a class="chip a" href="#/artist/${oid}"><b style="color:${EDGE_STYLE[ty].color};font-weight:500">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>` : "").join("")}</div>
-    <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(a.name.split(" ")[0])}'s page →</a>`;
+    <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(artistShortName(a))}'s page →</a>`;
 }
 function igClear(){
   const svg = document.getElementById("ig-svg"), info = document.getElementById("ig-info");
@@ -1646,7 +1655,7 @@ function viewArtist(id){
     const t1 = window.TIER1 && window.TIER1[a.id];
     if(!t1) return "";
     return `<div class="why-card">
-      <div class="why-kicker">Why ${esc(a.name.split(" ").pop())} matters</div>
+      <div class="why-kicker">Why ${esc(artistShortName(a))} matters</div>
       <p>${esc(t1.why)}</p>
       <div class="traits">${t1.lookFor.map(t => `<span class="trait">${esc(t)}</span>`).join("")}</div>
     </div>`;
@@ -1795,12 +1804,12 @@ function viewArtwork(id){
           <a class="chip-label" style="display:block;margin-top:10px" href="#/museum/${mv.id}">${heldHere} work${heldHere === 1 ? "" : "s"} from these walls in the atlas →</a>
         </div>`;
       })() : ""}
-      ${moreBy.length ? `<div class="panel"><h3>More by ${esc(a.name.split(" ")[0])}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
+      ${moreBy.length ? `<div class="panel"><h3>More by ${esc(artistShortName(a))}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
         `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(a.style, a.palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(o.year.display)}</span></span></a>`).join("")}</div></div>` : ""}
       ${near.length ? `<div class="panel"><h3>Near it in the atlas</h3><div class="mini-cards">${near.map(o =>
         `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(Ax[o.artistId].style, Ax[o.artistId].palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(Ax[o.artistId].name)}</span></span></a>`).join("")}</div></div>` : ""}
       <div class="panel"><h3>Go next</h3><div class="chips">
-        ${chip("a", "artist/" + a.id, "All of " + a.name.split(" ").pop())}
+        ${chip("a", "artist/" + a.id, "All of " + artistShortName(a))}
         ${w.movements && w.movements[0] && Mx[w.movements[0]] ? chip("m", "movement/" + w.movements[0], "More " + Mx[w.movements[0]].name) : ""}
       </div></div>
     </aside>
