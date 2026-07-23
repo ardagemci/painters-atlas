@@ -2209,8 +2209,8 @@ searchInput.addEventListener("keydown", e => {
     links[selIdx].scrollIntoView({ block:"nearest" });
   } else if(e.key === "Enter"){
     const target = links[selIdx >= 0 ? selIdx : 0];
-    if(target){ location.hash = target.getAttribute("href"); searchInput.value = ""; hideSearch(); searchInput.blur(); }
-  } else if(e.key === "Escape"){ hideSearch(); searchInput.blur(); }
+    if(target){ location.hash = target.getAttribute("href"); searchInput.value = ""; hideSearch(); }
+  } else if(e.key === "Escape"){ hideSearch(); searchInput.focus(); }
 });
 searchResults.addEventListener("click", () => { searchInput.value = ""; hideSearch(); });
 document.addEventListener("click", e => { if(!e.target.closest(".search-wrap")) hideSearch(); });
