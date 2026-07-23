@@ -1428,8 +1428,10 @@ function viewHome(){
     .map(m => [m, artistsOfMovement(m.id).length]).sort((x,y) => y[1]-x[1]).slice(0,6);
   const stripWorks = [...CAT].filter(w => w.image && w.image.src)
     .sort(() => Math.random()-0.5);
-  const stripItems = stripWorks.map(w =>
-    `<a href="#/artwork/${w.id}" title="${esc(w.title)} — ${Ax[w.artistId] ? esc(Ax[w.artistId].name) : ""}"><img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}"></a>`).join("");
+  const stripAnchor = (w, dup) =>
+    `<a ${dup ? 'tabindex="-1" aria-hidden="true" ' : ""}href="#/artwork/${w.id}" title="${esc(w.title)} — ${Ax[w.artistId] ? esc(Ax[w.artistId].name) : ""}"><img loading="lazy" src="${w.image.src}" alt="${dup ? "" : esc(w.title)}"></a>`;
+  const stripItems = stripWorks.map(w => stripAnchor(w, false)).join("");
+  const stripItemsDup = stripWorks.map(w => stripAnchor(w, true)).join("");
   document.title = "Pigment — Find your place in the history of art";
   return `
   <header class="home-hero">
@@ -1478,7 +1480,7 @@ function viewHome(){
   })()}
 
   <div class="strip" aria-label="Masterpieces in the atlas">
-    <div class="strip-track">${stripItems}${stripItems}</div>
+    <div class="strip-track">${stripItems}${stripItemsDup}</div>
   </div>
 
   <section>
