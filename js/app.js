@@ -2271,42 +2271,121 @@ const searchResults = document.getElementById("search-results");
 const INDEX = [
   ...A.map(a => ({ type:"Artists",    href:"artist/"+a.id,    name:a.name, meta:a.years })),
   ...CAT.map(w => ({ type:"Artworks", href:"artwork/"+w.id,  name:w.title, meta:Ax[w.artistId] ? Ax[w.artistId].name : "" })),
-  ...LISTS.map(l => ({ type:"Lists",  href:"list/"+l.id,     name:l.title, meta:l.works.length + " works" })),
+  ...LISTS.map(l => ({ type:"Lists",  href:"list/"+l.id,     name:l.title, meta:l.works.length + " works", nometa:1 })),
   ...VEN.filter(v => !VENUE_SENTINELS[v.id] && (catByVenue[v.id] || []).length)
         .map(v => ({ type:"Museums", href:"museum/"+v.id,    name:v.name, meta:v.city })),
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),
-  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, meta:"" }))
+  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, alt:n.name, meta:"" }))
 ];
 let selIdx = -1;
+
+/* ---------- relevance ranking (AC21) ----------
+   Six tiers, best first. Ranking is by RELEVANCE; entity type survives only as the
+   deterministic tie-break inside a single tier, never as the ordering itself. */
+const SR_MAX = 9;
+const SR_EXACT = 0, SR_PREFIX = 1, SR_WORD = 2, SR_META = 3, SR_SUB = 4, SR_METASUB = 5, SR_NONE = 9;
+const SR_ARTICLE = /^(?:the|a|an|le|la|les|los|las|el|il|der|die|das)\s+(.+)$/;
+const SR_BOUNDARY = /[\s\-–—'’"“”()[\]/.,:;!?]/;
+/* every string an entry may be matched against: its display name, any explicit
+   alternate name (a nation carries the bare country name behind its flag glyph),
+   and either of those without a leading article — display ornament is not identity */
+function srKeys(it){
+  const keys = [it.name.toLowerCase()];
+  const add = s => { if(s && keys.indexOf(s) < 0) keys.push(s); };
+  if(it.alt) add(it.alt.toLowerCase());
+  keys.slice().forEach(k => { const m = k.match(SR_ARTICLE); if(m) add(m[1]); });
+  return keys;
+}
+/* a list's meta is a count ("12 works"), not identity — it is displayed, never matched */
+INDEX.forEach(it => { it.keys = srKeys(it); it.metaKey = it.nometa ? "" : (it.meta || "").toLowerCase(); });
+
+/* does q start a word inside hay (a surname, "du Louvre"), or merely fall inside
+   one ("sTATE Hermitage")? */
+function srWordStart(hay, q){
+  for(let i = hay.indexOf(q); i > 0; i = hay.indexOf(q, i + 1)){
+    if(SR_BOUNDARY.test(hay.charAt(i - 1))) return true;
+  }
+  return false;
+}
+function srRank(it, q){
+  let best = SR_NONE;
+  for(const k of it.keys){
+    if(k === q) return SR_EXACT;                        /* an exact name always ranks first */
+    const at = k.indexOf(q);
+    if(at === 0) best = Math.min(best, SR_PREFIX);
+    else if(at > 0) best = Math.min(best, srWordStart(k, q) ? SR_WORD : SR_SUB);
+  }
+  if(best <= SR_WORD) return best;
+  /* meta was never searched before, so no artwork could be found by its painter's
+     name. A meta match on a word boundary is meaningful and outranks an incidental
+     substring buried inside an unrelated title. */
+  const m = it.metaKey, mat = m ? m.indexOf(q) : -1;
+  if(mat >= 0) best = Math.min(best, (mat === 0 || srWordStart(m, q)) ? SR_META : SR_METASUB);
+  return best;
+}
+/* Type-fair fill. Inside one tier the matching types take turns, so a crowded type
+   (247 artists) can never consume the whole cap and starve a matching artwork,
+   museum or movement. Tiers are never crossed for fairness — a prefix match always
+   outranks a substring match, whichever types they belong to. */
+function srSelect(scored, max){
+  const out = [];
+  for(let tier = SR_EXACT; tier <= SR_METASUB && out.length < max; tier++){
+    const lanes = [], byType = {};
+    scored.forEach(s => {
+      if(s.r !== tier) return;
+      if(!byType[s.it.type]) lanes.push(byType[s.it.type] = []);
+      byType[s.it.type].push(s.it);
+    });
+    for(let round = 0, moved = true; moved && out.length < max; round++){
+      moved = false;
+      for(const lane of lanes){
+        if(round >= lane.length) continue;
+        out.push(lane[round]); moved = true;
+        if(out.length >= max) break;
+      }
+    }
+  }
+  return out;
+}
 
 function runSearch(q){
   q = q.trim().toLowerCase();
   if(!q){ hideSearch(); return; }
-  const starts = [], contains = [];
-  INDEX.forEach(it => {
-    const n = it.name.toLowerCase();
-    if(n.startsWith(q)) starts.push(it);
-    else if(n.includes(q)) contains.push(it);
-  });
-  const hits = [...starts, ...contains].slice(0, 9);
+  const scored = [];
+  INDEX.forEach(it => { const r = srRank(it, q); if(r < SR_NONE) scored.push({ it, r }); });
+  const hits = srSelect(scored, SR_MAX);
   selIdx = -1;
   if(!hits.length){
     searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(q)}”.</div>`;
+    searchResults.setAttribute("aria-label", "Search results — nothing matches");
   } else {
-    /* listbox → group → option, so the type headings stay in the tree as group names (C3) */
-    let html = "", lastType = "";
-    hits.forEach((it, i) => {
-      if(it.type !== lastType){
-        if(lastType) html += `</div>`;
-        html += `<div role="group" aria-label="${esc(it.type)}"><div class="sr-group" role="presentation">${it.type}</div>`;
-        lastType = it.type;
-      }
-      html += `<a href="#/${it.href}" id="sr-opt-${i}" role="option" aria-selected="false" tabindex="-1" data-i="${i}"><span>${esc(it.name)}</span><span class="sr-meta">${esc(it.meta)}</span></a>`;
+    /* listbox → group → option, so the type headings stay in the tree as group names (C3).
+       Grouping happens AFTER ranking, so each type's heading is emitted exactly once and
+       the groups are ordered by their best-ranked member. */
+    const groups = [];
+    hits.forEach(it => {
+      let g = groups.find(x => x.type === it.type);
+      if(!g) groups.push(g = { type: it.type, items: [] });
+      g.items.push(it);
     });
-    if(lastType) html += `</div>`;
+    let html = "", i = 0;
+    groups.forEach(g => {
+      html += `<div role="group" aria-label="${esc(g.type)}"><div class="sr-group" role="presentation">${g.type}</div>`;
+      g.items.forEach(it => {
+        html += `<a href="#/${it.href}" id="sr-opt-${i}" role="option" aria-selected="false" tabindex="-1" data-i="${i}"><span>${esc(it.name)}</span><span class="sr-meta">${esc(it.meta)}</span></a>`;
+        i++;
+      });
+      html += `</div>`;
+    });
+    /* the cap used to truncate in silence; say so instead */
+    const more = scored.length - hits.length;
+    if(more > 0) html += `<div class="sr-more" aria-hidden="true">Showing ${hits.length} of ${scored.length} matches — keep typing to narrow it.</div>`;
     searchResults.innerHTML = html;
+    searchResults.setAttribute("aria-label", more > 0
+      ? `Search results — showing ${hits.length} of ${scored.length} matches`
+      : `Search results — ${hits.length} match${hits.length === 1 ? "" : "es"}`);
   }
   searchResults.hidden = false;
   searchInput.setAttribute("aria-expanded", "true");
@@ -2314,6 +2393,7 @@ function runSearch(q){
 }
 function hideSearch(){
   searchResults.hidden = true; selIdx = -1;
+  searchResults.setAttribute("aria-label", "Search results");
   searchInput.setAttribute("aria-expanded", "false");
   searchInput.removeAttribute("aria-activedescendant");
 }

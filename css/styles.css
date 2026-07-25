@@ -157,6 +157,10 @@ p{margin:0 0 1em}
 .search-results a:hover,.search-results a.sel{background:rgba(201,164,92,.13)}
 .search-results .sr-meta{font-size:.74rem;color:var(--muted);margin-left:auto;white-space:nowrap}
 .search-results .sr-empty{padding:14px;color:var(--muted);font-size:.88rem;text-align:center}
+.search-results .sr-more{
+  margin-top:4px;padding:8px 12px 4px;border-top:1px solid var(--line);
+  color:var(--faint);font-size:.72rem;
+}
 
 #theme-toggle{
   flex-shrink:0;width:38px;height:38px;border-radius:50%;
