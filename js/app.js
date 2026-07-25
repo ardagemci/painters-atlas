@@ -988,12 +988,18 @@ const IG_WORDS = {
   befriended: ["friend of", "friend of"], rivaled: ["rival of", "rival of"],
   partners: ["partner of", "partner of"]
 };
+/* Colour is not carried here any more: a theme-invariant hex cannot satisfy both
+   themes at once, and the `<b>` labels below are body text (AC19, 4.5:1). Each
+   type gets an `e-<type>` class instead, and `css/styles.css` resolves it to a
+   theme token through `--rc` — stroke, arrowhead fill, legend swatch and label
+   all read the same custom property. The dash patterns still carry type
+   redundantly, so nothing here depends on colour alone. */
 const EDGE_STYLE = {
-  taught:     { label:"taught",      color:"#c9a45c", dash:"",      arrow:true  },
-  influenced: { label:"influenced",  color:"#6fb3a8", dash:"5 4",   arrow:true  },
-  befriended: { label:"friends",     color:"#c97b6a", dash:"",      arrow:false },
-  rivaled:    { label:"rivals",      color:"#c4536a", dash:"2 4",   arrow:false },
-  partners:   { label:"partners",    color:"#d98ab0", dash:"",      arrow:false }
+  taught:     { label:"taught",      dash:"",      arrow:true  },
+  influenced: { label:"influenced",  dash:"5 4",   arrow:true  },
+  befriended: { label:"friends",     dash:"",      arrow:false },
+  rivaled:    { label:"rivals",      dash:"2 4",   arrow:false },
+  partners:   { label:"partners",    dash:"",      arrow:false }
 };
 
 function influenceLayout(W, H){
@@ -1111,7 +1117,7 @@ function viewInfluences(){
   let defs = `<defs>`;
   Object.entries(EDGE_STYLE).forEach(([ty, st]) => {
     if(st.arrow) defs += `<marker id="arr-${ty}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="${st.color}"/></marker>`;
+      <path class="ig-arr e-${ty}" d="M0,0 L10,5 L0,10 z"/></marker>`;
   });
   defs += `</defs>`;
 
@@ -1121,9 +1127,9 @@ function viewInfluences(){
     const r2 = e.t.r + 3;
     const dx = e.t.x - e.s.x, dy = e.t.y - e.s.y, d = Math.sqrt(dx*dx + dy*dy) || 1;
     const tx = e.t.x - dx / d * r2, ty2 = e.t.y - dy / d * r2;
-    return `<line class="ig-edge" data-etype="${e.ty}" data-a="${e.s.a.id}" data-b="${e.t.a.id}"
+    return `<line class="ig-edge e-${e.ty}" data-etype="${e.ty}" data-a="${e.s.a.id}" data-b="${e.t.a.id}"
       x1="${e.s.x.toFixed(1)}" y1="${e.s.y.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty2.toFixed(1)}"
-      stroke="${st.color}" ${st.dash ? `stroke-dasharray="${st.dash}"` : ""} ${st.arrow ? `marker-end="url(#arr-${e.ty})"` : ""}/>`;
+      ${st.dash ? `stroke-dasharray="${st.dash}"` : ""} ${st.arrow ? `marker-end="url(#arr-${e.ty})"` : ""}/>`;
   }).join("");
 
   const nodeSvg = nodes.map(n => {
@@ -1140,7 +1146,7 @@ function viewInfluences(){
   }).join("");
 
   const legend = Object.entries(EDGE_STYLE).map(([ty, st]) =>
-    `<button class="tl2-leg" data-etype-btn="${ty}"><i style="background:${st.color}"></i>${st.label} · ${edges.filter(e => e.ty === ty).length}</button>`).join("");
+    `<button class="tl2-leg" data-etype-btn="${ty}"><i class="ig-sw e-${ty}"></i>${st.label} · ${edges.filter(e => e.ty === ty).length}</button>`).join("");
 
   return `
   <div class="page-head">
@@ -1179,7 +1185,7 @@ function igFocus(nid){
   info.hidden = false;
   info.innerHTML = `<strong>${esc(a.name)}</strong> <span class="mc-meta">${esc(a.years)}</span>
     <div class="chips" style="margin-top:8px">${rels.map(([oid, ty, dir]) =>
-      Ax[oid] ? `<a class="chip a" href="#/artist/${oid}"><b style="color:${EDGE_STYLE[ty].color};font-weight:500">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>` : "").join("")}</div>
+      Ax[oid] ? `<a class="chip a" href="#/artist/${oid}"><b class="ig-rel e-${ty}">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>` : "").join("")}</div>
     <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(artistShortName(a))}'s page →</a>`;
 }
 function igClear(){
@@ -1456,7 +1462,7 @@ function viewExplore(){
     <p class="page-lede">Four instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
   </div>
   <div class="entry-cards">
-    <a class="entry-card" href="#/timeline" style="--ec:var(--gold)">
+    <a class="entry-card" href="#/timeline" style="--ec:var(--gold2)">
       <div class="ec-kicker">Time</div>
       <h3>The grand timeline</h3>
       <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Giotto to Banksy and watch the centuries hand each other the brush.</p>
@@ -1578,7 +1584,7 @@ function viewHome(){
   </header>
 
   <div class="entry-cards">
-    <div class="entry-card" style="--ec:var(--gold)">
+    <div class="entry-card" style="--ec:var(--gold2)">
       <a class="ec-cover" href="#/artists" aria-label="Start with an artist"></a>
       <div class="ec-kicker">Begin</div>
       <h3>Start with an artist</h3>
@@ -1834,7 +1840,7 @@ function viewArtist(id){
         return rels.length ? `<div class="panel">
           <h3>Lineage & circle</h3>
           <div class="chips">${rels.map(([oid, ty, dir]) =>
-            `<a class="chip a" href="#/artist/${oid}"><b style="color:${EDGE_STYLE[ty].color};font-weight:500">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>`).join("")}</div>
+            `<a class="chip a" href="#/artist/${oid}"><b class="ig-rel e-${ty}">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>`).join("")}</div>
           <a href="#/influences" class="chip-label" style="display:block;margin-top:12px">see the full influence graph →</a>
         </div>` : "";
       })()}

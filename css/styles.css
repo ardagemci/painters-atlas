@@ -355,7 +355,7 @@ p{margin:0 0 1em}
 
 .page-head{margin:6px 0 30px}
 .page-kicker{
-  font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+  font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold2);
   margin-bottom:10px;
 }
 h1.display{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;margin-bottom:.25em}
@@ -466,7 +466,7 @@ section{margin:46px 0}
   background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:2px;
 }
 .why-kicker{
-  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);
   margin-bottom:10px;
 }
 .why-card p{
@@ -547,7 +547,7 @@ section{margin:46px 0}
   border-bottom:1px dashed var(--line2);
 }
 .facts li:last-child{border-bottom:none}
-.facts li::before{content:"✦";position:absolute;left:4px;color:var(--gold);font-size:.8rem;top:12px}
+.facts li::before{content:"✦";position:absolute;left:4px;color:var(--gold2);font-size:.8rem;top:12px}
 
 .side-panel{position:sticky;top:96px;display:flex;flex-direction:column;gap:26px}
 .panel{
@@ -560,7 +560,7 @@ section{margin:46px 0}
 }
 .work:last-child{border-bottom:none}
 .work .w-year{
-  font-family:var(--serif);font-size:.85rem;color:var(--gold);min-width:44px;text-align:right;
+  font-family:var(--serif);font-size:.85rem;color:var(--gold2);min-width:44px;text-align:right;
 }
 .work .w-title{font-size:.93rem;color:var(--body-ink);font-style:italic}
 .work.has-img{display:block;cursor:zoom-in;padding:12px 0}
@@ -738,7 +738,7 @@ section{margin:46px 0}
 }
 .entry-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--ec,var(--gold))}
 .entry-card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:var(--shadow)}
-.entry-card .ec-kicker{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ec,var(--gold))}
+.entry-card .ec-kicker{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ec,var(--gold2))}
 .entry-card h3{font-size:1.4rem;margin:10px 0 8px;color:var(--ink)}
 .entry-card p{font-size:.9rem;color:var(--muted);margin:0}
 .entry-card .ec-arrow{
@@ -973,7 +973,18 @@ section{margin:46px 0}
   border:1px solid var(--line2);border-radius:18px;background:var(--panel);
 }
 #ig-svg{display:block}
-.ig-edge{stroke-width:1.3;stroke-opacity:.5;transition:stroke-opacity .25s,stroke-width .25s}
+/* the five relationship types resolve through the theme tokens, not through a
+   theme-invariant hex: one custom property per type, read by the edge stroke,
+   the arrowhead, the legend swatch and the inline label alike (AC19). */
+.e-taught{--rc:var(--gold2)}
+.e-influenced{--rc:var(--teal)}
+.e-befriended{--rc:var(--wine)}
+.e-rivaled{--rc:var(--rose)}
+.e-partners{--rc:var(--mauve)}
+.ig-arr{fill:var(--rc)}
+.ig-sw{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0;background:var(--rc)}
+.ig-rel{color:var(--rc);font-weight:500}
+.ig-edge{stroke:var(--rc);stroke-width:1.3;stroke-opacity:.5;transition:stroke-opacity .25s,stroke-width .25s}
 .ig-edge.hid{display:none}
 .ig-node{cursor:pointer}
 .ig-node circle{stroke:var(--panel);stroke-width:3;transition:opacity .25s,filter .2s}
