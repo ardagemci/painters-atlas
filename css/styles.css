@@ -192,10 +192,42 @@ html[data-theme="light"]{
   --scroll2:#c2b696;
 }
 html[data-theme="light"] #bg-canvas{opacity:.6}
+/* The light hero is painted over the generative cover, whose pixels are mixed
+   fresh every visit — so it is bounded against a worst-case fully opaque BLACK
+   cover pixel, not against any sampled cover. With #bg-canvas at opacity .6 and
+   an effective paper alpha of .72 over the text block, the blend factor is
+   k = .6 * (1 - .72) = .168 and the worst reachable backdrop is rgb(201,196,186).
+   Against that: the three stops below score 6.62 / 3.23 / 4.29 (large-text floor
+   3.0) and the small text raised at .home-hero-content scores 8.66 / 6.28
+   (floor 4.5). The lightest stop #81632b is the light --gold2, so the hero and
+   the link colour agree. Dark is untouched; it measures 6.20. (AC19 / F-2) */
 html[data-theme="light"] .home-hero-content h1{
-  background:linear-gradient(92deg,#5e451c,#a8813c 38%,#5e451c 62%,#8a6a2e);
+  background:linear-gradient(92deg,#4a3616,#81632b 38%,#4a3616 62%,#6b5122);
   background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;
+}
+/* paper haze shaped to the title block; free to thin at the frame so the cover
+   still reads there. #bg-canvas{opacity:.6} above is deliberately unchanged. */
+html[data-theme="light"] .home-hero .hero-shade{
+  background:radial-gradient(ellipse 96% 74% at 50% 42%,
+    rgba(var(--bg-rgb),.84) 0%, rgba(var(--bg-rgb),.74) 62%,
+    rgba(var(--bg-rgb),.38) 84%, rgba(var(--bg-rgb),.66) 100%);
+}
+/* a scrim cannot carry 4.5:1 small text in the worst case without effectively
+   hiding the cover, so the hero's small text goes up one rung in light instead */
+html[data-theme="light"] .home-hero-content .kicker{color:var(--ink)}
+html[data-theme="light"] .home-hero-content .footer-note{color:var(--body-ink)}
+/* the credit's painter link is text inside the same block, and a{}'s --gold2
+   only reaches 3.23 against the bounding backdrop (a:hover's #fff, 1.73). It
+   takes the credit's own ink and carries its affordance on the underline, the
+   same treatment .img-credit a already uses for a credit-line link. */
+html[data-theme="light"] .home-hero-content .footer-note a{
+  color:var(--body-ink);text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:var(--line);
+}
+html[data-theme="light"] .home-hero-content .footer-note a:hover,
+html[data-theme="light"] .home-hero-content .footer-note a:focus-visible{
+  color:var(--ink);text-decoration-color:var(--gold);
 }
 html[data-theme="light"] .card-art::after{
   background:linear-gradient(105deg,transparent 38%,rgba(255,253,245,.32) 50%,transparent 62%);
