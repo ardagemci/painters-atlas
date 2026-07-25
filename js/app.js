@@ -66,8 +66,34 @@ function tasteDist(a, b){
 
 /* ---------- the Taste Passport (ADMIRE_SPEC §10) ---------- */
 const PASSPORT_KEY = "pigment.taste.v1";
+/* storage health — reads and writes can fail (quota, private browsing, corrupt JSON).
+   We record what actually happened so the interface can say it plainly instead of
+   showing an empty state or claiming a save that never landed. */
+const ppState = { read: "ok", write: "ok", corrupt: false };
+function ppRaw(){
+  try{ return localStorage.getItem(PASSPORT_KEY); }catch(e){ return null; }
+}
 function getPassport(){
-  try{ return JSON.parse(localStorage.getItem(PASSPORT_KEY)); }catch(e){ return null; }
+  let raw;
+  try{ raw = localStorage.getItem(PASSPORT_KEY); }
+  catch(e){ ppState.read = "denied"; return null; }
+  ppState.read = "ok";
+  if(raw === null || raw === ""){ ppState.corrupt = false; return null; }   /* genuinely no passport yet */
+  try{
+    const p = JSON.parse(raw);
+    if(p && typeof p === "object"){ ppState.corrupt = false; return p; }
+  }catch(e){}
+  ppState.corrupt = true;      /* present but unreadable — the stored bytes stay untouched */
+  return null;
+}
+/* the single write path: it never overwrites a passport we could not read */
+function ppWrite(p){
+  if(ppState.corrupt || ppState.read === "denied") return false;
+  try{
+    localStorage.setItem(PASSPORT_KEY, JSON.stringify(p));
+    ppState.write = "ok";
+    return true;
+  }catch(e){ ppState.write = "failed"; return false; }
 }
 function newPassport(){
   const now = new Date().toISOString();
@@ -87,7 +113,7 @@ function passportToggle(field, id){
   const i = arr.findIndex(e => e.id === id);
   if(i >= 0) arr.splice(i, 1); else arr.push({ id, at: new Date().toISOString() });
   p.updatedAt = new Date().toISOString();
-  try{ localStorage.setItem(PASSPORT_KEY, JSON.stringify(p)); }catch(e){}
+  if(!ppWrite(p)) return null;      /* nothing was stored — the caller must not claim it was */
   return i < 0;
 }
 const PP_LABELS = {
@@ -95,6 +121,25 @@ const PP_LABELS = {
   seen: ["Seen in person", "Seen in person ✓"],
   saved: ["Save for later", "Saved ✓"]
 };
+/* a literal notice when storage refuses us — states what did not happen, offers a way out */
+const PP_WRITE_MSG = "Not saved. This device would not store your Taste Passport — it may be out of room, or site data may be switched off for this browser. Nothing already saved has changed.";
+function ppNotice(msg){
+  let el = document.getElementById("pp-notice");
+  if(!el){
+    el = document.createElement("div");
+    el.id = "pp-notice";
+    el.className = "pp-notice";
+    el.setAttribute("role", "status");
+    document.body.appendChild(el);
+  }
+  el.innerHTML = `<p>${esc(msg)}</p>
+    <div class="chips">
+      <button class="chip" data-tsx="export">Back up data (.json)</button>
+      <a class="chip" href="#/taste">Open the Taste Passport</a>
+      <button class="chip" data-tsx="notice-close">Dismiss</button>
+    </div>`;
+  el.hidden = false;
+}
 function passportActions(w){
   return ["admirations", "seen", "saved"].map((field, i) => {
     const on = passportHas(field, w.id);
@@ -2119,6 +2164,7 @@ app.addEventListener("click", e => {
   const ppBtn = e.target.closest("[data-pp]");
   if(ppBtn){                                               /* Admire / Seen / Save → Taste Passport */
     const on = passportToggle(ppBtn.dataset.pp, ppBtn.dataset.ppid);
+    if(on === null){ ppNotice(PP_WRITE_MSG); return; }      /* the write failed — leave the label alone */
     ppBtn.classList.toggle("on", on);
     ppBtn.textContent = PP_LABELS[ppBtn.dataset.pp][on ? 1 : 0];
     return;
@@ -2361,7 +2407,7 @@ const T_POLE = { F:["figurative","abstract"], D:["calm","dramatic"], E:["classic
 
 function ppSave(p){
   p.updatedAt = new Date().toISOString();
-  try{ localStorage.setItem(PASSPORT_KEY, JSON.stringify(p)); }catch(e){}
+  return ppWrite(p);
 }
 function ppFull(){
   const p = getPassport() || newPassport();
@@ -2739,7 +2785,7 @@ function obFinish(){
   p.milestones = p.milestones || {};
   p.milestones.onboarded = true;
   p.milestones.confidence = st.tier;
-  ppSave(p);
+  if(!ppSave(p)) ppNotice("Your answers were not saved. This device would not store the Taste Passport, so the map you just made will be gone when you leave this page. Back it up below, or free some space and take the onboarding again.");
 }
 
 /* ---------- the passport card (a painted, shareable PNG) ---------- */
@@ -2884,11 +2930,32 @@ function drawCardPreview(){
   });
 }
 
+/* ---------- storage cannot be read: say which case it is, keep the data, offer a way out ---------- */
+function ppTroubleView(){
+  const denied = ppState.read === "denied";
+  return `
+  <div class="ob-wrap">
+    <div class="page-kicker">The Taste Passport · this device's storage</div>
+    <h1 class="display">${denied ? "This browser will not let Pigment read its storage." : "Something is stored here, and it cannot be read."}</h1>
+    <p class="page-lede">${denied
+      ? "Local storage is blocked for this site — private browsing or a site-data setting will do that. Pigment cannot read or write your Taste Passport on this device until it is available again. Nothing has been deleted. Admire, Seen in person and Saved for later will not stick in the meantime."
+      : `The data saved under <code>${PASSPORT_KEY}</code> on this device is not readable as a Taste Passport. Pigment has not changed it and will not write over it. Download it first if you want a copy; replacing it is your choice, not ours.`}</p>
+    <div class="chips" style="margin-top:16px">
+      <button class="chip" data-tsx="storage-retry">Try reading it again</button>
+      ${denied ? "" : `<button class="chip" data-tsx="export">Download the stored data</button>
+      <button class="chip" data-tsx="storage-reset">Replace it with a new Passport</button>`}
+      <a class="chip" href="#/">Back to the atlas</a>
+    </div>
+    <p class="chip-label" id="taste-msg"></p>
+  </div>`;
+}
+
 /* ---------- the taste page (#/taste) ---------- */
 function viewTaste(){
   document.title = "Your taste — Pigment";
   requestAnimationFrame(drawCardPreview);
   const p = getPassport();
+  if(ppState.corrupt || ppState.read === "denied") return ppTroubleView();
   if(!p || (!p.admirations.length && !(p.milestones && p.milestones.onboarded))) return `
     <div class="ob-wrap">
       <div class="page-kicker">The Taste Passport</div>
@@ -3031,7 +3098,7 @@ document.addEventListener("click", e => {
     p.persona = p.persona || {};
     p.persona.adopted = id;
     p.persona.adoptedAt = new Date().toISOString();
-    ppSave(p);
+    if(!ppSave(p)) ppNotice("Persona not adopted. This device would not store the change, so your Taste Passport is unchanged.");
     route();
   }
   else if(act === "later"){ location.hash = "#/taste"; }
@@ -3053,10 +3120,31 @@ document.addEventListener("click", e => {
     });
   }
   else if(act === "export"){
+    const p = getPassport();
+    /* if it could not be parsed, back up the raw bytes rather than exporting "null" */
+    const text = p ? JSON.stringify(p, null, 1) : (ppRaw() || "");
+    if(!text){ ppNotice("There is nothing stored on this device to back up yet."); return; }
     const a = document.createElement("a");
-    a.href = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(getPassport(), null, 1));
-    a.download = "pigment-passport.json";
+    a.href = "data:application/json;charset=utf-8," + encodeURIComponent(text);
+    a.download = p ? "pigment-passport.json" : "pigment-passport-unreadable.json";
     a.click();
+  }
+  else if(act === "notice-close"){
+    const el = document.getElementById("pp-notice");
+    if(el) el.hidden = true;
+  }
+  else if(act === "storage-retry"){
+    ppState.read = "ok"; ppState.write = "ok"; ppState.corrupt = false;
+    route();
+  }
+  else if(act === "storage-reset"){
+    if(confirm("Replace the unreadable data on this device with a new, empty Taste Passport? Download it first if you want a copy — this cannot be undone.")){
+      let gone = true;
+      try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){ gone = false; }
+      if(!gone){ ppNotice("Not replaced. This browser would not let Pigment clear its storage, so the existing data is still there."); return; }
+      ppState.read = "ok"; ppState.write = "ok"; ppState.corrupt = false;
+      ob = null; route();
+    }
   }
   else if(act === "share-url"){
     const url = location.href.split("#")[0] + "#/passport/" + passportPayload();
@@ -3066,13 +3154,16 @@ document.addEventListener("click", e => {
   }
   else if(act === "reset"){
     if(confirm("Erase your Taste Passport from this device? Export it first if you want a copy.")){
-      try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){}
+      let gone = true;
+      try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){ gone = false; }
+      if(!gone){ ppNotice("Not erased. This browser would not let Pigment clear its storage, so your Taste Passport is still on this device."); return; }
+      ppState.read = "ok"; ppState.write = "ok"; ppState.corrupt = false;
       ob = null; route();
     }
   }
   else if(act === "import"){
     const merged = mergePassports(getPassport(), window._ppImport || {});
-    ppSave(merged);
+    if(!ppSave(merged)){ ppNotice(PP_WRITE_MSG); return; }
     location.hash = "#/taste";
   }
 });
