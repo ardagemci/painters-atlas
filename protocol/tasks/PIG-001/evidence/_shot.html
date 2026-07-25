@@ -1,0 +1,14 @@
+<!doctype html>
+<!-- Vermeer evidence harness (PIG-001). Not a production file. Sets theme +
+     optional prefs in localStorage, then redirects to the route under test so
+     headless Chrome captures the page in the requested theme. -->
+<meta charset="utf-8">
+<title>shot</title>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  try{ localStorage.setItem("pigment-theme", p.get("theme") || "dark"); }catch(e){}
+  var route = p.get("route") || "#/";
+  location.replace("/index.html" + route);
+})();
+</script>

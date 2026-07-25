@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- Vermeer evidence harness (PIG-001). Not a production file.
+     Renders index.html in a same-origin iframe at the requested CSS width and
+     applies a root font-size (text-only zoom, WCAG 1.4.4 proxy) inside it, so
+     headless Chrome can capture 200% text zoom. -->
+<meta charset="utf-8">
+<title>zoom shot</title>
+<style>html,body{margin:0;padding:0;background:#000}iframe{border:0;display:block}</style>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  try{ localStorage.setItem("pigment-theme", p.get("theme") || "dark"); }catch(e){}
+  var w = p.get("w") || "1280", h = p.get("h") || "800";
+  var zoom = p.get("zoom") || "200%";
+  var route = p.get("route") || "#/";
+  var f = document.createElement("iframe");
+  f.width = w; f.height = h;
+  f.src = "/index.html" + route;
+  f.addEventListener("load", function(){
+    try{ f.contentDocument.documentElement.style.fontSize = zoom; }catch(e){}
+  });
+  document.body.appendChild(f);
+})();
+</script>
