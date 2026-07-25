@@ -44,10 +44,10 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
     <a href="#/nations" data-nav="nations">Nations</a>
   </nav>
   <div class="search-wrap">
-    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" aria-label="Search artists, artworks, lists, museums, movements, techniques, eras and nations">
-    <div id="search-results" class="search-results" hidden></div>
+    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="search-results" aria-label="Search artists, artworks, lists, museums, movements, techniques, eras and nations">
+    <div id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden></div>
   </div>
-  <button id="theme-toggle" aria-label="Switch between dark and light mode" title="Dark / light mode">☀</button>
+  <button id="theme-toggle" aria-label="Light mode" aria-pressed="false" title="Dark / light mode">☀</button>
 </header>
 
 <main id="app" class="view-enter" aria-live="polite"></main>

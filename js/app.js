@@ -143,7 +143,7 @@ function ppNotice(msg){
 function passportActions(w){
   return ["admirations", "seen", "saved"].map((field, i) => {
     const on = passportHas(field, w.id);
-    return `<button class="aw-btn ${i === 0 ? "primary" : ""} ${on ? "on" : ""}" data-pp="${field}" data-ppid="${w.id}">${PP_LABELS[field][on ? 1 : 0]}</button>`;
+    return `<button class="aw-btn ${i === 0 ? "primary" : ""} ${on ? "on" : ""}" data-pp="${field}" data-ppid="${w.id}" aria-pressed="${on}">${PP_LABELS[field][on ? 1 : 0]}</button>`;
   }).join("");
 }
 
@@ -958,10 +958,10 @@ function viewTimeline(){
   A.forEach(a => counts[a.movements[0]] = (counts[a.movements[0]] || 0) + 1);
   const legEntries = Object.entries(counts).sort((x, y) => y[1] - x[1]).filter(([mid]) => Mx[mid]);
   const legend = (tlLegendAll ? legEntries : legEntries.slice(0, 14))
-    .map(([mid, c]) => `<button class="tl2-leg" data-tlmov="${mid}"><i style="background:${vivid(Mx[mid].palette)}"></i>${esc(Mx[mid].name)} · ${c}</button>`)
+    .map(([mid, c]) => `<button class="tl2-leg" data-tlmov="${mid}" aria-pressed="false"><i style="background:${vivid(Mx[mid].palette)}"></i>${esc(Mx[mid].name)} · ${c}</button>`)
     .join("");
   const legMore = legEntries.length > 14
-    ? `<button class="tl2-leg tl2-leg-more" data-tlleg>${tlLegendAll ? "show fewer −" : "+ " + (legEntries.length - 14) + " more movements"}</button>` : "";
+    ? `<button class="tl2-leg tl2-leg-more" data-tlleg aria-expanded="${tlLegendAll}">${tlLegendAll ? "show fewer −" : "+ " + (legEntries.length - 14) + " more movements"}</button>` : "";
 
   return `
   <div class="page-head">
@@ -972,12 +972,12 @@ function viewTimeline(){
   <div class="tl2-toolbar">
     <span class="f-label">Zoom</span>
     ${[["3","Compact"],["6","Standard"],["12","Detail"]].map(([z, l]) =>
-      `<button class="f-btn ${tlZoom === +z ? "on" : ""}" data-tlzoom="${z}">${l}</button>`).join("")}
+      `<button class="f-btn ${tlZoom === +z ? "on" : ""}" data-tlzoom="${z}" aria-pressed="${tlZoom === +z}">${l}</button>`).join("")}
     <span class="f-spacer"></span>
     <span class="f-label">Jump to</span>
     ${E.map(e => `<button class="f-btn" data-tljump="${(e.start - TL_Y0) * pxy}">${esc(e.name.split(" ")[0])}</button>`).join("")}
   </div>
-  <div class="tl2-legend"><button class="tl2-leg" data-tlmov=""><i style="background:var(--gold)"></i>All</button>${legend}${legMore}</div>
+  <div class="tl2-legend"><button class="tl2-leg" data-tlmov="" aria-pressed="false"><i style="background:var(--gold)"></i>All</button>${legend}${legMore}</div>
   <div class="tl2-wrap" id="tl2"><div class="tl2-inner" style="width:${W}px;height:${H}px">${grid}${barHtml}</div></div>
   <p class="map-hint">${A.length} painters · ${laneEnds.length} lanes · fading bars are still painting</p>`;
 }
@@ -1238,7 +1238,10 @@ function setMapZoom(target){
   const svg = document.getElementById("atlas-map");
   mapZoom = target;
   if(!svg) return;
-  document.querySelectorAll(".map-zoom").forEach(b => b.classList.toggle("on", b.dataset.zoom === target));
+  document.querySelectorAll(".map-zoom").forEach(b => {
+    b.classList.toggle("on", b.dataset.zoom === target);
+    b.setAttribute("aria-pressed", b.dataset.zoom === target ? "true" : "false");
+  });
   const dots = svg.querySelector("#map-dots");
   const from = svg.getAttribute("viewBox").split(/\s+/).map(Number);
   const to = MAP_REGIONS[target].vb;
@@ -1259,8 +1262,8 @@ function worldMapView(){
   return `<div class="map-wrap">
     <div class="map-toolbar">
       <span class="f-label">Zoom</span>
-      <button class="f-btn map-zoom ${mapZoom === "world" ? "on" : ""}" data-zoom="world">World</button>
-      <button class="f-btn map-zoom ${mapZoom === "europe" ? "on" : ""}" data-zoom="europe">Europe</button>
+      <button class="f-btn map-zoom ${mapZoom === "world" ? "on" : ""}" data-zoom="world" aria-pressed="${mapZoom === "world"}">World</button>
+      <button class="f-btn map-zoom ${mapZoom === "europe" ? "on" : ""}" data-zoom="europe" aria-pressed="${mapZoom === "europe"}">Europe</button>
     </div>
     <svg id="atlas-map" viewBox="${MAP_REGIONS[mapZoom].vb.join(" ")}" style="aspect-ratio:1000/420"
          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map of painters by nation">
@@ -1494,7 +1497,7 @@ function viewList(id){
           <div class="le-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a> · ${esc(w.year.display)}</div>
           <p class="le-note">${esc(e.note)}</p>
         </div>
-        <button class="aw-btn le-adm ${on ? "on" : ""}" data-pp="admirations" data-ppid="${w.id}">${on ? "Admired ✓" : "Admire"}</button>
+        <button class="aw-btn le-adm ${on ? "on" : ""}" data-pp="admirations" data-ppid="${w.id}" aria-pressed="${on}">${on ? "Admired ✓" : "Admire"}</button>
       </li>`;
     }).join("")}
   </ol>
@@ -1658,12 +1661,12 @@ function viewArtists(){
   </div>
   <div class="filter-bar">
     <span class="f-label">Era</span>
-    <button class="f-btn ${artistFilter.era==='all'?'on':''}" data-era="all">All</button>
-    ${E.map(e => `<button class="f-btn ${artistFilter.era===e.id?'on':''}" data-era="${e.id}">${esc(e.name)}</button>`).join("")}
+    <button class="f-btn ${artistFilter.era==='all'?'on':''}" data-era="all" aria-pressed="${artistFilter.era==='all'}">All</button>
+    ${E.map(e => `<button class="f-btn ${artistFilter.era===e.id?'on':''}" data-era="${e.id}" aria-pressed="${artistFilter.era===e.id}">${esc(e.name)}</button>`).join("")}
     <span class="f-spacer"></span>
     <span class="f-label">Sort</span>
-    <button class="f-btn ${artistFilter.sort==='chrono'?'on':''}" data-sort="chrono">Chronological</button>
-    <button class="f-btn ${artistFilter.sort==='az'?'on':''}" data-sort="az">A–Z</button>
+    <button class="f-btn ${artistFilter.sort==='chrono'?'on':''}" data-sort="chrono" aria-pressed="${artistFilter.sort==='chrono'}">Chronological</button>
+    <button class="f-btn ${artistFilter.sort==='az'?'on':''}" data-sort="az" aria-pressed="${artistFilter.sort==='az'}">A–Z</button>
   </div>
   <div class="cards">${list.map(artistCard).join("")}</div>`;
 }
@@ -1901,8 +1904,8 @@ function taxIndexView(list, type, title, kicker, lede){
   </div>
   <div class="filter-bar">
     <span class="f-label">View</span>
-    <button class="f-btn ${view === "cards" ? "on" : ""}" data-vtype="${type}" data-view="cards">Cards</button>
-    <button class="f-btn ${view === "tree" ? "on" : ""}" data-vtype="${type}" data-view="tree">Family tree</button>
+    <button class="f-btn ${view === "cards" ? "on" : ""}" data-vtype="${type}" data-view="cards" aria-pressed="${view === "cards"}">Cards</button>
+    <button class="f-btn ${view === "tree" ? "on" : ""}" data-vtype="${type}" data-view="tree" aria-pressed="${view === "tree"}">Family tree</button>
   </div>
   ${view === "tree"
     ? treeView(list, type)
@@ -2117,8 +2120,11 @@ function setNav(page){
   const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists",
     explore:"explore", timeline:"explore", influences:"explore", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
-  document.querySelectorAll("#main-nav a").forEach(a =>
-    a.classList.toggle("active", a.dataset.nav === map[page]));
+  document.querySelectorAll("#main-nav a").forEach(a => {
+    const cur = a.dataset.nav === map[page];
+    a.classList.toggle("active", cur);
+    if(cur) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");   /* C1 */
+  });
 }
 
 function animateCounters(){
@@ -2166,6 +2172,7 @@ app.addEventListener("click", e => {
     const on = passportToggle(ppBtn.dataset.pp, ppBtn.dataset.ppid);
     if(on === null){ ppNotice(PP_WRITE_MSG); return; }      /* the write failed — leave the label alone */
     ppBtn.classList.toggle("on", on);
+    ppBtn.setAttribute("aria-pressed", on ? "true" : "false");
     ppBtn.textContent = PP_LABELS[ppBtn.dataset.pp][on ? 1 : 0];
     return;
   }
@@ -2176,7 +2183,10 @@ app.addEventListener("click", e => {
   const etb = e.target.closest("[data-etype-btn]");
   if(etb){                                                 /* edge-type filter */
     const ty = etb.dataset.etypeBtn;
-    document.querySelectorAll("[data-etype-btn]").forEach(b => b.classList.toggle("on", b === etb));
+    document.querySelectorAll("[data-etype-btn]").forEach(b => {
+      b.classList.toggle("on", b === etb);
+      b.setAttribute("aria-pressed", b === etb ? "true" : "false");
+    });
     document.querySelectorAll(".ig-edge").forEach(l => l.classList.toggle("hid", !!ty && l.dataset.etype !== ty));
     return;
   }
@@ -2212,9 +2222,9 @@ app.addEventListener("click", e => {
   const tm = e.target.closest("[data-tlmov]");
   if(tm){                                                  /* movement isolation, no re-render */
     const wasOn = tm.classList.contains("on");
-    document.querySelectorAll("[data-tlmov]").forEach(b => b.classList.remove("on"));
+    document.querySelectorAll("[data-tlmov]").forEach(b => { b.classList.remove("on"); b.setAttribute("aria-pressed", "false"); });
     const mid = !wasOn ? tm.dataset.tlmov : "";
-    if(!wasOn) tm.classList.add("on");
+    if(!wasOn){ tm.classList.add("on"); tm.setAttribute("aria-pressed", "true"); }
     document.querySelectorAll(".tl2-bar").forEach(b => b.classList.toggle("dim", !!mid && b.dataset.mov !== mid));
     return;
   }
@@ -2285,16 +2295,28 @@ function runSearch(q){
   if(!hits.length){
     searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(q)}”.</div>`;
   } else {
+    /* listbox → group → option, so the type headings stay in the tree as group names (C3) */
     let html = "", lastType = "";
     hits.forEach((it, i) => {
-      if(it.type !== lastType){ html += `<div class="sr-group">${it.type}</div>`; lastType = it.type; }
-      html += `<a href="#/${it.href}" data-i="${i}"><span>${esc(it.name)}</span><span class="sr-meta">${esc(it.meta)}</span></a>`;
+      if(it.type !== lastType){
+        if(lastType) html += `</div>`;
+        html += `<div role="group" aria-label="${esc(it.type)}"><div class="sr-group" role="presentation">${it.type}</div>`;
+        lastType = it.type;
+      }
+      html += `<a href="#/${it.href}" id="sr-opt-${i}" role="option" aria-selected="false" tabindex="-1" data-i="${i}"><span>${esc(it.name)}</span><span class="sr-meta">${esc(it.meta)}</span></a>`;
     });
+    if(lastType) html += `</div>`;
     searchResults.innerHTML = html;
   }
   searchResults.hidden = false;
+  searchInput.setAttribute("aria-expanded", "true");
+  searchInput.removeAttribute("aria-activedescendant");
 }
-function hideSearch(){ searchResults.hidden = true; selIdx = -1; }
+function hideSearch(){
+  searchResults.hidden = true; selIdx = -1;
+  searchInput.setAttribute("aria-expanded", "false");
+  searchInput.removeAttribute("aria-activedescendant");
+}
 
 searchInput.addEventListener("input", () => runSearch(searchInput.value));
 searchInput.addEventListener("focus", () => { if(searchInput.value.trim()) runSearch(searchInput.value); });
@@ -2304,7 +2326,11 @@ searchInput.addEventListener("keydown", e => {
     e.preventDefault();
     if(!links.length) return;
     selIdx = (selIdx + (e.key === "ArrowDown" ? 1 : -1) + links.length) % links.length;
-    links.forEach((l,i) => l.classList.toggle("sel", i === selIdx));
+    links.forEach((l,i) => {
+      l.classList.toggle("sel", i === selIdx);
+      l.setAttribute("aria-selected", i === selIdx ? "true" : "false");
+    });
+    searchInput.setAttribute("aria-activedescendant", links[selIdx].id);
     links[selIdx].scrollIntoView({ block:"nearest" });
   } else if(e.key === "Enter"){
     const target = links[selIdx >= 0 ? selIdx : 0];
@@ -2323,10 +2349,12 @@ function applyTheme(t){
   document.documentElement.dataset.theme = t;
   try{ localStorage.setItem("pigment-theme", t); }catch(e){}
   themeBtn.textContent = t === "light" ? "☾" : "☀";
+  themeBtn.setAttribute("aria-pressed", t === "light" ? "true" : "false");   /* C2: stable label, toggled state */
   if(window.__bgInit) window.__bgInit();
 }
 themeBtn.addEventListener("click", () => applyTheme(currentTheme() === "light" ? "dark" : "light"));
 themeBtn.textContent = currentTheme() === "light" ? "☾" : "☀";
+themeBtn.setAttribute("aria-pressed", currentTheme() === "light" ? "true" : "false");
 
 /* ============================================================
    AMBIENT BACKGROUND — drifting pigment blobs & flowing ribbons
@@ -2671,7 +2699,7 @@ function viewPalette(){
       <h1 class="display">Pick four tones.</h1>
       <p class="page-lede">Don't overthink — choose the four you'd want on your walls. They seed your profile palette and whisper (only whisper) to the map.</p>
       <div class="tone-grid">${TASTE_TONES.map(t => `
-        <button class="tone ${ob.tones.indexOf(t.id) >= 0 ? "on" : ""}" data-tsx="tone" data-tsid="${t.id}" style="--tone:${t.hex}">
+        <button class="tone ${ob.tones.indexOf(t.id) >= 0 ? "on" : ""}" data-tsx="tone" data-tsid="${t.id}" aria-pressed="${ob.tones.indexOf(t.id) >= 0}" style="--tone:${t.hex}">
           <i></i><span>${esc(t.name)}</span>
         </button>`).join("")}</div>
       <div class="ob-foot">
