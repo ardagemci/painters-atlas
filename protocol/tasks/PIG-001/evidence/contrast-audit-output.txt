@@ -1,0 +1,160 @@
+==============================================================================
+PASS 1 — design tokens, every ink over every surface (both themes)
+==============================================================================
+
+[dark]  17 colour tokens parsed
+  ink          surface    ratio     body    large/UI note
+  --ink        --bg       15.72     PASS    PASS    
+  --ink        --bg2      15.31     PASS    PASS    
+  --ink        --panel    14.80     PASS    PASS    
+  --ink        --panel2   13.96     PASS    PASS    
+  --body-ink   --bg       12.97     PASS    PASS    
+  --body-ink   --bg2      12.63     PASS    PASS    
+  --body-ink   --panel    12.21     PASS    PASS    
+  --body-ink   --panel2   11.52     PASS    PASS    
+  --muted      --bg       6.40      PASS    PASS    
+  --muted      --bg2      6.23      PASS    PASS    
+  --muted      --panel    6.02      PASS    PASS    
+  --muted      --panel2   5.68      PASS    PASS    
+  --faint      --bg       3.49      FAIL    PASS    large text / UI only
+  --faint      --bg2      3.40      FAIL    PASS    large text / UI only
+  --faint      --panel    3.29      FAIL    PASS    large text / UI only
+  --faint      --panel2   3.10      FAIL    PASS    large text / UI only
+  --gold       --bg       8.33      PASS    PASS    
+  --gold       --bg2      8.11      PASS    PASS    
+  --gold       --panel    7.84      PASS    PASS    
+  --gold       --panel2   7.40      PASS    PASS    
+  --gold2      --bg       12.25     PASS    PASS    
+  --gold2      --bg2      11.92     PASS    PASS    
+  --gold2      --panel    11.53     PASS    PASS    
+  --gold2      --panel2   10.88     PASS    PASS    
+  --wine       --bg       6.07      PASS    PASS    
+  --wine       --bg2      5.91      PASS    PASS    
+  --wine       --panel    5.72      PASS    PASS    
+  --wine       --panel2   5.40      PASS    PASS    
+  --teal       --bg       8.09      PASS    PASS    
+  --teal       --bg2      7.88      PASS    PASS    
+  --teal       --panel    7.62      PASS    PASS    
+  --teal       --panel2   7.18      PASS    PASS    
+  --blue       --bg       6.88      PASS    PASS    
+  --blue       --bg2      6.70      PASS    PASS    
+  --blue       --panel    6.48      PASS    PASS    
+  --blue       --panel2   6.11      PASS    PASS    
+
+[light]  17 colour tokens parsed
+  ink          surface    ratio     body    large/UI note
+  --ink        --bg       12.73     PASS    PASS    
+  --ink        --bg2      11.85     PASS    PASS    
+  --ink        --panel    13.89     PASS    PASS    
+  --ink        --panel2   12.40     PASS    PASS    
+  --body-ink   --bg       9.25      PASS    PASS    
+  --body-ink   --bg2      8.60      PASS    PASS    
+  --body-ink   --panel    10.09     PASS    PASS    
+  --body-ink   --panel2   9.00      PASS    PASS    
+  --muted      --bg       4.10      FAIL    PASS    large text / UI only
+  --muted      --bg2      3.81      FAIL    PASS    large text / UI only
+  --muted      --panel    4.47      FAIL    PASS    large text / UI only
+  --muted      --panel2   3.99      FAIL    PASS    large text / UI only
+  --faint      --bg       2.37      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --faint      --bg2      2.21      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --faint      --panel    2.59      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --faint      --panel2   2.31      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --gold       --bg       3.04      FAIL    PASS    large text / UI only
+  --gold       --bg2      2.83      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --gold       --panel    3.31      FAIL    PASS    large text / UI only
+  --gold       --panel2   2.96      FAIL    FAIL    below 3:1 — not usable for text or UI
+  --gold2      --bg       4.27      FAIL    PASS    large text / UI only
+  --gold2      --bg2      3.97      FAIL    PASS    large text / UI only
+  --gold2      --panel    4.65      PASS    PASS    
+  --gold2      --panel2   4.15      FAIL    PASS    large text / UI only
+  --wine       --bg       4.41      FAIL    PASS    large text / UI only
+  --wine       --bg2      4.10      FAIL    PASS    large text / UI only
+  --wine       --panel    4.81      PASS    PASS    
+  --wine       --panel2   4.29      FAIL    PASS    large text / UI only
+  --teal       --bg       4.32      FAIL    PASS    large text / UI only
+  --teal       --bg2      4.02      FAIL    PASS    large text / UI only
+  --teal       --panel    4.72      PASS    PASS    
+  --teal       --panel2   4.21      FAIL    PASS    large text / UI only
+  --blue       --bg       4.44      FAIL    PASS    large text / UI only
+  --blue       --bg2      4.13      FAIL    PASS    large text / UI only
+  --blue       --panel    4.85      PASS    PASS    
+  --blue       --panel2   4.33      FAIL    PASS    large text / UI only
+
+==============================================================================
+PASS 2 — pairs actually rendered in the browser (16 routes x 2 themes)
+==============================================================================
+
+139 distinct rendered pairs; 137 scored, 2 unresolvable by token maths.
+
+FAILURES (43):
+  theme  fg        bg        ratio  need   count   selector               example
+  light  #6fb3a8   #faf6ec   2.24   4.5    1       b                      influenced
+  light  #a39a86   #f2ecdf   2.37   4.5    207     p.footer-note          Tonight's cover: mixed aft
+  dark   #f6f1e6   #d9886e   2.42   4.5    1       span                   Paul Signac
+  light  #f6f1e6   #d9886e   2.42   4.5    1       span                   Paul Signac
+  dark   #f6f1e6   #8a9bb0   2.52   4.5    1       span                   Agnes Martin
+  light  #f6f1e6   #8a9bb0   2.52   4.5    1       span                   Agnes Martin
+  dark   #f6f1e6   #e87a2e   2.57   4.5    2       span                   Morris Louis
+  light  #f6f1e6   #e87a2e   2.57   4.5    2       span                   Morris Louis
+  light  #a39a86   #faf6ec   2.59   4.5    21      a.chip-label           see the full influence gra
+  dark   #f6f1e6   #d97a8a   2.63   4.5    1       span                   Georgia O'Keeffe
+  light  #f6f1e6   #d97a8a   2.63   4.5    1       span                   Georgia O'Keeffe
+  light  #a8813c   #f2ecdf   3.04   4.5    11      div.page-kicker        The collection
+  dark   #f6f1e6   #c4763e   3.10   4.5    1       span                   Edward Hopper
+  light  #f6f1e6   #c4763e   3.10   4.5    1       span                   Edward Hopper
+  dark   #f6f1e6   #5e8ab0   3.25   4.5    3       span                   Kitagawa Utamaro
+  light  #f6f1e6   #5e8ab0   3.25   4.5    3       span                   Kitagawa Utamaro
+  dark   #6e675a   #16140f   3.29   4.5    21      a.chip-label           see the full influence gra
+  light  #a8813c   #faf6ec   3.31   4.5    127     div.ec-kicker          Begin
+  dark   #f6f1e6   #8a8276   3.37   4.5    4       span                   Shen Zhou
+  light  #f6f1e6   #8a8276   3.37   4.5    4       span                   Shen Zhou
+  dark   #6e675a   #0d0c0a   3.49   4.5    207     p.footer-note          Tonight's cover: mixed aft
+  dark   #f6f1e6   #e0427a   3.56   4.5    8       span                   Yayoi Kusama (gradient bar)
+  dark   #f6f1e6   #e0427a   3.56   4.5    5       span                   Emily Kame Kngwarreye
+  light  #f6f1e6   #e0427a   3.56   4.5    8       span                   Yayoi Kusama (gradient bar)
+  light  #f6f1e6   #e0427a   3.56   4.5    5       span                   Emily Kame Kngwarreye
+  dark   #f6f1e6   #b06a32   3.76   4.5    10      span                   Annibale Carracci
+  light  #f6f1e6   #b06a32   3.76   4.5    10      span                   Annibale Carracci
+  dark   #f6f1e6   #c4542e   4.01   4.5    2       span                   Henri Rousseau
+  light  #f6f1e6   #c4542e   4.01   4.5    2       span                   Henri Rousseau
+  dark   #c4536a   #1b1914   4.01   4.5    1       b                      rival of
+  dark   #f6f1e6   #c4541f   4.02   4.5    4       span                   Giorgione
+  light  #f6f1e6   #c4541f   4.02   4.5    4       span                   Giorgione
+  light  #c4536a   #faf6ec   4.06   4.5    1       b                      rival of
+  light  #7a715e   #f2ecdf   4.10   4.5    620     span.brand-sub         an atlas of painters
+  dark   #f6f1e6   #8a6e46   4.24   4.5    15      span                   Kim Hong-do (Danwon)
+  light  #f6f1e6   #8a6e46   4.24   4.5    15      span                   Kim Hong-do (Danwon)
+  light  #8a6a2e   #f2ecdf   4.27   4.5    48      div.kicker             Pigment · a taste atlas of
+  light  #2e7a6e   #f2ecdf   4.32   4.5    2       b                      One detail you cannot unse
+  dark   #f6f1e6   #c4423e   4.44   4.5    1       span                   Diego Rivera
+  light  #f6f1e6   #c4423e   4.44   4.5    1       span                   Diego Rivera
+  light  #7a715e   #faf6ec   4.47   4.5    768     p                      Pick a painter and follow
+  dark   #f6f1e6   #c43e4e   4.50   4.5    1       span                   Tamara de Lempicka
+  light  #f6f1e6   #c43e4e   4.50   4.5    1       span                   Tamara de Lempicka
+
+UNRESOLVABLE by token maths — must be judged from pixels (2):
+  dark   h1.home-title          #/           GRADIENT-CLIPPED unresolvable
+  light  h1.home-title          #/           GRADIENT-CLIPPED unresolvable
+  (background-clip:text over a gradient: the computed colour is the
+   fill, not the painted glyph, so a browser pixel read is required.)
+
+==============================================================================
+PASS 3 — composites token maths cannot reach (browser-sampled)
+==============================================================================
+
+Hero title (background-clip:text) over the generative #bg-canvas:
+  dark   worst  6.20:1  need 3.0 (large text)  PASS
+         stop [201, 164, 92] over backdrop [52, 38, 32] (canvas px [135, 94, 79, 81], canvas opacity 1.0)
+  light  worst  2.47:1  need 3.0 (large text)  FAIL
+         stop [168, 129, 60] over backdrop [223, 213, 201] (canvas px [133, 105, 99, 75], canvas opacity 0.6)
+
+Focus indicators (WCAG 1.4.11, need 3.0:1):
+  influence-graph node ring  dark    11.53:1  PASS
+  influence-graph node ring  light    4.65:1  PASS
+  skip-link outline          dark    13.96:1  PASS
+  skip-link outline          light   12.40:1  PASS
+
+==============================================================================
+SUMMARY: 43 rendered-pair failures (pass 2), 1 composite failures (pass 3).
+         composite FAIL: hero-title-over-bg-canvas [light] 2.47:1
+==============================================================================

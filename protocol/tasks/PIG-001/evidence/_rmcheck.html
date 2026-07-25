@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- Vermeer evidence harness (PIG-001). Not a production file.
+     Loads index.html in a same-origin iframe and reports, from inside it, what
+     actually happens under prefers-reduced-motion (AC20): whether the media
+     query matches, whether marquee/strip animations and view transitions are
+     running, and whether the strip is still keyboard-operable and its
+     information still present. Run headless Chrome twice, with and without
+     --force-prefers-reduced-motion, and diff the two <pre> dumps. -->
+<meta charset="utf-8">
+<title>reduced-motion check</title>
+<style>html,body{margin:0;background:#fff;color:#000;font:12px/1.45 monospace}
+pre{white-space:pre-wrap;padding:12px;margin:0}iframe{width:1440px;height:900px;border:0}</style>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  try{ localStorage.setItem("pigment-theme", p.get("theme") || "dark"); }catch(e){}
+  var route = p.get("route") || "#/";
+
+  function probe(win, doc){
+    var r = {};
+    r.mediaMatches = win.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // every element the page animates or transitions, as the engine sees it
+    var animated = [], transitioned = [];
+    doc.querySelectorAll("body *").forEach(function(el){
+      var cs = win.getComputedStyle(el);
+      var cls = el.getAttribute("class") || "";
+      var tag = el.tagName.toLowerCase() + (cls ? "." + cls.split(/\s+/).slice(0,2).join(".") : "");
+      if(cs.animationName && cs.animationName !== "none")
+        animated.push({ sel: tag, name: cs.animationName, dur: cs.animationDuration,
+                        play: cs.animationPlayState, iter: cs.animationIterationCount });
+      var td = parseFloat(cs.transitionDuration) || 0;
+      if(td > 0.01) transitioned.push({ sel: tag, dur: cs.transitionDuration });
+    });
+    r.animatedCount = animated.length;
+    r.animatedSample = animated.slice(0, 12);
+    r.transitionedCount = transitioned.length;
+    r.transitionedSample = transitioned.slice(0, 8);
+
+    // Web Animations API — catches JS-driven motion CSS cannot show
+    try{
+      var wa = doc.getAnimations ? doc.getAnimations() : [];
+      r.runningWebAnimations = wa.filter(function(a){ return a.playState === "running"; }).length;
+      r.totalWebAnimations = wa.length;
+    }catch(e){ r.runningWebAnimations = "n/a"; }
+
+    // the marquee / strip: information and controls must survive
+    var strip = doc.querySelector(".strip, .marquee, [class*=strip], [class*=marquee]");
+    if(strip){
+      var cs = win.getComputedStyle(strip);
+      var focusables = strip.querySelectorAll('a[href],button,[tabindex]:not([tabindex="-1"])');
+      r.strip = {
+        sel: strip.tagName.toLowerCase() + "." + (strip.getAttribute("class") || ""),
+        animation: cs.animationName, animDuration: cs.animationDuration,
+        playState: cs.animationPlayState,
+        overflowX: cs.overflowX,
+        scrollWidth: strip.scrollWidth, clientWidth: strip.clientWidth,
+        keyboardReachableItems: focusables.length,
+        itemCount: strip.children.length,
+        textLength: (strip.textContent || "").trim().length
+      };
+    } else { r.strip = null; }
+
+    // counters animate from 0 -> target; under reduced motion they must still
+    // end on the real number, not stay blank
+    var counters = [].slice.call(doc.querySelectorAll("[data-count]")).slice(0, 6);
+    r.counters = counters.map(function(c){
+      return { target: c.dataset.count, shown: (c.textContent || "").trim() };
+    });
+    return r;
+  }
+
+  var f = document.createElement("iframe");
+  f.src = "/index.html" + route;
+  f.addEventListener("load", function(){
+    setTimeout(function(){
+      var out;
+      try{ out = probe(f.contentWindow, f.contentDocument); }
+      catch(e){ out = { error: String(e) }; }
+      var pre = document.createElement("pre");
+      pre.id = "rm-result";
+      pre.textContent = "RM-RESULT " + JSON.stringify(out, null, 1);
+      document.body.appendChild(pre);
+    }, 2500);
+  });
+  var add = function(){ document.body.appendChild(f); };
+  if(document.body) add(); else document.addEventListener("DOMContentLoaded", add);
+})();
+</script>

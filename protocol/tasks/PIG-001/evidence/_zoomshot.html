@@ -17,8 +17,12 @@
   f.width = w; f.height = h;
   f.src = "/index.html" + route;
   f.addEventListener("load", function(){
-    try{ f.contentDocument.documentElement.style.fontSize = zoom; }catch(e){}
+    /* re-apply: the hash router re-renders after first paint */
+    var apply = function(){ try{ f.contentDocument.documentElement.style.fontSize = zoom; }catch(e){} };
+    apply(); setTimeout(apply, 400); setTimeout(apply, 1200);
   });
-  document.body.appendChild(f);
+  /* the script runs in <head>, so document.body does not exist yet */
+  var add = function(){ document.body.appendChild(f); };
+  if(document.body) add(); else document.addEventListener("DOMContentLoaded", add);
 })();
 </script>

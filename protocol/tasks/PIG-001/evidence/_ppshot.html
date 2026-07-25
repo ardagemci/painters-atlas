@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- Vermeer evidence harness (PIG-001). Not a production file.
+     Seeds a local Taste Passport plus a differing incoming passport, then renders
+     index.html at #/passport/<payload> in a same-origin, full-size iframe so headless
+     Chrome can capture the import UI (AC5/AC6). ?step=2 clicks through to the
+     per-field keep-mine / take-theirs screen. No production file is touched. -->
+<meta charset="utf-8">
+<title>passport import shot</title>
+<style>html,body{margin:0;padding:0}iframe{border:0;display:block;width:100vw;height:100vh}</style>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  try{ localStorage.setItem("pigment-theme", p.get("theme") || "dark"); }catch(e){}
+
+  var now = "2026-07-25T22:56:06.931Z", then = "2026-01-02T00:00:00.000Z";
+  var mine = {
+    version: 1, createdAt: then, updatedAt: now,
+    admirations: [{id:"the-school-of-athens",at:now},{id:"the-arnolfini-portrait",at:now}],
+    notForMe: [], seen: [], wantToSee: [], saved: [], probes: [],
+    quiz: { answers:{q1:"a",q2:"b",q3:"a",q4:"a",q5:"a"}, at: now },
+    palette: { tones:["ultramarine","caravaggio-black","icon-gold","monet-fog"] },
+    persona: { adopted:"gilded-sentimentalist", adoptedAt: now,
+               candidates:["time-traveler","gilded-sentimentalist","sun-drunk-colorist"],
+               hidden:false, provisional:true },
+    tasteVector: {}, milestones: { onboarded:true, confidence:"provisional" },
+    skipped: [], deckSeen: [], clusters: []
+  };
+  var theirs = JSON.parse(JSON.stringify(mine));
+  theirs.quiz       = { answers:{q1:"d",q2:"d",q3:"d",q4:"d",q5:"d"}, at: then };
+  theirs.palette    = { tones:["venetian-red","verdigris","dried-rose","bone-white"] };
+  theirs.persona    = { adopted:"time-traveler", adoptedAt: then, candidates:["time-traveler"],
+                        hidden:false, provisional:true };
+  theirs.milestones = { onboarded:true, confidence:"sharp" };
+  theirs.admirations= mine.admirations.concat([{id:"the-scream",at:then},{id:"impression-sunrise",at:then}]);
+  theirs.seen       = [{id:"the-night-watch",at:then}];
+
+  try{ localStorage.setItem("pigment.taste.v1", JSON.stringify(mine)); }catch(e){}
+  var payload = btoa(unescape(encodeURIComponent(JSON.stringify(theirs))))
+                  .replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+
+  var f = document.createElement("iframe");
+  f.src = "/index.html#/passport/" + payload;
+  f.addEventListener("load", function(){
+    if(p.get("step") !== "2") return;
+    setTimeout(function(){
+      try{
+        var b = f.contentDocument.querySelector('[data-tsx="import-review"]');
+        if(b) b.click();
+      }catch(e){}
+    }, 500);
+  });
+  document.addEventListener("DOMContentLoaded", function(){ document.body.appendChild(f); });
+})();
+</script>
