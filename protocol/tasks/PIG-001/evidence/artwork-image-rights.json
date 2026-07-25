@@ -6,17 +6,17 @@
  "scope_note": "Census of every renderable shipped artwork image, not a sample. Supersedes the coverage (not the conclusions) of the 122-record sample in rights-register.json for the question 'what still needs credit?'",
  "legal_conclusion": "none",
  "totals": {
-  "images": 694,
-  "resolved_ok": 694,
+  "images": 693,
+  "resolved_ok": 693,
   "unverified": 0,
-  "credit_required": 29,
+  "credit_required": 28,
   "no_obligation": 665,
   "by_licence": {
    "CC BY 2.0": 7,
    "CC BY 2.5": 1,
    "CC BY 3.0": 3,
    "CC BY 4.0": 1,
-   "CC BY-SA 3.0": 4,
+   "CC BY-SA 3.0": 3,
    "CC BY-SA 4.0": 13,
    "CC0": 17,
    "Public domain": 648
@@ -2700,7 +2700,8 @@
   {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",
    "used_in": [
-    "js/catalog-1.js"
+    "js/catalog-1.js",
+    "js/artworks.js"
    ],
    "commons_title": "File:Sistine_ceiling.jpg",
    "commons_file_page": "https://commons.wikimedia.org/wiki/File:Sistine_ceiling.jpg",
@@ -5015,25 +5016,6 @@
    "usage_terms": "Public domain",
    "legal_conclusion": "none",
    "credit_required": false
-  },
-  {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/500px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg",
-   "used_in": [
-    "js/artworks.js"
-   ],
-   "commons_title": "File:Sistine_Chapel_ceiling_02_(brightened).jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Sistine_Chapel_ceiling_02_(brightened).jpg",
-   "fetch_status": "ok",
-   "license_short": "CC BY-SA 3.0",
-   "license_tpl": "cc-by-sa-3.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "author": "Antoine Taveneaux",
-   "credit": "File:Sistine_Chapel_ceiling_02.jpg",
-   "attribution": "",
-   "attribution_required": "true",
-   "usage_terms": "Creative Commons Attribution-Share Alike 3.0",
-   "legal_conclusion": "none",
-   "credit_required": true
   },
   {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tizian_041.jpg/500px-Tizian_041.jpg",

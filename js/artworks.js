@@ -19,8 +19,8 @@ window.ARTWORKS = {
  },
  "michelangelo": {
   "Sistine Chapel Ceiling": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/500px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Sistine_Chapel_ceiling_02_(brightened).jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sistine_ceiling.jpg"
   },
   "The Last Judgment": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Last_Judgement_%28Michelangelo%29.jpg/500px-Last_Judgement_%28Michelangelo%29.jpg",

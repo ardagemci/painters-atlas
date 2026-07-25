@@ -173,3 +173,14 @@ strike through and supersede instead. -->
 - **Effect on user experience:** None this release; seeds a likely PIG-002-class taste-math objective.
 - **Status:** accepted (forward direction; not scheduled)
 - **Raised by / decided by:** Arda / Synthesis Lead.
+
+## D-016
+
+- **Date / round / state:** 2026-07-25 / build / building
+- **What changed:** Two build-integrity facts recorded, neither hidden. (1) **Gate 4 partial breach, benign:** commit `ef8b2b3` ("Add nine Abstract Expressionist painters, the Washington Color School, and Noland's Beginning") landed directly on `pig-001-stabilization`, interleaved between unit-24 commits. It is Sol's independent content lane, not PIG-001 scope. The branch is therefore no longer a pure PIG-001 delta: corpus counts moved mid-build (artists 247→256, movements 75→76, catalog 317→323, venues 115→116, museum notes 103→104, influence edges 225→238). Consequences: the rollback procedure must revert PIG-001's units *by commit*, not by resetting the branch, or Sol's content would be discarded with it; and evidence captured before/after this commit describes different corpora. (2) **Seurat's Directive-1 fix was half-applied** — `js/catalog-1.js` got the verified-PD Sistine file but `js/artworks.js` still shipped the CC BY-SA 3.0 Taveneaux photograph. Found by Dürer's unit-24 census, fixed by the Synthesis Lead; artwork attribution-required count fell 28→27.
+- **Why it changed:** Gate 4 requires isolation and Gate 3 requires that deviations be visible. A shared `main` working tree with a parallel builder makes strict isolation aspirational rather than enforced; recording it is the honest response.
+- **Assumption or constraint that required it:** CLAUDE.md Gate 4 (isolation) and Gate 3 (no silent deviation); PIGMENT.md's coordination rule that Sol works the same repository.
+- **Supporting evidence:** `git log --oneline effa805..HEAD` (ef8b2b3 between 4259932 and a4417d4); validator snapshots before/after; evidence/build-log-unit-24.md; regenerated evidence/artwork-image-rights.json.
+- **Effect on user experience:** None adverse — Sol's content is valid and the credit pipeline absorbed the new venue with no code change (a robustness signal). The Sistine fix removes the last CC BY-SA image that was being presented as public domain.
+- **Status:** accepted (recorded, not remediated — extracting a pushed, legitimate commit would rewrite shared history for no product benefit)
+- **Raised by / decided by:** Dürer (census) and Synthesis Lead / Synthesis Lead. Flagged to the owner and carried into the Build Evidence Report for Van Eyck's regression sweep.

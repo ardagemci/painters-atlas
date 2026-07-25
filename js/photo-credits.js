@@ -13,7 +13,7 @@
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
      Commons file title as derived from the image URL (see commonsTitle() in
-     js/app.js). 28 entries. Public-domain and CC0 images are
+     js/app.js). 27 entries. Public-domain and CC0 images are
      deliberately absent: they carry no obligation, and the existing
      "image via Wikimedia Commons" source link already names their origin.
 
@@ -159,7 +159,6 @@ window.IMAGE_CREDITS = {
 "File:Piero_della_Francesca_The_Resurrection_detail_VlRan.jpg": { author:"VlRan", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_The_Resurrection_detail_VlRan.jpg", required:true },
 "File:Pieta_de_Michelangelo_-_Vaticano.jpg": { author:"original file by Stanislav Traykov", license:"CC BY 2.5", licenseUrl:"https://creativecommons.org/licenses/by/2.5", page:"https://commons.wikimedia.org/wiki/File:Pieta_de_Michelangelo_-_Vaticano.jpg", required:true },
 "File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg": { author:"carulmare", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg", required:true },
-"File:Sistine_Chapel_ceiling_02_(brightened).jpg": { author:"Antoine Taveneaux", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Sistine_Chapel_ceiling_02_(brightened).jpg", required:true },
 "File:Stubbs_Anatomy_of_the_Horse_2.JPG": { author:"Warburg1866", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Stubbs_Anatomy_of_the_Horse_2.JPG", required:true },
 "File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg": { author:"GoldenArtists", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg", required:true },
 "File:The_Swing_(P430).jpg": { author:"Ajc994", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Swing_(P430).jpg", required:true },
