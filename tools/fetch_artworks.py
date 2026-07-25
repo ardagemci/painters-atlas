@@ -6,7 +6,16 @@ listed work of every painter who died in or before 1955 to an image, and writes
 js/artworks.js. Only images hosted on Wikimedia Commons are accepted (Commons
 enforces public-domain status in the US and the source country).
 """
-import json, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.parse, urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import commons_rights as cr
+
+# Rights metadata captured opportunistically while resolving images. Asking
+# Commons for extmetadata costs one query parameter and zero extra requests,
+# so there is no reason to keep throwing it away — see tools/rights_register.py
+# for the register built on top of it. Nothing here reaches a legal conclusion.
+RIGHTS = {}
 
 CUTOFF = 1955
 UA = {"User-Agent": "PigmentAtlas/1.0 (personal static art atlas; gemciarda@gmail.com)"}
@@ -46,17 +55,18 @@ def from_wikipedia(candidates, surname):
 def from_commons(query):
     u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json"
          "&generator=search&gsrnamespace=6&gsrlimit=6"
-         "&prop=imageinfo&iiprop=url|mime&iiurlwidth=500"
+         "&prop=imageinfo&iiprop=url|mime|extmetadata&iiurlwidth=500"
          "&gsrsearch=" + urllib.parse.quote(query))
     try:
         d = get_json(u)
     except Exception:
-        return None
+        return None                                    # transient: unresolved, not absent
     pages = (d.get("query") or {}).get("pages") or {}
     for p in sorted(pages.values(), key=lambda p: p.get("index", 99)):
         ii = (p.get("imageinfo") or [{}])[0]
         u = ii.get("thumburl", "")
         if ii.get("mime", "").startswith("image/") and u and ".djvu" not in u.lower() and ".pdf" not in u.lower():
+            cr.capture_from_imageinfo(RIGHTS, p)
             return {"img": u, "page": ii.get("descriptionurl", "")}
     return None
 
@@ -101,6 +111,9 @@ def main():
         f.write("window.ARTWORKS = ")
         json.dump(result, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
+    if RIGHTS:
+        total = cr.save_sidecar(RIGHTS)
+        print(f"rights captured this run: {len(RIGHTS)} (cache now {total}) -> {cr.sidecar_path()}")
     print(f"\nDONE artists:{len(result)} works:{hits} misses:{len(misses)}")
     for m in misses: print("  MISS", m)
 

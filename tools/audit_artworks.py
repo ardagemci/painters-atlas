@@ -6,7 +6,16 @@ building photos, unrelated pages), re-resolves them with strict filename
 validation, health-checks every URL, and rewrites js/artworks.js.
 Needs /tmp/pigment-artists.json (tools/dump-artists.jxa.js).
 """
-import json, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.parse, urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import commons_rights as cr
+
+# Rights metadata captured while auditing. extmetadata rides along on queries
+# this tool already makes, so the capture costs no extra request and cannot
+# make the rate-limiting worse. See tools/rights_register.py. No legal
+# conclusion is reached here or anywhere in this file.
+RIGHTS = {}
 
 UA = {"User-Agent": "PigmentAtlas/1.0 (personal static art atlas; gemciarda@gmail.com)"}
 BLACKLIST = ("room", "salle", "interior", "interieur", "installation", "visitors",
@@ -96,7 +105,7 @@ def try_commons(queries, name_toks, title_toks):
     for q in queries:
         u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json"
              "&generator=search&gsrnamespace=6&gsrlimit=8"
-             "&prop=imageinfo&iiprop=url|mime&iiurlwidth=500"
+             "&prop=imageinfo&iiprop=url|mime|extmetadata&iiurlwidth=500"
              "&gsrsearch=" + urllib.parse.quote(q))
         try:
             d = get_json(u)
@@ -112,6 +121,7 @@ def try_commons(queries, name_toks, title_toks):
             if ".djvu" in url.lower() or ".pdf" in url.lower():
                 continue
             if fname_valid(url, name_toks, title_toks):
+                cr.capture_from_imageinfo(RIGHTS, p)
                 return {"img": url, "page": ii.get("descriptionurl", "")}
     return None
 
@@ -129,10 +139,12 @@ def main():
             key = f"{aid}::{title}"
             if key in PINNED:                              # hand-curated: resolve exact file, skip search
                 u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo"
-                     "&iiprop=url&iiurlwidth=500&titles=" + urllib.parse.quote("File:" + PINNED[key]))
+                     "&iiprop=url|mime|extmetadata&iiurlwidth=500&titles="
+                     + urllib.parse.quote("File:" + PINNED[key]))
                 try:
                     p = list(get_json(u)["query"]["pages"].values())[0]
                     ii = p["imageinfo"][0]
+                    cr.capture_from_imageinfo(RIGHTS, p)
                     works[title] = {"img": ii["thumburl"], "page": ii["descriptionurl"]}
                     print(f"  {key} -> PINNED", flush=True)
                 except Exception as ex:
@@ -195,6 +207,9 @@ def main():
         f.write(head + "window.ARTWORKS = ")
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
+    if RIGHTS:
+        cached = cr.save_sidecar(RIGHTS)
+        print(f"rights captured this run: {len(RIGHTS)} (cache now {cached}) -> {cr.sidecar_path()}")
     total = sum(len(v) for v in data.values())
     print(f"\nDONE flagged:{len(flagged)} fixed:{len(fixed)} dropped:{len(dropped)} dead:{dead} unknown-kept:{unknown}")
     print(f"final: {len(data)} artists, {total} works")
