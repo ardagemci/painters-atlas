@@ -1149,11 +1149,12 @@ function viewInfluences(){
     <p class="page-lede">${nodes.length} painters joined by ${edges.length} documented relationships — teachers, disciples, friends, rivals and partners. Choose a painter — click, or Tab to it and press Enter — to light up their circle; choose it again to visit their page, or press Escape to clear. Chains run from Theophanes teaching Rublev to Warhol sparring with Kusama.</p>
   </div>
   <div class="tl2-legend"><button class="tl2-leg" data-etype-btn=""><i style="background:var(--gold)"></i>all types</button>${legend}</div>
+  <button class="skip-inline" data-skipto="ig-end">Skip the graph — ${nodes.length} painters follow</button>
   <div class="ig-wrap" id="ig-wrap">
     <svg id="ig-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="Influence graph — ${nodes.length} painters, ${edges.length} relationships" xmlns="http://www.w3.org/2000/svg">${defs}${edgeSvg}${nodeSvg}</svg>
   </div>
   <div class="ig-info" id="ig-info" hidden></div>
-  <p class="map-hint">nodes sized by connections, coloured by movement · solitary painters (Hilma af Klint kept her circle a séance) aren't shown</p>`;
+  <p class="map-hint" id="ig-end" tabindex="-1">nodes sized by connections, coloured by movement · solitary painters (Hilma af Klint kept her circle a séance) aren't shown</p>`;
 }
 
 function igFocus(nid){
@@ -2070,9 +2071,45 @@ function view404(){
 /* ============================================================
    ROUTER
    ============================================================ */
+/* ---------- route orientation & focus (AC15, AC17) ----------
+   `#app` used to carry aria-live="polite" while every navigation replaced its whole
+   innerHTML — assistive tech re-read the entire page on every route change, sixteen
+   times over during onboarding. The live region is now a dedicated, tiny one that
+   carries the page name alone, and focus moves to the new page's heading.
+   A re-render of the page you are already on (every onboarding tap calls route())
+   announces nothing and puts focus back on the control you were using. */
+const routeStatus = document.getElementById("route-status");
+let lastRouteKey = null;
+function focusSilently(el){
+  if(!el) return false;
+  if(!el.hasAttribute("tabindex") && !/^(A|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(el.tagName))
+    el.setAttribute("tabindex", "-1");
+  try{ el.focus({ preventScroll: true }); }catch(e){ try{ el.focus(); }catch(e2){ return false; } }
+  return document.activeElement === el;
+}
+/* the entry point of a view: its heading, or the main landmark if it has none */
+function viewEntry(){ return app.querySelector("h1") || app; }
+/* a signature stable across a re-render of the same view */
+function fpOf(el){
+  if(!el || !el.dataset || !app.contains(el)) return null;
+  const k = Object.keys(el.dataset);
+  if(!k.length && !el.id) return null;
+  return (el.id || "") + "|" + el.tagName + "|" + k.sort().map(n => n + "=" + el.dataset[n]).join("&");
+}
+function restoreFocus(fp){
+  if(!fp) return false;
+  const list = app.querySelectorAll("a[href], button, input, select, textarea, [tabindex]");
+  for(let i = 0; i < list.length; i++) if(fpOf(list[i]) === fp) return focusSilently(list[i]);
+  return false;
+}
 function route(){
   const hash = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
   const [page, id] = hash.split("/");
+  /* a genuine navigation, or a re-render of the page already on screen? */
+  const key = page + "/" + (id || "");
+  const first = lastRouteKey === null, nav = key !== lastRouteKey;
+  const keep = nav ? null : fpOf(document.activeElement);
+  lastRouteKey = key;
   let html;
   switch(page){
     case "":            html = viewHome(); break;
@@ -2114,7 +2151,29 @@ function route(){
   animateCounters();
   setNav(page);
   hideSearch();
+  if(nav && !first){
+    /* one concise announcement of the new page identity, and focus at its start.
+       Never on the first load — arriving at a page should not steal focus. */
+    focusSilently(viewEntry());
+    if(routeStatus) routeStatus.textContent = (document.title || "").split(" — ")[0];
+  } else if(!nav){
+    if(!restoreFocus(keep) && keep) focusSilently(viewEntry());   /* the control is gone — go to the heading, silently */
+  }
 }
+
+/* skip navigation (AC17 "repeated navigation can be bypassed"): the header skip
+   link, and the bypass past the influence graph's ~200 focusable nodes. A button,
+   not an <a href="#…">, because the fragment belongs to the hash router. */
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-skipto]");
+  if(!el) return;
+  e.preventDefault();
+  const to = el.dataset.skipto;
+  const target = to === "main" ? viewEntry() : document.getElementById(to);
+  if(!target || !focusSilently(target)) return;
+  try{ target.scrollIntoView({ block: "start", behavior: reducedMotion ? "auto" : "smooth" }); }
+  catch(err){ target.scrollIntoView(); }
+});
 
 function setNav(page){
   const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists",
