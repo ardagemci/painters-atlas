@@ -1003,20 +1003,6 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Kirchner_1909_Marzella.jpg"
   }
  },
- "frida-kahlo": {
-  "The Two Fridas": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg/960px-Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg"
-  },
-  "Self-Portrait with Thorn Necklace and Hummingbird": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg/500px-Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Joseph_Ducreux_(French)_-_Self-Portrait,_Yawning_-_Google_Art_Project.jpg"
-  },
-  "The Broken Column": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Broken_column_in_Syrakousai.jpg/500px-Broken_column_in_Syrakousai.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Broken_column_in_Syrakousai.jpg"
-  }
- },
  "amrita-sher-gil": {
   "Young Girls": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Young_Girls.jpg/500px-Young_Girls.jpg",
@@ -1389,8 +1375,8 @@ window.ARTWORKS = {
  },
  "matrakci-nasuh": {
   "View of Istanbul (Mecmu-ı Menazil)": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png/960px-Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png",
-   "page": "https://commons.wikimedia.org/wiki/File:Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg/960px-Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg"
   },
   "View of Aleppo": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms_5964.png/960px-Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms_5964.png",
@@ -1745,8 +1731,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Wyspia%C5%84ski,_Macierzy%C5%84stwo.jpg"
   },
   "Self-Portrait": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg/500px-Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Joseph_Ducreux_(French)_-_Self-Portrait,_Yawning_-_Google_Art_Project.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Stanis%C5%82aw_Wyspia%C5%84ski%2C_Autoportret.jpg/500px-Stanis%C5%82aw_Wyspia%C5%84ski%2C_Autoportret.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Wyspia%C5%84ski,_Autoportret.jpg"
   }
  },
  "witkacy": {
@@ -2003,8 +1989,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Karl_Bryullov_(Bryullo)_-_%D0%92%D1%81%D0%B0%D0%B4%D0%BD%D0%B8%D1%86%D0%B0_-_Google_Art_Project.jpg"
   },
   "Self-Portrait": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg/500px-Joseph_Ducreux_%28French%29_-_Self-Portrait%2C_Yawning_-_Google_Art_Project.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Joseph_Ducreux_(French)_-_Self-Portrait,_Yawning_-_Google_Art_Project.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg/500px-Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Karl_Bryullov_(Bryullo)_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg"
   }
  },
  "ivan-shishkin": {
@@ -2079,10 +2065,6 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Bada_Shanren_-_Fish_and_Rocks_-_1953.247_-_Cleveland_Museum_of_Art.tiff"
   },
   "Lotus and Birds": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bada_Shanren_%28Zhu_Da%29_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg/960px-Bada_Shanren_%28Zhu_Da%29_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Bada_Shanren_(Zhu_Da)_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg"
-  },
-  "Two Birds": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bada_Shanren_%28Zhu_Da%29_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg/960px-Bada_Shanren_%28Zhu_Da%29_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Bada_Shanren_(Zhu_Da)_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg"
   }

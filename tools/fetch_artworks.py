@@ -19,6 +19,30 @@ RIGHTS = {}
 
 CUTOFF = 1955
 UA = {"User-Agent": "PigmentAtlas/1.0 (personal static art atlas; gemciarda@gmail.com)"}
+
+# artist-id::work-title -> why no image may be resolved for this work.
+#
+# The CUTOFF above is a *heuristic for which artists to try*, not a rights
+# determination (AC28/OD-5: no legal conclusion follows from a death year).
+# Where an artist clears the cutoff but the individual works are still in
+# copyright, Commons holds no image of the work — and the resolvers below,
+# which accept the best *search hit*, will happily return something else that
+# merely shares a word with the title. That is how Kahlo's "The Broken Column"
+# became a photograph of a broken column in Syracuse (CC BY 2.0), and "The Two
+# Fridas" a photograph of a park sculpture (CC BY-SA 4.0) — wrong artworks
+# carrying attribution obligations Pigment honours nowhere.
+#
+# Suppressed works render as a plain title row in "Major works" (js/app.js),
+# which is the honest outcome: no image, no generative cover posing as one.
+# Remove an entry only with a verified exact-match, verifiably-PD file.
+SUPPRESS = {
+    "frida-kahlo::The Two Fridas":
+        "Kahlo d.1954; works still in copyright (Mexico life+100). No PD image exists on Commons.",
+    "frida-kahlo::Self-Portrait with Thorn Necklace and Hummingbird":
+        "Kahlo d.1954; works still in copyright. Resolver previously returned a Ducreux self-portrait.",
+    "frida-kahlo::The Broken Column":
+        "Kahlo d.1954; works still in copyright. Resolver previously returned a CC BY 2.0 photo of a column.",
+}
 ART_WORDS = ("painting", "painted", "fresco", "triptych", "altarpiece", "portrait",
              "mural", "woodblock", "print", "icon", "panel", "canvas", "miniature",
              "screens", "scroll", "watercolour", "watercolor", "drawing", "series")
@@ -91,6 +115,10 @@ def main():
         surname = a["name"].split()[-1]
         found = {}
         for t in a["works"]:
+            key = "%s::%s" % (a["id"], t)
+            if key in SUPPRESS:
+                print("  SUPPRESSED %s — %s" % (key, SUPPRESS[key]), flush=True)
+                continue
             art = from_wikipedia(candidates_for(t, surname), surname)
             if not art:
                 clean = re.sub(r"\s*\(.*?\)", "", t).strip()

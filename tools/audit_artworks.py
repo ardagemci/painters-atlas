@@ -40,7 +40,16 @@ PINNED = {
     "jacek-malczewski::The Vicious Circle": "Bledne kolo.jpg",
     "hilma-af-klint::Paintings for the Temple": "Hilma af Klint - Altarpiece No. 1 Group X (13919).jpg",
     "caravaggio::Judith Beheading Holofernes": "Judith Beheading Holofernes-Caravaggio (c.1598-9).jpg",
+    # Hand-corrected 2026-07-25 (PIG-001 AC11 register). The previous file was
+    # "Aleppo ca1537 by Matrakci Nasuh …" — the same manuscript and artist, but
+    # the Aleppo folio, not the Istanbul one, and a duplicate of this artist's
+    # sibling "View of Aleppo" record. Verified exact-match + PD before pinning.
+    "matrakci-nasuh::View of Istanbul (Mecmu-ı Menazil)": "Matrakçı Nasuh - İstanbul.jpg",
 }
+
+# Works that must never carry an image. Imported from the resolver so the two
+# tools cannot drift; see tools/fetch_artworks.py SUPPRESS for the reasoning.
+from fetch_artworks import SUPPRESS                              # noqa: E402
 
 def get_json(url):
     req = urllib.request.Request(url, headers=UA)
@@ -137,6 +146,11 @@ def main():
         name_toks = tokens(a["name"], 4)
         for title in list(works):
             key = f"{aid}::{title}"
+            if key in SUPPRESS:                            # must never carry an image
+                del works[title]
+                dropped.append(key + "  (suppressed: " + SUPPRESS[key] + ")")
+                print(f"  {key} -> SUPPRESSED", flush=True)
+                continue
             if key in PINNED:                              # hand-curated: resolve exact file, skip search
                 u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo"
                      "&iiprop=url|mime|extmetadata&iiurlwidth=500&titles="
