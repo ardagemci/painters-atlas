@@ -175,14 +175,25 @@ class TestSidecar(unittest.TestCase):
 #: from the AC11 rights register (2026-07-25). Recorded here as an explicit
 #: delta rather than by rewriting the frozen inventory: the freeze is dated
 #: evidence of effa805 and must stay byte-stable, while the tool necessarily
-#: reports the corrected tree. Each removal is a confirmed wrong-artwork image;
-#: each addition was verified exact-match and PD before it was pinned.
-#: Full reasoning: protocol/tasks/PIG-001/evidence/rights-register.md.
+#: reports the corrected tree. Each removal is a confirmed wrong-artwork image
+#: OR a photographer-copyright swap; each addition was verified exact-match and
+#: PD before it was pinned.
+#: Full reasoning: protocol/tasks/PIG-001/evidence/rights-register.md and
+#: rights-remediation.md (owner-directed round 2, 2026-07-25).
 U = "https://upload.wikimedia.org/wikipedia/commons/thumb/"
 CORRECTIONS = {
     "catalog_pd_rendered": {
-        "removed": [U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg"],
-        "added": [U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg"],
+        "removed": [
+            U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg",
+            # Antoine Taveneaux's in-situ ceiling photograph, CC BY-SA 3.0:
+            # the fresco is PD, the photograph was not. Replaced with a PD-Art
+            # reproduction plate that carries no photographer claim.
+            U + "1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/500px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg",
+        ],
+        "added": [
+            U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg",
+            U + "2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",
+        ],
     },
     "gallery_rendered": {
         "removed": [
@@ -190,11 +201,15 @@ CORRECTIONS = {
             U + "a/a5/Broken_column_in_Syrakousai.jpg/500px-Broken_column_in_Syrakousai.jpg",
             U + "c/c6/Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png/960px-Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png",
             U + "e/e6/Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg/960px-Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg",
+            # Livioandronico2013's dome photograph, CC BY-SA 4.0. Replaced with
+            # a photograph the photographer himself released under PD-self.
+            U + "7/78/Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg/500px-Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg",
         ],
         "added": [
             U + "a/a2/Stanis%C5%82aw_Wyspia%C5%84ski%2C_Autoportret.jpg/500px-Stanis%C5%82aw_Wyspia%C5%84ski%2C_Autoportret.jpg",
             U + "d/db/Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg/500px-Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg",
             U + "f/f0/Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg/960px-Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg",
+            U + "a/a5/Cupola_Duomo_Parma_Correggio.jpg/500px-Cupola_Duomo_Parma_Correggio.jpg",
         ],
     },
     # The stubs were re-emitted so public og:image/twitter:image metadata stops
@@ -206,10 +221,14 @@ CORRECTIONS = {
             U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaifuu_kaisei%29_-_Google_Art_Project.jpg",
             U + "c/c6/Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png/960px-Aleppo_ca1537_by_Matrakci_Nasuh_Istanbul_University_Library_ms5964.png",
             U + "e/e6/Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg/960px-Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg",
+            U + "1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/500px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg",
+            U + "7/78/Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg/500px-Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg",
         ],
         "added": [
             U + "2/25/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg/500px-Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg",
             U + "f/f0/Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg/960px-Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg",
+            U + "2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",
+            U + "a/a5/Cupola_Duomo_Parma_Correggio.jpg/500px-Cupola_Duomo_Parma_Correggio.jpg",
         ],
     },
 }

@@ -1075,8 +1075,8 @@ window.ARTWORKS = {
  },
  "correggio": {
   "Assumption of the Virgin (Parma Cathedral)": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg/500px-Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg",
-   "page": "https://en.wikipedia.org/wiki/Assumption_of_the_Virgin_(Correggio)"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Cupola_Duomo_Parma_Correggio.jpg/500px-Cupola_Duomo_Parma_Correggio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cupola_Duomo_Parma_Correggio.jpg"
   },
   "Jupiter and Io": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Antonio_Allegri%2C_called_Correggio_-_Jupiter_and_Io_-_Google_Art_Project.jpg/500px-Antonio_Allegri%2C_called_Correggio_-_Jupiter_and_Io_-_Google_Art_Project.jpg",
