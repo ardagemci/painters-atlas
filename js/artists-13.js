@@ -92,11 +92,11 @@ window.ARTISTS.push(
     "The Bearden Foundation he endowed still funds young artists and scholars."] },
 
 { id:"alma-thomas", name:"Alma Thomas", years:"1891–1978", born:1891, died:1978,
-  nation:"usa", eras:["20th-century"], movements:["abstract-art","color-field"],
+  nation:"usa", eras:["20th-century"], movements:["abstract-art","color-field","washington-color-school"],
   techniques:["acrylic-painting","watercolor"], style:"pointillist",
   palette:["#c4302a","#2e50c4","#f0c82e","#2e8a5e","#f0ece0"],
   tagline:"Mosaic gardens at 75 — the retired teacher who joined the space age",
-  works:[{t:"The Eclipse",y:"1970"},{t:"Blast Off",y:"1970"},{t:"Resurrection",y:"1966"}],
+  works:[{t:"The Eclipse",y:"1970"},{t:"Blast Off",y:"1970"},{t:"Resurrection",y:"1966"},{t:"Mars Dust",y:"1972"}],
   life:"Born in Columbus, Georgia, Thomas moved with her family to Washington DC to escape Jim Crow's worst, became Howard University's first fine-arts graduate, and taught junior-high art for thirty-five years. Full-time painting began at retirement, age 69, arthritis notwithstanding; her first major solo show came at 75, and she worked until her death at 86.",
   career:"Her signature arrived with the late start: irregular tiles of pure colour marching in stripes and circles — azalea gardens seen through wind, Earth seen from orbit (the Apollo missions thrilled her into a 'space series'). In 1972 she became the first Black woman given a solo show at the Whitney; in 2015, her Resurrection became the first work by a Black woman to hang in the White House Collection.",
   outside:"She watched the moon landing transfixed and painted Blast Off at seventy-nine: 'You look down on things. You streak through the clouds so fast you don't know whether the flower below is a violet or what.' Her Washington garden supplied six decades of colour notes.",

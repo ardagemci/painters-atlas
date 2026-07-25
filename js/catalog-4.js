@@ -515,6 +515,49 @@ window.CATALOG = (window.CATALOG || []).concat([
           "The rocket is a scatter of gold flecks: abstraction, in 1875",
           "Titled like music on purpose — subject demoted, sensation promoted"],
   tags:["night","golden","historical","would-hang"],
-  related:["the-starry-night","cafe-terrace-at-night"] }
+  related:["the-starry-night","cafe-terrace-at-night"] },
+/* ---------- Abstract Expressionism, second rank + the Washington colourists ---------- */
+{ id:"beginning-noland", tier:1, title:"Beginning", worksKey:"Beginning",
+  artistId:"kenneth-noland", year:{ display:"1958", sort:1958 },
+  movements:["color-field","washington-color-school"], techniques:["acrylic-painting","soak-stain","flat-color"], nation:"usa",
+  museum:{ id:"hirshhorn", name:"Hirshhorn Museum and Sculpture Garden", city:"Washington, D.C." },
+  image:{ status:"copyright" },
+  coords:{ F:95, D:-40, E:60, C:45, M:35 }, coordsSource:"override",
+  description:"Rings of colour, roughly brushed at the edges, sitting dead centre on raw canvas that has been left to show. It is one of the first targets Noland painted, five years after Frankenthaler's studio taught him to stain rather than cover, and the title is not modest — this was the beginning. The question it opens occupied him for fifty years: where should an image sit inside its edges? Here the answer is the simplest one available. In the middle, and breathing.",
+  notice:["The canvas between the rings is bare cotton, not white paint",
+          "Edges are hand-brushed, not taped — the geometry is warm, not machined",
+          "Colour sits in the cloth rather than on it, so nothing casts a shadow"],
+  tags:["abstract","geometric","quiet","experimental"],
+  related:["composition-vii"] },
+
+{ id:"chief-kline", tier:2, title:"Chief", artistId:"franz-kline",
+  year:{ display:"1950", sort:1950 }, movements:["abstract-expressionism","action-painting"],
+  techniques:["oil-painting","gestural-abstraction"], nation:"usa",
+  museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" }, image:{ status:"copyright" },
+  coords:{ F:90, D:85, E:55, C:5, M:55 }, tags:["abstract","black-and-white","monumental-scale"] },
+
+{ id:"elegy-to-the-spanish-republic-108", tier:2, title:"Elegy to the Spanish Republic, 108", artistId:"robert-motherwell",
+  year:{ display:"1965–67", sort:1965 }, movements:["abstract-expressionism"],
+  techniques:["oil-painting","gestural-abstraction"], nation:"usa",
+  museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" }, image:{ status:"copyright" },
+  coords:{ F:80, D:70, E:45, C:45, M:70 }, tags:["abstract","black-and-white","political"] },
+
+{ id:"city-limits-guston", tier:2, title:"City Limits", artistId:"philip-guston",
+  year:{ display:"1969", sort:1969 }, movements:["expressionism"],
+  techniques:["oil-painting"], nation:"usa",
+  museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" }, image:{ status:"copyright" },
+  coords:{ F:-55, D:65, E:55, C:50, M:25 }, tags:["figures","political","experimental"] },
+
+{ id:"the-gate-hofmann", tier:2, title:"The Gate", artistId:"hans-hofmann",
+  year:{ display:"1959–60", sort:1959 }, movements:["abstract-expressionism","color-field"],
+  techniques:["oil-painting","impasto"], nation:"usa",
+  museum:{ id:"guggenheim-ny", name:"Solomon R. Guggenheim Museum", city:"New York" }, image:{ status:"copyright" },
+  coords:{ F:85, D:45, E:50, C:15, M:25 }, tags:["abstract","geometric","would-hang"] },
+
+{ id:"mars-dust", tier:2, title:"Mars Dust", artistId:"alma-thomas",
+  year:{ display:"1972", sort:1972 }, movements:["color-field","washington-color-school"],
+  techniques:["acrylic-painting","flat-color"], nation:"usa",
+  museum:{ id:"whitney", name:"Whitney Museum of American Art", city:"New York" }, image:{ status:"copyright" },
+  coords:{ F:90, D:-25, E:45, C:10, M:30 }, tags:["abstract","red","quiet"] }
 
 ]);

@@ -129,5 +129,6 @@ window.VENUES = [
   { id:"ny-carlsberg-glyptotek", name:"Ny Carlsberg Glyptotek", city:"Copenhagen", country:"Denmark", type:"museum" },
   { id:"moderna-museet", name:"Moderna Museet", city:"Stockholm", country:"Sweden", type:"museum" },
   { id:"russian-museum", name:"State Russian Museum", city:"St Petersburg", country:"Russia", type:"museum" },
-  { id:"glenstone", name:"Glenstone", city:"Potomac", country:"United States", type:"museum" }
+  { id:"glenstone", name:"Glenstone", city:"Potomac", country:"United States", type:"museum" },
+  { id:"hirshhorn", name:"Hirshhorn Museum and Sculpture Garden", city:"Washington, D.C.", country:"United States", type:"museum" }
 ];
