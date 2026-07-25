@@ -2068,6 +2068,40 @@ function view404(){
   </div>`;
 }
 
+/* ---------- privacy disclosure (#/privacy, AC25) ----------
+   Plain, literal copy by design — this is instruction/state/persistence/privacy
+   content, where the house style's clarity rule overrides its usual voice.
+   Every figure below is measured against this build, not carried over from an
+   earlier report; re-run the greps in build-log-unit-23.md before editing. */
+function viewPrivacy(){
+  document.title = "Privacy — Pigment";
+  return `
+  <div class="page-head">
+    <div class="page-kicker">How Pigment handles your data</div>
+    <h1 class="display">Privacy</h1>
+    <p class="page-lede">Plain facts about what Pigment stores, what it sends, and to whom.</p>
+  </div>
+  <section style="max-width:680px">
+    <h2 class="sec-title">No account, no server</h2>
+    <p>Pigment has no account system and no backend server. Admiring a work, marking it Seen in person, saving it for later, and taking onboarding all write to your own browser's storage on your own device — nothing is sent to Pigment or to anyone else. Three keys are used: <code>pigment.taste.v1</code> (localStorage, your Taste Passport), <code>pigment.onboarding.v1</code> (sessionStorage, only while onboarding is in progress), and <code>pigment-theme</code> (localStorage, your dark/light choice). This data stays on your device until you clear it yourself or clear your browser's site data for Pigment.</p>
+
+    <h2 class="sec-title">No analytics, no tracking</h2>
+    <p>Pigment runs no analytics, no tracking pixels, and no beacons. No visit, click, or Admire is logged, measured, or transmitted anywhere. This was checked directly in the source, not assumed.</p>
+
+    <h2 class="sec-title">One third-party host: Wikimedia Commons images</h2>
+    <p>Pigment displays artwork and museum photographs hosted on Wikimedia Commons, at <code>upload.wikimedia.org</code>. When a page shows one of these images, your browser requests it directly from Wikimedia's servers, not from Pigment — that request reaches Wikimedia with your IP address, under Wikimedia's own privacy policy, which Pigment does not control. Measured in this build: <strong>888 upload.wikimedia.org image URLs</strong> across the catalog, gallery and museum data, rendered as images at 18 places in the code, on most pages that show artwork or museum photographs — artist pages, artwork pages, museum pages, lists, and more.</p>
+    <p>Separately, the "image via Wikimedia Commons" / "photo via Wikimedia Commons" / "source" links placed next to individual images point to Wikimedia Commons and Wikipedia file or article pages (<code>commons.wikimedia.org</code>, <code>en.wikipedia.org</code>, and one <code>pt.wikipedia.org</code> page). Those are ordinary outbound links — your browser only contacts them if you click through.</p>
+
+    <h2 class="sec-title">Fonts are served locally</h2>
+    <p>Pigment's typefaces, Playfair Display and Inter, are self-hosted from this site (<code>assets/fonts/</code>). No font provider is contacted when the site loads.</p>
+
+    <h2 class="sec-title">Image credit</h2>
+    <p>Artwork and museum images throughout Pigment are sourced from Wikimedia Commons. Where available, the licence and photographer for an individual image are linked next to it. This page is the general credit for the collection as a whole.</p>
+
+    <p style="margin-top:26px"><a class="chip" href="#/">Back to the atlas</a></p>
+  </section>`;
+}
+
 /* ============================================================
    ROUTER
    ============================================================ */
@@ -2137,6 +2171,7 @@ function route(){
     case "era":         html = viewEra(id); break;
     case "nations":     html = viewNations(); break;
     case "nation":      html = viewNation(id); break;
+    case "privacy":     html = viewPrivacy(); break;
     default:            html = view404();
   }
   app.classList.remove("view-enter");
