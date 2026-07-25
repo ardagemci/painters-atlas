@@ -725,8 +725,10 @@ function paintAll(root){
 /* ============================================================
    HTML BUILDERS
    ============================================================ */
-const canvasTag = (style, palette, seed, eager, salt) =>
-  `<canvas data-paint data-style="${style}" data-colors="${palette.join(",")}" data-seed="${esc(seed)}"${eager?' data-eager="1"':''}${salt?` data-salt="${esc(salt)}"`:''}></canvas>`;
+/* a cover is never the artwork itself (PIGMENT.md §14) — the accessible name says so */
+const coverLabel = subject => `Generative cover for ${subject}, painted in the browser`;
+const canvasTag = (style, palette, seed, label, eager, salt) =>
+  `<canvas role="img" aria-label="${esc(label || "Generative cover painted in the browser")}" data-paint data-style="${style}" data-colors="${palette.join(",")}" data-seed="${esc(seed)}"${eager?' data-eager="1"':''}${salt?` data-salt="${esc(salt)}"`:''}></canvas>`;
 
 const chip = (type, href, label) => `<a class="chip ${type}" href="#/${href}">${esc(label)}</a>`;
 const chipsFor = a => [
@@ -739,7 +741,7 @@ const chipsFor = a => [
 function artistCard(a){
   const movs = a.movements.slice(0,2).map(m => Mx[m] ? chip("m","movement/"+m, Mx[m].name) : "").join("");
   return `<article class="card" data-href="#/artist/${a.id}">
-    <div class="card-art">${canvasTag(a.style, a.palette, a.id)}</div>
+    <div class="card-art">${canvasTag(a.style, a.palette, a.id, coverLabel(a.name))}</div>
     <div class="card-body">
       <h3><a href="#/artist/${a.id}">${esc(a.name)}</a></h3>
       <div class="card-meta">${esc(a.years)} · ${Nx[a.nation] ? esc(Nx[a.nation].name) : ""}</div>
@@ -755,7 +757,7 @@ function artworkCard(w){
   return `<article class="card aw-card" data-href="#/artwork/${w.id}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
-      : canvasTag(a.style, a.palette, w.id)}</div>
+      : canvasTag(a.style, a.palette, w.id, coverLabel(w.title + " by " + a.name))}</div>
     <div class="card-body">
       <h3><a href="#/artwork/${w.id}">${esc(w.title)}</a></h3>
       <div class="card-meta">${esc(a.name)} · ${esc(w.year.display)}</div>
@@ -766,7 +768,7 @@ function artworkCard(w){
 function taxCard(item, type, count){
   const kids = (type === "movement" ? movChildren(item.id) : tecChildren(item.id));
   return `<article class="card tax-card" data-href="#/${type}/${item.id}">
-    <div class="card-art">${canvasTag(item.style, item.palette, item.id)}</div>
+    <div class="card-art">${canvasTag(item.style, item.palette, item.id, coverLabel(item.name))}</div>
     <div class="card-body">
       <h3><a href="#/${type}/${item.id}">${esc(item.name)}</a></h3>
       <div class="card-meta">${item.period ? esc(item.period) + " · " : ""}${count} artist${count===1?"":"s"}</div>
@@ -783,7 +785,7 @@ const crumbs = parts => `<nav class="breadcrumbs">` +
 
 function hero(opts){
   return `<header class="hero">
-    ${canvasTag(opts.style, opts.palette, opts.seed, true, opts.salt)}
+    ${canvasTag(opts.style, opts.palette, opts.seed, coverLabel(opts.title), true, opts.salt)}
     <div class="hero-shade"></div>
     <div class="hero-content">
       ${opts.crumbs || ""}
@@ -1267,7 +1269,7 @@ function museumCard(v){
   return `<article class="card list-card" data-href="#/museum/${v.id}">
     <div class="card-art">${note && note.photo
       ? `<img loading="lazy" src="${note.photo.src}" alt="${esc(v.name)}">`
-      : (fa ? canvasTag(fa.style, fa.palette, v.id) : "")}</div>
+      : (fa ? canvasTag(fa.style, fa.palette, v.id, coverLabel(v.name)) : "")}</div>
     <div class="card-body">
       <div class="lc-kicker">${esc(v.city)} · ${works.length} work${works.length === 1 ? "" : "s"}</div>
       <h3><a href="#/museum/${v.id}">${esc(v.name)}</a></h3>
@@ -1326,7 +1328,7 @@ function viewMuseum(id){
     <h2 class="sec-title">Artists on these walls</h2>
     <div class="mini-cards mu-artists">${artists.map(p => {
       const n = works.filter(w => w.artistId === p.id).length;
-      return `<a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id)}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${n} ${n === 1 ? "work" : "works"} here</span></span></a>`;
+      return `<a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id, coverLabel(p.name))}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${n} ${n === 1 ? "work" : "works"} here</span></span></a>`;
     }).join("")}</div>
   </section>` : ""}
   ${kindred.length ? `<section>
@@ -1379,7 +1381,7 @@ function listCard(l){
   return `<article class="card list-card" data-href="#/list/${l.id}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(l.title)}">`
-      : (ca ? canvasTag(ca.style, ca.palette, l.id) : "")}</div>
+      : (ca ? canvasTag(ca.style, ca.palette, l.id, coverLabel(l.title)) : "")}</div>
     <div class="card-body">
       <div class="lc-kicker">List · ${l.works.length} works</div>
       <h3><a href="#/list/${l.id}">${esc(l.title)}</a></h3>
@@ -1409,7 +1411,7 @@ function viewList(id){
   <div class="list-hero">
     <div class="list-hero-art">${cimg
       ? `<img src="${cw.image.src}" alt="${esc(cw.title)}">`
-      : (ca ? canvasTag(ca.style, ca.palette, l.id, true) : "")}</div>
+      : (ca ? canvasTag(ca.style, ca.palette, l.id, coverLabel(l.title), true) : "")}</div>
     <div class="list-hero-body">
       ${crumbs([["Atlas",""],["Lists","lists"],[l.title]])}
       <h1 class="display">${esc(l.title)}</h1>
@@ -1428,7 +1430,7 @@ function viewList(id){
         <span class="le-num">${i + 1}</span>
         <a class="le-art" href="#/artwork/${w.id}">${img
           ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">`
-          : canvasTag(a.style, a.palette, w.id + "-le")}</a>
+          : canvasTag(a.style, a.palette, w.id + "-le", coverLabel(w.title + " by " + a.name))}</a>
         <div class="le-body">
           <h3><a href="#/artwork/${w.id}">${esc(w.title)}</a></h3>
           <div class="le-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a> · ${esc(w.year.display)}</div>
@@ -1456,7 +1458,7 @@ function viewHome(){
   document.title = "Pigment — Find your place in the history of art";
   return `
   <header class="home-hero">
-    ${canvasTag(muse.style, muse.palette, muse.id, true, String(Date.now()%100000))}
+    ${canvasTag(muse.style, muse.palette, muse.id, `Tonight's generative cover, mixed after ${muse.name} and painted in the browser`, true, String(Date.now()%100000))}
     <div class="hero-shade"></div>
     <div class="home-hero-content">
       <div class="kicker">Pigment · a taste atlas of painting</div>
@@ -1524,7 +1526,7 @@ function viewHome(){
     <h2 class="sec-title">Begin with an era</h2>
     <div class="era-strip">
       ${E.map(e => `<a class="era-tile" href="#/era/${e.id}">
-          ${canvasTag(e.style, e.palette, e.id)}
+          ${canvasTag(e.style, e.palette, e.id, coverLabel(e.name))}
           <div class="et-shade"></div>
           <div class="et-label"><b>${esc(e.name)}</b><span>${esc(e.range)} · ${artistsOfEra(e.id).length} painters</span></div>
         </a>`).join("")}
@@ -1619,7 +1621,7 @@ function arcWorkChips(ids){
     const img = w.image && w.image.src && w.image.status === "pd";
     return `<a class="arc-work" href="#/artwork/${w.id}">${img
       ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">`
-      : `<span class="arc-work-gen">${canvasTag(artist.style, artist.palette, w.id)}</span>`}
+      : `<span class="arc-work-gen">${canvasTag(artist.style, artist.palette, w.id, coverLabel(w.title + " by " + artist.name))}</span>`}
       <span class="arc-work-t">${esc(w.title)}<em>${esc(w.year.display)}</em></span>
     </a>`;
   }).join("")}</div>`;
@@ -1709,7 +1711,7 @@ function viewArtist(id){
         <h3>Kindred spirits</h3>
         <div class="mini-cards">
           ${kindred.map(o => `<a class="mini-card" href="#/artist/${o.id}">
-              ${canvasTag(o.style, o.palette, o.id)}
+              ${canvasTag(o.style, o.palette, o.id, coverLabel(o.name))}
               <span><span class="mc-name">${esc(o.name)}</span><br><span class="mc-meta">${esc(o.years)}</span></span>
             </a>`).join("")}
         </div>
@@ -1777,7 +1779,7 @@ function viewArtwork(id){
   <div class="aw-hero" ${hasImg ? `data-lb-img="${w.image.src}" data-lb-cap="${esc(w.title)} (${esc(w.year.display)}) — ${esc(a.name)}" data-lb-link="${w.image.page}"` : ""}>
     ${hasImg
       ? `<img src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
-      : `<div class="aw-hero-gen">${canvasTag(a.style, a.palette, w.id, true)}<span class="map-hint">${held
+      : `<div class="aw-hero-gen">${canvasTag(a.style, a.palette, w.id, coverLabel(w.title + " by " + a.name), true)}<span class="map-hint">${held
         ? "a seeded Pigment interpretation — the original artwork remains under copyright"
         : "an interpretation painted in the browser — the original is unphotographed"}</span></div>`}
   </div>
@@ -1817,9 +1819,9 @@ function viewArtwork(id){
         </div>`;
       })() : ""}
       ${moreBy.length ? `<div class="panel"><h3>More by ${esc(artistShortName(a))}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
-        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(a.style, a.palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(o.year.display)}</span></span></a>`).join("")}</div></div>` : ""}
+        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(a.style, a.palette, o.id, coverLabel(o.title + " by " + a.name))}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(o.year.display)}</span></span></a>`).join("")}</div></div>` : ""}
       ${near.length ? `<div class="panel"><h3>Near it in the atlas</h3><div class="mini-cards">${near.map(o =>
-        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(Ax[o.artistId].style, Ax[o.artistId].palette, o.id)}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(Ax[o.artistId].name)}</span></span></a>`).join("")}</div></div>` : ""}
+        `<a class="mini-card" href="#/artwork/${o.id}">${o.image && o.image.src ? `<img class="mc-img" loading="lazy" src="${o.image.src}" alt="">` : canvasTag(Ax[o.artistId].style, Ax[o.artistId].palette, o.id, coverLabel(o.title + " by " + Ax[o.artistId].name))}<span><span class="mc-name">${esc(o.title)}</span><br><span class="mc-meta">${esc(Ax[o.artistId].name)}</span></span></a>`).join("")}</div></div>` : ""}
       <div class="panel"><h3>Go next</h3><div class="chips">
         ${chip("a", "artist/" + a.id, "All of " + artistShortName(a))}
         ${w.movements && w.movements[0] && Mx[w.movements[0]] ? chip("m", "movement/" + w.movements[0], "More " + Mx[w.movements[0]].name) : ""}
@@ -1902,7 +1904,7 @@ function viewEras(){
     ${E.map(e => {
       const n = artistsOfEra(e.id).length;
       return `<article class="card tax-card" data-href="#/era/${e.id}">
-        <div class="card-art">${canvasTag(e.style, e.palette, e.id)}</div>
+        <div class="card-art">${canvasTag(e.style, e.palette, e.id, coverLabel(e.name))}</div>
         <div class="card-body">
           <h3><a href="#/era/${e.id}">${esc(e.name)}</a></h3>
           <div class="card-meta">${esc(e.range)} · ${n} painters</div>
@@ -1963,7 +1965,7 @@ function viewNations(){
   ${worldMapView()}
   <div class="cards">
     ${sorted.map(([n,c]) => `<article class="card tax-card" data-href="#/nation/${n.id}">
-        <div class="card-art">${canvasTag("fauvist", n.palette, n.id)}</div>
+        <div class="card-art">${canvasTag("fauvist", n.palette, n.id, coverLabel(n.name))}</div>
         <div class="card-body">
           <h3><a href="#/nation/${n.id}">${n.flag} ${esc(n.name)}</a></h3>
           <div class="card-meta">${c} painter${c===1?"":"s"}</div>
@@ -2678,7 +2680,7 @@ function obHandoff(st){
   return `<section class="ob-handoff">
     <h2 class="sec-title">Start here <span class="count">matched to your map</span></h2>
     <div class="mini-cards mu-artists">${artists.map(p => `
-      <a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id)}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${esc(p.tagline)}</span></span></a>`).join("")}</div>
+      <a class="mini-card" href="#/artist/${p.id}">${canvasTag(p.style, p.palette, p.id, coverLabel(p.name))}<span><span class="mc-name">${esc(p.name)}</span><br><span class="mc-meta">${esc(p.tagline)}</span></span></a>`).join("")}</div>
     ${list ? `<div class="chips" style="margin-top:12px"><a class="chip m" href="#/list/${list.l.id}">List for you: ${esc(list.l.title)}</a></div>` : ""}
   </section>`;
 }
