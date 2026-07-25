@@ -2313,11 +2313,17 @@ function viewCredits(){
 /* ---------- route orientation & focus (AC15, AC17) ----------
    `#app` used to carry aria-live="polite" while every navigation replaced its whole
    innerHTML — assistive tech re-read the entire page on every route change, sixteen
-   times over during onboarding. The live region is now a dedicated, tiny one that
-   carries the page name alone, and focus moves to the new page's heading.
+   times over during onboarding. That was replaced by a focus move to the new page's
+   heading plus a small `#route-status` live region; both fired on every route
+   change, so the page was announced twice, and because the live region carried the
+   document title while the heading carries the editorial string, the two often
+   disagreed ("The grand timeline" / "Timeline", "Blank canvas" / "Lost").
+   There is now exactly one channel: focus moves to the new page's `h1`. It is the
+   stronger signal — it announces the page identity AND places the caret at the
+   content — and a status region that merely restates the heading added no
+   information. Every route renders a non-empty `h1`, so identity is never lost.
    A re-render of the page you are already on (every onboarding tap calls route())
    announces nothing and puts focus back on the control you were using. */
-const routeStatus = document.getElementById("route-status");
 let lastRouteKey = null;
 function focusSilently(el){
   if(!el) return false;
@@ -2396,7 +2402,6 @@ function route(){
     /* one concise announcement of the new page identity, and focus at its start.
        Never on the first load — arriving at a page should not steal focus. */
     focusSilently(viewEntry());
-    if(routeStatus) routeStatus.textContent = (document.title || "").split(" — ")[0];
   } else if(!nav){
     if(!restoreFocus(keep) && keep) focusSilently(viewEntry());   /* the control is gone — go to the heading, silently */
   }
