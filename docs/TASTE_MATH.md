@@ -164,7 +164,8 @@ Quiz-vs-evidence disagreement (`|q_axis − evidence mean| > 50` on any informed
 Fixed decks waste taps. The deck should maximize information per reaction:
 
 - **Stage 1 (4 anchor works, fixed):** one from each F×D quadrant, all with |F|,|D| ≥ 50 — coarse quadrant fix.
-- **Stages 2–4 (adaptive, 4 works each):** pick from precomputed buckets keyed by `(current quadrant, most-uncertain axis)` — probing E, then C, then the weakest axis again. The policy is a small baked JSON lookup (quadrants × axes × candidates), not runtime search: static-site friendly.
+- **Stages 2–4 (adaptive, 4 works each) — DESIGNED, NOT SHIPPED.** The build selects the whole deck up front (`buildDeck()`, once per session) and never re-reads the user's answers mid-deck; see the deferred-promise register, `PIGMENT.md` §19 D-1. The design below stands; the implementation does not exist yet.
+   pick from precomputed buckets keyed by `(current quadrant, most-uncertain axis)` — probing E, then C, then the weakest axis again. The policy is a small baked JSON lookup (quadrants × axes × candidates), not runtime search: static-site friendly.
 - Hard constraints preserved from `ADMIRE_SPEC` §6.2 (the copyright-skew defense): ≥ 3 abstract-capable works (`F ≥ +30`), ≥ 2 non-European, era spread, all with confident coords and great images.
 - Effect: ~12 adaptive reactions ≈ 20–25 static ones. Serves the sub-4-minute ruling.
 

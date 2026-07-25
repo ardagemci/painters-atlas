@@ -100,7 +100,7 @@ Word budgets are targets, not laws — but a unit 2× over budget is a rewrite, 
 
 ### 4.7 Museum pages *(new)*
 - Informative, never brochure. The register: **a well-read friend who's been there twice and has opinions.**
-- The hero unit is **"If you only have one hour"** — 5–8 works, ordered as a route, one sentence each, honest about crowds ("you will not be alone with her").
+- The hero unit is **"If you only have one hour"** — 5–8 works, ordered as a route, one sentence each, honest about crowds ("you will not be alone with her"). **Not yet built** — museum pages currently ship a collection grid. This is a standing editorial target, not a description of the current page; see `PIGMENT.md` §19 D-2.
 - History: 60–100 words. Architecture: one paragraph only if the building matters. Fun facts: same rules as artist facts.
 
 ### 4.8 Persona descriptions *(Phase 1.5)*
