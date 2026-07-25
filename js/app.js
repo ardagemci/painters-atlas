@@ -2754,12 +2754,52 @@ function personaCard(ps, opts){
   </div>`;
 }
 
-/* ---------- onboarding state + view (#/palette) ---------- */
+/* ---------- onboarding state + view (#/palette) ----------
+   The in-progress state is materialized to sessionStorage after every step, so a
+   reload, a back/forward, or a wandered-off tab resumes at the exact checkpoint with
+   the same sixteen works and the same answers. The deck ids are stored rather than a
+   seed: buildDeck() is seeded with Math.random(), so no seed can rebuild it. This is
+   a separate additive key — `pigment.taste.v1` and its schema are untouched, and a
+   browser that refuses the write simply loses resumability, never the run itself. */
+const OB_KEY = "pigment.onboarding.v1";
 let ob = null;
+function obWrite(){
+  if(!ob) return;
+  try{
+    sessionStorage.setItem(OB_KEY, JSON.stringify({
+      v: 1, step: ob.step, tones: ob.tones, deck: ob.deck.map(w => w.id), di: ob.di,
+      admired: ob.admired, skipped: ob.skipped, answers: ob.answers, adopted: ob.adopted
+    }));
+  }catch(e){}
+}
+function obClear(){
+  ob = null;
+  try{ sessionStorage.removeItem(OB_KEY); }catch(e){}
+}
+function obRestore(){
+  let raw = null;
+  try{ raw = sessionStorage.getItem(OB_KEY); }catch(e){ return null; }
+  if(!raw) return null;
+  let s; try{ s = JSON.parse(raw); }catch(e){ return null; }
+  if(!s || s.v !== 1 || !Array.isArray(s.deck) || !s.deck.length) return null;
+  const deck = s.deck.map(id => CatX[id]).filter(Boolean);
+  if(deck.length !== s.deck.length) return null;      /* catalog moved under a stale tab — don't half-resume */
+  const o = { step: [1, 2, 3, 4].indexOf(s.step) >= 0 ? s.step : 1,
+              tones: (s.tones || []).slice(0, 4), deck: deck,
+              di: Math.max(0, Math.min(deck.length, s.di | 0)),
+              admired: (s.admired || []).slice(), skipped: (s.skipped || []).slice(),
+              answers: Object.assign({}, s.answers || {}), adopted: !!s.adopted };
+  /* never resume into a step whose own precondition no longer holds */
+  if(o.step === 2 && o.di >= o.deck.length) o.step = 3;
+  if(o.step === 3 && Object.keys(o.answers).length >= TASTE_QUESTIONS.length) o.step = 4;
+  return o;
+}
 function obStart(){
   ob = { step: 1, tones: [], deck: buildDeck(new Date().toISOString().slice(0, 10) + ":" + Math.floor(Math.random() * 1e6)),
          di: 0, admired: [], skipped: [], answers: {}, adopted: false };
+  obWrite();
 }
+ob = obRestore();
 function viewPalette(){
   document.title = "Find your palette — Pigment";
   if(!ob || ob.step === 0) return `
@@ -3268,20 +3308,23 @@ document.addEventListener("click", e => {
     const i = ob.tones.indexOf(id);
     if(i >= 0) ob.tones.splice(i, 1);
     else if(ob.tones.length < 4) ob.tones.push(id);
+    obWrite();
     route();
   }
-  else if(act === "tones-done"){ if(ob.tones.length === 4){ ob.step = 2; route(); } }
+  else if(act === "tones-done"){ if(ob.tones.length === 4){ ob.step = 2; obWrite(); route(); } }
   else if(act === "deck-admire" || act === "deck-pass"){
     const w = ob.deck[ob.di];
     (act === "deck-admire" ? ob.admired : ob.skipped).push(w.id);
     ob.di++;
     if(ob.di >= 16) ob.step = 3;
+    obWrite();
     route();
   }
   else if(act === "answer"){
     const [qid, oid] = id.split(":");
     ob.answers[qid] = oid;
     if(Object.keys(ob.answers).length >= 5){ ob.step = 4; obFinish(); }
+    obWrite();
     route();
   }
   else if(act === "adopt"){
@@ -3290,10 +3333,19 @@ document.addEventListener("click", e => {
     p.persona.adopted = id;
     p.persona.adoptedAt = new Date().toISOString();
     if(!ppSave(p)) ppNotice("Persona not adopted. This device would not store the change, so your Taste Passport is unchanged.");
+    else if(ob){ ob.adopted = true; obWrite(); }
     route();
   }
   else if(act === "later"){ location.hash = "#/taste"; }
-  else if(act === "retake"){ ob = null; }
+  else if(act === "retake"){
+    /* a real link, and a real consequence: say so, and let cancel mean cancel */
+    if(!confirm("Take the onboarding again? You'll choose four tones, sixteen works and five questions from scratch, and finishing replaces the tones and answers behind your current map. Anything you had part-way through is discarded. Your admirations are kept.")){
+      e.preventDefault();
+      return;
+    }
+    obClear();
+    if(location.hash.replace(/^#\/?/, "").split("/")[0] === "palette") route();
+  }
   else if(act === "card"){
     el.disabled = true;
     paintPassportCard().then(cv => {
@@ -3334,7 +3386,7 @@ document.addEventListener("click", e => {
       try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){ gone = false; }
       if(!gone){ ppNotice("Not replaced. This browser would not let Pigment clear its storage, so the existing data is still there."); return; }
       ppState.read = "ok"; ppState.write = "ok"; ppState.corrupt = false;
-      ob = null; route();
+      obClear(); route();
     }
   }
   else if(act === "share-url"){
@@ -3349,7 +3401,7 @@ document.addEventListener("click", e => {
       try{ localStorage.removeItem(PASSPORT_KEY); }catch(err){ gone = false; }
       if(!gone){ ppNotice("Not erased. This browser would not let Pigment clear its storage, so your Taste Passport is still on this device."); return; }
       ppState.read = "ok"; ppState.write = "ok"; ppState.corrupt = false;
-      ob = null; route();
+      obClear(); route();
     }
   }
   else if(act === "import-review"){
