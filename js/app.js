@@ -3056,8 +3056,52 @@ function decodePayload(s){
     return JSON.parse(decodeURIComponent(escape(atob(s))));
   }catch(e){ return null; }
 }
-function mergePassports(mine, theirs){
-  const out = mine || newPassport();
+/* The list fields below combine by union. These four do not: each is a single value,
+   so an import can only ever REPLACE one — and PIGMENT.md §9 forbids doing that silently.
+   Nothing here is written until the user has chosen, field by field. */
+const PP_CHOICE_FIELDS = ["quiz", "palette", "persona", "milestones"];
+const PP_FIELD_LABELS = {
+  quiz: "Onboarding answers", palette: "Chosen tones",
+  persona: "Adopted Persona", milestones: "Progress markers"
+};
+/* the decision each field actually carries — an empty shell from newPassport() is not a decision */
+function ppFieldKey(field, v){
+  if(!v) return "";
+  if(field === "persona")    return String(v.adopted || "");
+  if(field === "palette")    return (v.tones || []).join(",");
+  if(field === "milestones") return v.onboarded ? JSON.stringify([!!v.onboarded, v.confidence || ""]) : "";
+  return Object.keys(v.answers || {}).length ? JSON.stringify(v.answers) : "";   /* quiz */
+}
+
+function ppFieldSummary(field, v){
+  if(!v) return "nothing saved";
+  if(field === "quiz") return `${Object.keys(v.answers || {}).length} answers${v.at ? " · saved " + String(v.at).slice(0, 10) : ""}`;
+  if(field === "palette"){
+    const names = (v.tones || []).map(tid => { const t = TASTE_TONES.find(o => o.id === tid); return t ? t.name : tid; });
+    return names.length ? names.join(", ") : "no tones";
+  }
+  if(field === "persona"){
+    if(!v.adopted) return "none adopted";
+    const ps = PERSONAS.find(x => x.id === v.adopted);
+    return (ps ? ps.name : v.adopted) + (v.adoptedAt ? " · adopted " + String(v.adoptedAt).slice(0, 10) : "");
+  }
+  if(field === "milestones") return `onboarding ${v.onboarded ? "finished" : "not finished"} · map ${esc(v.confidence || "unknown")}`;
+  return "saved";
+}
+
+/* which single-value fields would an import overwrite? */
+function passportConflicts(mine, theirs){
+  if(!mine || !theirs) return [];
+  return PP_CHOICE_FIELDS.filter(f => {
+    const a = ppFieldKey(f, mine[f]), b = ppFieldKey(f, theirs[f]);
+    return a && b && a !== b;
+  });
+}
+
+/* pure: `mine` is cloned, never mutated, so an abandoned merge cannot leak into local state */
+function mergePassports(mine, theirs, choices){
+  choices = choices || {};
+  const out = mine ? JSON.parse(JSON.stringify(mine)) : newPassport();
   ["admirations", "seen", "wantToSee", "saved", "probes"].forEach(f => {
     const seen = {};
     (out[f] || []).forEach(e => seen[e.id] = e);
@@ -3069,28 +3113,67 @@ function mergePassports(mine, theirs){
   ["skipped", "deckSeen", "notForMe"].forEach(f => {
     out[f] = Array.from(new Set((out[f] || []).concat(theirs[f] || [])));
   });
-  const newer = (theirs.updatedAt || "") > (out.updatedAt || "");
-  ["quiz", "palette", "persona", "milestones"].forEach(f => {
-    if(theirs[f] && (newer || !out[f])) out[f] = theirs[f];
+  PP_CHOICE_FIELDS.forEach(f => {
+    const a = ppFieldKey(f, out[f]), b = ppFieldKey(f, theirs[f]);
+    if(!b) return;                                           /* nothing offered */
+    const take = () => { out[f] = JSON.parse(JSON.stringify(theirs[f])); };
+    if(!a){ take(); return; }                                /* nothing of ours to lose */
+    if(a === b) return;                                      /* same decision — no choice to make */
+    if(choices[f] === "theirs") take();                      /* replaced only on an explicit choice */
   });
   return out;
 }
+
+let ppImport = null;                                         /* { payload, data, choices, step } */
+
 function viewPassportImport(payload){
   document.title = "Import passport — Pigment";
   const data = decodePayload(payload || "");
-  if(!data || data.version !== 1) return `
+  if(!data || data.version !== 1){
+    ppImport = null;
+    return `
     <div class="ob-wrap"><h1 class="display">That passport didn't scan.</h1>
-    <p class="page-lede">The link seems damaged. Ask for a fresh one, or start your own map.</p>
-    <a class="aw-btn primary" href="#/palette">Find your palette →</a></div>`;
-  window._ppImport = data;
+    <p class="page-lede">The link seems damaged. Nothing on this device has been changed. Ask for a fresh one, or start your own map.</p>
+    <a class="aw-btn primary" href="#/palette">Find your palette →</a>
+    <a class="chip-label" style="display:block;margin-top:14px" href="#/">no thanks — take me home</a></div>`;
+  }
+  if(!ppImport || ppImport.payload !== payload) ppImport = { payload, data, choices: {}, step: 1 };
+  ppImport.data = data;
+  const mine = getPassport();
+  const conflicts = passportConflicts(mine, data);
+  conflicts.forEach(f => { if(!ppImport.choices[f]) ppImport.choices[f] = "mine"; });   /* default keeps yours */
+
+  if(ppImport.step === 2 && conflicts.length) return `
+  <div class="ob-wrap">
+    <div class="page-kicker">Taste Passport · import · ${conflicts.length} choice${conflicts.length === 1 ? "" : "s"}</div>
+    <h1 class="display">Which of these should Pigment keep?</h1>
+    <p class="page-lede">These are single values, not lists, so they cannot be combined — one of the two has to win. Yours is selected. Nothing is written until you press Merge below, and nothing at all is written if you cancel.</p>
+    <div class="pp-conflicts">${conflicts.map(f => `
+      <div class="panel">
+        <h3>${esc(PP_FIELD_LABELS[f])}</h3>
+        <div class="pp-choice">
+          <button class="f-btn ${ppImport.choices[f] === "mine" ? "on" : ""}" data-tsx="ppc" data-tsid="${f}:mine" aria-pressed="${ppImport.choices[f] === "mine"}">Keep mine — ${esc(ppFieldSummary(f, mine[f]))}</button>
+          <button class="f-btn ${ppImport.choices[f] === "theirs" ? "on" : ""}" data-tsx="ppc" data-tsid="${f}:theirs" aria-pressed="${ppImport.choices[f] === "theirs"}">Take theirs — ${esc(ppFieldSummary(f, data[f]))}</button>
+        </div>
+      </div>`).join("")}</div>
+    <button class="aw-btn primary ob-cta" data-tsx="import">Merge with these choices</button>
+    <button class="chip" style="margin-left:10px" data-tsx="import-cancel">Cancel — change nothing</button>
+  </div>`;
+
+  const combined = ["admirations", "seen", "wantToSee", "saved", "probes"]
+    .reduce((n, f) => n + (data[f] || []).length, 0);
   return `
   <div class="ob-wrap">
     <div class="page-kicker">Taste Passport · import</div>
     <h1 class="display">A passport arrived.</h1>
     <p class="page-lede">${(data.admirations || []).length} admirations · ${(data.seen || []).length} seen in person ·
-      persona: ${data.persona && data.persona.adopted ? esc((PERSONAS.find(x => x.id === data.persona.adopted) || {}).name || data.persona.adopted) : "none adopted"}.
-      Importing merges it with what's already on this device — nothing is dropped.</p>
-    <button class="aw-btn primary ob-cta" data-tsx="import">Merge into my passport</button>
+      persona: ${data.persona && data.persona.adopted ? esc((PERSONAS.find(x => x.id === data.persona.adopted) || {}).name || data.persona.adopted) : "none adopted"}.</p>
+    <p class="page-lede">Admirations, works seen in person, saved works, probes and skipped works are <b>combined</b> — all ${combined} entries in this passport are added to yours and none of yours is removed. ${conflicts.length
+      ? `Four settings cannot be combined because each holds a single value, and <b>${conflicts.length} of them differ</b> from yours: ${conflicts.map(f => esc(PP_FIELD_LABELS[f].toLowerCase())).join(", ")}. You choose which to keep on the next screen. Nothing is written until then.`
+      : `The four single-value settings — onboarding answers, chosen tones, adopted Persona and progress markers — either match yours or are missing from one side, so nothing of yours will be replaced.`}</p>
+    ${conflicts.length
+      ? `<button class="aw-btn primary ob-cta" data-tsx="import-review">Choose what to keep →</button>`
+      : `<button class="aw-btn primary ob-cta" data-tsx="import">Merge into my passport</button>`}
     <a class="chip-label" style="display:block;margin-top:14px" href="#/">no thanks — take me home</a>
   </div>`;
 }
@@ -3189,9 +3272,30 @@ document.addEventListener("click", e => {
       ob = null; route();
     }
   }
+  else if(act === "import-review"){
+    if(ppImport){ ppImport.step = 2; route(); }             /* no write on this path */
+  }
+  else if(act === "ppc"){                                    /* per-field choice: keep mine / take theirs */
+    const [field, which] = String(id).split(":");
+    if(ppImport && PP_CHOICE_FIELDS.indexOf(field) >= 0 && (which === "mine" || which === "theirs")){
+      ppImport.choices[field] = which;
+      route();                                               /* no write on this path either */
+    }
+  }
+  else if(act === "import-cancel"){
+    ppImport = null;                                         /* nothing was ever written */
+    location.hash = "#/";
+  }
   else if(act === "import"){
-    const merged = mergePassports(getPassport(), window._ppImport || {});
-    if(!ppSave(merged)){ ppNotice(PP_WRITE_MSG); return; }
+    if(!ppImport) return;
+    const mine = getPassport();
+    if(ppState.corrupt || ppState.read === "denied"){
+      ppNotice("Not merged. Pigment cannot read the Taste Passport already on this device, so it will not write over it. Open the Taste Passport to deal with that first.");
+      return;
+    }
+    const merged = mergePassports(mine, ppImport.data, ppImport.choices);
+    if(!ppSave(merged)){ ppNotice(PP_WRITE_MSG); return; }    /* failed write leaves local storage untouched */
+    ppImport = null;
     location.hash = "#/taste";
   }
 });

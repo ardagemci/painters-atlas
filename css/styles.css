@@ -806,6 +806,10 @@ section{margin:46px 0}
 }
 .pp-notice[hidden]{display:none}
 .pp-notice p{margin:0 0 12px}
+/* import conflict choices — one panel per single-value field that would be replaced */
+.pp-conflicts{display:grid;gap:14px;margin:20px 0 22px}
+.pp-choice{display:flex;flex-wrap:wrap;gap:8px}
+.pp-choice .f-btn{text-align:left}
 
 /* ---------- world map ---------- */
 .map-wrap{
