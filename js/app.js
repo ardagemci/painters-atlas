@@ -1085,8 +1085,10 @@ function viewInfluences(){
     const mov = Mx[n.a.movements[0]];
     const c = vivid(mov ? mov.palette : n.a.palette);
     const r = n.r;
-    return `<g class="ig-node" data-nid="${n.a.id}" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
+    const lab = `${n.a.name}, ${n.a.years}, ${n.d} connection${n.d === 1 ? "" : "s"}`;
+    return `<g class="ig-node" data-nid="${n.a.id}" tabindex="0" role="button" aria-label="${esc(lab)}" data-baselabel="${esc(lab)}" transform="translate(${n.x.toFixed(1)},${n.y.toFixed(1)})">
       <circle r="${r.toFixed(1)}" fill="${c}"/>
+      <circle class="ig-ring" r="${(r + 5).toFixed(1)}"/>
       <text y="${(r + 12).toFixed(1)}">${esc(n.a.name)}</text>
       <title>${esc(n.a.name)} · ${esc(n.a.years)} — ${n.d} connection${n.d === 1 ? "" : "s"}</title>
     </g>`;
@@ -1099,11 +1101,11 @@ function viewInfluences(){
   <div class="page-head">
     <div class="page-kicker">Who taught whom, who changed whom</div>
     <h1 class="display">The influence graph</h1>
-    <p class="page-lede">${nodes.length} painters joined by ${edges.length} documented relationships — teachers, disciples, friends, rivals and partners. Click a painter to light up their circle; click again to visit their page. Chains run from Theophanes teaching Rublev to Warhol sparring with Kusama.</p>
+    <p class="page-lede">${nodes.length} painters joined by ${edges.length} documented relationships — teachers, disciples, friends, rivals and partners. Choose a painter — click, or Tab to it and press Enter — to light up their circle; choose it again to visit their page, or press Escape to clear. Chains run from Theophanes teaching Rublev to Warhol sparring with Kusama.</p>
   </div>
   <div class="tl2-legend"><button class="tl2-leg" data-etype-btn=""><i style="background:var(--gold)"></i>all types</button>${legend}</div>
   <div class="ig-wrap" id="ig-wrap">
-    <svg id="ig-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${defs}${edgeSvg}${nodeSvg}</svg>
+    <svg id="ig-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="Influence graph — ${nodes.length} painters, ${edges.length} relationships" xmlns="http://www.w3.org/2000/svg">${defs}${edgeSvg}${nodeSvg}</svg>
   </div>
   <div class="ig-info" id="ig-info" hidden></div>
   <p class="map-hint">nodes sized by connections, coloured by movement · solitary painters (Hilma af Klint kept her circle a séance) aren't shown</p>`;
@@ -1120,7 +1122,12 @@ function igFocus(nid){
   });
   svg.classList.add("focused");
   svg.querySelectorAll(".ig-node").forEach(g => g.classList.toggle("lit", nbs.has(g.dataset.nid)));
-  svg.querySelectorAll(".ig-node").forEach(g => g.classList.toggle("sel", g.dataset.nid === nid));
+  svg.querySelectorAll(".ig-node").forEach(g => {
+    const sel = g.dataset.nid === nid;
+    g.classList.toggle("sel", sel);
+    /* the second activation navigates — say so in the accessible name */
+    g.setAttribute("aria-label", g.dataset.baselabel + (sel ? " — circle shown; choose again to open their page" : ""));
+  });
   svg.querySelectorAll(".ig-edge").forEach(l => l.classList.toggle("lit", l.dataset.a === nid || l.dataset.b === nid));
   const a = Ax[nid];
   info.hidden = false;
@@ -1134,7 +1141,13 @@ function igClear(){
   if(!svg) return;
   svg.classList.remove("focused");
   svg.querySelectorAll(".lit, .sel").forEach(el => el.classList.remove("lit", "sel"));
+  svg.querySelectorAll(".ig-node").forEach(g => g.setAttribute("aria-label", g.dataset.baselabel));
   if(info){ info.hidden = true; info.innerHTML = ""; }
+}
+/* one activation path for pointer and keyboard alike */
+function igActivate(g){
+  if(g.classList.contains("sel")) location.hash = "#/artist/" + g.dataset.nid;
+  else igFocus(g.dataset.nid);
 }
 
 /* ---------- world map (nations) with zoomable Europe inset ---------- */
@@ -2113,11 +2126,7 @@ app.addEventListener("click", e => {
   const lbEl = e.target.closest("[data-lb-img]");
   if(lbEl && !e.target.closest("a")){ openLightbox(lbEl.dataset.lbImg, lbEl.dataset.lbCap, lbEl.dataset.lbLink); return; }
   const ign = e.target.closest(".ig-node");
-  if(ign){                                                 /* first click: focus; second: visit */
-    if(ign.classList.contains("sel")) location.hash = "#/artist/" + ign.dataset.nid;
-    else igFocus(ign.dataset.nid);
-    return;
-  }
+  if(ign){ igActivate(ign); return; }                      /* first click: focus; second: visit */
   const etb = e.target.closest("[data-etype-btn]");
   if(etb){                                                 /* edge-type filter */
     const ty = etb.dataset.etypeBtn;
@@ -2173,6 +2182,27 @@ app.addEventListener("click", e => {
   if(e.target.closest("a")) return;
   const card = e.target.closest("[data-href]");
   if(card) location.hash = card.dataset.href;
+});
+
+/* constellation nodes are <g> elements: give them the key behaviour a button would have */
+app.addEventListener("keydown", e => {
+  const g = e.target.closest && e.target.closest(".ig-node");
+  if(!g) return;
+  if(e.key === "Enter" || e.key === " " || e.key === "Spacebar"){
+    e.preventDefault();                                    /* Space must not scroll the graph */
+    igActivate(g);
+  } else if(e.key === "Escape"){
+    igClear();                                             /* focus stays where it is */
+  }
+});
+/* keep a keyboard-focused node inside the scrollable graph — never scroll the page itself */
+app.addEventListener("focusin", e => {
+  const g = e.target.closest && e.target.closest(".ig-node");
+  const wrap = document.getElementById("ig-wrap");
+  if(!g || !wrap) return;
+  const b = g.getBoundingClientRect(), w = wrap.getBoundingClientRect();
+  if(b.left < w.left || b.right > w.right)  wrap.scrollLeft += (b.left + b.right) / 2 - (w.left + w.right) / 2;
+  if(b.top  < w.top  || b.bottom > w.bottom) wrap.scrollTop += (b.top + b.bottom) / 2 - (w.top + w.bottom) / 2;
 });
 
 window.addEventListener("hashchange", route);

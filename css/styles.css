@@ -783,6 +783,13 @@ section{margin:46px 0}
 #ig-svg.focused .ig-edge.lit{stroke-opacity:.95;stroke-width:2.2}
 #ig-svg.focused .ig-node.lit text{fill:var(--ink)}
 .ig-node.sel circle{stroke:var(--gold2);stroke-width:3}
+/* keyboard focus ring: sits outside the node, so it reads over the panel in both themes */
+.ig-node{outline:none}
+.ig-node circle.ig-ring{fill:none;stroke:none;stroke-width:2.5}
+.ig-node:focus circle.ig-ring{stroke:var(--gold2)}
+.ig-node:focus:not(:focus-visible) circle.ig-ring{stroke:none}
+/* a focused node must stay legible even while the rest of the graph is dimmed */
+#ig-svg.focused .ig-node:focus{opacity:1}
 .ig-info{
   margin-top:16px;padding:18px 22px;
   background:var(--panel);border:1px solid var(--line);border-radius:16px;
