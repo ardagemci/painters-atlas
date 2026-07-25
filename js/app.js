@@ -1322,6 +1322,46 @@ function dailyHome(daily){
   </section>`;
 }
 
+/* ---------- photo credit (TASL — title, author, source, licence) ----------
+   Attribution is a licence term, not decoration. 87 of the 103 museum building
+   photographs and 28 shipped artwork images carry Creative Commons licences
+   whose one operative obligation is: name the author, name the licence, link
+   both the licence deed and the source file. The registries are generated into
+   js/photo-credits.js from the rights evidence (tools/build_photo_credits.py);
+   everything below only renders them. Nothing here claims a legal clearance —
+   it records what Commons asserts (OD-5). */
+const PCREDITS = window.PHOTO_CREDITS || {};
+const ICREDITS = window.IMAGE_CREDITS || {};
+
+/* the Commons "File:" title behind an upload.wikimedia.org URL — the mirror of
+   commons_file_title() in tools/commons_rights.py, thumbnail form included:
+     /wikipedia/commons/thumb/5/59/Name.jpg/500px-Name.jpg  →  File:Name.jpg */
+function commonsTitle(src){
+  if(!src) return null;
+  let path;
+  try{ path = new URL(src, location.href).pathname; }catch(e){ return null; }
+  const parts = path.split("/").filter(Boolean);
+  if(parts.indexOf("commons") < 0) return null;        /* /wikipedia/en/ = a local upload */
+  const t = parts.indexOf("thumb");
+  const name = t >= 0 ? parts[t + 3] : parts[parts.length - 1];
+  if(!name) return null;
+  try{ return "File:" + decodeURIComponent(name); }catch(e){ return "File:" + name; }
+}
+function imageCredit(src){ const t = commonsTitle(src); return t ? ICREDITS[t] || null : null; }
+
+/* One credit line. `label` names what is being credited ("Photograph",
+   "Image credit"); every field is escaped, because the author strings come
+   from Commons — plain-texted at build time, escaped again here. */
+function creditLine(c, label){
+  if(!c) return "";
+  const bits = [c.author ? esc(label) + ": " + esc(c.author) : esc(label)];
+  bits.push(c.licenseUrl
+    ? `<a href="${esc(c.licenseUrl)}" target="_blank" rel="noopener license">${esc(c.license)}</a>`
+    : esc(c.license));
+  if(c.page) bits.push(`<a href="${esc(c.page)}" target="_blank" rel="noopener">file on Commons</a>`);
+  return bits.join(" · ");
+}
+
 /* ---------- museums ---------- */
 function museumCard(v){
   const works = catByVenue[v.id] || [];
@@ -1350,7 +1390,8 @@ function viewMuseums(){
     <h1 class="display">Museums</h1>
     <p class="page-lede">Where the atlas hangs in real life. ${held.length} museums, churches and palaces hold the works catalogued so far — each with its own walls, and the great ones with their own story.</p>
   </div>
-  <div class="cards wide">${held.map(museumCard).join("")}</div>`;
+  <div class="cards wide">${held.map(museumCard).join("")}</div>
+  <p class="img-credit index-credit">Building photographs by Wikimedia Commons contributors. Each museum's page names its photographer and licence; the full list is in <a href="#/credits">Credits</a>.</p>`;
 }
 
 function viewMuseum(id){
@@ -1362,6 +1403,11 @@ function viewMuseum(id){
   const collage = works.filter(w => w.image && w.image.src && w.image.status === "pd").slice(0, 6);
   const kindred = VEN.filter(o => o.id !== id && !VENUE_SENTINELS[o.id] && (catByVenue[o.id] || []).length &&
     (o.city === v.city || o.country === v.country)).slice(0, 6);
+  /* the building photograph's credit. It is rendered on every museum page that
+     has a photograph, not only the ones whose hero shows it: 82 of the 103 heroes
+     are given over to a collage of the works instead, but the same photograph is
+     still this venue's cover everywhere else in the atlas. */
+  const photoCredit = note && note.photo ? creditLine(PCREDITS[id], "Photograph") : "";
   return `
   <div class="mu-hero">
     ${collage.length
@@ -1371,11 +1417,12 @@ function viewMuseum(id){
     <div class="mu-hero-body">
       ${crumbs([["Atlas",""],["Museums","museums"],[v.name]])}
       <h1 class="display">${esc(v.name)}</h1>
-      <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}${note && note.photo ? ` · <a href="${note.photo.page}" target="_blank" rel="noopener">photo via Wikimedia Commons</a>` : ""}</div>
+      <div class="mu-sub">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note && note.founded ? " · founded " + esc(note.founded) : ""}${v.type && v.type !== "museum" ? " · a " + esc(v.type) : ""}${note && note.photo && !photoCredit ? ` · <a href="${note.photo.page}" target="_blank" rel="noopener">photo via Wikimedia Commons</a>` : ""}</div>
       ${note ? `<div class="mu-hook">${esc(note.hook)}</div>` : ""}
       <div class="chips" style="margin-top:10px">${shareChip("p/museum/" + v.id + ".html")}</div>
     </div>
   </div>
+  ${photoCredit ? `<p class="img-credit mu-credit">${photoCredit}</p>` : ""}
   ${note && note.essay ? `<div class="mu-essay">${note.essay.split("\n\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
   <div class="stats-row">
     <div class="stat"><div class="num">${works.length}</div><div class="lbl">Works in the atlas</div></div>
@@ -1865,6 +1912,8 @@ function viewArtwork(id){
           ? `<a href="#/museum/${venue.id}">${esc(venue.name)}</a>` : esc(venue.name)) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
         ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>`
         : held ? "original image omitted under copyright" : "image not yet available"}</p>
+      ${hasImg && imageCredit(w.image.src)
+        ? `<p class="img-credit">${creditLine(imageCredit(w.image.src), "Image credit")}</p>` : ""}
       ${(listsByWork[w.id] || []).length ? `<div class="aw-lists"><span class="chip-label">In lists:</span> ${listsByWork[w.id].map(l =>
         `<a class="chip" href="#/list/${l.id}">${esc(l.title)}</a>`).join("")}</div>` : ""}
     </div>
@@ -2090,15 +2139,111 @@ function viewPrivacy(){
 
     <h2 class="sec-title">One third-party host: Wikimedia Commons images</h2>
     <p>Pigment displays artwork and museum photographs hosted on Wikimedia Commons, at <code>upload.wikimedia.org</code>. When a page shows one of these images, your browser requests it directly from Wikimedia's servers, not from Pigment — that request reaches Wikimedia with your IP address, under Wikimedia's own privacy policy, which Pigment does not control. Measured in this build: <strong>888 upload.wikimedia.org image URLs</strong> across the catalog, gallery and museum data, rendered as images at 18 places in the code, on most pages that show artwork or museum photographs — artist pages, artwork pages, museum pages, lists, and more.</p>
-    <p>Separately, the "image via Wikimedia Commons" / "photo via Wikimedia Commons" / "source" links placed next to individual images point to Wikimedia Commons and Wikipedia file or article pages (<code>commons.wikimedia.org</code>, <code>en.wikipedia.org</code>, and one <code>pt.wikipedia.org</code> page). Those are ordinary outbound links — your browser only contacts them if you click through.</p>
+    <p>Separately, the "image via Wikimedia Commons" / "source" / "file on Commons" links placed next to individual images point to Wikimedia Commons and Wikipedia file or article pages (<code>commons.wikimedia.org</code>, <code>en.wikipedia.org</code>, and one <code>pt.wikipedia.org</code> page), and the licence names in photo credits link to the licence deeds at <code>creativecommons.org</code> (plus one <code>flickr.com</code> "no known restrictions" statement). Those are ordinary outbound links — your browser only contacts them if you click through.</p>
 
     <h2 class="sec-title">Fonts are served locally</h2>
     <p>Pigment's typefaces, Playfair Display and Inter, are self-hosted from this site (<code>assets/fonts/</code>). No font provider is contacted when the site loads.</p>
 
     <h2 class="sec-title">Image credit</h2>
-    <p>Artwork and museum images throughout Pigment are sourced from Wikimedia Commons. Where available, the licence and photographer for an individual image are linked next to it. This page is the general credit for the collection as a whole.</p>
+    <p>Artwork and museum images throughout Pigment are sourced from Wikimedia Commons. Where a licence requires it, the photographer, the licence and the source file are named next to the image itself. <a href="#/credits">Credits</a> collects all of them in one place.</p>
 
     <p style="margin-top:26px"><a class="chip" href="#/">Back to the atlas</a></p>
+  </section>`;
+}
+
+/* ---------- the credits page (#/credits) ----------
+   The per-image credit next to each picture is the one the licence requires;
+   this page is the consolidated view of the same facts — every photographer in
+   the atlas in one place, plus the general credit to Wikimedia Commons. Counts
+   are computed from the registries rather than written down, so they cannot
+   drift away from what actually ships. */
+function shippedImageTitles(){
+  const seen = {};
+  CAT.forEach(w => {
+    if(!(w.image && w.image.src && w.image.status === "pd")) return;
+    const t = commonsTitle(w.image.src); if(t) seen[t] = 1;
+  });
+  const G = window.ARTWORKS || {};
+  Object.keys(G).forEach(aid => Object.keys(G[aid]).forEach(title => {
+    const t = commonsTitle(G[aid][title].img); if(t) seen[t] = 1;
+  }));
+  return Object.keys(seen);
+}
+/* file title → the works in the atlas that are that picture */
+function creditUsage(){
+  const use = {};
+  const add = (src, label, href) => {
+    const t = commonsTitle(src);
+    if(!t || !ICREDITS[t]) return;
+    const list = use[t] = use[t] || [];
+    if(!list.some(u => u.label === label)) list.push({ label, href });
+  };
+  CAT.forEach(w => {
+    if(!(w.image && w.image.src && w.image.status === "pd")) return;
+    const a = Ax[w.artistId];
+    add(w.image.src, w.title + (a ? " — " + a.name : ""), "#/artwork/" + w.id);
+  });
+  const G = window.ARTWORKS || {};
+  Object.keys(G).forEach(aid => {
+    const a = Ax[aid];
+    Object.keys(G[aid]).forEach(title =>
+      add(G[aid][title].img, title + (a ? " — " + a.name : ""), "#/artist/" + aid));
+  });
+  return use;
+}
+function viewCredits(){
+  document.title = "Credits — Pigment";
+  const venueIds = Object.keys(PCREDITS).filter(id => Vx[id]).sort((x, y) =>
+    (Vx[x].name || "").localeCompare(Vx[y].name || ""));
+  const venueRequired = venueIds.filter(id => PCREDITS[id].required).length;
+  const imageIds = Object.keys(ICREDITS).sort();
+  const usage = creditUsage();
+  const shippedTotal = shippedImageTitles().length;
+  const freeImages = Math.max(0, shippedTotal - imageIds.length);
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Attribution</div>
+    <h1 class="display">Credits</h1>
+    <p class="page-lede">Pigment is built on pictures other people took and shared. This page names them — every photographer whose licence asks to be named, and the archive that made the rest reachable at all.</p>
+  </div>
+  <section style="max-width:760px">
+    <h2 class="sec-title">Wikimedia Commons</h2>
+    <p>Every image in the atlas — the paintings and the buildings that hold them — comes from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>, the free media archive maintained by the Wikimedia Foundation and its volunteers. Pigment is not affiliated with Wikimedia; it is one of the many things Commons exists to make possible. Images load directly from Wikimedia's servers, as the <a href="#/privacy">Privacy</a> page explains.</p>
+    <p>Most of the paintings are old enough to be in the public domain, and the photographs of them are offered under public-domain or CC0 terms — no credit is required, and none of that is a legal clearance we claim on your behalf. Where a licence <em>does</em> ask for credit, the credit is rendered next to the picture, and repeated here.</p>
+  </section>
+
+  <section style="max-width:760px">
+    <h2 class="sec-title">Museum photographs <span class="count">${venueIds.length} buildings · ${venueRequired} under a licence requiring credit</span></h2>
+    <p class="page-lede" style="font-size:1rem">The photograph on each museum's page and card was taken by one of these people.</p>
+    <ul class="credit-list">
+      ${venueIds.map(id => `<li>
+        <a class="cr-what" href="#/museum/${id}">${esc(Vx[id].name)}</a>
+        <span class="img-credit">${creditLine(PCREDITS[id], "Photograph")}</span>
+      </li>`).join("")}
+    </ul>
+  </section>
+
+  <section style="max-width:760px">
+    <h2 class="sec-title">Artwork images under a licence <span class="count">${imageIds.length} of ${shippedTotal} images in the atlas</span></h2>
+    <p class="page-lede" style="font-size:1rem">Most reproductions here are public domain. These ${imageIds.length} are photographs somebody licensed for reuse on condition of credit — usually a picture taken in the room, of a fresco, a ceiling or a sculpture, where the photographer's own work is part of what you see. The remaining ${freeImages} carry no attribution condition.</p>
+    <ul class="credit-list">
+      ${imageIds.map(t => {
+        const users = usage[t] || [];
+        const what = users.length
+          ? users.slice(0, 2).map(u => `<a href="${u.href}">${esc(u.label)}</a>`).join(", ")
+          : esc(String(t).replace(/^File:/, "").replace(/_/g, " "));
+        return `<li>
+          <span class="cr-what">${what}</span>
+          <span class="img-credit">${creditLine(ICREDITS[t], "Image credit")}</span>
+        </li>`;
+      }).join("")}
+    </ul>
+  </section>
+
+  <section style="max-width:760px">
+    <h2 class="sec-title">Fonts</h2>
+    <p>Playfair Display and Inter are self-hosted under the SIL Open Font License 1.1 (see <code>assets/fonts/LICENSE.md</code>).</p>
+    <p style="margin-top:26px"><a class="chip" href="#/">Back to the atlas</a> <a class="chip" href="#/privacy">Privacy</a></p>
   </section>`;
 }
 
@@ -2172,6 +2317,7 @@ function route(){
     case "nations":     html = viewNations(); break;
     case "nation":      html = viewNation(id); break;
     case "privacy":     html = viewPrivacy(); break;
+    case "credits":     html = viewCredits(); break;
     default:            html = view404();
   }
   app.classList.remove("view-enter");
@@ -2246,10 +2392,14 @@ function openLightbox(img, caption, link){
     document.addEventListener("keydown", e => { if(e.key === "Escape") lb.classList.remove("open"); });
   }
   const big = img.replace(/\/(\d+)px-/, "/1280px-");
+  /* the enlarged view is where a gallery thumbnail becomes the image itself —
+     so it is where a licence-required credit has to appear (AC11/AC14) */
+  const credit = creditLine(imageCredit(img), "Image credit");
   lb.innerHTML = `<figure>
     <button class="lb-close" aria-label="Close">×</button>
     <img src="${big}" onerror="if(this.src!=='${img}')this.src='${img}'" alt="">
-    <figcaption>${caption}${link ? ` · <a href="${link}" target="_blank" rel="noopener">source</a>` : ""}</figcaption>
+    <figcaption>${caption}${link ? ` · <a href="${link}" target="_blank" rel="noopener">source</a>` : ""}${
+      credit ? `<span class="img-credit lb-credit">${credit}</span>` : ""}</figcaption>
   </figure>`;
   lb.classList.add("open");
 }

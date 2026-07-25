@@ -599,6 +599,36 @@ section{margin:46px 0}
 .aw-card .card-art img{width:100%;height:100%;object-fit:cover;display:block}
 .mini-card .mc-img{width:52px;height:38px;border-radius:7px;flex-shrink:0;object-fit:cover}
 
+/* ---------- photo credit (attribution, not decoration) ----------
+   Quiet secondary metadata: it must be legible and its links reachable in both
+   themes, but it never competes with the picture or the prose. --muted, not
+   --faint, so the line keeps its contrast on warm paper as well as on dark. */
+.img-credit{
+  font-size:.78rem;line-height:1.6;color:var(--muted);
+  letter-spacing:.02em;margin:0;
+}
+.img-credit a{color:var(--muted);text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:var(--line);transition:color .2s var(--ease),text-decoration-color .2s}
+.img-credit a:hover,.img-credit a:focus-visible{color:var(--gold2);text-decoration-color:var(--gold)}
+.mu-credit{margin:-4px 0 18px}
+.index-credit{margin-top:22px;max-width:74ch}
+#lightbox .lb-credit{display:block;margin-top:8px;font-style:normal;color:#b8b1a2}
+#lightbox .lb-credit a{color:#d9cfb6}
+#lightbox .lb-credit a:hover{color:var(--gold2)}
+
+/* the consolidated credits page (#/credits) */
+.credit-list{list-style:none;padding:0;margin:14px 0 0}
+.credit-list li{
+  padding:10px 0;border-top:1px solid var(--line2);
+  display:flex;flex-wrap:wrap;gap:2px 16px;align-items:baseline;
+}
+.credit-list li:first-child{border-top:0}
+.credit-list .cr-what{flex:1 1 240px;font-size:.95rem;color:var(--body-ink)}
+.credit-list .cr-what a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.credit-list .cr-what a:hover,.credit-list .cr-what a:focus-visible{color:var(--gold2)}
+.credit-list .img-credit{flex:1 1 280px}
+@media(max-width:640px){ .credit-list li{display:block} .credit-list .img-credit{margin-top:3px} }
+
 /* ---------- lightbox ---------- */
 #lightbox{
   position:fixed;inset:0;z-index:120;display:none;
