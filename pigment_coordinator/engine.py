@@ -4,7 +4,7 @@ from typing import Any, Dict, Tuple
 
 from .analysts import persist_analyst_packet, validate_analyst_packet
 from .errors import ConfigurationError, GateError, TransitionError
-from .gates import check_convergence, check_quality_gate, require_gate
+from .gates import check_build_gate, check_convergence, check_quality_gate, require_gate
 from .messages import persist_message, validate_message
 from .prompts import PHASE_INSTRUCTIONS, analyst_prompt, load_analyst_prompt, load_system_prompt, provider_prompt
 from .providers import Provider, ProviderRequest
@@ -241,6 +241,73 @@ class Coordinator:
             lines.extend(f"- {item}" for item in message["evidence"] or ["None recorded."])
             lines.extend(["", f"**Disposition:** `{message['workflow_state']}` -> `{message['next_state']}`", ""])
         atomic_write_text(task_dir / "decision-record.md", "\n".join(lines))
+
+    def ingest_build(self, task_id: str, message_path: Path, analyst_path: Path, branch: str, baseline: str) -> Dict[str, Any]:
+        """Route an implementation_report produced by a real workspace build.
+
+        Separate from `ingest` on purpose: deliberation messages are text and
+        may be routed as text, but a build claim must be corroborated by the
+        repository itself (isolated branch, commits beyond baseline, production
+        files actually changed) before the Coordinator will accept it.
+        """
+        state = self.store.load(task_id)
+        if state["workflow_state"] != "approved_for_build":
+            raise TransitionError(f"Build ingestion requires approved_for_build; task is at {state['workflow_state']}")
+        if not state.get("build_authorized"):
+            raise GateError("Build ingestion requires an authorized build")
+
+        require_gate("Build", check_build_gate(self.repo_root, branch, baseline))
+
+        message = read_json(Path(message_path))
+        expected = {
+            "task_id": state["task_id"],
+            "project": "pigment",
+            "round": state["round"],
+            "sender": "claude-synthesis-lead",
+            "recipient": "coordinator",
+            "message_type": "implementation_report",
+            "workflow_state": "building",
+            "next_state": "internal_review",
+        }
+        validate_message(message, expected)
+
+        packet = read_json(Path(analyst_path))
+        validate_analyst_packet(
+            packet,
+            {
+                "task_id": state["task_id"],
+                "project": "pigment",
+                "round": state["round"],
+                "analyst_id": "synthesis-liaison",
+                "pole": "claude-synthesis-build",
+                "analysis_mode": "build_review",
+            },
+        )
+
+        state["workflow_state"] = "building"
+        self.store.record_event(state, "build_started", {"branch": branch, "baseline": baseline})
+        state["message_count"] += 1
+        state["last_message_type"] = message["message_type"]
+        state["round"] = message["round"]
+        state["workflow_state"] = message["next_state"]
+        artifact = persist_message(self.store.task_dir(task_id), state["message_count"], message)
+        state["analyst_count"] = state.get("analyst_count", 0) + 1
+        persist_analyst_packet(self.store.task_dir(task_id), state["analyst_count"], packet)
+        self._refresh_decision_record(task_id)
+        self.store.record_event(
+            state,
+            "build_ingested",
+            {
+                "branch": branch,
+                "baseline": baseline,
+                "source": str(message_path),
+                "message_sha256": digest(message),
+                "artifact": str(artifact.relative_to(self.repo_root)),
+                "analyst_sha256": digest(packet),
+            },
+        )
+        self.store.save(state)
+        return state
 
     def advance(self, task_id: str) -> Dict[str, Any]:
         state = self.store.load(task_id)

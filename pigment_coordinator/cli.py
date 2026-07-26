@@ -76,6 +76,16 @@ def parser() -> argparse.ArgumentParser:
     ingest.add_argument("message", help="Path to the message JSON file")
     ingest.add_argument("--analyst", required=True, help="Path to the liaison analyst packet JSON file")
 
+    ingest_build = commands.add_parser(
+        "ingest-build",
+        help="Route an implementation_report, corroborated against the repository (branch, commits, production diff)",
+    )
+    ingest_build.add_argument("task_id")
+    ingest_build.add_argument("message", help="Path to the implementation_report JSON file")
+    ingest_build.add_argument("--analyst", required=True, help="Path to the liaison build_review packet JSON file")
+    ingest_build.add_argument("--branch", required=True, help="Isolated build branch that must carry the work")
+    ingest_build.add_argument("--baseline", required=True, help="Commit the branch must descend from")
+
     for name, help_text in (
         ("advance", "Run exactly one deterministic transition"),
         ("run", "Run until a human or configuration pause"),
@@ -117,6 +127,14 @@ def main(argv=None) -> int:
             )
         elif args.command == "ingest":
             state = coordinator.ingest(args.task_id, Path(args.message), Path(args.analyst))
+        elif args.command == "ingest-build":
+            state = coordinator.ingest_build(
+                args.task_id,
+                Path(args.message),
+                Path(args.analyst),
+                args.branch,
+                args.baseline,
+            )
         elif args.command == "advance":
             state = coordinator.advance(args.task_id)
         elif args.command == "run":

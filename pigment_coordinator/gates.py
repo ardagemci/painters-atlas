@@ -77,6 +77,65 @@ def check_quality_gate(repo_root: Path, task_dir: Path, validator_command: str =
     return failures
 
 
+PRODUCTION_PATHS = ("js", "css", "index.html", "p", "tools", "sitemap.xml", "robots.txt")
+
+
+def _git(repo_root: Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        ["git", *args],
+        cwd=str(repo_root),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        timeout=60,
+    )
+
+
+def check_build_gate(repo_root: Path, branch: str, baseline: str) -> List[str]:
+    """Verify a build actually happened in this repository.
+
+    The Coordinator must never accept a text artifact as proof of a build.
+    An implementation_report is only routable when the named isolated branch
+    exists, carries commits beyond the frozen baseline, and those commits
+    actually touched production files.
+    """
+    failures: List[str] = []
+    if not branch.strip():
+        failures.append("build ingestion requires the isolated branch name")
+        return failures
+    if not baseline.strip():
+        failures.append("build ingestion requires the baseline commit")
+        return failures
+
+    resolved = _git(repo_root, "rev-parse", "--verify", f"{branch}^{{commit}}")
+    if resolved.returncode != 0:
+        failures.append(f"isolated branch does not exist in this repository: {branch}")
+        return failures
+
+    base = _git(repo_root, "rev-parse", "--verify", f"{baseline}^{{commit}}")
+    if base.returncode != 0:
+        failures.append(f"baseline commit does not exist in this repository: {baseline}")
+        return failures
+
+    ancestor = _git(repo_root, "merge-base", "--is-ancestor", baseline, branch)
+    if ancestor.returncode != 0:
+        failures.append(f"{branch} does not descend from baseline {baseline}")
+        return failures
+
+    commits = _git(repo_root, "rev-list", "--count", f"{baseline}..{branch}")
+    if commits.returncode != 0 or not commits.stdout.strip().isdigit() or int(commits.stdout.strip()) == 0:
+        failures.append(f"{branch} carries no commits beyond baseline {baseline}")
+        return failures
+
+    touched = _git(repo_root, "diff", "--name-only", baseline, branch, "--", *PRODUCTION_PATHS)
+    if touched.returncode != 0 or not touched.stdout.strip():
+        failures.append(
+            f"{branch} changed no production files ({', '.join(PRODUCTION_PATHS)}) — "
+            "a text artifact cannot be accepted as a build"
+        )
+    return failures
+
+
 def require_gate(name: str, failures: List[str]) -> None:
     if failures:
         raise GateError(f"{name} blocked: " + "; ".join(failures))

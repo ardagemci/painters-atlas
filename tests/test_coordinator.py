@@ -300,6 +300,86 @@ class CoordinatorTest(unittest.TestCase):
         with self.assertRaises(TransitionError):
             self.coordinator.ingest(task_id, self.write_json("valid.json", valid), audit)
 
+    def git_repo_with_build(self, touch_production=True):
+        """A throwaway git repo: baseline commit, then a branch that may or may
+        not touch production files."""
+        import subprocess
+
+        root = self.repo
+        def git(*args):
+            return subprocess.run(["git", *args], cwd=str(root), text=True,
+                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        git("init", "-q")
+        git("config", "user.email", "test@example.com")
+        git("config", "user.name", "Test")
+        (root / "README.md").write_text("baseline", encoding="utf-8")
+        git("add", "README.md")
+        git("commit", "-q", "-m", "baseline")
+        baseline = git("rev-parse", "HEAD").stdout.strip()
+        git("checkout", "-q", "-b", "build-branch")
+        if touch_production:
+            (root / "js").mkdir(exist_ok=True)
+            (root / "js" / "app.js").write_text("// built\n", encoding="utf-8")
+            git("add", "js/app.js")
+        else:
+            (root / "notes.txt").write_text("just prose\n", encoding="utf-8")
+            git("add", "notes.txt")
+        git("commit", "-q", "-m", "work")
+        return baseline
+
+    def build_message(self, task_id, round_number=1):
+        message = self.valid_message()
+        message.update({
+            "task_id": task_id, "round": round_number,
+            "message_type": "implementation_report",
+            "sender": "claude-synthesis-lead", "recipient": "coordinator",
+            "workflow_state": "building", "next_state": "internal_review",
+        })
+        return message
+
+    def test_build_gate_refuses_a_text_only_build_claim(self):
+        from pigment_coordinator.gates import check_build_gate
+
+        baseline = self.git_repo_with_build(touch_production=False)
+        failures = check_build_gate(self.repo, "build-branch", baseline)
+        self.assertTrue(any("changed no production files" in f for f in failures))
+
+        self.assertTrue(check_build_gate(self.repo, "no-such-branch", baseline))
+        self.assertTrue(check_build_gate(self.repo, "build-branch", "0" * 40))
+        self.assertTrue(check_build_gate(self.repo, "", baseline))
+
+    def test_ingest_build_requires_repository_corroboration(self):
+        task_id = "PIG-907"
+        baseline = self.git_repo_with_build(touch_production=True)
+        self.adopt_fixture(task_id)
+        self.coordinator.adopt_task(task_id, "Build recovery", baseline)
+
+        message = self.write_json("build.json", self.build_message(task_id))
+        analyst = self.write_json("build-audit.json", self.analyst_fixture(
+            task_id, "synthesis-liaison", "claude-synthesis-build", mode="build_review"))
+
+        # Wrong state: the task is at intake, not approved_for_build.
+        with self.assertRaises(TransitionError):
+            self.coordinator.ingest_build(task_id, message, analyst, "build-branch", baseline)
+
+        state = self.coordinator.status(task_id)
+        state["workflow_state"] = "approved_for_build"
+        state["build_authorized"] = True
+        self.coordinator.store.save(state)
+
+        # A branch that exists but carries no production change is refused.
+        with self.assertRaises(GateError):
+            self.coordinator.ingest_build(task_id, message, analyst, "main", baseline)
+
+        state = self.coordinator.ingest_build(task_id, message, analyst, "build-branch", baseline)
+        self.assertEqual(state["workflow_state"], "internal_review")
+        self.assertEqual(state["last_message_type"], "implementation_report")
+        task_dir = self.repo / "protocol" / "tasks" / task_id
+        self.assertTrue((task_dir / "build-evidence-report.md").exists())
+        events = [e["type"] for e in state["events"]]
+        self.assertIn("build_started", events)
+        self.assertIn("build_ingested", events)
+
     def provider_request(self):
         return ProviderRequest(
             system_prompt="system",
