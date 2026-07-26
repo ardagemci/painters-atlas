@@ -168,6 +168,12 @@
      clears the 3.0 large-text floor. */
   --hero-veil:.80;
   --hero-veil-edge:.30;
+  /* museum-band scrim, see .mu-hero-body. The band is the one place in the
+     atlas where text paints over a Wikimedia PHOTOGRAPH, so the veil is bounded
+     against a worst-case fully opaque photograph pixel — WHITE here, where the
+     ink is light. --muted, the darkest rung that paints in the band once the
+     crumbs take the cover rung, needs .864; .88 clears it at 4.75. (AC19/F-V1) */
+  --mu-veil:.88;
   --serif:"Playfair Display","Didot","Bodoni 72",Georgia,serif;
   --sans:"Inter","Avenir Next","Segoe UI",system-ui,sans-serif;
   --ease:cubic-bezier(.22,.9,.3,1);
@@ -206,6 +212,11 @@ html[data-theme="light"]{
      #81632b, the lightest title stop, clears 3.0. */
   --hero-veil:.86;
   --hero-veil-edge:.34;
+  /* the same museum-band veil, bounded against a worst-case fully opaque BLACK
+     photograph pixel, where light's dark ink is weakest. --muted needs .834
+     here; the shared .88 clears it at 5.03. One value serves both themes, so
+     the band's geometry is identical in each — only the token is per-theme. */
+  --mu-veil:.88;
 }
 html[data-theme="light"] #bg-canvas{opacity:.6}
 /* The light hero is painted over the generative cover, whose pixels are mixed
@@ -1207,11 +1218,60 @@ section{margin:46px 0}
 .mu-collage.c1,.mu-collage.c2{grid-template-columns:repeat(2,1fr)}
 .mu-collage.c4{grid-template-columns:repeat(2,1fr)}
 .mu-collage img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
-.mu-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.18),rgba(var(--bg-rgb),.94) 80%)}
-.mu-hero-body{position:relative;padding:34px 38px 26px;width:100%}
+/* .mu-shade no longer carries any contrast duty — the veil below does — so it
+   drops to a light tie between photograph and page. It used to ramp to .94 by
+   80 % of .mu-hero, which put the photograph's own presence at the mercy of the
+   hero's height while still leaving the text block short of its floor. */
+.mu-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30))}
+/* The veil sits on the TEXT BLOCK, not on the hero box, which is the whole
+   point: .mu-shade's alpha ramped as a percentage of .mu-hero, while
+   .mu-hero-body is bottom-anchored and its height varies with the venue name,
+   the hook and the founding year — so the same element landed at a different
+   alpha on every venue (.37–.51 where it needed .864). Anchored here, every
+   glyph in the band sits at exactly --mu-veil on all 104 venues, at every
+   viewport. The 18 px feather is shorter than the smallest top padding in the
+   band (22 px at ≤700 px), so no glyph can ever fall inside the ramp; above it
+   the photograph keeps far more of itself than the old .94 ramp left. */
+.mu-hero-body{
+  position:relative;padding:34px 38px 26px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--mu-veil)) 18px,
+    rgba(var(--bg-rgb),var(--mu-veil)) 100%);
+}
 .mu-hero-body h1{margin-bottom:.15em}
+/* Crumbs in the band paint over a photograph, so they take the rung the artist
+   hero already takes over its cover (.hero-content .breadcrumbs): --faint needs
+   a backdrop alpha of .93 dark / .98 light and cannot be carried by any veil
+   that leaves the photograph visible, while --muted and --body-ink clear at
+   --mu-veil. Outside the band .breadcrumbs keeps --faint on opaque page paint. */
+.mu-hero-body .breadcrumbs,
+.mu-hero-body .breadcrumbs .sep{color:var(--muted)}
+.mu-hero-body .breadcrumbs a{color:var(--body-ink)}
+.mu-hero-body .breadcrumbs a:hover{color:var(--gold2)}
 .mu-sub{color:var(--muted);font-size:.95rem;letter-spacing:.04em}
 .mu-hook{font-family:var(--serif);font-style:italic;color:var(--gold2);font-size:1.18rem;margin-top:10px}
+/* Light's --gold2 (#81632b) is the one token in the band that no usable veil can
+   carry: over a worst-case opaque photograph pixel it needs .975 to clear 4.5,
+   i.e. an opaque band. Inside the band light gold drops to #6b5122 — already the
+   light home-hero title's darker stop, not a new colour — which clears at 4.82,
+   and its hover to #4a3616 (7.44), that gradient's darkest stop. The global
+   a:hover{color:#fff} would otherwise paint white on warm paper here. Dark's
+   --gold2 needs only .69 and is left alone. (AC19 / F-V1) */
+html[data-theme="light"] .mu-hook,
+html[data-theme="light"] .mu-sub a,
+html[data-theme="light"] .mu-hero-body .breadcrumbs a:hover{color:#6b5122}
+html[data-theme="light"] .mu-sub a:hover{color:#4a3616}
+/* The route's programmatic focus ring (#app h1:focus-visible, 2px solid --gold)
+   lands on the veil, not on page paint, and light's --gold #9e7938 reads only
+   2.60 against the veiled bound — under the 3.0 non-text floor of WCAG 1.4.11.
+   It is not a regression (over a dark photograph the old thin scrim put the same
+   ring near 1.15) but the veil makes it deterministic, so it is fixed here with
+   the band gold this unit already introduced: 4.82. Scoped to the band — on
+   ordinary light page paint the shipped ring reads 3.40 and is left alone. Dark
+   needs nothing (6.19). The #app id is carried to outrank #app h1:focus-visible.
+   (AC19 / F-V1) */
+html[data-theme="light"] #app .mu-hero-body h1:focus-visible{outline-color:#6b5122}
 .mu-essay{max-width:74ch;margin:0 0 14px;font-size:1.05rem;line-height:1.85;color:var(--body-ink)}
 .mu-essay p:first-child::first-letter{
   font-family:var(--serif);font-size:3.3em;float:left;line-height:.82;
