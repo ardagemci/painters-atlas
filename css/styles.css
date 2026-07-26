@@ -162,6 +162,12 @@
   --shadow:0 18px 50px rgba(0,0,0,.55);
   --scroll1:#2c2820;
   --scroll2:#41392a;
+  /* home-hero scrim, see .home-hero .hero-shade. Dark ink is light ink, so the
+     worst reachable backdrop is a fully opaque WHITE cover pixel: the veil has
+     to pull that down to rgb(61,60,59) before --gold, the darkest title stop,
+     clears the 3.0 large-text floor. */
+  --hero-veil:.80;
+  --hero-veil-edge:.30;
   --serif:"Playfair Display","Didot","Bodoni 72",Georgia,serif;
   --sans:"Inter","Avenir Next","Segoe UI",system-ui,sans-serif;
   --ease:cubic-bezier(.22,.9,.3,1);
@@ -190,33 +196,27 @@ html[data-theme="light"]{
   --shadow:0 16px 44px rgba(94,74,40,.22);
   --scroll1:#d8cfba;
   --scroll2:#c2b696;
+  /* light ink is dark ink, so the worst reachable backdrop is a fully opaque
+     BLACK cover pixel; the veil has to lift that to rgb(208,203,192) before
+     #81632b, the lightest title stop, clears 3.0. */
+  --hero-veil:.86;
+  --hero-veil-edge:.34;
 }
 html[data-theme="light"] #bg-canvas{opacity:.6}
 /* The light hero is painted over the generative cover, whose pixels are mixed
    fresh every visit — so it is bounded against a worst-case fully opaque BLACK
-   cover pixel, not against any sampled cover. With #bg-canvas at opacity .6 and
-   an effective paper alpha of .72 over the text block, the blend factor is
-   k = .6 * (1 - .72) = .168 and the worst reachable backdrop is rgb(201,196,186).
-   Against that: the three stops below score 6.62 / 3.23 / 4.29 (large-text floor
-   3.0) and the small text raised at .home-hero-content scores 8.66 / 6.28
-   (floor 4.5). The lightest stop #81632b is the light --gold2, so the hero and
-   the link colour agree. Dark is untouched; it measures 6.20. (AC19 / F-2) */
+   cover pixel, not against any sampled cover. The lightest stop #81632b is the
+   light --gold2, so the hero and the link colour agree. Bound and floors are on
+   .home-hero .hero-shade, where the veil is set. (AC19 / F-2 / V2-1 / V2-2) */
 html[data-theme="light"] .home-hero-content h1{
   background:linear-gradient(92deg,#4a3616,#81632b 38%,#4a3616 62%,#6b5122);
   background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;
 }
-/* paper haze shaped to the title block; free to thin at the frame so the cover
-   still reads there. #bg-canvas{opacity:.6} above is deliberately unchanged. */
-html[data-theme="light"] .home-hero .hero-shade{
-  background:radial-gradient(ellipse 96% 74% at 50% 42%,
-    rgba(var(--bg-rgb),.84) 0%, rgba(var(--bg-rgb),.74) 62%,
-    rgba(var(--bg-rgb),.38) 84%, rgba(var(--bg-rgb),.66) 100%);
-}
 /* a scrim cannot carry 4.5:1 small text in the worst case without effectively
-   hiding the cover, so the hero's small text goes up one rung in light instead */
+   hiding the cover, so the hero's small text goes up one rung in light instead.
+   (The cover credit is lifted in BOTH themes — see .home-hero-content .footer-note.) */
 html[data-theme="light"] .home-hero-content .kicker{color:var(--ink)}
-html[data-theme="light"] .home-hero-content .footer-note{color:var(--body-ink)}
 /* the credit's painter link is text inside the same block, and a{}'s --gold2
    only reaches 3.23 against the bounding backdrop (a:hover's #fff, 1.73). It
    takes the credit's own ink and carries its affordance on the underline, the
@@ -743,8 +743,34 @@ section{margin:46px 0}
   text-align:center;margin-bottom:40px;
 }
 .home-hero canvas{position:absolute;inset:0;width:100%;height:100%}
-.home-hero .hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(var(--bg-rgb),.25),rgba(var(--bg-rgb),.88) 88%)}
+/* The layer behind this hero's text is NOT #bg-canvas (opacity .5/.6, and it is
+   outside .home-hero): it is the in-hero generative cover canvas at opacity 1,
+   verified in the DOM. So the only thing between a cover pixel and a glyph is
+   this scrim, and the composite backdrop is
+     B = cover * (1 - veil) + page * veil.
+   The covers regenerate every visit, so the veil is bounded against a worst-case
+   fully opaque cover pixel — white in dark (where the ink is light), black in
+   light (where the ink is dark) — not against any sampled cover.
+   Geometry: radii of 100 % of the box put the whole of .home-hero-content inside
+   the plateau at every viewport measured (worst normalised radius .58 at 390 px,
+   .49 at 1440 px), while the corners reach r = .707 and take ~23 % of the way to
+   --hero-veil-edge, so the cover still reads at the rounded frame.
+   Bound at the plateau — dark veil .80 / light veil .86:
+     title stops   dark 4.65 / 6.20 / 8.27 · light 6.62 / 3.46 / 4.60   floor 3.0
+     kicker        dark --gold2 6.84       · light --ink 9.27           floor 4.5
+     lede, credit  dark --body-ink 7.25    · light --body-ink 6.73      floor 4.5
+   (AC19 · V2-1 dark P1, V2-2 light margin) */
+.home-hero .hero-shade{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 100% 100% at 50% 50%,
+    rgba(var(--bg-rgb),var(--hero-veil)) 0%,
+    rgba(var(--bg-rgb),var(--hero-veil)) 62%,
+    rgba(var(--bg-rgb),var(--hero-veil-edge)) 100%);
+}
 .home-hero-content{position:relative;padding:60px 24px}
+/* --faint cannot reach 4.5 under any veil that leaves the cover visible (it needs
+   an alpha of .93), so the cover credit takes the body rung in both themes. */
+.home-hero-content .footer-note{color:var(--body-ink)}
 .home-hero-content .kicker{
   font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;
 }
