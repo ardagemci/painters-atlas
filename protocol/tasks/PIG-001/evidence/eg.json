@@ -1,0 +1,256 @@
+{
+ "E": [
+  {
+   "route": "#/museums",
+   "live": [],
+   "focus": [
+    {
+     "sel": "h1.display",
+     "tabindex": "-1",
+     "text": "Museums",
+     "role": null,
+     "label": null
+    }
+   ],
+   "active": "h1.display|tabindex=-1|Museums",
+   "liveEls": 0,
+   "h1": "Museums",
+   "title": "Museums \u2014 Pigment"
+  },
+  {
+   "route": "#/timeline",
+   "live": [],
+   "focus": [
+    {
+     "sel": "h1.display",
+     "tabindex": "-1",
+     "text": "The grand timeline",
+     "role": null,
+     "label": null
+    }
+   ],
+   "active": "h1.display|tabindex=-1|The grand timeline",
+   "liveEls": 0,
+   "h1": "The grand timeline",
+   "title": "Timeline \u2014 Pigment"
+  },
+  {
+   "route": "#/palette",
+   "live": [],
+   "focus": [
+    {
+     "sel": "h1.display",
+     "tabindex": "-1",
+     "text": "Find your palette.",
+     "role": null,
+     "label": null
+    }
+   ],
+   "active": "h1.display|tabindex=-1|Find your palette.",
+   "liveEls": 0,
+   "h1": "Find your palette.",
+   "title": "Find your palette \u2014 Pigment"
+  },
+  {
+   "route": "#/credits",
+   "live": [],
+   "focus": [
+    {
+     "sel": "h1.display",
+     "tabindex": "-1",
+     "text": "Credits",
+     "role": null,
+     "label": null
+    }
+   ],
+   "active": "h1.display|tabindex=-1|Credits",
+   "liveEls": 0,
+   "h1": "Credits",
+   "title": "Credits \u2014 Pigment"
+  },
+  {
+   "route": "#/no-such-page",
+   "live": [],
+   "focus": [
+    {
+     "sel": "h1",
+     "tabindex": "-1",
+     "text": "Blank canvas",
+     "role": null,
+     "label": null
+    }
+   ],
+   "active": "h1|tabindex=-1|Blank canvas",
+   "liveEls": 0,
+   "h1": "Blank canvas",
+   "title": "Lost \u2014 Pigment"
+  }
+ ],
+ "G_resources": {
+  "hosts": {
+   "localhost:8421": 38,
+   "upload.wikimedia.org": 74
+  },
+  "total": 112,
+  "bad": [],
+  "statusSupported": true,
+  "errors": [],
+  "warnings": []
+ },
+ "G_images": [
+  {
+   "route": "#/",
+   "n": 519,
+   "b": 0
+  },
+  {
+   "route": "#/artists",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/timeline",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/influences",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/daily",
+   "n": 1,
+   "b": 0
+  },
+  {
+   "route": "#/lists",
+   "n": 12,
+   "b": 0
+  },
+  {
+   "route": "#/palette",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/taste",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/museums",
+   "n": 104,
+   "b": 0
+  },
+  {
+   "route": "#/explore",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/movements",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/techniques",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/eras",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/nations",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/privacy",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/credits",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/no-such-page",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/list/paintings-that-still-scare-us",
+   "n": 13,
+   "b": 0
+  },
+  {
+   "route": "#/museum/met",
+   "n": 28,
+   "b": 0
+  },
+  {
+   "route": "#/artist/duccio",
+   "n": 3,
+   "b": 0
+  },
+  {
+   "route": "#/movement/renaissance",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/technique/oil-painting",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/era/14th-century",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/nation/france",
+   "n": 0,
+   "b": 0
+  },
+  {
+   "route": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJhZG1pcmF0aW9ucyI6W10sIm5vdEZvck1lIjpbXSwic2VlbiI6W10sIndhbnRUb1NlZSI6W10sInNhdmVkIjpbXSwicHJvYmVzIjpbXSwicXVpeiI6eyJhbnN3ZXJzIjp7fSwiYXQiOm51bGx9LCJwYWxldHRlIjp7InRvbmVzIjpbXX0sInBlcnNvbmEiOnt9LCJ0YXN0ZVZlY3RvciI6e30sIm1pbGVzdG9uZXMiOnt9LCJza2lwcGVkIjpbXSwiZGVja1NlZW4iOltdLCJjbHVzdGVycyI6W119",
+   "n": 0,
+   "b": 0
+  }
+ ],
+ "G_cdp_console": [],
+ "credits": {
+  "museum-louvre": {
+   "count": 1,
+   "texts": [
+    "Photograph: Benh LIEU SONG (Flickr) \u00b7 CC BY-SA 3.0 \u00b7 file on Commons"
+   ],
+   "links": [
+    [
+     "noopener license :: https://creativecommons.org/licenses/by-sa/3.0",
+     "noopener :: https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg"
+    ]
+   ],
+   "rawLeak": false
+  },
+  "artwork-david": {
+   "count": 1,
+   "texts": [
+    "Image credit: J\u00f6rg Bittner Unna \u00b7 CC BY 3.0 \u00b7 file on Commons"
+   ],
+   "links": [
+    [
+     "noopener license :: https://creativecommons.org/licenses/by/3.0",
+     "noopener :: https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.j"
+    ]
+   ],
+   "rawLeak": false
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "noticeUp": true,
+ "chip": {
+  "x": 713,
+  "y": 846,
+  "label": "Open the Taste Passport"
+ },
+ "afterClick": {
+  "hash": "#/taste",
+  "title": "Your taste \u2014 Pigment",
+  "h1": "figurative + calm",
+  "focus": "H1.display",
+  "admirationsShown": true
+ },
+ "passportIntact": 1
+}

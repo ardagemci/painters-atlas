@@ -19,7 +19,7 @@
   "slug": "home",
   "vp": "desktop-1440x900",
   "png": "home__desktop-1440x900__dark.png",
-  "bytes": 497521,
+  "bytes": 336134,
   "ASSERT": "PASS"
  },
  {
@@ -42,7 +42,7 @@
   "slug": "artists",
   "vp": "desktop-1440x900",
   "png": "artists__desktop-1440x900__dark.png",
-  "bytes": 601916,
+  "bytes": 595529,
   "ASSERT": "PASS"
  },
  {
@@ -65,7 +65,7 @@
   "slug": "artist-leonardo",
   "vp": "desktop-1440x900",
   "png": "artist-leonardo__desktop-1440x900__dark.png",
-  "bytes": 477188,
+  "bytes": 513825,
   "ASSERT": "PASS"
  },
  {
@@ -88,7 +88,7 @@
   "slug": "artwork-david",
   "vp": "desktop-1440x900",
   "png": "artwork-david__desktop-1440x900__dark.png",
-  "bytes": 388310,
+  "bytes": 355815,
   "ASSERT": "PASS"
  },
  {
@@ -111,7 +111,7 @@
   "slug": "explore",
   "vp": "desktop-1440x900",
   "png": "explore__desktop-1440x900__dark.png",
-  "bytes": 281502,
+  "bytes": 268958,
   "ASSERT": "PASS"
  },
  {
@@ -134,7 +134,7 @@
   "slug": "timeline",
   "vp": "desktop-1440x900",
   "png": "timeline__desktop-1440x900__dark.png",
-  "bytes": 232054,
+  "bytes": 236650,
   "ASSERT": "PASS"
  },
  {
@@ -157,7 +157,7 @@
   "slug": "influences",
   "vp": "desktop-1440x900",
   "png": "influences__desktop-1440x900__dark.png",
-  "bytes": 324473,
+  "bytes": 299922,
   "ASSERT": "PASS"
  },
  {
@@ -180,7 +180,7 @@
   "slug": "museums",
   "vp": "desktop-1440x900",
   "png": "museums__desktop-1440x900__dark.png",
-  "bytes": 899091,
+  "bytes": 935547,
   "ASSERT": "PASS"
  },
  {
@@ -203,7 +203,7 @@
   "slug": "museum-louvre",
   "vp": "desktop-1440x900",
   "png": "museum-louvre__desktop-1440x900__dark.png",
-  "bytes": 800363,
+  "bytes": 769860,
   "ASSERT": "PASS"
  },
  {
@@ -226,7 +226,7 @@
   "slug": "lists",
   "vp": "desktop-1440x900",
   "png": "lists__desktop-1440x900__dark.png",
-  "bytes": 1008524,
+  "bytes": 1019737,
   "ASSERT": "PASS"
  },
  {
@@ -249,7 +249,7 @@
   "slug": "palette",
   "vp": "desktop-1440x900",
   "png": "palette__desktop-1440x900__dark.png",
-  "bytes": 274228,
+  "bytes": 266322,
   "ASSERT": "PASS"
  },
  {
@@ -272,7 +272,7 @@
   "slug": "taste",
   "vp": "desktop-1440x900",
   "png": "taste__desktop-1440x900__dark.png",
-  "bytes": 222458,
+  "bytes": 291283,
   "ASSERT": "PASS"
  },
  {
@@ -295,7 +295,7 @@
   "slug": "daily",
   "vp": "desktop-1440x900",
   "png": "daily__desktop-1440x900__dark.png",
-  "bytes": 698383,
+  "bytes": 641851,
   "ASSERT": "PASS"
  },
  {
@@ -318,7 +318,7 @@
   "slug": "privacy",
   "vp": "desktop-1440x900",
   "png": "privacy__desktop-1440x900__dark.png",
-  "bytes": 434770,
+  "bytes": 421707,
   "ASSERT": "PASS"
  },
  {
@@ -341,7 +341,7 @@
   "slug": "credits",
   "vp": "desktop-1440x900",
   "png": "credits__desktop-1440x900__dark.png",
-  "bytes": 399631,
+  "bytes": 369522,
   "ASSERT": "PASS"
  },
  {
@@ -364,7 +364,7 @@
   "slug": "invalid-route",
   "vp": "desktop-1440x900",
   "png": "invalid-route__desktop-1440x900__dark.png",
-  "bytes": 218618,
+  "bytes": 271757,
   "ASSERT": "PASS"
  },
  {
@@ -375,9 +375,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -387,7 +387,7 @@
   "slug": "home",
   "vp": "mobile-390x844",
   "png": "home__mobile-390x844__dark.png",
-  "bytes": 214176,
+  "bytes": 118989,
   "ASSERT": "PASS"
  },
  {
@@ -398,9 +398,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -410,7 +410,7 @@
   "slug": "artists",
   "vp": "mobile-390x844",
   "png": "artists__mobile-390x844__dark.png",
-  "bytes": 148807,
+  "bytes": 168444,
   "ASSERT": "PASS"
  },
  {
@@ -421,9 +421,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -433,7 +433,7 @@
   "slug": "artist-leonardo",
   "vp": "mobile-390x844",
   "png": "artist-leonardo__mobile-390x844__dark.png",
-  "bytes": 164626,
+  "bytes": 212023,
   "ASSERT": "PASS"
  },
  {
@@ -444,9 +444,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -456,7 +456,7 @@
   "slug": "artwork-david",
   "vp": "mobile-390x844",
   "png": "artwork-david__mobile-390x844__dark.png",
-  "bytes": 194097,
+  "bytes": 245897,
   "ASSERT": "PASS"
  },
  {
@@ -467,9 +467,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -479,7 +479,7 @@
   "slug": "explore",
   "vp": "mobile-390x844",
   "png": "explore__mobile-390x844__dark.png",
-  "bytes": 129086,
+  "bytes": 116222,
   "ASSERT": "PASS"
  },
  {
@@ -490,9 +490,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -502,7 +502,7 @@
   "slug": "timeline",
   "vp": "mobile-390x844",
   "png": "timeline__mobile-390x844__dark.png",
-  "bytes": 106678,
+  "bytes": 155510,
   "ASSERT": "PASS"
  },
  {
@@ -513,9 +513,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -525,7 +525,7 @@
   "slug": "influences",
   "vp": "mobile-390x844",
   "png": "influences__mobile-390x844__dark.png",
-  "bytes": 117750,
+  "bytes": 117119,
   "ASSERT": "PASS"
  },
  {
@@ -536,9 +536,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -548,7 +548,7 @@
   "slug": "museums",
   "vp": "mobile-390x844",
   "png": "museums__mobile-390x844__dark.png",
-  "bytes": 206251,
+  "bytes": 208175,
   "ASSERT": "PASS"
  },
  {
@@ -559,9 +559,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -571,7 +571,7 @@
   "slug": "museum-louvre",
   "vp": "mobile-390x844",
   "png": "museum-louvre__mobile-390x844__dark.png",
-  "bytes": 206959,
+  "bytes": 282268,
   "ASSERT": "PASS"
  },
  {
@@ -582,9 +582,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -594,7 +594,7 @@
   "slug": "lists",
   "vp": "mobile-390x844",
   "png": "lists__mobile-390x844__dark.png",
-  "bytes": 218690,
+  "bytes": 258071,
   "ASSERT": "PASS"
  },
  {
@@ -605,9 +605,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -617,7 +617,7 @@
   "slug": "palette",
   "vp": "mobile-390x844",
   "png": "palette__mobile-390x844__dark.png",
-  "bytes": 93306,
+  "bytes": 135017,
   "ASSERT": "PASS"
  },
  {
@@ -628,9 +628,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -640,7 +640,7 @@
   "slug": "taste",
   "vp": "mobile-390x844",
   "png": "taste__mobile-390x844__dark.png",
-  "bytes": 129262,
+  "bytes": 129009,
   "ASSERT": "PASS"
  },
  {
@@ -651,9 +651,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -663,7 +663,7 @@
   "slug": "daily",
   "vp": "mobile-390x844",
   "png": "daily__mobile-390x844__dark.png",
-  "bytes": 207944,
+  "bytes": 301612,
   "ASSERT": "PASS"
  },
  {
@@ -674,9 +674,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -686,7 +686,7 @@
   "slug": "privacy",
   "vp": "mobile-390x844",
   "png": "privacy__mobile-390x844__dark.png",
-  "bytes": 153842,
+  "bytes": 171316,
   "ASSERT": "PASS"
  },
  {
@@ -697,9 +697,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -709,7 +709,7 @@
   "slug": "credits",
   "vp": "mobile-390x844",
   "png": "credits__mobile-390x844__dark.png",
-  "bytes": 122462,
+  "bytes": 187594,
   "ASSERT": "PASS"
  },
  {
@@ -720,9 +720,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
@@ -732,7 +732,7 @@
   "slug": "invalid-route",
   "vp": "mobile-390x844",
   "png": "invalid-route__mobile-390x844__dark.png",
-  "bytes": 73414,
+  "bytes": 96858,
   "ASSERT": "PASS"
  },
  {
@@ -755,7 +755,7 @@
   "slug": "home",
   "vp": "desktop-1440x900",
   "png": "home__desktop-1440x900__light.png",
-  "bytes": 440378,
+  "bytes": 327763,
   "ASSERT": "PASS"
  },
  {
@@ -778,7 +778,7 @@
   "slug": "artists",
   "vp": "desktop-1440x900",
   "png": "artists__desktop-1440x900__light.png",
-  "bytes": 636798,
+  "bytes": 638959,
   "ASSERT": "PASS"
  },
  {
@@ -801,7 +801,7 @@
   "slug": "artist-leonardo",
   "vp": "desktop-1440x900",
   "png": "artist-leonardo__desktop-1440x900__light.png",
-  "bytes": 502067,
+  "bytes": 516441,
   "ASSERT": "PASS"
  },
  {
@@ -824,7 +824,7 @@
   "slug": "artwork-david",
   "vp": "desktop-1440x900",
   "png": "artwork-david__desktop-1440x900__light.png",
-  "bytes": 372399,
+  "bytes": 390749,
   "ASSERT": "PASS"
  },
  {
@@ -847,7 +847,7 @@
   "slug": "explore",
   "vp": "desktop-1440x900",
   "png": "explore__desktop-1440x900__light.png",
-  "bytes": 314766,
+  "bytes": 283751,
   "ASSERT": "PASS"
  },
  {
@@ -870,7 +870,7 @@
   "slug": "timeline",
   "vp": "desktop-1440x900",
   "png": "timeline__desktop-1440x900__light.png",
-  "bytes": 262724,
+  "bytes": 263990,
   "ASSERT": "PASS"
  },
  {
@@ -893,7 +893,7 @@
   "slug": "influences",
   "vp": "desktop-1440x900",
   "png": "influences__desktop-1440x900__light.png",
-  "bytes": 338780,
+  "bytes": 335493,
   "ASSERT": "PASS"
  },
  {
@@ -916,7 +916,7 @@
   "slug": "museums",
   "vp": "desktop-1440x900",
   "png": "museums__desktop-1440x900__light.png",
-  "bytes": 947840,
+  "bytes": 430732,
   "ASSERT": "PASS"
  },
  {
@@ -939,7 +939,7 @@
   "slug": "museum-louvre",
   "vp": "desktop-1440x900",
   "png": "museum-louvre__desktop-1440x900__light.png",
-  "bytes": 866075,
+  "bytes": 815391,
   "ASSERT": "PASS"
  },
  {
@@ -962,7 +962,7 @@
   "slug": "lists",
   "vp": "desktop-1440x900",
   "png": "lists__desktop-1440x900__light.png",
-  "bytes": 1045482,
+  "bytes": 992290,
   "ASSERT": "PASS"
  },
  {
@@ -985,7 +985,7 @@
   "slug": "palette",
   "vp": "desktop-1440x900",
   "png": "palette__desktop-1440x900__light.png",
-  "bytes": 292905,
+  "bytes": 361243,
   "ASSERT": "PASS"
  },
  {
@@ -1008,7 +1008,7 @@
   "slug": "taste",
   "vp": "desktop-1440x900",
   "png": "taste__desktop-1440x900__light.png",
-  "bytes": 313658,
+  "bytes": 278068,
   "ASSERT": "PASS"
  },
  {
@@ -1031,7 +1031,7 @@
   "slug": "daily",
   "vp": "desktop-1440x900",
   "png": "daily__desktop-1440x900__light.png",
-  "bytes": 708631,
+  "bytes": 696214,
   "ASSERT": "PASS"
  },
  {
@@ -1054,7 +1054,7 @@
   "slug": "privacy",
   "vp": "desktop-1440x900",
   "png": "privacy__desktop-1440x900__light.png",
-  "bytes": 496857,
+  "bytes": 462915,
   "ASSERT": "PASS"
  },
  {
@@ -1077,7 +1077,7 @@
   "slug": "credits",
   "vp": "desktop-1440x900",
   "png": "credits__desktop-1440x900__light.png",
-  "bytes": 460027,
+  "bytes": 503846,
   "ASSERT": "PASS"
  },
  {
@@ -1100,7 +1100,7 @@
   "slug": "invalid-route",
   "vp": "desktop-1440x900",
   "png": "invalid-route__desktop-1440x900__light.png",
-  "bytes": 319537,
+  "bytes": 206029,
   "ASSERT": "PASS"
  },
  {
@@ -1111,9 +1111,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1123,7 +1123,7 @@
   "slug": "home",
   "vp": "mobile-390x844",
   "png": "home__mobile-390x844__light.png",
-  "bytes": 184981,
+  "bytes": 143528,
   "ASSERT": "PASS"
  },
  {
@@ -1134,9 +1134,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1146,7 +1146,7 @@
   "slug": "artists",
   "vp": "mobile-390x844",
   "png": "artists__mobile-390x844__light.png",
-  "bytes": 145757,
+  "bytes": 170329,
   "ASSERT": "PASS"
  },
  {
@@ -1157,9 +1157,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1169,7 +1169,7 @@
   "slug": "artist-leonardo",
   "vp": "mobile-390x844",
   "png": "artist-leonardo__mobile-390x844__light.png",
-  "bytes": 182460,
+  "bytes": 226690,
   "ASSERT": "PASS"
  },
  {
@@ -1180,9 +1180,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1192,7 +1192,7 @@
   "slug": "artwork-david",
   "vp": "mobile-390x844",
   "png": "artwork-david__mobile-390x844__light.png",
-  "bytes": 195291,
+  "bytes": 234045,
   "ASSERT": "PASS"
  },
  {
@@ -1203,9 +1203,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1215,7 +1215,7 @@
   "slug": "explore",
   "vp": "mobile-390x844",
   "png": "explore__mobile-390x844__light.png",
-  "bytes": 128144,
+  "bytes": 107212,
   "ASSERT": "PASS"
  },
  {
@@ -1226,9 +1226,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1238,7 +1238,7 @@
   "slug": "timeline",
   "vp": "mobile-390x844",
   "png": "timeline__mobile-390x844__light.png",
-  "bytes": 175951,
+  "bytes": 164495,
   "ASSERT": "PASS"
  },
  {
@@ -1249,9 +1249,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1261,7 +1261,7 @@
   "slug": "influences",
   "vp": "mobile-390x844",
   "png": "influences__mobile-390x844__light.png",
-  "bytes": 166882,
+  "bytes": 143650,
   "ASSERT": "PASS"
  },
  {
@@ -1272,9 +1272,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1284,7 +1284,7 @@
   "slug": "museums",
   "vp": "mobile-390x844",
   "png": "museums__mobile-390x844__light.png",
-  "bytes": 220434,
+  "bytes": 226443,
   "ASSERT": "PASS"
  },
  {
@@ -1295,9 +1295,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1307,7 +1307,7 @@
   "slug": "museum-louvre",
   "vp": "mobile-390x844",
   "png": "museum-louvre__mobile-390x844__light.png",
-  "bytes": 245643,
+  "bytes": 291470,
   "ASSERT": "PASS"
  },
  {
@@ -1318,9 +1318,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1330,7 +1330,7 @@
   "slug": "lists",
   "vp": "mobile-390x844",
   "png": "lists__mobile-390x844__light.png",
-  "bytes": 232616,
+  "bytes": 263421,
   "ASSERT": "PASS"
  },
  {
@@ -1341,9 +1341,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1353,7 +1353,7 @@
   "slug": "palette",
   "vp": "mobile-390x844",
   "png": "palette__mobile-390x844__light.png",
-  "bytes": 138445,
+  "bytes": 145243,
   "ASSERT": "PASS"
  },
  {
@@ -1364,9 +1364,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1376,7 +1376,7 @@
   "slug": "taste",
   "vp": "mobile-390x844",
   "png": "taste__mobile-390x844__light.png",
-  "bytes": 135446,
+  "bytes": 130731,
   "ASSERT": "PASS"
  },
  {
@@ -1387,9 +1387,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1399,7 +1399,7 @@
   "slug": "daily",
   "vp": "mobile-390x844",
   "png": "daily__mobile-390x844__light.png",
-  "bytes": 219447,
+  "bytes": 300962,
   "ASSERT": "PASS"
  },
  {
@@ -1410,9 +1410,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1422,7 +1422,7 @@
   "slug": "privacy",
   "vp": "mobile-390x844",
   "png": "privacy__mobile-390x844__light.png",
-  "bytes": 137481,
+  "bytes": 207885,
   "ASSERT": "PASS"
  },
  {
@@ -1433,9 +1433,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1445,7 +1445,7 @@
   "slug": "credits",
   "vp": "mobile-390x844",
   "png": "credits__mobile-390x844__light.png",
-  "bytes": 149695,
+  "bytes": 187201,
   "ASSERT": "PASS"
  },
  {
@@ -1456,9 +1456,9 @@
   "appPadT": "22px",
   "navOrder": "3",
   "navOverflowX": "auto",
-  "navWrap": "wrap",
-  "navW": 97,
-  "navH": 291,
+  "navWrap": "nowrap",
+  "navW": 358,
+  "navH": 35,
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
@@ -1468,7 +1468,7 @@
   "slug": "invalid-route",
   "vp": "mobile-390x844",
   "png": "invalid-route__mobile-390x844__light.png",
-  "bytes": 127235,
+  "bytes": 125996,
   "ASSERT": "PASS"
  }
 ]

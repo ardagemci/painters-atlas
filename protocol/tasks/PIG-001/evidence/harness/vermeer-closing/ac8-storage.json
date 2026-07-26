@@ -1,0 +1,433 @@
+[
+ {
+  "step": "S1.0 seeded passport + Admire control before the click",
+  "observed": {
+   "passportBytes": 436,
+   "button": {
+    "found": true,
+    "label": "Admire",
+    "pressed": "false",
+    "onClass": false,
+    "id": "the-starry-night",
+    "x": 176,
+    "y": 689
+   }
+  }
+ },
+ {
+  "step": "S1.1 Admire clicked while setItem throws",
+  "observed": {
+   "button": {
+    "found": true,
+    "label": "Admire",
+    "pressed": "false",
+    "onClass": false,
+    "id": "the-starry-night",
+    "x": 176,
+    "y": 687
+   },
+   "falseSuccess": false,
+   "notice": {
+    "present": true,
+    "hidden": false,
+    "role": "status",
+    "display": "block",
+    "visible": true,
+    "rect": [
+     440,
+     734,
+     560,
+     150
+    ],
+    "text": "Not saved. This device would not store your Taste Passport \u2014 it may be out of room, or site data may be switched off for this browser. Nothing already saved has changed. Back up data (.json) Open the Taste Passport Dismiss",
+    "actions": [
+     {
+      "tag": "button",
+      "label": "Back up data (.json)",
+      "act": "export"
+     },
+     {
+      "tag": "a",
+      "label": "Open the Taste Passport",
+      "act": "#/taste"
+     },
+     {
+      "tag": "button",
+      "label": "Dismiss",
+      "act": "notice-close"
+     }
+    ]
+   },
+   "storedBytesUnchanged": true,
+   "storedBytes": 436
+  }
+ },
+ {
+  "step": "S1.2 navigate away with the notice up",
+  "observed": {
+   "page": {
+    "title": "Museums \u2014 Pigment",
+    "h1": "Museums",
+    "lede": "Where the atlas hangs in real life. 104 museums, churches and palaces hold the works catalogued so far \u2014 each with its own walls, and the great ones with their own story.",
+    "chips": [],
+    "cards": 0,
+    "bodyLen": 12417
+   },
+   "notice": {
+    "present": true,
+    "hidden": false,
+    "role": "status",
+    "display": "block",
+    "visible": true,
+    "rect": [
+     440,
+     734,
+     560,
+     150
+    ],
+    "text": "Not saved. This device would not store your Taste Passport \u2014 it may be out of room, or site data may be switched off for this browser. Nothing already saved has changed. Back up data (.json) Open the Taste Passport Dismiss",
+    "actions": [
+     {
+      "tag": "button",
+      "label": "Back up data (.json)",
+      "act": "export"
+     },
+     {
+      "tag": "a",
+      "label": "Open the Taste Passport",
+      "act": "#/taste"
+     },
+     {
+      "tag": "button",
+      "label": "Dismiss",
+      "act": "notice-close"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "step": "S1.3 the notice's export and dismiss affordances, actually clicked",
+  "observed": {
+   "exportClickReturn": "[{\"href\":\"data:application/json;charset=utf-8,%7B%0A%20%22version%22%3A%201%2C%0A%20%22createdAt%22%3A%20%222026-07-01T00%3A00%3A0\",\"len\":943,\"download\":\"pigment-passport.json\"}]",
+   "downloadIntercepted": [
+    {
+     "href": "data:application/json;charset=utf-8,%7B%0A%20%22version%22%3A%201%2C%0A%20%22createdAt%22%3A%20%222026-07-01T00%3A00%3A0",
+     "len": 943,
+     "download": "pigment-passport.json"
+    }
+   ],
+   "afterDismiss": {
+    "hidden": true,
+    "display": "none"
+   }
+  }
+ },
+ {
+  "step": "S1.4 following the notice's 'Open the Taste Passport' chip",
+  "observed": {
+   "page": {
+    "title": "The Starry Night \u2014 Vincent van Gogh \u2014 Pigment",
+    "h1": "The Starry Night",
+    "lede": "",
+    "chips": [
+     {
+      "label": "Post-Impressionism",
+      "act": "#/movement/post-impressionism"
+     },
+     {
+      "label": "Oil Painting",
+      "act": "#/technique/oil-painting"
+     },
+     {
+      "label": "Impasto",
+      "act": "#/technique/impasto"
+     },
+     {
+      "label": "\ud83c\uddf3\ud83c\uddf1 Netherlands",
+      "act": "#/nation/netherlands"
+     },
+     {
+      "label": "All of van Gogh",
+      "act": "#/artist/vincent-van-gogh"
+     },
+     {
+      "label": "More Post-Impressionism",
+      "act": "#/movement/post-impressionism"
+     }
+    ],
+    "cards": 8,
+    "bodyLen": 1552
+   },
+   "passportStillReadable": true
+  }
+ },
+ {
+  "step": "S2.1 #/taste with corrupt pigment.taste.v1",
+  "observed": {
+   "page": {
+    "title": "Your taste \u2014 Pigment",
+    "h1": "Something is stored here, and it cannot be read.",
+    "lede": "The data saved under pigment.taste.v1 on this device is not readable as a Taste Passport. Pigment has not changed it and will not write over it. Download it first if you want a copy; replacing it is your choice, not ours.",
+    "chips": [
+     {
+      "label": "Try reading it again",
+      "act": "storage-retry"
+     },
+     {
+      "label": "Download the stored data",
+      "act": "export"
+     },
+     {
+      "label": "Replace it with a new Passport",
+      "act": "storage-reset"
+     },
+     {
+      "label": "Back to the atlas",
+      "act": "#/"
+     }
+    ],
+    "cards": 0,
+    "bodyLen": 445
+   },
+   "storedBytesPreserved": true,
+   "storedBytes": "{\"version\":1,\"admirations\":[{\"id\":\"mona-lisa\",\"at\":\"2026",
+   "ppState": {
+    "read": 1
+   }
+  }
+ },
+ {
+  "step": "S2.2 Admire with a corrupt passport present (no storage break at all)",
+  "observed": {
+   "button": {
+    "found": true,
+    "label": "Admire",
+    "pressed": "false",
+    "onClass": false,
+    "id": "the-starry-night",
+    "x": 176,
+    "y": 687
+   },
+   "notice": {
+    "present": true,
+    "hidden": false,
+    "role": "status",
+    "display": "block",
+    "visible": true,
+    "rect": [
+     440,
+     734,
+     560,
+     150
+    ],
+    "text": "Not saved. This device would not store your Taste Passport \u2014 it may be out of room, or site data may be switched off for this browser. Nothing already saved has changed. Back up data (.json) Open the Taste Passport Dismiss",
+    "actions": [
+     {
+      "tag": "button",
+      "label": "Back up data (.json)",
+      "act": "export"
+     },
+     {
+      "tag": "a",
+      "label": "Open the Taste Passport",
+      "act": "#/taste"
+     },
+     {
+      "tag": "button",
+      "label": "Dismiss",
+      "act": "notice-close"
+     }
+    ]
+   },
+   "storedBytesPreserved": true
+  }
+ },
+ {
+  "step": "S2.3 'Download the stored data' on the trouble view",
+  "observed": {
+   "downloadIntercepted": [
+    {
+     "href": "{\"version\":1,\"admirations\":[{\"id\":\"mona-lisa\",\"at\":\"2026",
+     "download": "pigment-passport-unreadable.json"
+    }
+   ],
+   "rawBytesRecovered": true,
+   "filename": "pigment-passport-unreadable.json"
+  }
+ },
+ {
+  "step": "S2.4 'Try reading it again' with the data still corrupt",
+  "observed": {
+   "page": {
+    "title": "Your taste \u2014 Pigment",
+    "h1": "Something is stored here, and it cannot be read.",
+    "lede": "The data saved under pigment.taste.v1 on this device is not readable as a Taste Passport. Pigment has not changed it and will not write over it. Download it first if you want a copy; replacing it is your choice, not ours.",
+    "chips": [
+     {
+      "label": "Try reading it again",
+      "act": "storage-retry"
+     },
+     {
+      "label": "Download the stored data",
+      "act": "export"
+     },
+     {
+      "label": "Replace it with a new Passport",
+      "act": "storage-reset"
+     },
+     {
+      "label": "Back to the atlas",
+      "act": "#/"
+     }
+    ],
+    "cards": 0,
+    "bodyLen": 445
+   },
+   "storedBytesPreserved": true
+  }
+ },
+ {
+  "step": "S2.5 'Replace it with a new Passport' (confirm accepted)",
+  "observed": {
+   "confirmText": "Replace the unreadable data on this device with a new, empty Taste Passport? Download it first if you want a copy \u2014 this cannot be undone.",
+   "storedAfter": null,
+   "page": {
+    "title": "Your taste \u2014 Pigment",
+    "h1": "No map yet \u2014 let's sketch one.",
+    "lede": "Admire artworks anywhere in the atlas and your Taste Passport records them locally, on this device. Or take the four-minute onboarding and get a provisional Persona right now.",
+    "chips": [],
+    "cards": 0,
+    "bodyLen": 263
+   }
+  }
+ },
+ {
+  "step": "S3.1 #/taste while getItem throws",
+  "observed": {
+   "page": {
+    "title": "Your taste \u2014 Pigment",
+    "h1": "This browser will not let Pigment read its storage.",
+    "lede": "Local storage is blocked for this site \u2014 private browsing or a site-data setting will do that. Pigment cannot read or write your Taste Passport on this device until it is available again. Nothing has been deleted. Admire, Seen in person and Saved for later will not stick in the meantime.",
+    "chips": [
+     {
+      "label": "Try reading it again",
+      "act": "storage-retry"
+     },
+     {
+      "label": "Back to the atlas",
+      "act": "#/"
+     }
+    ],
+    "cards": 0,
+    "bodyLen": 454
+   }
+  }
+ },
+ {
+  "step": "S3.2 Admire while reads are denied",
+  "observed": {
+   "button": {
+    "found": true,
+    "label": "Admire",
+    "pressed": "false",
+    "onClass": false,
+    "id": "the-starry-night",
+    "x": 176,
+    "y": 687
+   },
+   "notice": {
+    "present": true,
+    "hidden": false,
+    "role": "status",
+    "display": "block",
+    "visible": true,
+    "rect": [
+     440,
+     734,
+     560,
+     150
+    ],
+    "text": "Not saved. This device would not store your Taste Passport \u2014 it may be out of room, or site data may be switched off for this browser. Nothing already saved has changed. Back up data (.json) Open the Taste Passport Dismiss",
+    "actions": [
+     {
+      "tag": "button",
+      "label": "Back up data (.json)",
+      "act": "export"
+     },
+     {
+      "tag": "a",
+      "label": "Open the Taste Passport",
+      "act": "#/taste"
+     },
+     {
+      "tag": "button",
+      "label": "Dismiss",
+      "act": "notice-close"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "step": "S4 routes rendered while reads are denied",
+  "observed": {
+   "routes": [
+    {
+     "route": "#/",
+     "h1": "Find your place in the history of art.",
+     "chars": 6851,
+     "cards": 2
+    },
+    {
+     "route": "#/artists",
+     "h1": "All 256 painters",
+     "chars": 40713,
+     "cards": 0
+    },
+    {
+     "route": "#/museums",
+     "h1": "Museums",
+     "chars": 12417,
+     "cards": 0
+    },
+    {
+     "route": "#/museum/louvre",
+     "h1": "Mus\u00e9e du Louvre",
+     "chars": 2439,
+     "cards": 7
+    },
+    {
+     "route": "#/explore",
+     "h1": "Explore",
+     "chars": 1136,
+     "cards": 4
+    },
+    {
+     "route": "#/timeline",
+     "h1": "The grand timeline",
+     "chars": 6341,
+     "cards": 0
+    },
+    {
+     "route": "#/daily",
+     "h1": "The Night Watch",
+     "chars": 1172,
+     "cards": 0
+    },
+    {
+     "route": "#/lists",
+     "h1": "Lists",
+     "chars": 3756,
+     "cards": 0
+    },
+    {
+     "route": "#/credits",
+     "h1": "Credits",
+     "chars": 16170,
+     "cards": 0
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,1042 @@
+[
+ {
+  "journey": "J1",
+  "step": "1 entry",
+  "route": "#/",
+  "action": "load #/",
+  "rendered": {
+   "hash": "#/",
+   "title": "Pigment \u2014 Find your place in the history of art",
+   "h1": "Find your place in the history of art.",
+   "focus": "body",
+   "focusText": "Skip to the atlas\n\n\n\n  \n    \n    Pigment",
+   "chars": 6807
+  },
+  "observable": {
+   "anchor": "Find your place in the history of art.",
+   "onward": 592
+  },
+  "verdict": "OK",
+  "note": ""
+ },
+ {
+  "journey": "J1",
+  "step": "2 land on artist (via search)",
+  "route": "#/artist/leonardo-da-vinci",
+  "action": "typed 'Leonardo' in #q, clicked option 1 (Leonardo da Vinci1452\u20131519)",
+  "rendered": {
+   "h1": "Leonardo da Vinci",
+   "title": "Leonardo da Vinci \u2014 Pigment",
+   "focus": "h1",
+   "options": [
+    "Leonardo da Vinci1452\u20131519",
+    "Mona LisaLeonardo da Vinci",
+    "AnnunciationLeonardo da Vinci",
+    "Ginevra de' BenciLeonardo da Vinci"
+   ],
+   "ariaExpanded": "true"
+  },
+  "observable": {
+   "anchor": "hero h1 = 'Leonardo da Vinci'",
+   "relationship": "10 chip links: ['High Renaissance', 'Oil Painting', 'Sfumato', 'Fresco', 'Tempera']",
+   "consequence": "why-card: 'Why da Vinci matters\\n      Leonardo made painting a form of research: light studied like p'",
+   "onward": "chip <a> present: True"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J1",
+  "step": "3 traverse a relationship (keyboard)",
+  "route": "#/movement/high-renaissance",
+  "action": "focused first chip link ('High Renaissance') and pressed Enter",
+  "rendered": {
+   "h1": "High Renaissance",
+   "memberLinks": 7,
+   "focus": "h1"
+  },
+  "observable": {
+   "anchor": "High Renaissance",
+   "relationship": "member list of the related entity",
+   "consequence": "7 painters/works listed",
+   "onward": "25 chips + 7 cards"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J1",
+  "step": "4 back to the artist",
+  "route": "#/artist/leonardo-da-vinci",
+  "action": "browser Back",
+  "rendered": {
+   "h1": "Leonardo da Vinci",
+   "heroH1": "Leonardo da Vinci"
+  },
+  "observable": {
+   "anchor": "artist name still visible: True",
+   "relationship": "chips intact",
+   "consequence": "why-card intact",
+   "onward": "unchanged"
+  },
+  "verdict": "PASS",
+  "note": "frozen J1 Pass condition: keyboard user reaches >=1 related entity and back without losing the visible artist-name anchor"
+ },
+ {
+  "journey": "J2",
+  "step": "1 land on artwork",
+  "route": "#/artwork/the-starry-night",
+  "action": "load #/artwork/the-starry-night",
+  "rendered": {
+   "h1": "The Starry Night",
+   "title": "The Starry Night \u2014 Vincent van Gogh \u2014 Pigment"
+  },
+  "observable": {
+   "anchor": "h1 = 'The Starry Night' + artist sub-link 'Vincent van Gogh' -> #/artist/vincent-van-gogh",
+   "relationship": "chips ['Post-Impressionism', 'Oil Painting', 'Impasto', '\ud83c\uddf3\ud83c\uddf1 Netherlands', 'The Night Shift'] ; museum panel present: True",
+   "consequence": "copy: ['Painted from the window of an asylum at Saint-R\u00e9my \u2014 partly ', '73.7 \u00d7 92.1 cm \u00b7 The Museum of Modern Art, New York \u00b7 image ']",
+   "onward": "onward panels: ['The picture', 'What to notice', 'Where it hangs', 'More by van Gogh', 'Near it in the atlas']"
+  },
+  "verdict": "PASS",
+  "note": "frozen J2 Pass: artist link + >=1 chip + >=1 onward panel + the 3 passport buttons (found 3)"
+ },
+ {
+  "journey": "J2",
+  "step": "2 personal action (Admire)",
+  "route": "#/artwork/the-starry-night",
+  "action": "clicked the Admire button",
+  "rendered": {
+   "before": [
+    {
+     "label": "Admire",
+     "pressed": "false",
+     "field": "admirations"
+    },
+    {
+     "label": "Seen in person",
+     "pressed": "false",
+     "field": "seen"
+    },
+    {
+     "label": "Save for later",
+     "pressed": "false",
+     "field": "saved"
+    }
+   ],
+   "after": [
+    {
+     "label": "Admired \u2713",
+     "pressed": "true",
+     "field": "admirations"
+    },
+    {
+     "label": "Seen in person",
+     "pressed": "false",
+     "field": "seen"
+    },
+    {
+     "label": "Save for later",
+     "pressed": "false",
+     "field": "saved"
+    }
+   ]
+  },
+  "observable": {
+   "anchor": "artwork h1 unchanged",
+   "relationship": "Admire toggle",
+   "consequence": "label swap 'Admire' -> 'Admired \u2713', aria-pressed false -> true",
+   "onward": "feeds #/taste"
+  },
+  "verdict": "PASS",
+  "note": "independent fields after the click: ['admirations=true', 'seen=false', 'saved=false']"
+ },
+ {
+  "journey": "J2",
+  "step": "3 persistence across a full reload",
+  "route": "#/artwork/the-starry-night",
+  "action": "reload",
+  "rendered": {
+   "buttons": [
+    {
+     "label": "Admired \u2713",
+     "pressed": "true"
+    },
+    {
+     "label": "Seen in person",
+     "pressed": "false"
+    },
+    {
+     "label": "Save for later",
+     "pressed": "false"
+    }
+   ]
+  },
+  "observable": {
+   "consequence": "state survives reload: True"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J3",
+  "step": "1 lists -> a list",
+  "route": "#/list/paintings-that-still-scare-us",
+  "action": "clicked list card 'Paintings That Still Scare Us'",
+  "rendered": {
+   "h1": "Paintings That Still Scare Us",
+   "orderedList": true,
+   "entries": 10
+  },
+  "observable": {
+   "anchor": "h1 = 'Paintings That Still Scare Us'",
+   "relationship": "<ol class=list-entries> with 10 entries",
+   "consequence": "10 per-entry .le-note, e.g. \"Not screaming \u2014 hearing it. That's worse.\"",
+   "onward": "20 entry links to artworks"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J3",
+  "step": "2 end of list",
+  "route": "#/list/paintings-that-still-scare-us",
+  "action": "(same page, scrolled)",
+  "rendered": {
+   "sections": [
+    "More lists"
+   ]
+  },
+  "observable": {
+   "relationship": "'More lists' section: ['More lists']",
+   "consequence": "3 sibling list links on the page",
+   "onward": "listCard <a>"
+  },
+  "verdict": "PASS",
+  "note": "frozen J3 Pass: ordered walk + per-entry notes + >=1 onward list link"
+ },
+ {
+  "journey": "J3",
+  "step": "3 list entry -> artwork",
+  "route": "#/artwork/the-scream",
+  "action": "clicked entry ''",
+  "rendered": {
+   "h1": "The Scream",
+   "title": "The Scream \u2014 Edvard Munch \u2014 Pigment"
+  },
+  "observable": {
+   "anchor": "The Scream",
+   "relationship": "the list's pick",
+   "consequence": "artwork page renders",
+   "onward": "10 chips"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "1 start",
+  "route": "#/palette",
+  "action": "load #/palette",
+  "rendered": {
+   "h1": "Find your palette.",
+   "hasBegin": true
+  },
+  "observable": {
+   "anchor": "Find your palette.",
+   "relationship": "-",
+   "consequence": "enters the step machine",
+   "onward": "Begin ->"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "2 tones (step 1)",
+  "route": "#/palette",
+  "action": "clicked 4 of 20 tone buttons",
+  "rendered": {
+   "progressAfterEachClick": [
+    {
+     "progress": "1 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 1
+    },
+    {
+     "progress": "2 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 2
+    },
+    {
+     "progress": "3 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 3
+    },
+    {
+     "progress": "4 of 4 chosen",
+     "ctaDisabled": false,
+     "pressed": 4
+    }
+   ],
+   "ctaBefore": {
+    "disabled": true,
+    "label": "To the deck \u2192"
+   }
+  },
+  "observable": {
+   "anchor": "Pick four tones.",
+   "relationship": "20 .tone buttons, 4-cap",
+   "consequence": "'N of 4 chosen' + CTA disabled until 4: True -> False",
+   "onward": "To the deck ->"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "3 deck (step 2)",
+  "route": "#/palette",
+  "action": "answered 16 deck cards (alternating Admire / Pass)",
+  "rendered": {
+   "firstCard": {
+    "progress": "1 of 16",
+    "bar": "0%",
+    "kicker": "Step 2 of 3 \u00b7 the deck",
+    "hasCard": true,
+    "meta": "Composition VIIWassily Kandinsky \u00b7 1913",
+    "admire": true
+   },
+   "lastCard": {
+    "progress": "16 of 16",
+    "bar": "93.75%",
+    "kicker": "Step 2 of 3 \u00b7 the deck",
+    "hasCard": true,
+    "meta": "The Beheading of Saint John the BaptistCaravaggio ",
+    "admire": true
+   },
+   "cardsAnswered": 16,
+   "nowShowing": "Should art require visible skill?"
+  },
+  "observable": {
+   "anchor": "deck card image + meta",
+   "relationship": "Admire / Pass",
+   "consequence": "progress bar di/16 observed at every card: True",
+   "onward": "auto-advance at 16 -> 'Should art require visible skill?'"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "4 questions (step 3)",
+  "route": "#/palette",
+  "action": "answered 5 questions",
+  "rendered": {
+   "questions": [
+    {
+     "progress": "question 1 of 5",
+     "bar": "0%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art require visible skill?",
+     "options": 4
+    },
+    {
+     "progress": "question 2 of 5",
+     "bar": "20%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Does art need meaning?",
+     "options": 4
+    },
+    {
+     "progress": "question 3 of 5",
+     "bar": "40%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should a picture comfort you or disturb you?",
+     "options": 4
+    },
+    {
+     "progress": "question 4 of 5",
+     "bar": "60%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art explain the world or escape it?",
+     "options": 4
+    },
+    {
+     "progress": "question 5 of 5",
+     "bar": "80%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art be beautiful?",
+     "options": 4
+    }
+   ],
+   "nowShowing": "figurative + dramatic."
+  },
+  "observable": {
+   "anchor": "question text",
+   "relationship": "[4, 4, 4, 4, 4] option buttons",
+   "consequence": "progress qi/5 at every question: ['question 1 of 5', 'question 2 of 5', 'question 3 of 5', 'question 4 of 5', 'question 5 of 5']",
+   "onward": "auto-advance to reveal -> 'figurative + dramatic.'"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "5 reveal (step 4) + Passport creation",
+  "route": "#/palette",
+  "action": "(auto-advanced)",
+  "rendered": {
+   "reveal": {
+    "h1": "figurative + dramatic.",
+    "map": true,
+    "personaCards": 3,
+    "later": true,
+    "toTaste": true,
+    "handoff": true,
+    "handoffArtists": 3,
+    "handoffList": "List for you: Paint You Can Almost Touch"
+   },
+   "passportWritten": true,
+   "passportKeys": [
+    "admirations",
+    "clusters",
+    "createdAt",
+    "deckSeen",
+    "milestones",
+    "notForMe",
+    "palette",
+    "persona",
+    "probes",
+    "quiz",
+    "saved",
+    "seen",
+    "skipped",
+    "tasteVector",
+    "updatedAt",
+    "version",
+    "wantToSee"
+   ],
+   "onboarded": true,
+   "admirationsFromDeck": 8
+  },
+  "observable": {
+   "anchor": "signal-word h1 = 'figurative + dramatic.'",
+   "relationship": "taste map SVG + 3 persona candidates",
+   "consequence": "Adopt / Decide later present: True/True ; handoff 3 artists + list 'List for you: Paint You Can Almost Touch'",
+   "onward": "'To your taste page' present: True"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "6 adopt a Persona -> the Passport page",
+  "route": "#/taste",
+  "action": "clicked 'Adopt this Persona', then 'To your taste page ->'",
+  "rendered": {
+   "personaStored": {
+    "adopted": "border-crosser",
+    "candidates": [
+     "border-crosser",
+     "storm-chaser",
+     "gilded-sentimentalist"
+    ],
+    "adoptedAt": "2026-07-26T10:37:31.296Z",
+    "hidden": false,
+    "provisional": true
+   },
+   "tastePage": {
+    "h1": "The Border-Crosser",
+    "kicker": "The Taste Passport \u00b7 stored on this device",
+    "lede": "Position: figurative + dramatic \u00b7 secondary signals: experimental, monumental \u00b7 map is provisional \u00b7 8 admirations inform it.",
+    "map": true,
+    "chips": [
+     "Caravaggio Black",
+     "Monet Fog",
+     "Verdigris",
+     "Lamp Smoke",
+     "Copy share link",
+     "Retake onboarding",
+     "Back up data (.json)",
+     "Reset everything"
+    ],
+    "admiredSection": 0
+   }
+  },
+  "observable": {
+   "anchor": "h1 = 'The Border-Crosser'",
+   "relationship": "map + persona + admirations",
+   "consequence": "adopted persona preserved through the handoff: border-crosser",
+   "onward": "chips: ['Caravaggio Black', 'Monet Fog', 'Verdigris', 'Lamp Smoke', 'Copy share link', 'Retake onboarding', 'Back up data (.json)', 'Reset everything']"
+  },
+  "verdict": "PASS",
+  "note": "frozen J4 Pass: six-step machine completes with visible progress at each step, a persistent onward link, and reveal->#/taste preserves the saved persona"
+ },
+ {
+  "journey": "J5",
+  "step": "1 explore hub",
+  "route": "#/explore",
+  "action": "load #/explore",
+  "rendered": {
+   "h1": "Explore",
+   "lede": "Four instruments for seeing the whole atlas at once \u2014 eight centuries laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of ",
+   "entryCards": [
+    {
+     "href": "#/timeline",
+     "title": "The grand timeline"
+    },
+    {
+     "href": "#/influences",
+     "title": "The influence constellation"
+    },
+    {
+     "href": "#/movements",
+     "title": "Family trees of movements"
+    },
+    {
+     "href": "#/nations",
+     "title": "A world map of painters"
+    }
+   ]
+  },
+  "observable": {
+   "anchor": "Explore",
+   "relationship": "4 entry-cards",
+   "consequence": "lede names the instruments",
+   "onward": [
+    "#/timeline",
+    "#/influences",
+    "#/movements",
+    "#/nations"
+   ]
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J5",
+  "step": "2 timeline projection",
+  "route": "#/timeline",
+  "action": "clicked the timeline entry-card",
+  "rendered": {
+   "h1": "The grand timeline",
+   "bars": 0,
+   "legendNodes": 0,
+   "controls": [
+    "Compact",
+    "Standard",
+    "Detail",
+    "14th",
+    "15th",
+    "16th",
+    "17th",
+    "18th"
+   ],
+   "artistLinks": 256
+  },
+  "observable": {
+   "anchor": "The grand timeline",
+   "relationship": "bars = lifespans, legend = movements",
+   "consequence": "isolate/zoom controls present: True",
+   "onward": "256 bar links into #/artist/*"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J5",
+  "step": "3 timeline -> canonical page",
+  "route": "#/artist/duccio",
+  "action": "clicked a timeline bar ('Duccio di Buoninsegna')",
+  "rendered": {
+   "h1": "Duccio di Buoninsegna",
+   "hash": "#/artist/duccio"
+  },
+  "observable": {
+   "anchor": "Duccio di Buoninsegna",
+   "consequence": "canonical artist page renders",
+   "onward": "8 chips"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J5",
+  "step": "4 influence projection",
+  "route": "#/influences",
+  "action": "load #/influences",
+  "rendered": {
+   "graph": {
+    "h1": "The influence graph",
+    "svg": true,
+    "svgRole": "group",
+    "svgLabel": "Influence graph \u2014 204 painters, 238 relationships",
+    "nodes": 204,
+    "legend": [
+     "all types",
+     "taught \u00b7 30",
+     "influenced \u00b7 133",
+     "friends \u00b7 57",
+     "rivals \u00b7 14",
+     "partners \u00b7 4"
+    ]
+   }
+  },
+  "observable": {
+   "anchor": "The influence graph",
+   "relationship": "force graph, 204 nodes, edge-type legend ['all types', 'taught \u00b7 30', 'influenced \u00b7 133', 'friends \u00b7 57', 'rivals \u00b7 14', 'partners \u00b7 4']",
+   "consequence": "svg role=group label='Influence graph \u2014 204 painters, 238 relationships'",
+   "onward": "node focus reveals a lineage panel"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J5",
+  "step": "5 focus a node -> lineage panel",
+  "route": "#/influences",
+  "action": "focused an .ig-node and pressed Enter",
+  "rendered": {
+   "lineagePanel": "Leonardo da Vinci 1452\u20131519 influenced Raphaelrival of Michelangelo Buonarroti Open da Vinci's page \u2192",
+   "openLink": {
+    "text": "Open da Vinci's page \u2192",
+    "href": "#/artist/leonardo-da-vinci"
+   }
+  },
+  "observable": {
+   "anchor": "the focused entity",
+   "relationship": "its lineage",
+   "consequence": "Leonardo da Vinci 1452\u20131519 influenced Raphaelrival of Michelangelo Buonarroti Open da Vinci's page \u2192",
+   "onward": {
+    "text": "Open da Vinci's page \u2192",
+    "href": "#/artist/leonardo-da-vinci"
+   }
+  },
+  "verdict": "PASS",
+  "note": "frozen J5 Pass: #/explore names exactly the instruments it links to and each instrument offers a link into a canonical page"
+ },
+ {
+  "journey": "J4",
+  "step": "1 start",
+  "route": "#/palette",
+  "action": "load #/palette",
+  "rendered": {
+   "h1": "Find your palette.",
+   "hasBegin": true
+  },
+  "observable": {
+   "anchor": "Find your palette.",
+   "relationship": "-",
+   "consequence": "enters the step machine",
+   "onward": "Begin ->"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "2 tones (step 1)",
+  "route": "#/palette",
+  "action": "clicked 4 of 20 tone buttons",
+  "rendered": {
+   "progressAfterEachClick": [
+    {
+     "progress": "1 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 1
+    },
+    {
+     "progress": "2 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 2
+    },
+    {
+     "progress": "3 of 4 chosen",
+     "ctaDisabled": true,
+     "pressed": 3
+    },
+    {
+     "progress": "4 of 4 chosen",
+     "ctaDisabled": false,
+     "pressed": 4
+    }
+   ],
+   "ctaBefore": {
+    "disabled": true,
+    "label": "To the deck \u2192"
+   }
+  },
+  "observable": {
+   "anchor": "Pick four tones.",
+   "relationship": "20 .tone buttons, 4-cap",
+   "consequence": "'N of 4 chosen' + CTA disabled until 4: True -> False",
+   "onward": "To the deck ->"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "3 deck (step 2)",
+  "route": "#/palette",
+  "action": "answered 16 deck cards (alternating Admire / Pass)",
+  "rendered": {
+   "firstCard": {
+    "progress": "1 of 16",
+    "bar": "0%",
+    "kicker": "Step 2 of 3 \u00b7 the deck",
+    "hasCard": true,
+    "meta": "Composition VIIWassily Kandinsky \u00b7 1913",
+    "admire": true
+   },
+   "lastCard": {
+    "progress": "16 of 16",
+    "bar": "93.75%",
+    "kicker": "Step 2 of 3 \u00b7 the deck",
+    "hasCard": true,
+    "meta": "The Beheading of Saint John the BaptistCaravaggio ",
+    "admire": true
+   },
+   "cardsAnswered": 16,
+   "nowShowing": "Should art require visible skill?"
+  },
+  "observable": {
+   "anchor": "deck card image + meta",
+   "relationship": "Admire / Pass",
+   "consequence": "progress bar di/16 observed at every card: True",
+   "onward": "auto-advance at 16 -> 'Should art require visible skill?'"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "4 questions (step 3)",
+  "route": "#/palette",
+  "action": "answered 5 questions",
+  "rendered": {
+   "questions": [
+    {
+     "progress": "question 1 of 5",
+     "bar": "0%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art require visible skill?",
+     "options": 4
+    },
+    {
+     "progress": "question 2 of 5",
+     "bar": "20%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Does art need meaning?",
+     "options": 4
+    },
+    {
+     "progress": "question 3 of 5",
+     "bar": "40%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should a picture comfort you or disturb you?",
+     "options": 4
+    },
+    {
+     "progress": "question 4 of 5",
+     "bar": "60%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art explain the world or escape it?",
+     "options": 4
+    },
+    {
+     "progress": "question 5 of 5",
+     "bar": "80%",
+     "kicker": "Step 3 of 3 \u00b7 five questions",
+     "question": "Should art be beautiful?",
+     "options": 4
+    }
+   ],
+   "nowShowing": "abstract + dramatic."
+  },
+  "observable": {
+   "anchor": "question text",
+   "relationship": "[4, 4, 4, 4, 4] option buttons",
+   "consequence": "progress qi/5 at every question: ['question 1 of 5', 'question 2 of 5', 'question 3 of 5', 'question 4 of 5', 'question 5 of 5']",
+   "onward": "auto-advance to reveal -> 'abstract + dramatic.'"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "5 reveal (step 4) + Passport creation",
+  "route": "#/palette",
+  "action": "(auto-advanced)",
+  "rendered": {
+   "reveal": {
+    "h1": "abstract + dramatic.",
+    "map": true,
+    "personaCards": 3,
+    "later": true,
+    "toTaste": true,
+    "handoff": true,
+    "handoffArtists": 3,
+    "handoffList": "List for you: Paint You Can Almost Touch"
+   },
+   "passportWritten": true,
+   "passportKeys": [
+    "admirations",
+    "clusters",
+    "createdAt",
+    "deckSeen",
+    "milestones",
+    "notForMe",
+    "palette",
+    "persona",
+    "probes",
+    "quiz",
+    "saved",
+    "seen",
+    "skipped",
+    "tasteVector",
+    "updatedAt",
+    "version",
+    "wantToSee"
+   ],
+   "onboarded": true,
+   "admirationsFromDeck": 8
+  },
+  "observable": {
+   "anchor": "signal-word h1 = 'abstract + dramatic.'",
+   "relationship": "taste map SVG + 3 persona candidates",
+   "consequence": "Adopt / Decide later present: True/True ; handoff 3 artists + list 'List for you: Paint You Can Almost Touch'",
+   "onward": "'To your taste page' present: True"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "J4",
+  "step": "6 adopt a Persona -> the Passport page",
+  "route": "#/taste",
+  "action": "clicked 'Adopt this Persona', then 'To your taste page ->'",
+  "rendered": {
+   "personaStored": {
+    "adopted": "border-crosser",
+    "candidates": [
+     "border-crosser",
+     "hurricane-of-paint",
+     "geometry-mystic"
+    ],
+    "adoptedAt": "2026-07-26T10:38:17.125Z",
+    "hidden": false,
+    "provisional": true
+   },
+   "tastePage": {
+    "h1": "The Border-Crosser",
+    "kicker": "The Taste Passport \u00b7 stored on this device",
+    "lede": "Position: abstract + dramatic \u00b7 secondary signals: experimental \u00b7 map is provisional \u00b7 8 admirations inform it.",
+    "map": true,
+    "chips": [
+     "Caravaggio Black",
+     "Monet Fog",
+     "Verdigris",
+     "Lamp Smoke",
+     "Copy share link",
+     "Retake onboarding",
+     "Back up data (.json)",
+     "Reset everything"
+    ],
+    "admiredSection": 0
+   }
+  },
+  "observable": {
+   "anchor": "h1 = 'The Border-Crosser'",
+   "relationship": "map + persona + admirations",
+   "consequence": "adopted persona preserved through the handoff: border-crosser",
+   "onward": "chips: ['Caravaggio Black', 'Monet Fog', 'Verdigris', 'Lamp Smoke', 'Copy share link', 'Retake onboarding', 'Back up data (.json)', 'Reset everything']"
+  },
+  "verdict": "PASS",
+  "note": "frozen J4 Pass: six-step machine completes with visible progress at each step, a persistent onward link, and reveal->#/taste preserves the saved persona"
+ },
+ {
+  "journey": "CHAIN",
+  "step": "4/5/6/7 Admire -> consequence explanation -> persistence -> return",
+  "route": "#/taste",
+  "action": "Admired Mona Lisa on its own page, then returned to #/taste",
+  "rendered": {
+   "button": {
+    "btn": "Admired \u2713",
+    "pressed": "true"
+   },
+   "tastePage": {
+    "h1": "The Border-Crosser",
+    "lede": "Position: figurative + dramatic \u00b7 secondary signals: experimental \u00b7 map is provisional \u00b7 9 admirations inform it.",
+    "explains": true,
+    "rings": "Your passport card painted in the browser with your own tones",
+    "ringNote": "Two islands on your map \u2014 56% and 44% of you.",
+    "chips": [
+     "Caravaggio Black",
+     "Monet Fog",
+     "Verdigris",
+     "Lamp Smoke",
+     "Copy share link",
+     "Retake onboarding",
+     "Back up data (.json)",
+     "Reset everything"
+    ]
+   }
+  },
+  "observable": {
+   "consequence": "the Passport page states what the admiration did: 'Position: figurative + dramatic \u00b7 secondary signals: experimental \u00b7 map is provisional \u00b7 9 admirations inform it.'",
+   "persistence": "survived two full page loads",
+   "onward": [
+    "Caravaggio Black",
+    "Monet Fog",
+    "Verdigris",
+    "Lamp Smoke",
+    "Copy share link",
+    "Retake onboarding",
+    "Back up data (.json)",
+    "Reset everything"
+   ]
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "CHAIN",
+  "step": "8 export or share",
+  "route": "#/taste",
+  "action": "clicked 'Back up data (.json)', then 'Copy share link' with the clipboard API removed so the build's own fallback renders the URL in #taste-msg",
+  "rendered": {
+   "downloadIntercepted": [
+    {
+     "download": "pigment-passport.json",
+     "len": 4699
+    }
+   ],
+   "shareUrlShown": "http://localhost:8421/index.html?ch=2#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LT",
+   "sharePayloadChars": 2511,
+   "sharePayloadHead": "eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2"
+  },
+  "observable": {
+   "consequence": "a .json backup and a #/passport/<payload> share link",
+   "onward": "the link is the import path"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "CHAIN",
+  "step": "9 import (the share link opened on a device that already has a passport)",
+  "route": "#/passport/<payload>",
+  "action": "opened the share URL",
+  "rendered": {
+   "arrival": {
+    "h1": "A passport arrived.",
+    "lede": [
+     "9 admirations \u00b7 0 seen in person \u00b7 persona: The Border-Crosser.",
+     "Admirations, works seen in person, saved works, probes and skipped works are combined \u2014 all 9 entries in this passport are added to yours and none of yours is removed. Four settings cannot be combined because each holds a single value, and 1 of them differ from yours: chosen tones. You choose which "
+    ],
+    "cta": [
+     {
+      "act": "import-review",
+      "label": "Choose what to keep \u2192"
+     }
+    ]
+   }
+  },
+  "observable": {
+   "anchor": "A passport arrived.",
+   "relationship": "incoming vs local",
+   "consequence": [
+    "9 admirations \u00b7 0 seen in person \u00b7 persona: The Border-Crosser.",
+    "Admirations, works seen in person, saved works, probes and skipped works are combined \u2014 all 9 entries in this passport are added to yours and none of yours is removed. Four settings cannot be combined because each holds a single value, and 1 of them differ from yours: chosen tones. You choose which "
+   ],
+   "onward": [
+    "Choose what to keep \u2192"
+   ]
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "CHAIN",
+  "step": "10 conflict handling (per-field choice)",
+  "route": "#/passport/<payload>",
+  "action": "clicked 'Choose what to keep ->'",
+  "rendered": {
+   "conflictScreen": {
+    "h1": "Which of these should Pigment keep?",
+    "fields": [
+     {
+      "choice": "palette:mine",
+      "label": "Keep mine \u2014 ash, ash, ash, ash",
+      "pressed": "true"
+     },
+     {
+      "choice": "palette:theirs",
+      "label": "Take theirs \u2014 Caravaggio Black, Monet Fog, Verdigris, Lamp Smoke",
+      "pressed": "false"
+     }
+    ],
+    "cancel": true,
+    "merge": true
+   }
+  },
+  "observable": {
+   "relationship": "each conflicting field offers Keep mine / Take theirs",
+   "consequence": "2 field buttons; cancel present: True",
+   "onward": "'Merge with these choices'"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "CHAIN",
+  "step": "10b merge applied",
+  "route": "#/taste",
+  "action": "clicked 'Merge with these choices'",
+  "rendered": {
+   "admirationsBefore": [
+    "the-night-watch"
+   ],
+   "admirationsAfter": [
+    "the-night-watch",
+    "composition-vii",
+    "the-trinity",
+    "the-ten-largest-no-7",
+    "the-childs-bath",
+    "olympia",
+    "black-square",
+    "swan-no-17",
+    "the-school-of-athens",
+    "mona-lisa"
+   ],
+   "personaBefore": null,
+   "personaAfter": "border-crosser",
+   "landedOn": "The Border-Crosser"
+  },
+  "observable": {
+   "consequence": "union fields combined, single-value fields resolved by the choices",
+   "onward": "#/taste"
+  },
+  "verdict": "PASS",
+  "note": ""
+ },
+ {
+  "journey": "CHAIN",
+  "step": "11 reset",
+  "route": "#/taste",
+  "action": "clicked 'Reset everything' and confirmed",
+  "rendered": {
+   "confirmText": "Erase your Taste Passport from this device? Export it first if you want a copy.",
+   "storedAfter": null,
+   "h1": "No map yet \u2014 let's sketch one.",
+   "title": "Your taste \u2014 Pigment"
+  },
+  "observable": {
+   "consequence": "passport removed from this device",
+   "onward": "the empty-state Passport page invites the onboarding again"
+  },
+  "verdict": "PASS",
+  "note": ""
+ }
+]

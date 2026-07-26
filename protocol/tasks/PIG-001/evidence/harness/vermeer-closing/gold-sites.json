@@ -1,0 +1,326 @@
+[
+ {
+  "theme": "dark",
+  "route": "#/movements",
+  "sel": ".branch-chip::before",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 11.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   22,
+   20,
+   15
+  ],
+  "bgFrom": "article.card.tax-card",
+  "ratio": 11.53,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": "\"\u21b3\""
+ },
+ {
+  "theme": "dark",
+  "route": "#/movement/impressionism",
+  "sel": ".branch-chip::before",
+  "found": false
+ },
+ {
+  "theme": "dark",
+  "route": "#/timeline",
+  "sel": ".tl2-leg-more",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 12.16,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   13,
+   12,
+   10
+  ],
+  "bgFrom": "body",
+  "ratio": 12.25,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "dark",
+  "route": "#/timeline",
+  "sel": ".tl2-year.now",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 11.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   22,
+   20,
+   15
+  ],
+  "bgFrom": "div.tl2-wrap",
+  "ratio": 11.53,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "dark",
+  "route": "#/lists",
+  "sel": ".list-card .lc-kicker",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 10.24,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   22,
+   20,
+   15
+  ],
+  "bgFrom": "article.card.list-card",
+  "ratio": 11.53,
+  "verdict": "PASS",
+  "overPhoto": true,
+  "content": null
+ },
+ {
+  "theme": "dark",
+  "route": "#/list/paintings-that-still-scare-us",
+  "sel": ".le-num",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 19.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   13,
+   12,
+   10
+  ],
+  "bgFrom": "body",
+  "ratio": 12.25,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "dark",
+  "route": "#/taste",
+  "sel": ".pc-kind",
+  "found": true,
+  "color": [
+   232,
+   201,
+   138
+  ],
+  "token": "--gold2",
+  "fontPx": 9.92,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   22,
+   20,
+   15
+  ],
+  "bgFrom": "div.persona-card",
+  "ratio": 11.53,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "dark",
+  "route": "#/palette",
+  "sel": ".pc-kind",
+  "found": false
+ },
+ {
+  "theme": "light",
+  "route": "#/movements",
+  "sel": ".branch-chip::before",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 11.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   250,
+   246,
+   236
+  ],
+  "bgFrom": "article.card.tax-card",
+  "ratio": 5.18,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": "\"\u21b3\""
+ },
+ {
+  "theme": "light",
+  "route": "#/movement/impressionism",
+  "sel": ".branch-chip::before",
+  "found": false
+ },
+ {
+  "theme": "light",
+  "route": "#/timeline",
+  "sel": ".tl2-leg-more",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 12.16,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   242,
+   236,
+   223
+  ],
+  "bgFrom": "body",
+  "ratio": 4.75,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "light",
+  "route": "#/timeline",
+  "sel": ".tl2-year.now",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 11.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   250,
+   246,
+   236
+  ],
+  "bgFrom": "div.tl2-wrap",
+  "ratio": 5.18,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "light",
+  "route": "#/lists",
+  "sel": ".list-card .lc-kicker",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 10.24,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   250,
+   246,
+   236
+  ],
+  "bgFrom": "article.card.list-card",
+  "ratio": 5.18,
+  "verdict": "PASS",
+  "overPhoto": true,
+  "content": null
+ },
+ {
+  "theme": "light",
+  "route": "#/list/paintings-that-still-scare-us",
+  "sel": ".le-num",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 19.2,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   242,
+   236,
+   223
+  ],
+  "bgFrom": "body",
+  "ratio": 4.75,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "light",
+  "route": "#/taste",
+  "sel": ".pc-kind",
+  "found": true,
+  "color": [
+   129,
+   99,
+   43
+  ],
+  "token": "--gold2",
+  "fontPx": 9.92,
+  "large": false,
+  "need": 4.5,
+  "bg": [
+   250,
+   246,
+   236
+  ],
+  "bgFrom": "div.persona-card",
+  "ratio": 5.18,
+  "verdict": "PASS",
+  "overPhoto": false,
+  "content": null
+ },
+ {
+  "theme": "light",
+  "route": "#/palette",
+  "sel": ".pc-kind",
+  "found": false
+ }
+]

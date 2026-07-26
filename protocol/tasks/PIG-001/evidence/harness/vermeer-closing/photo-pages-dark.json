@@ -1,0 +1,369 @@
+{
+ "theme": "dark",
+ "viewport": [
+  1440,
+  900
+ ],
+ "rows": [
+  {
+   "sel": "span",
+   "path": "article.daily-stage > div.daily-stage-media > span",
+   "text": "Click to look closer",
+   "fpx": 9.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 395,
+   "glyphWorst": 14.82,
+   "glyphInk": [
+    242,
+    238,
+    229
+   ],
+   "glyphBackdrop": [
+    35,
+    26,
+    11
+   ],
+   "bandWorst": 3.56,
+   "bandBackdrop": [
+    168,
+    114,
+    28
+   ],
+   "overSrc": "500px-La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg",
+   "textShadow": "none",
+   "venue": "#/daily",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.lc-kicker",
+   "path": "article.card.list-card > div.card-body > div.lc-kicker",
+   "text": "List \u00b7 10 works",
+   "fpx": 10.24,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 267,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_a",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Paintings That Still Scare Us",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1445,
+   "glyphWorst": 14.8,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 14.8,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_a",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.card-tagline",
+   "path": "article.card.list-card > div.card-body > div.card-tagline",
+   "text": "Horror films age badly; painted dread do",
+   "fpx": 13.44,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 5035,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_a",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.lc-kicker",
+   "path": "article.card.list-card > div.card-body > div.lc-kicker",
+   "text": "List \u00b7 9 works",
+   "fpx": 10.24,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 245,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "The Night Shift",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 831,
+   "glyphWorst": 14.8,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 14.8,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.card-tagline",
+   "path": "article.card.list-card > div.card-body > div.card-tagline",
+   "text": "Painting nights is a technical dare \u2014 ho",
+   "fpx": 13.44,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 5210,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.lc-kicker",
+   "path": "article.card.list-card > div.card-body > div.lc-kicker",
+   "text": "List \u00b7 10 works",
+   "fpx": 10.24,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 267,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.j",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Stolen, Slashed, Survived",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1253,
+   "glyphWorst": 14.8,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 14.8,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.j",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.card-tagline",
+   "path": "article.card.list-card > div.card-body > div.card-tagline",
+   "text": "Masterpieces lead dangerous lives. These",
+   "fpx": 13.44,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 4761,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.j",
+   "textShadow": "none",
+   "venue": "#/lists",
+   "theme": "dark"
+  },
+  {
+   "sel": "div.lc-kicker",
+   "path": "article.card.list-card > div.card-body > div.lc-kicker",
+   "text": "Madrid \u00b7 21 works",
+   "fpx": 10.24,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 346,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "960px-Museo_del_Prado_2016_%2825185969599%29.jpg",
+   "textShadow": "none",
+   "venue": "#/museums",
+   "theme": "dark"
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Museo del Prado",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 835,
+   "glyphWorst": 14.8,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 14.8,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "960px-Museo_del_Prado_2016_%2825185969599%29.jpg",
+   "textShadow": "none",
+   "venue": "#/museums",
+   "theme": "dark"
+  }
+ ]
+}
