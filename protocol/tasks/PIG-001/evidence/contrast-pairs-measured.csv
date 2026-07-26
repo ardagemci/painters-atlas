@@ -1,140 +1,373 @@
 theme,fg,bg,size,fontpx,weight,count,selector,route,example
-dark,#9b937f,#16140f,body,14,300,768,p,#/,Pick a painter and follow
-dark,#ece6d9,#16140f,body,22,600,671,h3,#/,Start with an artist
-dark,#9b937f,#0d0c0a,body,9,400,620,span.brand-sub,#/,an atlas of painters
-dark,#ece6d9,#1b1914,body,11,400,417,a.chip.m,#/,Cubism
-dark,#6e675a,#0d0c0a,body,12,300,207,p.footer-note,#/,Tonight's cover: mixed aft
-dark,#d8d2c4,#0d0c0a,body,17,300,133,p.lede,#/,Eight centuries of painter
-dark,#c9a45c,#16140f,body,10,300,127,div.ec-kicker,#/,Begin
-dark,#ece6d9,#0d0c0a,body,15,300,125,span,#/,Find the three muskets
-dark,#e8c98a,#0d0c0a,body,12,300,48,div.kicker,#/,Pigment · a taste atlas of
-dark,#ece6d9,#12110f,body,12,400,34,a.chip.m,#/artist/leonardo-da-vinci,High Renaissance
-dark,#ece6d9,#0d0c0a,large,23,800,31,span.brand-text,#/,Pigment
-dark,#e8c98a,#16140f,body,17,400,31,button,#/,theme toggle glyph
-dark,#1d1a14,#caa43e,body,11,500,26,span,#/timeline,Duccio di Buoninsegna
-dark,#6e675a,#16140f,body,10,300,21,a.chip-label,#/artist/leonardo-da-vinci,see the full influence gra
-dark,#1d1a14,#e8a82e,body,11,500,21,span,#/timeline,James Ensor
-dark,#f6f1e6,#8a6e46,body,11,500,15,span,#/timeline,Kim Hong-do (Danwon)
-dark,#1d1a14,#9ab8d9,body,11,500,15,span,#/timeline,Camille Pissarro
-dark,#e8c98a,#16140f,large,27,800,13,span.n,#/,1
-dark,#1d1a14,#9aacb8,body,11,500,13,span,#/timeline,George Stubbs
-dark,#1d1a14,#caa45c,body,11,500,13,span,#/timeline,Gustave Moreau
-dark,#c9a45c,#0d0c0a,body,11,300,11,div.page-kicker,#/artists,The collection
-dark,#1d1a14,#8aa7c4,body,11,500,11,span,#/timeline,Rosalba Carriera
-dark,#1d1a14,#d9b894,body,11,500,11,span,#/timeline,Tarsila do Amaral
-dark,#f6f1e6,#c4302a,body,11,500,10,span,#/timeline,Matrakci Nasuh
-dark,#f6f1e6,#b06a32,body,11,500,10,span,#/timeline,Annibale Carracci
-dark,#1d1a14,#f0c82e,body,11,500,9,span,#/timeline,Frantisek Kupka
-dark,#1d1a14,#f4c430,body,11,500,8,span,#/timeline,Paul Cezanne
-dark,#f6f1e6,#e0427a,body,11,500,8,span,#/timeline,Yayoi Kusama (gradient bar)
-dark,#1d1a14,#c7b287,body,11,500,7,span,#/timeline,Hieronymus Bosch
-dark,#1d1a14,#d9aa4e,body,11,500,7,span,#/timeline,Frans Hals
-dark,#1d1a14,#e8c43e,body,11,500,6,span,#/timeline,Hilma af Klint
-dark,#6fb3a8,#16140f,body,10,300,5,div.ec-kicker,#/,Become
-dark,#1d1a14,#d9b27c,body,11,500,5,span,#/timeline,Fra Angelico
-dark,#1d1a14,#d9b46a,body,11,500,5,span,#/timeline,Leonardo da Vinci
-dark,#1d1a14,#cfa44e,body,11,500,5,span,#/timeline,Agnolo Bronzino
-dark,#f6f1e6,#e0427a,body,11,500,5,span,#/timeline,Emily Kame Kngwarreye
-dark,#c97b6a,#16140f,body,10,300,4,div.ec-kicker,#/,Wander
-dark,#d8d2c4,#1c1f1a,body,12,300,4,span.trait,#/artist/leonardo-da-vinci,Smoky lineless transitions
-dark,#f6f1e6,#8a8276,body,11,500,4,span,#/timeline,Shen Zhou
-dark,#f6f1e6,#c4541f,body,11,500,4,span,#/timeline,Giorgione
+dark,#ece6d9,#1b1914,body,11,400,411,a.chip.m,#/,Early Renaissance
+dark,#ece6d9,#16140f,body,18,600,410,a,#/,Paintings That Still Scare
+light,#2b2620,#faf6ec,body,11,400,410,a.chip.m,#/,Neoclassicism
+light,#2b2620,#faf6ec,body,18,600,410,a,#/,Paintings That Still Scare
+dark,#9b937f,#16140f,body,13,300,390,div.card-tagline,#/,Horror films age badly; pa
+light,#585244,#faf6ec,body,13,300,390,div.card-tagline,#/,Horror films age badly; pa
+dark,#9b937f,#16140f,body,12,300,290,div.card-meta,#/,c. 1445–1510 · Italy
+light,#585244,#faf6ec,body,12,300,290,div.card-meta,#/,1741–1807 · Switzerland
+dark,#9b937f,#0d0c0a,body,12,300,260,a,#/artwork/david,Atlas
+light,#585244,#f2ecdf,body,12,300,260,a,#/artwork/david,Atlas
+dark,#ece6d9,#16140f,body,11,300,204,text,#/influences,Leonardo da Vinci
+light,#2b2620,#faf6ec,body,11,300,204,text,#/influences,Leonardo da Vinci
+dark,#8b8372,#0d0c0a,body,12,300,160,a,#/,Artists
+light,#706755,#f2ecdf,body,12,300,160,a,#/,Artists
+dark,#9b937f,#0d0c0a,body,12,300,131,span.img-credit,#/credits,Photograph: C.Stadler/Bwag
+light,#585244,#f2ecdf,body,12,300,131,span.img-credit,#/credits,Photograph: C.Stadler/Bwag
+dark,#c9a45c,#16140f,body,10,300,120,div.lc-kicker,#/,List · 10 works
+light,#9e7938,#faf6ec,body,10,300,120,div.lc-kicker,#/,List · 10 works
+dark,#9b937f,#0d0c0a,body,14,500,119,a,#/,Artists
+light,#585244,#f2ecdf,body,14,500,119,a,#/,Artists
+dark,#d8d2c4,#0d0c0a,body,15,300,104,a.cr-what,#/credits,Albertina
+light,#433c31,#f2ecdf,body,15,300,104,a.cr-what,#/credits,Albertina
+dark,#ece6d9,#0d0c0a,body,15,300,28,a,#/credits,David — Michelangelo Buona
+light,#2b2620,#f2ecdf,body,15,300,28,a,#/credits,David — Michelangelo Buona
+dark,#0d0c0a,#caa43e,body,11,500,26,span,#/timeline,Duccio di Buoninsegna
+light,#0d0c0a,#caa43e,body,11,500,26,span,#/timeline,Duccio di Buoninsegna
+dark,#9b937f,#16140f,body,12,300,22,a.branch-chip,#/,Barbizon School
+light,#585244,#faf6ec,body,12,300,22,a.branch-chip,#/,Barbizon School
+dark,#0d0c0a,#e8a82e,body,11,500,21,span,#/timeline,James Ensor
+dark,#9b937f,#0d0c0a,body,12,400,21,button.tl2-leg,#/timeline,All
+light,#0d0c0a,#e8a82e,body,11,500,21,span,#/timeline,James Ensor
+light,#585244,#f2ecdf,body,12,400,21,button.tl2-leg,#/timeline,All
+dark,#9b937f,#0d0c0a,body,12,400,19,button.f-btn,#/artists,14th Century
+light,#585244,#f2ecdf,body,12,400,19,button.f-btn,#/artists,14th Century
+dark,#ece6d9,#0d0c0a,body,23,600,18,h2.sec-title,#/,Lists
+light,#2b2620,#f2ecdf,body,23,600,18,h2.sec-title,#/,Lists
+dark,#8b8372,#0d0c0a,body,12,300,17,p.footer-note,#/,Tonight's cover: mixed aft
+dark,#9b937f,#0d0c0a,body,9,400,16,span.brand-sub,#/,an atlas of painters
+dark,#9b937f,#0d0c0a,body,15,300,16,div.footer-brand,#/,— eight centuries of paint
+dark,#e8c98a,#16140f,body,17,400,16,button,#/,☀
+dark,#ece6d9,#0d0c0a,body,15,400,16,strong,#/,Pigment
+dark,#ece6d9,#0d0c0a,large,23,800,16,span.brand-text,#/,Pigment
+dark,#ece6d9,#1d1a13,body,14,400,16,button.skip-link,#/,Skip to the atlas
+light,#2b2620,#f0e9da,body,14,400,16,button.skip-link,#/,Skip to the atlas
+light,#2b2620,#f2ecdf,body,15,400,16,strong,#/,Pigment
+light,#2b2620,#f2ecdf,large,23,800,16,span.brand-text,#/,Pigment
+light,#585244,#f2ecdf,body,9,400,16,span.brand-sub,#/,an atlas of painters
+light,#585244,#f2ecdf,body,15,300,16,div.footer-brand,#/,— eight centuries of paint
+light,#706755,#f2ecdf,body,12,300,16,p.footer-note,#/,All cover artworks are gen
+light,#81632b,#faf6ec,body,17,400,16,button,#/,☾
+dark,#0d0c0a,#9ab8d9,body,11,500,15,span,#/timeline,Camille Pissarro
+dark,#f6f1e6,#836842,body,11,500,15,span,#/timeline,Kim Hong-do (Danwon)
+light,#0d0c0a,#9ab8d9,body,11,500,15,span,#/timeline,Camille Pissarro
+light,#f6f1e6,#836842,body,11,500,15,span,#/timeline,Kim Hong-do (Danwon)
+dark,#0d0c0a,#9aacb8,body,11,500,13,span,#/timeline,George Stubbs
+dark,#0d0c0a,#caa45c,body,11,500,13,span,#/timeline,Gustave Moreau
+light,#0d0c0a,#9aacb8,body,11,500,13,span,#/timeline,George Stubbs
+light,#0d0c0a,#caa45c,body,11,500,13,span,#/timeline,Gustave Moreau
+dark,#9b937f,#0d0c0a,body,16,300,12,p.page-lede,#/artists,Sorted by birth year — a w
+light,#585244,#f2ecdf,body,16,300,12,p.page-lede,#/artists,Sorted by birth year — a w
+dark,#0d0c0a,#8aa7c4,body,11,500,11,span,#/timeline,Rosalba Carriera
+dark,#0d0c0a,#d9b894,body,11,500,11,span,#/timeline,Tarsila do Amaral
+dark,#e8c98a,#0d0c0a,body,16,300,11,a,#/artist/leonardo-da-vinci,🇮🇹 Italy
+dark,#ece6d9,#0d0c0a,body,13,300,11,code,#/privacy,pigment.taste.v1
+light,#0d0c0a,#8aa7c4,body,11,500,11,span,#/timeline,Rosalba Carriera
+light,#0d0c0a,#d9b894,body,11,500,11,span,#/timeline,Tarsila do Amaral
+light,#2b2620,#f2ecdf,body,13,300,11,code,#/privacy,pigment.taste.v1
+light,#81632b,#f2ecdf,body,16,300,11,a,#/artist/leonardo-da-vinci,🇮🇹 Italy
+dark,#0d0c0a,#b06a32,body,11,500,10,span,#/timeline,Annibale Carracci
+dark,#9b937f,#16140f,body,12,300,10,span.mc-meta,#/artist/leonardo-da-vinci,1475–1564
+dark,#d8d2c4,#0d0c0a,body,16,300,10,p,#/artist/leonardo-da-vinci,Born out of wedlock in Vin
+dark,#e8c98a,#0d0c0a,body,11,300,10,div.page-kicker,#/artists,The collection
+dark,#ece6d9,#0d0c0a,large,54,800,10,h1.display,#/artists,All 256 painters
+dark,#ece6d9,#16140f,body,14,300,10,span.mc-name,#/artist/leonardo-da-vinci,Michelangelo Buonarroti
+dark,#f6f1e6,#c4302a,body,11,500,10,span,#/timeline,Matrakçı Nasuh
+light,#0d0c0a,#b06a32,body,11,500,10,span,#/timeline,Annibale Carracci
+light,#2b2620,#f2ecdf,large,54,800,10,h1.display,#/artists,All 256 painters
+light,#2b2620,#faf6ec,body,14,300,10,span.mc-name,#/artist/leonardo-da-vinci,Michelangelo Buonarroti
+light,#433c31,#f2ecdf,body,16,300,10,p,#/artist/leonardo-da-vinci,Born out of wedlock in Vin
+light,#585244,#faf6ec,body,12,300,10,span.mc-meta,#/artist/leonardo-da-vinci,1475–1564
+light,#81632b,#f2ecdf,body,11,300,10,div.page-kicker,#/artists,The collection
+light,#f6f1e6,#c4302a,body,11,500,10,span,#/timeline,Matrakçı Nasuh
+dark,#0d0c0a,#16140f,body,11,500,9,span,#/timeline,Yayoi Kusama
+dark,#0d0c0a,#f0c82e,body,11,500,9,span,#/timeline,František Kupka
+dark,#9b937f,#16140f,body,11,300,9,em,#/artist/leonardo-da-vinci,c. 1472–76
+dark,#e8c98a,#0d0c0a,body,14,700,9,a.active,#/artists,Artists
+dark,#e8c98a,#0d0c0a,body,16,300,9,div.arc-when,#/artist/leonardo-da-vinci,1452–66
+dark,#ece6d9,#0d0c0a,body,16,300,9,p,#/privacy,Pigment has no account sys
+dark,#ece6d9,#0d0c0a,body,19,600,9,h3,#/artist/leonardo-da-vinci,The notary's natural son
+dark,#ece6d9,#12110f,body,12,400,9,a.chip.m,#/artist/leonardo-da-vinci,High Renaissance
+dark,#ece6d9,#16140f,body,13,300,9,span.arc-work-t,#/artist/leonardo-da-vinci,Annunciation
+light,#0d0c0a,#f0c82e,body,11,500,9,span,#/timeline,František Kupka
+light,#0d0c0a,#faf6ec,body,11,500,9,span,#/timeline,Yayoi Kusama
+light,#2b2620,#f2ecdf,body,16,300,9,p,#/privacy,Pigment has no account sys
+light,#2b2620,#f2ecdf,body,19,600,9,h3,#/artist/leonardo-da-vinci,The notary's natural son
+light,#2b2620,#f2ece0,body,12,400,9,a.chip.m,#/artist/leonardo-da-vinci,High Renaissance
+light,#2b2620,#faf6ec,body,13,300,9,span.arc-work-t,#/artist/leonardo-da-vinci,Annunciation
+light,#585244,#faf6ec,body,11,300,9,em,#/artist/leonardo-da-vinci,c. 1472–76
+light,#81632b,#f2ecdf,body,14,700,9,a.active,#/artists,Artists
+light,#81632b,#f2ecdf,body,16,300,9,div.arc-when,#/artist/leonardo-da-vinci,1452–66
+dark,#0d0c0a,#f4c430,body,11,500,8,span,#/timeline,Paul Cézanne
+dark,#8b8372,#16140f,body,11,300,8,div.tl2-year.b,#/timeline,1300
+dark,#8b8372,#16140f,body,11,300,8,div.tl2-year.t,#/timeline,1300
+dark,#9b937f,#0d0c0a,body,11,300,8,span,#/,1300–1399 · 4 painters
+dark,#9b937f,#16140f,body,11,300,8,div.lbl,#/,Painters
+dark,#e8c98a,#16140f,large,34,800,8,div.num,#/,256
+dark,#ece6d9,#0d0c0a,body,17,600,8,b,#/,14th Century
+light,#0d0c0a,#f4c430,body,11,500,8,span,#/timeline,Paul Cézanne
+light,#2b2620,#f2ecdf,body,17,600,8,b,#/,14th Century
+light,#585244,#f2ecdf,body,11,300,8,span,#/,1300–1399 · 4 painters
+light,#585244,#faf6ec,body,11,300,8,div.lbl,#/,Painters
+light,#706755,#faf6ec,body,11,300,8,div.tl2-year.b,#/timeline,1300
+light,#706755,#faf6ec,body,11,300,8,div.tl2-year.t,#/timeline,1300
+light,#81632b,#faf6ec,large,34,800,8,div.num,#/,256
+dark,#0d0c0a,#c7b287,body,11,500,7,span,#/timeline,Hieronymus Bosch
+dark,#0d0c0a,#d9aa4e,body,11,500,7,span,#/timeline,Frans Hals
+dark,#9b937f,#0d0c0a,body,12,300,7,span.mc-meta,#/museum/louvre,1 work here
+dark,#9b937f,#16140f,body,14,300,7,p,#/,Pick a painter and follow 
+dark,#ece6d9,#0d0c0a,body,14,300,7,span.mc-name,#/museum/louvre,Jan van Eyck
+dark,#ece6d9,#16140f,body,22,600,7,h3,#/,Start with an artist
+light,#0d0c0a,#c7b287,body,11,500,7,span,#/timeline,Hieronymus Bosch
+light,#0d0c0a,#d9aa4e,body,11,500,7,span,#/timeline,Frans Hals
+light,#2b2620,#f2ecdf,body,14,300,7,span.mc-name,#/museum/louvre,Jan van Eyck
+light,#2b2620,#faf6ec,body,22,600,7,h3,#/,Start with an artist
+light,#585244,#f2ecdf,body,12,300,7,span.mc-meta,#/museum/louvre,1 work here
+light,#585244,#faf6ec,body,14,300,7,p,#/,Pick a painter and follow 
+dark,#0d0c0a,#e8c43e,body,11,500,6,span,#/timeline,Hilma af Klint
+dark,#8b8372,#0d0c0a,body,13,400,6,span.count,#/,guided walks through the a
+dark,#e8c98a,#0d0c0a,body,13,300,6,a,#/,Rembrandt van Rijn
+dark,#e8c98a,#16140f,body,17,600,6,h3,#/artist/leonardo-da-vinci,Kindred spirits
+dark,#ece6d9,#0d0c0a,body,13,400,6,button.aw-btn,#/,Seen in person
+dark,#ece6d9,#12110f,body,12,400,6,a.chip.t,#/artist/leonardo-da-vinci,Oil Painting
+light,#0d0c0a,#e8c43e,body,11,500,6,span,#/timeline,Hilma af Klint
+light,#2b2620,#f2ecdf,body,13,400,6,button.aw-btn,#/,Seen in person
+light,#2b2620,#f2ece0,body,12,400,6,a.chip.t,#/artist/leonardo-da-vinci,Oil Painting
+light,#706755,#f2ecdf,body,13,400,6,span.count,#/,guided walks through the a
+light,#81632b,#f2ecdf,body,13,300,6,a,#/,Rembrandt van Rijn
+light,#81632b,#faf6ec,body,17,600,6,h3,#/artist/leonardo-da-vinci,Kindred spirits
+dark,#0d0c0a,#cfa44e,body,11,500,5,span,#/timeline,Agnolo Bronzino
+dark,#0d0c0a,#d9b27c,body,11,500,5,span,#/timeline,Fra Angelico
+dark,#0d0c0a,#d9b46a,body,11,500,5,span,#/timeline,Leonardo da Vinci
+dark,#0d0c0a,#e0427a,body,11,500,5,span,#/timeline,Emily Kame Kngwarreye
+dark,#8b8372,#0d0c0a,body,12,300,5,span.sep,#/artist/leonardo-da-vinci,/
+dark,#9b937f,#16140f,body,13,300,5,p,#/,"Wander artists, artworks, "
+dark,#e8c98a,#16140f,large,27,800,5,span.n,#/,1
+dark,#ece6d9,#16140f,body,17,600,5,b,#/,Discover
+light,#0d0c0a,#cfa44e,body,11,500,5,span,#/timeline,Agnolo Bronzino
+light,#0d0c0a,#d9b27c,body,11,500,5,span,#/timeline,Fra Angelico
+light,#0d0c0a,#d9b46a,body,11,500,5,span,#/timeline,Leonardo da Vinci
+light,#0d0c0a,#e0427a,body,11,500,5,span,#/timeline,Emily Kame Kngwarreye
+light,#2b2620,#faf6ec,body,17,600,5,b,#/,Discover
+light,#585244,#faf6ec,body,13,300,5,p,#/,"Wander artists, artworks, "
+light,#706755,#f2ecdf,body,12,300,5,span.sep,#/artist/leonardo-da-vinci,/
+light,#81632b,#faf6ec,large,27,800,5,span.n,#/,1
+dark,#0d0c0a,#8a8276,body,11,500,4,span,#/timeline,Shen Zhou
+dark,#0d0c0a,#d9c49a,body,11,500,4,span,#/timeline,Ivan Shishkin
+dark,#9b937f,#16140f,body,13,300,4,span,#/artist/leonardo-da-vinci,"— his grace, systematized"
+dark,#d8d2c4,#1c1f1a,body,12,300,4,span.trait,#/artist/leonardo-da-vinci,"Smoky, lineless transition"
+dark,#e8c98a,#16140f,body,14,500,4,b,#/artist/leonardo-da-vinci,Raphael
+dark,#ece6d9,#0d0c0a,body,22,600,4,h2,#/artist/leonardo-da-vinci,"The life, in nine acts"
 dark,#f6f1e6,#8a1f2b,body,11,500,4,span,#/timeline,Giovanni Battista Piranesi
-dark,#1d1a14,#d9c49a,body,11,500,4,span,#/timeline,Ivan Shishkin
-dark,#171307,#c9a45c,body,12,500,3,button.f-btn.on,#/artists,All
-dark,#f6f1e6,#a8412e,body,11,500,3,span,#/timeline,Peter Paul Rubens
-dark,#f6f1e6,#5e8ab0,body,11,500,3,span,#/timeline,Kitagawa Utamaro
-dark,#1d1a14,#e8c87a,body,11,500,3,span,#/timeline,Thomas Cole
-dark,#f6f1e6,#8a4a42,body,11,500,3,span,#/timeline,Fernand Leger
-dark,#1d1a14,#f0c82e,body,11,500,3,span,#/timeline,David Hockney (gradient bar)
-dark,#6fb3a8,#0d0c0a,body,10,400,2,b,#/,One detail you cannot unse
-dark,#f2eee5,#0a0908,body,10,300,2,span,#/,Today in Pigment
-dark,#7d9cc0,#16140f,body,10,300,2,div.ec-kicker,#/explore,Geography
-dark,#1d1a14,#d9a83e,body,11,500,2,span,#/timeline,Osman Hamdi Bey
-dark,#f6f1e6,#c4542e,body,11,500,2,span,#/timeline,Henri Rousseau
-dark,#f6f1e6,#e87a2e,body,11,500,2,span,#/timeline,Morris Louis
-dark,#0d0c0a,#0d0c0a,large,32,800,1,h1.home-title,#/,GRADIENT-CLIPPED unresolvable
-dark,#6fb3a8,#1b1914,body,12,500,1,b,#/artist/leonardo-da-vinci,influenced
-dark,#c4536a,#1b1914,body,12,500,1,b,#/artist/leonardo-da-vinci,rival of
-dark,#1d1a14,#b0b8b4,body,11,500,1,span,#/timeline,Sesshu Toyo
-dark,#1d1a14,#e8b48a,body,11,500,1,span,#/timeline,Fitz Henry Lane
-dark,#f6f1e6,#d9886e,body,11,500,1,span,#/timeline,Paul Signac
-dark,#f6f1e6,#c4763e,body,11,500,1,span,#/timeline,Edward Hopper
-dark,#f6f1e6,#c4423e,body,11,500,1,span,#/timeline,Diego Rivera
-dark,#f6f1e6,#d97a8a,body,11,500,1,span,#/timeline,Georgia O'Keeffe
-dark,#1d1a14,#d9c890,body,11,500,1,span,#/timeline,Grant Wood
-dark,#f6f1e6,#c43e4e,body,11,500,1,span,#/timeline,Tamara de Lempicka
-dark,#f6f1e6,#8a9bb0,body,11,500,1,span,#/timeline,Agnes Martin
-dark,#000000,#efefef,body,13,400,1,button.skip-inline,#/influences,Skip the graph 204 painters
-dark,#ece6d9,#16140f,large,32,800,1,h1.display,#/museum/louvre,Musee du Louvre
-dark,#d8d2c4,#16140f,body,14,300,1,p,#/taste,You believe ornament is ho
-dark,#e8c98a,#0d0c0a,large,38,400,1,b,#/daily,75
-light,#2b2620,#faf6ec,body,22,600,1085,h3,#/,Start with an artist
-light,#7a715e,#faf6ec,body,14,300,768,p,#/,Pick a painter and follow
-light,#7a715e,#f2ecdf,body,9,400,620,span.brand-sub,#/,an atlas of painters
-light,#a39a86,#f2ecdf,body,12,300,207,p.footer-note,#/,Tonight's cover: mixed aft
-light,#433c31,#f2ecdf,body,17,300,133,p.lede,#/,Eight centuries of painter
-light,#a8813c,#faf6ec,body,10,300,127,div.ec-kicker,#/,Begin
-light,#2b2620,#f2ecdf,body,15,300,125,span,#/,Find the three muskets
-light,#8a6a2e,#f2ecdf,body,12,300,48,div.kicker,#/,Pigment · a taste atlas of
-light,#2b2620,#f2ece0,body,12,400,34,a.chip.m,#/artist/leonardo-da-vinci,High Renaissance
-light,#2b2620,#f2ecdf,large,23,800,31,span.brand-text,#/,Pigment
-light,#8a6a2e,#faf6ec,body,17,400,31,button,#/,theme toggle glyph
-light,#1d1a14,#caa43e,body,11,500,26,span,#/timeline,Duccio di Buoninsegna
-light,#a39a86,#faf6ec,body,10,300,21,a.chip-label,#/artist/leonardo-da-vinci,see the full influence gra
-light,#1d1a14,#e8a82e,body,11,500,21,span,#/timeline,James Ensor
-light,#f6f1e6,#8a6e46,body,11,500,15,span,#/timeline,Kim Hong-do (Danwon)
-light,#1d1a14,#9ab8d9,body,11,500,15,span,#/timeline,Camille Pissarro
-light,#8a6a2e,#faf6ec,large,27,800,13,span.n,#/,1
-light,#1d1a14,#9aacb8,body,11,500,13,span,#/timeline,George Stubbs
-light,#1d1a14,#caa45c,body,11,500,13,span,#/timeline,Gustave Moreau
-light,#a8813c,#f2ecdf,body,11,300,11,div.page-kicker,#/artists,The collection
-light,#1d1a14,#8aa7c4,body,11,500,11,span,#/timeline,Rosalba Carriera
-light,#1d1a14,#d9b894,body,11,500,11,span,#/timeline,Tarsila do Amaral
-light,#f6f1e6,#c4302a,body,11,500,10,span,#/timeline,Matrakci Nasuh
-light,#f6f1e6,#b06a32,body,11,500,10,span,#/timeline,Annibale Carracci
-light,#1d1a14,#f0c82e,body,11,500,9,span,#/timeline,Frantisek Kupka
-light,#1d1a14,#f4c430,body,11,500,8,span,#/timeline,Paul Cezanne
-light,#f6f1e6,#e0427a,body,11,500,8,span,#/timeline,Yayoi Kusama (gradient bar)
-light,#1d1a14,#c7b287,body,11,500,7,span,#/timeline,Hieronymus Bosch
-light,#1d1a14,#d9aa4e,body,11,500,7,span,#/timeline,Frans Hals
-light,#1d1a14,#e8c43e,body,11,500,6,span,#/timeline,Hilma af Klint
-light,#2e7a6e,#faf6ec,body,10,300,5,div.ec-kicker,#/,Become
-light,#1d1a14,#d9b27c,body,11,500,5,span,#/timeline,Fra Angelico
-light,#1d1a14,#d9b46a,body,11,500,5,span,#/timeline,Leonardo da Vinci
-light,#1d1a14,#cfa44e,body,11,500,5,span,#/timeline,Agnolo Bronzino
-light,#f6f1e6,#e0427a,body,11,500,5,span,#/timeline,Emily Kame Kngwarreye
-light,#a85544,#faf6ec,body,10,300,4,div.ec-kicker,#/,Wander
-light,#433c31,#f0f1e7,body,12,300,4,span.trait,#/artist/leonardo-da-vinci,Smoky lineless transitions
-light,#f6f1e6,#8a8276,body,11,500,4,span,#/timeline,Shen Zhou
-light,#f6f1e6,#c4541f,body,11,500,4,span,#/timeline,Giorgione
+dark,#f6f1e6,#b54d1d,body,11,500,4,span,#/timeline,Giorgione
+light,#0d0c0a,#8a8276,body,11,500,4,span,#/timeline,Shen Zhou
+light,#0d0c0a,#d9c49a,body,11,500,4,span,#/timeline,Ivan Shishkin
+light,#2b2620,#f2ecdf,body,22,600,4,h2,#/artist/leonardo-da-vinci,"The life, in nine acts"
+light,#433c31,#f0f1e7,body,12,300,4,span.trait,#/artist/leonardo-da-vinci,"Smoky, lineless transition"
+light,#585244,#faf6ec,body,13,300,4,span,#/artist/leonardo-da-vinci,"— his grace, systematized"
+light,#81632b,#faf6ec,body,14,500,4,b,#/artist/leonardo-da-vinci,Raphael
 light,#f6f1e6,#8a1f2b,body,11,500,4,span,#/timeline,Giovanni Battista Piranesi
-light,#1d1a14,#d9c49a,body,11,500,4,span,#/timeline,Ivan Shishkin
-light,#171307,#a8813c,body,12,500,3,button.f-btn.on,#/artists,All
+light,#f6f1e6,#b54d1d,body,11,500,4,span,#/timeline,Giorgione
+dark,#0d0c0a,#5e8ab0,body,11,500,3,span,#/timeline,Kitagawa Utamaro
+dark,#0d0c0a,#e8c87a,body,11,500,3,span,#/timeline,Thomas Cole
+dark,#171307,#c9a45c,body,12,500,3,button.f-btn.on,#/artists,All
+dark,#9b937f,#0d0c0a,body,10,300,3,span,#/,"· Sunday, July 26, 2026"
+dark,#d8d2c4,#0d0c0a,body,15,300,3,li,#/artist/leonardo-da-vinci,He wrote his notes right-t
+dark,#e8c98a,#0d0c0a,body,13,500,3,button.aw-btn.primary,#/,Admire
+dark,#ece6d9,#12110f,body,12,400,3,a.chip,#/privacy,Back to the atlas
+dark,#ece6d9,#12110f,body,12,400,3,a.chip.n,#/artist/leonardo-da-vinci,🇮🇹 Italy
+dark,#ece6d9,#1b1914,body,12,400,3,a.chip.a,#/artist/leonardo-da-vinci,Raphael
+dark,#f6f1e6,#8a4a42,body,11,500,3,span,#/timeline,Fernand Léger
+dark,#f6f1e6,#a8412e,body,11,500,3,span,#/timeline,Peter Paul Rubens
+light,#0d0c0a,#5e8ab0,body,11,500,3,span,#/timeline,Kitagawa Utamaro
+light,#0d0c0a,#e8c87a,body,11,500,3,span,#/timeline,Thomas Cole
+light,#171307,#9e7938,body,12,500,3,button.f-btn.on,#/artists,All
+light,#2b2620,#f2ece0,body,12,400,3,a.chip,#/privacy,Back to the atlas
+light,#2b2620,#f2ece0,body,12,400,3,a.chip.n,#/artist/leonardo-da-vinci,🇮🇹 Italy
+light,#2b2620,#faf6ec,body,12,400,3,a.chip.a,#/artist/leonardo-da-vinci,Raphael
+light,#433c31,#f2ecdf,body,12,300,3,a,#/,Ben Enwonwu
+light,#433c31,#f2ecdf,body,15,300,3,li,#/artist/leonardo-da-vinci,He wrote his notes right-t
+light,#585244,#f2ecdf,body,10,300,3,span,#/,"· Sunday, July 26, 2026"
+light,#81632b,#f2ecdf,body,13,500,3,button.aw-btn.primary,#/,Admire
+light,#f6f1e6,#8a4a42,body,11,500,3,span,#/timeline,Fernand Léger
 light,#f6f1e6,#a8412e,body,11,500,3,span,#/timeline,Peter Paul Rubens
-light,#f6f1e6,#5e8ab0,body,11,500,3,span,#/timeline,Kitagawa Utamaro
-light,#1d1a14,#e8c87a,body,11,500,3,span,#/timeline,Thomas Cole
-light,#f6f1e6,#8a4a42,body,11,500,3,span,#/timeline,Fernand Leger
-light,#1d1a14,#f0c82e,body,11,500,3,span,#/timeline,David Hockney (gradient bar)
-light,#2e7a6e,#f2ecdf,body,10,400,2,b,#/,One detail you cannot unse
+dark,#0d0c0a,#d9a83e,body,11,500,2,span,#/timeline,Osman Hamdi Bey
+dark,#0d0c0a,#e87a2e,body,11,500,2,span,#/timeline,Morris Louis
+dark,#6fb3a8,#0d0c0a,body,10,400,2,b,#/,One detail you cannot unse
+dark,#6fb3a8,#16140f,body,10,300,2,div.ec-kicker,#/,Become
+dark,#6fb3a8,#16140f,body,22,300,2,span.ec-arrow,#/,→
+dark,#8b8372,#0d0c0a,body,10,300,2,div.chip-label,#/artist/leonardo-da-vinci,Movements · Techniques · E
+dark,#8b8372,#0d0c0a,body,11,300,2,span.f-label,#/artists,Era
+dark,#8b8372,#0d0c0a,body,12,300,2,p.map-hint,#/timeline,256 painters · 105 lanes ·
+dark,#8b8372,#0d0c0a,body,12,300,2,span,#/artwork/david,David
+dark,#8b8372,#16140f,body,10,300,2,a.chip-label,#/artist/leonardo-da-vinci,see the full influence gra
+dark,#8b8372,#16140f,body,12,300,2,span.sep,#/museum/louvre,/
+dark,#9b937f,#0d0c0a,body,16,300,2,a,#/artwork/david,CC BY 3.0
+dark,#9b937f,#16140f,body,12,300,2,a,#/museum/louvre,Atlas
+dark,#c97b6a,#16140f,body,10,300,2,div.ec-kicker,#/,Wander
+dark,#c97b6a,#16140f,body,22,300,2,span.ec-arrow,#/,→
+dark,#d8d2c4,#0d0c0a,body,12,300,2,a,#/artist/leonardo-da-vinci,Atlas
+dark,#d8d2c4,#0d0c0a,body,13,300,2,span,#/,1642
+dark,#d8d2c4,#0d0c0a,body,16,300,2,span,#/artist/leonardo-da-vinci,1452–1519
+dark,#e8c98a,#0d0c0a,body,10,300,2,div.daily-kicker,#/,Painting of the day
+dark,#e8c98a,#0d0c0a,body,12,300,2,a.daily-enter,#/,Enter today's painting
+dark,#e8c98a,#0d0c0a,body,19,300,2,span,#/,→
+dark,#e8c98a,#16140f,body,10,300,2,div.ec-kicker,#/,Begin
+dark,#e8c98a,#16140f,body,13,300,2,a,#/,see your map
+dark,#e8c98a,#16140f,body,22,300,2,span.ec-arrow,#/,→
+dark,#ece6d9,#0d0c0a,body,15,300,2,span,#/,Find the three muskets: lo
+dark,#ece6d9,#0d0c0a,body,16,300,2,span.f-label,#/timeline,Zoom
+dark,#ece6d9,#12110f,body,12,400,2,a.chip.e,#/artist/leonardo-da-vinci,15th Century
+dark,#ece6d9,#12110f,body,12,400,2,button.chip,#/artist/leonardo-da-vinci,Share this page
+dark,#f2eee5,#0a0908,body,10,300,2,span,#/,Today in Pigment
+dark,#f6f1e6,#16140f,body,11,500,2,span,#/timeline,Jasper Johns
+dark,#f6f1e6,#b44d2a,body,11,500,2,span,#/timeline,Henri Rousseau
+light,#0d0c0a,#d9a83e,body,11,500,2,span,#/timeline,Osman Hamdi Bey
+light,#0d0c0a,#e87a2e,body,11,500,2,span,#/timeline,Morris Louis
+light,#2b2620,#f2ecdf,body,15,300,2,span,#/,Find the three muskets: lo
+light,#2b2620,#f2ecdf,body,16,300,2,span.f-label,#/timeline,Zoom
+light,#2b2620,#f2ece0,body,12,400,2,a.chip.e,#/artist/leonardo-da-vinci,15th Century
+light,#2b2620,#f2ece0,body,12,400,2,button.chip,#/artist/leonardo-da-vinci,Share this page
+light,#2b7368,#f2ecdf,body,10,400,2,b,#/,One detail you cannot unse
+light,#2b7368,#faf6ec,body,10,300,2,div.ec-kicker,#/,Become
+light,#2b7368,#faf6ec,body,22,300,2,span.ec-arrow,#/,→
+light,#433c31,#f2ecdf,body,13,300,2,span,#/,1642
+light,#433c31,#f2ecdf,body,16,300,2,span,#/artist/leonardo-da-vinci,1452–1519
+light,#585244,#f2ecdf,body,16,300,2,a,#/artwork/david,CC BY 3.0
+light,#585244,#faf6ec,body,12,300,2,a,#/museum/louvre,Atlas
+light,#706755,#f2ecdf,body,10,300,2,div.chip-label,#/artist/leonardo-da-vinci,Movements · Techniques · E
+light,#706755,#f2ecdf,body,11,300,2,span.f-label,#/artists,Era
+light,#706755,#f2ecdf,body,12,300,2,p.map-hint,#/timeline,256 painters · 105 lanes ·
+light,#706755,#f2ecdf,body,12,300,2,span,#/artwork/david,David
+light,#706755,#faf6ec,body,10,300,2,a.chip-label,#/artist/leonardo-da-vinci,see the full influence gra
+light,#706755,#faf6ec,body,12,300,2,span.sep,#/museum/louvre,/
+light,#81632b,#f2ecdf,body,10,300,2,div.daily-kicker,#/,Painting of the day
+light,#81632b,#f2ecdf,body,12,300,2,a.daily-enter,#/,Enter today's painting
+light,#81632b,#f2ecdf,body,19,300,2,span,#/,→
+light,#81632b,#faf6ec,body,10,300,2,div.ec-kicker,#/,Begin
+light,#81632b,#faf6ec,body,13,300,2,a,#/,see your map
+light,#81632b,#faf6ec,body,22,300,2,span.ec-arrow,#/,→
+light,#a05141,#faf6ec,body,10,300,2,div.ec-kicker,#/,Wander
+light,#a05141,#faf6ec,body,22,300,2,span.ec-arrow,#/,→
 light,#f2eee5,#0a0908,body,10,300,2,span,#/,Today in Pigment
-light,#4a6e9e,#faf6ec,body,10,300,2,div.ec-kicker,#/explore,Geography
-light,#1d1a14,#d9a83e,body,11,500,2,span,#/timeline,Osman Hamdi Bey
-light,#f6f1e6,#c4542e,body,11,500,2,span,#/timeline,Henri Rousseau
-light,#f6f1e6,#e87a2e,body,11,500,2,span,#/timeline,Morris Louis
-light,#f2ecdf,#f2ecdf,large,32,800,1,h1.home-title,#/,GRADIENT-CLIPPED unresolvable
-light,#6fb3a8,#faf6ec,body,12,500,1,b,#/artist/leonardo-da-vinci,influenced
-light,#c4536a,#faf6ec,body,12,500,1,b,#/artist/leonardo-da-vinci,rival of
-light,#1d1a14,#b0b8b4,body,11,500,1,span,#/timeline,Sesshu Toyo
-light,#1d1a14,#e8b48a,body,11,500,1,span,#/timeline,Fitz Henry Lane
-light,#f6f1e6,#d9886e,body,11,500,1,span,#/timeline,Paul Signac
-light,#f6f1e6,#c4763e,body,11,500,1,span,#/timeline,Edward Hopper
-light,#f6f1e6,#c4423e,body,11,500,1,span,#/timeline,Diego Rivera
-light,#f6f1e6,#d97a8a,body,11,500,1,span,#/timeline,Georgia O'Keeffe
-light,#1d1a14,#d9c890,body,11,500,1,span,#/timeline,Grant Wood
-light,#f6f1e6,#c43e4e,body,11,500,1,span,#/timeline,Tamara de Lempicka
-light,#f6f1e6,#8a9bb0,body,11,500,1,span,#/timeline,Agnes Martin
-light,#000000,#efefef,body,13,400,1,button.skip-inline,#/influences,Skip the graph 204 painters
-light,#2b2620,#faf6ec,large,32,800,1,h1.display,#/museum/louvre,Musee du Louvre
-light,#433c31,#faf6ec,body,14,300,1,p,#/taste,You believe ornament is ho
-light,#8a6a2e,#f2ecdf,large,38,400,1,b,#/daily,75
+light,#f6f1e6,#b44d2a,body,11,500,2,span,#/timeline,Henri Rousseau
+light,#f6f1e6,#faf6ec,body,11,500,2,span,#/timeline,Jasper Johns
+dark,#0d0c0a,#0d0c0a,large,59,800,1,h1.home-title,#/,Find your place in the his
+dark,#0d0c0a,#8a9bb0,body,11,500,1,span,#/timeline,Agnes Martin
+dark,#0d0c0a,#b0b8b4,body,11,500,1,span,#/timeline,Sesshū Tōyō
+dark,#0d0c0a,#c4763e,body,11,500,1,span,#/timeline,Edward Hopper
+dark,#0d0c0a,#d97a8a,body,11,500,1,span,#/timeline,Georgia O'Keeffe
+dark,#0d0c0a,#d9886e,body,11,500,1,span,#/timeline,Paul Signac
+dark,#0d0c0a,#d9c890,body,11,500,1,span,#/timeline,Grant Wood
+dark,#0d0c0a,#e8b48a,body,11,500,1,span,#/timeline,Fitz Henry Lane
+dark,#6fb3a8,#16140f,body,9,500,1,span.badge-soon,#/,soon
+dark,#6fb3a8,#1b1914,body,12,500,1,b.ig-rel.e-influenced,#/artist/leonardo-da-vinci,influenced
+dark,#7d9cc0,#16140f,body,10,300,1,div.ec-kicker,#/explore,Geography
+dark,#7d9cc0,#16140f,body,22,300,1,span.ec-arrow,#/explore,→
+dark,#8b8372,#0d0c0a,body,10,300,1,a.chip-label,#/,all 12 lists →
+dark,#8b8372,#0d0c0a,body,12,300,1,p.daily-return,#/daily,A new painting enters the 
+dark,#8b8372,#0d0c0a,body,13,300,1,p.aw-provenance,#/daily,"On view at , Amsterdam ·"
+dark,#8b8372,#16140f,body,12,300,1,span,#/museum/louvre,Musée du Louvre
+dark,#9b937f,#0d0c0a,body,12,300,1,p.img-credit.index-credit,#/museums,Building photographs by Wi
+dark,#9b937f,#0d0c0a,body,12,300,1,p.img-credit.mu-credit,#/museum/louvre,Photograph: Benh LIEU SONG
+dark,#9b937f,#0d0c0a,body,12,300,1,span,#/artist/leonardo-da-vinci,Leonardo da Vinci
+dark,#9b937f,#0d0c0a,body,16,300,1,p,#/no-such-page,This page hasn't been pain
+dark,#9b937f,#16140f,body,13,300,1,div.mu-panel-meta,#/artwork/david,Florence · Italy
+dark,#9b937f,#16140f,body,15,300,1,div.mu-sub,#/museum/louvre,Paris · France · founded 1
+dark,#c9a45c,#0d0c0a,body,12,400,1,button.tl2-leg.tl2-leg-more,#/timeline,+ 53 more movements
+dark,#c9a45c,#16140f,body,11,300,1,div.tl2-year.t.now,#/timeline,today
+dark,#ca6478,#1b1914,body,12,500,1,b.ig-rel.e-rivaled,#/artist/leonardo-da-vinci,rival of
+dark,#d8d2c4,#0d0c0a,body,15,300,1,span.cr-what,#/credits,","
+dark,#d8d2c4,#0d0c0a,body,16,300,1,p.aw-empty,#/artwork/david,Not written about yet — th
+dark,#d8d2c4,#0d0c0a,body,16,300,1,p.aw-provenance,#/artwork/david,"marble, 517 cm tall · , Fl"
+dark,#d8d2c4,#0d0c0a,body,16,300,1,p.daily-note,#/,Its real name is The Compa
+dark,#d8d2c4,#0d0c0a,body,16,300,1,p.img-credit,#/artwork/david,Image credit: Jörg Bittner
+dark,#d8d2c4,#0d0c0a,body,17,300,1,p,#/museum/louvre,"Fortress, then royal palac"
+dark,#d8d2c4,#0d0c0a,body,17,300,1,p.lede,#/,Eight centuries of painter
+dark,#d8d2c4,#0d0c0a,body,18,300,1,div.hero-tagline,#/artist/leonardo-da-vinci,“The universal mind who pa
+dark,#d8d2c4,#0d0c0a,body,18,300,1,p.daily-note,#/daily,Its real name is The Compa
+dark,#e8c98a,#0d0c0a,body,12,300,1,a,#/,Eugène Delacroix
+dark,#e8c98a,#0d0c0a,body,12,300,1,div.kicker,#/,Pigment · a taste atlas of
+dark,#e8c98a,#0d0c0a,body,17,500,1,a.aw-btn.primary.ob-cta,#/taste,Find your palette →
+dark,#e8c98a,#0d0c0a,body,17,500,1,button.aw-btn.primary.ob-cta,#/palette,Begin →
+dark,#e8c98a,#0d0c0a,large,38,400,1,b,#/daily,75
+dark,#e8c98a,#16140f,body,10,300,1,div.why-kicker,#/artist/leonardo-da-vinci,Why da Vinci matters
+dark,#e8c98a,#16140f,body,13,400,1,button.ec-surprise,#/,or surprise me →
+dark,#e8c98a,#16140f,body,15,300,1,div.mu-panel-hook,#/artwork/david,The hallway where David wa
+dark,#e8c98a,#16140f,body,19,300,1,div.mu-hook,#/museum/louvre,A palace that surrendered 
+dark,#e8c98a,#1d1a13,body,13,400,1,button.skip-inline,#/influences,Skip the graph — 204 paint
+dark,#ece6d9,#0d0c0a,body,16,300,1,em,#/credits,does
+dark,#ece6d9,#0d0c0a,body,16,400,1,strong,#/privacy,888 upload.wikimedia.org i
+dark,#ece6d9,#0d0c0a,large,38,600,1,a,#/,The Night Watch
+dark,#ece6d9,#0d0c0a,large,42,800,1,h1.display,#/artwork/david,David
+dark,#ece6d9,#0d0c0a,large,48,600,1,h1,#/no-such-page,Blank canvas
+dark,#ece6d9,#0d0c0a,large,52,800,1,h1.display,#/daily,The Night Watch
+dark,#ece6d9,#0d0c0a,large,58,800,1,h1,#/artist/leonardo-da-vinci,Leonardo da Vinci
+dark,#ece6d9,#12110f,body,12,400,1,a.chip.a,#/daily,Rembrandt van Rijn
+dark,#ece6d9,#16140f,body,17,300,1,a.mu-panel-name,#/artwork/david,Galleria dell'Accademia
+dark,#ece6d9,#16140f,body,18,300,1,p,#/artist/leonardo-da-vinci,Leonardo made painting a f
+dark,#ece6d9,#16140f,large,54,800,1,h1.display,#/museum/louvre,Musée du Louvre
+dark,#ece6d9,#1b1914,body,12,400,1,a.chip.m,#/artwork/david,More High Renaissance
+dark,#ece6d9,#1b1914,body,12,400,1,button.chip,#/museum/louvre,Share this page
+dark,#f6f1e6,#c13f3b,body,11,500,1,span,#/timeline,Diego Rivera
+dark,#f6f1e6,#c23b4c,body,11,500,1,span,#/timeline,Tamara de Lempicka
+light,#0d0c0a,#8a9bb0,body,11,500,1,span,#/timeline,Agnes Martin
+light,#0d0c0a,#b0b8b4,body,11,500,1,span,#/timeline,Sesshū Tōyō
+light,#0d0c0a,#c4763e,body,11,500,1,span,#/timeline,Edward Hopper
+light,#0d0c0a,#d97a8a,body,11,500,1,span,#/timeline,Georgia O'Keeffe
+light,#0d0c0a,#d9886e,body,11,500,1,span,#/timeline,Paul Signac
+light,#0d0c0a,#d9c890,body,11,500,1,span,#/timeline,Grant Wood
+light,#0d0c0a,#e8b48a,body,11,500,1,span,#/timeline,Fitz Henry Lane
+light,#2b2620,#f2ecdf,body,12,300,1,div.kicker,#/,Pigment · a taste atlas of
+light,#2b2620,#f2ecdf,body,16,300,1,em,#/credits,does
+light,#2b2620,#f2ecdf,body,16,400,1,strong,#/privacy,888 upload.wikimedia.org i
+light,#2b2620,#f2ecdf,large,38,600,1,a,#/,The Night Watch
+light,#2b2620,#f2ecdf,large,42,800,1,h1.display,#/artwork/david,David
+light,#2b2620,#f2ecdf,large,48,600,1,h1,#/no-such-page,Blank canvas
+light,#2b2620,#f2ecdf,large,52,800,1,h1.display,#/daily,The Night Watch
+light,#2b2620,#f2ecdf,large,58,800,1,h1,#/artist/leonardo-da-vinci,Leonardo da Vinci
+light,#2b2620,#f2ece0,body,12,400,1,a.chip.a,#/daily,Rembrandt van Rijn
+light,#2b2620,#faf6ec,body,12,400,1,a.chip.m,#/artwork/david,More High Renaissance
+light,#2b2620,#faf6ec,body,12,400,1,button.chip,#/museum/louvre,Share this page
+light,#2b2620,#faf6ec,body,17,300,1,a.mu-panel-name,#/artwork/david,Galleria dell'Accademia
+light,#2b2620,#faf6ec,body,18,300,1,p,#/artist/leonardo-da-vinci,Leonardo made painting a f
+light,#2b2620,#faf6ec,large,54,800,1,h1.display,#/museum/louvre,Musée du Louvre
+light,#2b7368,#faf6ec,body,9,500,1,span.badge-soon,#/,soon
+light,#2b7368,#faf6ec,body,12,500,1,b.ig-rel.e-influenced,#/artist/leonardo-da-vinci,influenced
+light,#433c31,#f2ecdf,body,12,300,1,p.footer-note,#/,Tonight's cover: mixed aft
+light,#433c31,#f2ecdf,body,15,300,1,span.cr-what,#/credits,","
+light,#433c31,#f2ecdf,body,16,300,1,p.aw-empty,#/artwork/david,Not written about yet — th
+light,#433c31,#f2ecdf,body,16,300,1,p.aw-provenance,#/artwork/david,"marble, 517 cm tall · , Fl"
+light,#433c31,#f2ecdf,body,16,300,1,p.daily-note,#/,Its real name is The Compa
+light,#433c31,#f2ecdf,body,16,300,1,p.img-credit,#/artwork/david,Image credit: Jörg Bittner
+light,#433c31,#f2ecdf,body,17,300,1,p,#/museum/louvre,"Fortress, then royal palac"
+light,#433c31,#f2ecdf,body,17,300,1,p.lede,#/,Eight centuries of painter
+light,#433c31,#f2ecdf,body,18,300,1,div.hero-tagline,#/artist/leonardo-da-vinci,“The universal mind who pa
+light,#433c31,#f2ecdf,body,18,300,1,p.daily-note,#/daily,Its real name is The Compa
+light,#476a98,#faf6ec,body,10,300,1,div.ec-kicker,#/explore,Geography
+light,#476a98,#faf6ec,body,22,300,1,span.ec-arrow,#/explore,→
+light,#585244,#f2ecdf,body,12,300,1,p.img-credit.index-credit,#/museums,Building photographs by Wi
+light,#585244,#f2ecdf,body,12,300,1,p.img-credit.mu-credit,#/museum/louvre,Photograph: Benh LIEU SONG
+light,#585244,#f2ecdf,body,12,300,1,span,#/artist/leonardo-da-vinci,Leonardo da Vinci
+light,#585244,#f2ecdf,body,16,300,1,p,#/no-such-page,This page hasn't been pain
+light,#585244,#faf6ec,body,13,300,1,div.mu-panel-meta,#/artwork/david,Florence · Italy
+light,#585244,#faf6ec,body,15,300,1,div.mu-sub,#/museum/louvre,Paris · France · founded 1
+light,#706755,#f2ecdf,body,10,300,1,a.chip-label,#/,all 12 lists →
+light,#706755,#f2ecdf,body,12,300,1,p.daily-return,#/daily,A new painting enters the 
+light,#706755,#f2ecdf,body,13,300,1,p.aw-provenance,#/daily,"On view at , Amsterdam ·"
+light,#706755,#faf6ec,body,12,300,1,span,#/museum/louvre,Musée du Louvre
+light,#81632b,#f0e9da,body,13,400,1,button.skip-inline,#/influences,Skip the graph — 204 paint
+light,#81632b,#f2ecdf,body,17,500,1,a.aw-btn.primary.ob-cta,#/taste,Find your palette →
+light,#81632b,#f2ecdf,body,17,500,1,button.aw-btn.primary.ob-cta,#/palette,Begin →
+light,#81632b,#f2ecdf,large,38,400,1,b,#/daily,75
+light,#81632b,#faf6ec,body,10,300,1,div.why-kicker,#/artist/leonardo-da-vinci,Why da Vinci matters
+light,#81632b,#faf6ec,body,13,400,1,button.ec-surprise,#/,or surprise me →
+light,#81632b,#faf6ec,body,15,300,1,div.mu-panel-hook,#/artwork/david,The hallway where David wa
+light,#81632b,#faf6ec,body,19,300,1,div.mu-hook,#/museum/louvre,A palace that surrendered 
+light,#9e7938,#f2ecdf,body,12,400,1,button.tl2-leg.tl2-leg-more,#/timeline,+ 53 more movements
+light,#9e7938,#faf6ec,body,11,300,1,div.tl2-year.t.now,#/timeline,today
+light,#b43e56,#faf6ec,body,12,500,1,b.ig-rel.e-rivaled,#/artist/leonardo-da-vinci,rival of
+light,#f2ecdf,#f2ecdf,large,59,800,1,h1.home-title,#/,Find your place in the his
+light,#f6f1e6,#c13f3b,body,11,500,1,span,#/timeline,Diego Rivera
+light,#f6f1e6,#c23b4c,body,11,500,1,span,#/timeline,Tamara de Lempicka

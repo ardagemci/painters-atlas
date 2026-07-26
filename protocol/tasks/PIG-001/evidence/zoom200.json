@@ -1,0 +1,1033 @@
+{
+ "routes": [
+  "#/",
+  "#/artists",
+  "#/timeline",
+  "#/influences",
+  "#/daily",
+  "#/lists",
+  "#/palette",
+  "#/taste",
+  "#/museums",
+  "#/explore",
+  "#/movements",
+  "#/techniques",
+  "#/eras",
+  "#/nations",
+  "#/privacy",
+  "#/credits",
+  "#/no-such-page",
+  "#/list/paintings-that-still-scare-us",
+  "#/museum/met",
+  "#/artist/duccio",
+  "#/movement/renaissance",
+  "#/technique/oil-painting",
+  "#/era/14th-century",
+  "#/nation/france",
+  "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJhZG1pcmF0aW9ucyI6W10sIm5vdEZvck1lIjpbXSwic2VlbiI6W10sIndhbnRUb1NlZSI6W10sInNhdmVkIjpbXSwicHJvYmVzIjpbXSwicXVpeiI6eyJhbnN3ZXJzIjp7fSwiYXQiOm51bGx9LCJwYWxldHRlIjp7InRvbmVzIjpbXX0sInBlcnNvbmEiOnt9LCJ0YXN0ZVZlY3RvciI6e30sIm1pbGVzdG9uZXMiOnt9LCJza2lwcGVkIjpbXSwiZGVja1NlZW4iOltdLCJjbHVzdGVycyI6W119"
+ ],
+ "results": {
+  "1270": [
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 9819,
+    "offender": "a",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:18",
+     "button.skip-inline:0"
+    ],
+    "route": "#/"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:256",
+     "button.skip-inline:0"
+    ],
+    "route": "#/artists"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 4796,
+    "offender": "div.tl2-year.t.now",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/timeline"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1944,
+    "offender": "svg",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [
+     {
+      "sel": "button.skip-inline",
+      "lostW": 100,
+      "lostH": 217,
+      "ov": "hidden/hidden"
+     }
+    ],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:1"
+    ],
+    "route": "#/influences"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/daily"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:12",
+     "button.skip-inline:0"
+    ],
+    "route": "#/lists"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/palette"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/taste"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:104",
+     "button.skip-inline:0"
+    ],
+    "route": "#/museums"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/explore"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:35",
+     "button.skip-inline:0"
+    ],
+    "route": "#/movements"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:20",
+     "button.skip-inline:0"
+    ],
+    "route": "#/techniques"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:8",
+     "button.skip-inline:0"
+    ],
+    "route": "#/eras"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:37",
+     "button.skip-inline:0"
+    ],
+    "route": "#/nations"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/privacy"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/credits"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/no-such-page"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:3",
+     "button.skip-inline:0"
+    ],
+    "route": "#/list/paintings-that-still-scare-us"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [
+     {
+      "sel": "div.mu-hero",
+      "lostW": 0,
+      "lostH": 707,
+      "ov": "hidden/hidden"
+     }
+    ],
+    "sel3": [
+     "div.mu-hero:1",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/museum/met"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/artist/duccio"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:30",
+     "button.skip-inline:0"
+    ],
+    "route": "#/movement/renaissance"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:207",
+     "button.skip-inline:0"
+    ],
+    "route": "#/technique/oil-painting"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:4",
+     "button.skip-inline:0"
+    ],
+    "route": "#/era/14th-century"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:40",
+     "button.skip-inline:0"
+    ],
+    "route": "#/nation/france"
+   },
+   {
+    "fs": "32px",
+    "cw": 1270,
+    "sw": 1270,
+    "over": 0,
+    "maxRight": 1270,
+    "offender": "canvas",
+    "navW": 493,
+    "navH": 258,
+    "navRight": 868,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiO"
+   }
+  ],
+  "1280": [
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 9828,
+    "offender": "div.strip-track",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:18",
+     "button.skip-inline:0"
+    ],
+    "route": "#/"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:256",
+     "button.skip-inline:0"
+    ],
+    "route": "#/artists"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 4801,
+    "offender": "div.tl2-year.t.now",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/timeline"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1949,
+    "offender": "svg",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [
+     {
+      "sel": "button.skip-inline",
+      "lostW": 100,
+      "lostH": 217,
+      "ov": "hidden/hidden"
+     }
+    ],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:1"
+    ],
+    "route": "#/influences"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/daily"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:12",
+     "button.skip-inline:0"
+    ],
+    "route": "#/lists"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/palette"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/taste"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:104",
+     "button.skip-inline:0"
+    ],
+    "route": "#/museums"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/explore"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:35",
+     "button.skip-inline:0"
+    ],
+    "route": "#/movements"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:20",
+     "button.skip-inline:0"
+    ],
+    "route": "#/techniques"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:8",
+     "button.skip-inline:0"
+    ],
+    "route": "#/eras"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:37",
+     "button.skip-inline:0"
+    ],
+    "route": "#/nations"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/privacy"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/credits"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/no-such-page"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:3",
+     "button.skip-inline:0"
+    ],
+    "route": "#/list/paintings-that-still-scare-us"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [
+     {
+      "sel": "div.mu-hero",
+      "lostW": 0,
+      "lostH": 707,
+      "ov": "hidden/hidden"
+     }
+    ],
+    "sel3": [
+     "div.mu-hero:1",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/museum/met"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/artist/duccio"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:30",
+     "button.skip-inline:0"
+    ],
+    "route": "#/movement/renaissance"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:207",
+     "button.skip-inline:0"
+    ],
+    "route": "#/technique/oil-painting"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:4",
+     "button.skip-inline:0"
+    ],
+    "route": "#/era/14th-century"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:40",
+     "button.skip-inline:0"
+    ],
+    "route": "#/nation/france"
+   },
+   {
+    "fs": "32px",
+    "cw": 1280,
+    "sw": 1280,
+    "over": 0,
+    "maxRight": 1280,
+    "offender": "canvas",
+    "navW": 503,
+    "navH": 192,
+    "navRight": 878,
+    "navWrap": "wrap",
+    "clipped": [],
+    "sel3": [
+     "div.mu-hero:0",
+     "div.card-tagline:0",
+     "button.skip-inline:0"
+    ],
+    "route": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiO"
+   }
+  ]
+ },
+ "nav390": {
+  "wrap": {
+   "w": 97,
+   "h": 291,
+   "scrollW": 109,
+   "clientW": 97,
+   "linksFullyInsideBox": 6,
+   "links": 8,
+   "headerH": 362
+  },
+  "nowrap": {
+   "w": 97,
+   "h": 35,
+   "scrollW": 689,
+   "clientW": 97,
+   "linksFullyInsideBox": 1,
+   "links": 8,
+   "headerH": 109
+  }
+ }
+}

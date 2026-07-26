@@ -165,6 +165,12 @@ def pass2():
             print("  %-6s %-9s %-9s %-6.2f %-6.1f %-7s %-22s %s"
                   % (f["theme"], f["fg"], f["bg"], f["_ratio"], f["_need"],
                      f["count"], f["selector"], f["example"][:34]))
+        print("\n  CAVEAT — a bare `span` row whose ratio is ~1.0 is a walk artifact, not a")
+        print("  render failure: #/timeline bars for LIVING painters are filled with an")
+        print("  inline linear-gradient, and a computed-style walk reads backgroundColor")
+        print("  only, so it falls through to the page behind the bar. Those labels were")
+        print("  measured from real glyph pixels instead — worst 4.61:1 across 156")
+        print("  painters in both themes, zero below AA. See the pass 3 note.")
     else:
         print("\nNo failures among the scored pairs.")
 
@@ -181,33 +187,37 @@ def pass2():
 
 # --------------------------------------------- composites read from the browser
 # Values below were sampled in Chrome, not assumed:
-#   * bg-canvas pixels: getImageData() on #bg-canvas at nine points across the
-#     bounding box of h1.home-title, on #/ , in each theme.
-#   * hero stops: the computed linear-gradient of h1.home-title, which is painted
-#     through -webkit-background-clip:text, so the glyphs ARE those stops.
-#   * light theme applies `#bg-canvas{opacity:.6}` (css/styles.css), so the
-#     canvas alpha is scaled by .6 before compositing onto --bg.
-#   * focus rings: circle.ig-ring stroke under a real Tab (:focus-visible), and
-#     the graph panel it is drawn over.
-CANVAS = {
-    "light": dict(page=[242, 236, 223], op=0.6,
-                  stops=[[94, 69, 28], [168, 129, 60], [94, 69, 28], [138, 106, 46]],
-                  samples=[[133, 105, 99, 75], [14, 21, 35, 36], [41, 62, 48, 37],
-                           [122, 72, 78, 46], [95, 80, 80, 51], [90, 75, 60, 51],
-                           [73, 36, 64, 28], [99, 85, 90, 54], [94, 78, 61, 46]]),
-    "dark": dict(page=[13, 12, 10], op=1.0,
-                 stops=[[244, 234, 210], [232, 201, 138], [244, 234, 210], [201, 164, 92]],
-                 samples=[[156, 92, 85, 72], [26, 26, 33, 39], [45, 67, 52, 34],
-                          [125, 74, 79, 45], [93, 78, 78, 52], [135, 94, 79, 81],
-                          [76, 38, 66, 27], [122, 97, 97, 71], [99, 81, 64, 44]]),
+#   * HERO: re-measured after unit 25 on REAL GLYPH PIXELS. Two screenshots per
+#     load, one with the hero text painted and one with it hidden; a pixel counts
+#     only where the two differ strongly, so the sample is confined to where a
+#     glyph actually lands instead of covering the whole (mostly empty) text box.
+#     The ink is the declared paint — the four gradient stops for the
+#     background-clip:text title, the computed colour otherwise — and the
+#     backdrop is that same pixel with the text hidden, i.e. everything really
+#     painted behind it. 8 fresh covers per theme; the worst is recorded.
+#     NOTE the surface: the hero sits over an UNNAMED canvas inside .home-hero at
+#     opacity 1 (rect 129,103 1182x438), not over #bg-canvas at opacity .6. The
+#     unit-25d bound was computed against #bg-canvas, which is the wrong layer.
+#   * focus indicators: token values read from the live cascade after unit 25.
+HERO_MEASURED = {  # (worst ratio, ink, backdrop, font px, large?) per selector
+    "light": [("h1.home-title", 3.06, [129, 99, 43], [196, 191, 181], 59, True),
+              ("div.kicker", 8.08, [43, 38, 32], [194, 190, 180], 12, False),
+              ("p.lede", 5.69, [67, 60, 49], [192, 187, 177], 17, False),
+              ("p.footer-note", 5.44, [67, 60, 49], [187, 183, 173], 12, False),
+              ("a", 5.72, [67, 60, 49], [194, 187, 178], 12, False)],
+    "dark": [("h1.home-title", 1.10, [201, 164, 92], [170, 160, 144], 59, True),
+             ("div.kicker", 4.05, [232, 201, 138], [96, 94, 90], 12, False),
+             ("p.lede", 1.97, [216, 210, 196], [151, 150, 143], 17, False),
+             ("p.footer-note", 1.74, [139, 131, 114], [99, 93, 80], 12, False),
+             ("a", 4.09, [232, 201, 138], [99, 93, 80], 12, False)],
 }
-FOCUS_RINGS = {  # circle.ig-ring stroke vs the graph panel beneath it
+FOCUS_RINGS = {  # circle.ig-ring stroke (= --gold2) vs the graph panel beneath it
     "dark": ([232, 201, 138], [22, 20, 15]),
-    "light": ([138, 106, 46], [250, 246, 236]),
+    "light": ([129, 99, 43], [250, 246, 236]),
 }
-SKIP_LINK = {  # skip-link outline vs its own focused background
-    "dark": ([236, 230, 217], [29, 26, 19]),
-    "light": ([43, 38, 32], [240, 233, 218]),
+SKIP_LINK = {  # skip-link outline (= --gold) vs its own focused background
+    "dark": ([201, 164, 92], [29, 26, 19]),
+    "light": ([158, 121, 56], [240, 233, 218]),
 }
 
 
@@ -217,23 +227,17 @@ def pass3():
     print("=" * 78)
     fails = []
 
-    print("\nHero title (background-clip:text) over the generative #bg-canvas:")
+    print("\nHome hero over the generative cover, measured on real glyph pixels")
+    print("(8 fresh covers per theme; worst observed):")
     for theme in ("dark", "light"):
-        d = CANVAS[theme]
-        worst = None
-        for s in d["samples"]:
-            a = (s[3] / 255.0) * d["op"]
-            backdrop = tuple(composite(tuple(s[:3]) + (a,), tuple(d["page"]) + (1.0,)))
-            for stop in d["stops"]:
-                r = ratio(tuple(stop) + (1.0,), backdrop)
-                if worst is None or r < worst[0]:
-                    worst = (r, stop, [round(x) for x in backdrop[:3]], s)
-        verdict = "PASS" if worst[0] >= AA_LARGE else "FAIL"
-        print("  %-6s worst %5.2f:1  need %.1f (large text)  %s" % (theme, worst[0], AA_LARGE, verdict))
-        print("         stop %s over backdrop %s (canvas px %s, canvas opacity %.1f)"
-              % (worst[1], worst[2], worst[3], d["op"]))
-        if verdict == "FAIL":
-            fails.append(("hero-title-over-bg-canvas", theme, worst[0]))
+        for sel, r, ink, backdrop, fpx, large in HERO_MEASURED[theme]:
+            need = AA_LARGE if large else AA_BODY
+            verdict = "PASS" if r >= need else "FAIL"
+            print("  %-6s %-16s %5.2f:1  need %.1f %-11s %s   ink %-16s over %s"
+                  % (theme, sel, r, need, "(large text)" if large else "(body text)",
+                     verdict, str(ink), str(backdrop)))
+            if verdict == "FAIL":
+                fails.append(("hero:" + sel, theme, r))
 
     print("\nFocus indicators (WCAG 1.4.11, need %.1f:1):" % AA_UI)
     for label, table in (("influence-graph node ring", FOCUS_RINGS),

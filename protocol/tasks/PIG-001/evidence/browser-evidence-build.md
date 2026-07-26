@@ -1,4 +1,15 @@
-# BROWSER EVIDENCE — PIG-001
+# BROWSER EVIDENCE — PIG-001 · ROUND 1 (superseded)
+
+> **SUPERSEDED — read `browser-evidence-build-r2.md` first.** This document is
+> the round-1 record, taken at commit `1214062`, before unit 25. It is kept
+> unchanged because Matisse's AC23 adjudication cites it, but its measurements no
+> longer describe the build. In particular round 2 **resolved** F-1, F-2, F-4 and
+> F-6, reduced F-3's 43 rendered-pair failures to 3 genuine ones, **withdrew**
+> F-1's `div.mu-hero` sub-finding as a false positive, and found that F-2's dark
+> figure of 6.20 was measured against the wrong layer (the real value is 1.10).
+> The 390 px screenshots referenced here were also a 500 px layout cropped to a
+> 390 px file; they have since been re-captured correctly. Round 2 states which
+> results are carried forward from this document and why.
 
 Reviewer: **Vermeer** (`claude-browser-reviewer`). Every statement below is tied
 to an artifact in this directory or to a command reproducible from it. Anything

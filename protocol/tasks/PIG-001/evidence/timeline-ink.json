@@ -1,0 +1,48 @@
+{
+ "dark": {
+  "painters": 156,
+  "samples": 323,
+  "skipped": 131,
+  "worst": {
+   "ratio": 4.61,
+   "name": "Giorgione",
+   "living": false,
+   "ink": [
+    246,
+    241,
+    230
+   ],
+   "backdrop": [
+    181,
+    77,
+    29
+   ],
+   "glyphPx": 230
+  },
+  "below45": [],
+  "below30": []
+ },
+ "light": {
+  "painters": 156,
+  "samples": 323,
+  "skipped": 131,
+  "worst": {
+   "ratio": 4.61,
+   "name": "Giorgione",
+   "living": false,
+   "ink": [
+    246,
+    241,
+    230
+   ],
+   "backdrop": [
+    181,
+    77,
+    29
+   ],
+   "glyphPx": 230
+  },
+  "below45": [],
+  "below30": []
+ }
+}

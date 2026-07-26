@@ -1,0 +1,518 @@
+{
+ "canvases": [
+  {
+   "id": "bg-canvas",
+   "cls": null,
+   "opacity": "0.6",
+   "inHero": false,
+   "coversHero": true,
+   "rect": [
+    0,
+    0,
+    1440,
+    900
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": true,
+   "coversHero": true,
+   "rect": [
+    129,
+    103,
+    1182,
+    438
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    300,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    471,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    642,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    814,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    985,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    1156,
+    3156,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    3288,
+    155,
+    116
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    3498,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    430,
+    3498,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    730,
+    3498,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    1031,
+    3498,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    3891,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    430,
+    3891,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    730,
+    3891,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    1031,
+    3891,
+    281,
+    175
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    4358,
+    381,
+    167
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    530,
+    4358,
+    381,
+    167
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    930,
+    4358,
+    381,
+    167
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    129,
+    4844,
+    381,
+    167
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    530,
+    4844,
+    381,
+    167
+   ]
+  },
+  {
+   "id": null,
+   "cls": null,
+   "opacity": "1",
+   "inHero": false,
+   "coversHero": false,
+   "rect": [
+    930,
+    4844,
+    381,
+    167
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "theme": "dark",
+   "selector": "a",
+   "worst": 4.09,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    99,
+    93,
+    80
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 526,
+   "text": "Paula Modersohn-Becker"
+  },
+  {
+   "theme": "dark",
+   "selector": "div.kicker",
+   "worst": 4.05,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    96,
+    94,
+    90
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 814,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "dark",
+   "selector": "h1.home-title",
+   "worst": 1.1,
+   "need": 3.0,
+   "verdict": "FAIL",
+   "ink": [
+    201,
+    164,
+    92
+   ],
+   "backdrop": [
+    170,
+    160,
+    144
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 17265,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.footer-note",
+   "worst": 1.74,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    139,
+    131,
+    114
+   ],
+   "backdrop": [
+    99,
+    93,
+    80
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 1000,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.lede",
+   "worst": 1.97,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    216,
+    210,
+    196
+   ],
+   "backdrop": [
+    151,
+    150,
+    143
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 5677,
+   "text": "Eight centuries of painters, t"
+  },
+  {
+   "theme": "light",
+   "selector": "a",
+   "worst": 5.72,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    194,
+    187,
+    178
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 352,
+   "text": "Francis Bacon"
+  },
+  {
+   "theme": "light",
+   "selector": "div.kicker",
+   "worst": 8.08,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    43,
+    38,
+    32
+   ],
+   "backdrop": [
+    194,
+    190,
+    180
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 858,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "light",
+   "selector": "h1.home-title",
+   "worst": 3.06,
+   "need": 3.0,
+   "verdict": "PASS",
+   "ink": [
+    129,
+    99,
+    43
+   ],
+   "backdrop": [
+    196,
+    191,
+    181
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 17433,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "light",
+   "selector": "p.footer-note",
+   "worst": 5.44,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    187,
+    183,
+    173
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 918,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "light",
+   "selector": "p.lede",
+   "worst": 5.69,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    192,
+    187,
+    177
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 5781,
+   "text": "Eight centuries of painters, t"
+  }
+ ]
+}
