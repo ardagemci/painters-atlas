@@ -1,0 +1,5593 @@
+{
+ "theme": "dark",
+ "viewport": [
+  390,
+  844
+ ],
+ "before": true,
+ "measured": 15,
+ "unrecoverable": [],
+ "pages": [
+  {
+   "venue": "k20-dusseldorf",
+   "imgs": 2,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "prado",
+   "imgs": 27,
+   "els": 12,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "louvre",
+   "imgs": 17,
+   "els": 12,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "moderna-museet",
+   "imgs": 10,
+   "els": 17,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "sistine-chapel",
+   "imgs": 6,
+   "els": 16,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "museu-picasso-barcelona",
+   "imgs": 1,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "tate-modern",
+   "imgs": 1,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "stanley-museum-iowa",
+   "imgs": 1,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "neue-galerie",
+   "imgs": 2,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "met",
+   "imgs": 28,
+   "els": 12,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "belvedere",
+   "imgs": 4,
+   "els": 12,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "yale-university-art-gallery",
+   "imgs": 2,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "frida-kahlo",
+   "imgs": 0,
+   "els": 0
+  },
+  {
+   "venue": "accademia-florence",
+   "imgs": 2,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "st-peters-basilica",
+   "imgs": 2,
+   "els": 9,
+   "layoutStable": true,
+   "heroKind": "photo"
+  }
+ ],
+ "rows": [
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 90,
+   "glyphWorst": 1.69,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    89,
+    115,
+    103
+   ],
+   "bandWorst": 1.28,
+   "bandBackdrop": [
+    111,
+    134,
+    119
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 5.03,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    17,
+    17,
+    15
+   ],
+   "bandWorst": 4.52,
+   "bandBackdrop": [
+    29,
+    28,
+    28
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 187,
+   "glyphWorst": 1.06,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    165,
+    141,
+    52
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    165,
+    148,
+    72
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 14,
+   "glyphWorst": 3.43,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    60,
+    47,
+    38
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    156,
+    128,
+    81
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Kunstsammlung Nordrhein-Westfalen (K20)",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1061,
+   "glyphWorst": 1.0,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    159,
+    128,
+    31
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    129,
+    133,
+    126
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Kunstsammlung Nordrhein-Westfalen (K20)",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 7356,
+   "glyphWorst": 2.86,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    143,
+    137,
+    93
+   ],
+   "bandWorst": 2.75,
+   "bandBackdrop": [
+    147,
+    138,
+    120
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "D\u00fcsseldorf \u00b7 Germany",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 585,
+   "glyphWorst": 3.12,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    73,
+    69,
+    60
+   ],
+   "bandWorst": 2.62,
+   "bandBackdrop": [
+    83,
+    81,
+    68
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The Rhineland's black box for modern pai",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1932,
+   "glyphWorst": 8.62,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    46,
+    45,
+    43
+   ],
+   "bandWorst": 8.17,
+   "bandBackdrop": [
+    48,
+    49,
+    49
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 414,
+   "glyphWorst": 13.7,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    29,
+    28,
+    25
+   ],
+   "bandWorst": 10.94,
+   "bandBackdrop": [
+    47,
+    46,
+    41
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 92,
+   "glyphWorst": 1.66,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    115,
+    110,
+    97
+   ],
+   "bandWorst": 1.46,
+   "bandBackdrop": [
+    132,
+    116,
+    109
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 11,
+   "glyphWorst": 1.53,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    106,
+    104,
+    61
+   ],
+   "bandWorst": 1.11,
+   "bandBackdrop": [
+    125,
+    125,
+    108
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 167,
+   "glyphWorst": 1.69,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    105,
+    111,
+    102
+   ],
+   "bandWorst": 1.26,
+   "bandBackdrop": [
+    132,
+    131,
+    114
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 13,
+   "glyphWorst": 2.07,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    84,
+    85,
+    38
+   ],
+   "bandWorst": 1.66,
+   "bandBackdrop": [
+    102,
+    98,
+    58
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Museo del Prado",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 206,
+   "glyphWorst": 1.42,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    113,
+    107,
+    83
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    135,
+    133,
+    121
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Museo del Prado",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2687,
+   "glyphWorst": 4.09,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    115,
+    110,
+    97
+   ],
+   "bandWorst": 3.78,
+   "bandBackdrop": [
+    117,
+    116,
+    106
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Madrid \u00b7 Spain \u00b7 founded 1819",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 771,
+   "glyphWorst": 2.64,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    81,
+    80,
+    76
+   ],
+   "bandWorst": 2.28,
+   "bandBackdrop": [
+    90,
+    90,
+    79
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "Goya's workplace, Spain's fever dream",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1629,
+   "glyphWorst": 8.82,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    44,
+    44,
+    35
+   ],
+   "bandWorst": 7.35,
+   "bandBackdrop": [
+    58,
+    56,
+    49
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 410,
+   "glyphWorst": 13.43,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    30,
+    30,
+    28
+   ],
+   "bandWorst": 11.06,
+   "bandBackdrop": [
+    47,
+    45,
+    40
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Emilio J. Rodr\u00edguez Posada \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1508,
+   "glyphWorst": 5.77,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    26,
+    23
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    23,
+    28,
+    25
+   ],
+   "overSrc": "500px-Hieronymus_Bosch-_The_Seven_Deadly_Sins_and_the_Four_L",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 2.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 313,
+   "glyphWorst": 5.88,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    19,
+    24,
+    21
+   ],
+   "bandWorst": 5.82,
+   "bandBackdrop": [
+    20,
+    25,
+    22
+   ],
+   "overSrc": "500px-Bosch_-_Haywain_Triptych.jpg",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 412,
+   "glyphWorst": 6.24,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    15,
+    16,
+    14
+   ],
+   "bandWorst": 6.2,
+   "bandBackdrop": [
+    16,
+    17,
+    14
+   ],
+   "overSrc": "500px-Hieronymus_Bosch-_The_Seven_Deadly_Sins_and_the_Four_L",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 42,
+   "glyphWorst": 2.22,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    97,
+    91,
+    72
+   ],
+   "bandWorst": 1.08,
+   "bandBackdrop": [
+    138,
+    143,
+    138
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 13,
+   "glyphWorst": 3.12,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    63,
+    55,
+    40
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    126,
+    134,
+    130
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 59,
+   "glyphWorst": 1.82,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    104,
+    105,
+    94
+   ],
+   "bandWorst": 1.12,
+   "bandBackdrop": [
+    135,
+    140,
+    135
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 0,
+   "glyphWorst": null,
+   "glyphInk": null,
+   "glyphBackdrop": null,
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    129,
+    133,
+    126
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Mus\u00e9e du Louvre",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 299,
+   "glyphWorst": 1.35,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    156,
+    155,
+    154
+   ],
+   "bandWorst": 1.08,
+   "bandBackdrop": [
+    138,
+    137,
+    135
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Mus\u00e9e du Louvre",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2642,
+   "glyphWorst": 3.45,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    125,
+    122,
+    112
+   ],
+   "bandWorst": 3.07,
+   "bandBackdrop": [
+    132,
+    131,
+    120
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Paris \u00b7 France \u00b7 founded 1793",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 724,
+   "glyphWorst": 3.21,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    70,
+    68,
+    55
+   ],
+   "bandWorst": 2.69,
+   "bandBackdrop": [
+    85,
+    78,
+    66
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "A palace that surrendered to paintings",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1705,
+   "glyphWorst": 8.74,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    47,
+    44,
+    35
+   ],
+   "bandWorst": 7.38,
+   "bandBackdrop": [
+    61,
+    55,
+    45
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 413,
+   "glyphWorst": 14.39,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    25,
+    23,
+    19
+   ],
+   "bandWorst": 12.13,
+   "bandBackdrop": [
+    40,
+    38,
+    35
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Benh LIEU SONG (Flickr) \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1452,
+   "glyphWorst": 5.68,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    24,
+    27,
+    25
+   ],
+   "bandWorst": 5.6,
+   "bandBackdrop": [
+    23,
+    29,
+    27
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 3.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 326,
+   "glyphWorst": 6.18,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    17,
+    17,
+    16
+   ],
+   "bandWorst": 6.18,
+   "bandBackdrop": [
+    17,
+    17,
+    16
+   ],
+   "overSrc": "500px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.j",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1452,
+   "glyphWorst": 5.68,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    24,
+    27,
+    25
+   ],
+   "bandWorst": 5.6,
+   "bandBackdrop": [
+    23,
+    29,
+    27
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 10,
+   "glyphWorst": 1.4,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    112,
+    124,
+    131
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    167,
+    142,
+    135
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 0,
+   "glyphWorst": null,
+   "glyphInk": null,
+   "glyphBackdrop": null,
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    153,
+    125,
+    124
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 71,
+   "glyphWorst": 1.35,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    145,
+    122,
+    69
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    156,
+    148,
+    110
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 0,
+   "glyphWorst": null,
+   "glyphInk": null,
+   "glyphBackdrop": null,
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    148,
+    129,
+    111
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Moderna Museet",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 142,
+   "glyphWorst": 1.19,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    176,
+    140,
+    65
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    130,
+    132,
+    133
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Moderna Museet",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2636,
+   "glyphWorst": 2.4,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    147,
+    150,
+    148
+   ],
+   "bandWorst": 2.13,
+   "bandBackdrop": [
+    159,
+    159,
+    158
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Stockholm \u00b7 Sweden",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 409,
+   "glyphWorst": 1.82,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    113,
+    102,
+    100
+   ],
+   "bandWorst": 1.41,
+   "bandBackdrop": [
+    122,
+    122,
+    121
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "Stockholm's island of moderns \u2014 af Klint",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 2018,
+   "glyphWorst": 5.2,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    79,
+    78,
+    77
+   ],
+   "bandWorst": 4.31,
+   "bandBackdrop": [
+    91,
+    90,
+    88
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 412,
+   "glyphWorst": 14.01,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    26,
+    26,
+    25
+   ],
+   "bandWorst": 11.69,
+   "bandBackdrop": [
+    43,
+    41,
+    35
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_The_Ten_Largest_No._2_-_Childhood_-_1",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Emmawickstrm \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1214,
+   "glyphWorst": 5.72,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    27,
+    25
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    22,
+    28,
+    27
+   ],
+   "overSrc": "500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 4.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 301,
+   "glyphWorst": 5.76,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    26,
+    25
+   ],
+   "bandWorst": 5.75,
+   "bandBackdrop": [
+    21,
+    26,
+    26
+   ],
+   "overSrc": "500px-Hilma_af_Klint%2C_1915%2C_Svanen%2C_No._17.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1214,
+   "glyphWorst": 5.72,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    27,
+    25
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    22,
+    28,
+    27
+   ],
+   "overSrc": "500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "5",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 166,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.lbl",
+   "path": "div.stats-row > div.stat > div.lbl",
+   "text": "Works in the atlas",
+   "fpx": 10.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 360,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "1",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 130,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Hilma_af_Klint%2C_1915%2C_Svanen%2C_No._17.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.lbl",
+   "path": "div.stats-row > div.stat > div.lbl",
+   "text": "Artists on these walls",
+   "fpx": 10.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 431,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Hilma_af_Klint%2C_1915%2C_Svanen%2C_No._17.jpg",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "h2.sec-title",
+   "path": "main.view-enter > section > h2.sec-title",
+   "text": "In the collection",
+   "fpx": 23.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1968,
+   "glyphWorst": 14.0,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    33,
+    24,
+    21
+   ],
+   "bandWorst": 1.89,
+   "bandBackdrop": [
+    201,
+    164,
+    92
+   ],
+   "overSrc": "500px-Hilma_af_Klint_-_Altarpiece_No._1_Group_X_%2813919%29.",
+   "textShadow": "none",
+   "venue": "moderna-museet",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 103,
+   "glyphWorst": 1.87,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    111,
+    101,
+    87
+   ],
+   "bandWorst": 1.6,
+   "bandBackdrop": [
+    118,
+    113,
+    97
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 8,
+   "glyphWorst": 1.78,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    99,
+    91,
+    81
+   ],
+   "bandWorst": 1.54,
+   "bandBackdrop": [
+    108,
+    101,
+    86
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 163,
+   "glyphWorst": 1.57,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    117,
+    115,
+    99
+   ],
+   "bandWorst": 1.5,
+   "bandBackdrop": [
+    126,
+    116,
+    100
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 12,
+   "glyphWorst": 1.84,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    95,
+    89,
+    80
+   ],
+   "bandWorst": 1.23,
+   "bandBackdrop": [
+    118,
+    117,
+    109
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Sistine Chapel",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 61,
+   "glyphWorst": 1.79,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    100,
+    90,
+    80
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    134,
+    132,
+    120
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Sistine Chapel",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2427,
+   "glyphWorst": 3.98,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    115,
+    112,
+    104
+   ],
+   "bandWorst": 3.63,
+   "bandBackdrop": [
+    128,
+    117,
+    100
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Vatican City \u00b7 Vatican \u00b7 a church",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 711,
+   "glyphWorst": 2.73,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    80,
+    78,
+    71
+   ],
+   "bandWorst": 2.34,
+   "bandBackdrop": [
+    92,
+    87,
+    81
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The ceiling that redefined ambition",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1600,
+   "glyphWorst": 7.9,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    53,
+    51,
+    46
+   ],
+   "bandWorst": 6.91,
+   "bandBackdrop": [
+    62,
+    60,
+    54
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 409,
+   "glyphWorst": 13.54,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    30,
+    29,
+    27
+   ],
+   "bandWorst": 11.2,
+   "bandBackdrop": [
+    46,
+    44,
+    41
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: The original uploader was Sn",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 2078,
+   "glyphWorst": 5.42,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    27,
+    32,
+    27
+   ],
+   "bandWorst": 5.34,
+   "bandBackdrop": [
+    29,
+    33,
+    29
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 3.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 302,
+   "glyphWorst": 5.42,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    27,
+    32,
+    27
+   ],
+   "bandWorst": 5.34,
+   "bandBackdrop": [
+    29,
+    33,
+    29
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 380,
+   "glyphWorst": 5.52,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    26,
+    30,
+    26
+   ],
+   "bandWorst": 5.46,
+   "bandBackdrop": [
+    27,
+    31,
+    27
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "3",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 159,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Sistine_ceiling.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.lbl",
+   "path": "div.stats-row > div.stat > div.lbl",
+   "text": "Works in the atlas",
+   "fpx": 10.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 360,
+   "glyphWorst": 6.02,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 6.02,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Last_Judgement_%28Michelangelo%29.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "1",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 130,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "h2.sec-title",
+   "path": "main.view-enter > section > h2.sec-title",
+   "text": "In the collection",
+   "fpx": 23.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1958,
+   "glyphWorst": 13.51,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    40,
+    26,
+    23
+   ],
+   "bandWorst": 1.89,
+   "bandBackdrop": [
+    201,
+    164,
+    92
+   ],
+   "overSrc": "500px-Last_Judgement_%28Michelangelo%29.jpg",
+   "textShadow": "none",
+   "venue": "sistine-chapel",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 14,
+   "glyphWorst": 2.74,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    81,
+    77,
+    74
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    149,
+    147,
+    144
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 4,
+   "glyphWorst": 2.45,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    85,
+    68,
+    61
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    140,
+    130,
+    121
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 4,
+   "glyphWorst": 1.59,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    122,
+    111,
+    109
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    148,
+    147,
+    150
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 13,
+   "glyphWorst": 3.28,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    69,
+    48,
+    38
+   ],
+   "bandWorst": 1.32,
+   "bandBackdrop": [
+    132,
+    107,
+    92
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Museu Picasso",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 277,
+   "glyphWorst": 1.85,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    95,
+    89,
+    77
+   ],
+   "bandWorst": 1.13,
+   "bandBackdrop": [
+    132,
+    121,
+    114
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Museu Picasso",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2370,
+   "glyphWorst": 3.27,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    126,
+    126,
+    124
+   ],
+   "bandWorst": 3.0,
+   "bandBackdrop": [
+    133,
+    132,
+    130
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Barcelona \u00b7 Spain",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 442,
+   "glyphWorst": 2.42,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    85,
+    86,
+    84
+   ],
+   "bandWorst": 2.09,
+   "bandBackdrop": [
+    96,
+    95,
+    94
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The teenage Picasso, kept by his city",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1500,
+   "glyphWorst": 8.13,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    50,
+    49,
+    48
+   ],
+   "bandWorst": 6.8,
+   "bandBackdrop": [
+    62,
+    61,
+    59
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 410,
+   "glyphWorst": 13.69,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    29,
+    28,
+    26
+   ],
+   "bandWorst": 10.91,
+   "bandBackdrop": [
+    47,
+    46,
+    44
+   ],
+   "overSrc": "960px-Museu_Picasso_Barcelona.jpg",
+   "textShadow": "none",
+   "venue": "museu-picasso-barcelona",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 17,
+   "glyphWorst": 1.33,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    116,
+    127,
+    141
+   ],
+   "bandWorst": 1.19,
+   "bandBackdrop": [
+    135,
+    134,
+    135
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 0,
+   "glyphWorst": null,
+   "glyphInk": null,
+   "glyphBackdrop": null,
+   "bandWorst": 1.1,
+   "bandBackdrop": [
+    118,
+    125,
+    136
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 19,
+   "glyphWorst": 1.39,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    115,
+    124,
+    133
+   ],
+   "bandWorst": 1.07,
+   "bandBackdrop": [
+    142,
+    142,
+    146
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 4.31,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    32,
+    33,
+    29
+   ],
+   "bandWorst": 4.14,
+   "bandBackdrop": [
+    36,
+    36,
+    32
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Tate Modern",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 4,
+   "glyphWorst": 1.15,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    109,
+    123,
+    138
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    121,
+    134,
+    144
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Tate Modern",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2030,
+   "glyphWorst": 4.28,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    95,
+    109,
+    121
+   ],
+   "bandWorst": 3.32,
+   "bandBackdrop": [
+    125,
+    125,
+    121
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "London \u00b7 United Kingdom \u00b7 founded 2000",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1020,
+   "glyphWorst": 2.67,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    77,
+    80,
+    79
+   ],
+   "bandWorst": 2.12,
+   "bandBackdrop": [
+    95,
+    94,
+    91
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "A power station running on art now",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1483,
+   "glyphWorst": 9.75,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    39,
+    35,
+    33
+   ],
+   "bandWorst": 7.98,
+   "bandBackdrop": [
+    59,
+    49,
+    33
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 408,
+   "glyphWorst": 14.02,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    26,
+    26,
+    24
+   ],
+   "bandWorst": 11.81,
+   "bandBackdrop": [
+    42,
+    40,
+    38
+   ],
+   "overSrc": "960px-Tate_Modern_-_Bankside_Power_Station.jpg",
+   "textShadow": "none",
+   "venue": "tate-modern",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 69,
+   "glyphWorst": 1.08,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    109,
+    145,
+    183
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    120,
+    151,
+    187
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 8,
+   "glyphWorst": 1.0,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    95,
+    135,
+    180
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    94,
+    135,
+    180
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 125,
+   "glyphWorst": 1.2,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    100,
+    136,
+    180
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    140,
+    149,
+    150
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 9,
+   "glyphWorst": 1.06,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    103,
+    139,
+    181
+   ],
+   "bandWorst": 1.06,
+   "bandBackdrop": [
+    101,
+    139,
+    180
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Stanley Museum of Art",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 254,
+   "glyphWorst": 1.0,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    99,
+    134,
+    178
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    97,
+    134,
+    181
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Stanley Museum of Art",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 3527,
+   "glyphWorst": 2.6,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    141,
+    144,
+    140
+   ],
+   "bandWorst": 2.53,
+   "bandBackdrop": [
+    112,
+    152,
+    160
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Iowa City \u00b7 United States",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 612,
+   "glyphWorst": 2.21,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    80,
+    94,
+    95
+   ],
+   "bandWorst": 2.07,
+   "bandBackdrop": [
+    85,
+    98,
+    100
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The university that owns a Pollock mural",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1719,
+   "glyphWorst": 6.14,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    69,
+    68,
+    59
+   ],
+   "bandWorst": 5.48,
+   "bandBackdrop": [
+    76,
+    75,
+    70
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 409,
+   "glyphWorst": 13.4,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    31,
+    30,
+    27
+   ],
+   "bandWorst": 11.06,
+   "bandBackdrop": [
+    47,
+    45,
+    40
+   ],
+   "overSrc": "960px-Stanley_Museum_of_Art%2C_Burlington_Street_and_Museum_",
+   "textShadow": "none",
+   "venue": "stanley-museum-iowa",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 87,
+   "glyphWorst": 1.47,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    152,
+    111,
+    63
+   ],
+   "bandWorst": 1.19,
+   "bandBackdrop": [
+    169,
+    126,
+    74
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 9,
+   "glyphWorst": 1.41,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    145,
+    97,
+    50
+   ],
+   "bandWorst": 1.24,
+   "bandBackdrop": [
+    149,
+    108,
+    68
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 140,
+   "glyphWorst": 1.36,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    145,
+    121,
+    74
+   ],
+   "bandWorst": 1.04,
+   "bandBackdrop": [
+    154,
+    141,
+    147
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 7,
+   "glyphWorst": 1.31,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    142,
+    106,
+    51
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    153,
+    129,
+    90
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Neue Galerie",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 242,
+   "glyphWorst": 1.25,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    141,
+    110,
+    74
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    152,
+    129,
+    88
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Neue Galerie",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 1960,
+   "glyphWorst": 2.81,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    144,
+    136,
+    126
+   ],
+   "bandWorst": 2.81,
+   "bandBackdrop": [
+    144,
+    136,
+    126
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "New York \u00b7 United States",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 600,
+   "glyphWorst": 1.84,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    112,
+    104,
+    59
+   ],
+   "bandWorst": 1.72,
+   "bandBackdrop": [
+    114,
+    109,
+    69
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "Vienna 1900, transplanted to Fifth Avenu",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1786,
+   "glyphWorst": 6.61,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    75,
+    61,
+    34
+   ],
+   "bandWorst": 5.01,
+   "bandBackdrop": [
+    87,
+    81,
+    48
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 411,
+   "glyphWorst": 14.07,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    28,
+    25,
+    22
+   ],
+   "bandWorst": 11.48,
+   "bandBackdrop": [
+    45,
+    42,
+    38
+   ],
+   "overSrc": "500px-Gustav_Klimt_046.jpg",
+   "textShadow": "none",
+   "venue": "neue-galerie",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 32,
+   "glyphWorst": 1.29,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    136,
+    128,
+    103
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    160,
+    146,
+    120
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 5,
+   "glyphWorst": 1.54,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    107,
+    101,
+    85
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    141,
+    130,
+    107
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 40,
+   "glyphWorst": 1.45,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    130,
+    118,
+    100
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    160,
+    146,
+    121
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1,
+   "glyphWorst": 1.45,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    175,
+    159,
+    128
+   ],
+   "bandWorst": 1.17,
+   "bandBackdrop": [
+    156,
+    142,
+    113
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "The Metropolitan Museum of Art",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 452,
+   "glyphWorst": 1.05,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    136,
+    128,
+    103
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    141,
+    131,
+    106
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "The Metropolitan Museum of Art",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 5135,
+   "glyphWorst": 3.24,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    131,
+    127,
+    106
+   ],
+   "bandWorst": 2.98,
+   "bandBackdrop": [
+    138,
+    133,
+    113
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "New York \u00b7 United States \u00b7 founded 1870",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 980,
+   "glyphWorst": 3.21,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    73,
+    67,
+    56
+   ],
+   "bandWorst": 2.78,
+   "bandBackdrop": [
+    79,
+    77,
+    67
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "America's five-thousand-year answer",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1532,
+   "glyphWorst": 9.32,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    42,
+    39,
+    33
+   ],
+   "bandWorst": 8.24,
+   "bandBackdrop": [
+    51,
+    48,
+    41
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 409,
+   "glyphWorst": 13.55,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    30,
+    29,
+    26
+   ],
+   "bandWorst": 11.07,
+   "bandBackdrop": [
+    47,
+    45,
+    39
+   ],
+   "overSrc": "500px-D%C3%BCrer_Apocalypse_0.jpg",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Hugo Schneider \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1272,
+   "glyphWorst": 5.81,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    25,
+    23
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    23,
+    28,
+    25
+   ],
+   "overSrc": "500px-Albrecht_D%C3%BCrer%2C_Knight%2C_Death_and_Devil%2C_15",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 2.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 323,
+   "glyphWorst": 6.24,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    15,
+    16,
+    14
+   ],
+   "bandWorst": 6.23,
+   "bandBackdrop": [
+    16,
+    16,
+    15
+   ],
+   "overSrc": "500px-Albrecht_D%C3%BCrer_-_Melencolia_I_-_Google_Art_Projec",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1272,
+   "glyphWorst": 5.81,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    25,
+    23
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    23,
+    28,
+    25
+   ],
+   "overSrc": "500px-Albrecht_D%C3%BCrer%2C_Knight%2C_Death_and_Devil%2C_15",
+   "textShadow": "none",
+   "venue": "met",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 91,
+   "glyphWorst": 1.58,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    136,
+    110,
+    60
+   ],
+   "bandWorst": 1.03,
+   "bandBackdrop": [
+    167,
+    149,
+    95
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 10,
+   "glyphWorst": 1.6,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    120,
+    95,
+    53
+   ],
+   "bandWorst": 1.13,
+   "bandBackdrop": [
+    146,
+    119,
+    62
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 151,
+   "glyphWorst": 1.31,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    148,
+    124,
+    77
+   ],
+   "bandWorst": 1.1,
+   "bandBackdrop": [
+    155,
+    140,
+    84
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 10,
+   "glyphWorst": 1.54,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    120,
+    99,
+    53
+   ],
+   "bandWorst": 1.15,
+   "bandBackdrop": [
+    140,
+    119,
+    71
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "\u00d6sterreichische Galerie Belvedere",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 701,
+   "glyphWorst": 1.06,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    148,
+    124,
+    77
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    138,
+    131,
+    117
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "\u00d6sterreichische Galerie Belvedere",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 5542,
+   "glyphWorst": 3.37,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    129,
+    124,
+    102
+   ],
+   "bandWorst": 2.75,
+   "bandBackdrop": [
+    145,
+    138,
+    128
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Vienna \u00b7 Austria",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 374,
+   "glyphWorst": 2.76,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    84,
+    77,
+    55
+   ],
+   "bandWorst": 2.46,
+   "bandBackdrop": [
+    89,
+    85,
+    63
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "A prince's summer palace, Vienna's gold ",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1917,
+   "glyphWorst": 7.69,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    54,
+    53,
+    49
+   ],
+   "bandWorst": 6.86,
+   "bandBackdrop": [
+    64,
+    60,
+    54
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 408,
+   "glyphWorst": 13.86,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    28,
+    27,
+    23
+   ],
+   "bandWorst": 11.36,
+   "bandBackdrop": [
+    46,
+    43,
+    36
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Diego Delso \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1126,
+   "glyphWorst": 5.79,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    32,
+    22,
+    20
+   ],
+   "bandWorst": 5.57,
+   "bandBackdrop": [
+    36,
+    26,
+    21
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 4.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 256,
+   "glyphWorst": 6.39,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    14,
+    12,
+    11
+   ],
+   "bandWorst": 6.39,
+   "bandBackdrop": [
+    14,
+    12,
+    11
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1126,
+   "glyphWorst": 5.79,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    32,
+    22,
+    20
+   ],
+   "bandWorst": 5.67,
+   "bandBackdrop": [
+    35,
+    24,
+    20
+   ],
+   "overSrc": "500px-Judith_1_%28cropped%29.jpg",
+   "textShadow": "none",
+   "venue": "belvedere",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 101,
+   "glyphWorst": 1.47,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    115,
+    122,
+    96
+   ],
+   "bandWorst": 1.28,
+   "bandBackdrop": [
+    126,
+    131,
+    110
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 13,
+   "glyphWorst": 3.06,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    74,
+    53,
+    36
+   ],
+   "bandWorst": 2.82,
+   "bandBackdrop": [
+    89,
+    54,
+    41
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 173,
+   "glyphWorst": 1.4,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    145,
+    118,
+    74
+   ],
+   "bandWorst": 1.06,
+   "bandBackdrop": [
+    159,
+    142,
+    96
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 12,
+   "glyphWorst": 3.07,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    87,
+    46,
+    33
+   ],
+   "bandWorst": 2.79,
+   "bandBackdrop": [
+    93,
+    53,
+    40
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Yale University Art Gallery",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 479,
+   "glyphWorst": 3.15,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    82,
+    46,
+    35
+   ],
+   "bandWorst": 2.49,
+   "bandBackdrop": [
+    101,
+    60,
+    48
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Yale University Art Gallery",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 4094,
+   "glyphWorst": 3.56,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    136,
+    116,
+    103
+   ],
+   "bandWorst": 3.56,
+   "bandBackdrop": [
+    136,
+    116,
+    103
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "New Haven \u00b7 United States",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 676,
+   "glyphWorst": 2.79,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    79,
+    77,
+    61
+   ],
+   "bandWorst": 2.47,
+   "bandBackdrop": [
+    87,
+    85,
+    66
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The campus museum that outgrew the campu",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 2003,
+   "glyphWorst": 8.23,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    54,
+    48,
+    30
+   ],
+   "bandWorst": 6.31,
+   "bandBackdrop": [
+    66,
+    67,
+    53
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 411,
+   "glyphWorst": 13.84,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    29,
+    27,
+    21
+   ],
+   "bandWorst": 11.51,
+   "bandBackdrop": [
+    45,
+    42,
+    35
+   ],
+   "overSrc": "500px-Vincent_Willem_van_Gogh_076.jpg",
+   "textShadow": "none",
+   "venue": "yale-university-art-gallery",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 101,
+   "glyphWorst": 2.87,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    79,
+    74,
+    67
+   ],
+   "bandWorst": 2.84,
+   "bandBackdrop": [
+    80,
+    75,
+    65
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 12,
+   "glyphWorst": 2.64,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    73,
+    66,
+    56
+   ],
+   "bandWorst": 2.59,
+   "bandBackdrop": [
+    74,
+    67,
+    58
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 169,
+   "glyphWorst": 1.68,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    113,
+    109,
+    103
+   ],
+   "bandWorst": 1.01,
+   "bandBackdrop": [
+    153,
+    145,
+    140
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 12,
+   "glyphWorst": 2.89,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    67,
+    60,
+    50
+   ],
+   "bandWorst": 2.76,
+   "bandBackdrop": [
+    70,
+    63,
+    53
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Galleria dell'Accademia",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 468,
+   "glyphWorst": 2.59,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    74,
+    67,
+    57
+   ],
+   "bandWorst": 2.55,
+   "bandBackdrop": [
+    75,
+    68,
+    59
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Galleria dell'Accademia",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 3976,
+   "glyphWorst": 3.2,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    129,
+    127,
+    128
+   ],
+   "bandWorst": 2.92,
+   "bandBackdrop": [
+    140,
+    133,
+    128
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Florence \u00b7 Italy",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 360,
+   "glyphWorst": 3.08,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    72,
+    70,
+    68
+   ],
+   "bandWorst": 2.8,
+   "bandBackdrop": [
+    77,
+    76,
+    75
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The hallway where David waits",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1363,
+   "glyphWorst": 9.84,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    36,
+    35,
+    32
+   ],
+   "bandWorst": 8.15,
+   "bandBackdrop": [
+    50,
+    49,
+    46
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 410,
+   "glyphWorst": 14.1,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    27,
+    25,
+    23
+   ],
+   "bandWorst": 11.35,
+   "bandBackdrop": [
+    45,
+    43,
+    40
+   ],
+   "overSrc": "500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+   "textShadow": "none",
+   "venue": "accademia-florence",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 112,
+   "glyphWorst": 5.06,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    45,
+    34,
+    28
+   ],
+   "bandWorst": 4.81,
+   "bandBackdrop": [
+    49,
+    38,
+    31
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 14,
+   "glyphWorst": 4.27,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    45,
+    30,
+    21
+   ],
+   "bandWorst": 4.25,
+   "bandBackdrop": [
+    44,
+    31,
+    20
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 182,
+   "glyphWorst": 1.47,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    126,
+    118,
+    106
+   ],
+   "bandWorst": 1.0,
+   "bandBackdrop": [
+    153,
+    147,
+    136
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 4.0,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    49,
+    36,
+    26
+   ],
+   "bandWorst": 3.31,
+   "bandBackdrop": [
+    61,
+    50,
+    41
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "St Peter's Basilica",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 317,
+   "glyphWorst": 4.3,
+   "glyphInk": [
+    139,
+    131,
+    114
+   ],
+   "glyphBackdrop": [
+    40,
+    31,
+    25
+   ],
+   "bandWorst": 3.82,
+   "bandBackdrop": [
+    51,
+    40,
+    28
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "St Peter's Basilica",
+   "fpx": 32,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 2852,
+   "glyphWorst": 3.28,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    131,
+    125,
+    115
+   ],
+   "bandWorst": 2.79,
+   "bandBackdrop": [
+    146,
+    136,
+    128
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Vatican City \u00b7 Italy \u00b7 a church",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 615,
+   "glyphWorst": 1.89,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    105,
+    101,
+    97
+   ],
+   "bandWorst": 1.44,
+   "bandBackdrop": [
+    122,
+    120,
+    118
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The largest church, the tenderest marble",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1715,
+   "glyphWorst": 5.71,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    74,
+    72,
+    69
+   ],
+   "bandWorst": 5.08,
+   "bandBackdrop": [
+    83,
+    79,
+    76
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 409,
+   "glyphWorst": 13.96,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    28,
+    26,
+    23
+   ],
+   "bandWorst": 11.48,
+   "bandBackdrop": [
+    45,
+    42,
+    38
+   ],
+   "overSrc": "500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
+   "textShadow": "none",
+   "venue": "st-peters-basilica",
+   "theme": "dark",
+   "viewport": [
+    390,
+    844
+   ],
+   "band": true,
+   "layoutStable": true
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+[
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "k20-dusseldorf",
+  "matchedFocusVisibleRules": []
+ },
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "louvre",
+  "matchedFocusVisibleRules": []
+ },
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "moderna-museet",
+  "matchedFocusVisibleRules": []
+ },
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "tate-modern",
+  "matchedFocusVisibleRules": []
+ },
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "prado",
+  "matchedFocusVisibleRules": []
+ },
+ {
+  "color": "rgb(107, 81, 34)",
+  "style": "solid",
+  "width": "2px",
+  "offset": "5px",
+  "venue": "met",
+  "matchedFocusVisibleRules": []
+ }
+]

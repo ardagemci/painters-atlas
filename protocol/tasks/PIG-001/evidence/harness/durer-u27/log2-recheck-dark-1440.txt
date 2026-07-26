@@ -1,0 +1,35 @@
+venues=15 theme=dark 1440x900 before=False
+  0 k20-dusseldorf               imgs=2  els=12 worst=4.98 band=4.98
+  1 prado                        imgs=27 els=16 worst=5.27 band=5.27
+  2 louvre                       imgs=17 els=16 worst=5.15 band=5.15
+  3 moderna-museet               imgs=10 els=18 worst=4.97 band=5.07
+  4 sistine-chapel               imgs=6  els=18 worst=4.69 band=5.22
+  5 museu-picasso-barcelona      imgs=1  els=9  worst=5.06 band=5.06
+  6 tate-modern                  imgs=1  els=9  worst=5.24 band=5.24
+  7 stanley-museum-iowa          imgs=1  els=9  worst=5.09 band=5.09
+  8 neue-galerie                 imgs=2  els=16 worst=4.68 band=5.38
+  9 met                          imgs=28 els=16 worst=5.01 band=5.01
+ 10 belvedere                    imgs=4  els=18 worst=4.68 band=5.25
+ 11 yale-university-art-gallery  imgs=2  els=12 worst=5.46 band=5.46
+ 12 frida-kahlo                  imgs=0  no composite
+ 13 accademia-florence           imgs=2  els=16 worst=5.06 band=5.06
+ 14 st-peters-basilica           imgs=2  els=16 worst=5.19 band=5.21
+measured 15 venues; unrecoverable: none
+
+IN THE MUSEUM BAND (.mu-hero-body)  [recheck-dark-1440]
+  span                             4.98  need 4.5  PASS  k20-dusseldorf             ink [155, 147, 127]  backdrop [37, 38, 35]     (892 px)
+  div.mu-sub                       5.08  need 4.5  PASS  museu-picasso-barcelona    ink [155, 147, 127]  backdrop [37, 36, 34]     (459 px)
+  span.sep                         5.09  need 4.5  PASS  met                        ink [155, 147, 127]  backdrop [37, 36, 31]     (15 px)
+  div.mu-hook                      9.83  need 4.5  PASS  moderna-museet             ink [232, 201, 138]  backdrop [36, 35, 33]     (2033 px)
+  a                               10.03  need 4.5  PASS  museu-picasso-barcelona    ink [216, 210, 196]  backdrop [39, 38, 36]     (117 px)
+  button.chip                     12.17  need 4.5  PASS  st-peters-basilica         ink [236, 230, 217]  backdrop [39, 38, 35]     (411 px)
+  h1.display                      12.29  need 3.0  PASS  k20-dusseldorf             ink [236, 230, 217]  backdrop [39, 37, 34]     (20021 px)
+
+ELSEWHERE ON THE PAGE (over-approximation)  [recheck-dark-1440]
+  span.count                       4.68  need 4.5  PASS  neue-galerie               ink [139, 131, 114]  backdrop [32, 23, 20]     (700 px)
+  p.img-credit.mu-credit           5.62  need 4.5  PASS  yale-university-art-gallery ink [155, 147, 127]  backdrop [22, 29, 25]     (1091 px)
+  a                                5.75  need 4.5  PASS  k20-dusseldorf             ink [155, 147, 127]  backdrop [22, 26, 24]     (247 px)
+  div.lbl                          6.02  need 4.5  PASS  moderna-museet             ink [155, 147, 127]  backdrop [22, 20, 15]     (391 px)
+  p                               11.38  need 4.5  PASS  louvre                     ink [216, 210, 196]  backdrop [22, 29, 26]     (26861 px)
+  div.num                         11.53  need 3.0  PASS  prado                      ink [232, 201, 138]  backdrop [22, 20, 15]     (278 px)
+  h2.sec-title                    14.01  need 4.5  PASS  neue-galerie               ink [236, 230, 217]  backdrop [33, 24, 20]     (1953 px)

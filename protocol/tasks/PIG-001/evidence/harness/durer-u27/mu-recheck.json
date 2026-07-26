@@ -1,0 +1,1619 @@
+{
+ "theme": "dark",
+ "viewport": [
+  1440,
+  900
+ ],
+ "before": false,
+ "measured": 3,
+ "unrecoverable": [],
+ "pages": [
+  {
+   "venue": "louvre",
+   "imgs": 17,
+   "els": 16,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "prado",
+   "imgs": 27,
+   "els": 16,
+   "layoutStable": true,
+   "heroKind": "photo"
+  },
+  {
+   "venue": "k20-dusseldorf",
+   "imgs": 2,
+   "els": 12,
+   "layoutStable": true,
+   "heroKind": "photo"
+  }
+ ],
+ "rows": [
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 117,
+   "glyphWorst": 10.76,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    31,
+    33,
+    31
+   ],
+   "bandWorst": 10.73,
+   "bandBackdrop": [
+    32,
+    33,
+    31
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 5.35,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    31,
+    32,
+    31
+   ],
+   "bandWorst": 5.29,
+   "bandBackdrop": [
+    32,
+    33,
+    31
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 209,
+   "glyphWorst": 10.74,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    32,
+    33,
+    30
+   ],
+   "bandWorst": 10.7,
+   "bandBackdrop": [
+    33,
+    33,
+    31
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 5.4,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    31,
+    31,
+    29
+   ],
+   "bandWorst": 5.35,
+   "bandBackdrop": [
+    31,
+    32,
+    30
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Mus\u00e9e du Louvre",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 331,
+   "glyphWorst": 5.35,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    31,
+    32,
+    30
+   ],
+   "bandWorst": 5.29,
+   "bandBackdrop": [
+    32,
+    33,
+    31
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Mus\u00e9e du Louvre",
+   "fpx": 54.4,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 7092,
+   "glyphWorst": 12.65,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    36,
+    35,
+    31
+   ],
+   "bandWorst": 12.49,
+   "bandBackdrop": [
+    37,
+    36,
+    32
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Paris \u00b7 France \u00b7 founded 1793",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 707,
+   "glyphWorst": 5.15,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    36,
+    35,
+    31
+   ],
+   "bandWorst": 5.14,
+   "bandBackdrop": [
+    36,
+    35,
+    32
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "A palace that surrendered to paintings",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1706,
+   "glyphWorst": 10.24,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    32,
+    32,
+    28
+   ],
+   "bandWorst": 9.84,
+   "bandBackdrop": [
+    36,
+    35,
+    32
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 412,
+   "glyphWorst": 13.42,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    31,
+    30,
+    25
+   ],
+   "bandWorst": 11.2,
+   "bandBackdrop": [
+    47,
+    44,
+    37
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Benh LIEU SONG (Flickr) \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1436,
+   "glyphWorst": 5.76,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    26,
+    23
+   ],
+   "bandWorst": 5.45,
+   "bandBackdrop": [
+    27,
+    31,
+    30
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 3.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 291,
+   "glyphWorst": 5.76,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    26,
+    23
+   ],
+   "bandWorst": 5.72,
+   "bandBackdrop": [
+    21,
+    27,
+    24
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 405,
+   "glyphWorst": 6.44,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "bandWorst": 6.44,
+   "bandBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "p",
+   "path": "main.view-enter > div.mu-essay > p",
+   "text": "Fortress, then royal palace, then \u2014 one ",
+   "fpx": 16.8,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 26843,
+   "glyphWorst": 10.3,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    45,
+    34,
+    24
+   ],
+   "bandWorst": 10.3,
+   "bandBackdrop": [
+    45,
+    34,
+    24
+   ],
+   "overSrc": "500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Lo",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "11",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 232,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "7",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 168,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouc",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "1793",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 672,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retou",
+   "textShadow": "none",
+   "venue": "louvre",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 117,
+   "glyphWorst": 10.75,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    35,
+    32,
+    29
+   ],
+   "bandWorst": 10.75,
+   "bandBackdrop": [
+    35,
+    32,
+    29
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 5.69,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    24,
+    27,
+    24
+   ],
+   "bandWorst": 5.56,
+   "bandBackdrop": [
+    26,
+    29,
+    27
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 209,
+   "glyphWorst": 11.0,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    29,
+    31,
+    30
+   ],
+   "bandWorst": 10.77,
+   "bandBackdrop": [
+    30,
+    33,
+    32
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 16,
+   "glyphWorst": 5.6,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    28,
+    28,
+    23
+   ],
+   "bandWorst": 5.53,
+   "bandBackdrop": [
+    30,
+    29,
+    23
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Museo del Prado",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 331,
+   "glyphWorst": 5.27,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    34,
+    33,
+    29
+   ],
+   "bandWorst": 5.27,
+   "bandBackdrop": [
+    34,
+    33,
+    29
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Museo del Prado",
+   "fpx": 54.4,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 7355,
+   "glyphWorst": 12.65,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    37,
+    35,
+    27
+   ],
+   "bandWorst": 12.46,
+   "bandBackdrop": [
+    38,
+    36,
+    32
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "Madrid \u00b7 Spain \u00b7 founded 1819",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 798,
+   "glyphWorst": 5.28,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    34,
+    33,
+    28
+   ],
+   "bandWorst": 5.19,
+   "bandBackdrop": [
+    36,
+    34,
+    31
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "Goya's workplace, Spain's fever dream",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1627,
+   "glyphWorst": 10.33,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    32,
+    31,
+    27
+   ],
+   "bandWorst": 9.96,
+   "bandBackdrop": [
+    35,
+    34,
+    31
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 410,
+   "glyphWorst": 12.64,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    36,
+    35,
+    32
+   ],
+   "bandWorst": 10.41,
+   "bandBackdrop": [
+    52,
+    49,
+    44
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Emilio J. Rodr\u00edguez Posada \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1516,
+   "glyphWorst": 5.77,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    21,
+    26,
+    23
+   ],
+   "bandWorst": 5.6,
+   "bandBackdrop": [
+    24,
+    29,
+    24
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 2.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 321,
+   "glyphWorst": 6.44,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "bandWorst": 6.44,
+   "bandBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 422,
+   "glyphWorst": 6.44,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "bandWorst": 6.44,
+   "bandBackdrop": [
+    12,
+    11,
+    9
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "p",
+   "path": "main.view-enter > div.mu-essay > p",
+   "text": "The Prado isn't a survey of art history;",
+   "fpx": 16.8,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 26472,
+   "glyphWorst": 11.51,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    34,
+    24,
+    22
+   ],
+   "bandWorst": 11.45,
+   "bandBackdrop": [
+    23,
+    28,
+    25
+   ],
+   "overSrc": "500px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolutio",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "21",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 278,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Bosch_-_Haywain_Triptych.jpg",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "5",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 166,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-Triumph_of_Death_Brueghel.jpg",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.num",
+   "path": "div.stats-row > div.stat > div.num",
+   "text": "1819",
+   "fpx": 33.6,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 741,
+   "glyphWorst": 11.53,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "bandWorst": 11.53,
+   "bandBackdrop": [
+    22,
+    20,
+    15
+   ],
+   "overSrc": "500px-El_caballero_de_la_mano_en_el_pecho.jpg",
+   "textShadow": "none",
+   "venue": "prado",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 118,
+   "glyphWorst": 11.98,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    28,
+    21,
+    15
+   ],
+   "bandWorst": 10.68,
+   "bandBackdrop": [
+    38,
+    32,
+    27
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 15,
+   "glyphWorst": 5.17,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    38,
+    34,
+    29
+   ],
+   "bandWorst": 5.01,
+   "bandBackdrop": [
+    39,
+    37,
+    32
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Museums",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 209,
+   "glyphWorst": 10.34,
+   "glyphInk": [
+    216,
+    210,
+    196
+   ],
+   "glyphBackdrop": [
+    39,
+    35,
+    32
+   ],
+   "bandWorst": 10.26,
+   "bandBackdrop": [
+    39,
+    36,
+    31
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span.sep",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span.sep",
+   "text": "/",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 16,
+   "glyphWorst": 6.07,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    27,
+    17,
+    11
+   ],
+   "bandWorst": 5.27,
+   "bandBackdrop": [
+    38,
+    32,
+    27
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "span",
+   "path": "div.mu-hero-body > nav.breadcrumbs > span",
+   "text": "Kunstsammlung Nordrhein-Westfalen (K20)",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 892,
+   "glyphWorst": 4.98,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    37,
+    38,
+    35
+   ],
+   "bandWorst": 4.98,
+   "bandBackdrop": [
+    37,
+    38,
+    35
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "h1.display",
+   "path": "div.mu-hero > div.mu-hero-body > h1.display",
+   "text": "Kunstsammlung Nordrhein-Westfalen (K20)",
+   "fpx": 54.4,
+   "large": true,
+   "need": 3.0,
+   "glyphPx": 20021,
+   "glyphWorst": 12.29,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    39,
+    37,
+    34
+   ],
+   "bandWorst": 12.29,
+   "bandBackdrop": [
+    39,
+    37,
+    34
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-sub",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-sub",
+   "text": "D\u00fcsseldorf \u00b7 Germany",
+   "fpx": 15.2,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 594,
+   "glyphWorst": 5.15,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    37,
+    35,
+    28
+   ],
+   "bandWorst": 5.14,
+   "bandBackdrop": [
+    36,
+    35,
+    33
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "div.mu-hook",
+   "path": "div.mu-hero > div.mu-hero-body > div.mu-hook",
+   "text": "The Rhineland's black box for modern pai",
+   "fpx": 18.88,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1935,
+   "glyphWorst": 10.01,
+   "glyphInk": [
+    232,
+    201,
+    138
+   ],
+   "glyphBackdrop": [
+    34,
+    34,
+    29
+   ],
+   "bandWorst": 10.01,
+   "bandBackdrop": [
+    34,
+    34,
+    29
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "button.chip",
+   "path": "div.mu-hero-body > div.chips > button.chip",
+   "text": "Share this page",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 413,
+   "glyphWorst": 13.31,
+   "glyphInk": [
+    236,
+    230,
+    217
+   ],
+   "glyphBackdrop": [
+    35,
+    30,
+    22
+   ],
+   "bandWorst": 10.65,
+   "bandBackdrop": [
+    51,
+    47,
+    45
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": true,
+   "layoutStable": true
+  },
+  {
+   "sel": "p.img-credit.mu-credit",
+   "path": "main.view-enter > p.img-credit.mu-credit",
+   "text": "Photograph: Leoni1234 \u00b7 \u00b7",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 996,
+   "glyphWorst": 5.56,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    23,
+    30,
+    26
+   ],
+   "bandWorst": 5.54,
+   "bandBackdrop": [
+    24,
+    30,
+    27
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "CC BY-SA 3.0",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 242,
+   "glyphWorst": 5.7,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    22,
+    27,
+    25
+   ],
+   "bandWorst": 5.65,
+   "bandBackdrop": [
+    23,
+    28,
+    26
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  },
+  {
+   "sel": "a",
+   "path": "main.view-enter > p.img-credit.mu-credit > a",
+   "text": "file on Commons",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 294,
+   "glyphWorst": 6.22,
+   "glyphInk": [
+    155,
+    147,
+    127
+   ],
+   "glyphBackdrop": [
+    17,
+    16,
+    16
+   ],
+   "bandWorst": 6.22,
+   "bandBackdrop": [
+    17,
+    16,
+    16
+   ],
+   "overSrc": "500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
+   "textShadow": "none",
+   "venue": "k20-dusseldorf",
+   "theme": "dark",
+   "viewport": [
+    1440,
+    900
+   ],
+   "band": false,
+   "layoutStable": true
+  }
+ ]
+}

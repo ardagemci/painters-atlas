@@ -1,0 +1,33 @@
+venues=15 theme=light 390x844 before=True
+  0 k20-dusseldorf               imgs=2  els=9  worst=1.14 band=1.14
+  1 prado                        imgs=27 els=12 worst=1.40 band=1.40
+  2 louvre                       imgs=17 els=12 worst=1.32 band=1.32
+  3 moderna-museet               imgs=10 els=17 worst=1.35 band=1.35
+  4 sistine-chapel               imgs=6  els=16 worst=1.36 band=1.36
+  5 museu-picasso-barcelona      imgs=1  els=9  worst=1.36 band=1.36
+  6 tate-modern                  imgs=1  els=9  worst=1.66 band=1.66
+  7 stanley-museum-iowa          imgs=1  els=9  worst=1.45 band=1.45
+  8 neue-galerie                 imgs=2  els=9  worst=1.25 band=1.25
+  9 met                          imgs=28 els=12 worst=1.04 band=1.04
+ 10 belvedere                    imgs=4  els=12 worst=1.43 band=1.43
+ 11 yale-university-art-gallery  imgs=2  els=9  worst=1.37 band=1.37
+ 12 frida-kahlo                  imgs=0  no composite
+ 13 accademia-florence           imgs=2  els=9  worst=1.40 band=1.40
+ 14 st-peters-basilica           imgs=2  els=9  worst=1.42 band=1.42
+measured 15 venues; unrecoverable: none
+
+IN THE MUSEUM BAND (.mu-hero-body)  [before-light-390]
+  span                             1.04  need 4.5  FAIL  met                        ink [112, 103, 85]   backdrop [114, 105, 99]   (616 px)
+  span.sep                         1.25  need 4.5  FAIL  neue-galerie               ink [112, 103, 85]   backdrop [178, 97, 73]    (8 px)
+  a                                1.36  need 4.5  FAIL  sistine-chapel             ink [88, 82, 68]     backdrop [121, 97, 91]    (91 px)
+  div.mu-sub                       2.28  need 4.5  FAIL  neue-galerie               ink [88, 82, 68]     backdrop [145, 138, 132]  (630 px)
+  h1.display                       2.52  need 3.0  FAIL  k20-dusseldorf             ink [43, 38, 32]     backdrop [104, 99, 94]    (7270 px)
+  div.mu-hook                      2.54  need 4.5  FAIL  st-peters-basilica         ink [129, 99, 43]    backdrop [180, 174, 164]  (1666 px)
+  button.chip                     11.28  need 4.5  PASS  k20-dusseldorf             ink [43, 38, 32]     backdrop [228, 223, 211]  (408 px)
+
+ELSEWHERE ON THE PAGE (over-approximation)  [before-light-390]
+  p.img-credit.mu-credit           4.47  need 4.5  FAIL  met                        ink [88, 82, 68]     backdrop [194, 198, 186]  (1326 px)
+  a                                4.47  need 4.5  FAIL  met                        ink [88, 82, 68]     backdrop [194, 198, 186]  (1326 px)
+  div.num                          5.18  need 3.0  PASS  moderna-museet             ink [129, 99, 43]    backdrop [250, 246, 236]  (166 px)
+  div.lbl                          7.19  need 4.5  PASS  moderna-museet             ink [88, 82, 68]     backdrop [250, 246, 236]  (374 px)
+  h2.sec-title                     9.27  need 4.5  PASS  sistine-chapel             ink [43, 38, 32]     backdrop [219, 200, 186]  (1961 px)

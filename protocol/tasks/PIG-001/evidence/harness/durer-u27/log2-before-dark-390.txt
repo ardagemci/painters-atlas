@@ -1,0 +1,33 @@
+venues=15 theme=dark 390x844 before=True
+  0 k20-dusseldorf               imgs=2  els=9  worst=1.00 band=1.00
+  1 prado                        imgs=27 els=12 worst=1.42 band=1.42
+  2 louvre                       imgs=17 els=12 worst=1.35 band=1.35
+  3 moderna-museet               imgs=10 els=17 worst=1.19 band=1.19
+  4 sistine-chapel               imgs=6  els=16 worst=1.57 band=1.57
+  5 museu-picasso-barcelona      imgs=1  els=9  worst=1.59 band=1.59
+  6 tate-modern                  imgs=1  els=9  worst=1.15 band=1.15
+  7 stanley-museum-iowa          imgs=1  els=9  worst=1.00 band=1.00
+  8 neue-galerie                 imgs=2  els=9  worst=1.25 band=1.25
+  9 met                          imgs=28 els=12 worst=1.05 band=1.05
+ 10 belvedere                    imgs=4  els=12 worst=1.06 band=1.06
+ 11 yale-university-art-gallery  imgs=2  els=9  worst=1.40 band=1.40
+ 12 frida-kahlo                  imgs=0  no composite
+ 13 accademia-florence           imgs=2  els=9  worst=1.68 band=1.68
+ 14 st-peters-basilica           imgs=2  els=9  worst=1.47 band=1.47
+measured 15 venues; unrecoverable: none
+
+IN THE MUSEUM BAND (.mu-hero-body)  [before-dark-390]
+  span.sep                         1.00  need 4.5  FAIL  stanley-museum-iowa        ink [139, 131, 114]  backdrop [95, 135, 180]   (8 px)
+  span                             1.00  need 4.5  FAIL  k20-dusseldorf             ink [139, 131, 114]  backdrop [159, 128, 31]   (1061 px)
+  a                                1.06  need 4.5  FAIL  k20-dusseldorf             ink [155, 147, 127]  backdrop [165, 141, 52]   (187 px)
+  div.mu-sub                       1.82  need 4.5  FAIL  moderna-museet             ink [155, 147, 127]  backdrop [113, 102, 100]  (409 px)
+  h1.display                       2.40  need 3.0  FAIL  moderna-museet             ink [236, 230, 217]  backdrop [147, 150, 148]  (2636 px)
+  div.mu-hook                      5.20  need 4.5  PASS  moderna-museet             ink [232, 201, 138]  backdrop [79, 78, 77]     (2018 px)
+  button.chip                     13.40  need 4.5  PASS  stanley-museum-iowa        ink [236, 230, 217]  backdrop [31, 30, 27]     (409 px)
+
+ELSEWHERE ON THE PAGE (over-approximation)  [before-dark-390]
+  p.img-credit.mu-credit           5.42  need 4.5  PASS  sistine-chapel             ink [155, 147, 127]  backdrop [27, 32, 27]     (2078 px)
+  a                                5.42  need 4.5  PASS  sistine-chapel             ink [155, 147, 127]  backdrop [27, 32, 27]     (302 px)
+  div.lbl                          6.02  need 4.5  PASS  moderna-museet             ink [155, 147, 127]  backdrop [22, 20, 15]     (360 px)
+  div.num                         11.53  need 3.0  PASS  moderna-museet             ink [232, 201, 138]  backdrop [22, 20, 15]     (166 px)
+  h2.sec-title                    13.51  need 4.5  PASS  sistine-chapel             ink [236, 230, 217]  backdrop [40, 26, 23]     (1958 px)

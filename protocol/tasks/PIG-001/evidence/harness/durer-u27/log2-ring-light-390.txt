@@ -1,0 +1,14 @@
+k20-dusseldorf           focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+louvre                   focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+moderna-museet           focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+tate-modern              focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+prado                    focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+met                      focus-visible=False outline=none 3px rgb(43, 38, 32) offset=0px
+
+worst measured veiled backdrop under h1.display (light, 390px): [216, 210, 199] at uffizi
+  k20-dusseldorf           ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS
+  louvre                   ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS
+  moderna-museet           ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS
+  tate-modern              ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS
+  prado                    ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS
+  met                      ring [43, 38, 32] vs [216, 210, 199] -> 9.97  need 3.0  PASS

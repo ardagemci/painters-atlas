@@ -1,0 +1,123 @@
+venues=104 theme=dark 390x844 before=False
+  0 met                          imgs=28 els=12 worst=5.01 band=5.01
+  1 musee-dorsay                 imgs=27 els=12 worst=5.14 band=5.14
+  2 prado                        imgs=27 els=12 worst=5.20 band=5.20
+  3 moma                         imgs=2  els=9  worst=5.40 band=5.40
+  4 national-gallery-dc          imgs=18 els=12 worst=5.33 band=5.33
+  5 national-gallery-london      imgs=19 els=12 worst=5.67 band=5.67
+  6 louvre                       imgs=17 els=12 worst=4.88 band=4.88
+  7 uffizi                       imgs=16 els=12 worst=5.10 band=5.10
+  8 tretyakov                    imgs=14 els=18 worst=4.69 band=5.16
+  9 tate-modern                  imgs=1  els=9  worst=5.21 band=5.21
+ 10 rijksmuseum                  imgs=12 els=12 worst=5.26 band=5.26
+ 11 kunsthistorisches            imgs=12 els=18 worst=4.55 band=5.34
+ 12 guggenheim-ny                imgs=8  els=12 worst=4.98 band=4.98
+ 13 nasjonalmuseet-oslo          imgs=10 els=12 worst=5.37 band=5.37
+ 14 art-institute-chicago        imgs=6  els=12 worst=5.21 band=5.21
+ 15 moderna-museet               imgs=10 els=17 worst=4.88 band=4.88
+ 16 centre-pompidou              imgs=6  els=11 worst=5.03 band=5.03
+ 17 tate-britain                 imgs=8  els=9  worst=5.14 band=5.14
+ 18 van-gogh-museum              imgs=8  els=12 worst=5.46 band=5.46
+ 19 hermitage                    imgs=6  els=12 worst=5.28 band=5.28
+ 20 courtauld-gallery            imgs=8  els=14 worst=5.08 band=5.08
+ 21 philadelphia-museum-of-art   imgs=8  els=12 worst=5.18 band=5.18
+ 22 buffalo-akg                  imgs=4  els=9  worst=5.25 band=5.25
+ 23 vatican-museums              imgs=6  els=14 worst=4.96 band=4.96
+ 24 sistine-chapel               imgs=6  els=16 worst=5.21 band=5.21
+ 25 mauritshuis                  imgs=6  els=11 worst=5.21 band=5.21
+ 26 munch-museum                 imgs=6  els=14 worst=5.33 band=5.33
+ 27 albertina                    imgs=6  els=13 worst=5.07 band=5.07
+ 28 russian-museum               imgs=6  els=11 worst=5.03 band=5.03
+ 29 reina-sofia                  imgs=1  els=9  worst=5.22 band=5.22
+ 30 galleria-borghese            imgs=4  els=9  worst=5.19 band=5.19
+ 31 stadel                       imgs=4  els=9  worst=5.38 band=5.38
+ 32 belvedere                    imgs=4  els=12 worst=5.26 band=5.26
+ 33 palazzo-barberini            imgs=4  els=9  worst=5.27 band=5.27
+ 34 kimbell-art-museum           imgs=4  els=9  worst=5.47 band=5.47
+ 35 isabella-stewart-gardner     imgs=4  els=9  worst=5.41 band=5.41
+ 36 scottish-national-gallery    imgs=4  els=9  worst=5.37 band=5.37
+ 37 capodimonte                  imgs=4  els=9  worst=4.88 band=4.88
+ 38 detroit-institute-of-arts    imgs=4  els=9  worst=5.20 band=5.20
+ 39 gemaldegalerie-berlin        imgs=4  els=12 worst=5.51 band=5.51
+ 40 getty                        imgs=4  els=9  worst=5.22 band=5.22
+ 41 mfa-boston                   imgs=4  els=9  worst=5.15 band=5.15
+ 42 sfmoma                       imgs=1  els=9  worst=5.01 band=5.01
+ 43 whitney                      imgs=1  els=9  worst=5.26 band=5.26
+ 44 museo-dolores-olmedo         imgs=1  els=9  worst=4.88 band=4.88
+ 45 orangerie                    imgs=2  els=9  worst=5.69 band=5.69
+ 46 musee-marmottan              imgs=2  els=9  worst=5.66 band=5.66
+ 47 san-luigi-dei-francesi       imgs=2  els=9  worst=5.39 band=5.39
+ 48 santa-maria-delle-grazie     imgs=2  els=9  worst=5.54 band=5.54
+ 49 st-bavo-cathedral            imgs=2  els=9  worst=4.88 band=4.88
+ 50 alte-pinakothek              imgs=2  els=9  worst=6.06 band=6.06
+ 51 oslo-university-aula         imgs=2  els=9  worst=5.06 band=5.06
+ 52 kode-bergen                  imgs=2  els=9  worst=5.46 band=5.46
+ 53 pio-monte-della-misericordia imgs=2  els=9  worst=5.25 band=5.25
+ 54 st-johns-co-cathedral        imgs=2  els=9  worst=5.20 band=5.20
+ 55 kenwood-house                imgs=2  els=9  worst=5.27 band=5.27
+ 56 kroller-muller               imgs=2  els=9  worst=5.65 band=5.65
+ 57 lazaro-galdiano              imgs=2  els=9  worst=5.15 band=5.15
+ 58 yale-university-art-gallery  imgs=2  els=9  worst=5.40 band=5.40
+ 59 minneapolis-institute-of-art imgs=2  els=9  worst=5.97 band=5.97
+ 60 doria-pamphilj               imgs=2  els=9  worst=5.33 band=5.33
+ 61 schloss-weissenstein         imgs=2  els=9  worst=5.35 band=5.35
+ 62 royal-collection             imgs=2  els=9  worst=5.94 band=5.94
+ 63 czartoryski                  imgs=2  els=9  worst=5.43 band=5.43
+ 64 accademia-venice             imgs=2  els=9  worst=5.06 band=5.06
+ 65 accademia-florence           imgs=2  els=9  worst=5.33 band=5.33
+ 66 st-peters-basilica           imgs=2  els=9  worst=5.19 band=5.19
+ 67 mnaa-lisbon                  imgs=2  els=9  worst=5.29 band=5.29
+ 68 groeningemuseum              imgs=2  els=9  worst=5.19 band=5.19
+ 69 baltimore-museum-of-art      imgs=2  els=9  worst=5.60 band=5.60
+ 70 secession-vienna             imgs=2  els=9  worst=4.95 band=4.95
+ 71 mak-vienna                   imgs=2  els=12 worst=5.32 band=5.32
+ 72 wien-museum                  imgs=2  els=12 worst=5.29 band=5.29
+ 73 leopold-museum               imgs=2  els=9  worst=5.25 band=5.25
+ 74 k20-dusseldorf               imgs=2  els=9  worst=5.02 band=5.02
+ 75 musee-picasso-paris          imgs=1  els=9  worst=4.96 band=4.96
+ 76 museu-picasso-barcelona      imgs=1  els=9  worst=4.93 band=4.93
+ 77 thyssen-bornemisza           imgs=1  els=9  worst=5.26 band=5.26
+ 78 kelvingrove                  imgs=1  els=9  worst=4.96 band=4.96
+ 79 pushkin-museum               imgs=1  els=9  worst=5.08 band=5.08
+ 80 museum-ludwig                imgs=1  els=9  worst=5.09 band=5.09
+ 81 neue-galerie                 imgs=2  els=9  worst=5.16 band=5.16
+ 82 barnes-foundation            imgs=1  els=9  worst=4.88 band=4.88
+ 83 moca-la                      imgs=1  els=9  worst=5.14 band=5.14
+ 84 dallas-museum-art            imgs=1  els=9  worst=5.01 band=5.01
+ 85 stanley-museum-iowa          imgs=1  els=9  worst=5.10 band=5.10
+ 86 harry-ransom-center          imgs=1  els=9  worst=4.94 band=4.94
+ 87 rothko-chapel                imgs=1  els=9  worst=5.19 band=5.19
+ 88 dali-museum-florida          imgs=1  els=9  worst=5.10 band=5.10
+ 89 museo-arte-moderno-mexico    imgs=1  els=9  worst=4.93 band=4.93
+ 90 museo-frida-kahlo            imgs=1  els=9  worst=5.15 band=5.15
+ 91 national-gallery-australia   imgs=1  els=9  worst=5.01 band=5.01
+ 92 masp                         imgs=2  els=9  worst=5.73 band=5.73
+ 93 royal-museums-brussels       imgs=2  els=9  worst=5.26 band=5.26
+ 94 santo-tome                   imgs=2  els=9  worst=5.27 band=5.27
+ 95 toledo-cathedral             imgs=2  els=11 worst=5.44 band=5.44
+ 96 kunsthalle-mannheim          imgs=2  els=9  worst=5.08 band=5.08
+ 97 gemaldegalerie-dresden       imgs=2  els=9  worst=5.27 band=5.27
+ 98 brera                        imgs=2  els=9  worst=5.44 band=5.44
+ 99 villa-farnesina              imgs=2  els=9  worst=5.16 band=5.16
+100 musee-pau                    imgs=2  els=9  worst=5.08 band=5.08
+101 ny-carlsberg-glyptotek       imgs=2  els=9  worst=5.25 band=5.25
+102 glenstone                    imgs=2  els=9  worst=5.50 band=5.50
+103 hirshhorn                    imgs=1  els=9  worst=4.82 band=4.82
+measured 104 venues; unrecoverable: none
+
+IN THE MUSEUM BAND (.mu-hero-body)  [after-dark-390]
+  span.sep                         4.82  need 4.5  PASS  hirshhorn                  ink [155, 147, 127]  backdrop [41, 40, 38]     (14 px)
+  span                             4.82  need 4.5  PASS  hirshhorn                  ink [155, 147, 127]  backdrop [41, 40, 38]     (1118 px)
+  div.mu-sub                       5.08  need 4.5  PASS  vatican-museums            ink [155, 147, 127]  backdrop [37, 36, 32]     (544 px)
+  div.mu-hook                      9.71  need 4.5  PASS  uffizi                     ink [232, 201, 138]  backdrop [37, 36, 34]     (1922 px)
+  a                                9.77  need 4.5  PASS  hirshhorn                  ink [216, 210, 196]  backdrop [41, 40, 38]     (116 px)
+  h1.display                      12.15  need 3.0  PASS  moderna-museet             ink [236, 230, 217]  backdrop [39, 38, 37]     (2772 px)
+  button.chip                     12.16  need 4.5  PASS  philadelphia-museum-of-art ink [236, 230, 217]  backdrop [39, 38, 36]     (410 px)
+
+ELSEWHERE ON THE PAGE (over-approximation)  [after-dark-390]
+  span.count                       4.55  need 4.5  PASS  kunsthistorisches          ink [139, 131, 114]  backdrop [34, 26, 23]     (695 px)
+  p.img-credit.mu-credit           5.26  need 4.5  PASS  philadelphia-museum-of-art ink [155, 147, 127]  backdrop [32, 34, 27]     (1279 px)
+  a                                5.26  need 4.5  PASS  philadelphia-museum-of-art ink [155, 147, 127]  backdrop [32, 34, 27]     (1279 px)
+  div.lbl                          6.02  need 4.5  PASS  tretyakov                  ink [155, 147, 127]  backdrop [22, 20, 15]     (360 px)
+  div.num                         11.53  need 3.0  PASS  tretyakov                  ink [232, 201, 138]  backdrop [22, 20, 15]     (270 px)
+  h2.sec-title                    13.25  need 4.5  PASS  kunsthistorisches          ink [236, 230, 217]  backdrop [41, 28, 25]     (1957 px)

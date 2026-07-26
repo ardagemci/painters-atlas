@@ -1,0 +1,14 @@
+--- collage clipping, uffizi @ 1440x900 ---
+{"heroRect":[128,102,1184,340],"heroOverflow":"hidden","imgs":[{"rect":[129,103,393,320],"centreInsideHero":true,"elementAtItsOwnCentre":"h1.display"},{"rect":[524,103,393,320],"centreInsideHero":true,"elementAtItsOwnCentre":"h1.display"},{"rect":[918,103,393,320],"centreInsideHero":true,"elementAtItsOwnCentre":"h1.display"},{"rect":[129,424,393,390],"centreInsideHero":false,"elementAtItsOwnCentre":"p"},{"rect":[524,424,393,390],"centreInsideHero":false,"elementAtItsOwnCentre":"p"},{"rect":[918,424,393,390],"centreInsideHero":false,"elementAtItsOwnCentre":"main.view-enter"}]}
+
+element                                        backdrop AS SHIPPED    backdrop NO #bg-canvas
+a                                              [216, 212, 199]        [216, 212, 199]         worst 7.34 -> 7.34
+a                                              [227, 220, 207]        [234, 227, 213]         worst 5.69 -> 6.08
+button.chip                                    [221, 216, 204]        [221, 216, 204]         worst 10.54 -> 10.54
+div.mu-hook                                    [220, 214, 202]        [220, 214, 202]         worst 5.14 -> 5.14
+div.mu-sub                                     [219, 213, 201]        [219, 213, 201]         worst 5.31 -> 5.31
+h1.display                                     [218, 212, 200]        [218, 212, 200]         worst 10.16 -> 10.16
+p.img-credit.mu-credit                         [200, 203, 192]        [234, 227, 213]         worst 4.72 -> 6.08
+p                                              [220, 200, 188]        [242, 236, 223]         worst 6.75 -> 9.25
+span.sep                                       [232, 229, 216]        [232, 229, 216]         worst 6.15 -> 6.15
+span                                           [220, 215, 202]        [220, 215, 202]         worst 5.40 -> 5.40

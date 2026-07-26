@@ -1,0 +1,92 @@
+[
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   254,
+   320,
+   110
+  ],
+  "venue": "k20-dusseldorf"
+ },
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   259,
+   320,
+   37
+  ],
+  "venue": "louvre"
+ },
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   234,
+   320,
+   37
+  ],
+  "venue": "moderna-museet"
+ },
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   259,
+   320,
+   37
+  ],
+  "venue": "tate-modern"
+ },
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   259,
+   320,
+   37
+  ],
+  "venue": "prado"
+ },
+ {
+  "matchesFocusVisible": false,
+  "isActive": false,
+  "outlineColor": "rgb(43, 38, 32)",
+  "outlineWidth": "3px",
+  "outlineStyle": "none",
+  "outlineOffset": "0px",
+  "rect": [
+   35,
+   254,
+   320,
+   74
+  ],
+  "venue": "met"
+ }
+]
