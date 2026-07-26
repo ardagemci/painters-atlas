@@ -1,0 +1,806 @@
+{
+ "mobile390-dark": {
+  "headerH": 362,
+  "viewportH": 844,
+  "viewportW": 390,
+  "navBox": [
+   97,
+   291
+  ],
+  "navScrollW": 109,
+  "navClientW": 97,
+  "wrap": "wrap",
+  "basis": "0%",
+  "grow": "1",
+  "order": "3",
+  "overflowX": "auto",
+  "mask": "linear-gradient(90deg, rgb(0, 0, 0) 78%, rgba(0, 0, 0, 0))",
+  "navRows": 8,
+  "linkCount": 8,
+  "linksInside": 6,
+  "docSW": 390,
+  "docCW": 390,
+  "links": [
+   {
+    "t": "Artists",
+    "top": 58,
+    "left": 277,
+    "w": 78,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Lists",
+    "top": 95,
+    "left": 277,
+    "w": 58,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Museums",
+    "top": 132,
+    "left": 277,
+    "w": 90,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Explore",
+    "top": 168,
+    "left": 277,
+    "w": 81,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Movements",
+    "top": 205,
+    "left": 277,
+    "w": 108,
+    "h": 33,
+    "inside": false
+   },
+   {
+    "t": "Techniques",
+    "top": 241,
+    "left": 277,
+    "w": 109,
+    "h": 33,
+    "inside": false
+   },
+   {
+    "t": "Eras",
+    "top": 278,
+    "left": 277,
+    "w": 55,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Nations",
+    "top": 315,
+    "left": 277,
+    "w": 81,
+    "h": 33,
+    "inside": true
+   }
+  ]
+ },
+ "mobile390-light": {
+  "headerH": 362,
+  "viewportH": 844,
+  "viewportW": 390,
+  "navBox": [
+   97,
+   291
+  ],
+  "navScrollW": 109,
+  "navClientW": 97,
+  "wrap": "wrap",
+  "basis": "0%",
+  "grow": "1",
+  "order": "3",
+  "overflowX": "auto",
+  "mask": "linear-gradient(90deg, rgb(0, 0, 0) 78%, rgba(0, 0, 0, 0))",
+  "navRows": 8,
+  "linkCount": 8,
+  "linksInside": 6,
+  "docSW": 390,
+  "docCW": 390,
+  "links": [
+   {
+    "t": "Artists",
+    "top": 58,
+    "left": 277,
+    "w": 78,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Lists",
+    "top": 95,
+    "left": 277,
+    "w": 58,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Museums",
+    "top": 132,
+    "left": 277,
+    "w": 90,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Explore",
+    "top": 168,
+    "left": 277,
+    "w": 81,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Movements",
+    "top": 205,
+    "left": 277,
+    "w": 108,
+    "h": 33,
+    "inside": false
+   },
+   {
+    "t": "Techniques",
+    "top": 241,
+    "left": 277,
+    "w": 109,
+    "h": 33,
+    "inside": false
+   },
+   {
+    "t": "Eras",
+    "top": 278,
+    "left": 277,
+    "w": 55,
+    "h": 33,
+    "inside": true
+   },
+   {
+    "t": "Nations",
+    "top": 315,
+    "left": 277,
+    "w": 81,
+    "h": 33,
+    "inside": true
+   }
+  ]
+ },
+ "zoom200-1280": [
+  {
+   "route": "#/",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artists",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artist/leonardo-da-vinci",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artwork/david",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/explore",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/timeline",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/influences",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/museums",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/museum/louvre",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/lists",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/lists",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/palette",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/taste",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/daily",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/privacy",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/credits",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/movements",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/techniques",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/eras",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/nations",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/no-such-page",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/passport",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/movement/impressionism",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/technique/oil-on-canvas",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/era/renaissance",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/nation/france",
+   "over": 0,
+   "sw": 1280,
+   "cw": 1280,
+   "nav": [
+    503,
+    192,
+    878
+   ],
+   "fs": "32px"
+  }
+ ],
+ "zoom200-1270": [
+  {
+   "route": "#/",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artists",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artist/leonardo-da-vinci",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/artwork/david",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/explore",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/timeline",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/influences",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/museums",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/museum/louvre",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/lists",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/lists",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/palette",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/taste",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/daily",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/privacy",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/credits",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/movements",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/techniques",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/eras",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/nations",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/no-such-page",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/passport",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/movement/impressionism",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/technique/oil-on-canvas",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/era/renaissance",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  },
+  {
+   "route": "#/nation/france",
+   "over": 0,
+   "sw": 1270,
+   "cw": 1270,
+   "nav": [
+    493,
+    258,
+    868
+   ],
+   "fs": "32px"
+  }
+ ]
+}

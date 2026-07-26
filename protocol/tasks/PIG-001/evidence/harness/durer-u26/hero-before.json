@@ -1,0 +1,411 @@
+{
+ "viewport": [
+  1440,
+  900
+ ],
+ "freshCovers": 3,
+ "observed": [
+  {
+   "theme": "dark",
+   "selector": "a",
+   "worst": 4.02,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    100,
+    94,
+    83
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 391,
+   "text": "Angelica Kauffman"
+  },
+  {
+   "theme": "dark",
+   "selector": "div.kicker",
+   "worst": 4.35,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    97,
+    89,
+    69
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 783,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "dark",
+   "selector": "h1.home-title",
+   "worst": 1.08,
+   "need": 3.0,
+   "verdict": "FAIL",
+   "ink": [
+    201,
+    164,
+    92
+   ],
+   "backdrop": [
+    168,
+    162,
+    149
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 17228,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.footer-note",
+   "worst": 1.58,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    139,
+    131,
+    114
+   ],
+   "backdrop": [
+    100,
+    100,
+    96
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 705,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.lede",
+   "worst": 1.88,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    216,
+    210,
+    196
+   ],
+   "backdrop": [
+    159,
+    153,
+    141
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 5149,
+   "text": "Eight centuries of painters, t"
+  },
+  {
+   "theme": "light",
+   "selector": "a",
+   "worst": 5.6,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    191,
+    185,
+    178
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 402,
+   "text": "Sonia Delaunay"
+  },
+  {
+   "theme": "light",
+   "selector": "div.kicker",
+   "worst": 8.15,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    43,
+    38,
+    32
+   ],
+   "backdrop": [
+    197,
+    190,
+    183
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 843,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "light",
+   "selector": "h1.home-title",
+   "worst": 3.13,
+   "need": 3.0,
+   "verdict": "PASS",
+   "ink": [
+    129,
+    99,
+    43
+   ],
+   "backdrop": [
+    199,
+    193,
+    185
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 17382,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "light",
+   "selector": "p.footer-note",
+   "worst": 5.52,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    189,
+    184,
+    176
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 932,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "light",
+   "selector": "p.lede",
+   "worst": 5.76,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    193,
+    188,
+    180
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 5496,
+   "text": "Eight centuries of painters, t"
+  }
+ ],
+ "worstCaseBound": [
+  {
+   "theme": "dark",
+   "selector": "a",
+   "worst": 3.1,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    113,
+    112,
+    111
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 212,
+   "text": "Anders Zorn"
+  },
+  {
+   "theme": "dark",
+   "selector": "div.kicker",
+   "worst": 3.06,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    232,
+    201,
+    138
+   ],
+   "backdrop": [
+    113,
+    113,
+    111
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 697,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "dark",
+   "selector": "h1.home-title",
+   "worst": 1.0,
+   "need": 3.0,
+   "verdict": "FAIL",
+   "ink": [
+    201,
+    164,
+    92
+   ],
+   "backdrop": [
+    170,
+    169,
+    168
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 16240,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.footer-note",
+   "worst": 1.31,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    139,
+    131,
+    114
+   ],
+   "backdrop": [
+    113,
+    112,
+    111
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 212,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "dark",
+   "selector": "p.lede",
+   "worst": 1.47,
+   "need": 4.5,
+   "verdict": "FAIL",
+   "ink": [
+    216,
+    210,
+    196
+   ],
+   "backdrop": [
+    174,
+    174,
+    173
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 4265,
+   "text": "Eight centuries of painters, t"
+  },
+  {
+   "theme": "light",
+   "selector": "a",
+   "worst": 5.03,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    180,
+    176,
+    166
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 423,
+   "text": "Akseli Gallen-Kallela"
+  },
+  {
+   "theme": "light",
+   "selector": "div.kicker",
+   "worst": 7.42,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    43,
+    38,
+    32
+   ],
+   "backdrop": [
+    187,
+    182,
+    172
+   ],
+   "fontpx": 11.52,
+   "glyphPixels": 838,
+   "text": "Pigment \u00b7 a taste atlas of pai"
+  },
+  {
+   "theme": "light",
+   "selector": "h1.home-title",
+   "worst": 2.86,
+   "need": 3.0,
+   "verdict": "FAIL",
+   "ink": [
+    129,
+    99,
+    43
+   ],
+   "backdrop": [
+    190,
+    185,
+    175
+   ],
+   "fontpx": 59.2,
+   "glyphPixels": 17346,
+   "text": "Find your place in the history"
+  },
+  {
+   "theme": "light",
+   "selector": "p.footer-note",
+   "worst": 5.03,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    180,
+    176,
+    166
+   ],
+   "fontpx": 12.16,
+   "glyphPixels": 932,
+   "text": "Tonight's cover: mixed after"
+  },
+  {
+   "theme": "light",
+   "selector": "p.lede",
+   "worst": 5.33,
+   "need": 4.5,
+   "verdict": "PASS",
+   "ink": [
+    67,
+    60,
+    49
+   ],
+   "backdrop": [
+    186,
+    181,
+    171
+   ],
+   "fontpx": 16.8,
+   "glyphPixels": 5428,
+   "text": "Eight centuries of painters, t"
+  }
+ ]
+}
