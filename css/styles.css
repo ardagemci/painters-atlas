@@ -174,6 +174,15 @@
      ink is light. --muted, the darkest rung that paints in the band once the
      crumbs take the cover rung, needs .864; .88 clears it at 4.75. (AC19/F-V1) */
   --mu-veil:.88;
+  /* .hero cover scrim, see .hero-content. FOUR route families paint text over a
+     generated cover inside .hero — artist, movement/technique, era and nation
+     (hero() at js/app.js:831, called from :1826, :2042, :2099, :2158) — so this
+     is a .hero defect, not an artist-route one. Dark ink is light ink, so the
+     worst reachable backdrop is a fully opaque WHITE cover pixel. Binding ink is
+     --gold2 in .hero-sub a: it needs .691 to clear 4.5. --body-ink (crumbs, sep,
+     hero-sub, tagline) needs .675, and --ink at h1 needs .506 against the 3.0
+     large-text floor. (AC19 / V-F3) */
+  --hero-text-veil:.80;
   --serif:"Playfair Display","Didot","Bodoni 72",Georgia,serif;
   --sans:"Inter","Avenir Next","Segoe UI",system-ui,sans-serif;
   --ease:cubic-bezier(.22,.9,.3,1);
@@ -221,6 +230,15 @@ html[data-theme="light"]{
      here; the shared .88 clears it at 5.03. One value serves both themes, so
      the band's geometry is identical in each — only the token is per-theme. */
   --mu-veil:.88;
+  /* the same .hero cover veil, bounded against a worst-case fully opaque BLACK
+     cover pixel, where light's dark ink is weakest. Light's binding ink is also
+     --gold2 (.hero-sub a); after unit 29 re-pointed it to #544019 it needs .740,
+     so V-F3's specified .74 lands it at exactly 4.50 — a bound with no margin at
+     all, and every other bound in this file is set with one. .80 clears it at
+     5.27. --body-ink needs .705 (5.80 here), --ink at h1 .472 (7.99). One value
+     serves both themes, as --mu-veil does, so the hero's geometry is identical
+     in each and only the composited tone differs. (AC19 / V-F3) */
+  --hero-text-veil:.80;
 }
 html[data-theme="light"] #bg-canvas{opacity:.6}
 /* The light hero is painted over the generative cover, whose pixels are mixed
@@ -533,11 +551,38 @@ section{margin:46px 0}
   margin-bottom:34px;
 }
 .hero canvas{position:absolute;inset:0;width:100%;height:100%}
+/* .hero-shade no longer carries any contrast duty — the veil on .hero-content
+   below does — so it drops to a light tie between cover and page, exactly as
+   .mu-shade did at unit 27. It used to ramp .18 → .42 → .93 as a percentage of
+   .hero's HEIGHT while .hero-content is bottom-anchored, so the same element
+   landed at a different alpha on every subject: the breadcrumb row, the block's
+   first line, fell around 55–70 % of the hero where the ramp delivers only
+   .43–.61 against a requirement of .691 dark / .740 light. Left at .93 under the
+   new veil the two would composite to .986 and the cover would effectively be
+   gone, which is the outcome units 26a and 27 were careful to avoid. */
 .hero .hero-shade{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(var(--bg-rgb),.18) 0%,rgba(var(--bg-rgb),.42) 52%,rgba(var(--bg-rgb),.93) 100%);
+  background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30));
 }
-.hero-content{position:relative;padding:36px 38px 30px;width:100%}
+/* The veil sits on the TEXT BLOCK, not on the hero box — the third instance of
+   the one geometry, after .home-hero .hero-shade (unit 26a) and .mu-hero-body
+   (unit 27), and deliberately not a fourth pattern. Anchored here, every glyph
+   in the block sits at exactly --hero-text-veil on all four hero families, on
+   every subject and at every viewport, instead of at a ramp position that
+   depends on how tall the subject's name, dates and tagline happen to be.
+   The 18 px feather is shorter than the smallest padding-top in the block
+   (22 px at ≤480 px, below), so no glyph can ever fall inside the ramp. The
+   bound ignores .hero-shade entirely: the shade only ever pulls the backdrop
+   further toward the page colour, which in both themes is the direction the
+   veil already moves it, so the veil alone is the conservative bound.
+   (AC19 / V-F3) */
+.hero-content{
+  position:relative;padding:36px 38px 30px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 18px,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 100%);
+}
 .hero-content .breadcrumbs{margin-bottom:8px;color:var(--body-ink)}
 .hero-content .breadcrumbs a{color:var(--body-ink)}
 .hero-content h1{font-size:3.6rem;font-weight:800;text-shadow:0 3px 24px rgba(var(--bg-rgb),.85)}

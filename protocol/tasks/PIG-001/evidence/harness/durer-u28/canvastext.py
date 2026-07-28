@@ -163,29 +163,47 @@ def detect_stable(b, tries=6):
     return d
 
 
-def shot(b, path, box):
+def shot(b, path, box, sx=0, sy=0):
+    """CLIP ORIGIN — corrected at unit 30 (Vermeer's V-F2).
+
+    `Page.captureScreenshot`'s `clip` is in PAGE (document) coordinates, but
+    `box` is assembled from `getBoundingClientRect()`, which is in VIEWPORT
+    coordinates. The two agree only at scrollY == 0; at any other scroll
+    position the captured pixels were offset by exactly scrollY, so glyphs were
+    compared against whatever sat that far up the document. Every row this
+    harness produced at scrollY > 0 before unit 30 is invalid for that reason
+    (89 rows of the unit-29 pixel run). The scroll offset is added HERE, at the
+    capture, so all the per-element pixel arithmetic in measure() stays in the
+    viewport space the rects were measured in.
+    """
     import base64
     x, y, w, h = box
     r = b.cmd("Page.captureScreenshot",
               {"format": "png", "captureBeyondViewport": False,
-               "clip": {"x": x, "y": y, "width": w, "height": h, "scale": 1}})
+               "clip": {"x": x + sx, "y": y + sy, "width": w, "height": h, "scale": 1}})
     open(path, "wb").write(base64.b64decode(r["data"]))
 
 
 def measure(b, els, vw, vh):
     """Three-shot glyph diff. Returns rows; `overCanvas` is a PAINT test."""
+    # read the scroll offset once, here, and use it for all three shots: the
+    # page must not move between A, B and C or the diff is meaningless.
+    sx = int(b.ev("Math.round(window.scrollX)") or 0)
+    sy = int(b.ev("Math.round(window.scrollY)") or 0)
     xs0 = max(0, min(e["rect"][0] for e in els))
     ys0 = max(0, min(e["rect"][1] for e in els))
     xs1 = min(vw, max(e["rect"][0] + e["rect"][2] for e in els))
     ys1 = min(vh, max(e["rect"][1] + e["rect"][3] for e in els))
     box = (xs0, ys0, max(1, xs1 - xs0), max(1, ys1 - ys0))
-    shot(b, A_PNG, box)
+    shot(b, A_PNG, box, sx, sy)
     b.ev(HIDE)
     b.ev("new Promise(function(r){setTimeout(r,200)})", await_promise=True)
-    shot(b, B_PNG, box)
+    shot(b, B_PNG, box, sx, sy)
     b.ev(KILL)
     b.ev("new Promise(function(r){setTimeout(r,200)})", await_promise=True)
-    shot(b, C_PNG, box)
+    shot(b, C_PNG, box, sx, sy)
+    # the three shots must be the same pixels of the same document
+    assert int(b.ev("Math.round(window.scrollY)") or 0) == sy, "page scrolled mid-capture"
     # Both mutations are inline-style only and are undone here, so ONE page load
     # -- i.e. one canvas draw -- serves every scroll band of that route. Reloading
     # between bands would have re-seeded the canvas mid-route and made "a draw"
