@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/durer-u28/enumerate_overcanvas.py", line 143, in <module>
+    main()
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/durer-u28/enumerate_overcanvas.py", line 91, in main
+    theme, vw, vh, tag = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
+IndexError: list index out of range

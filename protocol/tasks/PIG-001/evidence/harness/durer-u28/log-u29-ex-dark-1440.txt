@@ -1,0 +1,32 @@
+draw 0   canvas maxAlpha=90  pairs=9458   new=9458   union=9458
+draw 1   canvas maxAlpha=145 pairs=12945  new=9053   union=18511
+draw 2   canvas maxAlpha=140 pairs=15213  new=9549   union=28060
+draw 3   canvas maxAlpha=103 pairs=10202  new=3349   union=31409
+draw 4   canvas maxAlpha=106 pairs=10048  new=3050   union=34459
+draw 5   canvas maxAlpha=110 pairs=9723   new=3185   union=37644
+draw 6   canvas maxAlpha=150 pairs=8509   new=2818   union=40462
+draw 7   canvas maxAlpha=101 pairs=10972  new=2724   union=43186
+draw 8   canvas maxAlpha=116 pairs=6603   new=1045   union=44231
+draw 9   canvas maxAlpha=135 pairs=9665   new=2011   union=46242
+draw 10  canvas maxAlpha=146 pairs=10081  new=4310   union=50552
+draw 11  canvas maxAlpha=119 pairs=11197  new=2929   union=53481
+draw 12  canvas maxAlpha=108 pairs=10524  new=1439   union=54920
+draw 13  canvas maxAlpha=112 pairs=16872  new=4029   union=58949
+draw 14  canvas maxAlpha=131 pairs=13377  new=2779   union=61728
+draw 15  canvas maxAlpha=148 pairs=10722  new=1661   union=63389
+draw 16  canvas maxAlpha=91  pairs=9644   new=1296   union=64685
+draw 17  canvas maxAlpha=110 pairs=11199  new=1211   union=65896
+draw 18  canvas maxAlpha=108 pairs=12406  new=1289   union=67185
+draw 19  canvas maxAlpha=106 pairs=12148  new=1202   union=68387
+draw 20  canvas maxAlpha=137 pairs=12427  new=1736   union=70123
+draw 21  canvas maxAlpha=119 pairs=13427  new=1543   union=71666
+draw 22  canvas maxAlpha=98  pairs=12149  new=876    union=72542
+draw 23  canvas maxAlpha=102 pairs=10264  new=609    union=73151
+draw 24  canvas maxAlpha=126 pairs=12256  new=1270   union=74421
+draw 25  canvas maxAlpha=125 pairs=13702  new=1284   union=75705
+draw 26  canvas maxAlpha=102 pairs=13289  new=874    union=76579
+draw 27  canvas maxAlpha=102 pairs=7964   new=333    union=76912
+draw 28  canvas maxAlpha=125 pairs=13747  new=1289   union=78201
+draw 29  canvas maxAlpha=103 pairs=11602  new=523    union=78724
+
+dark 1440x900 over 30 draws: canvas opacity 0.50 on bg [13, 12, 10], backing [792, 495], 78724 distinct (colour,alpha) buckets

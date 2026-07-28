@@ -1,0 +1,85 @@
+#/                             text-els=197  overCanvas=66  
+#/artists                      text-els=1207 overCanvas=37  
+#/artist/leonardo-da-vinci     text-els=152  overCanvas=80  
+#/artist/frida-kahlo           text-els=149  overCanvas=77  
+#/artwork/david                text-els=63   overCanvas=44  
+#/explore                      text-els=44   overCanvas=26  
+#/timeline                     text-els=331  overCanvas=55  
+#/influences                   text-els=240  overCanvas=33  
+#/museums                      text-els=342  overCanvas=28  
+#/museum/louvre                text-els=91   overCanvas=52  
+#/museum/tate-britain          text-els=62   overCanvas=39  
+#/museum/k20-dusseldorf        text-els=56   overCanvas=39  
+#/lists                        text-els=64   overCanvas=26  
+#/palette                      text-els=29   overCanvas=27  
+#/taste                        text-els=29   overCanvas=27  
+#/daily                        text-els=54   overCanvas=51  
+#/privacy                      text-els=52   overCanvas=50  
+#/credits                      text-els=563  overCanvas=561 
+#/no-such-page                 text-els=29   overCanvas=27  
+
+DISTINCT (ink x size x weight) PAINTING OVER #bg-canvas — light
+ink                    px   wt floor  count  selectors                                  routes
+[67, 60, 49]         12.5  300 4.5      604  a,p.img-credit.index-credit,p.img-credit.m 19 routes  bg-alpha 0.60
+[67, 60, 49]         13.8  500 4.5      140  a                                          19 routes  backdrop-filter,bg-alpha 0.78
+[67, 60, 49]         15.2  300 4.5      111  a.cr-what,li,span.cr-what                  3 routes  -
+[43, 38, 32]         12.5  400 4.5       44  a.chip,a.chip.a,a.chip.e,a.chip.m,a.chip.n 9 routes  bg-alpha 0.02
+[43, 38, 32]         15.2  300 4.5       28  a                                          1 routes  -
+[67, 60, 49]         15.5  300 4.5       25  a,p,p.aw-empty,p.aw-provenance,p.img-credi 3 routes  -
+[43, 38, 32]         23.2  600 4.5       24  h2.sec-title                               7 routes  -
+[67, 60, 49]         12.2  300 4.5       21  a,p.footer-note                            19 routes  bg-alpha 0.60
+[67, 60, 49]         12.2  400 4.5       21  button.tl2-leg                             2 routes  -
+[43, 38, 32]         23.2  800 3.0       19  span.brand-text                            19 routes  backdrop-filter,bg-alpha 0.78
+[67, 60, 49]          9.3  400 4.5       19  span.brand-sub                             19 routes  backdrop-filter,bg-alpha 0.78
+[67, 60, 49]         14.7  300 4.5       19  div.footer-brand                           19 routes  bg-alpha 0.60
+[43, 38, 32]         14.7  400 4.5       19  strong                                     19 routes  bg-alpha 0.60
+[67, 60, 49]         12.5  400 4.5       19  button.f-btn                               2 routes  -
+[84, 64, 25]         16.3  300 4.5       18  div.arc-when                               2 routes  -
+[43, 38, 32]         18.9  600 4.5       18  h3                                         2 routes  -
+[84, 64, 25]         13.8  700 4.5       12  a.active                                   12 routes  backdrop-filter,bg-alpha 0.78
+[43, 38, 32]         16.0  300 4.5       12  em,p,span.f-label                          3 routes  -
+[84, 64, 25]         16.0  300 4.5       11  a                                          6 routes  -
+[43, 38, 32]         13.0  300 4.5       11  code                                       2 routes  -
+[67, 60, 49]         12.8  400 4.5       10  span.count                                 5 routes  -
+[84, 64, 25]         10.9  300 4.5       10  div.page-kicker                            10 routes  -
+[43, 38, 32]         54.4  800 3.0       10  h1.display                                 10 routes  -
+[67, 60, 49]         16.3  300 4.5       10  p.page-lede                                10 routes  -
+[43, 38, 32]         14.4  300 4.5        9  span.mc-name                               3 routes  -
+[67, 60, 49]         11.5  300 4.5        9  span.mc-meta                               3 routes  -
+[43, 38, 32]         16.8  600 4.5        8  b                                          1 routes  -
+[67, 60, 49]         11.2  300 4.5        8  span                                       1 routes  -
+[43, 38, 32]         22.4  600 4.5        8  h2                                         2 routes  -
+[84, 64, 25]         13.1  300 4.5        6  a                                          2 routes  bg-alpha 0.35
+[43, 38, 32]         13.4  400 4.5        6  button.aw-btn                              3 routes  bg-alpha 0.35
+[67, 60, 49]         16.0  300 4.5        6  p,p.page-lede,span                         5 routes  -
+[67, 60, 49]          9.9  300 4.5        5  a.chip-label,div.chip-label                3 routes  -
+[67, 60, 49]         10.4  300 4.5        3  span                                       2 routes  bg-alpha 0.35
+[67, 60, 49]         13.1  300 4.5        3  p.aw-provenance,span                       2 routes  bg-alpha 0.35
+[84, 64, 25]         13.4  500 4.5        3  button.aw-btn.primary                      3 routes  bg-alpha 0.35
+[67, 60, 49]         17.9  300 4.5        3  div.hero-tagline,p.daily-note              3 routes  -
+[74, 54, 22]         59.2  800 3.0        2  h1.home-title                              1 routes  bg-image
+[67, 60, 49]         16.8  300 4.5        2  p,p.lede                                   2 routes  -
+[84, 64, 25]         10.4  300 4.5        2  div.daily-kicker                           2 routes  bg-alpha 0.35
+[27, 74, 67]          9.9  400 4.5        2  b                                          2 routes  bg-alpha 0.35
+[43, 38, 32]         15.4  300 4.5        2  span                                       2 routes  bg-alpha 0.35
+[84, 64, 25]         12.2  300 4.5        2  a.daily-enter                              2 routes  bg-alpha 0.35
+[84, 64, 25]         19.2  300 4.5        2  span                                       2 routes  bg-alpha 0.35
+[67, 60, 49]         10.9  300 4.5        2  span.f-label                               1 routes  -
+[43, 38, 32]         57.6  800 3.0        2  h1                                         2 routes  -
+[84, 64, 25]         15.5  300 4.5        2  a                                          1 routes  -
+[67, 60, 49]         11.8  300 4.5        2  p.map-hint                                 2 routes  -
+[84, 64, 25]         16.8  500 4.5        2  a.aw-btn.primary.ob-cta,button.aw-btn.prim 2 routes  -
+[43, 38, 32]         11.5  300 4.5        1  div.kicker                                 1 routes  -
+[129, 99, 43]        59.2  800 3.0        1  h1.home-title                              1 routes  bg-image
+[107, 81, 34]        59.2  800 3.0        1  h1.home-title                              1 routes  bg-image
+[43, 38, 32]         38.4  600 3.0        1  a                                          1 routes  bg-alpha 0.35
+[67, 60, 49]         16.5  300 4.5        1  p.daily-note                               1 routes  bg-alpha 0.35
+[43, 38, 32]         41.6  800 3.0        1  h1.display                                 1 routes  -
+[84, 64, 25]         12.2  400 4.5        1  button.tl2-leg.tl2-leg-more                1 routes  -
+[43, 38, 32]         52.0  800 3.0        1  h1.display                                 1 routes  -
+[84, 64, 25]         38.4  400 3.0        1  b                                          1 routes  -
+[67, 60, 49]         12.0  300 4.5        1  p.daily-return                             1 routes  -
+[43, 38, 32]         16.0  400 4.5        1  strong                                     1 routes  -
+[43, 38, 32]         48.0  600 3.0        1  h1                                         1 routes  -
+
+total text elements scanned: 3754, over canvas: 1345, distinct ink groups: 61

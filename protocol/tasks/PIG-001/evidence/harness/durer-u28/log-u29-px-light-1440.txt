@@ -1,0 +1,61 @@
+draw 0  #/                             bands=8   els=218  overCanvas=7    worst 9.10
+draw 0  #/artists                      bands=4   els=131  overCanvas=22   worst 7.08
+draw 0  #/credits                      bands=4   els=276  overCanvas=37   worst 6.35
+draw 0  #/daily                        bands=2   els=70   overCanvas=23   worst 5.65
+draw 0  #/museum/louvre                bands=4   els=133  overCanvas=11   worst 6.41
+draw 0  #/explore                      bands=1   els=33   overCanvas=18   worst 7.19
+draw 1  #/                             bands=7   els=190  overCanvas=2    worst 9.19
+draw 1  #/artists                      bands=4   els=131  overCanvas=20   worst 7.62
+draw 1  #/credits                      bands=4   els=276  overCanvas=33   worst 5.85
+draw 1  #/daily                        bands=2   els=70   overCanvas=23   worst 5.65
+draw 1  #/museum/louvre                bands=4   els=133  overCanvas=12   worst 7.08
+draw 1  #/explore                      bands=1   els=33   overCanvas=14   worst 7.71
+draw 2  #/                             bands=8   els=220  overCanvas=4    worst 9.02
+draw 2  #/artists                      bands=4   els=131  overCanvas=24   worst 7.43
+draw 2  #/credits                      bands=4   els=276  overCanvas=28   worst 6.20
+draw 2  #/daily                        bands=2   els=70   overCanvas=27   worst 5.65
+draw 2  #/museum/louvre                bands=4   els=133  overCanvas=14   worst 6.58
+draw 2  #/explore                      bands=1   els=33   overCanvas=12   worst 7.86
+draw 3  #/                             bands=8   els=218  overCanvas=6    worst 9.10
+draw 3  #/artists                      bands=4   els=131  overCanvas=24   worst 6.97
+draw 3  #/credits                      bands=4   els=276  overCanvas=37   worst 6.71
+draw 3  #/daily                        bands=2   els=70   overCanvas=27   worst 5.65
+draw 3  #/museum/louvre                bands=4   els=133  overCanvas=9    worst 7.01
+draw 3  #/explore                      bands=1   els=33   overCanvas=21   worst 7.88
+draw 4  #/                             bands=8   els=218  overCanvas=0    worst 99.00
+draw 4  #/artists                      bands=4   els=131  overCanvas=24   worst 6.93
+draw 4  #/credits                      bands=4   els=276  overCanvas=18   worst 6.73
+draw 4  #/daily                        bands=2   els=70   overCanvas=30   worst 5.65
+draw 4  #/museum/louvre                bands=4   els=133  overCanvas=14   worst 6.35
+draw 4  #/explore                      bands=1   els=33   overCanvas=17   worst 7.40
+
+WORST OBSERVED OVER #bg-canvas, PER ELEMENT CLASS (all draws)
+  p.aw-provenance                      5.65 need 4.5 pass  #/daily                    d=2   [67, 60, 49] -> [192, 186, 176] (no-canvas [192, 186, 176]) draw 0
+  a                                    5.85 need 4.5 pass  #/credits                  d=48  [84, 64, 25] -> [195, 201, 190] (no-canvas [242, 236, 223]) draw 1
+  b                                    6.11 need 4.5 pass  #/daily                    d=37  [27, 74, 67] -> [218, 199, 189] (no-canvas [242, 236, 223]) draw 1
+  p                                    6.35 need 4.5 pass  #/museum/louvre            d=42  [67, 60, 49] -> [214, 194, 183] (no-canvas [242, 236, 223]) draw 4
+  p.img-credit.mu-credit               6.41 need 4.5 pass  #/museum/louvre            d=42  [67, 60, 49] -> [194, 201, 188] (no-canvas [236, 229, 215]) draw 0
+  span.count                           6.46 need 4.5 pass  #/credits                  d=40  [67, 60, 49] -> [212, 197, 183] (no-canvas [242, 236, 223]) draw 1
+  p.page-lede                          6.60 need 4.5 pass  #/credits                  d=37  [67, 60, 49] -> [214, 199, 186] (no-canvas [242, 236, 223]) draw 1
+  span.img-credit                      6.63 need 4.5 pass  #/credits                  d=37  [67, 60, 49] -> [216, 199, 186] (no-canvas [242, 236, 223]) draw 1
+  p.daily-note                         6.71 need 4.5 pass  #/daily                    d=42  [67, 60, 49] -> [200, 205, 192] (no-canvas [242, 236, 223]) draw 2
+  div.daily-kicker                     6.75 need 4.5 pass  #/daily                    d=33  [84, 64, 25] -> [224, 212, 190] (no-canvas [242, 236, 223]) draw 4
+  div.page-kicker                      6.93 need 4.5 pass  #/artists                  d=30  [84, 64, 25] -> [226, 215, 193] (no-canvas [242, 236, 223]) draw 4
+  button.f-btn                         6.97 need 4.5 pass  #/artists                  d=38  [67, 60, 49] -> [219, 205, 186] (no-canvas [242, 236, 223]) draw 3
+  span                                 7.02 need 4.5 pass  #/daily                    d=38  [67, 60, 49] -> [219, 206, 185] (no-canvas [242, 236, 223]) draw 0
+  a.cr-what                            7.13 need 4.5 pass  #/credits                  d=30  [67, 60, 49] -> [223, 206, 195] (no-canvas [242, 236, 223]) draw 0
+  a.daily-enter                        7.25 need 4.5 pass  #/daily                    d=16  [84, 64, 25] -> [226, 220, 209] (no-canvas [242, 236, 223]) draw 1
+  div.footer-brand                     7.27 need 4.5 pass  #/daily                    d=35  [67, 60, 49] -> [221, 210, 188] (no-canvas [242, 236, 223]) draw 2
+  button.aw-btn.primary                7.33 need 4.5 pass  #/daily                    d=15  [84, 64, 25] -> [228, 221, 211] (no-canvas [242, 236, 223]) draw 1
+  p.footer-note                        7.55 need 4.5 pass  #/daily                    d=30  [67, 60, 49] -> [224, 214, 193] (no-canvas [242, 236, 223]) draw 4
+  span.f-label                         7.63 need 4.5 pass  #/artists                  d=30  [67, 60, 49] -> [226, 215, 193] (no-canvas [242, 236, 223]) draw 1
+  span.sep                             7.64 need 4.5 pass  #/daily                    d=29  [67, 60, 49] -> [226, 215, 194] (no-canvas [242, 236, 223]) draw 3
+  a.active                             8.19 need 4.5 pass  #/artists                  d=3   [84, 64, 25] -> [240, 233, 221] (no-canvas [242, 236, 223]) draw 0
+  h2.sec-title                         8.90 need 4.5 pass  #/credits                  d=40  [43, 38, 32] -> [212, 197, 183] (no-canvas [242, 236, 223]) draw 1
+  span.brand-sub                       8.93 need 4.5 pass  #/daily                    d=3   [67, 60, 49] -> [239, 232, 219] (no-canvas [241, 235, 222]) draw 4
+  h1.display                           9.82 need 3.0 pass  #/artists                  d=35  [43, 38, 32] -> [219, 208, 188] (no-canvas [242, 236, 223]) draw 0
+  button.aw-btn                       10.00 need 4.5 pass  #/daily                    d=29  [43, 38, 32] -> [225, 208, 195] (no-canvas [242, 236, 223]) draw 2
+  em                                  10.29 need 4.5 pass  #/credits                  d=25  [43, 38, 32] -> [217, 214, 201] (no-canvas [242, 236, 223]) draw 1
+  strong                              11.37 need 4.5 pass  #/explore                  d=12  [43, 38, 32] -> [233, 223, 208] (no-canvas [241, 234, 220]) draw 2
+  span.brand-text                     12.30 need 3.0 pass  #/artists                  d=3   [43, 38, 32] -> [239, 232, 219] (no-canvas [241, 235, 221]) draw 0
+classes below floor: 0 of 28
