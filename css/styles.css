@@ -424,7 +424,11 @@ section{margin:46px 0}
   font-size:1.45rem;margin-bottom:20px;
 }
 .sec-title::before{content:"";width:30px;height:1px;background:var(--gold);flex-shrink:0}
-.sec-title .count{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--faint)}
+/* The count sits in normal flow on the page background, so its backdrop is the
+   generative #bg-canvas, not flat paint. --faint measures 3.59 light / 4.34 dark
+   there against a 4.5 floor; --muted is the same rung-lift units 26a and 27 used
+   where a scrim could not carry the token. (AC19 / F-27-2 / F-28-1) */
+.sec-title .count{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--muted)}
 
 /* ---------- chips ---------- */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
@@ -662,13 +666,18 @@ section{margin:46px 0}
 
 /* ---------- photo credit (attribution, not decoration) ----------
    Quiet secondary metadata: it must be legible and its links reachable in both
-   themes, but it never competes with the picture or the prose. --muted, not
-   --faint, so the line keeps its contrast on warm paper as well as on dark. */
+   themes, but it never competes with the picture or the prose.
+   The line is in normal flow on the page background, so its backdrop is the
+   generative #bg-canvas. --muted reaches only 4.18 against a 4.5 floor on the
+   base .mu-credit actually sits on, so this goes up one further rung to
+   --body-ink (5.85) — the same remedy unit 26a used for .home-hero-content
+   .footer-note a, and the rung .bio-block p already gives this line in artist
+   bios. Size and weight still separate it from the prose. (AC19 / F-28-1) */
 .img-credit{
-  font-size:.78rem;line-height:1.6;color:var(--muted);
+  font-size:.78rem;line-height:1.6;color:var(--body-ink);
   letter-spacing:.02em;margin:0;
 }
-.img-credit a{color:var(--muted);text-decoration:underline;text-underline-offset:2px;
+.img-credit a{color:var(--body-ink);text-decoration:underline;text-underline-offset:2px;
   text-decoration-color:var(--line);transition:color .2s var(--ease),text-decoration-color .2s}
 .img-credit a:hover,.img-credit a:focus-visible{color:var(--gold2);text-decoration-color:var(--gold)}
 .mu-credit{margin:-4px 0 18px}
