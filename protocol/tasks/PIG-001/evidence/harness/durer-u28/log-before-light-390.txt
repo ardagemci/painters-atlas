@@ -1,0 +1,35 @@
+draw 0  #/                             bands=4   els=43   overCanvas=5    worst 6.31
+draw 0  #/museum/louvre                bands=4   els=42   overCanvas=6    worst 4.72
+draw 0  #/credits                      bands=4   els=114  overCanvas=7    worst 3.89
+draw 0  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 3.88
+draw 1  #/                             bands=4   els=43   overCanvas=5    worst 6.31
+draw 1  #/museum/louvre                bands=4   els=42   overCanvas=8    worst 4.63
+draw 1  #/credits                      bands=4   els=114  overCanvas=10   worst 3.49
+draw 1  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 4.19
+draw 2  #/                             bands=4   els=43   overCanvas=4    worst 6.32
+draw 2  #/museum/louvre                bands=4   els=42   overCanvas=8    worst 4.54
+draw 2  #/credits                      bands=4   els=114  overCanvas=11   worst 3.57
+draw 2  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 4.25
+draw 3  #/                             bands=4   els=43   overCanvas=5    worst 6.25
+draw 3  #/museum/louvre                bands=4   els=42   overCanvas=8    worst 4.59
+draw 3  #/credits                      bands=4   els=114  overCanvas=11   worst 3.93
+draw 3  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 3.45
+draw 4  #/                             bands=4   els=43   overCanvas=5    worst 6.30
+draw 4  #/museum/louvre                bands=4   els=42   overCanvas=7    worst 4.62
+draw 4  #/credits                      bands=4   els=114  overCanvas=7    worst 4.04
+draw 4  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 4.63
+draw 5  #/                             bands=4   els=43   overCanvas=4    worst 6.42
+draw 5  #/museum/louvre                bands=4   els=42   overCanvas=7    worst 4.55
+draw 5  #/credits                      bands=4   els=114  overCanvas=11   worst 3.69
+draw 5  #/artist/leonardo-da-vinci     bands=4   els=44   overCanvas=6    worst 3.80
+
+WORST OBSERVED OVER #bg-canvas, PER ELEMENT CLASS (all draws)
+  div.chip-label                       3.45 need 4.5 FAIL  #/artist/leonardo-da-vinci d=38  [112, 103, 85] -> [204, 204, 192] (no-canvas [242, 236, 223]) draw 3
+  a                                    3.49 need 4.5 FAIL  #/credits                  d=37  [129, 99, 43] -> [217, 202, 187] (no-canvas [242, 236, 223]) draw 1
+  div.page-kicker                      3.77 need 4.5 FAIL  #/credits                  d=33  [129, 99, 43] -> [222, 211, 190] (no-canvas [242, 236, 223]) draw 5
+  a.active                             4.47 need 4.5 FAIL  #/artist/leonardo-da-vinci d=7   [129, 99, 43] -> [236, 229, 216] (no-canvas [242, 236, 223]) draw 3
+  p.img-credit.mu-credit               4.62 need 4.5 pass  #/museum/louvre            d=40  [88, 82, 68] -> [195, 202, 188] (no-canvas [234, 227, 213]) draw 4
+  p.page-lede                          5.01 need 4.5 pass  #/credits                  d=40  [88, 82, 68] -> [202, 210, 200] (no-canvas [242, 236, 223]) draw 5
+  span.brand-sub                       6.30 need 4.5 pass  #/artist/leonardo-da-vinci d=4   [88, 82, 68] -> [237, 231, 218] (no-canvas [241, 235, 222]) draw 3
+  span.img-credit                      6.43 need 4.5 pass  #/credits                  d=2   [88, 82, 68] -> [240, 233, 220] (no-canvas [241, 235, 222]) draw 3
+classes below floor: 4 of 8

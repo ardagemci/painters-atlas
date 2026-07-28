@@ -1,0 +1,2 @@
+draw 0  #/                             bands=7   els=272  overCanvas=1    worst 6.53
+draw 0  #/artists                      bands=32  els=1742 overCanvas=11   worst 3.81

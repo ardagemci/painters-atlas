@@ -1,0 +1,19 @@
+draw 0  #/                             bands=9   els=76   overCanvas=3    worst 6.35
+draw 0  #/credits                      bands=5   els=28   overCanvas=6    worst 5.60
+draw 0  #/museums                      bands=4   els=24   overCanvas=5    worst 4.47
+draw 1  #/                             bands=9   els=76   overCanvas=5    worst 6.31
+draw 1  #/credits                      bands=5   els=28   overCanvas=4    worst 5.27
+draw 1  #/museums                      bands=4   els=24   overCanvas=5    worst 5.34
+draw 2  #/                             bands=9   els=76   overCanvas=5    worst 6.26
+draw 2  #/credits                      bands=5   els=28   overCanvas=4    worst 5.55
+draw 2  #/museums                      bands=4   els=24   overCanvas=6    worst 5.29
+draw 3  #/                             bands=9   els=76   overCanvas=5    worst 6.26
+draw 3  #/credits                      bands=5   els=28   overCanvas=3    worst 5.43
+draw 3  #/museums                      bands=4   els=24   overCanvas=5    worst 5.50
+
+WORST OBSERVED OVER #bg-canvas, PER ELEMENT CLASS (all draws)
+  p.page-lede                          4.47 need 4.5 FAIL  #/museums                  d=35  [155, 147, 127] -> [43, 47, 37] (no-canvas [13, 12, 10]) draw 0
+  div.card-tagline                     6.02 need 4.5 pass  #/museums                  d=1   [155, 147, 127] -> [22, 20, 15] (no-canvas [22, 20, 15]) draw 0
+  a                                    6.26 need 4.5 pass  #/credits                  d=4   [155, 147, 127] -> [17, 15, 12] (no-canvas [13, 12, 10]) draw 0
+  span.brand-sub                       6.26 need 4.5 pass  #/                         d=4   [155, 147, 127] -> [17, 15, 12] (no-canvas [13, 12, 10]) draw 3
+classes below floor: 1 of 4

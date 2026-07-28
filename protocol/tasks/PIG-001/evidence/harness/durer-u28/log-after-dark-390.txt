@@ -1,0 +1,26 @@
+draw 0  #/                             bands=5   els=37   overCanvas=4    worst 6.31
+draw 0  #/museum/louvre                bands=5   els=39   overCanvas=7    worst 6.27
+draw 0  #/credits                      bands=5   els=181  overCanvas=8    worst 5.41
+draw 0  #/artwork/david                bands=4   els=36   overCanvas=8    worst 5.55
+draw 1  #/                             bands=5   els=37   overCanvas=5    worst 6.31
+draw 1  #/museum/louvre                bands=5   els=39   overCanvas=6    worst 6.35
+draw 1  #/credits                      bands=5   els=181  overCanvas=3    worst 5.60
+draw 1  #/artwork/david                bands=4   els=36   overCanvas=8    worst 5.55
+draw 2  #/                             bands=5   els=37   overCanvas=5    worst 6.26
+draw 2  #/museum/louvre                bands=5   els=39   overCanvas=5    worst 6.35
+draw 2  #/credits                      bands=5   els=181  overCanvas=8    worst 5.65
+draw 2  #/artwork/david                bands=4   els=36   overCanvas=7    worst 4.86
+draw 3  #/                             bands=5   els=37   overCanvas=3    worst 6.31
+draw 3  #/museum/louvre                bands=5   els=39   overCanvas=6    worst 6.36
+draw 3  #/credits                      bands=5   els=181  overCanvas=8    worst 5.42
+draw 3  #/artwork/david                bands=4   els=36   overCanvas=7    worst 5.62
+
+WORST OBSERVED OVER #bg-canvas, PER ELEMENT CLASS (all draws)
+  a                                    4.86 need 4.5 pass  #/artwork/david            d=32  [155, 147, 127] -> [45, 39, 24] (no-canvas [13, 12, 10]) draw 2
+  p.page-lede                          5.41 need 4.5 pass  #/credits                  d=23  [155, 147, 127] -> [36, 30, 20] (no-canvas [13, 12, 10]) draw 0
+  div.mu-panel-meta                    6.11 need 4.5 pass  #/artwork/david            d=2   [155, 147, 127] -> [20, 18, 17] (no-canvas [19, 17, 16]) draw 1
+  span.brand-sub                       6.31 need 4.5 pass  #/credits                  d=3   [155, 147, 127] -> [16, 14, 12] (no-canvas [13, 12, 10]) draw 0
+  p.img-credit.mu-credit              10.73 need 4.5 pass  #/museum/louvre            d=22  [216, 210, 196] -> [29, 34, 29] (no-canvas [13, 12, 10]) draw 2
+  span.img-credit                     12.78 need 4.5 pass  #/credits                  d=3   [216, 210, 196] -> [16, 14, 12] (no-canvas [13, 12, 10]) draw 0
+  span                                12.79 need 4.5 pass  #/artwork/david            d=3   [216, 210, 196] -> [16, 14, 11] (no-canvas [13, 12, 10]) draw 1
+classes below floor: 0 of 7

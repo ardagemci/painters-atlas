@@ -1,0 +1,26 @@
+draw 0   canvas maxAlpha=97  pairs=9444   new=9444   union=9444
+draw 1   canvas maxAlpha=92  pairs=9760   new=6290   union=15734
+draw 2   canvas maxAlpha=98  pairs=7767   new=3381   union=19115
+draw 3   canvas maxAlpha=96  pairs=6086   new=2111   union=21226
+draw 4   canvas maxAlpha=87  pairs=6315   new=1941   union=23167
+draw 5   canvas maxAlpha=87  pairs=5403   new=840    union=24007
+draw 6   canvas maxAlpha=91  pairs=6630   new=1233   union=25240
+draw 7   canvas maxAlpha=91  pairs=9137   new=2233   union=27473
+draw 8   canvas maxAlpha=100 pairs=8634   new=2185   union=29658
+draw 9   canvas maxAlpha=88  pairs=7272   new=732    union=30390
+draw 10  canvas maxAlpha=100 pairs=9438   new=2411   union=32801
+draw 11  canvas maxAlpha=89  pairs=5074   new=297    union=33098
+draw 12  canvas maxAlpha=98  pairs=8105   new=1396   union=34494
+draw 13  canvas maxAlpha=93  pairs=8527   new=1011   union=35505
+draw 14  canvas maxAlpha=86  pairs=7051   new=533    union=36038
+draw 15  canvas maxAlpha=115 pairs=8547   new=1097   union=37135
+draw 16  canvas maxAlpha=100 pairs=7612   new=767    union=37902
+draw 17  canvas maxAlpha=88  pairs=8485   new=720    union=38622
+draw 18  canvas maxAlpha=99  pairs=9679   new=1752   union=40374
+draw 19  canvas maxAlpha=97  pairs=7293   new=942    union=41316
+draw 20  canvas maxAlpha=100 pairs=10044  new=902    union=42218
+draw 21  canvas maxAlpha=111 pairs=9330   new=2724   union=44942
+draw 22  canvas maxAlpha=94  pairs=7618   new=356    union=45298
+draw 23  canvas maxAlpha=91  pairs=5245   new=229    union=45527
+
+light 1440x900 over 24 draws: canvas opacity 0.60 on bg [242, 236, 223], backing [792, 495], 45527 distinct (colour,alpha) buckets
