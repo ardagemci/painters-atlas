@@ -1,6 +1,624 @@
 # PIG-001 — QUALITY REVIEW (Gate 2)
 
 **Reviewer:** Van Eyck (`claude-quality-reviewer`), Quality and Accessibility Reviewer
+**Branch:** `pig-001-stabilization` (verified: **not** `main`; no push, no merge)
+**Standard:** the 29 acceptance criteria of `protocol/tasks/PIG-001/specification.md`,
+frozen at `approved_for_build`. Nothing else. A criterion passes or fails; there is no
+partial credit, and an untested criterion is not a passing criterion.
+
+| Revision | Date | Tree | Verdict | Counts |
+| --- | --- | --- | --- | --- |
+| 1 | 2026-07-26 | `4fc8239` / `5fdf1aa` | GATE 2: BLOCKED | PASS 26 · FAIL 0 · UNSUPPORTED 3 (AC4, AC8, AC19) |
+| **2 — operative** | **2026-07-28** | **`1a41cff` (HEAD)** | **GATE 2: BLOCKED** | **PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL)** |
+
+Revision 1 is preserved verbatim in the **ARCHIVE** below. Nothing in it has been deleted:
+the record of what was blocked, and why, stands as written. Revision 2 supersedes only its
+verdict and its criterion statuses.
+
+---
+
+# REVISION 2 (2026-07-28) — OPERATIVE
+
+**Product tree reviewed at:** `1a41cff` (HEAD). Production code last moved at `3e24e4a`
+(unit 28); `1a41cff` and `1e9a1ad` are evidence-only.
+
+**Independence:** I wrote none of this code. I did not fix anything I found. This round I
+re-derived the two contested bounds arithmetically myself from the committed CSS and the
+committed canvas source rather than accept either implementer's or reviewer's numbers.
+
+## R2.1 — What this revision is
+
+Revision 1 blocked on three criteria for which no evidence existed. Since then:
+
+| Was | Work | Now |
+| --- | --- | --- |
+| AC4 UNSUPPORTED (F-3) | Vermeer ran the frozen journey matrix — 33 steps, 0 FAIL (`evidence/browser-evidence-closing.md` §2) | **PASS** — F-3 closed |
+| AC8 UNSUPPORTED (F-4) | Vermeer exercised storage failure with a passport present (`…closing.md` §3) | **PASS** — F-4 **retracted as my own false negative** |
+| AC19 UNSUPPORTED (F-5) | Unit 27 (`563f0af`) museum photograph band; unit 28 (`3e24e4a`) two canvas call sites | **FAIL** — F-5 closed, **new F-7 opened** |
+
+**The 26 passes of Revision 1 stand.** I re-tested only what the delta could disturb.
+Units 27 and 28 are CSS-only (plus a `?v=` bump); they touch no data, no `js/app.js`, and
+no layout geometry, so AC1–AC18 and AC20–AC29 cannot have moved except through the token
+and scrim changes I trace below. I re-ran the validator and re-checked F-1 and F-2 directly.
+
+## R2.2 — Checks I ran myself, with output
+
+### R2.2.1 Validator — `osascript -l JavaScript tools/validate.jxa.js`
+
+```
+app.js: syntax OK
+artists: 256, movements: 76, techniques: 39, eras: 8, nations: 37, painter styles: 27,
+influence edges: 238, venues: 116, catalog: 323 (tier1: 76), daily pool: 75,
+museum notes: 104, photo credits: 104 (attribution required: 88),
+artwork image credits: 27, personas: 15, lists: 12 (featured: 4), tier1 artists: 36 (arcs: 36)
+ALL REFERENCES VALID
+```
+
+Zero errors, **zero warnings**, all references valid — byte-identical to my Revision 1 run
+and to units 27 and 28's own logs. AC2 continues to hold. N-3 (corpus counts differ from the
+spec's frozen assumption, cause D-016) is unchanged.
+
+### R2.2.2 Source spot-checks — units 27 and 28 verified in the file, not in the log
+
+| Claim | Verified | Where |
+| --- | --- | --- |
+| `--mu-veil` exists, `.88` in **both** themes | **yes** | `styles.css:176` (dark), `:219` (light) |
+| Veil is on the **text block**, not the hero box | **yes** | `styles.css:1244-1249` — `.mu-hero-body` gradient, 18 px feather |
+| `.mu-shade` *reduced* to `.06→.30` (carries no contrast duty) | **yes** | `styles.css:1234` |
+| Band breadcrumbs off `--faint` → `--muted` / `--body-ink` | **yes** | `styles.css:1257-1259`, scoped to `.mu-hero-body` |
+| Light band gold `#6b5122`, hover `#4a3616` | **yes** | `styles.css:1272` and neighbours |
+| Band focus ring re-pointed in light only | **yes** | `styles.css:1283`, `#app` specificity carried |
+| `.sec-title .count` `--faint` → `--muted` (unit 28) | **yes** | `styles.css:431` |
+| `.img-credit` / `.img-credit a` → `--body-ink` (unit 28) | **yes** | `styles.css:676-681` |
+| Stylesheet `?v=` bumped for the shipped code | **yes** | `index.html:27` → `20260728-pig001-u28` |
+| `js/app.js` untouched by both units | **yes** | `git show --stat 563f0af 3e24e4a` — `css/styles.css` + `index.html` only |
+
+Both units are in the tree exactly as their logs describe. The one place a log corrected
+itself against the routing note (`.img-credit` was already `--muted`, not `--faint`, so the
+one-rung lift landed on `--body-ink`) is confirmed by the comment preserved at
+`styles.css:671-675`.
+
+### R2.2.3 I re-derived unit 27's `.88` bound myself
+
+Unit 27 is the evidence that moves AC19's photograph sub-claim from FAIL to PASS, and Dürer
+measured his own work. So I did not take his table. The veil is anchored to `.mu-hero-body`,
+which makes the bound pure arithmetic on the committed tokens — `.88·bg + .12·worst-opaque-pixel`,
+worst = white in dark, black in light, the rule Matisse set:
+
+| theme | element | ink | floor | **my bound** | Dürer's | verdict |
+| --- | --- | --- | --- | --- | --- | --- |
+| dark | `--ink` `h1.display` | `#ece6d9` | 3.0 | **11.66** | 11.66 | PASS |
+| dark | `--body-ink` crumb link | `#d8d2c4` | 4.5 | **9.63** | 9.63 | PASS |
+| dark | `--muted` `.mu-sub` + crumbs | `#9b937f` | 4.5 | **4.75** | 4.75 | PASS |
+| dark | `--gold2` `.mu-hook` | `#e8c98a` | 4.5 | **9.08** | 9.08 | PASS |
+| light | `--ink` `h1.display` | `#2b2620` | 3.0 | **9.72** | 9.72 | PASS |
+| light | `--body-ink` crumb link | `#433c31` | 4.5 | **7.06** | 7.06 | PASS |
+| light | `--muted` `.mu-sub` + crumbs | `#585244` | 4.5 | **5.03** | 5.03 | PASS |
+| light | band gold `#6b5122` | — | 4.5 | **4.82** | 4.82 | PASS |
+
+Every figure reproduces to the second decimal. **This is a bound, not a sample**, and because
+the veil is anchored to the text block it is independent of hero height — which is the
+structural reason one value serves 104 venues at both viewports, and why Dürer's 3,744
+measurements found zero below floor rather than getting lucky. The binding constraints are
+`--muted` at 4.75 dark and 4.82 light band gold; both clear, and both are thin margins that
+should not be eroded by a later token change without re-measuring.
+
+I also confirmed the fix by eye, comparing the committed pack shot against unit 27's:
+`museum-louvre__desktop-1440x900__dark.png` shows the breadcrumb "Atlas / Museums / Musée du
+Louvre" washed out over the collage; `u27-museum-louvre__desktop-1440x900__dark.png` shows it
+legible on a veiled block with the photographs *more* present above it, not less. D-27-4's
+claim that the photograph gained presence is true.
+
+**F-5 is genuinely closed**, on a bound I derived myself.
+
+### R2.2.4 I derived the canvas bound myself, from the committed CSS and canvas source
+
+This is the contested question, so I did not rely on unit 28's model either. From the tree:
+
+- `#bg-canvas` — `position:fixed; inset:0; width:100vw; height:100vh; z-index:-1; opacity:.5`
+  (`styles.css:277-280`), `opacity:.6` in light (`:221`). It is behind the entire viewport on
+  every route.
+- `a{color:var(--gold2)}` (`styles.css:265`) — **`--gold2` is the global link colour**, and in
+  light it is `#81632b` (`:199`).
+- The canvas paints, in light, blobs `#a8813c #a85544 #4a6e9e #3e7a5e #6e3a5e` at α .10 and
+  ribbons at α .10 (halo) and .18 (core), `source-over` (`js/app.js:2754-2758`).
+
+Computed by me on flat paper first, to locate the headroom:
+
+| light ink | on flat `--bg` | backdrop luminance it needs for 4.5 | flat paper L | headroom |
+| --- | --- | --- | --- | --- |
+| `--gold2` `#81632b` (= `a{}`) | **4.75** | 0.7944 | 0.8420 | **+0.0475** |
+| `--faint` `#706755` | **4.74** | 0.7961 | 0.8420 | **+0.0459** |
+| `--muted` `#585244` | 6.59 | 0.5587 | 0.8420 | +0.2833 |
+
+Then my own composite of the canvas over the page:
+
+| light backdrop | resulting L | `--gold2` | `--faint` | `--muted` |
+| --- | --- | --- | --- | --- |
+| **one** darkest blob at its centre (α .10 × .6) | 0.7645 | **4.34** | **4.33** | 6.02 |
+| all five blobs overlapping | 0.5823 | **3.37** | **3.36** | 4.67 |
+| five blobs + three ribbons (halo + core) | 0.3734 | **2.26** | **2.25** | 3.13 |
+
+**A single blob is enough.** The most conservative assumption available — one blob, at its
+own centre, no overlap, no ribbon — already puts the global link colour and `--faint` below
+4.5 in the light theme. My figures bracket Dürer's model bound (3.22) and his measured range
+(3.49–3.64) from both sides. This is not an instrument artefact and not a worst-corner
+contrivance: `--gold2` and `--faint` sit on **4.7-ish on flat paper**, roughly 0.046–0.048 of
+luminance from the floor, and the canvas that sits behind everything spends that margin
+several times over.
+
+### R2.2.5 Contrast audit re-run — and the blind spot that explains 28 units
+
+`python3 evidence/contrast-audit.py`, run in full, read with the caution Revision 1 established:
+
+- **Pass 1 (parses `css/styles.css` live) — current, and clean.** 19 tokens per theme over
+  four surfaces, all PASS.
+- **Pass 2 (`contrast-pairs-measured.csv`) — still stale.** Regenerated at `a018fe2`, before
+  unit 26. It still prints the three `#9e7938` gold-as-small-text rows unit 26c fixed.
+- **Pass 3 (browser-sampled pixels) — still stale.** It still prints the dark hero at
+  **1.10:1 FAIL**, a state unit 26a fixed and that Vermeer independently re-measured at 4.62
+  bound / 5.14 observed. Its five "composite FAIL" summary lines describe a build two units old.
+
+Treating the script's summary as current would be wrong, and I do not.
+
+**New and material, though:** Pass 1's surface set is `--bg`, `--bg2`, `--panel`, `--panel2`
+— **flat paint only**. `#bg-canvas` is not among them and never has been. Pass 1 reports
+`--faint` over `--bg` at 5.20 dark, and light `--faint`/`--gold2` at ~4.74/4.75, all PASS —
+which is exactly the clearance unit 26c and Vermeer's §5.4 gold sweep relied on. **That
+clearance was against a surface that is not what these tokens actually paint on for about a
+third of the site's text.** This is the structural reason the canvas class survived 28 units
+undetected, and it means the audit's clean Pass 1 must never again be read as clearing tokens
+site-wide. It clears them over panels.
+
+### R2.2.6 AC8 — I checked Vermeer's reasoning rather than accepting it, and it is half right
+
+Vermeer says my F-4 was a false negative because "my probe had no passport to fail against".
+**I traced the write-failure path in source, and that explanation does not hold for the case
+I actually probed** — but the conclusion is still correct, for a different reason:
+
+- `passportToggle` (`app.js:110-118`) does `getPassport() || newPassport()`. **With no passport
+  present it builds one**, mutates it, and calls `ppWrite`.
+- `ppWrite` (`:90-97`) then hits the throwing `setItem`, catches, sets `ppState.write="failed"`,
+  returns false.
+- The click handler at **`app.js:2481-2482`** is unconditional: `if(on === null){ ppNotice(PP_WRITE_MSG); return; }`.
+  There is no passport-presence gate anywhere on this path.
+
+So the notice **was** raised during my probe. I missed it because `ppNotice` (`:126-140`)
+creates `#pp-notice` lazily and appends it to `document.body` — outside `#app` — styled
+`position:fixed; bottom:16px; z-index:60` (`styles.css:1108-1114`). I inspected the route
+view and the button's `aria-pressed`; a body-level fixed toast was outside where I looked.
+**F-4 was my probe's error, and I retract it.**
+
+Vermeer's stated reason *is* correct for the **corrupt-read** half (his S2): my corrupt probe
+was genuinely inconclusive because there was nothing stored to corrupt.
+
+This matters beyond bookkeeping: because the affordance is raised unconditionally in code, AC8's
+recovery clause does not depend on a seeded passport, which is a stronger result than his
+transcript alone shows. I further confirmed in source the three affordances he clicked
+(`data-tsx="export"`, `href="#/taste"`, `data-tsx="notice-close"`, `:133-138`), the
+corrupt/denied branch split (`:3392-3402`, `:3415`), and the no-silent-overwrite guard
+(`ppWrite`'s first line: `if(ppState.corrupt || ppState.read === "denied") return false;`) —
+the build refuses to write over data it could not read. **AC8 passes.**
+
+### R2.2.7 F-1 and F-2 re-checked at HEAD
+
+- **F-1 (821–1100 px overflow).** `git diff 4fc8239..HEAD -- css/styles.css` contains **zero**
+  hits for `daily-media`; the rule is unchanged at `styles.css:879-884`. The finding stands
+  exactly as recorded, and adjudication **A1** is unaffected.
+- **F-2 (masked focus ring on the last nav link, ≤820 px).** The mask is still present and
+  unchanged — `linear-gradient(90deg,#000 78%,transparent)`, now at `styles.css:1176-1177`
+  (moved from `:1156` only because units 27/28 inserted rules above it). The finding stands
+  as recorded, minor.
+
+## R2.3 — Adjudications added this revision
+
+### A7 — AC4: **PASS**
+
+The transcript F-3 said did not exist now exists and I read it in full
+(`browser-evidence-closing.md` §2, raw at `harness/vermeer-closing/ac4-journeys.json`).
+It covers all five frozen journeys of `ux-requirements.md` §5 **and** AC4's own eleven-link
+chain — 33 steps, 0 FAIL, driven with real CDP mouse and key events rather than JavaScript
+shortcuts. The three links Revision 1 named as never exercised end to end are all there and
+all substantive: **consequence explanation** (`#/taste` stating "9 admirations inform it"),
+**export/share** (a 4,747-char `.json` and a share URL produced through the build's *own*
+clipboard fallback), and **reset** (confirm copy, then `localStorage.getItem` returning `null`).
+Conflict handling shows per-field keep/take **plus** an explicit "Cancel — change nothing",
+and the merge is a union that removes nothing. No broken or unexplained transition.
+
+This is the one criterion I certify **entirely on another reviewer's observation.** I did not
+re-walk the 33 steps. What I checked is that the transcript is specific enough to be falsifiable
+— it names counts, labels, `aria-pressed` transitions and stored-key states at each step, and
+it records a method correction against itself (an anchor-click override that had disabled the
+very link it was measuring, re-run cleanly). Evidence that reports its own instrument's failures
+is evidence I extend credit to. **AC4 passes.**
+
+I adopt his note N-V1: `ux-requirements.md` §5 still describes `#/explore` as offering two
+instruments where the build offers four. The frozen table is stale in the *build's favour* and
+this is what AC22 required; it is a documentation correction, not a defect.
+
+### A8 — AC8: **PASS**, F-4 retracted
+
+See R2.2.6. All five AC8 clauses are satisfied and I verified the mechanism in source rather
+than on report: no false success (`aria-pressed` stays `false`, label unchanged), context
+preserved (bytes byte-identical, 436→436), truthful notice (`role="status"`, "Nothing already
+saved has changed."), and a retry / recovery / **export** path. The corrupt branch preserves
+the stored bytes rather than wiping them and offers a verbatim download — which is better than
+the criterion asks for. **AC8 passes.**
+
+### A9 — The canvas class: **a live AC19 failure. It blocks.** (F-7)
+
+This is the decision I was asked to make and not defer, so here is the reasoning in full.
+
+**The frozen text.** AC19 reads: *"Both themes pass applicable WCAG 2.2 AA contrast checks for
+the frozen text, control, focus-indicator, and state pairs, including composites that require
+browser measurement."* (`specification.md:64`.)
+
+**Why the F-1 analogy does not transfer.** I ruled the 821–1100 px overflow a note because
+**AC18 enumerates its own test conditions** — "320, 390, 768, 1280, and 1440 CSS pixels and at
+200 percent text zoom" — and the specification's Frozen Inventories repeat those five widths.
+900 px is outside a set the criterion itself names, and widening it at certification time would
+be me rewriting a frozen standard. That escape hatch is textual, and it is the whole basis of A1.
+
+**AC19 has no such enumeration.** I checked: the Frozen Inventories freeze routes, control
+types, journeys, checkpoints, viewports, the search fixture, asset surfaces, the rights sample,
+the historical sample and third-party hosts. **They do not freeze a contrast-pair inventory.**
+There is no list from which the canvas class is absent. And the criterion's trailing clause —
+"including composites that require browser measurement" — reaches *toward* this class rather
+than away from it: text over a `position:fixed` generative canvas is the paradigm case of a
+composite that token maths cannot reach, which is precisely why Pass 1 of the audit never saw it.
+
+**The failure is real and I reproduced it independently.** R2.2.4: a single blob at its centre,
+the most conservative assumption available, puts light `--gold2` at **4.34** and `--faint` at
+**4.33** against a 4.5 floor; realistic overlap gives 3.37/3.36. `--gold2` is `a{}`, the global
+link colour. `#bg-canvas` is fixed to the viewport at `z-index:-1` behind every route, and unit
+28's enumerator — deciding membership by paint differential, not rect overlap, which is the
+sound method — found **1,346 of 3,755 text elements** painting over it across 19 routes. This is
+not an edge case reachable only by a contrived draw. It is roughly a third of the site's text,
+and in one of two shipped themes the global link colour is among it.
+
+**Why "pre-existing" does not excuse it here.** It is true and I record it: these failures
+pre-date PIG-001, and this build measurably improved contrast rather than degrading it. But
+that argument proves far too much in this task specifically. The dark home hero at 1.10:1 was
+pre-existing. The six gold-as-small-text sites were pre-existing. The museum photograph band —
+the F-5 I blocked on in Revision 1, and which units 27 and 28 exist to answer — was pre-existing.
+**Pre-existence has not once been accepted as an excuse across units 25, 26, 27 or 28.** Adopting
+it now, at the last criterion, only because the remaining work is inconvenient, would be lowering
+the bar at exactly the moment it is load-bearing. My own Revision 1 standard governs: *"a
+criterion-named composite class is unmeasured and its worst case fails."* The class is now
+measured, and it fails.
+
+**The implementer does not claim it.** Unit 28's self-assessment says plainly: *"AC19 is NOT
+fully supported."* Dürer checked and rejected the obvious lever (the canvas would have to become
+near-invisible — I confirmed the arithmetic: `--faint` needs the light backdrop held above
+L≈0.796 against flat paper's 0.842, so almost the entire canvas contribution would have to go),
+and specified a fix he correctly declined to implement on his own authority because retiring
+`--faint` and re-pointing the global light link colour is visual direction, not an implementation
+choice. Certifying a criterion the implementer refuses to claim, over his own written FAIL, on
+reasoning he already tested and rejected, is not something an independent gate can do.
+
+**Ruling: AC19 FAILS.** Not "unsupported" — Revision 1's word, when nobody had measured it —
+but **FAIL**, because it has now been measured, by three instruments and independently by me.
+Recorded as **F-7 (major)**.
+
+I record what is *not* in dispute, so the fix is not over-scoped: the museum band (unit 27),
+the home hero (unit 26a), the six re-pointed gold sites (unit 26c), the two call sites unit 28
+closed, and the band focus ring all pass and are independently corroborated. **The open failure
+is a token question, not a re-design**: `--faint` as a small-text colour over the canvas, and
+the light `--gold2` link colour. Dürer's option (a) — fold `--faint` into `--muted` over the
+canvas and re-point light `--gold2` to `#6b5122`, already in the palette from unit 27 — is the
+smaller and more reversible of the two he costed, and matches the rung-lifting remedy used in
+26a, 27 and 28. It needs Matisse's sign-off as visual direction, and it must be re-measured
+with unit 28's instruments in **both** themes and at **both** viewports, not inferred.
+
+**One thing the fix must not do:** `--muted` is the rung `.sec-title .count` was just lifted
+onto, and its own bound is 4.54 dark / 4.47 light, with 4.47 measured on `p.page-lede` at dark
+390. Folding `--faint` into `--muted` moves failing text onto a rung that is itself marginal.
+Whoever routes this should treat `--muted` over the canvas as in scope, not as the destination.
+
+### A10 — N-1 (screenshot pack): **re-opened. Still a note, not a blocker.**
+
+The pack was re-captured at `64d68a0` and the two surfaces I named are now correct — I verified
+by eye, not by timestamp, and Revision 1's complaint is answered.
+
+**But it is behind the code again, by two units.** The pack's files carry mtimes of
+2026-07-26 13:19–13:21; unit 27 committed 2026-07-27 02:23 and unit 28 2026-07-28 12:07. I
+opened `museum-louvre__desktop-1440x900__dark.png` and it shows the **pre-veil** band, with the
+breadcrumb washed out over the collage — the F-5 failure state. Unit 28's `.sec-title .count`
+and `.img-credit` changes appear on no shot in the pack at all. Unit 27 shipped its own four
+`u27-museum-*` captures, which *are* current for the band but pre-date unit 28.
+
+**Ruling: note, not a blocker**, on the same reasoning as Revision 1 — the stale shots understate
+the build, I verified the affected surfaces myself by derivation and by comparing the unit-27
+captures, and no criterion turns on a picture. But the spec's evidence package requires
+"desktop/mobile × dark/light screenshots" with Gate-2 certification, and a reader of the current
+pack would conclude the opposite of the truth on the museum surfaces. Because AC19 work must
+continue anyway, **the pack should be re-captured exactly once, at the final HEAD**, rather than
+chased per unit. If it is not re-captured before the Human Review Package, that becomes a
+certification defect in its own right.
+
+### A11 — Units 27/28 independence: **one real gap, and it is not load-bearing**
+
+Vermeer independently verified units 25–26. Nobody but Dürer has verified 27–28. That is the
+same arrangement that let round 1's 500 px capture defect survive two rounds, and I flagged it
+in N-1 for unit 26. It recurs here. What settles whether it leaves anything unsupported:
+
+- **Unit 27 — covered, by me.** Its result is a *bound*, not a sample, and I re-derived every
+  figure in it myself (R2.2.3), matching to the second decimal. Because the veil is anchored to
+  the text block, the bound is height-independent, so the 3,744-measurement sweep is
+  corroboration on top of arithmetic I verified rather than the load-bearing claim. He also
+  inherited Vermeer's corrected instrument rather than building his own and reproduced Vermeer's
+  BEFORE figures (`a` 1.33, `span.sep` 1.31, `div.mu-sub` 3.23) to two decimals — cross-operator
+  agreement on the instrument. I additionally confirmed the visible result by eye. **Not unsupported.**
+- **Unit 28's *fixes* — covered, by construction.** Both call sites moved to rungs whose
+  clearance I can check directly, and the direction of change is unambiguous. Its model
+  reproduced unit 27's independently-instrumented 4.18 figure exactly. **Not unsupported.**
+- **Unit 28's *sweep* — this is the real gap, and it points the safe way.** The 3,755-element
+  census ran in **light @1440 only**; the dark enumeration and the 390 enumeration were not run,
+  and two 390 AFTER cells for `.sec-title .count` rest on a token-level number rather than a
+  direct observation (D-28-5, stated honestly in the log). But every gap here is a gap in
+  *finding more failures*, not in confirming a pass. An under-run sweep cannot manufacture F-7;
+  it can only have missed additional members of it. Since F-7 blocks regardless, the gap changes
+  no verdict — but it means **the eventual fix cannot be verified by re-running this sweep alone**.
+  Whoever closes F-7 must run the enumerator in dark and at 390 as well, and that verification
+  should be done by someone other than its implementer.
+
+**Ruling:** unit 27 and unit 28's fixes are adequately supported, by my own derivation rather
+than by their author's assertion. The unrun halves of unit 28's sweep leave no criterion
+unsupported *today*, but they are a condition on the AC19 re-certification, recorded as N-5.
+
+### A12 — F-1 and F-2 stand as I left them
+
+Both re-checked in the tree at HEAD (R2.2.7) and unchanged by units 27–28. F-1 remains a minor
+finding outside AC18's frozen viewport set (adjudication A1 unchanged); F-2 remains a minor
+degradation of focus *visibility*, not its absence, on a control that predates the build.
+Neither blocks. Both belong in the Human Review Package as scheduled follow-ups.
+
+## R2.4 — ACCEPTANCE CRITERIA — ALL 29, CURRENT
+
+**PASS 28 · FAIL 1 · UNSUPPORTED 0**
+
+| # | Criterion (abbrev.) | R1 | **R2** | Evidence |
+| --- | --- | --- | --- | --- |
+| AC1 | effa805 baseline named, older labelled historical, deployed-identity proof defined | PASS | **PASS** | unchanged |
+| AC2 | Validator: no errors, refs valid, unedited snapshot | PASS | **PASS** | **my run, R2.2.1** — zero errors, zero warnings |
+| AC3 | Two deck warnings cleared on merit or owner exception | PASS | **PASS** | `deck-merit-review.md`; my validator run confirms 0 warnings |
+| AC4 | Frozen first-user journey matrix, no broken/unexplained transition | UNSUP | **PASS** | `browser-evidence-closing.md` §2 — 33 steps, 0 FAIL, five journeys + the eleven-link chain. **Adjudication A7**; F-3 closed |
+| AC5 | Import: per-field identify, explicit confirm, cancel/malformed preserves local | PASS | **PASS** | round 1 + AC4 chain links 9–10b (per-field keep/take **plus** cancel; union merge) |
+| AC6 | Admire/Seen/Saved independent, accurate visible + programmatic state | PASS | **PASS** | round 1; AC4 J2 — `admirations` flips, `seen`/`saved` stay `false` |
+| AC7 | Five interruption checkpoints resume exactly | PASS | **PASS** | Vermeer round 1, 5/5; wave-c U18. Not re-run in the closing pass (his NOT TESTED #10); carry-forward legitimate (A5) |
+| AC8 | Storage failure: no false success, context preserved, retry/recovery/export offered | UNSUP | **PASS** | `…closing.md` §3 + **my source trace, R2.2.6**. **Adjudication A8**; F-4 retracted |
+| AC9 | Invalid-route/no-match/empty/limit/failure preserve context + next action | PASS | **PASS** | unchanged; AC8's trouble views strengthen it |
+| AC10 | Frozen asset inventory, exact counts by surface + reachability | PASS | **PASS** | unchanged |
+| AC11 | Item-level rights sample ≥100 incl. Tier1∪daily + all Matisse/Kahlo | PASS | **PASS** | unchanged — 122 entries, nine fields each |
+| AC12 | Mismatches/unresolved/out-of-sample stay explicitly unresolved | PASS | **PASS** | unchanged |
+| AC13 | Historical sample: 10 profiles, ≥5 eras/movements/nations, 5 claim classes, 20 edges | PASS | **PASS** | unchanged |
+| AC14 | Release language checked, no overclaim | PASS | **PASS** | unchanged |
+| AC15 | Title updates, one identity to AT, focus to entry point, no repeat announcements | PASS | **PASS** | my R1 §2.6 (5/5, 0 live regions); re-confirmed at HEAD by `…closing.md` §7. Real screen-reader output NOT TESTED (A6) |
+| AC16 | Selected/current/expanded/pressed/active: visible + programmatic, not colour/position/hover alone | PASS | **PASS** | unchanged. **See F-7 caveat:** `a.active` measures 4.47 over the canvas in light 390 — a contrast defect, not a semantics defect; scored under AC19 |
+| AC17 | Keyboard-operable with visible focus; bypass; no nested interactive | PASS | **PASS** | unchanged; unit 27's band focus ring re-derived by me as an improvement (light 4.98/4.94 vs 2.60). F-2 minor, re-checked |
+| AC18 | 320/390/768/1280/1440 + 200 % zoom: destinations reachable, no root overflow | PASS | **PASS** as frozen | unchanged; 200 % zoom 0/26 at 1280 and 1270 (`…closing.md` §5.3). 821–1100 band outside the frozen set → **A1**, F-1 |
+| AC19 | Both themes pass AA for frozen text/control/focus/state pairs **incl. browser-measured composites** | UNSUP | **FAIL** | Photograph band **now PASSES** (unit 27; **bound re-derived by me, R2.2.3**) — F-5 closed. **But `--faint` small text and the light global link colour `--gold2` fail over `#bg-canvas`** — 3.45–4.39 measured, 3.22/3.69 bound, **reproduced independently by me at 4.33/4.34 from a single blob** (R2.2.4). **Adjudication A9 · F-7** |
+| AC20 | Reduced motion preserves info/choices; canvas + relationship viz have alternative + accessible name | PASS | **PASS** | unchanged; units 27–28 add no transition or animation |
+| AC21 | Frozen fixture, six classes, no starvation, count/selection/dismissal/focus-return | PASS | **PASS** | unchanged — wave-c 24/24 + my own six-class re-run |
+| AC22 | Home Explore promise = Explore destination; every instrument reachable | PASS | **PASS** | my R1 §2.7; re-confirmed by AC4 J5 (four cards, four routes) |
+| AC23 | Named adjudicator reviews hierarchy/relationship/entrances/identity without claiming comprehension | PASS | **PASS** | **A4** unchanged. N-2 stands, and now widens: Matisse has not seen units 26–28 either |
+| AC24 | ≥1 relationship journey: named entities, relationship + consequence, anchor, onward path | PASS | **PASS** | strengthened by AC4 J1/J5 — chip → movement → back with the anchor intact; `#ig-info` lineage with an onward link |
+| AC25 | Every third-party runtime request identified; undisclosed fails | PASS | **PASS** (disclosure) | `…closing.md` §7 at HEAD — `upload.wikimedia.org` only, 0 Google Fonts. Deployment-gated condition remains open as **F-6** |
+| AC26 | Criterion-to-unit matrix, defect/deferred register, rollback, cache/versioning | PASS | **PASS** | unchanged; `?v=` uniformity maintained through u27/u28 |
+| AC27 | Fresh IL assessment confirms buildability, doesn't lean on the 14-unit plan | PASS | **PASS** | unchanged |
+| AC28 | No legal conclusion from death year/host/attribution alone | PASS | **PASS** | unchanged |
+| AC29 | No production edit before `approved_for_build`; merge/deploy need explicit approval | PASS | **PASS** | branch verified `pig-001-stabilization` at HEAD; units 27–28 committed by explicit path; no merge, no push, no deploy |
+
+## R2.5 — FINDINGS LEDGER (full history)
+
+### CRITICAL — 0
+
+### MAJOR — 1 open
+
+#### F-7 (major, **open**) · AC19 · `--faint` small text and the light global link colour fail over `#bg-canvas`
+
+`#bg-canvas` (`styles.css:277-280`, `position:fixed; inset:0; z-index:-1; opacity:.5` dark /
+`.6` light) sits behind every route. Unit 28's census found **1,346 of 3,755 text elements**
+painting over it across 19 routes, membership decided by paint differential rather than rect
+overlap. Measured below floor, with a 4.5 body-text floor:
+
+| theme | viewport | class | ink | measured |
+| --- | --- | --- | --- | --- |
+| light | 390 | `div.chip-label` | `--faint` | 3.45 |
+| light | 390 | **`a` (global link)** | `--gold2` | 3.49 |
+| light | 1440 | `div.page-kicker` | `--gold2` | 3.53 |
+| light | 1440 | **`a` (global link)** | `--gold2` | 3.64 |
+| light | 1440 | `div.chip-label` | `--faint` | 3.72 |
+| light | 390 | `div.page-kicker` | `--gold2` | 3.77 |
+| light | 390 | `a.active` | `--gold2` | 4.47 |
+| dark | 1440 | `div.chip-label` | `--faint` | 4.39 |
+| dark | 390 | `p.page-lede` | `--muted` | 4.47 |
+
+Whole-surface model bound over 24 draws on plain `--bg`: `--faint` **3.69** dark / **3.22**
+light; `--gold2` **3.22** light; `--muted` 4.54 dark / 4.47 light.
+
+**Reproduced independently by me** (R2.2.4) from the committed CSS and `js/app.js:2754-2758`:
+a *single* darkest blob at its own centre, α .10 through element opacity .6, puts light
+`--gold2` at **4.34** and `--faint` at **4.33**. Both inks sit ~4.75 on flat paper, about
+0.046 of luminance above the floor; the canvas spends that several times over.
+
+`--faint` is not two call sites: it also paints `.chip-label`, `.f-label`, `.map-hint`,
+`.daily-return`, `.aw-provenance`, `.footer-note`, `.tl-year`, `.tn-count`, `.tm-lab`,
+`.footer-nav a` and the search placeholder over the canvas. `--gold2` is `a{}`
+(`styles.css:265`) — the global link colour.
+
+**Reproduction:** serve the repo; load any route in light theme; read the composited backdrop
+under a link or a `.chip-label` with the three-shot glyph diff (`evidence/harness/durer-u28/canvastext.py`),
+or compute it: `#81632b` over `.6·blob(#6e3a5e, α.10)` on `#f2ecdf`.
+
+**Why it is FAIL and not a scoped-out note:** adjudication **A9**. In short — AC18 enumerated
+its viewports and 900 px was outside them; AC19 enumerates no pair inventory and its
+"composites that require browser measurement" clause reaches this class directly. Pre-existence
+was not accepted as an excuse for the dark hero, the six gold sites, or the museum band, and
+cannot be accepted for the last one.
+
+**Remedy (not applied by me, and requiring Matisse's sign-off as visual direction):** Dürer's
+option (a) — retire `--faint` as a small-text colour over the canvas and re-point light
+`--gold2` to `#6b5122`. Lowering canvas opacity does not work; he checked and I confirmed the
+arithmetic. **`--muted` must be treated as in scope, not as the destination** — its own bound
+is 4.47 light / 4.54 dark.
+
+### MAJOR — closed this revision
+
+#### F-5 (major) · AC19 · text over Wikimedia photographs — **CLOSED by unit 27, verified by me**
+
+Raised in Revision 1: a criterion-named composite unmeasured across 116 venues, whose worst
+case I bounded at `.mu-sub` 2.44:1. Unit 27 moved the scrim from the hero box onto the text
+block (`--mu-veil:.88`, `styles.css:1244-1249`), lifted the band's breadcrumbs off `--faint`,
+and re-pointed the light band gold. **I re-derived the bound myself** (R2.2.3) and reproduce
+Dürer's table to the second decimal; his sweep adds 3,744 measurements over 416 venue-loads
+with zero below floor, at both viewports, and 390 px proved *worse* than 1440 rather than
+inheriting from it. The photograph is more present than before, not less. **Closed.**
+
+#### F-3 (major) · AC4 · the journey-matrix transcript did not exist — **CLOSED**
+
+It now exists and I read it in full: `browser-evidence-closing.md` §2, raw at
+`harness/vermeer-closing/ac4-journeys.json`. 33 steps, 0 FAIL. **Closed** (adjudication A7).
+
+### MINOR — 2 open, 1 retracted
+
+#### F-1 (minor, open) · pre-existing horizontal overflow at 821–1100 px on `#/`
+
+Unchanged and re-verified at HEAD: `.daily-media` (520 px fixed) is untouched by every commit
+since `4fc8239`. Root `scrollWidth` 1008 vs `clientWidth` 890 at 900 px. Outside AC18's frozen
+viewport set (**A1**), pre-dates PIG-001, and the band includes 1024 px. Schedule it.
+
+#### F-2 (minor, open) · AC17 · the last nav destination's focus indicator is faded by the mask, at ≤820 px
+
+Unchanged and re-verified at HEAD: `styles.css:1176-1177`, `linear-gradient(90deg,#000 78%,transparent)`
+on a `overflow-x:auto` box, so whatever link sits at the right edge is faded even when scrolled
+fully. Measured in Revision 1 at α≈0.52 (390 px) and ≈0.16 (673 px). Focus is degraded, not
+absent; the control predates the build. Minor. **Suggested remedy, one line, not applied:** drop
+the mask when the container is scrolled to its end, or apply it to the scrolling content.
+
+#### F-4 (minor) · AC8 · **RETRACTED — my own false negative**
+
+I reported no user-visible recovery affordance on write failure. There is one, and it is raised
+unconditionally at `app.js:2481-2482`. I missed it because `#pp-notice` is appended to
+`document.body` outside `#app` as a fixed bottom toast, and I inspected the route view. See
+R2.2.6 — including my correction to Vermeer's stated explanation, which holds only for the
+corrupt-read half. **Withdrawn with the reason recorded.**
+
+### NOTE
+
+#### F-6 (note) · AC25 · deployment-gated disclosure condition
+
+Recorded for completeness: Revision 1's AC25 row referenced "F-6" without defining it — my
+drafting slip, corrected here. The condition is that AC25 passes **on disclosure** against a
+locally served build; nothing in this review proves what a deployed GitHub Pages build serves
+(Vermeer's NOT TESTED #11). Confirming third-party request identity at the deployed origin is a
+pre-deployment step, not a Gate 2 condition.
+
+#### N-1 (note, **re-opened**) · the screenshot pack is behind the code again, by two units
+
+Re-captured at `64d68a0` and the two surfaces I originally named are now correct. But units 27
+and 28 shipped afterwards: `museum-louvre__*` in the pack still shows the **pre-veil** band
+(I opened it and compared against `u27-museum-louvre__*`), and no shot depicts unit 28 at all.
+Not a blocker (**A10**) — the stale shots understate the build and no criterion turns on a
+picture — but the pack must be re-captured **once, at final HEAD**, before the Human Review
+Package, or a reader will conclude the opposite of the truth on the museum surfaces.
+
+#### N-2 (note) · Matisse adjudicated on round-1 evidence, and the gap has widened
+
+AC23 stands (**A4**), but his record now pre-dates units 25 through 28, including two changes in
+his own domain: the museum band's treatment and the token rungs. He has never seen the corrected
+mobile captures he asked for. F-7's remedy requires his sign-off in any case, which is the
+natural occasion to refresh the record.
+
+#### N-3 (note) · corpus counts differ from the frozen specification assumption
+
+Unchanged: spec assumed 247/75/317/225; HEAD reports 256/76/323/238, cause D-016 (Sol's
+`ef8b2b3` landing mid-build), recorded and accepted. Flagged only so the Human Review Package
+does not present the spec's assumption line as current.
+
+#### N-4 (note, **new**) · `browser-evidence-closing.md` ships with four unresolved placeholders
+
+The committed file — the evidence of record for AC4 and AC8 — contains literal
+`<!--PLACEHOLDER-DARK-->` (line 86), `<!--PLACEHOLDER-LIGHT-->` (88),
+`<!--PLACEHOLDER-FINDINGS-->` (393) and `<!--PLACEHOLDER-VERDICT-->` (463), present in the
+committed object at `73ddc27` as well as on disk. So §1.2's AC19 dark and light measurement
+tables, the entire §6 findings section, and §9's verdict **are missing from the document**.
+
+This does not disturb AC4 or AC8: §2 and §3 are complete, specific and self-consistent, and
+they are what those criteria rest on. The missing §1.2 tables describe F-V1, which unit 27 has
+since closed and which I re-derived myself. But an evidence artifact in a certification package
+must not ship with unrendered template markers — a reader cannot tell a placeholder from a
+deletion. **Repair before the Human Review Package.**
+
+#### N-5 (note, new) · unit 28's census was run in light @1440 only
+
+19 routes, 3,755 elements, 67 ink groups — **light theme at 1440 only**. Not run in dark, not
+run at 390; two 390 AFTER cells rest on a token-level number rather than an observation (D-28-5,
+disclosed in the log). This cannot have manufactured F-7 — an under-run sweep only misses
+failures — so it leaves no criterion unsupported today. But **the fix for F-7 cannot be verified
+by re-running this sweep alone**: the enumerator must be run in dark and at 390, and by someone
+other than the implementer (**A11**).
+
+## R2.6 — REGRESSION SWEEP AT HEAD
+
+- **Validator:** clean, zero warnings, all references valid (R2.2.1). Identical to Revision 1.
+- **26 routes at `64d68a0`** (`…closing.md` §7): 26/26 reached, **0** console errors, **0**
+  warnings, **0** requests ≥400 of 112, **680** images checked with **0** broken,
+  `upload.wikimedia.org` the only third-party host, **0** Google Fonts. Units 27 and 28 landed
+  after that sweep, but both are CSS-only and neither adds a request, a script or an element —
+  `git show --stat` confirms `css/styles.css` + `index.html` only, with `js/app.js` untouched
+  and its `?v=` unchanged. I accept the sweep as carried forward on that reasoning, stated so it
+  is auditable.
+- **Changed surfaces did not break neighbours.** Unit 27's rules are confined to `.mu-hero-body`,
+  `.mu-shade` and band-scoped breadcrumb/focus overrides; `.breadcrumbs` outside the band keeps
+  `--faint` on opaque paint (`styles.css:1256` comment, verified). Unit 28 changed two
+  declarations. The separate `.hero .hero-shade` used by artist/artwork heroes and the
+  `.home-hero` rebuild from unit 26a are both untouched.
+- **Contrast did not regress anywhere.** Every unit-27/28 change moves ink *up* a rung or adds
+  opacity. F-7 is a pre-existing condition newly measured, not a new defect: no element measures
+  worse at HEAD than it did at `4fc8239`.
+- **F-1 and F-2 re-checked in the tree** (R2.2.7); neither moved.
+
+No regression found.
+
+## R2.7 — PRESSURE
+
+None was applied. I record that this revision was the harder call of the two, and how I made it.
+
+Revision 1 blocked on three criteria with no evidence — that is nearly mechanical. This time two
+of the three came back genuinely answered, with work of high quality: unit 27's bound reproduces
+under my own arithmetic, unit 28 found a defect *against its own unit's success story* and
+declined to paper over it, and every author in this chain corrected their own instrument in
+public (Vermeer's `visibility:hidden` false positive, Dürer's orphaned-chain provenance failure,
+his `background-clip:text` self-scoring). I retracted one of my own findings as a false negative
+for the same reason. Twenty-eight units of that culture make it tempting to call the last item
+residual risk and be done.
+
+I was explicitly told that ruling the canvas class a properly recorded pre-existing note would
+be legitimate and not a lowered bar. I considered it seriously, and I decline it — on a textual
+distinction rather than a temperamental one. AC18 froze the viewports that let me note the
+821–1100 px overflow; AC19 freezes no pair inventory and names browser-measured composites
+directly. The global link colour, in a shipped theme, over a layer behind every route, below
+floor on a single blob. The implementer says AC19 is not supported. I will not certify over that.
+
+Equally, I have not inflated it. F-7 is **one** finding, token-level, with a costed and
+reversible remedy that already exists in the palette. Twenty-eight of twenty-nine criteria pass,
+two of them newly, and I closed two of my own three blocking findings — one by verifying someone
+else's fix from first principles, one by admitting my probe was wrong.
+
+**What blocks is narrow and specific:** F-7 needs a token decision from Matisse and one
+re-measurement pass in both themes at both viewports, verified by someone who did not implement
+it. Plus the evidence hygiene in N-1 and N-4, neither of which is a criterion.
+
+---
+
+# ARCHIVE — REVISION 1 (2026-07-26) — SUPERSEDED BY REVISION 2
+
+*Preserved verbatim. Its verdict is superseded; its findings and adjudications A1–A6 remain the
+record of what was blocked and why. Where Revision 2 changes a status, the ledger in R2.5 says
+so explicitly. Section numbering below is Revision 1's own.*
+
+**Reviewer:** Van Eyck (`claude-quality-reviewer`), Quality and Accessibility Reviewer
 **Date:** 2026-07-26
 **Branch:** `pig-001-stabilization` (verified: **not** `main`; no push, no merge)
 **Product tree reviewed at:** `4fc8239` (unit 26 log). Re-confirmed unchanged at `5fdf1aa`,
@@ -570,7 +1188,7 @@ current pack shows a reader the *opposite* of what the build now does on two sur
 
 ---
 
-## 8. VERDICT
+## 8. VERDICT *(Revision 1 — SUPERSEDED by Revision 2; retained as the record)*
 
 Three acceptance criteria cannot be certified as passing because no evidence exists for
 them — two of those were never in any reviewer's brief, and one (AC19's photograph
@@ -590,7 +1208,53 @@ Blocking findings, each tied to its criterion:
 - **F-4 · AC8** — the storage-failure recovery path was never exercised by any reviewer;
   I verified only the no-false-success half.
 
+*(Revision 1's verdict line read `GATE 2: BLOCKED`, `OPEN CRITICAL: 0`, `OPEN MAJOR: 2`.
+Superseded — see the operative verdict below.)*
+
+---
+
+# OPERATIVE VERDICT — REVISION 2 (2026-07-28, tree `1a41cff`)
+
+Twenty-eight of twenty-nine criteria pass. Two of the three criteria that blocked Revision 1
+came back genuinely evidenced and I have closed them — AC4 on a transcript I read in full, AC8
+on a source trace that also retracts one of my own findings. The third did not.
+
+AC19's photograph composite is closed and I verified its bound myself. But the deliberate sweep
+that unit 28 was asked to run found the same defect in a far wider class: `--faint` small text
+in both themes, and the **global link colour `a{}` in the light theme**, fall below the 4.5
+floor wherever they paint over `#bg-canvas` — a layer fixed behind every route, under roughly a
+third of the site's text. I reproduced this independently from the committed CSS and canvas
+source: a *single* blob at its own centre is enough, at 4.34 and 4.33 against 4.5.
+
+These failures pre-date PIG-001 and this build improved contrast rather than degrading it. I
+weighed ruling them a scoped-out note, as I ruled the 821–1100 px overflow, and I decline: AC18
+enumerates the viewports that put 900 px outside it, whereas AC19 freezes no pair inventory and
+its "composites that require browser measurement" clause reaches this class directly. Pre-existence
+was not accepted as an excuse for the dark hero, the six gold sites, or the museum band. It cannot
+be accepted for the last one — least of all over the implementer's own written *"AC19 is NOT
+fully supported."*
+
+**PASS 28 · FAIL 1 · UNSUPPORTED 0**
+
+Blocking finding, tied to its criterion:
+
+- **F-7 · AC19** — `--faint` small text (3.45–4.39 measured; 3.69 dark / 3.22 light bound) and
+  the light global link colour `--gold2` (3.49–3.64 measured; 3.22 bound) fail WCAG AA over
+  `#bg-canvas`, across 1,346 of 3,755 text elements on 19 routes. Independently reproduced by me
+  at 4.34 / 4.33 from a single canvas blob. Remedy is token-level and reversible (retire `--faint`
+  over the canvas; re-point light `--gold2` to `#6b5122`), requires Matisse's sign-off as visual
+  direction, and must be re-measured in **both** themes at **both** viewports by someone other
+  than its implementer. `--muted` (4.47 light / 4.54 dark bound) is in scope, not the destination.
+
+Not blocking, but required before the Human Review Package: **N-1** (re-capture the screenshot
+pack once at final HEAD — it is two units stale and shows the pre-veil museum band) and **N-4**
+(`browser-evidence-closing.md` ships with four unresolved `<!--PLACEHOLDER-*-->` markers where its
+AC19 tables, findings and verdict should be).
+
+Open minor findings, neither blocking: **F-1** (821–1100 px overflow, outside AC18's frozen set),
+**F-2** (masked focus ring on the last nav link at ≤820 px).
+
 GATE 2: BLOCKED
 
 OPEN CRITICAL: 0
-OPEN MAJOR: 2
+OPEN MAJOR: 1
