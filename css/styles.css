@@ -611,6 +611,19 @@ section{margin:46px 0}
 .hero-content .breadcrumbs{margin-bottom:8px;color:var(--body-ink)}
 .hero-content .breadcrumbs a{color:var(--body-ink)}
 .hero-content h1{font-size:3.6rem;font-weight:800;text-shadow:0 3px 24px rgba(var(--bg-rgb),.85)}
+/* The route's programmatic focus ring (#app h1:focus-visible, 2px solid --gold,
+   offset 5px) now lands on the veil rather than on an unbounded cover, and
+   light's --gold #9e7938 reads only 2.13 against the veiled bound rgb(194,189,178)
+   — under the 3.0 non-text floor of WCAG 1.4.11. This is not a regression: over a
+   dark cover the old .43–.61 ramp put the same ring lower still and left it
+   different on every subject. The veil makes it deterministic, so it is closed
+   here the same way and with the same colour unit 27 used for the museum band —
+   #6b5122, already the light home-hero title's darker stop, not a new value —
+   which clears at 3.96. Scoped to the hero: on ordinary light page paint the
+   shipped ring reads 3.40 and is left alone, and dark needs nothing (4.65
+   against its own veiled bound). The #app id is carried to outrank
+   #app h1:focus-visible. (AC19 / WCAG 1.4.11 / V-F3) */
+html[data-theme="light"] #app .hero-content h1:focus-visible{outline-color:#6b5122}
 .hero-sub{font-size:1rem;color:var(--body-ink);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
 .hero-sub a{color:var(--gold2)}
 .hero-tagline{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--body-ink);margin-top:6px}
