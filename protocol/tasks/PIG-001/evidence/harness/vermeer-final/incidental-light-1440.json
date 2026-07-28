@@ -1,0 +1,856 @@
+{
+ "theme": "light",
+ "viewport": [
+  1440,
+  900
+ ],
+ "draws": 3,
+ "rows": [
+  {
+   "sel": "b",
+   "path": "div.daily-stage-copy > div.daily-detail > b",
+   "text": "One detail you cannot unsee",
+   "fpx": 9.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 603,
+   "glyphWorst": 6.4,
+   "glyphInk": [
+    27,
+    74,
+    67
+   ],
+   "glyphBackdrop": [
+    222,
+    204,
+    191
+   ],
+   "bandWorst": 6.4,
+   "bandBackdrop": [
+    222,
+    204,
+    191
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/daily",
+   "cssSel": ".daily-detail b",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": null,
+   "restInk": [
+    27,
+    74,
+    67
+   ],
+   "usedInk": [
+    27,
+    74,
+    67
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "section > p > a",
+   "text": "Wikimedia Commons",
+   "fpx": 16,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 6072,
+   "glyphWorst": 6.47,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    202,
+    212,
+    199
+   ],
+   "bandWorst": 6.47,
+   "bandBackdrop": [
+    202,
+    212,
+    199
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/credits",
+   "cssSel": "main a",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": false,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 116,
+   "glyphWorst": 5.28,
+   "glyphInk": [
+    107,
+    81,
+    34
+   ],
+   "glyphBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "bandWorst": 5.28,
+   "bandBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/museum/louvre",
+   "cssSel": ".breadcrumbs a",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    107,
+    81,
+    34
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.hero-content > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 95,
+   "glyphWorst": 2.77,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    105,
+    107,
+    99
+   ],
+   "bandWorst": 2.73,
+   "bandBackdrop": [
+    104,
+    106,
+    98
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artist/leonardo-da-vinci",
+   "cssSel": ".breadcrumbs a",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Paintings That Still Scare Us",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1345,
+   "glyphWorst": 9.16,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "bandWorst": 9.16,
+   "bandBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/lists",
+   "cssSel": ".card-body h3 a",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    43,
+    38,
+    32
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a.active",
+   "path": "header.site-header > nav.main-nav > a.active",
+   "text": "Artists",
+   "fpx": 13.76,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 316,
+   "glyphWorst": 12.51,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    240,
+    234,
+    221
+   ],
+   "bandWorst": 1.52,
+   "bandBackdrop": [
+    84,
+    64,
+    25
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artists",
+   "cssSel": ".main-nav a",
+   "draw": 0,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  },
+  {
+   "sel": "b",
+   "path": "div.daily-stage-copy > div.daily-detail > b",
+   "text": "One detail you cannot unsee",
+   "fpx": 9.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 616,
+   "glyphWorst": 6.91,
+   "glyphInk": [
+    27,
+    74,
+    67
+   ],
+   "glyphBackdrop": [
+    229,
+    212,
+    198
+   ],
+   "bandWorst": 6.91,
+   "bandBackdrop": [
+    229,
+    212,
+    198
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/daily",
+   "cssSel": ".daily-detail b",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": null,
+   "restInk": [
+    27,
+    74,
+    67
+   ],
+   "usedInk": [
+    27,
+    74,
+    67
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "section > p > a",
+   "text": "Wikimedia Commons",
+   "fpx": 16,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 6064,
+   "glyphWorst": 6.47,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    205,
+    211,
+    200
+   ],
+   "bandWorst": 6.47,
+   "bandBackdrop": [
+    205,
+    211,
+    200
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/credits",
+   "cssSel": "main a",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": false,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 116,
+   "glyphWorst": 5.28,
+   "glyphInk": [
+    107,
+    81,
+    34
+   ],
+   "glyphBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "bandWorst": 5.28,
+   "bandBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/museum/louvre",
+   "cssSel": ".breadcrumbs a",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    107,
+    81,
+    34
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.hero-content > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 95,
+   "glyphWorst": 2.77,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    105,
+    107,
+    99
+   ],
+   "bandWorst": 2.73,
+   "bandBackdrop": [
+    104,
+    106,
+    98
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artist/leonardo-da-vinci",
+   "cssSel": ".breadcrumbs a",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Paintings That Still Scare Us",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1345,
+   "glyphWorst": 9.16,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "bandWorst": 9.16,
+   "bandBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/lists",
+   "cssSel": ".card-body h3 a",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    43,
+    38,
+    32
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a.active",
+   "path": "header.site-header > nav.main-nav > a.active",
+   "text": "Artists",
+   "fpx": 13.76,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 316,
+   "glyphWorst": 12.42,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    240,
+    233,
+    221
+   ],
+   "bandWorst": 1.52,
+   "bandBackdrop": [
+    84,
+    64,
+    25
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artists",
+   "cssSel": ".main-nav a",
+   "draw": 1,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  },
+  {
+   "sel": "b",
+   "path": "div.daily-stage-copy > div.daily-detail > b",
+   "text": "One detail you cannot unsee",
+   "fpx": 9.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 620,
+   "glyphWorst": 7.1,
+   "glyphInk": [
+    27,
+    74,
+    67
+   ],
+   "glyphBackdrop": [
+    231,
+    215,
+    201
+   ],
+   "bandWorst": 6.91,
+   "bandBackdrop": [
+    229,
+    212,
+    198
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/daily",
+   "cssSel": ".daily-detail b",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": null,
+   "restInk": [
+    27,
+    74,
+    67
+   ],
+   "usedInk": [
+    27,
+    74,
+    67
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "section > p > a",
+   "text": "Wikimedia Commons",
+   "fpx": 16,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 6089,
+   "glyphWorst": 6.73,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    209,
+    215,
+    203
+   ],
+   "bandWorst": 6.71,
+   "bandBackdrop": [
+    208,
+    215,
+    202
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/credits",
+   "cssSel": "main a",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": false,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.mu-hero-body > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 116,
+   "glyphWorst": 5.28,
+   "glyphInk": [
+    107,
+    81,
+    34
+   ],
+   "glyphBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "bandWorst": 5.28,
+   "bandBackdrop": [
+    223,
+    217,
+    203
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/museum/louvre",
+   "cssSel": ".breadcrumbs a",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    107,
+    81,
+    34
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.hero-content > nav.breadcrumbs > a",
+   "text": "Atlas",
+   "fpx": 12.48,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 95,
+   "glyphWorst": 2.77,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    105,
+    107,
+    99
+   ],
+   "bandWorst": 2.73,
+   "bandBackdrop": [
+    104,
+    106,
+    98
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artist/leonardo-da-vinci",
+   "cssSel": ".breadcrumbs a",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    67,
+    60,
+    49
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  },
+  {
+   "sel": "a",
+   "path": "div.card-body > h3 > a",
+   "text": "Paintings That Still Scare Us",
+   "fpx": 17.92,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 1345,
+   "glyphWorst": 9.16,
+   "glyphInk": [
+    84,
+    64,
+    25
+   ],
+   "glyphBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "bandWorst": 9.16,
+   "bandBackdrop": [
+    250,
+    246,
+    236
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/lists",
+   "cssSel": ".card-body h3 a",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    43,
+    38,
+    32
+   ],
+   "usedInk": [
+    84,
+    64,
+    25
+   ]
+  },
+  {
+   "sel": "a.active",
+   "path": "header.site-header > nav.main-nav > a.active",
+   "text": "Artists",
+   "fpx": 13.76,
+   "large": false,
+   "need": 4.5,
+   "glyphPx": 316,
+   "glyphWorst": 12.73,
+   "glyphInk": [
+    43,
+    38,
+    32
+   ],
+   "glyphBackdrop": [
+    242,
+    236,
+    223
+   ],
+   "bandWorst": 1.52,
+   "bandBackdrop": [
+    84,
+    64,
+    25
+   ],
+   "overSrc": null,
+   "textShadow": "none",
+   "route": "#/artists",
+   "cssSel": ".main-nav a",
+   "draw": 2,
+   "theme": "light",
+   "viewport": [
+    1440,
+    900
+   ],
+   "hovered": true,
+   "restInk": [
+    84,
+    64,
+    25
+   ],
+   "usedInk": [
+    43,
+    38,
+    32
+   ]
+  }
+ ]
+}

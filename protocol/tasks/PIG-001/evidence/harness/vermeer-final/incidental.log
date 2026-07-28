@@ -1,0 +1,92 @@
+##### INCIDENTAL light 1440x900
+  d1 #/artists                    .main-nav a            HOVER  worst=12.42 ink=[43, 38, 32] bg=[240, 233, 221] (316 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+  d2 #/daily                      .daily-detail b        rest   worst=7.1 ink=[27, 74, 67] bg=[231, 215, 201] (620 px)
+   -- #/daily                      .daily-copy p a        no element in viewport
+   !! #/credits                  main a                 hover did NOT change colour (rgb(84, 64, 25)) — NOT a measurement of :hover
+  d2 #/credits                    main a                 rest   worst=6.73 ink=[84, 64, 25] bg=[209, 215, 203] (6089 px)
+  d2 #/museum/louvre              .breadcrumbs a         HOVER  worst=5.28 ink=[107, 81, 34] bg=[223, 217, 203] (116 px)
+  d2 #/artist/leonardo-da-vinci   .breadcrumbs a         HOVER  worst=2.77 ink=[43, 38, 32] bg=[105, 107, 99] (95 px)
+  d2 #/lists                      .card-body h3 a        HOVER  worst=9.16 ink=[84, 64, 25] bg=[250, 246, 236] (1345 px)
+  d2 #/artists                    .main-nav a            HOVER  worst=12.73 ink=[43, 38, 32] bg=[242, 236, 223] (316 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+
+WORST PER (route, selector)  [light-1440]
+  #/artist/leonardo-da-vinci     .breadcrumbs a           2.77 need 4.5 FAIL ink [43, 38, 32]     bg [105, 107, 99]   hovered=True
+  #/museum/louvre                .breadcrumbs a           5.28 need 4.5 PASS ink [107, 81, 34]    bg [223, 217, 203]  hovered=True
+  #/daily                        .daily-detail b          6.40 need 4.5 PASS ink [27, 74, 67]     bg [222, 204, 191]  hovered=None
+  #/credits                      main a                   6.47 need 4.5 PASS ink [84, 64, 25]     bg [202, 212, 199]  hovered=False
+  #/lists                        .card-body h3 a          9.16 need 4.5 PASS ink [84, 64, 25]     bg [250, 246, 236]  hovered=True
+  #/artists                      .main-nav a             12.42 need 4.5 PASS ink [43, 38, 32]     bg [240, 233, 221]  hovered=True
+cells below floor: 1 of 6
+##### INCIDENTAL light 390x844
+  d1 #/artist/leonardo-da-vinci   .breadcrumbs a         HOVER  worst=2.98 ink=[43, 38, 32] bg=[110, 112, 103] (101 px)
+  d1 #/lists                      .card-body h3 a        HOVER  worst=9.16 ink=[84, 64, 25] bg=[250, 246, 236] (1346 px)
+  d1 #/artists                    .main-nav a            HOVER  worst=12.53 ink=[43, 38, 32] bg=[241, 234, 221] (291 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+   -- #/daily                      .daily-detail b        no element in viewport
+   -- #/daily                      .daily-copy p a        no element in viewport
+  d2 #/credits                    main a                 HOVER  worst=11.84 ink=[43, 38, 32] bg=[234, 228, 216] (711 px)
+  d2 #/museum/louvre              .breadcrumbs a         HOVER  worst=5.24 ink=[107, 81, 34] bg=[223, 216, 202] (115 px)
+  d2 #/artist/leonardo-da-vinci   .breadcrumbs a         HOVER  worst=2.98 ink=[43, 38, 32] bg=[110, 112, 103] (101 px)
+  d2 #/lists                      .card-body h3 a        HOVER  worst=9.16 ink=[84, 64, 25] bg=[250, 246, 236] (1346 px)
+  d2 #/artists                    .main-nav a            HOVER  worst=12.2 ink=[43, 38, 32] bg=[239, 231, 216] (291 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+
+WORST PER (route, selector)  [light-390]
+  #/artist/leonardo-da-vinci     .breadcrumbs a           2.98 need 4.5 FAIL ink [43, 38, 32]     bg [110, 112, 103]  hovered=True
+  #/museum/louvre                .breadcrumbs a           5.24 need 4.5 PASS ink [107, 81, 34]    bg [223, 216, 202]  hovered=True
+  #/lists                        .card-body h3 a          9.16 need 4.5 PASS ink [84, 64, 25]     bg [250, 246, 236]  hovered=True
+  #/credits                      main a                  11.05 need 4.5 PASS ink [43, 38, 32]     bg [229, 220, 208]  hovered=True
+  #/artists                      .main-nav a             12.20 need 4.5 PASS ink [43, 38, 32]     bg [239, 231, 216]  hovered=True
+cells below floor: 1 of 5
+##### INCIDENTAL dark 1440x900
+   -- #/                           .footer-nav a          no element in viewport
+  d2 #/daily                      .daily-detail b        rest   worst=11.5 ink=[176, 218, 211] bg=[32, 24, 19] (627 px)
+   -- #/daily                      .daily-copy p a        no element in viewport
+   !! #/credits                  main a                 hover did NOT change colour (rgb(232, 201, 138)) — NOT a measurement of :hover
+  d2 #/credits                    main a                 rest   worst=10.54 ink=[232, 201, 138] bg=[27, 30, 27] (6152 px)
+  d2 #/museum/louvre              .breadcrumbs a         HOVER  worst=10.15 ink=[232, 201, 138] bg=[31, 33, 31] (116 px)
+   !! #/artist/leonardo-da-vinci .breadcrumbs a         hover did NOT change colour (rgb(216, 210, 196)) — NOT a measurement of :hover
+  d2 #/artist/leonardo-da-vinci   .breadcrumbs a         rest   worst=11.07 ink=[216, 210, 196] bg=[27, 31, 27] (117 px)
+  d2 #/lists                      .card-body h3 a        HOVER  worst=11.53 ink=[232, 201, 138] bg=[22, 20, 15] (1325 px)
+   !! #/artists                  .main-nav a            hover did NOT change colour (rgb(232, 201, 138)) — NOT a measurement of :hover
+  d2 #/artists                    .main-nav a            rest   worst=12.25 ink=[232, 201, 138] bg=[13, 12, 10] (314 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+
+WORST PER (route, selector)  [dark-1440]
+  #/museum/louvre                .breadcrumbs a          10.15 need 4.5 PASS ink [232, 201, 138]  bg [31, 33, 31]     hovered=True
+  #/credits                      main a                  10.28 need 4.5 PASS ink [232, 201, 138]  bg [26, 33, 29]     hovered=False
+  #/artist/leonardo-da-vinci     .breadcrumbs a          11.07 need 4.5 PASS ink [216, 210, 196]  bg [27, 31, 27]     hovered=False
+  #/daily                        .daily-detail b         11.50 need 4.5 PASS ink [176, 218, 211]  bg [32, 24, 19]     hovered=None
+  #/lists                        .card-body h3 a         11.53 need 4.5 PASS ink [232, 201, 138]  bg [22, 20, 15]     hovered=True
+  #/artists                      .main-nav a             12.25 need 4.5 PASS ink [232, 201, 138]  bg [13, 12, 10]     hovered=False
+cells below floor: 0 of 6
+##### INCIDENTAL dark 390x844
+  d1 #/artists                    .main-nav a            rest   worst=12.22 ink=[232, 201, 138] bg=[14, 12, 11] (291 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+   -- #/daily                      .daily-detail b        no element in viewport
+   -- #/daily                      .daily-copy p a        no element in viewport
+  d2 #/credits                    main a                 HOVER  worst=19.55 ink=[255, 255, 255] bg=[13, 12, 10] (735 px)
+  d2 #/museum/louvre              .breadcrumbs a         HOVER  worst=9.75 ink=[232, 201, 138] bg=[36, 36, 33] (116 px)
+   !! #/artist/leonardo-da-vinci .breadcrumbs a         hover did NOT change colour (rgb(216, 210, 196)) — NOT a measurement of :hover
+  d2 #/artist/leonardo-da-vinci   .breadcrumbs a         rest   worst=9.38 ink=[216, 210, 196] bg=[47, 43, 31] (116 px)
+  d2 #/lists                      .card-body h3 a        HOVER  worst=11.53 ink=[232, 201, 138] bg=[22, 20, 15] (1325 px)
+   !! #/artists                  .main-nav a            hover did NOT change colour (rgb(232, 201, 138)) — NOT a measurement of :hover
+  d2 #/artists                    .main-nav a            rest   worst=11.98 ink=[232, 201, 138] bg=[17, 15, 13] (291 px)
+   -- #/privacy                    main a                 no element in viewport
+   -- #/                           .footer-nav a          no element in viewport
+
+WORST PER (route, selector)  [dark-390]
+  #/artist/leonardo-da-vinci     .breadcrumbs a           9.38 need 4.5 PASS ink [216, 210, 196]  bg [47, 43, 31]     hovered=False
+  #/museum/louvre                .breadcrumbs a           9.75 need 4.5 PASS ink [232, 201, 138]  bg [36, 36, 33]     hovered=True
+  #/lists                        .card-body h3 a         11.53 need 4.5 PASS ink [232, 201, 138]  bg [22, 20, 15]     hovered=True
+  #/artists                      .main-nav a             11.98 need 4.5 PASS ink [232, 201, 138]  bg [17, 15, 13]     hovered=False
+  #/credits                      main a                  16.61 need 4.5 PASS ink [255, 255, 255]  bg [39, 28, 22]     hovered=True
+cells below floor: 0 of 5

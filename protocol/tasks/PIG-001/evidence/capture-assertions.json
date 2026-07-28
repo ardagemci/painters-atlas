@@ -19,7 +19,7 @@
   "slug": "home",
   "vp": "desktop-1440x900",
   "png": "home__desktop-1440x900__dark.png",
-  "bytes": 336134,
+  "bytes": 323459,
   "ASSERT": "PASS"
  },
  {
@@ -42,7 +42,7 @@
   "slug": "artists",
   "vp": "desktop-1440x900",
   "png": "artists__desktop-1440x900__dark.png",
-  "bytes": 595529,
+  "bytes": 576587,
   "ASSERT": "PASS"
  },
  {
@@ -65,7 +65,7 @@
   "slug": "artist-leonardo",
   "vp": "desktop-1440x900",
   "png": "artist-leonardo__desktop-1440x900__dark.png",
-  "bytes": 513825,
+  "bytes": 514070,
   "ASSERT": "PASS"
  },
  {
@@ -88,7 +88,7 @@
   "slug": "artwork-david",
   "vp": "desktop-1440x900",
   "png": "artwork-david__desktop-1440x900__dark.png",
-  "bytes": 355815,
+  "bytes": 377204,
   "ASSERT": "PASS"
  },
  {
@@ -111,7 +111,7 @@
   "slug": "explore",
   "vp": "desktop-1440x900",
   "png": "explore__desktop-1440x900__dark.png",
-  "bytes": 268958,
+  "bytes": 289884,
   "ASSERT": "PASS"
  },
  {
@@ -134,7 +134,7 @@
   "slug": "timeline",
   "vp": "desktop-1440x900",
   "png": "timeline__desktop-1440x900__dark.png",
-  "bytes": 236650,
+  "bytes": 245819,
   "ASSERT": "PASS"
  },
  {
@@ -157,7 +157,7 @@
   "slug": "influences",
   "vp": "desktop-1440x900",
   "png": "influences__desktop-1440x900__dark.png",
-  "bytes": 299922,
+  "bytes": 300154,
   "ASSERT": "PASS"
  },
  {
@@ -180,7 +180,7 @@
   "slug": "museums",
   "vp": "desktop-1440x900",
   "png": "museums__desktop-1440x900__dark.png",
-  "bytes": 935547,
+  "bytes": 394392,
   "ASSERT": "PASS"
  },
  {
@@ -203,7 +203,7 @@
   "slug": "museum-louvre",
   "vp": "desktop-1440x900",
   "png": "museum-louvre__desktop-1440x900__dark.png",
-  "bytes": 769860,
+  "bytes": 344273,
   "ASSERT": "PASS"
  },
  {
@@ -226,7 +226,7 @@
   "slug": "lists",
   "vp": "desktop-1440x900",
   "png": "lists__desktop-1440x900__dark.png",
-  "bytes": 1019737,
+  "bytes": 1041629,
   "ASSERT": "PASS"
  },
  {
@@ -249,7 +249,7 @@
   "slug": "palette",
   "vp": "desktop-1440x900",
   "png": "palette__desktop-1440x900__dark.png",
-  "bytes": 266322,
+  "bytes": 254454,
   "ASSERT": "PASS"
  },
  {
@@ -272,7 +272,7 @@
   "slug": "taste",
   "vp": "desktop-1440x900",
   "png": "taste__desktop-1440x900__dark.png",
-  "bytes": 291283,
+  "bytes": 303466,
   "ASSERT": "PASS"
  },
  {
@@ -289,13 +289,13 @@
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
-  "h1": "The Night Watch",
+  "h1": "The Child's Bath",
   "imgs": 1,
   "brokenImgs": 0,
   "slug": "daily",
   "vp": "desktop-1440x900",
   "png": "daily__desktop-1440x900__dark.png",
-  "bytes": 641851,
+  "bytes": 765937,
   "ASSERT": "PASS"
  },
  {
@@ -318,7 +318,7 @@
   "slug": "privacy",
   "vp": "desktop-1440x900",
   "png": "privacy__desktop-1440x900__dark.png",
-  "bytes": 421707,
+  "bytes": 501219,
   "ASSERT": "PASS"
  },
  {
@@ -341,7 +341,7 @@
   "slug": "credits",
   "vp": "desktop-1440x900",
   "png": "credits__desktop-1440x900__dark.png",
-  "bytes": 369522,
+  "bytes": 395713,
   "ASSERT": "PASS"
  },
  {
@@ -364,7 +364,7 @@
   "slug": "invalid-route",
   "vp": "desktop-1440x900",
   "png": "invalid-route__desktop-1440x900__dark.png",
-  "bytes": 271757,
+  "bytes": 253640,
   "ASSERT": "PASS"
  },
  {
@@ -387,7 +387,7 @@
   "slug": "home",
   "vp": "mobile-390x844",
   "png": "home__mobile-390x844__dark.png",
-  "bytes": 118989,
+  "bytes": 157224,
   "ASSERT": "PASS"
  },
  {
@@ -410,7 +410,7 @@
   "slug": "artists",
   "vp": "mobile-390x844",
   "png": "artists__mobile-390x844__dark.png",
-  "bytes": 168444,
+  "bytes": 172474,
   "ASSERT": "PASS"
  },
  {
@@ -433,7 +433,7 @@
   "slug": "artist-leonardo",
   "vp": "mobile-390x844",
   "png": "artist-leonardo__mobile-390x844__dark.png",
-  "bytes": 212023,
+  "bytes": 210475,
   "ASSERT": "PASS"
  },
  {
@@ -456,7 +456,7 @@
   "slug": "artwork-david",
   "vp": "mobile-390x844",
   "png": "artwork-david__mobile-390x844__dark.png",
-  "bytes": 245897,
+  "bytes": 236510,
   "ASSERT": "PASS"
  },
  {
@@ -479,7 +479,7 @@
   "slug": "explore",
   "vp": "mobile-390x844",
   "png": "explore__mobile-390x844__dark.png",
-  "bytes": 116222,
+  "bytes": 123216,
   "ASSERT": "PASS"
  },
  {
@@ -502,7 +502,7 @@
   "slug": "timeline",
   "vp": "mobile-390x844",
   "png": "timeline__mobile-390x844__dark.png",
-  "bytes": 155510,
+  "bytes": 143195,
   "ASSERT": "PASS"
  },
  {
@@ -525,7 +525,7 @@
   "slug": "influences",
   "vp": "mobile-390x844",
   "png": "influences__mobile-390x844__dark.png",
-  "bytes": 117119,
+  "bytes": 121354,
   "ASSERT": "PASS"
  },
  {
@@ -548,7 +548,7 @@
   "slug": "museums",
   "vp": "mobile-390x844",
   "png": "museums__mobile-390x844__dark.png",
-  "bytes": 208175,
+  "bytes": 232813,
   "ASSERT": "PASS"
  },
  {
@@ -571,7 +571,7 @@
   "slug": "museum-louvre",
   "vp": "mobile-390x844",
   "png": "museum-louvre__mobile-390x844__dark.png",
-  "bytes": 282268,
+  "bytes": 227746,
   "ASSERT": "PASS"
  },
  {
@@ -594,7 +594,7 @@
   "slug": "lists",
   "vp": "mobile-390x844",
   "png": "lists__mobile-390x844__dark.png",
-  "bytes": 258071,
+  "bytes": 255820,
   "ASSERT": "PASS"
  },
  {
@@ -617,7 +617,7 @@
   "slug": "palette",
   "vp": "mobile-390x844",
   "png": "palette__mobile-390x844__dark.png",
-  "bytes": 135017,
+  "bytes": 134117,
   "ASSERT": "PASS"
  },
  {
@@ -640,7 +640,7 @@
   "slug": "taste",
   "vp": "mobile-390x844",
   "png": "taste__mobile-390x844__dark.png",
-  "bytes": 129009,
+  "bytes": 137452,
   "ASSERT": "PASS"
  },
  {
@@ -657,13 +657,13 @@
   "navLinks": 8,
   "navVisible": true,
   "theme": "dark",
-  "h1": "The Night Watch",
+  "h1": "The Child's Bath",
   "imgs": 1,
   "brokenImgs": 0,
   "slug": "daily",
   "vp": "mobile-390x844",
   "png": "daily__mobile-390x844__dark.png",
-  "bytes": 301612,
+  "bytes": 359051,
   "ASSERT": "PASS"
  },
  {
@@ -686,7 +686,7 @@
   "slug": "privacy",
   "vp": "mobile-390x844",
   "png": "privacy__mobile-390x844__dark.png",
-  "bytes": 171316,
+  "bytes": 163367,
   "ASSERT": "PASS"
  },
  {
@@ -709,7 +709,7 @@
   "slug": "credits",
   "vp": "mobile-390x844",
   "png": "credits__mobile-390x844__dark.png",
-  "bytes": 187594,
+  "bytes": 181950,
   "ASSERT": "PASS"
  },
  {
@@ -732,7 +732,7 @@
   "slug": "invalid-route",
   "vp": "mobile-390x844",
   "png": "invalid-route__mobile-390x844__dark.png",
-  "bytes": 96858,
+  "bytes": 108112,
   "ASSERT": "PASS"
  },
  {
@@ -755,7 +755,7 @@
   "slug": "home",
   "vp": "desktop-1440x900",
   "png": "home__desktop-1440x900__light.png",
-  "bytes": 327763,
+  "bytes": 300842,
   "ASSERT": "PASS"
  },
  {
@@ -778,7 +778,7 @@
   "slug": "artists",
   "vp": "desktop-1440x900",
   "png": "artists__desktop-1440x900__light.png",
-  "bytes": 638959,
+  "bytes": 611240,
   "ASSERT": "PASS"
  },
  {
@@ -801,7 +801,7 @@
   "slug": "artist-leonardo",
   "vp": "desktop-1440x900",
   "png": "artist-leonardo__desktop-1440x900__light.png",
-  "bytes": 516441,
+  "bytes": 535238,
   "ASSERT": "PASS"
  },
  {
@@ -824,7 +824,7 @@
   "slug": "artwork-david",
   "vp": "desktop-1440x900",
   "png": "artwork-david__desktop-1440x900__light.png",
-  "bytes": 390749,
+  "bytes": 402355,
   "ASSERT": "PASS"
  },
  {
@@ -847,7 +847,7 @@
   "slug": "explore",
   "vp": "desktop-1440x900",
   "png": "explore__desktop-1440x900__light.png",
-  "bytes": 283751,
+  "bytes": 334678,
   "ASSERT": "PASS"
  },
  {
@@ -870,7 +870,7 @@
   "slug": "timeline",
   "vp": "desktop-1440x900",
   "png": "timeline__desktop-1440x900__light.png",
-  "bytes": 263990,
+  "bytes": 302778,
   "ASSERT": "PASS"
  },
  {
@@ -893,7 +893,7 @@
   "slug": "influences",
   "vp": "desktop-1440x900",
   "png": "influences__desktop-1440x900__light.png",
-  "bytes": 335493,
+  "bytes": 343521,
   "ASSERT": "PASS"
  },
  {
@@ -916,7 +916,7 @@
   "slug": "museums",
   "vp": "desktop-1440x900",
   "png": "museums__desktop-1440x900__light.png",
-  "bytes": 430732,
+  "bytes": 328587,
   "ASSERT": "PASS"
  },
  {
@@ -939,7 +939,7 @@
   "slug": "museum-louvre",
   "vp": "desktop-1440x900",
   "png": "museum-louvre__desktop-1440x900__light.png",
-  "bytes": 815391,
+  "bytes": 764464,
   "ASSERT": "PASS"
  },
  {
@@ -962,7 +962,7 @@
   "slug": "lists",
   "vp": "desktop-1440x900",
   "png": "lists__desktop-1440x900__light.png",
-  "bytes": 992290,
+  "bytes": 1021899,
   "ASSERT": "PASS"
  },
  {
@@ -985,7 +985,7 @@
   "slug": "palette",
   "vp": "desktop-1440x900",
   "png": "palette__desktop-1440x900__light.png",
-  "bytes": 361243,
+  "bytes": 302479,
   "ASSERT": "PASS"
  },
  {
@@ -1008,7 +1008,7 @@
   "slug": "taste",
   "vp": "desktop-1440x900",
   "png": "taste__desktop-1440x900__light.png",
-  "bytes": 278068,
+  "bytes": 395013,
   "ASSERT": "PASS"
  },
  {
@@ -1025,13 +1025,13 @@
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
-  "h1": "The Night Watch",
+  "h1": "The Child's Bath",
   "imgs": 1,
   "brokenImgs": 0,
   "slug": "daily",
   "vp": "desktop-1440x900",
   "png": "daily__desktop-1440x900__light.png",
-  "bytes": 696214,
+  "bytes": 783267,
   "ASSERT": "PASS"
  },
  {
@@ -1054,7 +1054,7 @@
   "slug": "privacy",
   "vp": "desktop-1440x900",
   "png": "privacy__desktop-1440x900__light.png",
-  "bytes": 462915,
+  "bytes": 495154,
   "ASSERT": "PASS"
  },
  {
@@ -1077,7 +1077,7 @@
   "slug": "credits",
   "vp": "desktop-1440x900",
   "png": "credits__desktop-1440x900__light.png",
-  "bytes": 503846,
+  "bytes": 482440,
   "ASSERT": "PASS"
  },
  {
@@ -1100,7 +1100,7 @@
   "slug": "invalid-route",
   "vp": "desktop-1440x900",
   "png": "invalid-route__desktop-1440x900__light.png",
-  "bytes": 206029,
+  "bytes": 292601,
   "ASSERT": "PASS"
  },
  {
@@ -1123,7 +1123,7 @@
   "slug": "home",
   "vp": "mobile-390x844",
   "png": "home__mobile-390x844__light.png",
-  "bytes": 143528,
+  "bytes": 145013,
   "ASSERT": "PASS"
  },
  {
@@ -1146,7 +1146,7 @@
   "slug": "artists",
   "vp": "mobile-390x844",
   "png": "artists__mobile-390x844__light.png",
-  "bytes": 170329,
+  "bytes": 177731,
   "ASSERT": "PASS"
  },
  {
@@ -1169,7 +1169,7 @@
   "slug": "artist-leonardo",
   "vp": "mobile-390x844",
   "png": "artist-leonardo__mobile-390x844__light.png",
-  "bytes": 226690,
+  "bytes": 222859,
   "ASSERT": "PASS"
  },
  {
@@ -1192,7 +1192,7 @@
   "slug": "artwork-david",
   "vp": "mobile-390x844",
   "png": "artwork-david__mobile-390x844__light.png",
-  "bytes": 234045,
+  "bytes": 240758,
   "ASSERT": "PASS"
  },
  {
@@ -1215,7 +1215,7 @@
   "slug": "explore",
   "vp": "mobile-390x844",
   "png": "explore__mobile-390x844__light.png",
-  "bytes": 107212,
+  "bytes": 127269,
   "ASSERT": "PASS"
  },
  {
@@ -1238,7 +1238,7 @@
   "slug": "timeline",
   "vp": "mobile-390x844",
   "png": "timeline__mobile-390x844__light.png",
-  "bytes": 164495,
+  "bytes": 160801,
   "ASSERT": "PASS"
  },
  {
@@ -1261,7 +1261,7 @@
   "slug": "influences",
   "vp": "mobile-390x844",
   "png": "influences__mobile-390x844__light.png",
-  "bytes": 143650,
+  "bytes": 165005,
   "ASSERT": "PASS"
  },
  {
@@ -1284,7 +1284,7 @@
   "slug": "museums",
   "vp": "mobile-390x844",
   "png": "museums__mobile-390x844__light.png",
-  "bytes": 226443,
+  "bytes": 231441,
   "ASSERT": "PASS"
  },
  {
@@ -1307,7 +1307,7 @@
   "slug": "museum-louvre",
   "vp": "mobile-390x844",
   "png": "museum-louvre__mobile-390x844__light.png",
-  "bytes": 291470,
+  "bytes": 261206,
   "ASSERT": "PASS"
  },
  {
@@ -1330,7 +1330,7 @@
   "slug": "lists",
   "vp": "mobile-390x844",
   "png": "lists__mobile-390x844__light.png",
-  "bytes": 263421,
+  "bytes": 268115,
   "ASSERT": "PASS"
  },
  {
@@ -1353,7 +1353,7 @@
   "slug": "palette",
   "vp": "mobile-390x844",
   "png": "palette__mobile-390x844__light.png",
-  "bytes": 145243,
+  "bytes": 149627,
   "ASSERT": "PASS"
  },
  {
@@ -1376,7 +1376,7 @@
   "slug": "taste",
   "vp": "mobile-390x844",
   "png": "taste__mobile-390x844__light.png",
-  "bytes": 130731,
+  "bytes": 138350,
   "ASSERT": "PASS"
  },
  {
@@ -1393,13 +1393,13 @@
   "navLinks": 8,
   "navVisible": true,
   "theme": "light",
-  "h1": "The Night Watch",
+  "h1": "The Child's Bath",
   "imgs": 1,
   "brokenImgs": 0,
   "slug": "daily",
   "vp": "mobile-390x844",
   "png": "daily__mobile-390x844__light.png",
-  "bytes": 300962,
+  "bytes": 359409,
   "ASSERT": "PASS"
  },
  {
@@ -1422,7 +1422,7 @@
   "slug": "privacy",
   "vp": "mobile-390x844",
   "png": "privacy__mobile-390x844__light.png",
-  "bytes": 207885,
+  "bytes": 203368,
   "ASSERT": "PASS"
  },
  {
@@ -1445,7 +1445,7 @@
   "slug": "credits",
   "vp": "mobile-390x844",
   "png": "credits__mobile-390x844__light.png",
-  "bytes": 187201,
+  "bytes": 209619,
   "ASSERT": "PASS"
  },
  {
@@ -1468,7 +1468,7 @@
   "slug": "invalid-route",
   "vp": "mobile-390x844",
   "png": "invalid-route__mobile-390x844__light.png",
-  "bytes": 125996,
+  "bytes": 124619,
   "ASSERT": "PASS"
  }
 ]

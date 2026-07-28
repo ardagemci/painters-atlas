@@ -1,0 +1,390 @@
+[
+ {
+  "scroll": 0,
+  "text": "Horror films age badly; painted dread doesn'",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 5416,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    196,
+    627
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    5416
+   ]
+  ]
+ },
+ {
+  "scroll": 0,
+  "text": "Painting nights is a technical dare \u2014 how do",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 5626,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    550,
+    628
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    5626
+   ]
+  ]
+ },
+ {
+  "scroll": 0,
+  "text": "Masterpieces lead dangerous lives. These hav",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 5170,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    951,
+    628
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    5170
+   ]
+  ]
+ },
+ {
+  "scroll": 400,
+  "text": "What does a painter do with the final twelve",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 2222,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    147,
+    678
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    2222
+   ]
+  ]
+ },
+ {
+  "scroll": 400,
+  "text": "Amateurs change subjects; obsessives change ",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 2321,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    549,
+    678
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    2321
+   ]
+  ]
+ },
+ {
+  "scroll": 400,
+  "text": "Nobody wakes up loving squares. Abstraction ",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 1959,
+  "percentiles": {
+   "0": 7.19,
+   "1": 7.19,
+   "5": 7.19,
+   "25": 7.19,
+   "50": 7.19
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 7.19,
+   "at": [
+    949,
+    678
+   ],
+   "backdrop": [
+    250,
+    246,
+    236
+   ],
+   "backdropNoCanvas": [
+    250,
+    246,
+    236
+   ],
+   "ratioNoCanvas": 7.19
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     250,
+     246,
+     236
+    ],
+    1959
+   ]
+  ]
+ },
+ {
+  "scroll": 800,
+  "text": "The Book of Judith handed painters a license",
+  "fpx": 13.44,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "ownBg": "rgba(0, 0, 0, 0)",
+  "parentSel": "div.card-body",
+  "parentBg": "rgba(0, 0, 0, 0)",
+  "glyphPx": 1182,
+  "percentiles": {
+   "0": 4.72,
+   "1": 4.73,
+   "5": 4.77,
+   "25": 4.87,
+   "50": 5.17
+  },
+  "pxBelow4.5": 0,
+  "pctBelow4.5": 0.0,
+  "worstPixel": {
+   "ratio": 4.72,
+   "at": [
+    279,
+    828
+   ],
+   "backdrop": [
+    193,
+    204,
+    204
+   ],
+   "backdropNoCanvas": [
+    193,
+    204,
+    204
+   ],
+   "ratioNoCanvas": 4.72
+  },
+  "glyphPxAffectedByCanvas": 0,
+  "topBackdrops": [
+   [
+    [
+     203,
+     214,
+     214
+    ],
+    61
+   ],
+   [
+    [
+     205,
+     215,
+     214
+    ],
+    40
+   ],
+   [
+    [
+     206,
+     215,
+     213
+    ],
+    37
+   ],
+   [
+    [
+     216,
+     223,
+     217
+    ],
+    31
+   ]
+  ]
+ }
+]

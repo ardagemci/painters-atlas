@@ -1,0 +1,11 @@
+E #/museums live=0 liveEls=0 active=h1.display|tabindex=-1|Museums
+E #/timeline live=0 liveEls=0 active=h1.display|tabindex=-1|The grand timeline
+E #/palette live=0 liveEls=0 active=h1.display|tabindex=-1|Find your palette.
+E #/credits live=0 liveEls=0 active=h1.display|tabindex=-1|Credits
+E #/no-such-page live=0 liveEls=0 active=h1|tabindex=-1|Blank canvas
+
+G hosts {"localhost:8421": 38, "upload.wikimedia.org": 69} total 107 bad 0 errors 0 warnings 0
+G images checked 680 broken 0
+G CDP error/warning entries: 0
+CRED museum-louvre 1 ['Photograph: Benh LIEU SONG (Flickr) · CC BY-SA 3.0 · file on Commons']
+CRED artwork-david 1 ['Image credit: Jörg Bittner Unna · CC BY 3.0 · file on Commons']

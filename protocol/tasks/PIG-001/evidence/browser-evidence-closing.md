@@ -10,6 +10,16 @@ This pass exists because Van Eyck's Gate 2 review returned **PASS 26 · FAIL 0 �
 (`quality-review.md`): AC4, AC8 and AC19 had no evidence, and unit 26 had never been verified by
 anyone but its own implementer. My brief was to produce that evidence.
 
+> **REPAIRED 2026-07-28 · Van Eyck N-4.** This document was committed at `73ddc27` carrying four
+> literal `<!--PLACEHOLDER-*-->` markers — §1.2's two AC19 tables, all of §6, and §9 — because the
+> session writing it up was cut off. Those four sections are now rendered **from the raw data that
+> was already on disk** (`harness/vermeer-closing/photo-all-{dark,light}.json`, via that pass's own
+> renderer `table.py`), each under a dated repair note. **No measurement was re-run and no number
+> was reconstructed from memory.** Rendering the light data surfaced a defect in that run's own
+> instrument, which is reported at §1.2a rather than smoothed over. **§1's AC19 FAIL is history:**
+> units 27, 28 and 29 have since closed it, and the current measurements are in
+> `browser-evidence-final.md`. History is cross-referenced here, not rewritten.
+
 **Everything below is something I observed in a browser at `64d68a0`.** Where a number
 disagrees with a number someone else reported, I say so and mine is the one I stand behind.
 Where I could not observe something, it is in the NOT TESTED list and is not inferred.
@@ -83,9 +93,98 @@ artwork photographs (most venues) or a single **building photograph** — both f
 (`linear-gradient(180deg, rgba(var(--bg-rgb),.18), rgba(var(--bg-rgb),.94) 80%)`,
 `styles.css:1210`). All 104 museum pages measured, both themes, on real glyph pixels:
 
-<!--PLACEHOLDER-DARK-->
+> **Repair note, 2026-07-28 (Van Eyck N-4).** This section, §6 and §9 shipped in the committed
+> object at `73ddc27` as four literal `<!--PLACEHOLDER-*-->` markers: the session that produced
+> this pass was cut off while writing it up, and the tables were never rendered. They are rendered
+> **now, from the raw data that was on disk at the time** —
+> `harness/vermeer-closing/photo-all-dark.json` and `photo-all-light.json`, via that pass's own
+> renderer `harness/vermeer-closing/table.py`. Nothing here is a new measurement and nothing is
+> reconstructed from memory. Where the raw data will not support a number, that is stated instead
+> of a number. **§1's FAIL verdict is history, not the current state**: units 27, 28 and 29 have
+> since closed it — see `browser-evidence-final.md` §3 for the measurements at HEAD `a686d98`.
 
-<!--PLACEHOLDER-LIGHT-->
+**Dark theme — 104 venue pages, 1 467 measured text elements, 919 of them inside the photograph
+hero.**
+
+| element in the hero | px | floor | **worst measured** | venue | fails on |
+| --- | --- | --- | --- | --- | --- |
+| breadcrumb, current page (`--muted`) | 12.5 | 4.5 | **1.01** | `k20-dusseldorf` | **97 of 102 venues** |
+| breadcrumb separators (`--muted`) | 12.5 | 4.5 | **1.31** | `tate-modern` | **91 of 102 venues** |
+| breadcrumb links (`--body-ink`) | 12.5 | 4.5 | **1.33** | `stanley-museum-iowa` | **91 of 104 venues** |
+| `h1.display` venue name (`--ink`) | 54.4 | 3.0 | **2.48** | `k20-dusseldorf` | **1 of 104 venues** |
+| `.mu-sub` city · country · founded (`--muted`) | 15.2 | 4.5 | **3.23** | `museu-picasso-barcelona` | **74 of 104 venues** |
+| `.mu-hook` editorial line (`--gold2`) | 18.9 | 4.5 | 8.98 | `museu-picasso-barcelona` | — (0 of 104) |
+| `Share this page` chip | 12.5 | 4.5 | 13.85 | `st-peters-basilica` | — (0 of 104) |
+
+Below the hero, on the same pages: 548 further text elements measured, **1** class fails —
+`span.count` worst **4.44** on 1 of 45 venues (`neue-galerie`).
+
+**Light theme — 104 venue pages, 1 461 measured text elements, 913 of them inside the photograph
+hero.** *Read with the caveat below.*
+
+| element in the hero | px | floor | **worst measured** | venue | fails on |
+| --- | --- | --- | --- | --- | --- |
+| breadcrumb links (`--body-ink`) | 12.5 | 4.5 | **1.00** | `prado` | **99 of 104 venues** |
+| breadcrumb separators (`--muted`) | 12.5 | 4.5 | **1.00** | `louvre` | **97 of 98 venues** |
+| breadcrumb, current page (`--muted`) | 12.5 | 4.5 | **1.00** | `louvre` | **102 of 103 venues** |
+| `h1.display` venue name (`--ink`) | 54.4 | 3.0 | **1.00** | `prado` | **16 of 104 venues** |
+| `Share this page` chip | 12.5 | 4.5 | **1.00** | `prado` | **15 of 104 venues** |
+| `.mu-sub` city · country · founded (`--muted`) | 15.2 | 4.5 | **1.18** | `moderna-museet` | **88 of 104 venues** |
+| `.mu-hook` editorial line (`--gold2`) | 18.9 | 4.5 | **2.36** | `moderna-museet` | **104 of 104 venues** |
+
+Below the hero, on the same pages: 548 further text elements measured, 6 classes fail — `a` worst
+2.15 on 17 of 78 venues, `div.lbl` 2.37 on 13 of 63, `h2.sec-title` 1.06 on 7 of 45, `p` 1.43 on
+6 of 14, `p.img-credit.mu-credit` 2.14 on 18 of 78, `span.count` 3.03 on 43 of 45.
+
+### 1.2a — A defect in the LIGHT run, found while rendering this table
+
+Rendering the raw light data at repair time surfaced something the original pass never got to
+inspect, and it is reported rather than smoothed over. **The light run carries a contamination
+signature that the dark run does not:**
+
+| signature | dark run | light run |
+| --- | --- | --- |
+| rows reporting a ratio of exactly **1.00** (ink pixel identical to backdrop pixel — arithmetically impossible for real glyphs on a scrim) | **0** of 1 467 | **33** of 1 461 |
+| rows whose glyph-pixel count exceeds 50 000 (larger than any element's glyph area; `p` reaches **214 760**, roughly the whole viewport) | **0** | **11** |
+| venues showing either signature | **0** | **16** |
+
+Both signatures are what shot-A/shot-B divergence looks like when the two loads do not render the
+*same* collage — the diff then covers the photograph instead of the glyphs. It is confined to 16
+venues: `albertina`, `belvedere`, `buffalo-akg`, `gemaldegalerie-berlin`,
+`isabella-stewart-gardner`, `louvre`, `mauritshuis`, `moderna-museet`, `moma`, `munch-museum`,
+`national-gallery-dc`, `national-gallery-london`, `prado`, `sistine-chapel`, `tretyakov`,
+`van-gogh-museum`. **Every `1.00` in the light table above comes from that set**, so the light
+table's worst-case cells and its below-hero list are not trustworthy as printed.
+
+Excluding those 16 venues outright leaves **88 clean venues, 772 band measurements**, and the
+light picture is coherent with the dark one:
+
+| element in the hero | px | floor | **worst, clean venues only** | venue | fails on |
+| --- | --- | --- | --- | --- | --- |
+| breadcrumb, current page (`--muted`) | 12.5 | 4.5 | **1.24** | `museo-frida-kahlo` | **87 of 88 venues** |
+| breadcrumb separators (`--muted`) | 12.5 | 4.5 | **1.29** | `museo-frida-kahlo` | **82 of 83 venues** |
+| breadcrumb links (`--body-ink`) | 12.5 | 4.5 | **1.57** | `palazzo-barberini` | **83 of 88 venues** |
+| `h1.display` venue name (`--ink`) | 54.4 | 3.0 | **2.88** | `k20-dusseldorf` | **1 of 88 venues** |
+| `.mu-hook` editorial line (`--gold2`) | 18.9 | 4.5 | **3.60** | `scottish-national-gallery` | **88 of 88 venues** |
+| `.mu-sub` city · country · founded (`--muted`) | 15.2 | 4.5 | **3.84** | `palazzo-barberini` | **72 of 88 venues** |
+| `Share this page` chip | 12.5 | 4.5 | 11.27 | `uffizi` | — (0 of 88) |
+
+Below the hero, clean venues: 412 measurements, **3** classes below floor — `span.count` 3.38,
+`p.img-credit.mu-credit` 4.34, `a` 4.34, all worst on `villa-farnesina`.
+
+**This changes no verdict.** F-V1 is a failure in *both* themes on *both* readings, and the class
+that fails is the same class on the same elements; the contaminated cells only exaggerate how
+badly. It matters for two reasons and they are both recorded: (a) the light figures in the table
+above must not be quoted as measurements of the shipped build, and (b) the true light worst cases
+are `1.24 / 1.29 / 1.57 / 2.88 / 3.60 / 3.84`, not `1.00`. Dürer's unit 27 BEFORE run reproduced
+this pass's **dark** figures (`a` 1.33, `span.sep` 1.31, `div.mu-sub` 3.23) to two decimals; the
+dark run is the one that has cross-operator agreement, and it is the one this finding rests on.
+**A hypothesis about the mechanism, offered as a hypothesis and not as a finding:** this pass's
+`photos.py` writes both shots to *fixed* `/tmp` paths, so two concurrent runs read each other's
+pixels. Dürer's unit-27 driver `harness/durer-u27/mu.py` documents exactly that failure and fixes
+it with per-process paths. The file mtimes are consistent with a second run having overlapped the
+light sweep, but I did not observe the overlap and I am not claiming it — the contamination is
+observed, its cause is not.
 
 ## 1.3 Confirmed with my own eyes, not only with a script
 
@@ -390,7 +489,91 @@ was accurate, and the class it names is the one that fails.
 
 # 6 — FINDINGS
 
-<!--PLACEHOLDER-FINDINGS-->
+> **Repair note, 2026-07-28 (Van Eyck N-4).** This section shipped as a bare
+> `<!--PLACEHOLDER-FINDINGS-->` marker. It is rendered here from this pass's own body and raw
+> data. Each entry states which section of this document it rests on; nothing is added that this
+> pass did not observe. Dispositions at HEAD `a686d98` are marked **[status 2026-07-28]** and are
+> clearly separated from what was true on 2026-07-26.
+
+## F-V1 · MAJOR · criterion-failing · AC19 — text over Wikimedia photographs in the museum band
+
+**Observed** (§1.2, raw `harness/vermeer-closing/photo-all-{dark,light}.json`): on museum venue
+pages the breadcrumb row, `h1.display`, `.mu-sub` and (light only) `.mu-hook` paint directly over
+a `upload.wikimedia.org` photograph under a single scrim, `.mu-shade`, whose alpha ramps as a
+percentage of `.mu-hero`'s height while the text block `.mu-hero-body` is bottom-anchored. The
+same element therefore lands at a different alpha on every venue.
+
+| theme | worst class | worst measured | floor | venues below floor |
+| --- | --- | --- | --- | --- |
+| dark | breadcrumb, current page (`--muted`) | **1.01** | 4.5 | 97 of 102 |
+| dark | `h1.display` (`--ink`) | **2.48** | 3.0 | 1 of 104 |
+| light (clean venues, §1.2a) | breadcrumb, current page (`--muted`) | **1.24** | 4.5 | 87 of 88 |
+| light (clean venues, §1.2a) | `h1.display` (`--ink`) | **2.88** | 3.0 | 1 of 88 |
+
+**Confirmed by eye, not only by script** (§1.3): `ac19-museum-met__desktop-1440x900__dark.png`,
+`ac19-museum-k20__desktop-1440x900__{dark,light}.png`,
+`ac19-museum-frida-kahlo__desktop-1440x900__light.png`.
+
+**Root cause** measured, not guessed (§1.4). **Remedy** computed as a bound, not a sample (§1.5):
+move the scrim onto `.mu-hero-body` at alpha ≥ `.88`, which clears the worst required alpha
+(`.864` dark, `.834` light) against a worst-case fully opaque photograph pixel.
+
+**Scope limit stated at the time:** measured at **1440×900 only**; the mobile `.mu-hero` is
+shorter, so the mobile numbers were neither inherited nor assumed (NOT TESTED #4).
+
+**[status 2026-07-28] CLOSED by unit 27** (`563f0af`), which implemented exactly the remedy above
+as `--mu-veil:.88` on `.mu-hero-body`, and measured it at both viewports. Independently
+re-measured at HEAD in `browser-evidence-final.md` §3.
+
+## F-V2 · MAJOR · AC19 — small text below the band fails on the same pages *(rendered at repair time)*
+
+**This entry did not exist in the 2026-07-26 draft.** It is stated here because the raw data of
+this pass contains it and a reader of §1.2 will see it. Below the museum hero, on the same 104
+pages, the sweep measured 548 further text elements and found classes below floor in both themes:
+`span.count` **4.44** dark (1 of 45 venues) and, on clean light venues, `span.count` **3.38**,
+`p.img-credit.mu-credit` **4.34**, `a` **4.34**.
+
+At the time these were read as part of the photograph over-approximation. They are not: their
+real backdrop is the site-wide generative `#bg-canvas`, which is why the numbers move from venue
+to venue with no photograph involved. **Dürer found this independently** — unit 28's log records
+that unit 27's detector flagged `span.count` and `p.img-credit`, and that an A/B with `#bg-canvas`
+removed proved the surface. It became **F-27-2** (unit 28) and then **F-7** (unit 29).
+
+**[status 2026-07-28] CLOSED by units 28 and 29** (`3e24e4a`, `4362c8a`). Independently
+re-measured at HEAD in `browser-evidence-final.md` §4.
+
+## F-V3 · MINOR · instrument, not build — the light sweep of §1.2 is partly contaminated
+
+Found while rendering this document, not on 2026-07-26. 16 of 104 light venues carry shot-A/shot-B
+divergence signatures (33 rows at a ratio of exactly 1.00; 11 rows whose glyph-pixel counts exceed
+any possible glyph area). Full statement and the clean re-reading: **§1.2a**. It exaggerates F-V1
+without creating it, and the dark run — the one with cross-operator agreement — is unaffected.
+
+## Dispositions of findings this pass was sent to settle
+
+| finding | owner | this pass's evidence | disposition |
+| --- | --- | --- | --- |
+| **F-3** — AC4 unsupported, the frozen journey matrix had never been run | Van Eyck | §2 — 33 steps, 0 FAIL, all five journeys plus AC4's own eleven-link chain, real CDP mouse and key events | **CLOSED.** AC4 supported |
+| **F-4** — AC8: "no user-visible retry / recovery / export affordance" | Van Eyck | §3 — S1–S4; every affordance clicked, notice copy quoted, bytes verified preserved | **CLOSED — false negative, not a build defect.** His probe had no passport to fail against |
+| **N-1** — the screenshot pack depicted a superseded build | Van Eyck | §4 — 64 shots re-captured at `64d68a0`, 0 failed assertions, both named surfaces verified by eye | **CLOSED at `64d68a0`.** **[status 2026-07-28] re-opened by units 27–29 and closed again** — see `browser-evidence-final.md` §2 |
+| **Unit 26 unverified by anyone but its implementer** | Van Eyck | §5 — hero bounds reproduced to the second decimal at both viewports, nav 154 px / 358×35 / 1 row / 0 overflow, 26 routes at 200 % zoom with 0 overflow, all six gold sites computing `--gold2` | **CLOSED.** Unit 26a/26c claims stand |
+
+## Notes (not findings)
+
+- **N-V1 · the frozen UX table is stale on `#/explore`, in the build's favour.** §2:
+  `ux-requirements.md` §5 describes two instruments and flags "promise ≠ destination inventory —
+  CONFIRMED in code". At HEAD `#/explore` offers **four**, which is what the home card promises.
+  The asymmetry AC22 was about has been closed; the frozen table has not been updated to say so.
+  Recorded, not scored as a failure.
+- **Method correction, disclosed rather than buried (§1.1).** This pass's first shot-B used
+  `visibility:hidden`, which deletes an element's own background as well as its glyphs, and
+  produced a false 2.38:1 on `#/daily` that was nearly published. Corrected to
+  `color:transparent` + `-webkit-text-fill-color:transparent`; the same element then measures
+  **14.82** — PASS. Every number in this document comes from the corrected instrument, and the
+  full sweep was re-run to confirm the museum findings are method-independent.
+- **Method correction, AC8 (§3).** One step was measuring the harness rather than the build (an
+  overridden `HTMLAnchorElement.prototype.click` also disabled the link under test). Re-run
+  cleanly with a real mouse click; passes.
 
 ---
 
@@ -460,4 +643,44 @@ Explicit, and not inferred from anything.
 
 # 9 — DOES THE EVIDENCE NOW SUPPORT CERTIFICATION?
 
-<!--PLACEHOLDER-VERDICT-->
+> **Repair note, 2026-07-28 (Van Eyck N-4).** This section shipped as a bare
+> `<!--PLACEHOLDER-VERDICT-->` marker. It is rendered here from this pass's own body and from the
+> commit that carried it (`73ddc27`, "AC4 PASS, AC8 PASS, AC19 FAIL (F-V1)"). It states the
+> position **as of 2026-07-26 at `64d68a0`**. It is history. The current position is in
+> `browser-evidence-final.md`.
+
+**Not yet — by exactly one criterion.**
+
+| what I was sent to settle | answer on 2026-07-26 |
+| --- | --- |
+| **AC4** — frozen first-user journey matrix, no broken or unexplained transition | **Yes.** §2: 33 steps, 0 FAIL, five frozen journeys plus the eleven-link chain, walked with real mouse and key events. Van Eyck's F-3 closes |
+| **AC8** — storage-failure recovery does not claim success, preserves context, tells the truth, offers a way out | **Yes.** §3: S1–S4; every affordance clicked, every byte checked. Van Eyck's F-4 was a gap in the probe, not in the build |
+| **AC19** — text over imagery meets its contrast floor | **No.** §1: F-V1. The museum band fails in both themes across essentially the whole venue set, and I confirmed it by eye as well as by measurement |
+| **N-1** — the screenshot pack matches the build | **Yes at `64d68a0`.** §4: 64 shots, 0 failed assertions |
+| **Unit 26 verified by someone other than its implementer** | **Yes.** §5: bounds reproduced to the second decimal; where our numbers differ, mine are equal or better |
+
+So: of the **three** criteria Van Eyck recorded as UNSUPPORTED, **two are now supported by
+evidence that did not exist before this pass, and the third is not unsupported — it is failing.**
+Certification could not be granted, and the honest statement of why is one sentence:
+*the atlas puts small text over public-domain photographs under a scrim that was never sized for
+the text it carries.* That is one CSS rule wide (§1.5), it is fixable as a **bound** rather than a
+sample, and I said so with the number the fix needs — `.88`.
+
+What I would not have accepted at that moment: any claim that AC19 passes at 390 px. This pass
+measured 1440×900 only, and the failing mechanism is height-dependent, so the mobile band was
+**NOT TESTED**, not inherited (§8 #4).
+
+---
+
+### [status 2026-07-28] What happened next
+
+| | |
+| --- | --- |
+| **Unit 27** (`563f0af`) | Implemented §1.5's remedy as `--mu-veil:.88` on `.mu-hero-body`, at **both** viewports. F-V1 closed |
+| **Units 28–29** (`3e24e4a`, `4362c8a`) | Closed F-V2/F-27-2/F-7 — the `#bg-canvas` class this pass's data contained but did not name |
+| **This document's placeholders** | Repaired, from raw data, on 2026-07-28 (§1.2 note, §6 note, this note). Van Eyck's N-4 closes |
+| **The screenshot pack** | Re-captured again at HEAD `a686d98`, because units 27–29 landed after `64d68a0` |
+| **Independent re-measurement of units 27–29** | `browser-evidence-final.md` §3–§4 — my instrument, not their implementer's assertion |
+
+**The verdict above is superseded, not amended.** Nothing in §1 has been rewritten to hide that
+AC19 failed on 2026-07-26; it did, and this pass is the reason it was found.

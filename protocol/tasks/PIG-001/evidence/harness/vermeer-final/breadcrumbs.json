@@ -1,0 +1,1730 @@
+[
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.01,
+  "need": 4.5,
+  "backdrop": [
+   105,
+   107,
+   99
+  ],
+  "glyphPx": 83
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.02,
+  "need": 4.5,
+  "backdrop": [
+   105,
+   107,
+   100
+  ],
+  "glyphPx": 9
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.05,
+  "need": 4.5,
+  "backdrop": [
+   107,
+   108,
+   100
+  ],
+  "glyphPx": 96
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.08,
+  "need": 4.5,
+  "backdrop": [
+   109,
+   109,
+   100
+  ],
+  "glyphPx": 10
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   43,
+   38,
+   32
+  ],
+  "fpx": 12.48,
+  "worst": 2.77,
+  "need": 4.5,
+  "backdrop": [
+   105,
+   107,
+   99
+  ],
+  "glyphPx": 95
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.02,
+  "need": 4.5,
+  "backdrop": [
+   105,
+   107,
+   100
+  ],
+  "glyphPx": 9
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.05,
+  "need": 4.5,
+  "backdrop": [
+   107,
+   108,
+   100
+  ],
+  "glyphPx": 96
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.08,
+  "need": 4.5,
+  "backdrop": [
+   109,
+   109,
+   100
+  ],
+  "glyphPx": 10
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 9.25,
+  "need": 4.5,
+  "backdrop": [
+   242,
+   236,
+   223
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 9.25,
+  "need": 4.5,
+  "backdrop": [
+   242,
+   236,
+   223
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 9.25,
+  "need": 4.5,
+  "backdrop": [
+   242,
+   236,
+   223
+  ],
+  "glyphPx": 546
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 9.25,
+  "need": 4.5,
+  "backdrop": [
+   242,
+   236,
+   223
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": true,
+  "ink": [
+   43,
+   38,
+   32
+  ],
+  "fpx": 12.48,
+  "worst": 12.05,
+  "need": 4.5,
+  "backdrop": [
+   236,
+   230,
+   216
+  ],
+  "glyphPx": 118
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 8.75,
+  "need": 4.5,
+  "backdrop": [
+   236,
+   230,
+   216
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 8.57,
+  "need": 4.5,
+  "backdrop": [
+   233,
+   228,
+   215
+  ],
+  "glyphPx": 544
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 8.67,
+  "need": 4.5,
+  "backdrop": [
+   235,
+   229,
+   216
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.74,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   217,
+   203
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 6.27,
+  "need": 4.5,
+  "backdrop": [
+   234,
+   231,
+   219
+  ],
+  "glyphPx": 17
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.68,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   216,
+   203
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 5.9,
+  "need": 4.5,
+  "backdrop": [
+   230,
+   224,
+   210
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   107,
+   81,
+   34
+  ],
+  "fpx": 12.48,
+  "worst": 5.28,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   217,
+   203
+  ],
+  "glyphPx": 116
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 6.27,
+  "need": 4.5,
+  "backdrop": [
+   234,
+   231,
+   219
+  ],
+  "glyphPx": 17
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.68,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   216,
+   203
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "light",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 5.9,
+  "need": 4.5,
+  "backdrop": [
+   230,
+   224,
+   210
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.16,
+  "need": 4.5,
+  "backdrop": [
+   110,
+   112,
+   103
+  ],
+  "glyphPx": 88
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.34,
+  "need": 4.5,
+  "backdrop": [
+   118,
+   117,
+   106
+  ],
+  "glyphPx": 11
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.47,
+  "need": 4.5,
+  "backdrop": [
+   121,
+   121,
+   108
+  ],
+  "glyphPx": 113
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 3.0,
+  "need": 4.5,
+  "backdrop": [
+   141,
+   134,
+   114
+  ],
+  "glyphPx": 15
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   43,
+   38,
+   32
+  ],
+  "fpx": 12.48,
+  "worst": 2.98,
+  "need": 4.5,
+  "backdrop": [
+   110,
+   112,
+   103
+  ],
+  "glyphPx": 101
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.34,
+  "need": 4.5,
+  "backdrop": [
+   118,
+   117,
+   106
+  ],
+  "glyphPx": 11
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 2.47,
+  "need": 4.5,
+  "backdrop": [
+   121,
+   121,
+   108
+  ],
+  "glyphPx": 113
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 3.0,
+  "need": 4.5,
+  "backdrop": [
+   141,
+   134,
+   114
+  ],
+  "glyphPx": 15
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 6.95,
+  "need": 4.5,
+  "backdrop": [
+   218,
+   205,
+   184
+  ],
+  "glyphPx": 115
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.35,
+  "need": 4.5,
+  "backdrop": [
+   221,
+   211,
+   195
+  ],
+  "glyphPx": 17
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 6.73,
+  "need": 4.5,
+  "backdrop": [
+   214,
+   202,
+   183
+  ],
+  "glyphPx": 528
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.32,
+  "need": 4.5,
+  "backdrop": [
+   219,
+   211,
+   196
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": true,
+  "ink": [
+   43,
+   38,
+   32
+  ],
+  "fpx": 12.48,
+  "worst": 10.27,
+  "need": 4.5,
+  "backdrop": [
+   225,
+   212,
+   192
+  ],
+  "glyphPx": 118
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 8.22,
+  "need": 4.5,
+  "backdrop": [
+   231,
+   223,
+   208
+  ],
+  "glyphPx": 17
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.4,
+  "need": 4.5,
+  "backdrop": [
+   222,
+   212,
+   191
+  ],
+  "glyphPx": 542
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 8.14,
+  "need": 4.5,
+  "backdrop": [
+   229,
+   222,
+   210
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.68,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   216,
+   202
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 5.42,
+  "need": 4.5,
+  "backdrop": [
+   222,
+   215,
+   201
+  ],
+  "glyphPx": 16
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.61,
+  "need": 4.5,
+  "backdrop": [
+   222,
+   215,
+   202
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 6.34,
+  "need": 4.5,
+  "backdrop": [
+   236,
+   232,
+   220
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   107,
+   81,
+   34
+  ],
+  "fpx": 12.48,
+  "worst": 5.24,
+  "need": 4.5,
+  "backdrop": [
+   223,
+   216,
+   202
+  ],
+  "glyphPx": 115
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 5.42,
+  "need": 4.5,
+  "backdrop": [
+   222,
+   215,
+   201
+  ],
+  "glyphPx": 16
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   67,
+   60,
+   49
+  ],
+  "fpx": 12.48,
+  "worst": 7.61,
+  "need": 4.5,
+  "backdrop": [
+   222,
+   215,
+   202
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "light",
+  "vw": 390,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   88,
+   82,
+   68
+  ],
+  "fpx": 12.48,
+  "worst": 6.34,
+  "need": 4.5,
+  "backdrop": [
+   236,
+   232,
+   220
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.07,
+  "need": 4.5,
+  "backdrop": [
+   27,
+   31,
+   27
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.07,
+  "need": 4.5,
+  "backdrop": [
+   27,
+   31,
+   27
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 9.92,
+  "need": 4.5,
+  "backdrop": [
+   42,
+   39,
+   28
+  ],
+  "glyphPx": 142
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 10.9,
+  "need": 4.5,
+  "backdrop": [
+   30,
+   32,
+   28
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.07,
+  "need": 4.5,
+  "backdrop": [
+   27,
+   31,
+   27
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.07,
+  "need": 4.5,
+  "backdrop": [
+   27,
+   31,
+   27
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "a",
+  "text": "Artists",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 9.92,
+  "need": 4.5,
+  "backdrop": [
+   42,
+   39,
+   28
+  ],
+  "glyphPx": 142
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artist/leonardo-da-vinci",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 10.9,
+  "need": 4.5,
+  "backdrop": [
+   30,
+   32,
+   28
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.6,
+  "need": 4.5,
+  "backdrop": [
+   32,
+   24,
+   19
+  ],
+  "glyphPx": 118
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.85,
+  "need": 4.5,
+  "backdrop": [
+   29,
+   22,
+   18
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.96,
+  "need": 4.5,
+  "backdrop": [
+   28,
+   21,
+   17
+  ],
+  "glyphPx": 547
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 12.79,
+  "need": 4.5,
+  "backdrop": [
+   16,
+   14,
+   11
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": false,
+  "hoverMatched": true,
+  "ink": [
+   232,
+   201,
+   138
+  ],
+  "fpx": 12.48,
+  "worst": 11.7,
+  "need": 4.5,
+  "backdrop": [
+   21,
+   18,
+   13
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 12.32,
+  "need": 4.5,
+  "backdrop": [
+   21,
+   19,
+   13
+  ],
+  "glyphPx": 19
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "a",
+  "text": "Michelangelo B",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 11.98,
+  "need": 4.5,
+  "backdrop": [
+   25,
+   22,
+   16
+  ],
+  "glyphPx": 546
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/artwork/david",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": false,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 12.31,
+  "need": 4.5,
+  "backdrop": [
+   21,
+   19,
+   15
+  ],
+  "glyphPx": 18
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 10.76,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   33,
+   31
+  ],
+  "glyphPx": 117
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   155,
+   147,
+   127
+  ],
+  "fpx": 12.48,
+  "worst": 5.35,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   32,
+   31
+  ],
+  "glyphPx": 15
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 10.74,
+  "need": 4.5,
+  "backdrop": [
+   32,
+   33,
+   30
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "rest",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   155,
+   147,
+   127
+  ],
+  "fpx": 12.48,
+  "worst": 5.4,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   31,
+   29
+  ],
+  "glyphPx": 15
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Atlas",
+  "inHero": true,
+  "hoverMatched": true,
+  "ink": [
+   232,
+   201,
+   138
+  ],
+  "fpx": 12.48,
+  "worst": 10.15,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   33,
+   31
+  ],
+  "glyphPx": 116
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   155,
+   147,
+   127
+  ],
+  "fpx": 12.48,
+  "worst": 5.35,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   32,
+   31
+  ],
+  "glyphPx": 15
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "a",
+  "text": "Museums",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   216,
+   210,
+   196
+  ],
+  "fpx": 12.48,
+  "worst": 10.74,
+  "need": 4.5,
+  "backdrop": [
+   32,
+   33,
+   30
+  ],
+  "glyphPx": 209
+ },
+ {
+  "theme": "dark",
+  "vw": 1440,
+  "route": "#/museum/louvre",
+  "state": "hover",
+  "sel": "span.sep",
+  "text": "/",
+  "inHero": true,
+  "hoverMatched": false,
+  "ink": [
+   155,
+   147,
+   127
+  ],
+  "fpx": 12.48,
+  "worst": 5.4,
+  "need": 4.5,
+  "backdrop": [
+   31,
+   31,
+   29
+  ],
+  "glyphPx": 15
+ }
+]
