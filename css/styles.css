@@ -291,6 +291,31 @@ body{
 ::selection{background:var(--gold);color:#171307}
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:#fff}
+/* D-29-6 · Prose links carry an underline, not just a colour.
+   Unit 29 pushed every ink that clears the #bg-canvas ceiling into one narrow
+   band: link-vs-body separation is 1.10:1 in light and 1.06:1 in dark, so the
+   3:1 luminance technique for WCAG 1.4.1 (G183) is unreachable in either theme
+   without deleting the ink work. Colour therefore stops being the affordance and
+   the underline becomes it. Scoped to inline prose links only — classed anchors
+   (chips, cards, nav, entry-cards, diagram links) are distinguished by shape,
+   box or position and are excluded by :not([class]). The two credit surfaces
+   certified in units 26a and 28 keep their own rule and are excluded by class.
+   Resting colour is currentColor, not --line: --line renders at 1.16:1 against
+   the worst reachable canvas backdrop and cannot be the sole non-colour cue on
+   this surface. Geometry (underline + 2px offset) is unit 28's, unchanged.
+   (WCAG 1.4.1 / D-29-6 / Matisse ruling visual-ruling-d29-6.md) */
+#app p:not(.img-credit):not(.footer-note) a:not([class]){
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-decoration-color:currentColor;
+  text-underline-offset:2px;
+  text-decoration-skip-ink:auto;
+  transition:color .2s var(--ease),text-decoration-thickness .2s var(--ease);
+}
+#app p:not(.img-credit):not(.footer-note) a:not([class]):hover,
+#app p:not(.img-credit):not(.footer-note) a:not([class]):focus-visible{
+  text-decoration-thickness:2px;
+}
 img{max-width:100%}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em}
 p{margin:0 0 1em}
