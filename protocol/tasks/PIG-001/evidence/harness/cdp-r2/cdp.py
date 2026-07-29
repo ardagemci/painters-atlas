@@ -233,7 +233,7 @@ class Browser:
             self.proc.kill()
 
 
-BASE = "http://localhost:8421"
+BASE = os.environ.get("PIG_BASE", "http://localhost:8421")
 
 ROUTES16 = [
     ("home", "#/"), ("artists", "#/artists"), ("artist-leonardo", "#/artist/leonardo-da-vinci"),

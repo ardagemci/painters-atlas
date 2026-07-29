@@ -1090,8 +1090,27 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 }
 .era-tile:hover{transform:translateY(-5px);border-color:var(--line);box-shadow:var(--shadow)}
 .era-tile canvas{position:absolute;inset:0;width:100%;height:100%}
-.era-tile .et-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(var(--bg-rgb),.88))}
-.era-tile .et-label{position:relative;padding:12px 14px;width:100%}
+/* The fourth instance of the same defect, and the one Vermeer's closing
+   paragraph asked to be found by ENUMERATING the scrims rather than by waiting
+   for it to fail in someone's screenshot. .et-shade ramps transparent → .88 as a
+   percentage of .era-tile's HEIGHT while .et-label is bottom-anchored
+   (align-items:flex-end), so the same element sat at a different alpha on every
+   tile: measured before this change, light 1440×900, `b` — the era's name —
+   read 1.50 against its 4.5 floor and `span` 3.37, 12 of 16 elements below
+   floor. Same remedy as .hero-content and .mu-hero-body, same token, no new
+   value: the veil moves onto the TEXT BLOCK. --ink needs .472 and --body-ink
+   .705 in light, .675 in dark; --hero-text-veil .80 carries both. The feather
+   is 10 px here, not 18 — it must stay shorter than the block's padding-top,
+   which is 12 px on this tile. .et-shade drops to the same light cover/page tie
+   .mu-shade and .hero-shade take. (AC19 / V-F3 / WCAG 1.4.3) */
+.era-tile .et-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30))}
+.era-tile .et-label{
+  position:relative;padding:12px 14px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 10px,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 100%);
+}
 .era-tile .et-label b{font-family:var(--serif);font-size:1.05rem;font-weight:600;display:block;color:var(--ink)}
 .era-tile .et-label span{font-size:.7rem;color:var(--body-ink)}
 

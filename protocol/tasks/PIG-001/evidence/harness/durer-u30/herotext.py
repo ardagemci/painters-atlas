@@ -80,7 +80,7 @@ ROUTES = ["#/artist/" + a for a in ARTISTS] + OTHER_HEROES + ARTWORKS
 # routes can be told apart from the .hero routes in the output.
 DETECT = r"""(function(){
  var els=[],scopes=[['.hero-content','hero'],['.aw-hero','aw-hero'],
-                    ['.mu-hero-body','mu-hero-body']];
+                    ['.mu-hero-body','mu-hero-body'],['.era-tile','era-tile']];
  scopes.forEach(function(sc){
   [].forEach.call(document.querySelectorAll(sc[0]),function(root){
    var all=[root].concat([].slice.call(root.querySelectorAll('*')));
@@ -274,16 +274,30 @@ def run(theme, vw, vh, draws, tag, routes):
                         "s.textContent=%s;document.head.appendChild(s);return true;})()"
                         % json.dumps(BEFORE_CSS)) is True
                 wait_settled(b)
-                b.ev("window.scrollTo(0,0)")
-                b.ev("new Promise(function(r){setTimeout(r,260)})", await_promise=True)
+                # Heroes are the first block of their route and are measured at
+                # scroll 0. U30_SCROLL_SEL brings a below-the-fold scrim (the
+                # .era-tile strip on the home page) into view instead; that is
+                # only sound because the clip-origin defect V-F2 is fixed at
+                # this unit -- before the fix a scrolled capture was meaningless.
+                sel = os.environ.get("U30_SCROLL_SEL", "")
+                if sel:
+                    got = b.ev("(function(){var e=document.querySelector(%s);"
+                               "if(!e)return 0;e.scrollIntoView({block:'center'});"
+                               "return 1;})()" % json.dumps(sel))
+                    if not got:
+                        print("   (no %s on %s)" % (sel, r), flush=True)
+                        continue
+                else:
+                    b.ev("window.scrollTo(0,0)")
+                b.ev("new Promise(function(r){setTimeout(r,320)})", await_promise=True)
                 det = detect_stable(b)
-                assert det["y"] == 0, "hero must be measured at scroll 0"
+                assert sel or det["y"] == 0, "hero must be measured at scroll 0"
                 worst_route, nel = 99.0, 0
                 if det["els"]:
                     nel = len(det["els"])
                     for x in measure(b, det["els"], vw, vh):
                         x.update({"route": r, "draw": d, "theme": theme,
-                                  "vw": vw, "vh": vh, "scrollY": 0, "before": before})
+                                  "vw": vw, "vh": vh, "scrollY": det["y"], "before": before})
                         rows.append(x)
                         if x["worst"] < worst_route:
                             worst_route = x["worst"]
