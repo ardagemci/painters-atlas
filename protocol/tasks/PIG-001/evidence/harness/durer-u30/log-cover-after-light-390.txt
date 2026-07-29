@@ -1,0 +1,58 @@
+draw 0  #/                           bands=10 overCover=34   worst 3.56
+draw 0  #/artists                    bands=5  overCover=14   worst 5.87
+draw 0  #/artist/caravaggio          bands=6  overCover=11   worst 5.93
+draw 0  #/movement/impressionism     bands=5  overCover=25   worst 6.70
+draw 0  #/technique/oil-painting     bands=5  overCover=24   worst 6.43
+draw 0  #/era/16th-century           bands=6  overCover=30   worst 5.70
+draw 0  #/nation/italy               bands=5  overCover=23   worst 5.77
+draw 0  #/museum/louvre              bands=6  overCover=0    worst 99.00
+draw 0  #/artwork/the-red-studio     bands=4  overCover=10   worst 6.28
+draw 0  #/lists                      bands=4  overCover=0    worst 99.00
+draw 0  #/eras                       bands=4  overCover=12   worst 5.92
+draw 0  #/timeline                   bands=3  overCover=0    worst 99.00
+draw 1  #/                           bands=10 overCover=34   worst 3.64
+draw 1  #/artists                    bands=5  overCover=14   worst 5.87
+draw 1  #/artist/caravaggio          bands=6  overCover=11   worst 5.93
+draw 1  #/movement/impressionism     bands=5  overCover=25   worst 6.70
+draw 1  #/technique/oil-painting     bands=5  overCover=24   worst 6.43
+draw 1  #/era/16th-century           bands=6  overCover=30   worst 5.70
+draw 1  #/nation/italy               bands=5  overCover=23   worst 5.77
+draw 1  #/museum/louvre              bands=6  overCover=0    worst 99.00
+draw 1  #/artwork/the-red-studio     bands=4  overCover=10   worst 6.28
+draw 1  #/lists                      bands=4  overCover=0    worst 99.00
+draw 1  #/eras                       bands=4  overCover=12   worst 5.92
+draw 1  #/timeline                   bands=3  overCover=0    worst 99.00
+
+TEXT COMPOSITING OVER A COVER CANVAS, WORST PER (host, class)
+  header.home-hero           h1.home-title          3.56 need 3.0 pass  #/                         d=31  [129, 99, 43]
+                             a                      5.70 need 4.5 pass  #/era/16th-century         d=49  [67, 60, 49]
+                             span.brand-sub         5.76 need 4.5 pass  #/era/16th-century         d=48  [67, 60, 49]
+                             a.active               5.87 need 4.5 pass  #/artists                  d=38  [84, 64, 25]
+  header.hero                a                      5.93 need 4.5 pass  #/artist/caravaggio        d=36  [84, 64, 25]
+  a.era-tile                 span                   6.53 need 4.5 pass  #/                         d=36  [67, 60, 49]
+  header.hero                span                   6.53 need 4.5 pass  #/artist/caravaggio        d=37  [67, 60, 49]
+  header.hero                div.hero-tagline       6.59 need 4.5 pass  #/artist/caravaggio        d=36  [67, 60, 49]
+  header.hero                span.sep               6.60 need 4.5 pass  #/artist/caravaggio        d=36  [67, 60, 49]
+  header.home-hero           p.lede                 6.93 need 4.5 pass  #/                         d=31  [67, 60, 49]
+  header.home-hero           p.footer-note          6.93 need 4.5 pass  #/                         d=31  [67, 60, 49]
+  header.home-hero           a                      6.93 need 4.5 pass  #/                         d=31  [67, 60, 49]
+                             span.brand-text        7.83 need 3.0 pass  #/eras                     d=48  [43, 38, 32]
+  div.aw-hero-gen            span.map-hint          7.99 need 4.5 pass  #/artwork/the-red-studio   d=57  [242, 238, 229]
+  a.era-tile                 b                      8.81 need 4.5 pass  #/                         d=38  [43, 38, 32]
+  header.hero                h1                     8.92 need 3.0 pass  #/artist/caravaggio        d=37  [43, 38, 32]
+  a.mini-card                span.mc-meta           9.26 need 4.5 pass  #/artwork/the-red-studio   d=2   [67, 60, 49]
+  header.home-hero           div.kicker             9.55 need 4.5 pass  #/                         d=30  [43, 38, 32]
+  section                    h2.sec-title          12.30 need 4.5 pass  #/nation/italy             d=1   [43, 38, 32]
+  a.mini-card                span.mc-name          12.73 need 4.5 pass  #/artwork/the-red-studio   d=3   [43, 38, 32]
+  article.card               a                     12.74 need 4.5 pass  #/era/16th-century         d=2   [43, 38, 32]
+(host,class) pairs below floor: 0 of 21
+
+PER HOST (canvasTag call site)
+  header.home-hero               n=10    below=0    worst 3.56 pass
+                                 n=216   below=0    worst 5.70 pass
+  header.hero                    n=94    below=0    worst 5.93 pass
+  a.era-tile                     n=34    below=0    worst 6.53 pass
+  div.aw-hero-gen                n=2     below=0    worst 7.99 pass
+  a.mini-card                    n=6     below=0    worst 9.26 pass
+  section                        n=2     below=0    worst 12.30 pass
+  article.card                   n=2     below=0    worst 12.74 pass

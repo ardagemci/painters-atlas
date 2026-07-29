@@ -1,0 +1,52 @@
+draw 0  #/                             bands=12  els=221  overCanvas=51   worst 9.66
+draw 0  #/artists                      bands=5   els=87   overCanvas=22   worst 9.87
+draw 0  #/artist/leonardo-da-vinci     bands=6   els=118  overCanvas=67   worst 6.12
+draw 0  #/lists                        bands=4   els=51   overCanvas=9    worst 10.48
+draw 0  #/privacy                      bands=4   els=76   overCanvas=71   worst 9.93
+draw 0  #/credits                      bands=5   els=200  overCanvas=170  worst 9.87
+draw 1  #/                             bands=12  els=219  overCanvas=44   worst 9.23
+draw 1  #/artists                      bands=5   els=87   overCanvas=22   worst 10.71
+draw 1  #/artist/leonardo-da-vinci     bands=6   els=118  overCanvas=46   worst 9.84
+draw 1  #/lists                        bands=4   els=51   overCanvas=11   worst 9.78
+draw 1  #/privacy                      bands=4   els=76   overCanvas=71   worst 10.45
+draw 1  #/credits                      bands=5   els=200  overCanvas=179  worst 10.55
+
+WORST OBSERVED OVER #bg-canvas, PER ELEMENT CLASS (all draws)
+  em                                   6.12 need 4.5 pass  #/artist/leonardo-da-vinci d=1   [155, 147, 127] -> [20, 18, 15] (no-canvas [20, 18, 15]) draw 0
+  a                                    9.23 need 4.5 pass  #/                         d=2   [216, 210, 196] -> [47, 44, 39] (no-canvas [47, 44, 39]) draw 1
+  div.page-kicker                      9.78 need 4.5 pass  #/lists                    d=28  [232, 201, 138] -> [41, 35, 21] (no-canvas [13, 12, 10]) draw 1
+  p                                    9.84 need 4.5 pass  #/artist/leonardo-da-vinci d=28  [216, 210, 196] -> [40, 40, 34] (no-canvas [13, 12, 10]) draw 1
+  p.page-lede                          9.87 need 4.5 pass  #/artists                  d=28  [216, 210, 196] -> [40, 40, 30] (no-canvas [13, 12, 10]) draw 0
+  span.img-credit                      9.87 need 4.5 pass  #/credits                  d=31  [216, 210, 196] -> [44, 39, 25] (no-canvas [13, 12, 10]) draw 0
+  span.count                          10.35 need 4.5 pass  #/credits                  d=28  [216, 210, 196] -> [41, 35, 22] (no-canvas [13, 12, 10]) draw 0
+  span.brand-sub                      10.41 need 4.5 pass  #/                         d=1   [216, 210, 196] -> [36, 35, 34] (no-canvas [36, 35, 33]) draw 0
+  div.arc-when                        10.58 need 4.5 pass  #/artist/leonardo-da-vinci d=18  [232, 201, 138] -> [25, 30, 27] (no-canvas [13, 12, 10]) draw 0
+  a.cr-what                           10.59 need 4.5 pass  #/credits                  d=28  [216, 210, 196] -> [41, 32, 26] (no-canvas [13, 12, 10]) draw 1
+  a.active                            10.85 need 4.5 pass  #/lists                    d=1   [232, 201, 138] -> [23, 27, 30] (no-canvas [23, 27, 30]) draw 0
+  button.f-btn                        10.90 need 4.5 pass  #/artists                  d=21  [216, 210, 196] -> [25, 33, 31] (no-canvas [13, 12, 10]) draw 0
+  div.daily-kicker                    11.22 need 4.5 pass  #/                         d=12  [232, 201, 138] -> [21, 24, 20] (no-canvas [13, 12, 10]) draw 0
+  p.daily-note                        11.30 need 4.5 pass  #/                         d=17  [216, 210, 196] -> [26, 29, 24] (no-canvas [13, 12, 10]) draw 0
+  a.daily-enter                       11.31 need 4.5 pass  #/                         d=12  [232, 201, 138] -> [25, 22, 15] (no-canvas [13, 12, 10]) draw 0
+  span.f-label                        11.36 need 4.5 pass  #/artists                  d=17  [216, 210, 196] -> [23, 29, 26] (no-canvas [13, 12, 10]) draw 1
+  a.chip-label                        11.41 need 4.5 pass  #/                         d=23  [216, 210, 196] -> [35, 25, 21] (no-canvas [13, 12, 10]) draw 0
+  div.chip-label                      11.42 need 4.5 pass  #/artist/leonardo-da-vinci d=16  [216, 210, 196] -> [29, 27, 22] (no-canvas [13, 12, 10]) draw 0
+  span                                11.88 need 4.5 pass  #/                         d=12  [216, 210, 196] -> [21, 24, 20] (no-canvas [13, 12, 10]) draw 0
+  b                                   11.94 need 4.5 pass  #/                         d=15  [176, 218, 211] -> [28, 20, 17] (no-canvas [13, 12, 10]) draw 0
+  button.aw-btn.primary               12.03 need 4.5 pass  #/                         d=5   [232, 201, 138] -> [18, 14, 11] (no-canvas [13, 12, 10]) draw 0
+  h2.sec-title                        12.32 need 4.5 pass  #/privacy                  d=27  [236, 230, 217] -> [40, 37, 27] (no-canvas [13, 12, 10]) draw 0
+  a.chip.t                            12.34 need 4.5 pass  #/artist/leonardo-da-vinci d=29  [236, 230, 217] -> [47, 34, 30] (no-canvas [18, 17, 15]) draw 0
+  div.footer-brand                    12.35 need 4.5 pass  #/privacy                  d=9   [216, 210, 196] -> [22, 18, 16] (no-canvas [13, 11, 10]) draw 1
+  a.chip.e                            12.53 need 4.5 pass  #/artist/leonardo-da-vinci d=27  [236, 230, 217] -> [45, 33, 30] (no-canvas [18, 17, 15]) draw 0
+  span.brand-text                     12.62 need 3.0 pass  #/                         d=1   [236, 230, 217] -> [36, 35, 34] (no-canvas [36, 35, 33]) draw 0
+  h3                                  12.63 need 4.5 pass  #/artist/leonardo-da-vinci d=24  [236, 230, 217] -> [33, 36, 31] (no-canvas [13, 12, 10]) draw 0
+  code                                12.65 need 4.5 pass  #/privacy                  d=28  [236, 230, 217] -> [41, 34, 22] (no-canvas [13, 12, 10]) draw 0
+  a.chip                              12.81 need 4.5 pass  #/privacy                  d=18  [236, 230, 217] -> [31, 35, 31] (no-canvas [18, 17, 15]) draw 1
+  p.footer-note                       12.89 need 4.5 pass  #/privacy                  d=2   [216, 210, 196] -> [14, 13, 11] (no-canvas [13, 11, 10]) draw 0
+  h1.display                          12.93 need 3.0 pass  #/artists                  d=23  [236, 230, 217] -> [36, 33, 24] (no-canvas [13, 12, 10]) draw 0
+  button.chip                         13.02 need 4.5 pass  #/artist/leonardo-da-vinci d=23  [236, 230, 217] -> [41, 30, 28] (no-canvas [18, 17, 15]) draw 0
+  h2                                  13.10 need 4.5 pass  #/artist/leonardo-da-vinci d=29  [236, 230, 217] -> [42, 29, 26] (no-canvas [13, 12, 10]) draw 0
+  strong                              13.30 need 4.5 pass  #/privacy                  d=20  [236, 230, 217] -> [27, 32, 28] (no-canvas [13, 12, 10]) draw 1
+  a.chip.n                            13.50 need 4.5 pass  #/artist/leonardo-da-vinci d=17  [236, 230, 217] -> [35, 28, 24] (no-canvas [18, 17, 15]) draw 1
+  a.chip.m                            13.61 need 4.5 pass  #/artist/leonardo-da-vinci d=17  [236, 230, 217] -> [35, 27, 23] (no-canvas [18, 17, 15]) draw 1
+  button.aw-btn                       14.52 need 4.5 pass  #/                         d=12  [236, 230, 217] -> [25, 22, 15] (no-canvas [13, 12, 10]) draw 0
+classes below floor: 0 of 37

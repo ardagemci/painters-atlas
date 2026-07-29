@@ -1,0 +1,10 @@
+draw 0  #/eras                             els=0   worst 99.00
+draw 0  #/timeline                         els=0   worst 99.00
+draw 1  #/eras                             els=0   worst 99.00
+draw 1  #/timeline                         els=0   worst 99.00
+draw 2  #/eras                             els=0   worst 99.00
+draw 2  #/timeline                         els=0   worst 99.00
+
+WORST OBSERVED PER ELEMENT CLASS (all draws, all subjects)
+classes below floor: 0 of 0
+subjects with >=1 element below floor: 0 of 0

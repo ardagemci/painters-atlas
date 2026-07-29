@@ -1,0 +1,51 @@
+draw 0  #/                           bands=8  overCover=31   worst 6.24
+draw 0  #/artists                    bands=4  overCover=30   worst 9.02
+draw 0  #/artist/caravaggio          bands=7  overCover=11   worst 11.69
+draw 0  #/movement/impressionism     bands=4  overCover=39   worst 8.27
+draw 0  #/technique/oil-painting     bands=5  overCover=48   worst 8.96
+draw 0  #/era/16th-century           bands=5  overCover=11   worst 10.12
+draw 0  #/nation/italy               bands=5  overCover=18   worst 7.54
+draw 0  #/museum/louvre              bands=4  overCover=0    worst 99.00
+draw 0  #/artwork/the-red-studio     bands=3  overCover=3    worst 7.99
+draw 0  #/lists                      bands=3  overCover=0    worst 99.00
+draw 0  #/eras                       bands=2  overCover=10   worst 8.10
+draw 0  #/timeline                   bands=2  overCover=0    worst 99.00
+draw 1  #/                           bands=8  overCover=31   worst 5.19
+draw 1  #/artists                    bands=4  overCover=30   worst 9.02
+draw 1  #/artist/caravaggio          bands=7  overCover=11   worst 11.69
+draw 1  #/movement/impressionism     bands=4  overCover=39   worst 8.27
+draw 1  #/technique/oil-painting     bands=5  overCover=48   worst 8.96
+draw 1  #/era/16th-century           bands=5  overCover=11   worst 10.12
+draw 1  #/nation/italy               bands=5  overCover=18   worst 7.54
+draw 1  #/museum/louvre              bands=4  overCover=0    worst 99.00
+draw 1  #/artwork/the-red-studio     bands=3  overCover=3    worst 7.99
+draw 1  #/lists                      bands=3  overCover=0    worst 99.00
+draw 1  #/eras                       bands=2  overCover=10   worst 8.10
+draw 1  #/timeline                   bands=2  overCover=0    worst 99.00
+
+TEXT COMPOSITING OVER A COVER CANVAS, WORST PER (host, class)
+  header.home-hero           h1.home-title          5.19 need 3.0 pass  #/                         d=44  [201, 164, 92]
+                             a                      7.54 need 4.5 pass  #/nation/italy             d=44  [216, 210, 196]
+  header.home-hero           div.kicker             7.69 need 4.5 pass  #/                         d=41  [232, 201, 138]
+  div.aw-hero-gen            span.map-hint          7.99 need 4.5 pass  #/artwork/the-red-studio   d=61  [242, 238, 229]
+                             a.active               8.10 need 4.5 pass  #/eras                     d=36  [232, 201, 138]
+  header.home-hero           a                      8.13 need 4.5 pass  #/                         d=39  [232, 201, 138]
+  header.home-hero           p.lede                 8.24 need 4.5 pass  #/                         d=42  [216, 210, 196]
+  header.hero                a                      8.27 need 4.5 pass  #/movement/impressionism   d=38  [216, 210, 196]
+  header.hero                span.sep               8.27 need 4.5 pass  #/movement/impressionism   d=38  [216, 210, 196]
+  header.hero                span                   8.27 need 4.5 pass  #/movement/impressionism   d=42  [216, 210, 196]
+  header.home-hero           p.footer-note          8.48 need 4.5 pass  #/                         d=40  [216, 210, 196]
+                             span.brand-text        8.86 need 3.0 pass  #/nation/italy             d=46  [236, 230, 217]
+  a.era-tile                 span                   8.88 need 4.5 pass  #/                         d=34  [216, 210, 196]
+  header.hero                div.hero-tagline       8.89 need 4.5 pass  #/movement/impressionism   d=36  [216, 210, 196]
+                             span.brand-sub         9.12 need 4.5 pass  #/nation/italy             d=31  [216, 210, 196]
+  header.hero                h1                    10.21 need 3.0 pass  #/movement/impressionism   d=40  [236, 230, 217]
+  a.era-tile                 b                     10.32 need 4.5 pass  #/                         d=39  [236, 230, 217]
+(host,class) pairs below floor: 0 of 17
+
+PER HOST (canvasTag call site)
+  header.home-hero               n=10    below=0    worst 5.19 pass
+                                 n=264   below=0    worst 7.54 pass
+  div.aw-hero-gen                n=2     below=0    worst 7.99 pass
+  header.hero                    n=94    below=0    worst 8.27 pass
+  a.era-tile                     n=32    below=0    worst 8.88 pass

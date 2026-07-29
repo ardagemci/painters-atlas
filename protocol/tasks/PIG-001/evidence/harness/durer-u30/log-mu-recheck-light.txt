@@ -1,0 +1,20 @@
+draw 0  #/museum/louvre                    els=0   worst 99.00
+draw 0  #/museum/tate-britain              els=9   worst 5.18
+draw 0  #/museum/k20-dusseldorf            els=9   worst 5.14
+draw 1  #/museum/louvre                    els=9   worst 5.19
+draw 1  #/museum/tate-britain              els=9   worst 5.18
+draw 1  #/museum/k20-dusseldorf            els=9   worst 5.14
+
+WORST OBSERVED PER ELEMENT CLASS (all draws, all subjects)
+  mu-hero-body div.mu-hook                5.14 need 4.5 pass  #/museum/k20-dusseldorf          cover-d=0   [107, 81, 34] -> [220, 214, 202] draw 0
+  mu-hero-body span                       5.15 need 4.5 pass  #/museum/k20-dusseldorf          cover-d=0   [88, 82, 68] -> [215, 210, 198] draw 0
+  mu-hero-body span.sep                   5.25 need 4.5 pass  #/museum/tate-britain            cover-d=0   [88, 82, 68] -> [217, 212, 201] draw 0
+  mu-hero-body div.mu-sub                 5.31 need 4.5 pass  #/museum/k20-dusseldorf          cover-d=0   [88, 82, 68] -> [219, 213, 201] draw 0
+  mu-hero-body a                          7.37 need 4.5 pass  #/museum/tate-britain            cover-d=0   [67, 60, 49] -> [217, 212, 201] draw 0
+  mu-hero-body h1.display                10.04 need 3.0 pass  #/museum/k20-dusseldorf          cover-d=0   [43, 38, 32] -> [216, 211, 199] draw 0
+  mu-hero-body button.chip               10.54 need 4.5 pass  #/museum/k20-dusseldorf          cover-d=0   [43, 38, 32] -> [221, 216, 204] draw 0
+classes below floor: 0 of 7
+subjects with >=1 element below floor: 0 of 3
+    #/museum/k20-dusseldorf            0/18 below floor, worst 5.14
+    #/museum/tate-britain              0/18 below floor, worst 5.18
+    #/museum/louvre                    0/9 below floor, worst 5.19

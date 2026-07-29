@@ -1,0 +1,20 @@
+draw 0  #/                           bands=2  overCover=0    worst 99.00
+draw 1  #/                           bands=10 overCover=34   worst 1.83
+
+TEXT COMPOSITING OVER A COVER CANVAS, WORST PER (host, class)
+  a.era-tile                 b                      1.83 need 4.5 FAIL  #/                         d=160 [236, 230, 217]
+  a.era-tile                 span                   3.70 need 4.5 FAIL  #/                         d=94  [216, 210, 196]
+  header.home-hero           h1.home-title          5.20 need 3.0 pass  #/                         d=42  [201, 164, 92]
+  header.home-hero           div.kicker             7.56 need 4.5 pass  #/                         d=43  [232, 201, 138]
+  header.home-hero           a                      7.80 need 4.5 pass  #/                         d=40  [232, 201, 138]
+  header.home-hero           p.lede                 8.01 need 4.5 pass  #/                         d=43  [216, 210, 196]
+  header.home-hero           p.footer-note          8.18 need 4.5 pass  #/                         d=42  [216, 210, 196]
+                             a                     11.12 need 4.5 pass  #/                         d=17  [216, 210, 196]
+                             span.brand-sub        11.51 need 4.5 pass  #/                         d=19  [216, 210, 196]
+                             span.brand-text       13.94 need 3.0 pass  #/                         d=19  [236, 230, 217]
+(host,class) pairs below floor: 2 of 10
+
+PER HOST (canvasTag call site)
+  a.era-tile                     n=17    below=10   worst 1.83 FAIL
+  header.home-hero               n=5     below=0    worst 5.20 pass
+                                 n=12    below=0    worst 11.12 pass

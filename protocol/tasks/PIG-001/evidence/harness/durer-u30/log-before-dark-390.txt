@@ -1,0 +1,96 @@
+draw 0  #/artist/caravaggio                els=11  worst 7.77
+draw 0  #/artist/frida-kahlo               els=10  worst 3.22
+draw 0  #/artist/claude-monet              els=11  worst 1.72
+draw 0  #/artist/leonardo-da-vinci         els=11  worst 3.49
+draw 0  #/artist/vincent-van-gogh          els=10  worst 2.46
+draw 0  #/artist/rembrandt                 els=10  worst 6.61
+draw 0  #/artist/katsushika-hokusai        els=11  worst 1.96
+draw 0  #/artist/jmw-turner                els=10  worst 2.34
+draw 0  #/artist/artemisia-gentileschi     els=10  worst 4.76
+draw 0  #/artist/el-greco                  els=11  worst 3.46
+draw 0  #/artist/gustav-klimt              els=11  worst 2.91
+draw 0  #/artist/paul-cezanne              els=11  worst 2.05
+draw 0  #/movement/impressionism           els=9   worst 1.94
+draw 0  #/technique/oil-painting           els=8   worst 3.43
+draw 0  #/era/16th-century                 els=11  worst 3.01
+draw 0  #/nation/italy                     els=8   worst 3.03
+draw 0  #/artwork/david                    els=0   worst 99.00
+draw 0  #/artwork/mona-lisa                els=0   worst 99.00
+draw 0  #/artwork/the-red-studio           els=1   worst 7.99
+draw 0  #/artwork/blue-nude-ii             els=1   worst 9.14
+draw 0  #/artwork/the-old-guitarist        els=1   worst 11.02
+draw 0  #/artwork/the-snail                els=1   worst 8.69
+draw 1  #/artist/caravaggio                els=11  worst 7.77
+draw 1  #/artist/frida-kahlo               els=10  worst 3.22
+draw 1  #/artist/claude-monet              els=11  worst 1.72
+draw 1  #/artist/leonardo-da-vinci         els=11  worst 3.49
+draw 1  #/artist/vincent-van-gogh          els=10  worst 2.46
+draw 1  #/artist/rembrandt                 els=10  worst 6.61
+draw 1  #/artist/katsushika-hokusai        els=11  worst 1.96
+draw 1  #/artist/jmw-turner                els=10  worst 2.34
+draw 1  #/artist/artemisia-gentileschi     els=10  worst 4.76
+draw 1  #/artist/el-greco                  els=11  worst 3.46
+draw 1  #/artist/gustav-klimt              els=11  worst 2.91
+draw 1  #/artist/paul-cezanne              els=11  worst 2.05
+draw 1  #/movement/impressionism           els=9   worst 1.94
+draw 1  #/technique/oil-painting           els=8   worst 3.43
+draw 1  #/era/16th-century                 els=11  worst 3.01
+draw 1  #/nation/italy                     els=8   worst 3.03
+draw 1  #/artwork/david                    els=0   worst 99.00
+draw 1  #/artwork/mona-lisa                els=0   worst 99.00
+draw 1  #/artwork/the-red-studio           els=1   worst 7.99
+draw 1  #/artwork/blue-nude-ii             els=1   worst 9.14
+draw 1  #/artwork/the-old-guitarist        els=1   worst 11.02
+draw 1  #/artwork/the-snail                els=1   worst 8.69
+draw 2  #/artist/caravaggio                els=11  worst 7.77
+draw 2  #/artist/frida-kahlo               els=10  worst 3.22
+draw 2  #/artist/claude-monet              els=11  worst 1.72
+draw 2  #/artist/leonardo-da-vinci         els=11  worst 3.49
+draw 2  #/artist/vincent-van-gogh          els=10  worst 2.46
+draw 2  #/artist/rembrandt                 els=10  worst 6.61
+draw 2  #/artist/katsushika-hokusai        els=11  worst 1.96
+draw 2  #/artist/jmw-turner                els=10  worst 2.34
+draw 2  #/artist/artemisia-gentileschi     els=10  worst 4.76
+draw 2  #/artist/el-greco                  els=11  worst 3.46
+draw 2  #/artist/gustav-klimt              els=11  worst 2.91
+draw 2  #/artist/paul-cezanne              els=11  worst 2.05
+draw 2  #/movement/impressionism           els=9   worst 1.94
+draw 2  #/technique/oil-painting           els=8   worst 3.43
+draw 2  #/era/16th-century                 els=11  worst 3.01
+draw 2  #/nation/italy                     els=8   worst 3.03
+draw 2  #/artwork/david                    els=0   worst 99.00
+draw 2  #/artwork/mona-lisa                els=0   worst 99.00
+draw 2  #/artwork/the-red-studio           els=1   worst 7.99
+draw 2  #/artwork/blue-nude-ii             els=1   worst 9.14
+draw 2  #/artwork/the-old-guitarist        els=1   worst 11.02
+draw 2  #/artwork/the-snail                els=1   worst 8.69
+
+WORST OBSERVED PER ELEMENT CLASS (all draws, all subjects)
+  hero         a                          1.72 need 4.5 FAIL  #/artist/claude-monet            cover-d=153 [216, 210, 196] -> [167, 161, 139] draw 0
+  hero         span.sep                   1.72 need 4.5 FAIL  #/artist/claude-monet            cover-d=153 [216, 210, 196] -> [167, 161, 139] draw 0
+  hero         span                       1.72 need 4.5 FAIL  #/artist/claude-monet            cover-d=154 [216, 210, 196] -> [167, 161, 139] draw 0
+  hero         h1                         2.35 need 3.0 FAIL  #/artist/claude-monet            cover-d=144 [236, 230, 217] -> [157, 151, 130] draw 0
+  hero         div.hero-tagline           4.61 need 4.5 pass  #/nation/italy                   cover-d=79  [216, 210, 196] -> [94, 89, 80] draw 0
+  aw-hero      span.map-hint              7.99 need 4.5 pass  #/artwork/the-red-studio         cover-d=61  [242, 238, 229] -> [74, 71, 66] draw 0
+classes below floor: 4 of 6
+subjects with >=1 element below floor: 11 of 20
+    #/artist/claude-monet              30/33 below floor, worst 1.72
+    #/movement/impressionism           24/27 below floor, worst 1.94
+    #/artist/katsushika-hokusai        30/33 below floor, worst 1.96
+    #/artist/paul-cezanne              30/33 below floor, worst 2.05
+    #/artist/jmw-turner                18/30 below floor, worst 2.34
+    #/artist/vincent-van-gogh          12/30 below floor, worst 2.46
+    #/artist/gustav-klimt              15/33 below floor, worst 2.91
+    #/era/16th-century                 0/33 below floor, worst 3.01
+    #/nation/italy                     9/24 below floor, worst 3.03
+    #/artist/frida-kahlo               15/30 below floor, worst 3.22
+    #/technique/oil-painting           3/24 below floor, worst 3.43
+    #/artist/el-greco                  15/33 below floor, worst 3.46
+    #/artist/leonardo-da-vinci         0/33 below floor, worst 3.49
+    #/artist/artemisia-gentileschi     0/30 below floor, worst 4.76
+    #/artist/rembrandt                 0/30 below floor, worst 6.61
+    #/artist/caravaggio                0/33 below floor, worst 7.77
+    #/artwork/the-red-studio           0/3 below floor, worst 7.99
+    #/artwork/the-snail                0/3 below floor, worst 8.69
+    #/artwork/blue-nude-ii             0/3 below floor, worst 9.14
+    #/artwork/the-old-guitarist        0/3 below floor, worst 11.02

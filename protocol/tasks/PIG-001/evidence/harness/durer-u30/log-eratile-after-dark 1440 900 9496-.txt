@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/durer-u30/herotext.py", line 346, in <module>
+    th, w, h, n, tag = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
+ValueError: invalid literal for int() with base 10: 'eratile-after-dark 1440 900 9496-'

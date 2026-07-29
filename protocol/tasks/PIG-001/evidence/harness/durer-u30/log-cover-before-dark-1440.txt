@@ -1,0 +1,12 @@
+draw 0  #/                           bands=8  overCover=31   worst 1.25
+draw 0  #/artists                    bands=4  overCover=30   worst 9.02
+draw 0  #/artist/caravaggio          bands=7  overCover=11   worst 11.09
+draw 0  #/artist/leonardo-da-vinci   bands=6  overCover=13   worst 8.88
+draw 0  #/artwork/the-red-studio     bands=3  overCover=3    worst 7.99
+draw 0  #/artwork/david              bands=3  overCover=0    worst 99.00
+draw 0  #/movements                  bands=4  overCover=20   worst 9.47
+draw 0  #/movement/impressionism     bands=4  overCover=39   worst 1.68
+draw 0  #/techniques                 bands=4  overCover=30   worst 7.43
+draw 0  #/technique/oil-painting     bands=5  overCover=48   worst 3.62
+draw 0  #/eras                       bands=2  overCover=10   worst 8.10
+draw 0  #/era/16th-century           bands=5  overCover=11   worst 7.41
