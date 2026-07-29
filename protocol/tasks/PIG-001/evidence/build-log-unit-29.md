@@ -339,11 +339,48 @@ rungs on the page background, not four. The four-rung ladder is real, but it is 
 
 Three consequences the project should carry forward:
 
-1. **`--faint` is effectively retired as a page-background ink.** It survives at
+1. **`--faint` is effectively retired as a page-background ink.** ~~It survives at
    `#search::placeholder`, `.sr-kicker`, `.tl-year`, `.tn-count`, `.tm-lab` and
-   `.pp-card-loading` — all inside opaque panels, all still clear on Pass 1. There
+   `.pp-card-loading` — all inside opaque panels, all still clear on Pass 1.~~ There
    is no room below `--muted` on the page background, and there is no room at
    `--muted` either.
+
+   > **CORRECTION — 2026-07-29, unit 31, re F-8 (Van Eyck, quality review rev 3
+   > §R3.3).** The struck sentence above is **false as written, and it was accepted
+   > as settled** — Matisse's D-29-6 ruling (`visual-ruling-d29-6.md:267-271`) repeats
+   > it. Two errors, and the second is the worse one:
+   >
+   > **(a) `.tl-year` is not inside an opaque panel.** `.timeline`
+   > (`css/styles.css:852-855`) declares `position`, margins, padding and two
+   > borders and **no background**, so the era start/end years composite directly
+   > onto `#bg-canvas` on all 8 `#/era/*` routes. Van Eyck measured 4.06–4.47
+   > against a 4.5 floor on real pixels; unit 31 reproduced it worse still —
+   > worst of 4 draws per cell: **3.68** light 390×844, **4.13** light 1440×900,
+   > **4.38** dark 1440×900, **4.41** dark 390×844. Fixed in unit 31 by
+   > re-pointing `.tl-year` to `--body-ink` (7.04–12.37 after).
+   >
+   > **(b) The clearance was asserted, not measured.** No instrument in unit 29
+   > could see three of the six sites — `#search::placeholder` is a pseudo-element
+   > with no text node, and `.tn-count`/`.tm-lab` are SVG `fill:` inks that unit
+   > 28's `color`-based glyph differential cannot hide. "All inside opaque panels"
+   > was a reading of the stylesheet, which is precisely the method the enumeration
+   > was built to replace. A false clearance propagates further than an unmeasured
+   > gap: an unmeasured gap invites a later measurement, a clearance closes the
+   > question.
+   >
+   > **(c) The list was also incomplete.** `--faint` has **eight** declarations in
+   > `css/styles.css`, not six: `.sr-kicker` names two (`.sr-group` at `:448` and
+   > `.sr-more` at `:460`), and `.tl2-year` (`:1183`, the grand timeline's gridline
+   > years) appears in no unit-29 list at all. Unit 31 measures it at **3.78** light
+   > / **3.63** dark, below the 4.5 floor — on opaque panel paint, so it is a
+   > flat-paint contrast defect rather than an AC19 `#bg-canvas` one. Recorded by
+   > unit 31 as **N-31-1**, not fixed there, and not covered by this correction.
+   >
+   > Unit 31 re-measured all eight sites on real rendered pixels in both themes at
+   > 1440×900 and 390×844; the table is in
+   > `protocol/tasks/PIG-001/evidence/build-log-unit-31.md` §3. The sentence above
+   > is struck rather than deleted because the record of the error is the useful
+   > part. — Dürer
 2. **Any new small text on the page background must take `--body-ink` or `--ink`,
    or be measured against the ceiling first.** The rule and the derivation are now
    in the stylesheet at `#bg-canvas` so the next author meets them before choosing a
