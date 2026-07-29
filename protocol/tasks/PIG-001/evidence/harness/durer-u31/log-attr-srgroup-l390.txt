@@ -1,0 +1,2 @@
+as shipped  light  390x844 .search-results .sr-group    worst  1.00  ink [112, 103, 85] on [110, 103, 92]  'Museums'
+suppressed  light  390x844 .search-results .sr-group    worst  4.62  ink [112, 103, 85] on [240, 233, 218]  'Museums'

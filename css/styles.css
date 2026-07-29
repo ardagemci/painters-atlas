@@ -868,7 +868,17 @@ html[data-theme="light"] #app .hero-content h1:focus-visible{outline-color:#6b51
   opacity:0;pointer-events:none;transition:opacity .2s;
 }
 .tl-dot:hover .tl-tip{opacity:1}
-.tl-year{position:absolute;bottom:14px;font-size:.7rem;color:var(--faint);letter-spacing:.12em}
+/* --body-ink, not --faint (unit 31, AC19/F-8). `.timeline` above declares no
+   background, so these 11.2 px era years composite straight onto #bg-canvas on
+   all 8 #/era/* routes — the ink rule at #bg-canvas applies to them and only
+   --body-ink and --ink clear it. Unit 29 §7.1 listed .tl-year among the --faint
+   sites that survive "inside opaque panels"; that was false for this one, and
+   Van Eyck measured it at 4.06 light / 4.19 dark on real pixels against a 4.5
+   floor. Derived ceiling: --faint 1.83 dark / 2.58 light -> --body-ink 4.56 /
+   5.02. The other seven --faint declarations were re-measured in unit 31 and are
+   all panel-hosted — none touches this canvas. One of them still fails on its own
+   opaque paint (.tl2-year, on the 1 px gridline behind it, N-31-1). */
+.tl-year{position:absolute;bottom:14px;font-size:.7rem;color:var(--body-ink);letter-spacing:.12em}
 .tl-year.start{left:2%}
 .tl-year.end{right:2%}
 

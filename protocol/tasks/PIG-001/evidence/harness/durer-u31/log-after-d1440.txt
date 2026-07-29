@@ -1,0 +1,53 @@
+draw 0  tl-year          .tl-year                       n=2 /2   worst 12.47 canvas=6   cover=0  
+draw 0  tl-year-19       .tl-year                       n=2 /2   worst 12.37 canvas=7   cover=0  
+draw 0  search-ph        #search::placeholder           n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 0  sr-group         .search-results .sr-group      n=3 /3   worst  4.62 canvas=0   cover=0  
+draw 0  sr-more          .search-results .sr-more       n=1 /1   worst  4.62 canvas=0   cover=0  
+draw 0  tn-count         .tree-svg .tn-count            n=48/76  worst  4.62 canvas=0   cover=0  
+draw 0  tn-count-tech    .tree-svg .tn-count            n=39/39  worst  4.62 canvas=0   cover=0  
+draw 0  tm-lab           .tm-lab                        n=4 /4   worst  4.90 canvas=0   cover=0  
+draw 0  pp-card-loading  .pp-card-loading               n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 0  tl2-year         .tl2-year                      n=8 /17  worst  3.63 canvas=0   cover=0  
+draw 1  tl-year          .tl-year                       n=2 /2   worst 11.45 canvas=16  cover=0  
+draw 1  tl-year-19       .tl-year                       n=2 /2   worst 12.89 canvas=1   cover=0  
+draw 1  search-ph        #search::placeholder           n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 1  sr-group         .search-results .sr-group      n=3 /3   worst  4.62 canvas=0   cover=0  
+draw 1  sr-more          .search-results .sr-more       n=1 /1   worst  4.62 canvas=0   cover=0  
+draw 1  tn-count         .tree-svg .tn-count            n=48/76  worst  4.62 canvas=0   cover=0  
+draw 1  tn-count-tech    .tree-svg .tn-count            n=39/39  worst  4.62 canvas=0   cover=0  
+draw 1  tm-lab           .tm-lab                        n=4 /4   worst  4.90 canvas=0   cover=0  
+draw 1  pp-card-loading  .pp-card-loading               n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 1  tl2-year         .tl2-year                      n=8 /17  worst  3.63 canvas=0   cover=0  
+draw 2  tl-year          .tl-year                       n=2 /2   worst 11.13 canvas=18  cover=0  
+draw 2  tl-year-19       .tl-year                       n=2 /2   worst 12.80 canvas=2   cover=0  
+draw 2  search-ph        #search::placeholder           n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 2  sr-group         .search-results .sr-group      n=3 /3   worst  4.62 canvas=0   cover=0  
+draw 2  sr-more          .search-results .sr-more       n=1 /1   worst  4.62 canvas=0   cover=0  
+draw 2  tn-count         .tree-svg .tn-count            n=48/76  worst  4.62 canvas=0   cover=0  
+draw 2  tn-count-tech    .tree-svg .tn-count            n=39/39  worst  4.62 canvas=0   cover=0  
+draw 2  tm-lab           .tm-lab                        n=4 /4   worst  4.90 canvas=0   cover=0  
+draw 2  pp-card-loading  .pp-card-loading               n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 2  tl2-year         .tl2-year                      n=8 /17  worst  3.63 canvas=0   cover=0  
+draw 3  tl-year          .tl-year                       n=2 /2   worst 11.45 canvas=16  cover=0  
+draw 3  tl-year-19       .tl-year                       n=2 /2   worst 12.87 canvas=2   cover=0  
+draw 3  search-ph        #search::placeholder           n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 3  sr-group         .search-results .sr-group      n=3 /3   worst  4.62 canvas=0   cover=0  
+draw 3  sr-more          .search-results .sr-more       n=1 /1   worst  4.62 canvas=0   cover=0  
+draw 3  tn-count         .tree-svg .tn-count            n=48/76  worst  4.62 canvas=0   cover=0  
+draw 3  tn-count-tech    .tree-svg .tn-count            n=39/39  worst  4.62 canvas=0   cover=0  
+draw 3  tm-lab           .tm-lab                        n=4 /4   worst  4.90 canvas=0   cover=0  
+draw 3  pp-card-loading  .pp-card-loading               n=1 /1   worst  4.90 canvas=0   cover=0  
+draw 3  tl2-year         .tl2-year                      n=8 /17  worst  3.63 canvas=0   cover=0  
+
+WORST OBSERVED PER SITE (all draws)
+  tl2-year         .tl2-year                    3.63 need 4.5 FAIL  11.2px  on opaque paint  ink [232, 201, 138] -> [119, 99, 57] (no-canvas [119, 99, 57])
+  sr-group         .search-results .sr-group    4.62 need 4.5 pass   9.9px  on opaque paint  ink [139, 131, 114] -> [29, 26, 19] (no-canvas [29, 26, 19])
+  sr-more          .search-results .sr-more     4.62 need 4.5 pass  11.5px  on opaque paint  ink [139, 131, 114] -> [29, 26, 19] (no-canvas [29, 26, 19])
+  tn-count         .tree-svg .tn-count          4.62 need 4.5 pass  11.0px  on opaque paint  ink [139, 131, 114] -> [29, 26, 19] (no-canvas [29, 26, 19])
+  tn-count-tech    .tree-svg .tn-count          4.62 need 4.5 pass  11.0px  on opaque paint  ink [139, 131, 114] -> [29, 26, 19] (no-canvas [29, 26, 19])
+  search-ph        #search::placeholder         4.90 need 4.5 pass  14.1px  on opaque paint  ink [139, 131, 114] -> [22, 20, 15] (no-canvas [22, 20, 15])
+  tm-lab           .tm-lab                      4.90 need 4.5 pass  10.0px  on opaque paint  ink [139, 131, 114] -> [22, 20, 15] (no-canvas [22, 20, 15])
+  pp-card-loading  .pp-card-loading             4.90 need 4.5 pass  13.6px  on opaque paint  ink [139, 131, 114] -> [22, 20, 15] (no-canvas [22, 20, 15])
+  tl-year          .tl-year                    11.13 need 4.5 pass  11.2px  on #bg-canvas   ink [216, 210, 196] -> [28, 30, 28] (no-canvas [13, 12, 10])
+  tl-year-19       .tl-year                    12.37 need 4.5 pass  11.2px  on #bg-canvas   ink [216, 210, 196] -> [18, 19, 16] (no-canvas [13, 12, 10])
+sites below floor: 1 of 10 measured

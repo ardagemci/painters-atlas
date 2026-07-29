@@ -1,0 +1,2 @@
+as shipped  dark  1440x900 .tl2-year                    worst  3.63  ink [232, 201, 138] on [119, 99, 57]  'today'
+suppressed  dark  1440x900 .tl2-year                    worst  4.90  ink [139, 131, 114] on [22, 20, 15]  '1300'

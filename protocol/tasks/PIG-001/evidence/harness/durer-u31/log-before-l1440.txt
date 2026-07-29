@@ -1,0 +1,13 @@
+draw 0  tl-year          .tl-year                       n=2 /2   worst  4.13 canvas=19  cover=0  
+draw 0  tl-year-19       .tl-year                       n=2 /2   worst  4.16 canvas=18  cover=0  
+draw 1  tl-year          .tl-year                       n=2 /2   worst  4.44 canvas=8   cover=0  
+draw 1  tl-year-19       .tl-year                       n=2 /2   worst  4.38 canvas=9   cover=0  
+draw 2  tl-year          .tl-year                       n=2 /2   worst  4.14 canvas=15  cover=0  
+draw 2  tl-year-19       .tl-year                       n=2 /2   worst  4.26 canvas=18  cover=0  
+draw 3  tl-year          .tl-year                       n=2 /2   worst  4.17 canvas=17  cover=0  
+draw 3  tl-year-19       .tl-year                       n=2 /2   worst  4.48 canvas=7   cover=0  
+
+WORST OBSERVED PER SITE (all draws)
+  tl-year          .tl-year                     4.13 need 4.5 FAIL  11.2px  on #bg-canvas   ink [112, 103, 85] -> [223, 222, 210] (no-canvas [242, 236, 223])
+  tl-year-19       .tl-year                     4.16 need 4.5 FAIL  11.2px  on #bg-canvas   ink [112, 103, 85] -> [224, 223, 210] (no-canvas [242, 236, 223])
+sites below floor: 2 of 2 measured

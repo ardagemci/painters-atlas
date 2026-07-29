@@ -1,0 +1,2 @@
+as shipped  light 1440x900 .tl2-year                    worst  3.78  ink [112, 103, 85] on [225, 211, 183]  '1300'
+suppressed  light 1440x900 .tl2-year                    worst  5.13  ink [112, 103, 85] on [249, 245, 235]  '1600'
