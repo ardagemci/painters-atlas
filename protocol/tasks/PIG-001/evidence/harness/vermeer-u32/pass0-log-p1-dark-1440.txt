@@ -1,0 +1,5 @@
+d0  #/                               bands=7  els=272  canvas=63   cover=31  worstFail -  [98s]
+d0  #/artists                        bands=4  els=193  canvas=21   cover=30  worstFail -  [141s]
+d0  #/artist/leonardo-da-vinci       bands=6  els=290  canvas=47   cover=13  worstFail -  [211s]
+d0  #/artwork/david                  bands=3  els=97   canvas=31   cover=0   worstFail -  [242s]
+d0  #/explore                        bands=1  els=43   canvas=18   cover=0   worstFail -  [253s]

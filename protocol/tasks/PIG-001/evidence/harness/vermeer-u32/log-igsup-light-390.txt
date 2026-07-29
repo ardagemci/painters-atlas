@@ -1,0 +1,6 @@
+d0  ig-node-text     .ig-node text                  n=41  worst  1.41 canvas=0   cover=0   
+d1  ig-node-text     .ig-node text                  n=41  worst  1.41 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  ig-node-text     .ig-node text                    1.41 need 4.5 FAIL  10.5px on opaque paint ink [88, 82, 68] -> [196, 48, 42]
+sites below floor: 1 of 1 measured

@@ -1,0 +1,12 @@
+d0  ig-node-text     .ig-node text                  NOT PRESENT
+d0  map-dot-name     .map-dot .md-name              NOT PRESENT
+d1  ig-node-text     .ig-node text                  n=41  worst  1.01 canvas=0   cover=0   
+d1  map-dot-name     .map-dot .md-name              NOT PRESENT
+
+WORST OBSERVED PER SITE (all draws)
+  ig-node-text     .ig-node text                    1.01 need 4.5 FAIL  10.5px on opaque paint ink [155, 147, 127] -> [99, 159, 149]
+sites below floor: 1 of 1 measured
+
+NOT MEASURED (unverified by this instrument)
+  ig-node-text     .ig-node text                  #/influences             selector matched nothing
+  map-dot-name     .map-dot .md-name              #/nations                selector matched nothing

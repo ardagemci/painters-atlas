@@ -1,0 +1,28 @@
+#/                             controls=8   ink-changing=5   measured=5   FAIL=0
+#/artists                      controls=20  ink-changing=13  measured=13  FAIL=0
+#/artist/leonardo-da-vinci     controls=22  ink-changing=12  measured=12  FAIL=0
+#/artwork/david                controls=11  ink-changing=5   measured=5   FAIL=0
+#/explore                      controls=9   ink-changing=3   measured=3   FAIL=0
+#/timeline                     controls=35  ink-changing=20  measured=20  FAIL=0
+#/influences                   controls=35  ink-changing=20  measured=20  FAIL=0
+#/daily                        controls=11  ink-changing=5   measured=5   FAIL=0
+#/lists                        controls=10  ink-changing=4   measured=4   FAIL=0
+#/list/paintings-that-still-scare-us controls=10  ink-changing=4   measured=4   FAIL=0
+#/palette                      controls=11  ink-changing=5   measured=5   FAIL=0
+#/taste                        controls=11  ink-changing=5   measured=5   FAIL=0
+#/museums                      controls=10  ink-changing=4   measured=4   FAIL=0
+#/museum/louvre                controls=10  ink-changing=4   measured=4   FAIL=0
+#/movements                    controls=15  ink-changing=10  measured=10  FAIL=0
+#/movement/impressionism       controls=13  ink-changing=7   measured=7   FAIL=0
+#/techniques                   controls=17  ink-changing=11  measured=11  FAIL=0
+#/technique/oil-painting       controls=15  ink-changing=9   measured=9   FAIL=0
+#/eras                         controls=10  ink-changing=5   measured=5   FAIL=0
+#/era/16th-century             controls=16  ink-changing=8   measured=8   FAIL=0
+#/nations                      controls=48  ink-changing=21  measured=21  FAIL=0
+#/nation/italy                 controls=18  ink-changing=12  measured=12  FAIL=0
+#/privacy                      controls=8   ink-changing=4   measured=4   FAIL=0
+#/credits                      controls=10  ink-changing=6   measured=6   FAIL=0
+#/passport/import              controls=11  ink-changing=5   measured=5   FAIL=0
+#/no-such-page                 controls=11  ink-changing=6   measured=6   FAIL=0
+
+HOVER/FOCUS INK — dark 390x844: 213 measured, 0 below floor

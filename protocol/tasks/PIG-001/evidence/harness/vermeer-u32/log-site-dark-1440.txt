@@ -1,0 +1,44 @@
+d0  trait-before     .trait::before                 n=4   worst  6.01 canvas=0   cover=0   
+d0  facts-before     .facts li::before              n=3   worst 11.79 canvas=7   cover=0   
+d0  branch-before    .branch-chip::before           NOT PRESENT
+d0  tone-after       .tone.on::after                NOT PRESENT
+d0  search-ph        #search::placeholder           NOT PRESENT
+d0  tn-count-mv      .tree-svg .tn-count            n=48  worst  4.62 canvas=0   cover=0   
+d0  tn-count-tq      .tree-svg .tn-count            n=39  worst  4.62 canvas=0   cover=0   
+d0  tn-name-mv       .tree-svg .tn-name             n=48  worst 13.96 canvas=0   cover=0   
+d0  tm-lab           .tm-lab                        n=4   worst  4.90 canvas=0   cover=0   
+d0  tm-dot-lab       .taste-map text                n=4   worst  4.90 canvas=0   cover=0   
+d0  ig-node-text     .ig-node text                  n=69  worst  1.04 canvas=0   cover=0   
+d0  ig-node-lit      #ig-svg.focused .ig-node.lit text n=3   worst  2.72 canvas=0   cover=0   
+d0  map-dot-name     .map-dot .md-name              NOT PRESENT
+d0  sr-group         .search-results .sr-group      n=3   worst  4.62 canvas=0   cover=0   
+d0  sr-more          .search-results .sr-more       n=1   worst  4.62 canvas=0   cover=0   
+d0  sr-meta          .search-results .sr-meta       n=7   worst  5.68 canvas=0   cover=0   
+d0  sr-name          .search-results .sr-name       NOT PRESENT
+d0  tl2-year         .tl2-year                      n=8   worst  3.63 canvas=0   cover=0   
+d0  tl2-year-now     .tl2-year.now                  n=1   worst  3.63 canvas=0   cover=0   
+d0  tl-year          .tl-year                       n=2   worst 12.49 canvas=6   cover=0   
+d0  tl-year-19       .tl-year                       n=2   worst 12.73 canvas=5   cover=0   
+d0  pp-card-label    .pp-card-prev *                NOT PRESENT
+d0  taste-body       .taste-wrap *                  NOT PRESENT
+d0  palette-body     .palette-wrap *                NOT PRESENT
+d1  trait-before     .trait::before                 n=4   worst  6.01 canvas=0   cover=0   
+d1  facts-before     .facts li::before              n=3   worst 12.22 canvas=1   cover=0   
+d1  branch-before    .branch-chip::before           NOT PRESENT
+d1  tone-after       .tone.on::after                NOT PRESENT
+d1  search-ph        #search::placeholder           NOT PRESENT
+d1  tn-count-mv      .tree-svg .tn-count            n=48  worst  4.62 canvas=0   cover=0   
+Traceback (most recent call last):
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-u32/sitecensus.py", line 461, in <module>
+    run(th, w, h, n, tag, st)
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-u32/sitecensus.py", line 400, in run
+    for e in json.loads(b.ev(LOCATE % js(sel)))}
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 211, in ev
+    r = self.cmd("Runtime.evaluate",
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 153, in cmd
+    m = json.loads(self.ws.recv())
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 67, in recv
+    b0, b1 = self._read(2)
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 41, in _read
+    raise IOError("socket closed")
+OSError: socket closed

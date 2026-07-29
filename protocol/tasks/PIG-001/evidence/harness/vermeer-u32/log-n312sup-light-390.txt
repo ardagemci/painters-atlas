@@ -1,0 +1,17 @@
+d0  sr-group         .search-results .sr-group      n=3   worst  4.62 canvas=0   cover=0   
+d0  sr-more          .search-results .sr-more       n=1   worst  4.62 canvas=0   cover=0   
+d0  sr-meta          .search-results .sr-meta       n=7   worst  6.42 canvas=0   cover=0   
+d0  sr-name          .search-results .sr-name       NOT PRESENT
+d1  sr-group         .search-results .sr-group      n=3   worst  4.62 canvas=0   cover=0   
+d1  sr-more          .search-results .sr-more       n=1   worst  4.62 canvas=0   cover=0   
+d1  sr-meta          .search-results .sr-meta       n=7   worst  6.42 canvas=0   cover=0   
+d1  sr-name          .search-results .sr-name       NOT PRESENT
+
+WORST OBSERVED PER SITE (all draws)
+  sr-group         .search-results .sr-group        4.62 need 4.5 pass   9.9px on opaque paint ink [112, 103, 85] -> [240, 233, 218]
+  sr-more          .search-results .sr-more         4.62 need 4.5 pass  11.5px on opaque paint ink [112, 103, 85] -> [240, 233, 218]
+  sr-meta          .search-results .sr-meta         6.42 need 4.5 pass  11.8px on opaque paint ink [88, 82, 68] -> [240, 233, 218]
+sites below floor: 0 of 3 measured
+
+NOT MEASURED (unverified by this instrument)
+  sr-name          .search-results .sr-name       #/                       selector matched nothing

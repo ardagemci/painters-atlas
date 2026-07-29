@@ -1,0 +1,46 @@
+#/                             controls=16  ink-changing=10  measured=10  FAIL=1
+#/artists                      controls=35  ink-changing=18  measured=18  FAIL=0
+#/artist/leonardo-da-vinci     controls=26  ink-changing=14  measured=14  FAIL=1
+#/artwork/david                controls=15  ink-changing=11  measured=11  FAIL=0
+#/explore                      controls=27  ink-changing=17  measured=17  FAIL=0
+#/timeline                     controls=46  ink-changing=21  measured=21  FAIL=0
+#/influences                   controls=59  ink-changing=14  measured=14  FAIL=0
+#/daily                        controls=19  ink-changing=12  measured=13  FAIL=0
+#/lists                        controls=18  ink-changing=11  measured=11  FAIL=0
+#/list/paintings-that-still-scare-us controls=15  ink-changing=11  measured=11  FAIL=1
+#/palette                      controls=25  ink-changing=19  measured=19  FAIL=0
+#/taste                        controls=19  ink-changing=11  measured=11  FAIL=3
+#/museums                      controls=18  ink-changing=11  measured=11  FAIL=0
+#/museum/louvre                controls=17  ink-changing=13  measured=13  FAIL=3
+#/movements                    controls=29  ink-changing=19  measured=19  FAIL=0
+#/movement/impressionism       controls=20  ink-changing=10  measured=10  FAIL=0
+#/techniques                   controls=26  ink-changing=18  measured=18  FAIL=0
+#/technique/oil-painting       controls=25  ink-changing=10  measured=10  FAIL=0
+#/eras                         controls=21  ink-changing=14  measured=14  FAIL=0
+#/era/16th-century             controls=54  ink-changing=12  measured=12  FAIL=0
+#/nations                      controls=51  ink-changing=21  measured=21  FAIL=0
+#/nation/italy                 controls=26  ink-changing=14  measured=14  FAIL=0
+#/privacy                      controls=12  ink-changing=8   measured=8   FAIL=0
+#/credits                      controls=22  ink-changing=18  measured=18  FAIL=7
+#/passport/import              controls=25  ink-changing=20  measured=20  FAIL=0
+#/no-such-page                 controls=25  ink-changing=20  measured=20  FAIL=2
+
+HOVER/FOCUS INK — light 1440x900: 378 measured, 18 below floor
+  FAIL  1.21 need 4.5  button.chip              in #/taste                Reset everything   ink [255, 255, 255] -> [239, 233, 221]
+  FAIL  1.23 need 4.5  button.chip              in #/artist/leonardo-da-v Share this page    ink [255, 255, 255] -> [237, 231, 218]
+  FAIL  1.23 need 4.5  button.chip              in #/taste                Copy share link    ink [255, 255, 255] -> [237, 231, 219]
+  FAIL  1.23 need 4.5  button.chip              in #/taste                Back up data (.jso ink [255, 255, 255] -> [238, 231, 220]
+  FAIL  1.25 need 4.5  button.chip              in #/museum/louvre        Share this page    ink [255, 255, 255] -> [236, 230, 215]
+  FAIL  1.32 need 4.5  button.chip              in #/list/paintings-that- Share this page    ink [255, 255, 255] -> [232, 223, 210]
+  FAIL  2.98 need 4.5  button.ec-surprise       in #/                     or surprise me →   ink [84, 64, 25] -> [83, 144, 215]
+  FAIL  3.90 need 4.5  a                        in #/credits              Privacy            ink [43, 38, 32] -> [68, 133, 203]
+  FAIL  3.96 need 4.5  a                        in #/museum/louvre        file on Commons    ink [43, 38, 32] -> [74, 134, 202]
+  FAIL  4.07 need 4.5  a                        in #/museum/louvre        CC BY-SA 3.0       ink [43, 38, 32] -> [77, 136, 203]
+  FAIL  4.14 need 4.5  a                        in #/credits              file on Commons    ink [43, 38, 32] -> [77, 137, 208]
+  FAIL  4.14 need 4.5  a                        in #/credits              CC BY 3.0          ink [43, 38, 32] -> [77, 137, 208]
+  FAIL  4.14 need 4.5  a                        in #/credits              file on Commons    ink [43, 38, 32] -> [77, 137, 208]
+  FAIL  4.18 need 4.5  a                        in #/credits              CC BY-SA 4.0       ink [43, 38, 32] -> [77, 138, 208]
+  FAIL  4.18 need 4.5  a                        in #/credits              file on Commons    ink [43, 38, 32] -> [77, 138, 208]
+  FAIL  4.23 need 4.5  a                        in #/no-such-page         atlas home         ink [43, 38, 32] -> [77, 139, 209]
+  FAIL  4.24 need 4.5  a                        in #/no-such-page         full collection    ink [43, 38, 32] -> [78, 139, 209]
+  FAIL  4.29 need 4.5  a                        in #/credits              Wikimedia Commons  ink [43, 38, 32] -> [79, 140, 209]

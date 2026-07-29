@@ -1,0 +1,9 @@
+d0  tl2-year         .tl2-year                      n=4   worst  3.63 canvas=0   cover=0   
+d0  tl2-year-now     .tl2-year.now                  n=1   worst  3.63 canvas=0   cover=0   
+d1  tl2-year         .tl2-year                      n=4   worst  3.63 canvas=0   cover=0   
+d1  tl2-year-now     .tl2-year.now                  n=1   worst  3.63 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  tl2-year         .tl2-year                        3.63 need 4.5 FAIL  11.2px on opaque paint ink [232, 201, 138] -> [119, 99, 57]
+  tl2-year-now     .tl2-year.now                    3.63 need 4.5 FAIL  11.2px on opaque paint ink [232, 201, 138] -> [119, 99, 57]
+sites below floor: 2 of 2 measured

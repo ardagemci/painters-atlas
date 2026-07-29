@@ -1,0 +1,378 @@
+rows(all)=15894 clean=15341 fullyOccluded=553
+
+DISTINCT TRIPLES (ink,size,backdrop-CLASS): 328 ; below floor: 6
+
+| theme | ink | size/wt | backdrop class | worst | floor | rows | routes | example |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| dark | `#9b937f` | 10.5/300 | opaque | **1.04** | 4.5 | 109 | 1 | `text` |
+| dark | `#000000` | 13.0/300 | opaque | **1.21** | 4.5 | 74 | 1 | `text.md-flag` |
+| light | `#585244` | 10.5/300 | opaque | **1.27** | 4.5 | 109 | 1 | `text` |
+| light | `#81632b` | 32.0/800 | cover | 3.58 | 3.0 | 1 | 1 | `h1.home-title` |
+| dark | `#8b8372` | 11.2/300 | opaque | **3.77** | 4.5 | 2 | 1 | `div.tl2-year.t` |
+| light | `#706755` | 11.2/300 | opaque | **3.78** | 4.5 | 2 | 1 | `div.tl2-year.t` |
+| light | `#585244` | 13.1/300 | #bg-canvas | **4.35** | 4.5 | 18 | 1 | `div.le-meta` |
+| light | `#81632b` | 59.2/800 | cover | 4.52 | 3.0 | 1 | 1 | `h1.home-title` |
+| light | `#171307` | 12.5/500 | opaque | 4.63 | 4.5 | 12 | 5 | `button.f-btn.on` |
+| dark | `#ca6478` | 12.5/500 | opaque | 4.69 | 4.5 | 5 | 1 | `b.ig-rel.e-rivaled` |
+| dark | `#9b937f` | 12.5/300 | opaque | 4.90 | 4.5 | 6 | 1 | `span` |
+| light | `#476a98` | 9.9/300 | opaque | 5.14 | 4.5 | 3 | 1 | `div.ec-kicker` |
+| light | `#476a98` | 21.6/300 | opaque | 5.14 | 4.5 | 3 | 1 | `span.ec-arrow` |
+| dark | `#0d0c0a` | 10.9/500 | opaque | 5.15 | 4.5 | 18 | 1 | `span` |
+| dark | `#9b937f` | 15.2/300 | opaque | 5.15 | 4.5 | 2 | 1 | `div.mu-sub` |
+| light | `#0d0c0a` | 10.9/500 | opaque | 5.15 | 4.5 | 18 | 1 | `span` |
+| light | `#b43e56` | 12.5/500 | opaque | 5.17 | 4.5 | 5 | 1 | `b.ig-rel.e-rivaled` |
+| light | `#6b5122` | 18.9/300 | opaque | 5.17 | 4.5 | 2 | 1 | `div.mu-hook` |
+| light | `#2b7368` | 9.9/300 | opaque | 5.18 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| light | `#2b7368` | 21.6/300 | opaque | 5.18 | 4.5 | 4 | 2 | `span.ec-arrow` |
+| light | `#2b7368` | 9.3/500 | opaque | 5.18 | 4.5 | 2 | 1 | `span.badge-soon` |
+| light | `#2b7368` | 12.5/500 | opaque | 5.18 | 4.5 | 5 | 1 | `b.ig-rel.e-influenced` |
+| light | `#a05141` | 9.9/300 | opaque | 5.19 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| light | `#a05141` | 21.6/300 | opaque | 5.19 | 4.5 | 5 | 2 | `span.ec-arrow` |
+| light | `#544019` | 12.5/700 | opaque | 5.24 | 4.5 | 20 | 10 | `a.active` |
+| light | `#000000` | 13.0/300 | opaque | 5.25 | 4.5 | 74 | 1 | `text.md-flag` |
+| light | `#585244` | 12.5/300 | opaque | 5.26 | 4.5 | 6 | 1 | `span` |
+| light | `#585244` | 10.5/300 | #bg-canvas | 5.33 | 4.5 | 8 | 1 | `text` |
+| light | `#585244` | 15.2/300 | opaque | 5.34 | 4.5 | 2 | 1 | `div.mu-sub` |
+| dark | `#c9a45c` | 32.0/800 | cover | 5.42 | 3.0 | 1 | 1 | `h1.home-title` |
+| dark | `#9b937f` | 13.1/300 | #bg-canvas | 5.50 | 4.5 | 19 | 1 | `div.le-meta` |
+| light | `#544019` | 13.1/300 | #bg-canvas | 5.54 | 4.5 | 29 | 3 | `a` |
+| light | `#544019` | 17.9/600 | #bg-canvas | 5.55 | 4.5 | 18 | 1 | `a` |
+| light | `#544019` | 13.8/700 | canvas+cover | 5.55 | 4.5 | 8 | 5 | `a.active` |
+| light | `#544019` | 13.8/700 | #bg-canvas | 5.57 | 4.5 | 30 | 14 | `a.active` |
+| light | `#433c31` | 13.8/500 | cover | 5.57 | 4.5 | 95 | 12 | `a` |
+| light | `#433c31` | 12.5/500 | cover | 5.57 | 4.5 | 127 | 17 | `a` |
+| light | `#433c31` | 13.8/500 | #bg-canvas | 5.65 | 4.5 | 380 | 33 | `a` |
+| light | `#433c31` | 9.3/400 | opaque | 5.65 | 4.5 | 64 | 27 | `span.brand-sub` |
+| light | `#433c31` | 12.5/500 | opaque | 5.69 | 4.5 | 124 | 23 | `a` |
+| light | `#433c31` | 9.3/400 | canvas+cover | 5.71 | 4.5 | 37 | 17 | `span.brand-sub` |
+| dark | `#c97b6a` | 9.9/300 | opaque | 5.72 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| dark | `#c97b6a` | 21.6/300 | opaque | 5.72 | 4.5 | 5 | 2 | `span.ec-arrow` |
+| light | `#433c31` | 9.3/400 | cover | 5.76 | 4.5 | 29 | 15 | `span.brand-sub` |
+| light | `#544019` | 14.7/300 | cover | 5.76 | 4.5 | 17 | 9 | `a` |
+| light | `#544019` | 13.8/700 | cover | 5.80 | 4.5 | 16 | 9 | `a.active` |
+| light | `#433c31` | 13.8/500 | canvas+cover | 5.82 | 4.5 | 83 | 14 | `a` |
+| light | `#544019` | 13.8/700 | opaque | 5.83 | 4.5 | 43 | 16 | `a.active` |
+| light | `#544019` | 19.2/300 | #bg-canvas | 5.86 | 4.5 | 21 | 3 | `span` |
+| light | `#544019` | 12.5/700 | cover | 5.87 | 4.5 | 2 | 1 | `a.active` |
+| light | `#433c31` | 13.8/500 | opaque | 5.88 | 4.5 | 289 | 26 | `a` |
+| light | `#544019` | 16.3/300 | #bg-canvas | 5.96 | 4.5 | 18 | 1 | `div.arc-when` |
+| dark | `#c9a45c` | 59.2/800 | cover | 5.99 | 3.0 | 1 | 1 | `h1.home-title` |
+| light | `#433c31` | 9.3/400 | #bg-canvas | 6.01 | 4.5 | 139 | 32 | `span.brand-sub` |
+| dark | `#9b937f` | 14.4/300 | opaque | 6.02 | 4.5 | 15 | 2 | `p` |
+| dark | `#9b937f` | 13.4/300 | opaque | 6.02 | 4.5 | 613 | 20 | `div.card-tagline` |
+| dark | `#9b937f` | 13.1/300 | opaque | 6.02 | 4.5 | 16 | 3 | `p` |
+| dark | `#9b937f` | 10.9/300 | opaque | 6.02 | 4.5 | 16 | 2 | `div.lbl` |
+| dark | `#9b937f` | 12.2/300 | opaque | 6.02 | 4.5 | 582 | 19 | `div.card-meta` |
+| dark | `#9b937f` | 11.8/300 | opaque | 6.02 | 4.5 | 114 | 3 | `a.branch-chip` |
+| dark | `#9b937f` | 11.2/300 | opaque | 6.02 | 4.5 | 19 | 1 | `em` |
+| dark | `#9b937f` | 12.8/300 | opaque | 6.02 | 4.5 | 2 | 1 | `div.mu-panel-meta` |
+| dark | `#9b937f` | 10.5/300 | #bg-canvas | 6.07 | 4.5 | 8 | 1 | `text` |
+| light | `#433c31` | 12.5/500 | #bg-canvas | 6.07 | 4.5 | 270 | 33 | `a` |
+| light | `#544019` | 13.4/500 | #bg-canvas | 6.11 | 4.5 | 8 | 4 | `a.aw-btn.primary` |
+| light | `#544019` | 16.0/300 | cover | 6.11 | 4.5 | 17 | 9 | `a` |
+| light | `#433c31` | 14.7/300 | #bg-canvas | 6.12 | 4.5 | 61 | 24 | `span` |
+| light | `#544019` | 15.5/300 | #bg-canvas | 6.12 | 4.5 | 4 | 1 | `a` |
+| light | `#544019` | 10.9/300 | #bg-canvas | 6.13 | 4.5 | 28 | 14 | `div.page-kicker` |
+| light | `#433c31` | 12.5/300 | cover | 6.20 | 4.5 | 120 | 12 | `a` |
+| light | `#433c31` | 12.5/300 | #bg-canvas | 6.22 | 4.5 | 580 | 24 | `a` |
+| light | `#433c31` | 15.2/300 | #bg-canvas | 6.22 | 4.5 | 79 | 2 | `li` |
+| light | `#544019` | 10.4/300 | #bg-canvas | 6.24 | 4.5 | 4 | 2 | `div.daily-kicker` |
+| light | `#544019` | 16.0/300 | #bg-canvas | 6.26 | 4.5 | 15 | 4 | `a` |
+| light | `#433c31` | 12.5/500 | canvas+cover | 6.30 | 4.5 | 38 | 9 | `a` |
+| light | `#433c31` | 14.7/300 | cover | 6.33 | 4.5 | 21 | 12 | `span` |
+| light | `#544019` | 12.2/400 | #bg-canvas | 6.38 | 4.5 | 2 | 1 | `button.tl2-leg.tl2-leg-more` |
+| light | `#544019` | 12.5/700 | canvas+cover | 6.39 | 4.5 | 1 | 1 | `a.active` |
+| light | `#433c31` | 16.0/300 | cover | 6.47 | 4.5 | 33 | 12 | `span` |
+| dark | `#7d9cc0` | 9.9/300 | opaque | 6.48 | 4.5 | 3 | 1 | `div.ec-kicker` |
+| dark | `#7d9cc0` | 21.6/300 | opaque | 6.48 | 4.5 | 3 | 1 | `span.ec-arrow` |
+| light | `#433c31` | 15.5/300 | #bg-canvas | 6.49 | 4.5 | 26 | 2 | `p` |
+| light | `#433c31` | 12.2/400 | #bg-canvas | 6.53 | 4.5 | 42 | 2 | `button.tl2-leg` |
+| light | `#433c31` | 11.8/300 | #bg-canvas | 6.53 | 4.5 | 6 | 2 | `p.map-hint` |
+| light | `#544019` | 16.8/500 | #bg-canvas | 6.53 | 4.5 | 6 | 2 | `a.aw-btn.primary.ob-cta` |
+| light | `#433c31` | 15.8/300 | #bg-canvas | 6.54 | 4.5 | 20 | 10 | `p.desc-col` |
+| light | `#585244` | 13.1/300 | opaque | 6.59 | 4.5 | 17 | 3 | `p` |
+| light | `#433c31` | 11.2/300 | cover | 6.59 | 4.5 | 8 | 1 | `span` |
+| light | `#544019` | 12.5/700 | #bg-canvas | 6.62 | 4.5 | 22 | 10 | `a.active` |
+| light | `#433c31` | 17.9/300 | #bg-canvas | 6.65 | 4.5 | 2 | 1 | `p.daily-note` |
+| light | `#433c31` | 17.9/300 | cover | 6.66 | 4.5 | 12 | 12 | `div.hero-tagline` |
+| light | `#433c31` | 16.3/300 | #bg-canvas | 6.72 | 4.5 | 35 | 16 | `p.page-lede` |
+| light | `#433c31` | 10.4/300 | #bg-canvas | 6.78 | 4.5 | 6 | 2 | `span` |
+| light | `#433c31` | 13.1/300 | #bg-canvas | 6.83 | 4.5 | 6 | 2 | `span` |
+| light | `#433c31` | 11.2/300 | #bg-canvas | 6.83 | 4.5 | 30 | 8 | `span.tl-year.end` |
+| light | `#433c31` | 12.8/400 | #bg-canvas | 6.84 | 4.5 | 27 | 12 | `span.count` |
+| light | `#544019` | 12.2/300 | #bg-canvas | 6.86 | 4.5 | 5 | 2 | `a.daily-enter` |
+| dark | `#e8c98a` | 13.8/700 | opaque | 6.89 | 4.5 | 50 | 22 | `a.active` |
+| light | `#433c31` | 11.5/300 | #bg-canvas | 6.97 | 4.5 | 14 | 1 | `span.mc-meta` |
+| light | `#433c31` | 16.8/300 | cover | 7.02 | 4.5 | 2 | 1 | `p.lede` |
+| light | `#433c31` | 16.8/300 | #bg-canvas | 7.03 | 4.5 | 1 | 1 | `p` |
+| light | `#433c31` | 12.5/400 | #bg-canvas | 7.05 | 4.5 | 39 | 4 | `button.f-btn` |
+| light | `#433c31` | 12.2/300 | cover | 7.06 | 4.5 | 4 | 1 | `a` |
+| dark | `#d8d2c4` | 13.8/500 | opaque | 7.10 | 4.5 | 429 | 33 | `a` |
+| light | `#433c31` | 9.9/300 | #bg-canvas | 7.12 | 4.5 | 32 | 15 | `a.chip-label` |
+| light | `#585244` | 14.4/300 | opaque | 7.19 | 4.5 | 15 | 2 | `p` |
+| light | `#585244` | 13.4/300 | opaque | 7.19 | 4.5 | 613 | 20 | `div.card-tagline` |
+| light | `#585244` | 10.9/300 | opaque | 7.19 | 4.5 | 16 | 2 | `div.lbl` |
+| light | `#585244` | 12.2/300 | opaque | 7.19 | 4.5 | 582 | 19 | `div.card-meta` |
+| light | `#585244` | 11.8/300 | opaque | 7.19 | 4.5 | 115 | 3 | `a.branch-chip` |
+| light | `#585244` | 11.2/300 | opaque | 7.19 | 4.5 | 19 | 1 | `em` |
+| light | `#585244` | 12.8/300 | opaque | 7.19 | 4.5 | 2 | 1 | `div.mu-panel-meta` |
+| light | `#433c31` | 12.0/300 | #bg-canvas | 7.23 | 4.5 | 4 | 1 | `p.daily-return` |
+| light | `#433c31` | 16.0/300 | #bg-canvas | 7.25 | 4.5 | 7 | 3 | `p` |
+| dark | `#6fb3a8` | 12.5/500 | opaque | 7.27 | 4.5 | 5 | 1 | `b.ig-rel.e-influenced` |
+| light | `#544019` | 38.4/400 | #bg-canvas | 7.31 | 3.0 | 2 | 1 | `b` |
+| light | `#433c31` | 10.9/300 | #bg-canvas | 7.32 | 4.5 | 8 | 3 | `span.f-label` |
+| dark | `#d8d2c4` | 13.8/500 | #bg-canvas | 7.33 | 4.5 | 239 | 23 | `a` |
+| light | `#1b4a43` | 9.9/400 | #bg-canvas | 7.39 | 4.5 | 5 | 2 | `b` |
+| dark | `#e8c98a` | 13.8/700 | cover | 7.43 | 4.5 | 16 | 10 | `a.active` |
+| dark | `#d8d2c4` | 12.5/500 | cover | 7.52 | 4.5 | 129 | 16 | `a` |
+| dark | `#d8d2c4` | 12.5/500 | canvas+cover | 7.53 | 4.5 | 34 | 9 | `a` |
+| dark | `#d8d2c4` | 13.8/500 | cover | 7.54 | 4.5 | 121 | 15 | `a` |
+| light | `#433c31` | 16.5/300 | #bg-canvas | 7.60 | 4.5 | 2 | 1 | `p.daily-note` |
+| light | `#433c31` | 12.5/300 | opaque | 7.61 | 4.5 | 105 | 18 | `a` |
+| dark | `#6fb3a8` | 9.9/300 | opaque | 7.62 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| dark | `#6fb3a8` | 21.6/300 | opaque | 7.62 | 4.5 | 4 | 2 | `span.ec-arrow` |
+| dark | `#6fb3a8` | 9.3/500 | opaque | 7.62 | 4.5 | 2 | 1 | `span.badge-soon` |
+| dark | `#d8d2c4` | 9.3/400 | cover | 7.65 | 4.5 | 37 | 16 | `span.brand-sub` |
+| light | `#2b2620` | 23.2/800 | opaque | 7.78 | 3.0 | 62 | 26 | `span.brand-text` |
+| light | `#2b2620` | 23.2/800 | cover | 7.83 | 3.0 | 29 | 15 | `span.brand-text` |
+| light | `#2b2620` | 23.2/800 | canvas+cover | 7.86 | 3.0 | 37 | 17 | `span.brand-text` |
+| dark | `#171307` | 12.5/500 | opaque | 7.90 | 4.5 | 12 | 5 | `button.f-btn.on` |
+| light | `#544019` | 14.7/300 | #bg-canvas | 7.95 | 4.5 | 1 | 1 | `a` |
+| dark | `#e8c98a` | 11.5/300 | cover | 7.97 | 4.5 | 2 | 1 | `div.kicker` |
+| dark | `#e8c98a` | 12.2/300 | cover | 7.97 | 4.5 | 2 | 1 | `a` |
+| dark | `#e8c98a` | 13.8/700 | canvas+cover | 8.10 | 4.5 | 8 | 5 | `a.active` |
+| dark | `#d8d2c4` | 9.3/400 | opaque | 8.12 | 4.5 | 102 | 31 | `span.brand-sub` |
+| dark | `#e8c98a` | 14.7/300 | cover | 8.18 | 4.5 | 17 | 9 | `a` |
+| dark | `#d8d2c4` | 13.8/500 | canvas+cover | 8.27 | 4.5 | 58 | 13 | `a` |
+| dark | `#d8d2c4` | 12.5/300 | cover | 8.27 | 4.5 | 120 | 12 | `a` |
+| dark | `#e8c98a` | 16.0/300 | cover | 8.27 | 4.5 | 17 | 9 | `a` |
+| light | `#2b2620` | 23.2/800 | #bg-canvas | 8.28 | 3.0 | 141 | 32 | `span.brand-text` |
+| light | `#433c31` | 12.2/300 | #bg-canvas | 8.28 | 4.5 | 32 | 21 | `p.footer-note` |
+| dark | `#e8c98a` | 12.5/700 | opaque | 8.29 | 4.5 | 23 | 10 | `a.active` |
+| dark | `#d8d2c4` | 9.3/400 | canvas+cover | 8.33 | 4.5 | 29 | 16 | `span.brand-sub` |
+| dark | `#d8d2c4` | 12.5/500 | opaque | 8.36 | 4.5 | 143 | 27 | `a` |
+| light | `#544019` | 13.1/300 | opaque | 8.40 | 4.5 | 8 | 2 | `a` |
+| light | `#544019` | 16.0/300 | opaque | 8.40 | 4.5 | 1 | 1 | `a` |
+| light | `#544019` | 13.4/500 | opaque | 8.40 | 4.5 | 1 | 1 | `button.aw-btn.primary` |
+| light | `#544019` | 19.2/300 | opaque | 8.40 | 4.5 | 5 | 1 | `span.le-num` |
+| light | `#544019` | 17.9/600 | opaque | 8.40 | 4.5 | 3 | 1 | `a` |
+| dark | `#d8d2c4` | 16.8/300 | cover | 8.44 | 4.5 | 2 | 1 | `p.lede` |
+| dark | `#d8d2c4` | 12.2/300 | cover | 8.44 | 4.5 | 2 | 1 | `p.footer-note` |
+| light | `#2b2620` | 16.0/300 | #bg-canvas | 8.58 | 4.5 | 26 | 3 | `p` |
+| light | `#544019` | 10.2/300 | opaque | 8.62 | 4.5 | 62 | 5 | `div.lc-kicker` |
+| light | `#2b2620` | 30.4/800 | cover | 8.62 | 3.0 | 12 | 12 | `h1` |
+| dark | `#d8d2c4` | 14.7/300 | cover | 8.66 | 4.5 | 21 | 12 | `span` |
+| light | `#2b2620` | 16.8/600 | cover | 8.71 | 4.5 | 10 | 1 | `b` |
+| light | `#2b2620` | 57.6/800 | cover | 8.74 | 3.0 | 12 | 12 | `h1` |
+| dark | `#d8d2c4` | 16.0/300 | cover | 8.76 | 4.5 | 33 | 12 | `span` |
+| dark | `#ece6d9` | 23.2/800 | cover | 8.86 | 3.0 | 36 | 16 | `span.brand-text` |
+| dark | `#d8d2c4` | 11.2/300 | cover | 8.88 | 4.5 | 8 | 1 | `span` |
+| dark | `#d8d2c4` | 17.9/300 | cover | 8.89 | 4.5 | 12 | 12 | `div.hero-tagline` |
+| light | `#2b2620` | 18.9/600 | #bg-canvas | 8.95 | 4.5 | 17 | 1 | `h3` |
+| light | `#2b2620` | 23.2/600 | #bg-canvas | 8.96 | 4.5 | 74 | 17 | `h2.sec-title` |
+| light | `#433c31` | 14.7/300 | opaque | 9.09 | 4.5 | 4 | 1 | `p.le-note` |
+| dark | `#ece6d9` | 23.2/800 | opaque | 9.12 | 3.0 | 99 | 31 | `span.brand-text` |
+| light | `#544019` | 16.8/400 | opaque | 9.16 | 4.5 | 269 | 33 | `button` |
+| light | `#544019` | 9.9/300 | opaque | 9.16 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| light | `#544019` | 12.8/400 | opaque | 9.16 | 4.5 | 1 | 1 | `button.ec-surprise` |
+| light | `#544019` | 21.6/300 | opaque | 9.16 | 4.5 | 3 | 2 | `span.ec-arrow` |
+| light | `#544019` | 27.2/800 | opaque | 9.16 | 3.0 | 10 | 1 | `span.n` |
+| light | `#544019` | 33.6/800 | opaque | 9.16 | 3.0 | 19 | 2 | `div.num` |
+| light | `#544019` | 16.8/600 | opaque | 9.16 | 4.5 | 23 | 2 | `h3` |
+| light | `#544019` | 14.4/500 | opaque | 9.16 | 4.5 | 4 | 1 | `b` |
+| light | `#544019` | 15.2/300 | opaque | 9.16 | 4.5 | 2 | 1 | `div.mu-panel-hook` |
+| light | `#2b2620` | 12.5/400 | #bg-canvas | 9.19 | 4.5 | 177 | 17 | `a.chip` |
+| light | `#2b2620` | 32.0/800 | #bg-canvas | 9.21 | 3.0 | 17 | 17 | `h1.display` |
+| light | `#433c31` | 9.9/300 | opaque | 9.25 | 4.5 | 11 | 5 | `a.chip-label` |
+| light | `#433c31` | 12.5/400 | opaque | 9.25 | 4.5 | 5 | 2 | `button.f-btn` |
+| light | `#433c31` | 12.2/300 | opaque | 9.25 | 4.5 | 5 | 4 | `p.footer-note` |
+| light | `#433c31` | 15.2/300 | opaque | 9.25 | 4.5 | 12 | 1 | `a.cr-what` |
+| light | `#433c31` | 11.2/300 | opaque | 9.25 | 4.5 | 4 | 3 | `span.tl-year.end` |
+| light | `#2b2620` | 13.4/400 | #bg-canvas | 9.26 | 4.5 | 32 | 4 | `button.aw-btn` |
+| dark | `#e8c98a` | 13.8/700 | #bg-canvas | 9.28 | 4.5 | 23 | 9 | `a.active` |
+| dark | `#d8d2c4` | 12.5/500 | #bg-canvas | 9.28 | 4.5 | 253 | 33 | `a` |
+| light | `#2b2620` | 13.0/300 | #bg-canvas | 9.30 | 4.5 | 25 | 1 | `code` |
+| dark | `#d8d2c4` | 16.3/300 | #bg-canvas | 9.47 | 4.5 | 35 | 16 | `p.page-lede` |
+| light | `#2b2620` | 22.4/600 | #bg-canvas | 9.51 | 4.5 | 6 | 1 | `h2` |
+| light | `#2b2620` | 14.4/300 | #bg-canvas | 9.60 | 4.5 | 14 | 1 | `span.mc-name` |
+| dark | `#d8d2c4` | 12.5/300 | opaque | 9.64 | 4.5 | 91 | 5 | `a` |
+| light | `#2b2620` | 11.5/300 | cover | 9.67 | 4.5 | 2 | 1 | `div.kicker` |
+| light | `#2b2620` | 15.4/300 | #bg-canvas | 9.73 | 4.5 | 5 | 2 | `span` |
+| dark | `#e8c98a` | 10.9/300 | #bg-canvas | 9.81 | 4.5 | 27 | 14 | `div.page-kicker` |
+| dark | `#d8d2c4` | 15.5/300 | #bg-canvas | 9.81 | 4.5 | 26 | 2 | `p` |
+| dark | `#d8d2c4` | 12.8/400 | #bg-canvas | 9.83 | 4.5 | 23 | 12 | `span.count` |
+| light | `#2b2620` | 54.4/800 | #bg-canvas | 9.98 | 3.0 | 16 | 16 | `h1.display` |
+| dark | `#e8c98a` | 10.4/300 | #bg-canvas | 10.04 | 4.5 | 4 | 2 | `div.daily-kicker` |
+| dark | `#d8d2c4` | 9.3/400 | #bg-canvas | 10.05 | 4.5 | 101 | 31 | `span.brand-sub` |
+| dark | `#e8c98a` | 12.5/700 | cover | 10.06 | 4.5 | 2 | 1 | `a.active` |
+| dark | `#ece6d9` | 23.2/800 | canvas+cover | 10.09 | 3.0 | 31 | 16 | `span.brand-text` |
+| dark | `#e8c98a` | 16.3/300 | #bg-canvas | 10.09 | 4.5 | 18 | 1 | `div.arc-when` |
+| light | `#433c31` | 11.5/300 | opaque | 10.09 | 4.5 | 39 | 2 | `span.mc-meta` |
+| light | `#433c31` | 11.8/300 | opaque | 10.09 | 4.5 | 2 | 1 | `p.map-hint` |
+| light | `#2b2620` | 16.0/400 | #bg-canvas | 10.12 | 4.5 | 3 | 1 | `strong` |
+| dark | `#e8c98a` | 10.2/300 | opaque | 10.14 | 4.5 | 62 | 5 | `div.lc-kicker` |
+| light | `#2b2620` | 32.0/800 | opaque | 10.16 | 3.0 | 1 | 1 | `h1.display` |
+| dark | `#e8c98a` | 18.9/300 | opaque | 10.17 | 4.5 | 2 | 1 | `div.mu-hook` |
+| dark | `#ece6d9` | 57.6/800 | cover | 10.21 | 3.0 | 12 | 12 | `h1` |
+| dark | `#ece6d9` | 30.4/800 | cover | 10.21 | 3.0 | 12 | 12 | `h1` |
+| light | `#2b2620` | 48.0/600 | #bg-canvas | 10.22 | 3.0 | 2 | 1 | `h1` |
+| dark | `#e8c98a` | 13.1/300 | #bg-canvas | 10.26 | 4.5 | 30 | 3 | `a` |
+| light | `#2b2620` | 54.4/800 | opaque | 10.26 | 3.0 | 1 | 1 | `h1.display` |
+| dark | `#e8c98a` | 12.2/300 | #bg-canvas | 10.32 | 4.5 | 5 | 2 | `a.daily-enter` |
+| dark | `#ece6d9` | 16.8/600 | cover | 10.32 | 4.5 | 10 | 1 | `b` |
+| dark | `#e8c98a` | 16.0/300 | #bg-canvas | 10.32 | 4.5 | 14 | 4 | `a` |
+| dark | `#e8c98a` | 19.2/300 | #bg-canvas | 10.34 | 4.5 | 23 | 3 | `span` |
+| dark | `#e8c98a` | 15.5/300 | #bg-canvas | 10.40 | 4.5 | 4 | 1 | `a` |
+| dark | `#e8c98a` | 17.9/600 | #bg-canvas | 10.40 | 4.5 | 20 | 1 | `a` |
+| dark | `#e8c98a` | 12.5/700 | canvas+cover | 10.45 | 4.5 | 1 | 1 | `a.active` |
+| dark | `#d8d2c4` | 15.8/300 | #bg-canvas | 10.46 | 4.5 | 20 | 10 | `p.desc-col` |
+| dark | `#d8d2c4` | 12.5/400 | #bg-canvas | 10.50 | 4.5 | 27 | 4 | `button.f-btn` |
+| dark | `#e8c98a` | 38.4/400 | #bg-canvas | 10.51 | 3.0 | 2 | 1 | `b` |
+| light | `#2b2620` | 52.0/800 | #bg-canvas | 10.51 | 3.0 | 1 | 1 | `h1.display` |
+| light | `#2b2620` | 12.5/400 | opaque | 10.54 | 4.5 | 36 | 10 | `a.chip` |
+| dark | `#e8c98a` | 13.4/500 | #bg-canvas | 10.58 | 4.5 | 9 | 4 | `a.aw-btn.primary` |
+| dark | `#d8d2c4` | 15.2/300 | #bg-canvas | 10.61 | 4.5 | 89 | 2 | `li` |
+| dark | `#e8c98a` | 16.8/500 | #bg-canvas | 10.62 | 4.5 | 5 | 2 | `a.aw-btn.primary.ob-cta` |
+| dark | `#d8d2c4` | 10.4/300 | #bg-canvas | 10.64 | 4.5 | 6 | 2 | `span` |
+| dark | `#e8c98a` | 12.2/400 | #bg-canvas | 10.67 | 4.5 | 2 | 1 | `button.tl2-leg.tl2-leg-more` |
+| dark | `#d8d2c4` | 17.9/300 | #bg-canvas | 10.73 | 4.5 | 2 | 1 | `p.daily-note` |
+| dark | `#d8d2c4` | 12.5/300 | #bg-canvas | 10.80 | 4.5 | 594 | 25 | `a` |
+| dark | `#d8d2c4` | 16.8/300 | #bg-canvas | 10.82 | 4.5 | 1 | 1 | `p` |
+| dark | `#e8c98a` | 12.5/700 | #bg-canvas | 10.85 | 4.5 | 19 | 10 | `a.active` |
+| dark | `#d8d2c4` | 14.7/300 | #bg-canvas | 10.86 | 4.5 | 65 | 24 | `span` |
+| dark | `#d8d2c4` | 9.9/300 | #bg-canvas | 10.89 | 4.5 | 27 | 14 | `a.chip-label` |
+| dark | `#d8d2c4` | 10.9/300 | #bg-canvas | 10.89 | 4.5 | 6 | 3 | `span.f-label` |
+| dark | `#d8d2c4` | 16.0/300 | #bg-canvas | 10.89 | 4.5 | 5 | 2 | `p` |
+| dark | `#d8d2c4` | 12.0/300 | #bg-canvas | 10.93 | 4.5 | 4 | 1 | `p.daily-return` |
+| dark | `#b0dad3` | 9.9/400 | #bg-canvas | 10.97 | 4.5 | 5 | 2 | `b` |
+| dark | `#d8d2c4` | 11.8/300 | #bg-canvas | 11.02 | 4.5 | 6 | 2 | `p.map-hint` |
+| dark | `#d8d2c4` | 13.1/300 | #bg-canvas | 11.04 | 4.5 | 6 | 2 | `span` |
+| dark | `#d8d2c4` | 11.2/300 | #bg-canvas | 11.07 | 4.5 | 27 | 8 | `span.tl-year.end` |
+| light | `#2b2620` | 38.4/600 | #bg-canvas | 11.11 | 3.0 | 1 | 1 | `a` |
+| dark | `#d8d2c4` | 11.5/300 | #bg-canvas | 11.21 | 4.5 | 13 | 1 | `span.mc-meta` |
+| dark | `#d8d2c4` | 12.2/400 | #bg-canvas | 11.23 | 4.5 | 27 | 2 | `button.tl2-leg` |
+| light | `#2b2620` | 14.7/400 | #bg-canvas | 11.29 | 4.5 | 39 | 23 | `strong` |
+| dark | `#e8c98a` | 16.8/400 | opaque | 11.53 | 4.5 | 269 | 33 | `button` |
+| dark | `#e8c98a` | 9.9/300 | opaque | 11.53 | 4.5 | 4 | 2 | `div.ec-kicker` |
+| dark | `#e8c98a` | 12.8/400 | opaque | 11.53 | 4.5 | 1 | 1 | `button.ec-surprise` |
+| dark | `#e8c98a` | 21.6/300 | opaque | 11.53 | 4.5 | 3 | 2 | `span.ec-arrow` |
+| dark | `#e8c98a` | 27.2/800 | opaque | 11.53 | 3.0 | 10 | 1 | `span.n` |
+| dark | `#e8c98a` | 13.1/300 | opaque | 11.53 | 4.5 | 7 | 3 | `a` |
+| dark | `#e8c98a` | 33.6/800 | opaque | 11.53 | 3.0 | 19 | 2 | `div.num` |
+| dark | `#e8c98a` | 16.8/600 | opaque | 11.53 | 4.5 | 23 | 2 | `h3` |
+| dark | `#e8c98a` | 14.4/500 | opaque | 11.53 | 4.5 | 4 | 1 | `b` |
+| dark | `#e8c98a` | 15.2/300 | opaque | 11.53 | 4.5 | 2 | 1 | `div.mu-panel-hook` |
+| light | `#2b2620` | 30.4/600 | #bg-canvas | 11.69 | 3.0 | 1 | 1 | `a` |
+| light | `#2b2620` | 27.2/800 | #bg-canvas | 11.84 | 3.0 | 1 | 1 | `h1.display` |
+| dark | `#d8d2c4` | 16.5/300 | #bg-canvas | 11.88 | 4.5 | 2 | 1 | `p.daily-note` |
+| dark | `#ece6d9` | 23.2/600 | #bg-canvas | 11.88 | 4.5 | 71 | 17 | `h2.sec-title` |
+| dark | `#ece6d9` | 16.0/300 | #bg-canvas | 11.88 | 4.5 | 24 | 3 | `p` |
+| dark | `#ece6d9` | 54.4/800 | #bg-canvas | 11.97 | 3.0 | 16 | 16 | `h1.display` |
+| dark | `#ece6d9` | 12.5/400 | #bg-canvas | 12.09 | 4.5 | 147 | 16 | `a.chip` |
+| dark | `#ece6d9` | 23.2/800 | #bg-canvas | 12.17 | 3.0 | 103 | 31 | `span.brand-text` |
+| dark | `#d8d2c4` | 12.5/400 | opaque | 12.21 | 4.5 | 17 | 4 | `button.f-btn` |
+| dark | `#d8d2c4` | 11.5/300 | opaque | 12.21 | 4.5 | 40 | 3 | `span.mc-meta` |
+| dark | `#d8d2c4` | 9.9/300 | opaque | 12.21 | 4.5 | 16 | 8 | `a.chip-label` |
+| dark | `#d8d2c4` | 11.8/300 | opaque | 12.21 | 4.5 | 2 | 1 | `p.map-hint` |
+| dark | `#e8c98a` | 16.0/300 | opaque | 12.25 | 4.5 | 2 | 2 | `a` |
+| dark | `#e8c98a` | 17.9/600 | opaque | 12.25 | 4.5 | 1 | 1 | `a` |
+| dark | `#e8c98a` | 16.8/500 | opaque | 12.25 | 4.5 | 1 | 1 | `a.aw-btn.primary.ob-cta` |
+| dark | `#e8c98a` | 10.9/300 | opaque | 12.25 | 4.5 | 1 | 1 | `div.page-kicker` |
+| dark | `#e8c98a` | 14.7/300 | opaque | 12.25 | 4.5 | 1 | 1 | `a` |
+| dark | `#e8c98a` | 19.2/300 | opaque | 12.25 | 4.5 | 3 | 1 | `span.le-num` |
+| dark | `#d8d2c4` | 12.2/300 | #bg-canvas | 12.31 | 4.5 | 37 | 24 | `p.footer-note` |
+| dark | `#ece6d9` | 32.0/800 | opaque | 12.46 | 3.0 | 1 | 1 | `h1.display` |
+| light | `#2b2620` | 14.7/400 | opaque | 12.52 | 4.5 | 6 | 6 | `strong` |
+| dark | `#ece6d9` | 54.4/800 | opaque | 12.65 | 3.0 | 1 | 1 | `h1.display` |
+| dark | `#ece6d9` | 13.0/300 | #bg-canvas | 12.71 | 4.5 | 25 | 1 | `code` |
+| light | `#2b2620` | 18.9/600 | opaque | 12.73 | 4.5 | 1 | 1 | `h3` |
+| light | `#2b2620` | 41.6/800 | opaque | 12.73 | 3.0 | 2 | 1 | `h1.display` |
+| light | `#2b2620` | 23.2/600 | opaque | 12.73 | 4.5 | 1 | 1 | `h2.sec-title` |
+| dark | `#ece6d9` | 52.0/800 | #bg-canvas | 12.89 | 3.0 | 1 | 1 | `h1.display` |
+| dark | `#d8d2c4` | 12.8/400 | opaque | 12.97 | 4.5 | 4 | 4 | `span.count` |
+| dark | `#d8d2c4` | 16.0/300 | opaque | 12.97 | 4.5 | 2 | 1 | `span` |
+| dark | `#d8d2c4` | 12.2/400 | opaque | 12.97 | 4.5 | 15 | 2 | `button.tl2-leg` |
+| dark | `#d8d2c4` | 10.9/300 | opaque | 12.97 | 4.5 | 2 | 2 | `span.f-label` |
+| dark | `#d8d2c4` | 11.2/300 | opaque | 12.97 | 4.5 | 7 | 4 | `span.tl-year.end` |
+| dark | `#d8d2c4` | 15.2/300 | opaque | 12.97 | 4.5 | 2 | 1 | `a.cr-what` |
+| dark | `#ece6d9` | 32.0/800 | #bg-canvas | 12.99 | 3.0 | 17 | 17 | `h1.display` |
+| dark | `#ece6d9` | 17.9/300 | opaque | 13.02 | 4.5 | 2 | 1 | `p` |
+| dark | `#f2eee5` | 9.9/300 | opaque | 13.04 | 4.5 | 5 | 2 | `span` |
+| light | `#f2eee5` | 9.9/300 | opaque | 13.04 | 4.5 | 5 | 2 | `span` |
+| light | `#2b2620` | 17.9/300 | opaque | 13.07 | 4.5 | 2 | 1 | `p` |
+| dark | `#ece6d9` | 18.9/600 | #bg-canvas | 13.11 | 4.5 | 17 | 1 | `h3` |
+| dark | `#ece6d9` | 22.4/600 | #bg-canvas | 13.37 | 4.5 | 6 | 1 | `h2` |
+| dark | `#ece6d9` | 13.4/400 | #bg-canvas | 13.40 | 4.5 | 27 | 4 | `button.aw-btn` |
+| dark | `#ece6d9` | 12.5/400 | opaque | 13.42 | 4.5 | 66 | 14 | `a.chip.n` |
+| dark | `#ece6d9` | 15.4/300 | #bg-canvas | 13.44 | 4.5 | 5 | 2 | `span` |
+| dark | `#ece6d9` | 48.0/600 | #bg-canvas | 13.51 | 3.0 | 2 | 1 | `h1` |
+| dark | `#ece6d9` | 14.4/300 | #bg-canvas | 13.55 | 4.5 | 13 | 1 | `span.mc-name` |
+| light | `#2b2620` | 22.4/600 | opaque | 13.89 | 4.5 | 15 | 2 | `h3` |
+| light | `#2b2620` | 17.9/600 | opaque | 13.89 | 4.5 | 651 | 22 | `a` |
+| light | `#2b2620` | 17.3/600 | opaque | 13.89 | 4.5 | 9 | 1 | `b` |
+| light | `#2b2620` | 11.2/400 | opaque | 13.89 | 4.5 | 574 | 13 | `a.chip.m` |
+| light | `#2b2620` | 13.1/300 | opaque | 13.89 | 4.5 | 19 | 1 | `span.arc-work-t` |
+| light | `#2b2620` | 14.4/300 | opaque | 13.89 | 4.5 | 38 | 2 | `span.mc-name` |
+| light | `#2b2620` | 17.3/300 | opaque | 13.89 | 4.5 | 2 | 1 | `a.mu-panel-name` |
+| light | `#2b2620` | 16.0/300 | opaque | 13.89 | 4.5 | 2 | 1 | `span.f-label` |
+| dark | `#ece6d9` | 11.2/400 | opaque | 14.12 | 4.5 | 572 | 13 | `a.chip.m` |
+| dark | `#ece6d9` | 30.4/600 | #bg-canvas | 14.38 | 3.0 | 1 | 1 | `a` |
+| dark | `#ece6d9` | 38.4/600 | #bg-canvas | 14.39 | 3.0 | 1 | 1 | `a` |
+| dark | `#ece6d9` | 22.4/600 | opaque | 14.80 | 4.5 | 15 | 2 | `h3` |
+| dark | `#ece6d9` | 17.9/600 | opaque | 14.80 | 4.5 | 651 | 22 | `a` |
+| dark | `#ece6d9` | 17.3/600 | opaque | 14.80 | 4.5 | 9 | 1 | `b` |
+| dark | `#ece6d9` | 13.1/300 | opaque | 14.80 | 4.5 | 19 | 1 | `span.arc-work-t` |
+| dark | `#ece6d9` | 14.4/300 | opaque | 14.80 | 4.5 | 39 | 3 | `span.mc-name` |
+| dark | `#ece6d9` | 17.3/300 | opaque | 14.80 | 4.5 | 2 | 1 | `a.mu-panel-name` |
+| dark | `#ece6d9` | 16.0/300 | opaque | 14.80 | 4.5 | 4 | 3 | `em` |
+| dark | `#ece6d9` | 14.7/400 | #bg-canvas | 14.85 | 4.5 | 45 | 24 | `strong` |
+| dark | `#ece6d9` | 16.0/400 | #bg-canvas | 14.98 | 4.5 | 3 | 1 | `strong` |
+| dark | `#ece6d9` | 41.6/800 | #bg-canvas | 15.70 | 3.0 | 2 | 1 | `h1.display` |
+| dark | `#ece6d9` | 18.9/600 | opaque | 15.72 | 4.5 | 1 | 1 | `h3` |
+| dark | `#ece6d9` | 13.4/400 | opaque | 15.72 | 4.5 | 5 | 2 | `button.aw-btn` |
+| dark | `#ece6d9` | 23.2/600 | opaque | 15.72 | 4.5 | 4 | 4 | `h2.sec-title` |
+| dark | `#ece6d9` | 27.2/800 | opaque | 15.72 | 3.0 | 1 | 1 | `h1.display` |
+
+ROUTE x CELL (rows measured)
+| route | light@1440 | dark@1440 | light@390 | dark@390 |
+| --- | --- | --- | --- | --- |
+| `#/` | 318 | 315 | 131 | 131 |
+| `#/artist/leonardo-da-vinci` | 287 | 287 | 111 | 111 |
+| `#/artists` | 193 | 193 | 81 | 81 |
+| `#/artwork/david` | 95 | 95 | 86 | 86 |
+| `#/credits` | 264 | 264 | 178 | 178 |
+| `#/daily` | 74 | 74 | 65 | 65 |
+| `#/era/14th-century` | 72 | 72 | 86 | 86 |
+| `#/era/15th-century` | 155 | 155 | 95 | 95 |
+| `#/era/16th-century` | 208 | 208 | 95 | 95 |
+| `#/era/17th-century` | 236 | 236 | 96 | 96 |
+| `#/era/18th-century` | 222 | 222 | 83 | 83 |
+| `#/era/19th-century` | 228 | 228 | 98 | 98 |
+| `#/era/20th-century` | 233 | 233 | 100 | 100 |
+| `#/era/21st-century` | 191 | 191 | 101 | 101 |
+| `#/eras` | 71 | 71 | 55 | 55 |
+| `#/explore` | 43 | 43 | 59 | 59 |
+| `#/influences` | 141 | 141 | 78 | 78 |
+| `#/list/paintings-that-still-scare-us` | 143 | 143 | 140 | 140 |
+| `#/lists` | 88 | 88 | 49 | 49 |
+| `#/movement/impressionism` | 187 | 187 | 80 | 80 |
+| `#/movements` | 147 | 147 | 66 | 66 |
+| `#/museum/louvre` | 155 | 155 | 79 | 79 |
+| `#/museums` | 110 | 110 | 48 | 48 |
+| `#/nation/italy` | 250 | 250 | 81 | 81 |
+| `#/nations` | 214 | 214 | 106 | 106 |
+| `#/no-such-page` | 28 | 28 | 36 | 36 |
+| `#/palette` | 28 | 28 | 35 | 35 |
+| `#/passport/import` | 28 | 28 | 36 | 36 |
+| `#/privacy` | 98 | 98 | 72 | 72 |
+| `#/taste` | 28 | 28 | 35 | 35 |
+| `#/technique/oil-painting` | 224 | 224 | 82 | 82 |
+| `#/techniques` | 148 | 148 | 66 | 66 |
+| `#/timeline` | 87 | 87 | 69 | 69 |
+
+OCCLUDED-PIXEL LOWS — NOT AC19 verdicts (3 groups)
+| theme | vp | route | occluder(s) | worst occluded | clean worst | n |
+| --- | --- | --- | --- | --- | --- | --- |
+| light | 390 | `#/daily` | `button.skip-link`, `header.site-header` | 1.07 | none (fully occluded) | 1 |
+| dark | 390 | `#/timeline` | `button.skip-link`, `header.site-header` | 1.09 | none (fully occluded) | 1 |
+| dark | 1440 | `#/timeline` | `button.skip-link`, `header.site-header` | 1.12 | none (fully occluded) | 2 |

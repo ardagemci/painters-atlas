@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-u32/sitecensus.py", line 456, in <module>
+    scan(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]))
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-u32/sitecensus.py", line 334, in scan
+    wait_settled(b)
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-u32/sitecensus.py", line 235, in wait_settled
+    b.ev("new Promise(function(r){setTimeout(r,180)})", await_promise=True)
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 211, in ev
+    r = self.cmd("Runtime.evaluate",
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 153, in cmd
+    m = json.loads(self.ws.recv())
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 67, in recv
+    b0, b1 = self._read(2)
+  File "/Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/cdp-r2/cdp.py", line 41, in _read
+    raise IOError("socket closed")
+OSError: socket closed

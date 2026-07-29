@@ -1,0 +1,40 @@
+#/                             controls=8   ink-changing=5   measured=5   FAIL=1
+#/artists                      controls=20  ink-changing=14  measured=14  FAIL=0
+#/artist/leonardo-da-vinci     controls=22  ink-changing=10  measured=10  FAIL=1
+#/artwork/david                controls=11  ink-changing=7   measured=7   FAIL=0
+#/explore                      controls=9   ink-changing=4   measured=4   FAIL=0
+#/timeline                     controls=35  ink-changing=21  measured=21  FAIL=0
+#/influences                   controls=17  ink-changing=10  measured=10  FAIL=0
+#/daily                        controls=11  ink-changing=7   measured=7   FAIL=0
+#/lists                        controls=10  ink-changing=5   measured=5   FAIL=0
+#/list/paintings-that-still-scare-us controls=10  ink-changing=6   measured=6   FAIL=0
+#/palette                      controls=11  ink-changing=5   measured=5   FAIL=0
+#/taste                        controls=12  ink-changing=7   measured=7   FAIL=3
+#/museums                      controls=10  ink-changing=5   measured=5   FAIL=0
+#/museum/louvre                controls=13  ink-changing=9   measured=9   FAIL=3
+#/movements                    controls=15  ink-changing=10  measured=10  FAIL=0
+#/movement/impressionism       controls=13  ink-changing=6   measured=6   FAIL=0
+#/techniques                   controls=17  ink-changing=11  measured=11  FAIL=0
+#/technique/oil-painting       controls=15  ink-changing=6   measured=6   FAIL=0
+#/eras                         controls=10  ink-changing=5   measured=5   FAIL=0
+#/era/16th-century             controls=16  ink-changing=8   measured=8   FAIL=0
+#/nations                      controls=48  ink-changing=21  measured=20  FAIL=0
+#/nation/italy                 controls=18  ink-changing=6   measured=6   FAIL=0
+#/privacy                      controls=8   ink-changing=4   measured=4   FAIL=0
+#/credits                      controls=10  ink-changing=6   measured=6   FAIL=2
+#/passport/import              controls=11  ink-changing=6   measured=6   FAIL=0
+#/no-such-page                 controls=11  ink-changing=6   measured=6   FAIL=2
+
+HOVER/FOCUS INK — light 390x844: 209 measured, 12 below floor
+  FAIL  1.21 need 4.5  button.chip              in #/taste                Copy share link    ink [255, 255, 255] -> [239, 233, 221]
+  FAIL  1.21 need 4.5  button.chip              in #/taste                Back up data (.jso ink [255, 255, 255] -> [239, 233, 221]
+  FAIL  1.22 need 4.5  button.chip              in #/artist/leonardo-da-v Share this page    ink [255, 255, 255] -> [238, 232, 221]
+  FAIL  1.24 need 4.5  button.chip              in #/taste                Reset everything   ink [255, 255, 255] -> [238, 230, 216]
+  FAIL  1.29 need 4.5  button.chip              in #/museum/louvre        Share this page    ink [255, 255, 255] -> [233, 226, 212]
+  FAIL  3.90 need 4.5  a                        in #/museum/louvre        file on Commons    ink [43, 38, 32] -> [70, 133, 202]
+  FAIL  3.92 need 4.5  a                        in #/no-such-page         atlas home         ink [43, 38, 32] -> [71, 133, 204]
+  FAIL  4.07 need 4.5  a                        in #/no-such-page         full collection    ink [43, 38, 32] -> [73, 136, 206]
+  FAIL  4.11 need 4.5  a                        in #/                     Paul Klee          ink [43, 38, 32] -> [73, 137, 207]
+  FAIL  4.14 need 4.5  a                        in #/credits              Privacy            ink [43, 38, 32] -> [78, 137, 207]
+  FAIL  4.18 need 4.5  a                        in #/museum/louvre        CC BY-SA 3.0       ink [43, 38, 32] -> [79, 138, 205]
+  FAIL  4.19 need 4.5  a                        in #/credits              Wikimedia Commons  ink [43, 38, 32] -> [77, 138, 209]
