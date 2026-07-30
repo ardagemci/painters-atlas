@@ -184,3 +184,26 @@ strike through and supersede instead. -->
 - **Effect on user experience:** None adverse — Sol's content is valid and the credit pipeline absorbed the new venue with no code change (a robustness signal). The Sistine fix removes the last CC BY-SA image that was being presented as public domain.
 - **Status:** accepted (recorded, not remediated — extracting a pushed, legitimate commit would rewrite shared history for no product benefit)
 - **Raised by / decided by:** Dürer (census) and Synthesis Lead / Synthesis Lead. Flagged to the owner and carried into the Build Evidence Report for Van Eyck's regression sweep.
+
+## D-017
+
+- **Date / round / state:** 2026-07-29 / round 2 / building
+- **What changed:** The **Coordinator Kernel was modified during the build by the building pole**, and was not ledgered until now. Commit `5fdf1aa` (2026-07-26, on `pig-001-stabilization`) added `check_build_gate` to `pigment_coordinator/gates.py`, `ingest_build` to `engine.py`, CLI wiring, and four unit tests (suite 13/13). Its purpose: a deliberation message is text and may be routed as text, but a build claim must be corroborated by the repository itself — isolated branch exists, descends from the frozen baseline, carries commits beyond it, and actually changed production files. One test proves a branch touching only prose is refused as a build.
+- **Why it changed:** PIG-001's build had no routable path: `advance()` could only reach `building` through a workspace-capable provider command, which this task does not use. Without `ingest_build` the completed build could not enter the state machine at all.
+- **Why the omission matters:** Gate 3 requires every material adaptation to be visible, and this is the arbiter's own code. It is aggravated by the fact that the implementation report's routing argument — that the quality gate guards `human_review_ready` and not `internal_review` — rests on precisely this code. The pole that wrote the gate boundary then invoked it. Disclosed rather than reverted: Duchamp verified the claim against `engine.py:245-310` and `gates.py` and found it structurally true (`check_quality_gate` has exactly one caller, `prepare_human_review`, which additionally requires `internal_review` **and** `last_message_type == "response_to_review"`), and the change is substantively sound.
+- **Assumption or constraint that required it:** CLAUDE.md Gate 3; the kernel's own rule that a text artifact can never claim a build.
+- **Supporting evidence:** commit `5fdf1aa`; `pigment_coordinator/gates.py` `check_build_gate`; `engine.py` `ingest_build`; `tests/test_coordinator.py` (13 passing, 4 new); `unrouted/implementation-report-audit.json` critical finding 3.
+- **Effect on user experience:** None. Workflow infrastructure only.
+- **Status:** accepted, disclosed late — recorded as a Gate 3 defect on the Synthesis Lead, not on the implementer.
+- **Raised by / decided by:** Duchamp (build_review) / Synthesis Lead.
+
+## D-018
+
+- **Date / round / state:** 2026-07-29 / round 2 / building
+- **What changed:** The implementation report was returned for revision by Duchamp's build_review audit before transmission and repaired: **the open AC19 set is six majors, not five.** V32-7 (`.sr-group` beneath `.main-nav` at 390px, **1.00 light / 1.04 dark**, recovering to 4.62 when `.main-nav` is suppressed — `browser-evidence-enumeration.md` §V32-7, ledgered by Dürer as N-31-2) had been omitted while its sibling N-31-1 was carried from the same section of the same document. Also added: open notes N-3, N-6, N-8 and F-6 from the rev-3 quality review; `#search::placeholder` and `.gonext-item:hover b` as measured-not-cleared; the quality review's currency (rev 3 predates units 31 and 32, which is why its OPEN MAJOR reads 1 against the report's six); and corrections to `created_at`, one evidence filename, and the report's own acceptance criterion, which was false as written.
+- **Why it changed:** An implementation report that understates its open set by a major finding — one where text renders at 1.00:1 — would have carried a false picture into theory review, and the omission was asymmetric in a way that looked like selection rather than oversight.
+- **Assumption or constraint that required it:** The liaison's outgoing/build_review mandate: return incomplete or unsupported work to the team rather than normalising it.
+- **Supporting evidence:** `unrouted/implementation-report-audit.json` (critical findings 1–3, `recommended_action: return_for_revision`); `browser-evidence-enumeration.md` §V32-7; `quality-review.md` open-notes paragraph.
+- **Effect on user experience:** None directly; the report now states the real state of a mobile search surface that is currently unreadable.
+- **Status:** accepted
+- **Raised by / decided by:** Duchamp / Synthesis Lead.

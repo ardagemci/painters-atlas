@@ -1,0 +1,210 @@
+{
+ "task_id": "PIG-001",
+ "project": "pigment",
+ "round": 2,
+ "analyst_id": "synthesis-liaison",
+ "pole": "claude-synthesis-build",
+ "analysis_mode": "build_review",
+ "artifact_reviewed": [
+  "protocol/tasks/PIG-001/unrouted/implementation-report-message.json (the artifact under audit)",
+  "protocol/tasks/PIG-001/specification.md (frozen, workflow_state approved_for_build, frozen-sha256:70de6a71...)",
+  "protocol/tasks/PIG-001/state.json (build_authorized true; specification_frozen event 2026-07-23T17:42:52Z)",
+  "protocol/tasks/PIG-001/quality-review.md (Van Eyck, three revisions, operative rev 3 at tree 11e4471)",
+  "protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md (Vermeer unit 32, independent enumeration at 5c684ae)",
+  "protocol/tasks/PIG-001/evidence/build-log-unit-31.md (Duerer unit 31, deviation ledger, N-31-1 and N-31-2)",
+  "protocol/tasks/PIG-001/evidence/visual-direction-and-adjudication.md (Matisse AC23 adjudication)",
+  "protocol/tasks/PIG-001/evidence/visual-ruling-d29-6.md (Matisse D-29-6 ruling)",
+  "protocol/tasks/PIG-001/evidence/build-log-wave-a.md through build-log-unit-31.md; browser-evidence-build.md, -build-r2.md, -closing.md, -final.md",
+  "protocol/tasks/PIG-001/evidence/rights-register.md, rights-remediation.md, deck-merit-review.md",
+  "protocol/tasks/PIG-001/unrouted/decision-record.md (D-001..D-016) and owner-decisions-r2.md (OD-1..OD-5)",
+  "pigment_coordinator/engine.py, gates.py, analysts.py, util.py (read to test the routing claim, not accept it)",
+  "git history effa805..pig-001-stabilization@5c684ae (75 commits), git branch/merge-base state of main",
+  "live run: osascript -l JavaScript tools/validate.jxa.js; live run: gates.check_build_gate; recomputed util.digest of messages/004-final_synthesis.json"
+ ],
+ "summary": "The build is substantial and its arithmetic is unusually trustworthy: every numeric claim I spot-checked reproduced exactly, Gate 1 is verified end-to-end for the first time (frozen specification with a frozen-sha256 I recomputed independently, committed 5h17m before the first production edit), Gate 4 holds with its one breach honestly recorded, the validator passes with zero warnings under my own run, and the report never once reads as a certification while Gate 2 is blocked. It nevertheless must not be transmitted as written. The operative independent enumeration records SIX open major AC19 findings, not five: V32-7 (.sr-group under .main-nav at 390px, measured 1.00 light and 1.04 dark, recovering to 4.62 when .main-nav is suppressed) is confirmed by two reviewers, ledgered as open in unit 31's own build log as N-31-2, is the worst-measured text surface in the entire build, and appears nowhere in the report. That falsifies the report's own acceptance criterion that the open findings are 'not summarised away'. Four further open items from the operative quality review (N-8, N-6, N-3, F-6) and two explicitly-not-cleared NOT TESTED sites (#search::placeholder, .gonext-item:hover b) are also absent, and the Coordinator Kernel change the report's routing argument depends on was written by this pole mid-build and never ledgered. The routing argument itself is structurally correct against the code; the disclosure that would make it legitimate is not yet complete. Return for revision; the repairs are textual and the build does not need to move.",
+ "semantic_validity": "repairable",
+ "intended_user_outcome": "A first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it - with both themes readable, the site keyboard-operable, image rights truthfully attributed, and no claim made that the build does not support.",
+ "essential_principles": [
+  "No production edit before the Coordinator freezes the specification at approved_for_build (Gate 1).",
+  "Independent quality certification, never by the implementer, gates human_review_ready (Gate 2).",
+  "Every material deviation is ledgered, including deviations against the implementer's own interest (Gate 3).",
+  "Feature work is isolated from main and remains reversible (Gate 4).",
+  "Measured enumeration outranks sampling, and an unmeasured surface is never recorded as a pass.",
+  "Both themes must satisfy WCAG 2.2 AA for the frozen text, control, focus and state pairs, including browser-measured composites (AC19).",
+  "Rights claims state asserted basis and residual uncertainty; legal clearance is never claimed (AC28, OD-5)."
+ ],
+ "optional_forms": [
+  "Which remedy closes V32-7 - offsetting, re-stacking, or opaquing .main-nav over the open .search-results panel - is a UX and visual call, not a fixed requirement.",
+  "Whether the remaining AC19 findings are fixed in response_to_review or in a follow-on objective is a sequencing choice, provided none is closed by assertion.",
+  "The measurement harness design (glyph-differential probes, layer suppression for attribution) is Claude's method choice and worked well.",
+  "Whether the stale created_at is corrected by re-stamping or by re-issuing the message."
+ ],
+ "accepted_counterpole_points": [
+  "The frozen 29 acceptance criteria governed the build unchanged; I found no criterion reinterpreted to fit what was built.",
+  "AC19 is genuinely not closed, and the report says so rather than arguing it closed.",
+  "F-1's scoping (821-1100px, outside AC18's enumerated viewport set) is a defensible reading that the theory pole may fairly dispute; the report correctly flags it as disputable rather than settling it.",
+  "AC23 passed with three recorded CONCERNs from the named adjudicator, and two of those deliberately decline to pre-empt the owner's reserved revisit of the artist-first hierarchy - verified at visual-direction-and-adjudication.md:586-598.",
+  "The five reported V32 findings are pre-existing conditions, not regressions: I confirmed .chip:hover{color:#fff}, .le-meta{color:var(--muted)}, .ig-node text{fill:var(--muted)} and .tl2-year{color:var(--faint)} all exist at effa805, and that where this build re-pointed tokens it improved the measured value (dark .tl2-year.now --gold #c9a45c to --gold2 #e8c98a; light --faint #a39a86 to #706755).",
+  "Rejecting the specified #6b5122 remedy on measurement (3.42 against the derived ceiling) and substituting #544019 is exactly the right posture: a remedy specified by two reviewers was still refused because it did not measure."
+ ],
+ "constraints_or_principles_to_defend": [
+  "An open major finding recorded by an independent reviewer may not be absent from the report that routes the build. V32-7 must be named with its measurement and its remedy space.",
+  "Gate 3 applies to the Coordinator's own source as much as to js/ and css/: the mid-build kernel change at 5fdf1aa must be ledgered before the report that relies on it is transmitted.",
+  "NOT TESTED means not tested. #search::placeholder and .gonext-item:hover b are explicitly not cleared in the evidence and must appear in the report's risk set alongside .map-dot .md-name.",
+  "The independent certifier's open notes belong to the certifier, not to the reporting pole's editorial discretion: N-8, N-6, N-3 and F-6 must survive into the report.",
+  "Gate 2 stays blocked and Gate 2 stays Van Eyck's to certify; nothing in the repaired report may soften that, and the current report does not.",
+  "No merge to main and no deployment without the owner's explicit approval."
+ ],
+ "adaptations": [
+  {
+   "change": "The Coordinator Kernel was modified during the build by the building pole: commit 5fdf1aa (2026-07-26, on pig-001-stabilization) added check_build_gate to pigment_coordinator/gates.py and ingest_build to engine.py, plus cli.py wiring and 4 tests.",
+   "reason": "To stop the Coordinator accepting a text artifact as proof of a build - the change requires the isolated branch to exist, descend from the frozen baseline, carry commits beyond it, and have actually changed production files.",
+   "constraint": "Architectural constraint of the existing project, resolved in the right direction: the kernel previously had no way to corroborate a build claim. But CLAUDE.md makes the Kernel the neutral arbiter, and the report's central routing argument depends on the shape of exactly this code.",
+   "evidence": [
+    "git show 5fdf1aa --stat: pigment_coordinator/cli.py, engine.py, gates.py, tests/test_coordinator.py",
+    "grep of ingest-build / ingest_build / check_build_gate across all of protocol/tasks/PIG-001/ returns zero hits",
+    "decision-record.md D-012 records only the earlier pre-build adopt/ingest work at d2b935d, not this change",
+    "live run of gates.check_build_gate(repo, pig-001-stabilization, effa805) returns [] - the gate does pass"
+   ],
+   "user_consequence": "None directly. The governance consequence is real: the pole edited the arbiter mid-build and then cited the arbiter's structure as permission to route.",
+   "intent_preserved": true,
+   "disposition": "reconsider"
+  },
+  {
+   "change": "Gate 4 partial breach recorded: an unrelated content commit (ef8b2b3) from a concurrent builder landed directly on pig-001-stabilization between unit-24 commits, moving corpus counts mid-build; rollback must therefore revert PIG-001 commits individually rather than resetting the branch.",
+   "reason": "A shared working tree with a parallel builder makes strict isolation aspirational rather than enforced; recording it beats pretending the branch is a pure delta.",
+   "constraint": "Architectural constraint of the existing project (single shared repository, concurrent content lane per PIGMENT.md).",
+   "evidence": [
+    "decision-record.md D-016",
+    "git log effa805..HEAD confirms ef8b2b3 sits exactly between 4259932 and a4417d4, as D-016 states",
+    "my validator run reports the post-commit corpus (artists 256, venues 116, museum notes 104), matching D-016's stated movement"
+   ],
+   "user_consequence": "None adverse; the concurrent content is valid and the credit pipeline absorbed the new venue with no code change.",
+   "intent_preserved": true,
+   "disposition": "accept"
+  },
+  {
+   "change": "The frozen specification's rollback procedure ('revert the merge commit and restore all ?v= strings to effa805 values in the same commit') is superseded in substance by per-commit revert.",
+   "reason": "Reverting a single merge would discard the concurrent content lane along with PIG-001's units.",
+   "constraint": "Direct consequence of the D-016 breach; a genuine constraint, not a preference.",
+   "evidence": [
+    "specification.md, 'Rollback, cache, and versioning' section",
+    "decision-record.md D-016 consequence 1",
+    "implementation-report-message.json acceptance_criteria item 5"
+   ],
+   "user_consequence": "Rollback is slower and more error-prone than the frozen procedure promised, but remains available and reversible.",
+   "intent_preserved": true,
+   "disposition": "accept"
+  },
+  {
+   "change": "A contrast remedy specified by both the Quality Reviewer and the Synthesis Lead (#6b5122) was measured at 3.42 against the derived ceiling, rejected, and replaced with #544019.",
+   "reason": "The specified value did not measure. Applying it would have produced a documented pass over a real failure.",
+   "constraint": "Safety/accessibility requirement (AC19, WCAG 2.2 AA).",
+   "evidence": [
+    "css/styles.css light --gold2:#544019 (verified in the working tree)",
+    "evidence/visual-ruling-d29-6.md",
+    "implementation-report-message.json accepted_points item 5"
+   ],
+   "user_consequence": "Positive: readable ink instead of a remedy that only looked applied.",
+   "intent_preserved": true,
+   "disposition": "accept"
+  },
+  {
+   "change": "Two onboarding deck-pool validator warnings were cleared by two editorial re-scores under OD-4; a third candidate re-score was refused as tuning rather than re-reading.",
+   "reason": "The frozen specification forbade pre-authorized re-scores and required editorial merit; coordinates are taste data and are never tuned to silence a validator.",
+   "constraint": "Maintenance and data-integrity concern, correctly handled.",
+   "evidence": [
+    "evidence/deck-merit-review.md (including its own honesty check that -55 is not the minimum value clearing the warning)",
+    "my validator run: zero warnings emitted"
+   ],
+   "user_consequence": "Taste coordinates remain editorially justified rather than validator-shaped.",
+   "intent_preserved": true,
+   "disposition": "accept"
+  }
+ ],
+ "resolved_issues": [
+  "Gate 1 verified end-to-end for the first time and it PASSES. specification.md carries workflow_state: \"approved_for_build\" and evidence marker frozen-sha256:70de6a712bff204b1d9f12e6bfcc8a1087a86cfdd288edc741826acb9f9b0166; I recomputed that digest independently with the kernel's own util.digest over messages/004-final_synthesis.json and it matched exactly. It was committed at db3d8a8, 2026-07-23 20:43:10 +0300. The first commit touching any Gate-1 production path (js, css, index.html, p, tools, sitemap.xml, robots.txt) is 52465b4 at 2026-07-24 02:00:51 +0300 - 5h17m later. No production-path commit falls between the baseline and the freeze.",
+  "Gate 4 verified. main is at 4175586, a pre-build commit; HEAD..main is empty, so main carries nothing from this build and nothing was merged. The branch descends from effa805 (merge-base --is-ancestor confirms) and gates.check_build_gate returns no failures. The one breach (ef8b2b3) is recorded in D-016 and its rollback consequence is stated correctly; the report's caveat is adequate.",
+  "Scale figures reproduce exactly. 75 commits in effa805..HEAD, and 720 files changed under precisely the Gate-1 production path set - the report's figure to the file.",
+  "Validator verified by my own run, not by assertion: 'ALL REFERENCES VALID', zero warnings emitted.",
+  "Rights figures reproduce. My validator run reports photo credits 104 (attribution required 88) and artwork image credits 27, i.e. the 131 credits the report claims, split exactly as claimed. The 694-image census superseding a 122-record sample and finding 29 attribution-required images 'not the 2 the 122-record sample reported' is verbatim in build-log-unit-24.md. The 8 wrong-artwork images (4 removed, 3 corrected, 1 documented) and the single Ducreux file serving multiple artists' self-portraits are in rights-register.md and rights-remediation.md.",
+  "Behavioural figures reproduce: import cancel byte-identity 2578 to 2578 bytes with first differing index -1 (browser-evidence-build.md:303); checkpoint resume 5/5 backed by 29/29 round-trip assertions across genuine reloads (build-log-wave-c.md:338, 376); search fixture 24/24 (build-log-wave-c.md:351); 200% text zoom 0px overflow on 26/26 routes from +115-117px before (browser-evidence-build-r2.md:168, 363); 204 graph tab stops skipped (browser-evidence-build.md:245); 888 upload.wikimedia.org URLs (build-log-unit-23.md:32-37, including a recorded 892-to-888 re-count drift); ARIA baselines 0 to 2/2/4/22 (build-log-wave-b.md:149-151).",
+  "All five reported V32 measurements reproduce to the decimal against browser-evidence-enumeration.md: V32-1 1.01-1.39 in all four cells with double-layer suppression clearing to 6.02; V32-2 2.72 dark / 3.29 light; V32-3 #fff at 1.21-1.32 across four routes, surviving because unit 29's fix was element-typed on 'a' and cannot reach button.chip; V32-4 4.35 light@390 with backdropNoCanvas equal to --bg exactly; V32-5/6 3.78 light / 3.63 dark with the binding element genuinely differing by theme (dark .tl2-year.now in --gold2 on the gold now-rule; light plain --faint on the century rule, where .now passes at 4.76).",
+  "The report's 'not regressions' assumption holds under test. All four offending declarations pre-exist at effa805, and every token this build re-pointed moved the measurement upward rather than downward.",
+  "Browser evidence coverage satisfies the kernel's quality gate: 106 PNGs, none zero-byte, with desktop/dark 29, desktop/light 30, mobile/dark 24, mobile/light 23 - all four filename greps in gates.check_quality_gate would pass.",
+  "The single worst available defect is absent. Nothing in the report reads as a certification: the summary states 'Gate 2 is BLOCKED and remains so', the evidence list records three BLOCKED verdicts, and requested_actions item 4 says 'Do not treat this report as a certification'. I looked for softening in the prose and did not find it.",
+  "The routing claim is structurally true against the code, not merely asserted. engine.py ingest_build (245-310) calls only check_build_gate. check_quality_gate has exactly one caller, prepare_human_review (415-418), which additionally requires workflow_state == internal_review and last_message_type == response_to_review. After ingestion the state is internal_review with last_message_type == implementation_report, from which advance (354-356) routes to the theory pole for review, then revision, then response_to_review. There is no path to human_review_ready that bypasses the quality gate.",
+  "Van Eyck's condition that the four hero() route families be re-enumerated in both themes at both viewports by a non-implementer IS satisfied: browser-evidence-enumeration.md section 5 walks all four families with 0 hero-surface failures, worst 3.58 against a 3.0 floor.",
+  "The message envelope passes the real kernel parser: messages.validate_message against the exact ingest_build expectations returns clean, and gates.check_build_gate returns no failures, so the artifact is mechanically routable once its content defects are repaired."
+ ],
+ "critical_issues": [
+  "V32-7 IS MISSING FROM THE REPORT, AND IT IS THE WORST DEFECT IN THE BUILD. browser-evidence-enumeration.md - the operative independent enumeration, committed at the very HEAD (5c684ae) the report cites - records at section 3 'V32-7 (major) . .sr-group under .main-nav at 390 px' measured at 1.00 light and 1.04 dark, recovering to 4.62 in both themes when .main-nav is suppressed, and at section 4.2 confirms it as a real defect on a structural criterion (the occlusion guard that demoted two other 1.0x readings as benign transit deliberately KEPT this one, because .main-nav is a sibling subtree rather than an ancestor of .sr-group). Duerer's own build-log-unit-31.md:238 and :348 record it as 'N-31-2 (new, unfixed, out of this brief)', 'Deferred, referred to Mondrian'. The report contains zero occurrences of 'V32-7', 'N-31' or 'sr-group'. There are therefore SIX open major AC19 findings, not five, and the omitted one is a 1.00:1 contrast ratio - text that is effectively invisible - on the search-results panel at mobile width, a primary discovery flow. The asymmetry is what makes this a defect rather than a lapse: the report carries N-31-1 from the same section-4 pair (as V32-5/6) and drops N-31-2.",
+  "THE REPORT'S OWN ACCEPTANCE CRITERION IS FALSE AS WRITTEN. acceptance_criteria item 2 states 'The five open AC19 findings are named with measurements and remedies, not summarised away.' Both halves fail: the count is six, and one finding is summarised away entirely. A build report that under-reports its most severe measured defect cannot be the artifact against which the theory pole reviews the build, and cannot be the artifact the audit trail preserves as the honest position at this handoff.",
+  "THE COORDINATOR KERNEL WAS MODIFIED MID-BUILD BY THE BUILDING POLE AND IT IS NOWHERE IN THE LEDGER. Commit 5fdf1aa (2026-07-26, on pig-001-stabilization) added check_build_gate to pigment_coordinator/gates.py and ingest_build to engine.py, with cli.py wiring and 4 tests. Grepping ingest-build, ingest_build, check_build_gate and gates.py across the whole of protocol/tasks/PIG-001/ returns zero hits; D-001..D-016 do not mention it (D-012 covers only the earlier pre-build adopt/ingest work at d2b935d); no build log mentions it. This is a Gate 3 defect on its own terms - an unrecorded material deviation is a defect - and it is aggravated by the fact that the report's central routing argument rests on the behaviour of exactly this code. The change is substantively good and pro-honesty, and I do not recommend reverting it; I recommend it be ledgered as a decision, disclosed in the report, and that the Coordinator rule on whether the building pole may amend the arbiter mid-build."
+ ],
+ "noncritical_issues": [
+  "Four of the operative Quality Review's open items are absent from the report. quality-review.md:1855-1864 (rev 3, operative) lists beyond blocking F-8: N-1 and N-8 as 'required before the Human Review Package', minors F-1 and F-2, and open notes N-6 (dark --gold2 at 4.31 against the absolute ceiling, D-29-7), N-3 and F-6. The report claims 'three recorded notes' and carries only F-1, F-2, N-1. N-8 (Matisse's visual review of the prose underline against real prose) is a condition the certifier attached to the Human Review Package; dropping it at this handoff is where such conditions get lost. Zero occurrences of N-8, N-6, N-3 or F-6 in the report.",
+  "A condition Van Eyck attached to the F-8 remedy is unmet and undisclosed. He required the five sibling --faint sites be re-checked 'by measurement rather than by the reading that failed here', naming #search::placeholder among them. browser-evidence-enumeration.md section 5 reports #search::placeholder 'not measured' and lists it under NOT TESTED. The report does not mention it. Notably, that reading-not-measuring failure mode is the exact defect unit 31 was struck through for.",
+  "A second explicitly-not-cleared surface is omitted. browser-evidence-enumeration.md section 7 item 9: '.gonext-item:hover b{color:#fff} (css:662) - source-identified sibling of V32-3 that I did not measure... Explicitly not cleared.' I confirmed the rule exists at effa805 (css:315) and at HEAD (css:662). The report's risk set names only .map-dot .md-name as the likeliest further finding, so a second named, source-identified candidate goes unstated.",
+  "Quality-review currency is not disclosed. Van Eyck's operative rev-3 verdict was written against tree 11e4471; unit 31's production edit (03ebdde) and unit 32 (5c684ae) landed afterwards. No independent Quality Reviewer evidence therefore exists at HEAD, and that is why his OPEN MAJOR count reads 1 while the report's reads 5. The report's 'PASS 28 FAIL 1 at last writing' hints at this but does not state plainly that the certifier has not reviewed the final two units. It should.",
+  "created_at is 2026-07-29T12:00:00Z, roughly eleven hours BEFORE the HEAD it describes: 5c684ae was committed 2026-07-30 02:17:15 +0300 (2026-07-29 23:17 UTC). The report cannot honestly be dated before the commit whose evidence it quotes. Re-stamp before transmission.",
+  "Evidence citation error: the report cites 'browser-evidence-build.md, -r2.md, -closing.md, -final.md'. There is no browser-evidence-r2.md; the file is browser-evidence-build-r2.md. Verified by directory listing.",
+  "protocol/tasks/PIG-001/build-evidence-report.md does not exist, though gates.check_quality_gate requires it by name and D-016 states facts were 'carried into the Build Evidence Report'. This does not block ingest_build, but it will block prepare_human_review later, and D-016 currently cites a document that has never been written.",
+  "The '130/130 route-widths at zero' figure is presented without its caveat. browser-evidence-build-r2.md:404 states plainly that in round 2 '320 and 768 were not re-measured', so 130/130 is a round-1 measurement at an earlier tree. Given how much of this build's method rests on refusing inherited numbers, this one should carry its own age.",
+  "'75 commits' is literally correct for effa805..HEAD but four of the 75 (d2b935d, 4fa3503, db3d8a8, 4175586) are pre-build coordinator, spec-freeze and owner-decision commits already reachable from main. The build's own delta is 71 commits. Not a defect, but the precision the rest of the report maintains is worth extending here.",
+  "The frozen specification's rollback text ('revert the merge commit and restore all ?v= strings to effa805 values in the same commit') is superseded in substance by D-016's per-commit revert, but the report's rollback statement carries only the per-commit half and drops the ?v= restoration requirement entirely."
+ ],
+ "unsupported_claims": [
+  "acceptance_criteria item 2 - 'The five open AC19 findings are named with measurements and remedies, not summarised away' - is contradicted by the report's own cited evidence: the enumeration records six open majors and V32-7 is named nowhere.",
+  "summary and proposal - 'AC19 retains five open major findings' / 'AC19 has five open major findings' - understates the operative independent measurement by one major finding.",
+  "summary - 'plus three recorded notes' - understates the operative Quality Review, which carries N-1, N-8, F-1, F-2, N-6, N-3 and F-6 as open non-blocking items.",
+  "assumptions item 1 and the 'Why this is being routed with AC19 open' section cite the Coordinator's gate structure as authority without disclosing that this pole wrote check_build_gate and ingest_build into the kernel mid-build at 5fdf1aa, unledgered.",
+  "risks item 2 - '.map-dot .md-name is named as the likeliest further finding and is NOT TESTED' - is true but incomplete: it presents one NOT TESTED candidate where the evidence names a second, .gonext-item:hover b, as an explicitly-not-cleared sibling of an open major.",
+  "proposal - 'overflow contained (130/130 route-widths at zero...)' - inherits a round-1 figure whose own evidence file records that 320 and 768 were not re-measured.",
+  "evidence item 6 cites 'browser-evidence-...-r2.md', a filename that does not exist."
+ ],
+ "evidence_gaps": [
+  "No independent Quality Reviewer evidence exists at HEAD: the operative rev-3 review predates unit 31's production edit (03ebdde) and unit 32 (5c684ae). Gate 2 cannot be certified against a tree nobody independent has reviewed.",
+  "#search::placeholder is NOT MEASURED, and it is one of the five sibling sites Van Eyck required be re-checked by measurement rather than by reading when he blocked on F-8.",
+  ".gonext-item:hover b{color:#fff} (css:662) is source-identified as a sibling of open major V32-3 and explicitly not cleared.",
+  ".map-dot .md-name (fill:var(--muted), css:1280) is unmeasured - only emitted at the europe map zoom, which the enumeration never reached - and is flagged by its own author as the likeliest hiding place for a further SVG finding.",
+  "The pseudo-element perimeter list is derived from reading the stylesheet, not from the DOM: the perimeter scan crashed, and .branch-chip::before and .tone.on::after never rendered. Bounded by reading is the method A13 rejected.",
+  "Focus-ring contrast (WCAG 1.4.11) is structurally unmeasurable by a glyph-differential instrument and is NOT TESTED beyond unit 30's hero - and F-2 plus the enumeration's own rider (plain links and buttons take Chrome's UA ring, not the site's gold one) sit adjacent to it.",
+  "Colour-emoji glyphs (text.md-flag, a.chip.n flags) cannot be scored because painted colour is not the computed fill; disclosed as unmeasured rather than cleared, which is the right call.",
+  "The canvas-exposed census ran ONE draw against a Math.random-seeded #bg-canvas; the intended many-draw pass was not run. Its own author states that any canvas-exposed triple that passes, passes on one draw - and F-8 was partly missed because one cell of eight passed by chance. Every canvas-exposed pass in that table is a weaker clearance than it looks.",
+  "Only one id was rendered per parameterised route; second ids are unmeasured outside unit 30's hero bound.",
+  "No build-evidence-report.md exists at protocol/tasks/PIG-001/, which gates.check_quality_gate requires by name for Gate 2.",
+  "Real assistive-technology output, non-Chrome engines, 200% zoom over the new veils, and deployed identity are all NOT TESTED - correctly disclosed by the report.",
+  "No legal clearance is claimed for the 88 of 104 attribution-requiring museum photographs; credits render, residual risk is the owner's accepted position under OD-5."
+ ],
+ "specialists_recommended": [
+  "Synthesis Lead (Rubens) - repair and re-issue the report: add V32-7 with its measurements and remedy space, correct the count to six, restore N-8/N-6/N-3/F-6, add #search::placeholder and .gonext-item:hover b to the risk set, disclose the mid-build kernel change and the quality review's currency, re-stamp created_at, fix the browser-evidence-r2.md citation.",
+  "UX and Interaction Architect (Mondrian) - V32-7's remedy is a layout and stacking decision (.main-nav painting over the open .search-results panel at 390px, both at z-index:auto inside .site-header), which the enumeration explicitly refers to UX rather than to an ink change.",
+  "Quality and Accessibility Reviewer (Van Eyck) - re-verify at HEAD including units 31 and 32, carry N-8/N-6/N-3/F-6 forward explicitly, and rule on whether V32-7 is a 1.4.3 finding or a stacking defect under a different criterion. Gate 2 remains his.",
+  "Browser Evidence Reviewer (Vermeer) - measure the three named unmeasured surfaces (#search::placeholder, .gonext-item:hover b, .map-dot .md-name at the europe zoom), re-run the DOM pseudo-element perimeter scan that crashed, and re-run canvas-exposed triples at multiple draws.",
+  "Visual Design Director (Matisse) - N-8, his outstanding visual review of the prose underline against real prose, which Van Eyck set as a condition on the Human Review Package."
+ ],
+ "intent_preserved": true,
+ "feasibility_supported": true,
+ "quality_evidence_appears_sufficient": false,
+ "convergence_recommended": false,
+ "recommended_action": "return_for_revision",
+ "recommended_next_state": "approved_for_build",
+ "human_escalation": {
+  "recommended": false,
+  "reason_category": "",
+  "decision_required": "",
+  "why_the_teams_cannot_resolve_it": "Every defect I found is a disclosure or ledger repair the Claude pole can make without owner input, and the remedy for V32-7 is a reversible UX decision inside the existing project. No constitutional escalation criterion is met: identity, audience and purpose are unchanged; no legal, privacy, security or financial risk is newly created; no paid service or infrastructure commitment arises; scope and schedule are unchanged. The owner should see this report at Human Review, not before it."
+ },
+ "confidence": {
+  "level": "high",
+  "basis": "Every load-bearing finding rests on something I executed or read at line level rather than accepted: I recomputed the frozen-specification digest with the kernel's own util.digest and matched 70de6a71...; I read the git dates establishing Gate 1's 5h17m margin; I counted 720 production files under the exact Gate-1 path set; I ran the validator and gates.check_build_gate and messages.validate_message myself; I read engine.py's call sites to test the routing claim rather than accept it; and V32-7's omission is a zero-hit grep against the report for three separate identifiers, cross-checked against two independent documents that both record the finding as open. The one thing I cannot settle is whether V32-7 is formally an AC19 1.4.3 failure or a stacking defect under another criterion - that is Van Eyck's call - but its absence from the report is not a matter of classification either way."
+ },
+ "rationale": "This is the best-evidenced build this project has produced and it still must go back. The arithmetic is trustworthy in a way that is rare: I spot-checked hard, across scale figures, rights figures, behavioural figures and every contrast measurement the report quotes, and it all reproduced - the 720-production-file count to the file, the frozen-specification digest to the character, five V32 findings to the decimal. Gate 1 is verified end-to-end for the first time and passes with a five-hour margin. Gate 4 holds and its one breach is recorded honestly, against interest. The report never dresses itself as a certification while Gate 2 is blocked, which was the single worst defect available here and is simply not present. Three times this build replaced sampling with enumeration and changed its own answer; twice it caught its own instruments lying and corrected the record with a dated strike-through rather than a deletion. That is the behaviour the constitution is trying to produce. But the report's central promise - that nothing material is summarised away - is not true as written, and it fails on the one finding where failure costs most. V32-7 is a 1.00:1 contrast ratio on search-result headings at mobile width. That is invisible text on a primary discovery path. It is recorded as a major by an independent reviewer at the exact commit the report cites as HEAD, it is ledgered as unfixed in the implementer's own build log, and the report mentions it nowhere - while carrying its twin, N-31-1, from the same section of the same document. Four of the certifier's open notes vanish the same way, including one he made a condition on the Human Review Package. Two surfaces the evidence calls explicitly not cleared do not reach the risk set. And the routing argument, which I verified is structurally correct against engine.py and gates.py, leans on a gate this pole wrote into the Coordinator mid-build and never entered in the ledger. On the routing question itself: the destination is right. response_to_review is the correct home for measured findings with named remedies, no path to human_review_ready bypasses the quality gate, and I confirmed that by reading the code rather than the claim. But a boundary argument is only as legitimate as the disclosure it accompanies, and on the present disclosure this reads as convenience wearing protocol's clothes - not because routing to internal_review is wrong, but because the report asks the theory pole to review an open set that is understated by one major, four notes and two unmeasured sites, using a gate boundary whose provenance is undisclosed. Repair those and the identical routing becomes genuinely conformant. The repairs are textual; the build does not need to move; nothing needs rebuilding. Return for revision, then route.",
+ "owner_report": {
+  "visibility": "human_review",
+  "title": "Synthesis Liaison Report - PIG-001 Build Review (round 2)",
+  "markdown": "## Synthesis Liaison Report\n\n### Current Position\nThe build is real, large, and mostly honest. Thirty-one units landed on an isolated\nbranch off the frozen baseline; the repository validator passes with zero warnings; the\ntwo Taste-layer defects that the original theory brief never contained are closed and\nbehaviourally verified. Independent quality review has refused to certify three times\nand still refuses. The team is asking to route the build to the theory pole for review,\nnot to the owner and not to production.\n\n### Feasibility\nNothing in the remaining work is technically hard. Every open contrast defect has been\nmeasured and has a named remedy. One remedy is a layout decision rather than a colour\nchange and needs the interaction architect, not more measurement. No genuine\nimpossibility is claimed, and none is hiding.\n\n### Adaptations Made\nThree matter. A teammate's unrelated content work committed onto the build branch\nmid-build, so a rollback now has to undo this build's commits one by one instead of\nresetting the branch; that is recorded and the consequence is stated. A colour remedy\nthat two reviewers had specified was measured, found wrong, and replaced rather than\napplied. And the build team changed the coordinator's own code mid-build to add a check\nthat stops text files being accepted as proof of a build \u2014 a good change, but it was\nnever written into the decision ledger, and the report leans on that very code to argue\nits routing is allowed.\n\n### Product Intent\nPreserved. The frozen twenty-nine criteria governed the build unchanged, no criterion\nwas quietly reinterpreted, and the scope did not expand.\n\n### Evidence\nThe strongest support is that the numbers reproduce. I re-derived the build\nauthorization fingerprint myself and it matched exactly; I re-ran the validator; the\nproduction-file count, the credit counts, the recovery and search results, and every\ncontrast figure the report quotes came back the same. That is unusually good.\n\nThe gap is what the report leaves out. The most severe defect found anywhere in this\nbuild \u2014 search-result headings at mobile width painted at essentially zero contrast,\ninvisible text \u2014 appears in the independent measurement record and in the build team's\nown log, and does not appear in the report at all. Four smaller open items from the\nquality reviewer are also missing, including one he set as a condition on the final\nreview package. Two surfaces that were explicitly not cleared are not mentioned. And\nthe quality review the report cites was written before the last two units landed.\n\n### Remaining Problems\nSix major contrast defects are open, not five. The unrecorded change to the\ncoordinator's code needs ledgering. The report's own promise \u2014 that nothing was\nsummarised away \u2014 is not true as written and has to be made true before it is sent.\n\n### Synthesis Assessment\nFeasibility is supported. Quality is not, and the report knows that and says so\nplainly, which is to its credit. But a report that under-reports its worst defect\ncannot be the artifact the next pole reviews against. Sending it back is a small repair,\nnot a rebuild.\n\n### What Happens Next\nI am recommending the report be returned to the team for correction and re-sent. The\nbuild stays where it is; no state changes and nothing reaches production.\n\n### Attention Required\nHold for final Human Review Package.\n"
+ },
+ "created_at": "2026-07-30T01:15:00Z"
+}
