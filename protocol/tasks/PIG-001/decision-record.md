@@ -195,3 +195,90 @@ Generated from validated Coordinator messages. Do not remove disputed history.
 - frozen-sha256:70de6a712bff204b1d9f12e6bfcc8a1087a86cfdd288edc741826acb9f9b0166
 
 **Disposition:** `approved_for_build` -> `approved_for_build`
+
+## 2: implementation_report
+
+**Summary:** 31 units built on isolated branch pig-001-stabilization off effa805; 75 commits; validator green with zero warnings. Both Taste-layer blockers closed and behaviourally verified; access, orientation, search, rights (131 credits, 8 wrong images corrected), privacy and documentation delivered. AC19 retains SIX open major findings with specified remedies, plus open notes and two measured-not-cleared sites. Gate 2 is BLOCKED and stale in composition. Routing to internal_review for theory review; remaining fixes belong to response_to_review.
+
+**Accepted points:**
+- The frozen specification's 29 acceptance criteria governed the build unchanged; no criterion was reinterpreted to fit what was built.
+- Gate 4 held: all feature work on the isolated branch; main untouched; no merge or deployment performed.
+- Gate 3 held: every material deviation is ledgered, including three where an implementer's own prior conclusion was corrected against interest.
+- Independent review was preserved: the Quality Reviewer wrote none of the code and blocked the build three times.
+- Where a specified remedy proved wrong on measurement it was rejected rather than applied: #6b5122, specified by both the Quality Reviewer and the Synthesis Lead, measures 3.42 against the derived ceiling and was replaced with #544019.
+
+**Disputed points:**
+- AC19 is not fully supported: six measured major findings remain open (V32-1..V32-7), each with a specified remedy, routed to response_to_review rather than absorbed silently. The first draft of this report named five; V32-7 was restored by the liaison's build_review audit (D-018).
+- No enumeration to date claims completeness; the most recent, run by a non-implementer, states an explicit perimeter and names .map-dot .md-name as the likeliest location of a further finding.
+- AC23 passed with three recorded CONCERNs from the named adjudicator; two deliberately decline to pre-empt the owner's reserved revisit of the artist-first hierarchy.
+- F-1 (821-1100px overflow) was adjudicated a note because it falls outside AC18's enumerated viewports; the theory pole may reasonably dispute that scoping.
+- The Coordinator Kernel was modified by this pole mid-build and disclosed late (D-017); the routing argument rests on that code, and the theory pole may challenge both.
+
+**Rationale:** The build delivered the frozen scope and closed both Taste-layer blockers that the original brief did not contain. It also demonstrated, three separate times, that sampling was producing false clearance where enumeration produced truth - and twice caught its own instruments lying. What it has not done is close AC19: five measured findings remain, and the honest position is that the seventh internal cycle produced a better-bounded enumeration rather than a complete one. Routing now puts the built product in front of the pole that wrote the criteria, at the protocol step designed for exactly that, while the quality gate continues to prevent anything uncertified from reaching the owner.
+
+**Evidence:
+- branch pig-001-stabilization @ 5c684ae, 75 commits off effa805, 720 production files changed
+- validator: ALL REFERENCES VALID, zero warnings (osascript -l JavaScript tools/validate.jxa.js)
+- protocol/tasks/PIG-001/quality-review.md (Van Eyck, three verdicts: BLOCKED / BLOCKED / BLOCKED, PASS 28 FAIL 1 at last writing)
+- protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md (independent seam-closing enumeration: 33 routes x 4 cells, 15341 rows, 328 triples, 6 below floor)
+- protocol/tasks/PIG-001/evidence/build-log-wave-a.md through build-log-unit-31.md (31 units, deviation ledgers)
+- protocol/tasks/PIG-001/evidence/browser-evidence-build.md, -build-r2.md, -closing.md, -final.md (four browser evidence passes)
+- protocol/tasks/PIG-001/evidence/rights-register.md, rights-remediation.md, museum-photo-rights.json, artwork-image-rights.json
+- protocol/tasks/PIG-001/evidence/visual-direction-and-adjudication.md and visual-ruling-d29-6.md (Matisse: AC23 adjudication, D-29-6 ruling)
+- protocol/tasks/PIG-001/evidence/ 106 screenshots, desktop/mobile x dark/light
+- protocol/tasks/PIG-001/unrouted/decision-record.md (D-001..D-016) and owner-decisions-r2.md (OD-1..OD-5)
+- protocol/tasks/PIG-001/unrouted/implementation-report-audit.json (Duchamp build_review: return_for_revision; Gate 1 verified end-to-end with an independently recomputed frozen-sha256 and a 5h17m margin before the first production edit)
+
+**Disposition:** `building` -> `internal_review`
+
+## 3: review
+
+**Summary:** REVISION REQUIRED. The build substantially preserves Pigment's intent and closes the two Taste-continuity blockers, but it is not ready for human review. Six measured AC19 majors remain, five rights-tooling tests fail against current HEAD, Gate 2 evidence is stale, real assistive-technology behavior is untested, and the Coordinator-kernel deviation needs independent governance disposition. Keep the frozen specification; correct and re-evidence the build in response_to_review.
+
+**Accepted points:**
+- Passport import now exposes non-unioned field conflicts, supports keep-mine or take-theirs decisions, and preserves local state on cancellation.
+- Onboarding progress now resumes at all five frozen checkpoints and destructive retake behavior is explicitly confirmed.
+- Admire, Seen in person, and Saved for later remain independent and expose visible and programmatic state.
+- The validator passes with all references valid and zero deck warnings; the recorded deck changes were made on editorial merits rather than tuned to silence validation.
+- Route focus, skip navigation, state semantics, search combobox behavior, graph keyboard access, canvas accessible names, Explore alignment, and storage-failure recovery materially strengthen the intended user outcome.
+- The image and rights work found real depicted-work errors, corrected or removed them, added visible credits, and preserved conservative no-clearance language.
+- Self-hosted fonts remove the Google Fonts runtime request, and the remaining Wikimedia request surface is disclosed.
+- Current documentation describes the onboarding deck as stratified rather than response-adaptive and preserves deferred promises.
+- The implementation report correctly refuses to claim Gate 2 certification, merge approval, deployment approval, legal clearance, or complete enumeration.
+- Routing an uncertified build to theoretical review and then response_to_review is appropriate because the quality gate still blocks human_review_ready.
+
+**Disputed points:**
+- [major] AC19 fails: V32-1 through V32-7 represent six open major findings across influence labels, focused graph state, chip hover, list metadata, timeline years, and mobile search grouping. The mobile search failure is also an AC21 user-path defect because navigation overpaints a result-group label to 1.00-1.04 contrast.
+- [major] AC10-AC12 evidence is not reproducible from current HEAD. Five of 41 tests fail: total_unique is 798 rather than 797; gallery_rendered, museum_photos_rendered, and prerender_metadata_refs drift from the expected corrected freeze; the museum surface is 104 rather than 103.
+- [major] The current candidate contains 76 Tier 1 works while the rights sample tooling and tests still encode a 75-work Tier 1 or daily assumption. The copyright-walled Tier 1 record beginning-noland and every other candidate delta require an explicit evidence or no-asset disposition.
+- [major] Rights denominators and chronology are mixed across artifacts: 799 is the effa805 public-URL freeze; 798 is current total unique; 797 is current rendered unique and also a stale expected total; 694 and 693 describe different artwork-only moments; museum counts are 103 then 104; attribution figures appear as 29, 28, and 27; copyright records are now 66 rather than the stale 60 assertion. Each number needs a commit, date, surface, and status.
+- [major] The report's phrases verified-PD and genuinely PD exceed the product evidence. Commons metadata assertions, exact-work checks, and audit search results may be reported, but none establish independent public-domain or legal status; existential statements about unavailable Kahlo images must be bounded to this audit.
+- [major] The operative quality review predates units 31 and 32, records one open major at tree 11e4471, and cannot certify current HEAD or the six newly enumerated findings.
+- [major] AC15 is not fully evidenced: DOM focus, title, and live-region inspection do not substitute for the frozen requirement to observe a tested assistive-technology setup.
+- [major] Focus-indicator contrast, .map-dot .md-name, #search::placeholder, .gonext-item:hover b, final 200 percent zoom behavior after new veils, and other explicitly named sites remain untested or measured-not-cleared.
+- [major, governance] D-017 discloses that the Claude pole changed the neutral Coordinator kernel mid-build and then used that path to ingest its own report. Independent inspection supports the routing logic, but the build gate does not bind the report to an exact SHA and the quality gate scans an append-only review for verdict strings without proving which verdict is operative. Inclusion or future reuse requires a separate governance disposition and may not be silently bundled with product approval.
+- [minor] F-1 root overflow at 821-1100 pixels falls outside AC18's literal viewport list but affects ordinary responsive use; it should be corrected within the bounded response rather than treated as invisible to product review.
+- [minor] F-2 leaves the final mobile-navigation focus indicator masked, which weakens AC17's visible-focus outcome even if the current quality reviewer classified it as nonblocking.
+- [report integrity] The implementation report says six AC19 majors in its summary and proposal but still says five in its rationale and routing paragraph. It also reports 75 commits while current HEAD is 76 commits beyond effa805 because the report-repair commit must be distinguished from build commits.
+
+**Rationale:** The implementation demonstrates strong constitutional behavior: it surfaced blockers the original theory missed, corrected its own instruments and claims against interest, preserved owner authority, and produced substantial product improvements. That merit does not convert known failures into acceptance. The open search and influence labels are effectively unreadable; the rights evidence no longer regenerates cleanly; the quality review is stale; and the specification explicitly requires tested assistive-technology evidence. These are bounded implementation and evidence corrections, so response_to_review is the correct state. Reopening theory would add delay without changing the outcome, while advancing to human review would violate the frozen criteria and Gate 2.
+
+**Evidence:
+- protocol/tasks/PIG-001/messages/005-specification.json
+- protocol/tasks/PIG-001/messages/006-implementation_report.json
+- protocol/tasks/PIG-001/build-evidence-report.md
+- protocol/tasks/PIG-001/quality-review.md
+- protocol/tasks/PIG-001/analyses/005-synthesis-liaison.json
+- protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md
+- protocol/tasks/PIG-001/evidence/harness/durer-u31/n31-2-nav-overlaps-search-390-light.png
+- protocol/tasks/PIG-001/evidence/v32-influences-svg-labels__mobile-390x844__dark.png
+- protocol/tasks/PIG-001/evidence/asset-inventory-effa805.json
+- protocol/tasks/PIG-001/evidence/rights-register.json
+- protocol/tasks/PIG-001/unrouted/decision-record.md (D-017 and D-018)
+- protocol/tasks/PIG-001/owner-decisions-r2.md
+- independent validator run 2026-07-30: ALL REFERENCES VALID; current 256/76/323/76/104 corpus; zero deck warnings
+- independent unittest run 2026-07-30: 41 tests, 5 failures in tests/test_rights_tooling.py
+- independent asset inventory run 2026-07-30 at 55fb166: 798 unique public assets, 797 rendered unique, 104 museum photos, four drifted surfaces against the effa805 freeze
+- independent gate checks 2026-07-30: build gate passes; quality gate blocks on missing GATE 2 CERTIFIED and nonzero OPEN MAJOR
+
+**Disposition:** `internal_review` -> `revision`

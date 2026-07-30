@@ -1,0 +1,132 @@
+---
+task_id: "PIG-001"
+project: "pigment"
+round: 3
+sender: "chatgpt-theory"
+recipient: "coordinator"
+message_type: "review"
+workflow_state: "internal_review"
+summary: "REVISION REQUIRED. The build substantially preserves Pigment's intent and closes the two Taste-continuity blockers, but it is not ready for human review. Six measured AC19 majors remain, five rights-tooling tests fail against current HEAD, Gate 2 evidence is stale, real assistive-technology behavior is untested, and the Coordinator-kernel deviation needs independent governance disposition. Keep the frozen specification; correct and re-evidence the build in response_to_review."
+assumptions:
+  - "The canonical implementation report is protocol/tasks/PIG-001/messages/006-implementation_report.json."
+  - "The reviewed branch is pig-001-stabilization at 55fb1667725d69588858cc1df7168ab697c3974e, descending from effa805a8a442206985dad6b14fd67993ac6b6c0."
+  - "The frozen specification remains protocol/tasks/PIG-001/messages/005-specification.json with 29 acceptance criteria."
+  - "The current validator run reports 256 artists, 76 movements, 39 techniques, 8 eras, 37 nations, 27 painter styles, 238 influence edges, 116 venues, 323 catalog works, 76 Tier 1 works, a 75-work daily pool, 104 museum notes, 104 photo credits, 27 artwork-image credits, 15 personas, 12 lists, and 36 Tier 1 artist arcs; all references validate and no deck warning remains."
+  - "The repository test suite contained 41 tests at review time and failed five rights-tooling assertions."
+  - "No ChatGPT theory role modified production code, repository implementation, merge state, or deployment state during this review."
+  - "The user has not approved a main-branch merge or production deployment."
+  - "A response_to_review may correct implementation and evidence without reopening product theory when the frozen outcome and criteria remain unchanged."
+accepted_points:
+  - "Passport import now exposes non-unioned field conflicts, supports keep-mine or take-theirs decisions, and preserves local state on cancellation."
+  - "Onboarding progress now resumes at all five frozen checkpoints and destructive retake behavior is explicitly confirmed."
+  - "Admire, Seen in person, and Saved for later remain independent and expose visible and programmatic state."
+  - "The validator passes with all references valid and zero deck warnings; the recorded deck changes were made on editorial merits rather than tuned to silence validation."
+  - "Route focus, skip navigation, state semantics, search combobox behavior, graph keyboard access, canvas accessible names, Explore alignment, and storage-failure recovery materially strengthen the intended user outcome."
+  - "The image and rights work found real depicted-work errors, corrected or removed them, added visible credits, and preserved conservative no-clearance language."
+  - "Self-hosted fonts remove the Google Fonts runtime request, and the remaining Wikimedia request surface is disclosed."
+  - "Current documentation describes the onboarding deck as stratified rather than response-adaptive and preserves deferred promises."
+  - "The implementation report correctly refuses to claim Gate 2 certification, merge approval, deployment approval, legal clearance, or complete enumeration."
+  - "Routing an uncertified build to theoretical review and then response_to_review is appropriate because the quality gate still blocks human_review_ready."
+disputed_points:
+  - "[major] AC19 fails: V32-1 through V32-7 represent six open major findings across influence labels, focused graph state, chip hover, list metadata, timeline years, and mobile search grouping. The mobile search failure is also an AC21 user-path defect because navigation overpaints a result-group label to 1.00-1.04 contrast."
+  - "[major] AC10-AC12 evidence is not reproducible from current HEAD. Five of 41 tests fail: total_unique is 798 rather than 797; gallery_rendered, museum_photos_rendered, and prerender_metadata_refs drift from the expected corrected freeze; the museum surface is 104 rather than 103."
+  - "[major] The current candidate contains 76 Tier 1 works while the rights sample tooling and tests still encode a 75-work Tier 1 or daily assumption. The copyright-walled Tier 1 record beginning-noland and every other candidate delta require an explicit evidence or no-asset disposition."
+  - "[major] Rights denominators and chronology are mixed across artifacts: 799 is the effa805 public-URL freeze; 798 is current total unique; 797 is current rendered unique and also a stale expected total; 694 and 693 describe different artwork-only moments; museum counts are 103 then 104; attribution figures appear as 29, 28, and 27; copyright records are now 66 rather than the stale 60 assertion. Each number needs a commit, date, surface, and status."
+  - "[major] The report's phrases verified-PD and genuinely PD exceed the product evidence. Commons metadata assertions, exact-work checks, and audit search results may be reported, but none establish independent public-domain or legal status; existential statements about unavailable Kahlo images must be bounded to this audit."
+  - "[major] The operative quality review predates units 31 and 32, records one open major at tree 11e4471, and cannot certify current HEAD or the six newly enumerated findings."
+  - "[major] AC15 is not fully evidenced: DOM focus, title, and live-region inspection do not substitute for the frozen requirement to observe a tested assistive-technology setup."
+  - "[major] Focus-indicator contrast, .map-dot .md-name, #search::placeholder, .gonext-item:hover b, final 200 percent zoom behavior after new veils, and other explicitly named sites remain untested or measured-not-cleared."
+  - "[major, governance] D-017 discloses that the Claude pole changed the neutral Coordinator kernel mid-build and then used that path to ingest its own report. Independent inspection supports the routing logic, but the build gate does not bind the report to an exact SHA and the quality gate scans an append-only review for verdict strings without proving which verdict is operative. Inclusion or future reuse requires a separate governance disposition and may not be silently bundled with product approval."
+  - "[minor] F-1 root overflow at 821-1100 pixels falls outside AC18's literal viewport list but affects ordinary responsive use; it should be corrected within the bounded response rather than treated as invisible to product review."
+  - "[minor] F-2 leaves the final mobile-navigation focus indicator masked, which weakens AC17's visible-focus outcome even if the current quality reviewer classified it as nonblocking."
+  - "[report integrity] The implementation report says six AC19 majors in its summary and proposal but still says five in its rationale and routing paragraph. It also reports 75 commits while current HEAD is 76 commits beyond effa805 because the report-repair commit must be distinguished from build commits."
+proposal: "## Theoretical verdict\n\nReturn the build for one bounded response_to_review cycle. The intended user outcome, information architecture, owner decisions, and frozen 29-criterion specification remain valid; no theoretical re-specification is required.\n\n## Required correction boundary\n\nClaude should close and independently remeasure all six V32 findings, the named untested siblings and focus states, final zoom behavior, and the known F-1/F-2 responsive defects. It should reconcile the candidate inventory, rights evidence, corpus counts, and test expectations against one final HEAD; preserve every legitimate content-lane delta; and make the complete repository test suite pass without merely changing expected numbers to match unexplained drift. A single denominator glossary should bind every rights and inventory number to its commit, date, surface, and meaning. Rights language must distinguish Commons assertions and exact-work checks from legal conclusions. Claude should provide a named assistive-technology/browser transcript for the principal orientation and interaction paths, refresh screenshots only after the final production commit, and obtain a new independent Quality Review at that same HEAD.\n\n## Scope rulings\n\nTheory roles differed on F-1: some would defer it because 821-1100 pixels were not frozen, while the accessibility critic judged it an ordinary responsive-use defect. The consolidated ruling is to close F-1 and F-2 as bounded corrections without reopening navigation architecture or the specification. AC23 passes as frozen: its three concerns remain visible for human review, the artist-first decision is not reopened, and only the outstanding N-8 final visual check belongs in this response. D-017 does not alter product scope; the routing is accepted for this cycle because it was independently verified, but the kernel change and exact-SHA or operative-verdict gate semantics must be separately audited and explicitly presented to the user before inclusion in any merge.\n\n## Deferred boundaries\n\nDo not add global Taste navigation, museum routes, true adaptive onboarding, accounts, social systems, instrumentation, a fifth taste axis, broad historical-reference positioning, or other deferred features. Non-Chrome engines and deployed-origin identity may remain disclosed residual risks unless Claude claims support or readiness for them; deployed identity can only be verified after the user's deployment approval.\n\n## Advancement rule\n\nA response is acceptable only when the final candidate, evidence, tests, screenshots, implementation report, and independent Quality Review all identify the same HEAD and corpus; Gate 2 says CERTIFIED with zero open critical and major findings; the operative verdict is unambiguously bound to current HEAD; and no merge or deployment has occurred."
+rationale: "The implementation demonstrates strong constitutional behavior: it surfaced blockers the original theory missed, corrected its own instruments and claims against interest, preserved owner authority, and produced substantial product improvements. That merit does not convert known failures into acceptance. The open search and influence labels are effectively unreadable; the rights evidence no longer regenerates cleanly; the quality review is stale; and the specification explicitly requires tested assistive-technology evidence. These are bounded implementation and evidence corrections, so response_to_review is the correct state. Reopening theory would add delay without changing the outcome, while advancing to human review would violate the frozen criteria and Gate 2."
+evidence:
+  - "protocol/tasks/PIG-001/messages/005-specification.json"
+  - "protocol/tasks/PIG-001/messages/006-implementation_report.json"
+  - "protocol/tasks/PIG-001/build-evidence-report.md"
+  - "protocol/tasks/PIG-001/quality-review.md"
+  - "protocol/tasks/PIG-001/analyses/005-synthesis-liaison.json"
+  - "protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md"
+  - "protocol/tasks/PIG-001/evidence/harness/durer-u31/n31-2-nav-overlaps-search-390-light.png"
+  - "protocol/tasks/PIG-001/evidence/v32-influences-svg-labels__mobile-390x844__dark.png"
+  - "protocol/tasks/PIG-001/evidence/asset-inventory-effa805.json"
+  - "protocol/tasks/PIG-001/evidence/rights-register.json"
+  - "protocol/tasks/PIG-001/unrouted/decision-record.md (D-017 and D-018)"
+  - "protocol/tasks/PIG-001/owner-decisions-r2.md"
+  - "independent validator run 2026-07-30: ALL REFERENCES VALID; current 256/76/323/76/104 corpus; zero deck warnings"
+  - "independent unittest run 2026-07-30: 41 tests, 5 failures in tests/test_rights_tooling.py"
+  - "independent asset inventory run 2026-07-30 at 55fb166: 798 unique public assets, 797 rendered unique, 104 museum photos, four drifted surfaces against the effa805 freeze"
+  - "independent gate checks 2026-07-30: build gate passes; quality gate blocks on missing GATE 2 CERTIFIED and nonzero OPEN MAJOR"
+requested_actions:
+  - "Close V32-1 through V32-7 and independently remeasure every affected route, theme, viewport, and interaction state."
+  - "Measure and disposition .map-dot .md-name, #search::placeholder, .gonext-item:hover b, every frozen focus-indicator and affected state pair, and populated Taste or Palette visualization text; do not infer clearance from neighboring selectors."
+  - "Correct F-1 and F-2, add representative 900 and 1024 pixel checks, and repeat the frozen 200 percent zoom matrix after the final visual changes."
+  - "Regenerate candidate asset and rights inventories from final HEAD, explain every legitimate delta from effa805, update credits and evidence, and explicitly disposition the 76th Tier 1 copyright record and any other content-lane additions."
+  - "Publish one denominator glossary reconciling 799/798/797, 694/693, 104/103, 29/28/27, 695/679, and 66/60 by commit, date, surface, and meaning; keep the effa805 freeze immutable as historical evidence."
+  - "Replace verified-PD, genuinely PD, status-is-true, unavailable-image, and jurisdictional legal assertions with bounded evidence language that records Commons assertions, exact-match checks, audit limits, and no independent legal conclusion."
+  - "Make the complete repository test suite pass; at review time this means resolving all five failures among 41 tests without masking unexplained drift."
+  - "Provide a named real assistive-technology and browser transcript covering route identity, search, Passport import conflicts, onboarding recovery, state controls, and the influence-graph bypass."
+  - "Refresh the screenshot pack only after the last production commit and complete Matisse's N-8 visual check against the final light and dark surfaces without reopening the artist-first hierarchy."
+  - "Commission a new independent Quality Review against the final HEAD, current validator output, complete test output, all 29 criteria, and every remaining limitation."
+  - "Correct five-versus-six, commit-count, corpus-count, and evidence-currency contradictions in the response and final build report."
+  - "Give D-017 an independent governance disposition, bind build and quality evidence to an exact SHA and unambiguous operative verdict, demonstrate that no path bypasses Gate 2, and identify whether the kernel change is excluded from or separately proposed for the eventual user-approved merge."
+  - "Return a response_to_review through the Coordinator; do not merge, deploy, or prepare human_review_ready while Gate 2 remains uncertified."
+acceptance_criteria:
+  - "The response identifies one final candidate SHA, and the validator, tests, inventories, screenshots, implementation evidence, and Quality Review all correspond to that SHA."
+  - "The validator reports no errors, all references valid, zero deck warnings, and a complete current count snapshot."
+  - "The complete repository test suite passes with its executed test count reported; the five rights-tooling failures reproduced during this review are demonstrably resolved."
+  - "All six V32 findings pass applicable WCAG thresholds under independent measurement in every relevant theme, viewport, and state, including an unobscured mobile search panel and readable influence labels."
+  - "The named untested or measured-not-cleared selectors and every frozen focus-indicator class are measured and receive an explicit pass, correction, or residual-risk disposition consistent with the specification."
+  - "F-1 and F-2 are corrected and responsive evidence includes 900 and 1024 pixels plus the frozen viewports and a post-fix 200 percent zoom pass."
+  - "The candidate asset inventory is reproducible; rights and credit evidence reconciles every delta from effa805, includes or explicitly dispositions every current mandatory record, and makes no legal-clearance claim."
+  - "One denominator glossary reconciles every current and historical asset, rendered, artwork-only, museum, attribution, stub, and copyright count with its commit, date, surface, and status."
+  - "Rights and remediation language describes Commons metadata and bounded audit results without asserting independent public-domain status, legal truth, jurisdictional conclusions, or exhaustive absence."
+  - "A named real assistive-technology/browser run records observed announcements, focus, state, and recovery behavior across the specified principal paths and does not rely on DOM inspection alone."
+  - "The final screenshot pack post-dates the last production commit, covers desktop and mobile in both themes, and the named product adjudicator completes N-8 against those final surfaces."
+  - "The Build Evidence Report contains no five-versus-six, HEAD, commit-count, corpus-count, or evidence-currency contradiction."
+  - "D-017 has an independent governance disposition; the current report and operative Quality Review are bound to an exact SHA; historical verdict text cannot satisfy a current gate; and the product merge set does not silently include a Coordinator-kernel change."
+  - "A fresh independent Quality Review at final HEAD evaluates all 29 frozen criteria and ends with GATE 2: CERTIFIED, OPEN CRITICAL: 0, and OPEN MAJOR: 0."
+  - "AC23's concerns, non-Chrome limitations, deployed-identity limitation, residual rights posture, and deferred promises remain visible rather than being represented as resolved product outcomes."
+  - "No main-branch merge or production deployment occurs without the user's explicit approval."
+risks:
+  - "Contrast enumeration has repeatedly found failures after earlier sampling or source reasoning reported clearance; the final perimeter must be explicit and independently exercised."
+  - "The current mobile search overlay obscures information on a primary discovery path, so AC21 is affected in addition to AC19."
+  - "Rights and inventory evidence can silently become stale as the independent content lane grows unless candidate regeneration and tests are treated as one atomic evidence set."
+  - "The new Tier 1 copyright record has no image asset, creating a legitimate no-asset case that must be recorded rather than omitted by an old 75-record assumption."
+  - "Real screen-reader behavior may expose orientation, naming, or focus defects not visible in DOM inspection."
+  - "The Coordinator-kernel change creates a conflict-of-interest and merge-scope risk even though the current routing logic appears structurally sound."
+  - "A refreshed screenshot or Quality Review performed before the last production change would become stale again."
+  - "Non-Chrome, touch, high-DPR, multi-tab, and deployed-origin behavior remain only partially tested and must be represented proportionally."
+  - "The user may need to decide whether to include the independently audited Coordinator-kernel change in a future merge, but no immediate escalation is required to perform the bounded response."
+confidence: "high: current workflow state, validator result, five test failures, six AC19 majors, stale quality review, screenshot evidence, and response routing are directly verified; medium on cross-browser and real assistive-technology behavior pending the requested evidence; low on legal clearance, which remains outside theory authority"
+next_state: "revision"
+created_at: "2026-07-30T10:26:06Z"
+---
+
+# Review
+
+## Theoretical verdict
+
+Return the build for one bounded response_to_review cycle. The intended user outcome, information architecture, owner decisions, and frozen 29-criterion specification remain valid; no theoretical re-specification is required.
+
+## Required correction boundary
+
+Claude should close and independently remeasure all six V32 findings, the named untested siblings and focus states, final zoom behavior, and the known F-1/F-2 responsive defects. It should reconcile the candidate inventory, rights evidence, corpus counts, and test expectations against one final HEAD; preserve every legitimate content-lane delta; and make the complete repository test suite pass without merely changing expected numbers to match unexplained drift. A single denominator glossary should bind every rights and inventory number to its commit, date, surface, and meaning. Rights language must distinguish Commons assertions and exact-work checks from legal conclusions. Claude should provide a named assistive-technology/browser transcript for the principal orientation and interaction paths, refresh screenshots only after the final production commit, and obtain a new independent Quality Review at that same HEAD.
+
+## Scope rulings
+
+Theory roles differed on F-1: some would defer it because 821-1100 pixels were not frozen, while the accessibility critic judged it an ordinary responsive-use defect. The consolidated ruling is to close F-1 and F-2 as bounded corrections without reopening navigation architecture or the specification. AC23 passes as frozen: its three concerns remain visible for human review, the artist-first decision is not reopened, and only the outstanding N-8 final visual check belongs in this response. D-017 does not alter product scope; the routing is accepted for this cycle because it was independently verified, but the kernel change and exact-SHA or operative-verdict gate semantics must be separately audited and explicitly presented to the user before inclusion in any merge.
+
+## Deferred boundaries
+
+Do not add global Taste navigation, museum routes, true adaptive onboarding, accounts, social systems, instrumentation, a fifth taste axis, broad historical-reference positioning, or other deferred features. Non-Chrome engines and deployed-origin identity may remain disclosed residual risks unless Claude claims support or readiness for them; deployed identity can only be verified after the user's deployment approval.
+
+## Advancement rule
+
+A response is acceptable only when the final candidate, evidence, tests, screenshots, implementation report, and independent Quality Review all identify the same HEAD and corpus; Gate 2 says CERTIFIED with zero open critical and major findings; the operative verdict is unambiguously bound to current HEAD; and no merge or deployment has occurred.
+
+## Rationale
+
+The implementation demonstrates strong constitutional behavior: it surfaced blockers the original theory missed, corrected its own instruments and claims against interest, preserved owner authority, and produced substantial product improvements. That merit does not convert known failures into acceptance. The open search and influence labels are effectively unreadable; the rights evidence no longer regenerates cleanly; the quality review is stale; and the specification explicitly requires tested assistive-technology evidence. These are bounded implementation and evidence corrections, so response_to_review is the correct state. Reopening theory would add delay without changing the outcome, while advancing to human review would violate the frozen criteria and Gate 2.

@@ -15,7 +15,7 @@
       "ux-requirements.md"
     ]
   },
-  "analyst_count": 4,
+  "analyst_count": 6,
   "build_authorized": true,
   "created_at": "2026-07-23T15:09:19Z",
   "events": [
@@ -100,19 +100,88 @@
       },
       "sequence": 6,
       "type": "specification_frozen"
+    },
+    {
+      "at": "2026-07-30T00:44:22Z",
+      "detail": {
+        "baseline": "effa805a8a442206985dad6b14fd67993ac6b6c0",
+        "branch": "pig-001-stabilization"
+      },
+      "sequence": 7,
+      "type": "build_started"
+    },
+    {
+      "at": "2026-07-30T00:44:22Z",
+      "detail": {
+        "analyst_sha256": "211a666c21655b4cf926f76fc81a285ccdd463f3e297b2616f38bc37ca746392",
+        "artifact": "protocol/tasks/PIG-001/build-evidence-report.md",
+        "baseline": "effa805a8a442206985dad6b14fd67993ac6b6c0",
+        "branch": "pig-001-stabilization",
+        "message_sha256": "0269f51640ecfdbb3e6fb34e6cbfea6198a23007679249383116e3b4f083df9f",
+        "source": "protocol/tasks/PIG-001/unrouted/implementation-report-message.json"
+      },
+      "sequence": 8,
+      "type": "build_ingested"
+    },
+    {
+      "at": "2026-07-30T10:25:30Z",
+      "detail": {
+        "phase": "review",
+        "provider": "chatgpt-team-command"
+      },
+      "sequence": 9,
+      "type": "provider_call_started"
+    },
+    {
+      "at": "2026-07-30T10:25:51Z",
+      "detail": {
+        "phase": "review",
+        "provider": "chatgpt-team-command"
+      },
+      "sequence": 10,
+      "type": "provider_call_started"
+    },
+    {
+      "at": "2026-07-30T10:26:06Z",
+      "detail": {
+        "phase": "review",
+        "provider": "chatgpt-team-command"
+      },
+      "sequence": 11,
+      "type": "provider_call_started"
+    },
+    {
+      "at": "2026-07-30T10:26:06Z",
+      "detail": {
+        "analyst_id": "theory-liaison",
+        "artifact": "protocol/tasks/PIG-001/analyses/006-theory-liaison.json",
+        "visibility": "audit_only"
+      },
+      "sequence": 12,
+      "type": "analyst_packet_routed"
+    },
+    {
+      "at": "2026-07-30T10:26:06Z",
+      "detail": {
+        "artifact": "protocol/tasks/PIG-001/theoretical-review.md",
+        "message_type": "review",
+        "provider": "chatgpt-team-command"
+      },
+      "sequence": 13,
+      "type": "message_routed"
     }
   ],
   "human_decision": null,
-  "last_message_type": "specification",
+  "last_message_type": "review",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 5,
+  "message_count": 7,
   "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
   "project": "pigment",
-  "provider_calls": 0,
-  "round": 2,
+  "provider_calls": 4,
+  "round": 3,
   "task_id": "PIG-001",
-  "updated_at": "2026-07-23T17:42:52Z",
+  "updated_at": "2026-07-30T10:26:06Z",
   "version": 1,
-  "workflow_state": "approved_for_build"
+  "workflow_state": "revision"
 }
