@@ -332,3 +332,151 @@ Not applicable — no screenshots exist for the proposed rule. If §1c is built,
 Vermeer should capture `#/credits`, `#/privacy` and `#/404` at 1440×900 and 390×844
 in both themes, and I will review the underline weight and offset against the
 prose at those sizes before the rule is considered settled.
+
+---
+
+# N-8 — the underline, seen
+
+**Date:** 2026-08-06 · **Reviewer:** Matisse (`claude-visual-director`) · **HEAD:** `a71e2c5`
+**Scope:** the D-29-6 prose-link underline as built in unit 30b (`css/styles.css:310-336`),
+judged against rendered prose for the first time. Plus a short coherence sweep over
+units 33/34/36. Not in scope: contrast (measured and closed), artist-first hierarchy
+(owner-reserved), AC23.
+
+## VERDICT — **PASS WITH NOTE**
+
+The specification survives contact with real prose. Both themes, both viewports.
+One note, recorded below, and one thing I could not see.
+
+### Evidence
+
+| # | Screenshot | What it shows |
+| --- | --- | --- |
+| E1 | `evidence/credits__desktop-1440x900__dark.png` | Wikimedia Commons + Privacy links in body prose, dark |
+| E2 | `evidence/credits__desktop-1440x900__light.png` | same paragraph, light paper over the ambient wave |
+| E3 | 2× crops of E1/E2 at the same paragraph (sips, `--cropOffset 385 120`, 780×110 → 2340×330) | underline weight, offset, skip-ink, wrap behaviour |
+| E4 | `evidence/credits__mobile-390x844__dark.png` | 390px column: link on its own line, and a link mid-sentence |
+| E5 | `evidence/privacy__desktop-1440x900__light.png` | prose with mono `code` spans and no links — the control case |
+| E6 | `evidence/museum-louvre__desktop-1440x900__light.png` | `.img-credit` underlines on light paper, directly above unlinked prose |
+| E7 | live at `127.0.0.1:8433` (own port, killed; owner's 8422 untouched) | computed style on `#/credits`: `text-decoration-thickness:1px`, `text-decoration-color:rgb(232,201,138)` = `currentColor`, `text-underline-offset:2px` |
+
+### 1. Affordance without noise — **holds**
+
+E1/E3: "Wikimedia Commons" and "Privacy" read as links at a glance, before colour is
+consciously processed. Nothing else in that column is underlined, so the mark is
+unambiguous. Density is the reason it works: the D-29-6 scope
+(`p:not(.img-credit):not(.footer-note) a:not([class])`) yields **two** underlines in
+the whole Credits lede and **zero** on the Privacy page (E5) — where the mono `code`
+spans, correctly, carry no underline and so cannot be mistaken for links. On the
+artist and museum pages (E6, `u30-artist-caravaggio__desktop-1440x900__dark.png`) the
+editorial prose carries no inline links at all, so the dense-prose smear I was most
+worried about does not exist on this site. The rule is doing work exactly where prose
+links exist and nowhere else.
+
+### 2. Both themes — **holds; dark is the stronger of the two, not the weaker**
+
+I ruled theme-neutral because dark measured worse (1.06:1 vs light's 1.10:1) and I
+expected dark to be the case I had got wrong. Seen (E3), it is the opposite. In dark
+the underline is `#e8c98a` on near-black: high-luminance hairline on a dark field,
+and it reads as crisply as the glyphs above it. In light it is the muted gold-brown
+on paper — present, correct, and quieter, because a dark hairline on a light ground
+at 1px simply carries less optical weight than a light hairline on a dark ground at
+the same measure. Light is the marginal case. It still passes: at 2× (E3, light) the
+rule under "Wikimedia / Commons" and under "Privacy" is continuous and unmistakable.
+But if anyone ever proposes trimming this treatment, light is where it would break
+first — the opposite of what my own measurement predicted. Recorded as a correction
+to my §1b reasoning: the contrast ratio predicted which theme needed the underline
+*most*, not which theme would render it *best*. Those are different questions and I
+conflated them.
+
+### 3. Collisions — **none found**
+
+- **Descenders:** "Privacy" is the test case in both themes. `text-decoration-skip-ink:auto`
+  cuts the rule cleanly around the `y` tail at 2px offset (E3, both). No pierce, no
+  visible nick in the glyph.
+- **Adjacent punctuation:** "Wikimedia Commons**,**" — the comma sits outside the
+  underline in both themes (E3). Correct: the anchor ends where the link ends.
+- **Wrapped links:** the same link breaks across two lines in E1/E2/E3 and again,
+  differently, at 390px (E4). Both fragments carry the rule; the second-line fragment
+  starts flush at the measure's left edge with no orphaned stub. Line-height is wide
+  enough (E3) that the first line's underline never crowds the second line's
+  ascenders.
+- **Links inside list entries:** none exist under this selector — list, card and chip
+  anchors are classed and excluded, and E6/`lists__desktop-1440x900__light.png`
+  confirm the exclusions hold at HEAD. Nothing in a list picked up the rule by accident.
+
+### 4. Hover / focus thickening — **not seen; specification confirmed in the cascade**
+
+I state this plainly rather than claim a judgement I did not make. The evidence pack
+contains **no hover or focus-visible capture** — 108 stills, all resting state — and
+my live session on `#/credits` confirmed the resting computed values (E7) but the
+pane became unresponsive before I could capture the hovered frame. What is confirmed:
+the rule exists as specified at `css/styles.css:333-336`, `1px → 2px` on both `:hover`
+and `:focus-visible`, transitioned on thickness rather than colour so it survives
+greyscale.
+
+On the value itself I hold my specification: a doubling is the smallest step that is
+reliably perceptible on a 16px body at 2px offset, and the step below it (1px → 1.5px)
+would land on sub-pixel rendering and read as nothing on a non-retina display. 2px is
+not crude — at 2px offset the thickened rule still clears the descenders that
+skip-ink carves around it. **This is a defended specification, not an observation.**
+If Van Eyck wants N-8 closed on observed evidence rather than on the cascade, the
+missing artifact is one frame: `#/credits`, dark and light, mouse over "Privacy".
+I do not consider that frame blocking.
+
+### 5. NOTE (non-blocking) — two underline colours on one page
+
+E1 shows it: in the Credits lede the prose underlines are gold (`currentColor`), and
+250px below, in the attribution table, the `.img-credit` underlines are grey
+(`var(--line)`). Same geometry, same page, two colours for one affordance. I looked
+at this deliberately and I am not calling it a defect: the table is metadata, it is
+set smaller and dimmer on purpose, and its links being visibly quieter than the
+lede's is correct hierarchy rather than an inconsistency. E6 shows the same pairing
+on light paper and it reads as deliberate there too. The unification already noted in
+this document (`.img-credit`/`.footer-note` taking `currentColor`) remains available
+and remains **out of scope for PIG-001** — it would touch two certified surfaces to
+buy tidiness, not accessibility. Recorded so the next reviewer does not rediscover it
+as a finding.
+
+## COHERENCE SWEEP — units 33 / 34 / 36
+
+Screenshot-grounded, no contrast re-audit.
+
+- **Influence-graph label halo (u33) — passes, and it is the best change in the set.**
+  `evidence/u33-ig-labels__desktop-1440x900__dark.png` and
+  `evidence/influences__desktop-1440x900__dark.png`. The fear was a smear; the result
+  is the opposite. At full density (204 painters, 238 edges) the halo is invisible as
+  an object — you see no glow, no plate, no box — and its only perceptible effect is
+  that "Dante Gabriel Rossetti" and "Lucas Cranach the Elder" stay readable where they
+  cross an edge line. Re-emitting labels after the dots is right: a label clipped by a
+  node is a bug, a label over a node is a legend. **Pass.**
+- **Graph label crowding — observation, not a finding.** In the dense right-hand
+  cluster (Renoir / Hokusai / Dalí / Bacon) labels sit close enough to touch. That is
+  the graph's data density at 1440px, not a regression from unit 33, and the halo is
+  what keeps it legible rather than what causes it. No action.
+- **`.tl2-year` (unit 34) — passes.** `evidence/timeline__desktop-1440x900__light.png`.
+  The 1300/1400 markers read as quiet letterspaced gold on the gridline, in the same
+  voice as the "EIGHT CENTURIES AT A GLANCE" eyebrow and the "— " section rules. It
+  belongs to the system; nothing bolted on.
+- **`.le-meta` (unit 34) — passes.** `evidence/lists__desktop-1440x900__light.png`.
+  "LIST · 10 WORKS" sits in the same caps-tracked register as every other eyebrow on
+  the site. The card stack still leads with the artwork; the meta recedes. Identity
+  holds.
+- **Chips (unit 36) — resting state passes.**
+  `evidence/u30-artist-caravaggio__desktop-1440x900__dark.png`. The movement/technique/
+  era/nation row and the "why this painter matters" tag row are one family, dot-marked
+  and pill-shaped, and they do not compete with the hero. Hover is a state and is not
+  in the pack; not judged.
+- **Mobile search-panel layering (unit 36) — passes.**
+  `evidence/credits__mobile-390x844__dark.png`. Search field above, horizontally
+  scrolling nav row below, both on the sticky header, no bleed-through of page content
+  and no z-order artifact at the seam.
+- **`#/credits` lede copy (unit 36) — passes, and it is in voice.** "Pigment is built
+  on pictures other people took and shared" is plain, unembarrassed, and does the
+  Style Guide's job of crediting without lawyering. Set in body prose directly under
+  the framed title, it also gives the two prose underlines the uncrowded field that
+  makes §1 pass.
+
+**Identity holds across all seven.** Nothing in units 33/34/36 reads as bolted on;
+the additions are all in the existing letterspaced-caps / hairline-rule / dot-chip
+vocabulary rather than beside it.
