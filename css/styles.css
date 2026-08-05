@@ -1049,8 +1049,21 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 .daily-enter{display:inline-flex;align-items:center;gap:12px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
 .daily-enter span{font-size:1.2rem;transition:transform .25s var(--ease)}
 .daily-enter:hover span{transform:translateX(5px)}
+/* F-1 — `#/` overflowed horizontally by 150 / 113 / 54 / 18 px at 821 / 900 /
+   1024 / 1100 px, and this box was the whole of it. It was classified a note
+   because those widths fall outside the frozen viewport list; the theory pole's
+   position is that real people use them, and they are right.
+   The mechanism, measured rather than guessed: `min-height:390px` on a box with
+   `aspect-ratio:4/3` TRANSFERS through the ratio into a 390 x 4/3 = 520 px
+   minimum WIDTH, which the grid track cannot go below however narrow the
+   viewport. `body{overflow-x:hidden}` then hid the symptom — the page did not
+   scroll sideways, it silently clipped — which is why nothing caught it.
+   Removing the min-height removes the transferred minimum; the ratio alone
+   still gives the box its height from whatever width the track has, so at
+   1280 px and above the rendered geometry is unchanged (520 x 390), and below
+   that it shrinks instead of overflowing. (F-1) */
 .daily-media{
-  position:relative;display:flex;align-items:center;justify-content:center;min-height:390px;aspect-ratio:4/3;
+  position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;
   overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#0c0b09;
 }
 .daily-media img{width:100%;height:100%;display:block;object-fit:contain;transition:transform .5s var(--ease)}
@@ -1077,7 +1090,7 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 
 @media (max-width:820px){
   .daily-home{grid-template-columns:1fr;gap:28px;margin:34px -16px;padding:30px 16px}
-  .daily-media{order:-1;min-height:0;aspect-ratio:4/3}
+  .daily-media{order:-1;aspect-ratio:4/3}   /* min-height:0 retired with F-1 — nothing to reset */
   .daily-copy h2{font-size:1.9rem}
   .daily-page-head{align-items:start}
   .daily-page-head h1{font-size:2.45rem}
