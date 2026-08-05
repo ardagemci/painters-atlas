@@ -1305,6 +1305,10 @@ function isEuropean(n){
 function mapDotsSVG(region){
   const mag = MAP_REGIONS[region].mag;
   let out = "";
+  /* Label de-collision at the europe zoom — see mapDecollide() below. Each
+     label is emitted at its natural place under the dot, and carries the
+     alternative place above it in `data-alty`, so the post-render pass can move
+     a colliding label without recomputing any geometry. */
   [...N].map(n => [n, artistsOfNation(n.id).length])
     .filter(([n]) => window.NATION_COORDS[n.id] && (region === "world" || isEuropean(n)))
     .sort((a, b) => b[1] - a[1])                          /* big circles behind small */
@@ -1312,9 +1316,12 @@ function mapDotsSVG(region){
       const [x, y] = mapProj(...window.NATION_COORDS[n.id]);
       const r  = region === "world" ? 5 + Math.sqrt(c) * 3 : (6 + Math.sqrt(c) * 1.9) / mag;
       const fs = region === "world" ? 13 : 10.5 / mag;
-      const name = region === "europe"
-        ? `<text class="md-name" style="font-size:${(9.5 / mag).toFixed(2)}px" x="${x.toFixed(1)}" y="${(y + r + 11 / mag).toFixed(2)}">${esc(n.name)} · ${c}</text>`
-        : "";
+      let name = "";
+      if(region === "europe"){
+        const lfs = 9.5 / mag;
+        const below = y + r + 11 / mag, above = y - r - 5 / mag;
+        name = `<text class="md-name" style="font-size:${lfs.toFixed(2)}px" x="${x.toFixed(1)}" y="${below.toFixed(2)}" data-alty="${above.toFixed(2)}">${esc(n.name)} · ${c}</text>`;
+      }
       out += `<a href="#/nation/${n.id}" class="map-dot">
         <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" vector-effect="non-scaling-stroke"/>
         <text class="md-flag" style="font-size:${fs.toFixed(2)}px" x="${x.toFixed(1)}" y="${(y + fs * 0.34).toFixed(2)}">${n.flag}</text>
@@ -1325,6 +1332,64 @@ function mapDotsSVG(region){
     out += `<rect class="eu-frame" data-zoom="europe" x="${ex}" y="${ey}" width="${ew}" height="${eh}" rx="6" vector-effect="non-scaling-stroke"><title>Zoom into Europe</title></rect>`;
   }
   return out;
+}
+
+/* Label de-collision at the europe zoom, on real geometry.
+   The `--panel2` halo on .md-name (css/styles.css) gives each label its own
+   backdrop over the gold dot circle it sits on — that closed the 1.28 dark
+   measurement. A halo cannot help where two LABELS overlap each other, and one
+   pair did: "Germany · 19" and "Belgium & Flanders · 8", whose worst glyph
+   pixel measured 1.73 against a neighbouring label's ink rather than against
+   any surface, at every width in both themes.
+   The first attempt at this estimated each label's box from its character count
+   and did not fire — a reminder that SVG text has no width until it is laid
+   out. So it is done here instead, after render, on getBBox(), which is the
+   real thing. A colliding label moves to the alternative place its emitter
+   already computed for it; if that also collides it stays where it was, since a
+   known collision is better than an unmeasured one. Idempotent, so it is safe
+   to call on every render. (AC19 / u32 NOT TESTED 7) */
+function mapDecollide(){
+  const svg = document.getElementById("atlas-map");
+  if(!svg) return;
+  const labels = [...svg.querySelectorAll(".md-name[data-alty]")];
+  if(!labels.length) return;
+  const placed = [];
+  const overlap = (b, p) => Math.min(b.x + b.width, p.x + p.width) - Math.max(b.x, p.x);
+  const clash = b => placed.filter(p => overlap(b, p) > 0 &&
+                                        b.y < p.y + p.height && p.y < b.y + b.height);
+  const bbox = t => { try{ return t.getBBox(); }catch(e){ return null; } };
+  labels.forEach(t => {
+    if(!t.dataset.y0) t.dataset.y0 = t.getAttribute("y");   /* survive a re-run */
+    if(!t.dataset.x0) t.dataset.x0 = t.getAttribute("x");
+    t.setAttribute("y", t.dataset.y0);
+    t.setAttribute("x", t.dataset.x0);
+    let box = bbox(t);
+    if(!box) return;                                        /* not laid out — leave it */
+    let bad = clash(box);
+    if(bad.length){
+      /* second choice: the other side of the dot */
+      t.setAttribute("y", t.dataset.alty);
+      const alt = bbox(t);
+      if(alt && !clash(alt).length){ box = alt; bad = []; }
+      else t.setAttribute("y", t.dataset.y0);
+    }
+    if(bad.length){
+      /* third choice: the smallest sideways nudge that clears every collider.
+         Bounded at 60 % of the label's own width — past that the label would no
+         longer read as belonging to its dot, and an honest residual is better
+         than a label pointing at the wrong country. */
+      const left = Math.max(...bad.map(p => box.x + box.width - p.x));
+      const right = Math.max(...bad.map(p => p.x + p.width - box.x));
+      const d = Math.abs(left) <= Math.abs(right) ? -(left + 0.6) : (right + 0.6);
+      if(Math.abs(d) <= box.width * 0.6){
+        t.setAttribute("x", (parseFloat(t.dataset.x0) + d).toFixed(2));
+        const nudged = bbox(t);
+        if(nudged && !clash(nudged).length) box = nudged;
+        else t.setAttribute("x", t.dataset.x0);
+      }
+    }
+    placed.push(box);
+  });
 }
 
 function setMapZoom(target){
@@ -1339,7 +1404,7 @@ function setMapZoom(target){
   const dots = svg.querySelector("#map-dots");
   const from = svg.getAttribute("viewBox").split(/\s+/).map(Number);
   const to = MAP_REGIONS[target].vb;
-  const finish = () => { dots.innerHTML = mapDotsSVG(target); dots.style.opacity = 1; };
+  const finish = () => { dots.innerHTML = mapDotsSVG(target); mapDecollide(); dots.style.opacity = 1; };
   if(reducedMotion){ svg.setAttribute("viewBox", to.join(" ")); finish(); return; }
   dots.style.opacity = 0;
   const t0 = performance.now(), dur = 750;
@@ -2428,6 +2493,7 @@ function route(){
   window.scrollTo(0, 0);
   de.style.scrollBehavior = "";
   paintAll(app);
+  mapDecollide();                          /* the world map, if this route carries one */
   animateCounters();
   setNav(page);
   hideSearch();

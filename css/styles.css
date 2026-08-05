@@ -162,6 +162,15 @@
   --shadow:0 18px 50px rgba(0,0,0,.55);
   --scroll1:#2c2820;
   --scroll2:#41392a;
+  /* The ink every hover state lifts to. It is a TOKEN and not a literal because
+     of V32-3: unit 29 closed the white-on-warm-paper hover defect with
+     `html[data-theme="light"] a:hover{color:var(--ink)}`, which is typed on the
+     element `a` and therefore structurally could not reach `<button class="chip">`
+     (1.21–1.32 in light, four routes) or `.gonext-item:hover b`. A per-theme
+     token cannot be scoped past by element type: any rule that lifts ink on
+     hover reads --hover-ink and is correct in both themes by construction.
+     (AC19 / V32-3 / u32 NOT TESTED 9) */
+  --hover-ink:#fff;
   /* home-hero scrim, see .home-hero .hero-shade. Dark ink is light ink, so the
      worst reachable backdrop is a fully opaque WHITE cover pixel: the veil has
      to pull that down to rgb(61,60,59) before --gold, the darkest title stop,
@@ -220,6 +229,10 @@ html[data-theme="light"]{
   --shadow:0 16px 44px rgba(94,74,40,.22);
   --scroll1:#d8cfba;
   --scroll2:#c2b696;
+  /* white on warm paper is 1.07–1.32; on this side of the theme the hover lift
+     goes DOWN, to the darkest ink. Same value unit 29 chose, now carried by the
+     token rather than by an `a`-typed selector. (AC19 / V32-3) */
+  --hover-ink:var(--ink);
   /* light ink is dark ink, so the worst reachable backdrop is a fully opaque
      BLACK cover pixel; the veil has to lift that to rgb(208,203,192) before
      #81632b, the lightest title stop, clears 3.0. */
@@ -268,10 +281,13 @@ html[data-theme="light"] .home-hero-content .footer-note a:hover,
 html[data-theme="light"] .home-hero-content .footer-note a:focus-visible{
   color:var(--ink);text-decoration-color:var(--gold);
 }
-/* a:hover{color:#fff} is dark's hover and paints white on warm paper here — 1.07
-   against --bg. Unit 27 patched it inside the museum band only; unit 29 closes it
-   for every other link, at the rung the band already uses. (AC19/F-7) */
-html[data-theme="light"] a:hover{color:var(--ink)}
+/* Unit 29's `html[data-theme="light"] a:hover{color:var(--ink)}` stood here. It
+   was right about the value and wrong about the shape: typed on `a`, it left
+   `button.chip:hover` and `.gonext-item:hover b` painting #fff on warm paper
+   (V32-3, and unit 32's NOT TESTED 9). Both are now carried by --hover-ink at
+   the declaration site, so this element-typed override is retired rather than
+   widened — a selector list would have had the same defect one member later.
+   (AC19 / V32-3) */
 html[data-theme="light"] .card-art::after{
   background:linear-gradient(105deg,transparent 38%,rgba(255,253,245,.32) 50%,transparent 62%);
 }
@@ -290,7 +306,7 @@ body{
 }
 ::selection{background:var(--gold);color:#171307}
 a{color:var(--gold2);text-decoration:none}
-a:hover{color:#fff}
+a:hover{color:var(--hover-ink)}
 /* D-29-6 · Prose links carry an underline, not just a colour.
    Unit 29 pushed every ink that clears the #bg-canvas ceiling into one narrow
    band: link-vs-body separation is 1.10:1 in light and 1.06:1 in dark, so the
@@ -449,7 +465,17 @@ p{margin:0 0 1em}
   outline:2px solid var(--gold);outline-offset:5px;border-radius:3px;
 }
 
-.search-wrap{position:relative;flex-shrink:0;width:min(280px,30vw)}
+/* V32-7 (= N-31-2) — a stacking defect, not a colour one. .sr-group measured
+   1.00 light / 1.04 dark at 390 and 4.62 the moment .main-nav was suppressed;
+   at 1440 it is 4.62 as shipped. The mechanism is the 820 px rule below, which
+   gives .main-nav `order:3`: flex `order` reorders PAINT order as well as
+   layout, so below 820 px the nav — whose <a>s are position:relative for their
+   underline, and so paint as positioned boxes — is painted after .search-wrap
+   and lands on top of the open panel. An explicit z-index settles it at every
+   width instead of leaving it to source order, and stays inside .site-header's
+   own z-index:50 stacking context. Coordinate note: this is the same surface as
+   the AT-3 dismissal announcement. (AC19 / AC21 / V32-7 / N-31-2) */
+.search-wrap{position:relative;z-index:3;flex-shrink:0;width:min(280px,30vw)}
 #search{
   width:100%;padding:9px 16px;
   background:var(--panel);border:1px solid var(--line2);border-radius:999px;
@@ -532,7 +558,7 @@ section{margin:46px 0}
   background:rgba(255,255,255,.02);
   transition:transform .25s var(--ease),border-color .25s,background .25s,color .25s;
 }
-.chip:hover{transform:translateY(-2px);color:#fff}
+.chip:hover{transform:translateY(-2px);color:var(--hover-ink)}
 .chip::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .chip.m::before{background:var(--gold)}
 .chip.t::before{background:var(--teal)}
@@ -679,7 +705,7 @@ html[data-theme="light"] #app .hero-content h1:focus-visible{outline-color:#6b51
 .gonext-item:last-child{border-bottom:none}
 .gonext-item b{color:var(--gold2);font-weight:500}
 .gonext-item span{color:var(--muted);font-size:.82rem}
-.gonext-item:hover b{color:#fff}
+.gonext-item:hover b{color:var(--hover-ink)}
 
 /* ---------- Tier 1 career arc — "the life, in acts" ---------- */
 .arc{margin-bottom:6px}
@@ -1208,8 +1234,21 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 .tl2-grid{position:absolute;top:0;bottom:0;width:1px;background:var(--line2)}
 .tl2-grid.c{background:var(--line)}
 .tl2-grid.now{background:var(--gold);opacity:.55}
+/* V32-5 / V32-6 (= N-31-1, confirmed independently at unit 32) — a flat-paint
+   geometry defect, not an ink one. The label is translateX(-50%)-centred on its
+   own 1 px .tl2-grid rule, so the rule passes THROUGH the glyphs: 3.78 light /
+   3.63 dark, recovering to 5.13–5.17 / 4.90 the moment the rule alone is
+   suppressed. The binding element differs by theme — in dark it is .tl2-year.now
+   in --gold2 over the gold `now` rule, in light it is plain --faint over the
+   century rule while .now passes at 4.76 — so an ink swap aimed at either one
+   leaves the other open. Instead the label takes its host surface with it: an
+   opaque --panel chip, which is .tl2-wrap's own background, so nothing changes
+   visually except that the rule now stops at the label instead of crossing it.
+   z-index is explicit because .tl2-grid is also absolutely positioned and later
+   in paint order would otherwise decide this. (AC19 / V32-5 / V32-6 / N-31-1) */
 .tl2-year{
-  position:absolute;transform:translateX(-50%);
+  position:absolute;transform:translateX(-50%);z-index:1;
+  padding:0 4px;background:var(--panel);border-radius:4px;
   font-family:var(--serif);font-size:.7rem;color:var(--faint);letter-spacing:.14em;
 }
 .tl2-year.t{top:8px}
@@ -1246,9 +1285,24 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 .ig-edge.hid{display:none}
 .ig-node{cursor:pointer}
 .ig-node circle{stroke:var(--panel);stroke-width:3;transition:opacity .25s,filter .2s}
+/* V32-1 / V32-2 — the label carries its own backdrop.
+   Measured 1.01–1.39 in all four cells at rest, and 2.72–3.29 for the focused
+   state's --ink relabelling. Suppression showed the ink is NOT the defect: on
+   .ig-wrap's --panel it clears at 6.02. What fails is what CROSSES it — the
+   .ig-edge relationship strokes AND the neighbouring .ig-node circles, which
+   are hard-coded movement-palette hexes rather than theme tokens, and hiding
+   only one of the two layers did not clear it. Re-inking the label cannot help
+   when the backdrop is an arbitrary saturated hex; nor can the graph's colour
+   identity be surrendered. So the glyph is given the surface it was designed
+   for: paint-order lays a --panel stroke under the fill, restoring the panel as
+   the measured backdrop wherever an edge or a circle passes behind the text.
+   Width is in `em` so it tracks the font size rather than a magic pixel, and
+   both the at-rest --muted and the focused --ink inherit it. (AC19/V32-1/V32-2) */
 .ig-node text{
   fill:var(--muted);font-family:var(--sans);font-size:10.5px;
   text-anchor:middle;pointer-events:none;transition:opacity .25s;
+  paint-order:stroke fill;
+  stroke:var(--panel);stroke-width:.34em;stroke-linejoin:round;
 }
 .ig-node:hover circle{filter:brightness(1.25)}
 #ig-svg.focused .ig-node:not(.lit){opacity:.07}
@@ -1297,7 +1351,17 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 }
 .map-dot:hover circle{fill:rgba(201,164,92,.75)}
 .map-dot text{font-size:13px;text-anchor:middle;pointer-events:none}
-.map-dot .md-name{fill:var(--muted);font-family:var(--sans)}
+/* The same class as V32-1, on the surface Vermeer named in unit 32's NOT TESTED
+   list 7 as "the most likely place a fifth SVG finding is hiding". It was: at
+   the europe zoom the dot label is crossed by its own gold .map-dot circle and
+   measured 1.28 dark@1440 (light@390 scraped 4.78). Same remedy, same reason —
+   the ink is fine on .map-land's --panel2, so the label carries that surface
+   with it. (AC19 / u32 NOT TESTED 7) */
+.map-dot .md-name{
+  fill:var(--muted);font-family:var(--sans);
+  paint-order:stroke fill;
+  stroke:var(--panel2);stroke-width:.34em;stroke-linejoin:round;
+}
 .map-hint{font-size:.74rem;color:var(--body-ink);font-style:italic;text-align:center;margin:8px 0 4px}
 .map-toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
 #map-dots{transition:opacity .3s ease}
@@ -1376,7 +1440,14 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
 .le-art{display:block;width:132px;height:100px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .le-art img,.le-art canvas{width:100%;height:100%;object-fit:cover;display:block}
 .le-body h3{margin:0 0 4px;font-size:1.12rem;font-family:var(--serif)}
-.le-meta{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+/* V32-4 — the second residual of F-7's class, and the F-8 seam exactly: unit
+   28/29's route list held #/lists but not #/list/<id>, so this selector was
+   never walked and kept --muted while 26 siblings were re-pointed. Its measured
+   backdrop is #bg-canvas with NO panel anywhere in the ancestry, and against
+   unit 29's derived canvas ceiling --muted is bounded at 3.57 light / 2.24 dark
+   — it fails by bound, not by sample. Only --body-ink and --ink clear the floor
+   over that surface. (AC19 / V32-4 / F-7) */
+.le-meta{font-size:.82rem;color:var(--body-ink);margin-bottom:6px}
 .le-note{margin:0;color:var(--body-ink);font-size:.92rem;font-style:italic;max-width:52ch}
 .le-adm{white-space:nowrap}
 .aw-lists{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
