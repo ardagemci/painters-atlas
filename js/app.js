@@ -1304,7 +1304,7 @@ function isEuropean(n){
 
 function mapDotsSVG(region){
   const mag = MAP_REGIONS[region].mag;
-  let out = "";
+  let out = "", names = "";
   /* Label de-collision at the europe zoom — see mapDecollide() below. Each
      label is emitted at its natural place under the dot, and carries the
      alternative place above it in `data-alty`, so the post-render pass can move
@@ -1316,17 +1316,24 @@ function mapDotsSVG(region){
       const [x, y] = mapProj(...window.NATION_COORDS[n.id]);
       const r  = region === "world" ? 5 + Math.sqrt(c) * 3 : (6 + Math.sqrt(c) * 1.9) / mag;
       const fs = region === "world" ? 13 : 10.5 / mag;
-      let name = "";
       if(region === "europe"){
         const lfs = 9.5 / mag;
         const below = y + r + 11 / mag, above = y - r - 5 / mag;
-        name = `<text class="md-name" style="font-size:${lfs.toFixed(2)}px" x="${x.toFixed(1)}" y="${below.toFixed(2)}" data-alty="${above.toFixed(2)}">${esc(n.name)} · ${c}</text>`;
+        names += `<text class="md-name" style="font-size:${lfs.toFixed(2)}px" x="${x.toFixed(1)}" y="${below.toFixed(2)}" data-alty="${above.toFixed(2)}">${esc(n.name)} · ${c}</text>`;
       }
       out += `<a href="#/nation/${n.id}" class="map-dot">
         <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" vector-effect="non-scaling-stroke"/>
         <text class="md-flag" style="font-size:${fs.toFixed(2)}px" x="${x.toFixed(1)}" y="${(y + fs * 0.34).toFixed(2)}">${n.flag}</text>
-        <title>${esc(n.name)} — ${c} painter${c === 1 ? "" : "s"}</title>${name}</a>`;
+        <title>${esc(n.name)} — ${c} painter${c === 1 ? "" : "s"}</title></a>`;
     });
+  /* Every label after every dot. A halo gives a label its own backdrop over
+     what was painted BEFORE it; it is no defence against what is painted after,
+     and dots are emitted largest-first, so a later dot's circle landed on an
+     earlier dot's label — 2.14-3.24 at 1024-1440 even with the collisions
+     resolved. Labels are pointer-events:none and each dot keeps its own <title>
+     as its accessible name, so lifting them out of the <a> costs no semantics
+     and no hit target. (AC19 / u32 NOT TESTED 7) */
+  if(names) out += `<g class="md-labels">${names}</g>`;
   if(region === "world"){
     const [ex, ey, ew, eh] = MAP_REGIONS.europe.vb;       /* clickable Europe frame */
     out += `<rect class="eu-frame" data-zoom="europe" x="${ex}" y="${ey}" width="${ew}" height="${eh}" rx="6" vector-effect="non-scaling-stroke"><title>Zoom into Europe</title></rect>`;

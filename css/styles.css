@@ -1370,8 +1370,13 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
    measured 1.28 dark@1440 (light@390 scraped 4.78). Same remedy, same reason —
    the ink is fine on .map-land's --panel2, so the label carries that surface
    with it. (AC19 / u32 NOT TESTED 7) */
-.map-dot .md-name{
+/* not `.map-dot .md-name` any more: the labels are lifted out of the dots into
+   a trailing <g class="md-labels"> so that no dot can paint over one. They
+   therefore need their own text-anchor and pointer-events, which they used to
+   inherit from `.map-dot text`. */
+.md-name{
   fill:var(--muted);font-family:var(--sans);
+  text-anchor:middle;pointer-events:none;
   paint-order:stroke fill;
   stroke:var(--panel2);stroke-width:.34em;stroke-linejoin:round;
 }
