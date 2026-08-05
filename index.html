@@ -46,13 +46,38 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
     <a href="#/nations" data-nav="nations">Nations</a>
   </nav>
   <div class="search-wrap">
-    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="search-results" aria-label="Search artists, artworks, lists, museums, movements, techniques, eras and nations">
+    <!-- AT-4: VoiceOver announced this field as "list box pop-up, menu pop-up
+         combo box" — three roles for one control. Two of the three came from a
+         single attribute: aria-haspopup="listbox" maps to BOTH an AXHasPopup
+         flag (spoken as "menu pop-up") and an AXPopupValue of listbox (spoken
+         as "list box pop-up"). ARIA 1.2 gives role="combobox" an implicit
+         popup, so the attribute added no information and contradicted itself
+         out loud. Removed; role, aria-autocomplete, aria-expanded and
+         aria-controls are the pattern. -->
+    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-label="Search artists, artworks, lists, museums, movements, techniques, eras and nations">
     <div id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden></div>
   </div>
   <button id="theme-toggle" aria-label="Light mode" aria-pressed="false" title="Dark / light mode">☀</button>
 </header>
 
 <main id="app" class="view-enter" tabindex="-1"></main>
+
+<!-- The results channel (AT-1, AT-3, AT-6, AT-7). The owner's two VoiceOver
+     sessions found one defect wearing four faces: the application performs the
+     correct action and never says that it did. Every instrument in this task
+     could verify that a control exists, is reachable, is named and that its
+     state transition is correct; none could detect that the RESULT was never
+     announced. This is the one place a result is spoken.
+     It lives OUTSIDE #app deliberately. The router replaces #app.innerHTML
+     wholesale on every render, and a live region that is created with its
+     content already in it is not reliably announced; a persistent node that is
+     mutated afterwards is. It is also NOT the region unit 25f removed for C-8:
+     that one wrapped the whole page and fired on every route change, so the
+     page was announced twice and the two channels disagreed. This one is
+     written only by the four explicit call sites in js/app.js — the deck
+     card, the search dismissal, the import cancel and the merge outcome — and
+     never by route() itself. -->
+<div id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">

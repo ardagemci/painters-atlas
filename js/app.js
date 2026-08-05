@@ -40,6 +40,39 @@ const artistsOfNation = id => A.filter(a => a.nation === id);
 
 /* ---------------- tiny utils ---------------- */
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* decorative punctuation, hidden from assistive technology (AT-5).
+   "or surprise me →" was announced as "or surprise me right arrow". One
+   constant per glyph rather than twenty inline spans, so no call site can
+   reintroduce a bare arrow, and the visual is byte-identical. */
+const ARR = '<span aria-hidden="true">→</span>';
+const ARRL = '<span aria-hidden="true">←</span>';
+
+/* ---------------- the results channel (AT-1, AT-3, AT-6, AT-7) ----------------
+   The owner's two VoiceOver sessions found one defect wearing four faces: the
+   application performs the correct action and never says that it did. The deck
+   never named the artwork being judged; dismissing search, cancelling an import
+   and completing a merge were all silent. They are fixed as one thing, through
+   one channel, because they are one defect.
+
+   `say()` writes the persistent #live-status region in index.html. The clear-
+   then-set is required: writing the same string twice in a row is not a
+   mutation, and an unchanged region announces nothing.
+
+   `sayNext()` is for the two results that cross a route boundary (import cancel,
+   merge outcome). Setting the region before the new page renders races the
+   router's focus move; queueing it and flushing at the END of route() makes the
+   order deterministic — the heading is announced first, the result second.
+   Neither is the whole-page live region unit 25f removed for C-8: route() never
+   writes here of its own accord, only when a call site has queued a result. */
+const liveStatus = document.getElementById("live-status");
+let liveTimer = 0, pendingSay = null;
+function say(msg, delay){
+  if(!liveStatus || !msg) return;
+  clearTimeout(liveTimer);
+  liveStatus.textContent = "";
+  liveTimer = setTimeout(() => { liveStatus.textContent = msg; }, delay || 60);
+}
+function sayNext(msg){ pendingSay = msg; }
 /* short/family name for an artist — keeps leading particles (van/da/de/el…) with the surname */
 const NAME_PARTICLES = new Set(["van","von","der","den","de","del","della","di","da","du","la","le","los","las","dos","ten","ter","of","the","el","al"]);
 function artistShortName(a){
@@ -1240,7 +1273,7 @@ function igFocus(nid){
   info.innerHTML = `<strong>${esc(a.name)}</strong> <span class="mc-meta">${esc(a.years)}</span>
     <div class="chips" style="margin-top:8px">${rels.map(([oid, ty, dir]) =>
       Ax[oid] ? `<a class="chip a" href="#/artist/${oid}"><b class="ig-rel e-${ty}">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>` : "").join("")}</div>
-    <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(artistShortName(a))}'s page →</a>`;
+    <a class="btn" style="margin-top:10px;display:inline-block" href="#/artist/${nid}">Open ${esc(artistShortName(a))}'s page ${ARR}</a>`;
 }
 function igClear(){
   const svg = document.getElementById("ig-svg"), info = document.getElementById("ig-info");
@@ -1372,7 +1405,7 @@ function dailyHome(daily){
       <p class="daily-note">${esc(w.description)}</p>
       <div class="daily-detail"><b>One detail you cannot unsee</b><span>${esc(daily.detail)}</span></div>
       <div class="aw-actions daily-actions">${passportActions(w)}</div>
-      <a class="daily-enter" href="#/daily">Enter today's painting <span>→</span></a>
+      <a class="daily-enter" href="#/daily">Enter today's painting <span aria-hidden="true">→</span></a>
     </div>
     <a class="daily-media" href="#/daily" aria-label="Open today's painting: ${esc(w.title)}">
       <img loading="eager" src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}"
@@ -1520,25 +1553,25 @@ function viewExplore(){
       <div class="ec-kicker">Time</div>
       <h3>The grand timeline</h3>
       <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Giotto to Banksy and watch the centuries hand each other the brush.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/influences" style="--ec:var(--teal)">
       <div class="ec-kicker">Connection</div>
       <h3>The influence constellation</h3>
       <p>${(window.INFLUENCES || []).length} relationships — taught, influenced, befriended, rivaled, partnered — drawn as one force-directed web. Find the hidden hubs.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/movements" style="--ec:var(--wine)">
       <div class="ec-kicker">Lineage</div>
       <h3>Family trees of movements</h3>
       <p>Switch any movement index to its Family tree view and watch the schools branch from their parents — Post-Impressionism out of Impressionism, and on down the line.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/nations" style="--ec:var(--blue)">
       <div class="ec-kicker">Geography</div>
       <h3>A world map of painters</h3>
       <p>Where the painters came from, plotted across the globe with a zoomable Europe inset — though most of them, as you'll read, refused to stay put.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
   </div>`;
 }
@@ -1643,20 +1676,20 @@ function viewHome(){
       <div class="ec-kicker">Begin</div>
       <h3>Start with an artist</h3>
       <p>Pick a painter and follow the threads — teachers, rivals, movements, and the works that made them matter.</p>
-      <button class="ec-surprise" data-random-artist>or surprise me →</button>
-      <span class="ec-arrow">→</span>
+      <button class="ec-surprise" data-random-artist>or surprise me ${ARR}</button>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </div>
     <a class="entry-card" href="#/${(() => { const p = getPassport(); return p && p.milestones && p.milestones.onboarded ? "taste" : "palette"; })()}" style="--ec:var(--teal)">
       <div class="ec-kicker">Become</div>
       <h3>Find your palette</h3>
       <p>Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste, with a Persona to argue about. Under four minutes.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/explore" style="--ec:var(--wine)">
       <div class="ec-kicker">Wander</div>
       <h3>Explore the atlas</h3>
       <p>Eight centuries on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
-      <span class="ec-arrow">→</span>
+      <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
   </div>
 
@@ -1667,7 +1700,7 @@ function viewHome(){
     return feat.length ? `<section>
       <h2 class="sec-title">Lists <span class="count">guided walks through the atlas</span></h2>
       <div class="cards wide">${feat.map(listCard).join("")}</div>
-      <a class="chip-label" style="display:block;margin-top:14px" href="#/lists">all ${LISTS.length} lists →</a>
+      <a class="chip-label" style="display:block;margin-top:14px" href="#/lists">all ${LISTS.length} lists ${ARR}</a>
     </section>` : "";
   })()}
 
@@ -1740,7 +1773,7 @@ function viewDaily(){
       <p class="daily-note">${esc(w.description)}</p>
       <div class="daily-detail"><b>One detail you cannot unsee</b><span>${esc(daily.detail)}</span></div>
       <div class="aw-actions daily-actions">${passportActions(w)}</div>
-      <a class="daily-enter" href="#/artwork/${w.id}">Go deeper into the artwork <span>→</span></a>
+      <a class="daily-enter" href="#/artwork/${w.id}">Go deeper into the artwork <span aria-hidden="true">→</span></a>
       <p class="daily-return">A new painting enters the atlas at your next local midnight.</p>
     </div>
   </article>
@@ -1895,7 +1928,7 @@ function viewArtist(id){
           <h3>Lineage & circle</h3>
           <div class="chips">${rels.map(([oid, ty, dir]) =>
             `<a class="chip a" href="#/artist/${oid}"><b class="ig-rel e-${ty}">${IG_WORDS[ty][dir === "in" ? 0 : 1]}</b>&nbsp;${esc(Ax[oid].name)}</a>`).join("")}</div>
-          <a href="#/influences" class="chip-label" style="display:block;margin-top:12px">see the full influence graph →</a>
+          <a href="#/influences" class="chip-label" style="display:block;margin-top:12px">see the full influence graph ${ARR}</a>
         </div>` : "";
       })()}
       ${(() => {
@@ -1986,7 +2019,7 @@ function viewArtwork(id){
           <a class="mu-panel-name" href="#/museum/${mv.id}">${esc(mv.name)}</a>
           <div class="mu-panel-meta">${esc(mv.city)}${mv.country ? " · " + esc(mv.country) : ""}${mn && mn.founded ? " · founded " + esc(mn.founded) : ""}</div>
           ${mn ? `<div class="mu-panel-hook">${esc(mn.hook)}</div>` : ""}
-          <a class="chip-label" style="display:block;margin-top:10px" href="#/museum/${mv.id}">${heldHere} work${heldHere === 1 ? "" : "s"} from these walls in the atlas →</a>
+          <a class="chip-label" style="display:block;margin-top:10px" href="#/museum/${mv.id}">${heldHere} work${heldHere === 1 ? "" : "s"} from these walls in the atlas ${ARR}</a>
         </div>`;
       })() : ""}
       ${moreBy.length ? `<div class="panel"><h3>More by ${esc(artistShortName(a))}</h3><div class="mini-cards">${moreBy.slice(0, 4).map(o =>
@@ -2101,8 +2134,8 @@ function viewEra(id){
     crumbs: crumbs([["Atlas",""],["Eras","eras"],[e.name]]),
     title:e.name,
     sub:`<span>${esc(e.range)}</span><span>${artists.length} painters</span>` +
-        (idx>0 ? `<a href="#/era/${E[idx-1].id}">← ${esc(E[idx-1].name)}</a>` : "") +
-        (idx<E.length-1 ? `<a href="#/era/${E[idx+1].id}">${esc(E[idx+1].name)} →</a>` : ""),
+        (idx>0 ? `<a href="#/era/${E[idx-1].id}">${ARRL} ${esc(E[idx-1].name)}</a>` : "") +
+        (idx<E.length-1 ? `<a href="#/era/${E[idx+1].id}">${esc(E[idx+1].name)} ${ARR}</a>` : ""),
     tagline:e.blurb
   })}
   <p class="desc-col">${esc(e.desc)}</p>
@@ -2404,6 +2437,17 @@ function route(){
     focusSilently(viewEntry());
   } else if(!nav){
     if(!restoreFocus(keep) && keep) focusSilently(viewEntry());   /* the control is gone — go to the heading, silently */
+  }
+  /* a queued result, spoken after the destination exists (AT-6, AT-7). Where the
+     destination has a message slot the result is also PUT ON THE PAGE, because
+     "which choice won" is not a screen-reader-only question — a sighted user was
+     not told either. Routes without a slot get the announcement alone. */
+  if(pendingSay){
+    const m = pendingSay;
+    pendingSay = null;
+    const slot = document.getElementById("taste-msg");
+    if(slot) slot.textContent = m;
+    say(m, 320);
   }
 }
 
@@ -2724,7 +2768,19 @@ searchInput.addEventListener("keydown", e => {
   } else if(e.key === "Enter"){
     const target = links[selIdx >= 0 ? selIdx : 0];
     if(target){ location.hash = target.getAttribute("href"); searchInput.value = ""; hideSearch(); }
-  } else if(e.key === "Escape"){ hideSearch(); searchInput.focus(); }
+  } else if(e.key === "Escape"){
+    /* AT-3 — Escape closed the results and said nothing. Focus was already
+       returning correctly (unit 7 fixed the blur-to-body defect), but the
+       frozen criterion asks for the dismissal to be PERCEIVABLE, and a silent
+       correct action is not. Announced only from this path: hideSearch() is
+       also called by route() and by every outside click, and announcing there
+       would re-create the C-8 defect unit 25f removed. Guarded on the panel
+       having actually been open, so Escape on a closed field stays silent. */
+    const wasOpen = !searchResults.hidden;
+    hideSearch();
+    searchInput.focus();
+    if(wasOpen) say("Search results closed. You are back in the search field.");
+  }
 });
 searchResults.addEventListener("click", () => { searchInput.value = ""; hideSearch(); });
 document.addEventListener("click", e => { if(!e.target.closest(".search-wrap")) hideSearch(); });
@@ -3109,6 +3165,17 @@ function obStart(){
   obWrite();
 }
 ob = obRestore();
+/* AT-1's active half. The deck re-renders the same route, so route() restores
+   focus to the button that was just pressed and announces nothing — correct
+   behaviour for a re-render, and exactly why the new artwork went unspoken.
+   This is the one thing that changed, said once. */
+function obDeckSay(){
+  if(!ob || ob.step !== 2) return;
+  const w = ob.deck[ob.di];
+  if(!w) return;
+  const a = Ax[w.artistId];
+  say(`${w.title} — ${a.name}, ${w.year.display}. Artwork ${ob.di + 1} of 16. Admire, or pass.`);
+}
 function viewPalette(){
   document.title = "Find your palette — Pigment";
   if(!ob || ob.step === 0) return `
@@ -3116,9 +3183,9 @@ function viewPalette(){
       <div class="page-kicker">Onboarding · under four minutes</div>
       <h1 class="display">Find your palette.</h1>
       <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among eight centuries of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
-      <button class="aw-btn primary ob-cta" data-tsx="start">Begin →</button>
+      <button class="aw-btn primary ob-cta" data-tsx="start">Begin ${ARR}</button>
       ${getPassport() && getPassport().milestones && getPassport().milestones.onboarded
-        ? `<a class="chip-label" style="display:block;margin-top:14px" href="#/taste">or return to your taste page →</a>` : ""}
+        ? `<a class="chip-label" style="display:block;margin-top:14px" href="#/taste">or return to your taste page ${ARR}</a>` : ""}
     </div>`;
 
   if(ob.step === 1){
@@ -3133,24 +3200,38 @@ function viewPalette(){
         </button>`).join("")}</div>
       <div class="ob-foot">
         <span class="chip-label">${ob.tones.length} of 4 chosen</span>
-        <button class="aw-btn primary" data-tsx="tones-done" ${ob.tones.length === 4 ? "" : "disabled"}>To the deck →</button>
+        <button class="aw-btn primary" data-tsx="tones-done" ${ob.tones.length === 4 ? "" : "disabled"}>To the deck ${ARR}</button>
       </div>
     </div>`;
   }
 
   if(ob.step === 2){
     const w = ob.deck[ob.di], a = Ax[w.artistId];
+    const subject = `${w.title} — ${a.name}, ${w.year.display}`;
+    /* AT-1, the most serious accessibility defect found in PIG-001: the deck
+       asked the visitor to Admire or Pass on sixteen artworks and never said
+       which artwork. Every prior check confirmed the CONTROLS were reachable and
+       named; none checked that the SUBJECT was announced, so the core Taste loop
+       was not operable by a blind user.
+       Two mechanisms, deliberately, because they answer two different questions.
+       The card is a labelled group and each button names its object, so a user
+       exploring the page — or landing on the button after a tap, which is where
+       restoreFocus() puts them — can always find out what is in front of them.
+       That is durable but passive: it is only heard if something is focused or
+       explored. The active half is the live announcement in obDeckSay(), which
+       fires on every card change, since the artwork changes underneath a button
+       whose focus never moves. Neither alone is sufficient. */
     return `
     <div class="ob-wrap ob-deck">
       <div class="page-kicker">Step 2 of 3 · the deck</div>
       <div class="deck-progress"><i style="width:${(ob.di / 16) * 100}%"></i></div>
-      <div class="deck-card">
-        <img src="${w.image.src}" alt="${esc(w.title)}">
+      <div class="deck-card" role="group" aria-label="Artwork ${ob.di + 1} of 16 — ${esc(subject)}">
+        <img src="${w.image.src}" alt="${esc(subject)}">
         <div class="deck-meta"><b>${esc(w.title)}</b><span>${esc(a.name)} · ${esc(w.year.display)}</span></div>
       </div>
       <div class="deck-actions">
-        <button class="aw-btn deck-pass" data-tsx="deck-pass">Pass</button>
-        <button class="aw-btn primary deck-admire" data-tsx="deck-admire">Admire</button>
+        <button class="aw-btn deck-pass" data-tsx="deck-pass" aria-label="Pass on ${esc(w.title)} by ${esc(a.name)}">Pass</button>
+        <button class="aw-btn primary deck-admire" data-tsx="deck-admire" aria-label="Admire ${esc(w.title)} by ${esc(a.name)}">Admire</button>
       </div>
       <p class="chip-label">passing is silence, not a dislike · ${ob.di + 1} of 16</p>
     </div>`;
@@ -3193,7 +3274,7 @@ function viewPalette(){
       </div>
     </div>
     <div class="ob-foot">
-      <a class="aw-btn primary" href="#/taste">To your taste page →</a>
+      <a class="aw-btn primary" href="#/taste">To your taste page ${ARR}</a>
       <button class="aw-btn" data-tsx="card">Download your card</button>
       ${adopted ? "" : `<button class="aw-btn" data-tsx="later">Decide later</button>`}
     </div>
@@ -3418,7 +3499,7 @@ function viewTaste(){
       <div class="page-kicker">The Taste Passport</div>
       <h1 class="display">No map yet — let's sketch one.</h1>
       <p class="page-lede">Admire artworks anywhere in the atlas and your Taste Passport records them locally, on this device. Or take the four-minute onboarding and get a provisional Persona right now.</p>
-      <a class="aw-btn primary ob-cta" href="#/palette">Find your palette →</a>
+      <a class="aw-btn primary ob-cta" href="#/palette">Find your palette ${ARR}</a>
     </div>`;
   const st = tasteState(p), pc = personaCandidates(st), sig = signalWords(st.u);
   const adopted = p.persona && p.persona.adopted ? PERSONAS.find(x => x.id === p.persona.adopted) : null;
@@ -3563,7 +3644,7 @@ function viewPassportImport(payload){
     return `
     <div class="ob-wrap"><h1 class="display">That passport didn't scan.</h1>
     <p class="page-lede">The link seems damaged. Nothing on this device has been changed. Ask for a fresh one, or start your own map.</p>
-    <a class="aw-btn primary" href="#/palette">Find your palette →</a>
+    <a class="aw-btn primary" href="#/palette">Find your palette ${ARR}</a>
     <a class="chip-label" style="display:block;margin-top:14px" href="#/">no thanks — take me home</a></div>`;
   }
   if(!ppImport || ppImport.payload !== payload) ppImport = { payload, data, choices: {}, step: 1 };
@@ -3601,7 +3682,7 @@ function viewPassportImport(payload){
       ? `Four settings cannot be combined because each holds a single value, and <b>${conflicts.length} of them differ</b> from yours: ${conflicts.map(f => esc(PP_FIELD_LABELS[f].toLowerCase())).join(", ")}. You choose which to keep on the next screen. Nothing is written until then.`
       : `The four single-value settings — onboarding answers, chosen tones, adopted Persona and progress markers — either match yours or are missing from one side, so nothing of yours will be replaced.`}</p>
     ${conflicts.length
-      ? `<button class="aw-btn primary ob-cta" data-tsx="import-review">Choose what to keep →</button>`
+      ? `<button class="aw-btn primary ob-cta" data-tsx="import-review">Choose what to keep ${ARR}</button>`
       : `<button class="aw-btn primary ob-cta" data-tsx="import">Merge into my passport</button>`}
     <a class="chip-label" style="display:block;margin-top:14px" href="#/">no thanks — take me home</a>
   </div>`;
@@ -3620,7 +3701,7 @@ document.addEventListener("click", e => {
     obWrite();
     route();
   }
-  else if(act === "tones-done"){ if(ob.tones.length === 4){ ob.step = 2; obWrite(); route(); } }
+  else if(act === "tones-done"){ if(ob.tones.length === 4){ ob.step = 2; obWrite(); route(); obDeckSay(); } }
   else if(act === "deck-admire" || act === "deck-pass"){
     const w = ob.deck[ob.di];
     (act === "deck-admire" ? ob.admired : ob.skipped).push(w.id);
@@ -3628,6 +3709,7 @@ document.addEventListener("click", e => {
     if(ob.di >= 16) ob.step = 3;
     obWrite();
     route();
+    obDeckSay();                                           /* AT-1 — name the next artwork */
   }
   else if(act === "answer"){
     const [qid, oid] = id.split(":");
@@ -3725,6 +3807,14 @@ document.addEventListener("click", e => {
   }
   else if(act === "import-cancel"){
     ppImport = null;                                         /* nothing was ever written */
+    /* AT-6 — the cancel is functionally perfect (the stored passport is
+       byte-identical afterwards, proven by instrumentation) and said nothing.
+       For a sighted user the redirect is a cue; for a screen-reader user,
+       backing out of something that threatened to overwrite their identity
+       produced silence and a change of place. The one sentence they need is the
+       one the damaged-passport screen already says, in the voice this build
+       already ships: "Nothing on this device has been changed." */
+    sayNext("Import cancelled. Nothing on this device has been changed. You are back on the Pigment home page.");
     location.hash = "#/";
   }
   else if(act === "import"){
@@ -3734,9 +3824,22 @@ document.addEventListener("click", e => {
       ppNotice("Not merged. Pigment cannot read the Taste Passport already on this device, so it will not write over it. Open the Taste Passport to deal with that first.");
       return;
     }
+    /* AT-7 — read the outcome BEFORE the merge, while `mine` is still mine, so
+       the report is of what was decided rather than of what is now stored. */
+    const conflicts = passportConflicts(mine, ppImport.data);
+    const choices = ppImport.choices || {};
+    const added = ["admirations", "seen", "wantToSee", "saved", "probes"]
+      .reduce((n, f) => n + (ppImport.data[f] || []).length, 0);
     const merged = mergePassports(mine, ppImport.data, ppImport.choices);
     if(!ppSave(merged)){ ppNotice(PP_WRITE_MSG); return; }    /* failed write leaves local storage untouched */
     ppImport = null;
+    /* the destination names a persona and stops; nothing said which choice won,
+       so the user had to infer the result of a decision they were explicitly
+       asked to make. Say it, field by field, and put it on the page too. */
+    sayNext(conflicts.length
+      ? `Passport merged. ${added} entries added. ${conflicts.map(f =>
+          `${PP_FIELD_LABELS[f]}: ${choices[f] === "theirs" ? "theirs taken" : "yours kept"}`).join(" · ")}.`
+      : `Passport merged. ${added} entries added, and nothing of yours was replaced.`);
     location.hash = "#/taste";
   }
 });
