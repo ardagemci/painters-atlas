@@ -54,7 +54,7 @@ Pigment is playful but never careless. Trust is the product.
 1. **Hedge legends, state facts.** Legends get *reportedly, legend says, Vasari claims, the story goes.* Documented facts get plain statement. Never let a good story quietly upgrade itself into a fact.
 2. **Never invent quotes.** If a quote's attribution is shaky, say so ("attributed," "the quote varies; the wheelchair didn't").
 3. **Contested identities are stated as contested.** (Malevich: "Both Ukraine and Russia claim him.") Choose a primary filing, acknowledge the dispute, never flatten it.
-4. **Copyright is worn openly.** We show public-domain works and say so; generative covers are "interpretations painted in the browser," never passed off as the real thing.
+4. **Copyright is worn openly — and bounded.** We show works whose Commons metadata *asserts* a public-domain basis, and we say exactly that: what the source asserts, who the credit names, and what remains unresolved. Never write that a work "is public domain," "is cleared," or "is verified PD" — those are legal conclusions this project does not make and is not qualified to make (OD-5, AC12). <!-- OD5-EXEMPT: this line quotes the banned phrases in order to ban them; enforced by tests/test_rights_tooling.py TestProseLanguage --> Generative covers are "interpretations painted in the browser," never passed off as the real thing.
 5. **Uncertainty is content.** "No one knows why" is often the most interesting sentence available. Use it.
 6. **No fake precision.** "c. 1503–19" not "1503." If scholarship ranges, the date ranges.
 7. **When correcting the record, don't lecture.** One clause of correction, then move on.

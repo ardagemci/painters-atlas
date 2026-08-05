@@ -266,8 +266,14 @@ both palettes.
 * **AC14 (no overclaim)** — PASS. Counts on `#/credits` are computed from the
   registries at render time, so no number in the interface can drift from what
   ships. The privacy page was updated rather than left to overstate the host
-  inventory. The credits page says plainly that most images are public domain
-  and that this is not a clearance.
+  inventory. The credits page says plainly that most images carry a Commons
+  public-domain assertion and that this is not a clearance.
+
+  > **CORRECTION — 2026-08-05, unit 35, re OD-5 (D-019).** This line previously
+  > read "says plainly that most images are public domain". Restated to what the
+  > page can honestly claim. Note that the *page copy itself* still overstates at
+  > `js/app.js:2393` — see the open item in `evidence/data-reconciliation.md`;
+  > this unit does not own `js/app.js` and did not edit it.
 * **AC26 (zero-dependency architecture)** — PASS. One new static data file, no
   new runtime dependency, no build step in the serving path, no framework. Tools
   are Python stdlib and JXA. The generated registry is a plain global, loaded by

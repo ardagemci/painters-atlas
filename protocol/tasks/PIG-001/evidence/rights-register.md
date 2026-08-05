@@ -184,11 +184,21 @@ outside the mandated sample.
 ### Dispositions and why
 
 **Removed (no image), 4 records.** Kahlo died in 1954 and clears the build's
-`died <= 1955` filter, but her *works* remain in copyright — Mexico is life+100,
-so 2054. No public-domain image of a Kahlo painting exists on Commons to
-substitute, which is precisely why the resolver returned garbage: it searched,
-found nothing matching, and accepted the best near-miss. There is no honest
-replacement, so the images are gone. `js/app.js:1765` renders a work with no
+`died <= 1955` filter, but on the ordinary term arithmetic her *works* would not
+be assertable as public domain — Mexico's term is life+100, so 2054. This
+audit's Commons searches (2026-07-25, queries logged in the run notes below)
+located no candidate image of a Kahlo painting that passes the exact-work check,
+which is precisely why the resolver returned garbage: it searched, found nothing
+matching, and accepted the best near-miss. This audit found no honest
+replacement, so the images are gone.
+
+> **CORRECTION — 2026-08-05, unit 35, re OD-5 (D-019).** This paragraph
+> previously read "her *works* remain in copyright" and "No public-domain image
+> of a Kahlo painting exists on Commons to substitute." The first is a legal
+> conclusion; the second is an exhaustive-absence claim about all of Commons,
+> which no search this project ran could establish. Both are restated as what
+> was actually observed: term arithmetic, and the result of *this audit's*
+> searches. The disposition is unchanged — the records stay removed. `js/app.js:1765` renders a work with no
 gallery entry as a plain title row — the work still appears in "Major works",
 with no picture and no generative cover posing as one. That is the honest
 degradation and it required no code change.
@@ -280,11 +290,19 @@ the licence identifier. Three options, none of which I am authorised to pick:
 
 1. **The `died <= 1955` filter is not a rights test, and the corpus proves it.**
    `tools/fetch_artworks.py` uses artist death year to decide whom to resolve
-   images for. Kahlo (d. 1954) and Matisse (d. 1954) both pass, yet their works
-   are broadly still in copyright — Matisse's *The Snail* (1953) is PD in France
-   only from 2025 and remains under US copyright until 2049. The filter is a
-   reasonable heuristic for *whom to try*; it is not, and was never, a
-   determination. README's overclaim on exactly this point was corrected in
+   images for. Kahlo (d. 1954) and Matisse (d. 1954) both pass, yet on the
+   ordinary term arithmetic their works would broadly still be in copyright —
+   for Matisse's *The Snail* (1953), France's life+70 term runs to 2025 and the
+   US term for a 1953 publication runs to 2049. The filter is a reasonable
+   heuristic for *whom to try*; it is not, and was never, a determination.
+
+   > **CORRECTION — 2026-08-05, unit 35, re OD-5 (D-019).** This paragraph
+   > previously read "their works are broadly still in copyright — Matisse's *The
+   > Snail* (1953) is PD in France only from 2025 and remains under US copyright
+   > until 2049." That stated jurisdictional conclusions as fact. The arithmetic
+   > of the published terms is reportable; the conclusion drawn from it for any
+   > particular work is not, and this project has not made one. The point the
+   > finding rests on is unaffected: a death-year filter is not a rights test. README's overclaim on exactly this point was corrected in
    Wave D (unit 21); the code-level version of the same conflation is recorded
    here. **This is the single most important structural finding in the
    register.** Guarded now by an explicit `SUPPRESS` list with stated reasons in
@@ -302,8 +320,9 @@ the licence identifier. Three options, none of which I am authorised to pick:
    carries only `img` and `page`. Per Wave D's D-W-3 that is deliberate — rights
    metadata is a sidecar, not runtime payload — and I have not changed it. The
    consequence to record is that the gallery surface has **no in-band signal**
-   distinguishing a verified PD scan from a CC BY-SA photograph, which is why
-   this class of defect was invisible until a register existed.
+   distinguishing a file whose Commons metadata asserts a public-domain basis
+   from a CC BY-SA photograph, which is why this class of defect was invisible
+   until a register existed.
 
 4. **Duplicate-image detection is free and finds real defects.** Two of the
    eight mismatches were found only by checking for image URLs used by more than

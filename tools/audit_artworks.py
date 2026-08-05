@@ -43,7 +43,9 @@ PINNED = {
     # Hand-corrected 2026-07-25 (PIG-001 AC11 register). The previous file was
     # "Aleppo ca1537 by Matrakci Nasuh …" — the same manuscript and artist, but
     # the Aleppo folio, not the Istanbul one, and a duplicate of this artist's
-    # sibling "View of Aleppo" record. Verified exact-match + PD before pinning.
+    # sibling "View of Aleppo" record. Before pinning: the exact-work check
+    # passed against the Commons file page, and that page's metadata asserts a
+    # public-domain basis. No independent legal determination (OD-5, AC12).
     "matrakci-nasuh::View of Istanbul (Mecmu-ı Menazil)": "Matrakçı Nasuh - İstanbul.jpg",
 }
 

@@ -2,25 +2,31 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-07-25
+   Generated: 2026-08-05
 
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
      (js/venues.js). One entry per photograph in js/museums-1.js. 104
      entries, 88 of which carry a licence requiring attribution; the
-     other 16 are public-domain or CC0 and are credited as a courtesy.
+     other 16 carry a Commons public-domain or CC0 assertion instead,
+     and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
      Commons file title as derived from the image URL (see commonsTitle() in
-     js/app.js). 27 entries. Public-domain and CC0 images are
-     deliberately absent: they carry no obligation, and the existing
-     "image via Wikimedia Commons" source link already names their origin.
+     js/app.js). 27 entries. Files whose Commons metadata asserts a
+     public-domain or CC0 basis are deliberately absent: that assertion carries
+     no attribution obligation, and the existing "image via Wikimedia Commons"
+     source link already names their origin.
+
+   Nothing in this file, and nothing generated from it, is a rights clearance.
+   Every licence string is what the Commons file page asserts (OD-5, AC12).
 
    Credit shape: { author, license, licenseUrl, page, required }
      author      photographer / uploader, plain text (may be absent)
      license     licence short name, e.g. "CC BY-SA 4.0"
-     licenseUrl  licence deed (absent for public-domain files, which have none)
+     licenseUrl  licence deed (absent where the asserted basis is a
+                 public-domain tag, which has no deed)
      page        Commons file page — the "source" half of TASL
      required    true when the licence requires attribution
 

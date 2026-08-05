@@ -3,8 +3,11 @@
 
 Reads /tmp/pigment-artists.json (from tools/dump-artists.jxa.js), resolves each
 listed work of every painter who died in or before 1955 to an image, and writes
-js/artworks.js. Only images hosted on Wikimedia Commons are accepted (Commons
-enforces public-domain status in the US and the source country).
+js/artworks.js. Only images hosted on Wikimedia Commons are accepted, because
+Commons' own upload policy requires a free-licence or public-domain basis to be
+*asserted* for the US and the source country. That is a hosting policy and an
+assertion by an uploader — not a determination by Commons, and not one by this
+project. Nothing in this file reaches a legal conclusion (OD-5, AC12).
 """
 import json, os, re, sys, time, urllib.parse, urllib.request
 
@@ -34,14 +37,24 @@ UA = {"User-Agent": "PigmentAtlas/1.0 (personal static art atlas; gemciarda@gmai
 #
 # Suppressed works render as a plain title row in "Major works" (js/app.js),
 # which is the honest outcome: no image, no generative cover posing as one.
-# Remove an entry only with a verified exact-match, verifiably-PD file.
+# Remove an entry only for a file that passes the exact-work check AND whose
+# Commons metadata asserts a public-domain basis. Neither test is a clearance.
+#
+# Language note (unit 35, 2026-08-05, D-019): the reasons below previously read
+# "works still in copyright" and "No PD image exists on Commons" — a legal   # OD5-EXEMPT
+# conclusion and an exhaustive-absence claim, both beyond this project's
+# evidence. They are restated as what was actually observed. OD-5 / AC12.
 SUPPRESS = {
     "frida-kahlo::The Two Fridas":
-        "Kahlo d.1954; works still in copyright (Mexico life+100). No PD image exists on Commons.",
+        "Kahlo d.1954; Mexico's term runs life+100, so no PD basis is assertable on the "
+        "ordinary term arithmetic. This audit's Commons searches (2026-07-25, logged in "
+        "evidence/rights-register.md) located no candidate passing the exact-work check.",
     "frida-kahlo::Self-Portrait with Thorn Necklace and Hummingbird":
-        "Kahlo d.1954; works still in copyright. Resolver previously returned a Ducreux self-portrait.",
+        "Kahlo d.1954; same term arithmetic. Resolver previously returned a Ducreux "
+        "self-portrait — a confirmed wrong-artwork match, not a rights finding.",
     "frida-kahlo::The Broken Column":
-        "Kahlo d.1954; works still in copyright. Resolver previously returned a CC BY 2.0 photo of a column.",
+        "Kahlo d.1954; same term arithmetic. Resolver previously returned a CC BY 2.0 "
+        "photograph of a column in Syracuse — a confirmed wrong-artwork match.",
 }
 ART_WORDS = ("painting", "painted", "fresco", "triptych", "altarpiece", "portrait",
              "mural", "woodblock", "print", "icon", "panel", "canvas", "miniature",

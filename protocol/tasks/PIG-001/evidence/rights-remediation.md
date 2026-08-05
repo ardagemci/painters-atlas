@@ -7,8 +7,9 @@ was re-verified against the Commons API by the Synthesis Lead, not inherited.
 
 ## Directive 1 — PD replacements found for BOTH frescoes ✅
 
-The owner asked us to look for genuinely public-domain images before accepting
-attribution obligations. Both were found, and both replacements also fix the
+The owner asked us to look for images carrying a Commons public-domain
+assertion before accepting attribution obligations. Both were found, and both
+replacements also fix the
 `page` field to point at a real Commons **file page** instead of an English
 Wikipedia article (the documentation defect affecting 92 of 122 sampled records).
 
