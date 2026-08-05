@@ -1,0 +1,210 @@
+[
+ {
+  "file": "home__desktop-1440x900__light.png",
+  "route": "#/",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/",
+  "images": {
+   "total": 519,
+   "broken": 0
+  },
+  "bytes": 231744
+ },
+ {
+  "file": "artists__desktop-1440x900__light.png",
+  "route": "#/artists",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/artists",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 622292
+ },
+ {
+  "file": "artist-leonardo__desktop-1440x900__light.png",
+  "route": "#/artist/leonardo-da-vinci",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/artist/leonardo-da-vinci",
+  "images": {
+   "total": 18,
+   "broken": 0
+  },
+  "bytes": 463512
+ },
+ {
+  "file": "artwork-david__desktop-1440x900__light.png",
+  "route": "#/artwork/david",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/artwork/david",
+  "images": {
+   "total": 6,
+   "broken": 0
+  },
+  "bytes": 391507
+ },
+ {
+  "file": "explore__desktop-1440x900__light.png",
+  "route": "#/explore",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/explore",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 292231
+ },
+ {
+  "file": "timeline__desktop-1440x900__light.png",
+  "route": "#/timeline",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/timeline",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 277906
+ },
+ {
+  "file": "influences__desktop-1440x900__light.png",
+  "route": "#/influences",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/influences",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 340850
+ },
+ {
+  "file": "museums__desktop-1440x900__light.png",
+  "route": "#/museums",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/museums",
+  "images": {
+   "total": 104,
+   "broken": 0
+  },
+  "bytes": 934700
+ },
+ {
+  "file": "museum-louvre__desktop-1440x900__light.png",
+  "route": "#/museum/louvre",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/museum/louvre",
+  "images": {
+   "total": 17,
+   "broken": 0
+  },
+  "bytes": 709856
+ },
+ {
+  "file": "lists__desktop-1440x900__light.png",
+  "route": "#/lists",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/lists",
+  "images": {
+   "total": 12,
+   "broken": 0
+  },
+  "bytes": 1098101
+ },
+ {
+  "file": "palette__desktop-1440x900__light.png",
+  "route": "#/palette",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/palette",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 305391
+ },
+ {
+  "file": "taste__desktop-1440x900__light.png",
+  "route": "#/taste",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/taste",
+  "images": {
+   "total": 12,
+   "broken": 0
+  },
+  "bytes": 270458
+ },
+ {
+  "file": "daily__desktop-1440x900__light.png",
+  "route": "#/daily",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/daily",
+  "images": {
+   "total": 1,
+   "broken": 0
+  },
+  "bytes": 772783
+ },
+ {
+  "file": "privacy__desktop-1440x900__light.png",
+  "route": "#/privacy",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/privacy",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 416023
+ },
+ {
+  "file": "credits__desktop-1440x900__light.png",
+  "route": "#/credits",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/credits",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 380333
+ },
+ {
+  "file": "invalid-route__desktop-1440x900__light.png",
+  "route": "#/no-such-page",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "hash": "#/no-such-page",
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 281734
+ }
+]

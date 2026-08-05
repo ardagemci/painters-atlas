@@ -1,0 +1,44 @@
+#/                                       err=3  warn=2  failed=3  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+      ERROR  network/error: Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED
+      ERROR  network/error: Failed to load resource: net::ERR_CONNECTION_RESET
+      ERROR  network/error: Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED
+      WARN   javascript/warning: The resource http://localhost:8433/assets/fonts/inter-normal-latin.woff2 was preloaded using link preload but not used within a fe
+      WARN   javascript/warning: The resource http://localhost:8433/assets/fonts/playfair-display-normal-latin.woff2 was preloaded using link preload but not used 
+#/artists                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/artist/leonardo-da-vinci               err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/artwork/david                          err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/explore                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/timeline                               err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/influences                             err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/daily                                  err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/lists                                  err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/list/paintings-that-still-scare-us     err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/palette                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/taste                                  err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/museums                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/museum/louvre                          err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost,upload.wikimedia.org
+#/movements                              err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/movement/impressionism                 err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/techniques                             err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/technique/oil-painting                 err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/eras                                   err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/era/16th-century                       err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/nations                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/nation/italy                           err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/privacy                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/credits                                err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/passport/import                        err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+#/no-such-page                           err=0  warn=0  failed=0  4xx=0  brokenImg=0  hosts=localhost
+
+==== SWEEP SUMMARY (light, 26 routes) ====
+routes with console errors : 1
+routes with warnings       : 1
+routes with failed requests: 1
+routes with >=400 responses: 0
+routes with broken images  : 0
+
+HOSTS CONTACTED:
+   localhost                           954
+   upload.wikimedia.org                160   <-- external
+
+font/CDN providers contacted: 0 

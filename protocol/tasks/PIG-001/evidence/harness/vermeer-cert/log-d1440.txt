@@ -1,0 +1,49 @@
+d0  ig-node-text   .ig-node text                      n=69  worst  6.02 need 4.5 pass canvas=0   cover=0   
+d0  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 need 4.5 pass canvas=0   cover=0   
+d0  chip-hover     button.chip                        n=1   worst 16.11 need 4.5 pass canvas=17  cover=0   
+d0  le-meta        .le-meta                           n=10  worst 10.88 need 4.5 pass canvas=23  cover=0   
+d0  tl2-year       .tl2-year                          n=8   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d0  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 need 4.5 pass canvas=0   cover=0   
+d0  sr-group       .search-results .sr-group          n=3   worst  4.62 need 4.5 pass canvas=0   cover=0   
+d0  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d0  search-ph      #search::placeholder               n=1   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d0  sr-meta        .search-results .sr-meta           n=7   worst  5.68 need 4.5 pass canvas=0   cover=0   
+d0  map-dot-name   .md-name                           n=22  worst  5.68 need 4.5 pass canvas=0   cover=0   
+d1  ig-node-text   .ig-node text                      n=69  worst  6.02 need 4.5 pass canvas=0   cover=0   
+d1  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 need 4.5 pass canvas=0   cover=0   
+d1  chip-hover     button.chip                        n=1   worst 14.99 need 4.5 pass canvas=23  cover=0   
+d1  le-meta        .le-meta                           n=10  worst 11.45 need 4.5 pass canvas=18  cover=0   
+d1  tl2-year       .tl2-year                          n=8   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d1  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 need 4.5 pass canvas=0   cover=0   
+d1  sr-group       .search-results .sr-group          n=3   worst  4.62 need 4.5 pass canvas=0   cover=0   
+d1  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d1  search-ph      #search::placeholder               n=1   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d1  sr-meta        .search-results .sr-meta           n=7   worst  5.68 need 4.5 pass canvas=0   cover=0   
+d1  map-dot-name   .md-name                           n=22  worst  5.68 need 4.5 pass canvas=0   cover=0   
+d2  ig-node-text   .ig-node text                      n=69  worst  6.02 need 4.5 pass canvas=0   cover=0   
+d2  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 need 4.5 pass canvas=0   cover=0   
+d2  chip-hover     button.chip                        n=1   worst 16.32 need 4.5 pass canvas=16  cover=0   
+d2  le-meta        .le-meta                           n=10  worst 11.71 need 4.5 pass canvas=18  cover=0   
+d2  tl2-year       .tl2-year                          n=8   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d2  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 need 4.5 pass canvas=0   cover=0   
+d2  sr-group       .search-results .sr-group          n=3   worst  4.62 need 4.5 pass canvas=0   cover=0   
+d2  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d2  search-ph      #search::placeholder               n=1   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d2  sr-meta        .search-results .sr-meta           n=7   worst  5.68 need 4.5 pass canvas=0   cover=0   
+d2  map-dot-name   .md-name                           n=22  worst  5.68 need 4.5 pass canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  sr-group         .search-results .sr-group        4.62 need 4.5 pass   9.9px on opaque paint ink [139, 131, 114] -> [29, 26, 19]
+  tl2-year         .tl2-year                        4.90 need 4.5 pass  11.2px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  search-ph        #search::placeholder             4.90 need 4.5 pass  14.1px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  sr-meta          .search-results .sr-meta         5.68 need 4.5 pass  11.8px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  map-dot-name     .md-name                         5.68 need 4.5 pass   2.1px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  ig-node-text     .ig-node text                    6.02 need 4.5 pass  10.5px on opaque paint ink [155, 147, 127] -> [22, 20, 15]
+  le-meta          .le-meta                        10.88 need 4.5 pass  13.1px on #bg-canvas   ink [216, 210, 196] -> [36, 31, 19]
+  tl2-year-now     .tl2-year.now                   11.53 need 4.5 pass  11.2px on opaque paint ink [232, 201, 138] -> [22, 20, 15]
+  ig-node-lit      #ig-svg.focused .ig-node.lit t  14.80 need 4.5 pass  10.5px on opaque paint ink [236, 230, 217] -> [22, 20, 15]
+  chip-hover       button.chip                     14.99 need 4.5 pass  12.5px on #bg-canvas   ink [255, 255, 255] -> [36, 40, 33]
+sites below floor: 0 of 10 measured
+
+NOT MEASURED (unverified by this instrument)
+  gonext-hover     .gonext-item b                 #/artist/leonardo-da-vinci present but never 90% in viewport

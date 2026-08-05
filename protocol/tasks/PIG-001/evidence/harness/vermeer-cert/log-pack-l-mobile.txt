@@ -1,0 +1,17 @@
+home             #/                             iw=390   theme=light imgs=519 broken=0 154969 bytes
+artists          #/artists                      iw=390   theme=light imgs=0 broken=0 191675 bytes
+artist-leonardo  #/artist/leonardo-da-vinci     iw=390   theme=light imgs=18 broken=0 218754 bytes
+artwork-david    #/artwork/david                iw=390   theme=light imgs=6 broken=0 245442 bytes
+explore          #/explore                      iw=390   theme=light imgs=0 broken=0 138420 bytes
+timeline         #/timeline                     iw=390   theme=light imgs=0 broken=0 190316 bytes
+influences       #/influences                   iw=390   theme=light imgs=0 broken=0 152381 bytes
+museums          #/museums                      iw=390   theme=light imgs=104 broken=0 235725 bytes
+museum-louvre    #/museum/louvre                iw=390   theme=light imgs=17 broken=0 261840 bytes
+lists            #/lists                        iw=390   theme=light imgs=12 broken=0 267460 bytes
+palette          #/palette                      iw=390   theme=light imgs=0 broken=0 162920 bytes
+taste            #/taste                        iw=390   theme=light imgs=12 broken=0 111406 bytes
+daily            #/daily                        iw=390   theme=light imgs=1 broken=0 328548 bytes
+privacy          #/privacy                      iw=390   theme=light imgs=0 broken=0 209338 bytes
+credits          #/credits                      iw=390   theme=light imgs=0 broken=0 207205 bytes
+invalid-route    #/no-such-page                 iw=390   theme=light imgs=0 broken=0 140050 bytes
+wrote 16 captures; assertions -> /Users/ardagemci/Claude/painters-atlas/protocol/tasks/PIG-001/evidence/harness/vermeer-cert/capture-assertions-light-390.json

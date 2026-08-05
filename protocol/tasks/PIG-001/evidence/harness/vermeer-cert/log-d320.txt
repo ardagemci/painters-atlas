@@ -1,0 +1,24 @@
+d0  ig-node-text   .ig-node text                      n=31  worst  6.02 need 4.5 pass canvas=0   cover=0   
+d0  tl2-year       .tl2-year                          n=4   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d0  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 need 4.5 pass canvas=0   cover=0   
+d0  le-meta        .le-meta                           n=7   worst 11.17 need 4.5 pass canvas=22  cover=0   
+d0  sr-group       .search-results .sr-group          n=3   worst  4.62 need 4.5 pass canvas=0   cover=0   
+d0  sr-meta        .search-results .sr-meta           n=7   worst  5.68 need 4.5 pass canvas=0   cover=0   
+d0  map-dot-name   .md-name                           n=22  worst  4.99 need 4.5 pass canvas=0   cover=0   
+d1  ig-node-text   .ig-node text                      n=31  worst  6.02 need 4.5 pass canvas=0   cover=0   
+d1  tl2-year       .tl2-year                          n=4   worst  4.90 need 4.5 pass canvas=0   cover=0   
+d1  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 need 4.5 pass canvas=0   cover=0   
+d1  le-meta        .le-meta                           n=7   worst 10.55 need 4.5 pass canvas=29  cover=0   
+d1  sr-group       .search-results .sr-group          n=3   worst  4.62 need 4.5 pass canvas=0   cover=0   
+d1  sr-meta        .search-results .sr-meta           n=7   worst  5.68 need 4.5 pass canvas=0   cover=0   
+d1  map-dot-name   .md-name                           n=22  worst  4.99 need 4.5 pass canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  sr-group         .search-results .sr-group        4.62 need 4.5 pass   9.9px on opaque paint ink [139, 131, 114] -> [29, 26, 19]
+  tl2-year         .tl2-year                        4.90 need 4.5 pass  11.2px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  map-dot-name     .md-name                         4.99 need 4.5 pass   2.1px on opaque paint ink [155, 147, 127] -> [42, 37, 24]
+  sr-meta          .search-results .sr-meta         5.68 need 4.5 pass  11.8px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  ig-node-text     .ig-node text                    6.02 need 4.5 pass  10.5px on opaque paint ink [155, 147, 127] -> [22, 20, 15]
+  le-meta          .le-meta                        10.55 need 4.5 pass  13.1px on #bg-canvas   ink [216, 210, 196] -> [42, 32, 27]
+  tl2-year-now     .tl2-year.now                   11.53 need 4.5 pass  11.2px on opaque paint ink [232, 201, 138] -> [22, 20, 15]
+sites below floor: 0 of 7 measured

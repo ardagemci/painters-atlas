@@ -1,0 +1,683 @@
+[
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 251
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 251
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 41
+   }
+  ],
+  "route": "#/",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/artists",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": {
+    "n": 17,
+    "worstOver": 3525,
+    "rect": [
+     4725,
+     1024,
+     79,
+     37
+    ]
+   },
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   },
+   {
+    "sel": "a.tl2-bar",
+    "lostW": 0,
+    "lostH": 4
+   }
+  ],
+  "route": "#/timeline",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "button.skip-inline",
+    "lostW": 100,
+    "lostH": 217
+   }
+  ],
+  "route": "#/influences",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/daily",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 251
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 253
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 251
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 3
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 41
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 241
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 56
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 230
+   }
+  ],
+  "route": "#/lists",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/palette",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/taste",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 62
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 285
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 63
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 55
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 415
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 63
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 63
+   }
+  ],
+  "route": "#/museums",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "a.entry-card",
+    "lostW": 7,
+    "lostH": 0
+   }
+  ],
+  "route": "#/explore",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/movements",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/techniques",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/eras",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/nations",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/privacy",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/credits",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/no-such-page",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 253
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 230
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 251
+   }
+  ],
+  "route": "#/list/paintings-that-still-scare-us",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.mu-hero",
+    "lostW": 0,
+    "lostH": 707
+   }
+  ],
+  "route": "#/museum/met",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/artist/duccio",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/movement/renaissance",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/technique/oil-painting",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/era/14th-century",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/nation/france",
+  "theme": "dark"
+ },
+ {
+  "vw": 1280,
+  "fs": "32px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "route": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJhZG1pcmF0aW9ucyI6W10sIm5vdEZvck1lIjpbXSwic2VlbiI6W10sIndhbnRUb1NlZSI6W10sInNhdmVkIjpbXSwicHJvYmVzIjpbXSwicXVpeiI6eyJhbnN3ZXJzIjp7fSwiYXQiOm51bGx9LCJwYWxldHRlIjp7InRvbmVzIjpbXX0sInBlcnNvbmEiOnt9LCJ0YXN0ZVZlY3RvciI6e30sIm1pbGVzdG9uZXMiOnt9LCJza2lwcGVkIjpbXSwiZGVja1NlZW4iOltdLCJjbHVzdGVycyI6W119",
+  "theme": "dark"
+ }
+]

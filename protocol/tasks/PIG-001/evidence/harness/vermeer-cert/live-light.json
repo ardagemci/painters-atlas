@@ -1,0 +1,97 @@
+{
+ "identity": {
+  "present": true,
+  "outsideApp": true,
+  "parent": "body",
+  "role": "status",
+  "ariaLive": "polite",
+  "ariaAtomic": "true",
+  "cls": "sr-only",
+  "textAtRest": "",
+  "display": "block",
+  "visibility": "visible",
+  "otherLiveRegions": [
+   "live-status[polite]"
+  ]
+ },
+ "routeChanges": [
+  {
+   "route": "#/artists",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/timeline",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/influences",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/museums",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/lists",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/palette",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/explore",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/credits",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/privacy",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/artist/leonardo-da-vinci",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/no-such-page",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  },
+  {
+   "route": "#/",
+   "mutations": 0,
+   "regionText": "",
+   "log": []
+  }
+ ],
+ "positiveControl": {
+  "searchOpened": true,
+  "panelWasOpen": true,
+  "mutations": 1,
+  "regionText": "Search results closed. You are back in the search field."
+ }
+}

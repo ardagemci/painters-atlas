@@ -1,0 +1,102 @@
+{
+ "artworkZoom200": [
+  {
+   "vw": 1280,
+   "fs": "32px",
+   "docScrollW": 1280,
+   "docOver": 0,
+   "items": [],
+   "moved": {
+    ".skip-link": {
+     "n": 1,
+     "worstOver": 0,
+     "rect": null
+    },
+    ".tl2-year": null,
+    ".daily-media": null,
+    ".md-name": null
+   },
+   "clipped": [],
+   "route": "#/artwork/david",
+   "theme": "light"
+  },
+  {
+   "vw": 1280,
+   "fs": "32px",
+   "docScrollW": 1280,
+   "docOver": 0,
+   "items": [],
+   "moved": {
+    ".skip-link": {
+     "n": 1,
+     "worstOver": 0,
+     "rect": null
+    },
+    ".tl2-year": null,
+    ".daily-media": null,
+    ".md-name": null
+   },
+   "clipped": [],
+   "route": "#/artwork/the-starry-night",
+   "theme": "light"
+  },
+  {
+   "vw": 1280,
+   "fs": "32px",
+   "docScrollW": 1280,
+   "docOver": 0,
+   "items": [],
+   "moved": {
+    ".skip-link": {
+     "n": 1,
+     "worstOver": 0,
+     "rect": null
+    },
+    ".tl2-year": null,
+    ".daily-media": null,
+    ".md-name": null
+   },
+   "clipped": [],
+   "route": "#/artwork/david",
+   "theme": "dark"
+  },
+  {
+   "vw": 1280,
+   "fs": "32px",
+   "docScrollW": 1280,
+   "docOver": 0,
+   "items": [],
+   "moved": {
+    ".skip-link": {
+     "n": 1,
+     "worstOver": 0,
+     "rect": null
+    },
+    ".tl2-year": null,
+    ".daily-media": null,
+    ".md-name": null
+   },
+   "clipped": [],
+   "route": "#/artwork/the-starry-night",
+   "theme": "dark"
+  }
+ ],
+ "creditsCopy": {
+  "light": {
+   "newLedePresent": true,
+   "oldLedeAbsent": true,
+   "newPdPhrasePresent": true,
+   "oldPdPhraseAbsent": true,
+   "theme": "light",
+   "chars": 13064
+  },
+  "dark": {
+   "newLedePresent": true,
+   "oldLedeAbsent": true,
+   "newPdPhrasePresent": true,
+   "oldPdPhraseAbsent": true,
+   "theme": "dark",
+   "chars": 13064
+  }
+ }
+}

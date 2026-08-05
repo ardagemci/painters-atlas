@@ -1,0 +1,28 @@
+ROUTES 25  theme=dark width=1280
+dark  #/                                       fs=32px docOver=0    crossing=0  clipped=3  
+dark  #/artists                                fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/timeline                               fs=32px docOver=0    crossing=0  clipped=8  
+dark  #/influences                             fs=32px docOver=0    crossing=0  clipped=1  
+dark  #/daily                                  fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/lists                                  fs=32px docOver=0    crossing=0  clipped=8  
+dark  #/palette                                fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/taste                                  fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/museums                                fs=32px docOver=0    crossing=0  clipped=7  
+dark  #/explore                                fs=32px docOver=0    crossing=0  clipped=1  
+dark  #/movements                              fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/techniques                             fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/eras                                   fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/nations                                fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/privacy                                fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/credits                                fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/no-such-page                           fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/list/paintings-that-still-scare-us     fs=32px docOver=0    crossing=0  clipped=3  
+dark  #/museum/met                             fs=32px docOver=0    crossing=0  clipped=1  
+dark  #/artist/duccio                          fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/movement/renaissance                   fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/technique/oil-painting                 fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/era/14th-century                       fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/nation/france                          fs=32px docOver=0    crossing=0  clipped=0  
+dark  #/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQ fs=32px docOver=0    crossing=0  clipped=0  
+
+dark @1280: 25 routes, 0 with overflow at 200%

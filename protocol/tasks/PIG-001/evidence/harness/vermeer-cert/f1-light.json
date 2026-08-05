@@ -1,0 +1,296 @@
+[
+ {
+  "vw": 320,
+  "fs": "16px",
+  "docScrollW": 320,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [],
+  "width": 320,
+  "theme": "light"
+ },
+ {
+  "vw": 390,
+  "fs": "16px",
+  "docScrollW": 390,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": null,
+   ".md-name": null
+  },
+  "clipped": [],
+  "width": 390,
+  "theme": "light"
+ },
+ {
+  "vw": 821,
+  "fs": "16px",
+  "docScrollW": 821,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 237
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 237
+   }
+  ],
+  "width": 821,
+  "theme": "light"
+ },
+ {
+  "vw": 900,
+  "fs": "16px",
+  "docScrollW": 900,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 261
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 261
+   }
+  ],
+  "width": 900,
+  "theme": "light"
+ },
+ {
+  "vw": 1024,
+  "fs": "16px",
+  "docScrollW": 1024,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 198
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 198
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 28
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 190
+   }
+  ],
+  "width": 1024,
+  "theme": "light"
+ },
+ {
+  "vw": 1100,
+  "fs": "16px",
+  "docScrollW": 1100,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 213
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 213
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 30
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 205
+   }
+  ],
+  "width": 1100,
+  "theme": "light"
+ },
+ {
+  "vw": 1280,
+  "fs": "16px",
+  "docScrollW": 1280,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 242
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 242
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 33
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 232
+   }
+  ],
+  "width": 1280,
+  "theme": "light"
+ },
+ {
+  "vw": 1440,
+  "fs": "16px",
+  "docScrollW": 1440,
+  "docOver": 0,
+  "items": [],
+  "moved": {
+   ".skip-link": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".tl2-year": null,
+   ".daily-media": {
+    "n": 1,
+    "worstOver": 0,
+    "rect": null
+   },
+   ".md-name": null
+  },
+  "clipped": [
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 242
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 242
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 33
+   },
+   {
+    "sel": "div.card-art",
+    "lostW": 0,
+    "lostH": 232
+   }
+  ],
+  "width": 1440,
+  "theme": "light"
+ }
+]

@@ -1,0 +1,9 @@
+dark   320px zoom=False n=0   renderedFontSize None..None px  clientRectH None..None px
+dark   320px zoom=True  n=22  renderedFontSize 2.34..2.34 px  clientRectH 3..3 px
+        e.g. France · 40                  userFs=2.07 ctm=1.129 -> 2.34 px
+dark   390px zoom=False n=0   renderedFontSize None..None px  clientRectH None..None px
+dark   390px zoom=True  n=22  renderedFontSize 2.97..2.97 px  clientRectH 4..4 px
+        e.g. France · 40                  userFs=2.07 ctm=1.435 -> 2.97 px
+dark  1440px zoom=False n=0   renderedFontSize None..None px  clientRectH None..None px
+dark  1440px zoom=True  n=22  renderedFontSize 10.45..10.45 px  clientRectH 13..13 px
+        e.g. France · 40                  userFs=2.07 ctm=5.049 -> 10.45 px

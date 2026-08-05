@@ -1,0 +1,326 @@
+[
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 320,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 2.34,
+  "maxRenderedFs": 2.34,
+  "minRectH": 3,
+  "maxRectH": 3,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 1.129,
+    "renderedFs": 2.34,
+    "rectH": 3,
+    "rectW": 12.31,
+    "bboxH": 2.66
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 1.129,
+    "renderedFs": 2.34,
+    "rectH": 3,
+    "rectW": 9.31,
+    "bboxH": 2.66
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 1.129,
+    "renderedFs": 2.34,
+    "rectH": 3,
+    "rectW": 14.19,
+    "bboxH": 2.66
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 1.129,
+    "renderedFs": 2.34,
+    "rectH": 3,
+    "rectW": 21.23,
+    "bboxH": 2.66
+   }
+  ],
+  "theme": "light",
+  "width": 320,
+  "europeZoom": true
+ },
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 390,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 2.97,
+  "maxRenderedFs": 2.97,
+  "minRectH": 4,
+  "maxRectH": 4,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 1.435,
+    "renderedFs": 2.97,
+    "rectH": 4,
+    "rectW": 15.69,
+    "bboxH": 2.79
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 1.435,
+    "renderedFs": 2.97,
+    "rectH": 4,
+    "rectW": 11.88,
+    "bboxH": 2.79
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 1.435,
+    "renderedFs": 2.97,
+    "rectH": 4,
+    "rectW": 18.08,
+    "bboxH": 2.79
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 1.435,
+    "renderedFs": 2.97,
+    "rectH": 4,
+    "rectW": 27.06,
+    "bboxH": 2.79
+   }
+  ],
+  "theme": "light",
+  "width": 390,
+  "europeZoom": true
+ },
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 900,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 7.37,
+  "maxRenderedFs": 7.37,
+  "minRectH": 9,
+  "maxRectH": 9,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 3.561,
+    "renderedFs": 7.37,
+    "rectH": 9,
+    "rectW": 38.92,
+    "bboxH": 2.53
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 3.561,
+    "renderedFs": 7.37,
+    "rectH": 9,
+    "rectW": 29.45,
+    "bboxH": 2.53
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 3.561,
+    "renderedFs": 7.37,
+    "rectH": 9,
+    "rectW": 44.84,
+    "bboxH": 2.53
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 3.561,
+    "renderedFs": 7.37,
+    "rectH": 9,
+    "rectW": 67.14,
+    "bboxH": 2.53
+   }
+  ],
+  "theme": "light",
+  "width": 900,
+  "europeZoom": true
+ },
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 1024,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 8.49,
+  "maxRenderedFs": 8.49,
+  "minRectH": 10,
+  "maxRectH": 10,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 4.104,
+    "renderedFs": 8.49,
+    "rectH": 10,
+    "rectW": 44.84,
+    "bboxH": 2.44
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 4.104,
+    "renderedFs": 8.49,
+    "rectH": 10,
+    "rectW": 33.92,
+    "bboxH": 2.44
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 4.104,
+    "renderedFs": 8.49,
+    "rectH": 10,
+    "rectW": 51.66,
+    "bboxH": 2.44
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 4.104,
+    "renderedFs": 8.49,
+    "rectH": 10,
+    "rectW": 77.34,
+    "bboxH": 2.44
+   }
+  ],
+  "theme": "light",
+  "width": 1024,
+  "europeZoom": true
+ },
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 1280,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 10.45,
+  "maxRenderedFs": 10.45,
+  "minRectH": 13,
+  "maxRectH": 13,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 55.19,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 41.75,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 63.58,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 95.19,
+    "bboxH": 2.57
+   }
+  ],
+  "theme": "light",
+  "width": 1280,
+  "europeZoom": true
+ },
+ {
+  "n": 0,
+  "theme": "light",
+  "width": 1440,
+  "europeZoom": false
+ },
+ {
+  "n": 22,
+  "minRenderedFs": 10.45,
+  "maxRenderedFs": 10.45,
+  "minRectH": 13,
+  "maxRectH": 13,
+  "sample": [
+   {
+    "text": "France \u00b7 40",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 55.19,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Italy \u00b7 30",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 41.75,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Germany \u00b7 19",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 63.58,
+    "bboxH": 2.57
+   },
+   {
+    "text": "Britain & Ireland \u00b7 16",
+    "userFs": 2.07,
+    "ctmScale": 5.049,
+    "renderedFs": 10.45,
+    "rectH": 13,
+    "rectW": 95.19,
+    "bboxH": 2.57
+   }
+  ],
+  "theme": "light",
+  "width": 1440,
+  "europeZoom": true
+ }
+]
