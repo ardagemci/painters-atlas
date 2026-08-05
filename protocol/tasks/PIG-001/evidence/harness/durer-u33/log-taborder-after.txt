@@ -1,0 +1,7 @@
+start activeElement: {"tag":"BODY"}
+--- light 1440x900 — sequential focus order, real Tab key events ---
+  Tab 1   BUTTON   skip-link        Skip to the atlas              rect=[14, 14, 140, 38] pos=fixed    inVP=True
+  Tab 2   A        brand            Pigmentan atlas of painters    rect=[28, 15, 173, 36] pos=static   inVP=True
+  Tab 3   A                         Artists                        rect=[229, 14, 92, 39] pos=relative inVP=True
+  Tab 4   A                         Lists                          rect=[325, 14, 70, 39] pos=relative inVP=True
+  Tab 5   A                         Museums                        rect=[399, 14, 105, 39] pos=relative inVP=True

@@ -1,0 +1,41 @@
+d0  ig-node-text   .ig-node text                      n=69  worst  1.04 canvas=0   cover=0   
+d0  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst  2.72 canvas=0   cover=0   
+d0  chip-hover     button.chip                        n=1   worst 18.75 canvas=1   cover=0   
+d0  chip-hover-t   button.chip                        n=3   worst 15.65 canvas=20  cover=0   
+d0  gonext-hover   .gonext-item b                     NO HOVER HOST
+d0  le-meta        .le-meta                           n=10  worst  5.52 canvas=18  cover=0   
+d0  tl2-year       .tl2-year                          n=8   worst  3.63 canvas=0   cover=0   
+d0  tl2-year-now   .tl2-year.now                      n=1   worst  3.63 canvas=0   cover=0   
+d0  sr-group       .search-results .sr-group          n=3   worst  4.62 canvas=0   cover=0   
+d0  sr-meta        .search-results .sr-meta           n=7   worst  5.68 canvas=0   cover=0   
+d0  map-dot-name   .map-dot .md-name                  NOT PRESENT
+d0  search-ph      #search                            n=1   worst 14.80 canvas=0   cover=0   
+d1  ig-node-text   .ig-node text                      n=69  worst  1.04 canvas=0   cover=0   
+d1  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst  2.72 canvas=0   cover=0   
+d1  chip-hover     button.chip                        n=1   worst 16.47 canvas=15  cover=0   
+d1  chip-hover-t   button.chip                        n=3   worst 18.69 canvas=2   cover=0   
+d1  gonext-hover   .gonext-item b                     NO HOVER HOST
+d1  le-meta        .le-meta                           n=10  worst  5.78 canvas=18  cover=0   
+d1  tl2-year       .tl2-year                          n=8   worst  3.63 canvas=0   cover=0   
+d1  tl2-year-now   .tl2-year.now                      n=1   worst  3.63 canvas=0   cover=0   
+d1  sr-group       .search-results .sr-group          n=3   worst  4.62 canvas=0   cover=0   
+d1  sr-meta        .search-results .sr-meta           n=7   worst  5.68 canvas=0   cover=0   
+d1  map-dot-name   .map-dot .md-name                  NOT PRESENT
+d1  search-ph      #search                            n=1   worst 14.80 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  ig-node-text     .ig-node text                    1.04 need 4.5 FAIL  10.5px on opaque paint ink [155, 147, 127] -> [101, 162, 152]
+  ig-node-lit      #ig-svg.focused .ig-node.lit t   2.72 need 4.5 FAIL  10.5px on opaque paint ink [236, 230, 217] -> [94, 150, 140]
+  tl2-year         .tl2-year                        3.63 need 4.5 FAIL  11.2px on opaque paint ink [232, 201, 138] -> [119, 99, 57]
+  tl2-year-now     .tl2-year.now                    3.63 need 4.5 FAIL  11.2px on opaque paint ink [232, 201, 138] -> [119, 99, 57]
+  sr-group         .search-results .sr-group        4.62 need 4.5 pass   9.9px on opaque paint ink [139, 131, 114] -> [29, 26, 19]
+  le-meta          .le-meta                         5.52 need 4.5 pass  13.1px on #bg-canvas   ink [155, 147, 127] -> [26, 30, 26]
+  sr-meta          .search-results .sr-meta         5.68 need 4.5 pass  11.8px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  search-ph        #search                         14.80 need 4.5 pass  14.1px on opaque paint ink [236, 230, 217] -> [22, 20, 15]
+  chip-hover-t     button.chip                     15.65 need 4.5 pass  12.5px on #bg-canvas   ink [255, 255, 255] -> [30, 37, 33]
+  chip-hover       button.chip                     16.47 need 4.5 pass  12.5px on #bg-canvas   ink [255, 255, 255] -> [28, 32, 30]
+sites below floor: 4 of 10 measured
+
+NOT MEASURED (unverified by this instrument)
+  gonext-hover     .gonext-item b                 #/artwork/david          hover host matched nothing
+  map-dot-name     .map-dot .md-name              #/nations                selector matched nothing

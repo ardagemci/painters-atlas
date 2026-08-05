@@ -1,0 +1,9 @@
+dark  320px  docScrollW=320   over=0     CLEAN
+dark  390px  docScrollW=390   over=0     CLEAN
+dark  821px  docScrollW=821   over=0     CLEAN
+dark  900px  docScrollW=900   over=0     CLEAN
+dark 1024px  docScrollW=1024  over=0     CLEAN
+dark 1100px  docScrollW=1100  over=0     CLEAN
+dark 1280px  docScrollW=1280  over=0     CLEAN
+dark 1440px  docScrollW=1440  over=0     CLEAN
+worst overflow on #/ over these widths: 0 px

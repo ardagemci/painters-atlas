@@ -1,0 +1,54 @@
+d0  ig-node-text   .ig-node text                      n=69  worst  4.42 canvas=0   cover=0   
+d0  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+d0  chip-hover     button.chip                        n=1   worst 18.87 canvas=0   cover=0   
+d0  chip-hover-t   button.chip                        n=3   worst 16.42 canvas=16  cover=0   
+d0  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d0  le-meta        .le-meta                           n=10  worst 11.47 canvas=20  cover=0   
+d0  tl2-year       .tl2-year                          n=8   worst  4.90 canvas=0   cover=0   
+d0  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 canvas=0   cover=0   
+d0  sr-group       .search-results .sr-group          n=3   worst  4.62 canvas=0   cover=0   
+d0  sr-meta        .search-results .sr-meta           n=7   worst  5.68 canvas=0   cover=0   
+d0  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+d0  search-ph      #search::placeholder               n=1   worst  4.90 canvas=0   cover=0   
+d1  ig-node-text   .ig-node text                      n=69  worst  4.42 canvas=0   cover=0   
+d1  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+d1  chip-hover     button.chip                        n=1   worst 16.47 canvas=15  cover=0   
+d1  chip-hover-t   button.chip                        n=3   worst 16.47 canvas=15  cover=0   
+d1  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d1  le-meta        .le-meta                           n=10  worst 10.75 canvas=26  cover=0   
+d1  tl2-year       .tl2-year                          n=8   worst  4.90 canvas=0   cover=0   
+d1  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 canvas=0   cover=0   
+d1  sr-group       .search-results .sr-group          NOT PRESENT
+d1  sr-meta        .search-results .sr-meta           n=7   worst  5.68 canvas=0   cover=0   
+d1  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+d1  search-ph      #search::placeholder               n=1   worst  4.90 canvas=0   cover=0   
+d2  ig-node-text   .ig-node text                      n=69  worst  4.42 canvas=0   cover=0   
+d2  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+d2  chip-hover     button.chip                        n=1   worst 18.87 canvas=0   cover=0   
+d2  chip-hover-t   button.chip                        n=3   worst 16.47 canvas=15  cover=0   
+d2  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d2  le-meta        .le-meta                           n=10  worst 12.35 canvas=8   cover=0   
+d2  tl2-year       .tl2-year                          n=8   worst  4.90 canvas=0   cover=0   
+d2  tl2-year-now   .tl2-year.now                      n=1   worst 11.53 canvas=0   cover=0   
+d2  sr-group       .search-results .sr-group          n=3   worst  4.62 canvas=0   cover=0   
+d2  sr-meta        .search-results .sr-meta           n=7   worst  5.68 canvas=0   cover=0   
+d2  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+d2  search-ph      #search::placeholder               n=1   worst  4.90 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  ig-node-text     .ig-node text                    4.42 need 4.5 FAIL  10.5px on opaque paint ink [155, 147, 127] -> [61, 42, 35]
+  sr-group         .search-results .sr-group        4.62 need 4.5 pass   9.9px on opaque paint ink [139, 131, 114] -> [29, 26, 19]
+  tl2-year         .tl2-year                        4.90 need 4.5 pass  11.2px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  search-ph        #search::placeholder             4.90 need 4.5 pass  14.1px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  sr-meta          .search-results .sr-meta         5.68 need 4.5 pass  11.8px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  map-dot-name     .md-name                         5.68 need 4.5 pass   2.1px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+  le-meta          .le-meta                        10.75 need 4.5 pass  13.1px on #bg-canvas   ink [216, 210, 196] -> [39, 31, 25]
+  tl2-year-now     .tl2-year.now                   11.53 need 4.5 pass  11.2px on opaque paint ink [232, 201, 138] -> [22, 20, 15]
+  ig-node-lit      #ig-svg.focused .ig-node.lit t  14.80 need 4.5 pass  10.5px on opaque paint ink [236, 230, 217] -> [22, 20, 15]
+  chip-hover-t     button.chip                     16.42 need 4.5 pass  12.5px on #bg-canvas   ink [255, 255, 255] -> [29, 32, 31]
+  chip-hover       button.chip                     16.47 need 4.5 pass  12.5px on #bg-canvas   ink [255, 255, 255] -> [28, 32, 30]
+sites below floor: 1 of 11 measured
+
+NOT MEASURED (unverified by this instrument)
+  gonext-hover     .gonext-item b                 #/artist/leonardo-da-vinci present but never 90% in viewport
+  sr-group         .search-results .sr-group      #/                       selector matched nothing

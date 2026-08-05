@@ -1,0 +1,51 @@
+
+the live region (index.html, outside #app)
+  PASS live region present                            {'role': 'status', 'live': 'polite', 'atomic': 'true', 'inApp': False, 'text': ''}
+  PASS role=status, aria-live=polite, atomic          
+  PASS outside #app, so route() cannot destroy it     
+  PASS silent at rest — route() does not write here   
+  PASS still silent after a route change (C-8 not re-created) 
+
+AT-4 — one coherent role on the search field
+  PASS aria-haspopup removed (the source of two of three roles) {'role': 'combobox', 'haspopup': None, 'autocomplete': 'list', 'expanded': 'false', 'controls': 'search-results'}
+  PASS role=combobox retained                         
+  PASS aria-autocomplete/expanded/controls retained   
+
+AT-3 — dismissing search says so
+  PASS panel open before Escape                       
+  PASS panel closed                                   
+  PASS dismissal announced                            'Search results closed. You are back in the search field.'
+  PASS focus returned to the field                    
+  PASS Escape on a closed panel stays silent          ''
+
+AT-1 — the deck names the artwork being judged
+  PASS card is a labelled group                       
+  PASS card name carries title, artist and position   Artwork 1 of 16 — Composition VII — Wassily Kandinsky, 1913
+  PASS image alt names artist, not only title         Composition VII — Wassily Kandinsky, 1913
+  PASS Admire names its object                        Admire Composition VII by Wassily Kandinsky
+  PASS Pass names its object                          Pass on Composition VII by Wassily Kandinsky
+  PASS card 1 announced on entering the deck          'Composition VII — Wassily Kandinsky, 1913. Artwork 1 of 16. Admire, or pass.'
+  PASS focus stayed on the pressed control (nothing else would speak) aw-btn primary deck-admire
+  PASS the NEW artwork is announced after a tap       'Composition VIII — Wassily Kandinsky, 1923. Artwork 2 of 16. Admire, or pass.'
+  PASS the announcement changed with the card         
+
+AT-6 / AT-7 — cancelling, and the merge outcome
+  PASS import arrival screen reached                  
+  PASS per-field conflict screen reached, 4 choices   
+  PASS cancel is still byte-identical (the fix changed nothing functional) 
+  PASS cancel relocates to the home page              #/
+  PASS cancel says nothing was changed                'Import cancelled. Nothing on this device has been changed. You are back on the Pigment home page.'
+  PASS merge lands on the taste page                  
+  PASS outcome announced                              'Passport merged. 2 entries added. Onboarding answers: theirs taken · Chosen tones: yours kept · Adopted Persona: theirs taken · Progress markers: yours kept.'
+  PASS outcome names every field that was decided     'Passport merged. 2 entries added. Onboarding answers: theirs taken · Chosen tones: yours kept · Adopted Persona: theirs taken · Progress markers: yours kept.'
+  PASS outcome reports theirs taken where theirs was chosen 
+  PASS outcome reports yours kept where yours was chosen 
+  PASS outcome is on the page as well, not only announced 'Passport merged. 2 entries added. Onboarding answers: theirs taken · Chosen tones: yours kept · Adopted Persona: theirs taken · Progress markers: yours kept.'
+  PASS the announcement matches what was actually stored — persona the-realist
+  PASS the announcement matches what was actually stored — tones ['ochre', 'indigo']
+
+AT-5 — decorative arrows are not exposed
+  PASS no arrow left in exposed text on #/palette     bare arrows: 0
+  PASS no arrow left in exposed text on #/explore     []
+
+37 checks pass, 0 fail

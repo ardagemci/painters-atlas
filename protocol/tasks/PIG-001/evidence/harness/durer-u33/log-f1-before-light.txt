@@ -1,0 +1,9 @@
+light  821px  docScrollW=971   over=150   
+      +150 px  a.daily-media                      width=520   min-height=390px    aspect-ratio=4 / 3
+light  900px  docScrollW=1013  over=113   
+      +113 px  a.daily-media                      width=520   min-height=390px    aspect-ratio=4 / 3
+light 1024px  docScrollW=1078  over=54    
+      +54  px  a.daily-media                      width=520   min-height=390px    aspect-ratio=4 / 3
+light 1100px  docScrollW=1118  over=18    
+      +18  px  a.daily-media                      width=520   min-height=390px    aspect-ratio=4 / 3
+worst overflow on #/ over these widths: 150 px

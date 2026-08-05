@@ -1,0 +1,11 @@
+d0  ig-node-text   .ig-node text                      n=69  worst  6.02 canvas=0   cover=0   
+d0  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+d1  ig-node-text   .ig-node text                      n=69  worst  6.02 canvas=0   cover=0   
+d1  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+d2  ig-node-text   .ig-node text                      n=69  worst  6.02 canvas=0   cover=0   
+d2  ig-node-lit    #ig-svg.focused .ig-node.lit text  n=3   worst 14.80 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  ig-node-text     .ig-node text                    6.02 need 4.5 pass  10.5px on opaque paint ink [155, 147, 127] -> [22, 20, 15]
+  ig-node-lit      #ig-svg.focused .ig-node.lit t  14.80 need 4.5 pass  10.5px on opaque paint ink [236, 230, 217] -> [22, 20, 15]
+sites below floor: 0 of 2 measured

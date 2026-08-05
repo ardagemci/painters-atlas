@@ -1,0 +1,10 @@
+.skip-link     on #/            
+   at rest      rect=[14, 14, 2, 2]             inViewport=True
+   t=0 (focus)  rect=[14, 14, 140, 38]          inViewport=True   <-- what an AT queries
+   settled      rect=[14, 14, 140, 38]          inViewport=True
+   transition   all 0s
+.skip-inline   on #/influences  
+   at rest      rect=[128, 390, 14, 4]          inViewport=True
+   t=0 (focus)  rect=[128, 390, 262, 34]        inViewport=True   <-- what an AT queries
+   settled      rect=[128, 390, 262, 34]        inViewport=True
+   transition   all 0s

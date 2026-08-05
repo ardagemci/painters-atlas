@@ -1,0 +1,7 @@
+d0  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+d1  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+d2  map-dot-name   .md-name                           n=22  worst  5.68 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  map-dot-name     .md-name                         5.68 need 4.5 pass   2.1px on opaque paint ink [155, 147, 127] -> [29, 26, 19]
+sites below floor: 0 of 1 measured

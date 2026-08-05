@@ -1,0 +1,15 @@
+d0  gonext-hover   .gonext-item b                     n=4   worst 18.40 canvas=0   cover=0   
+d0  map-dot-name   .map-dot .md-name                  n=22  worst  1.28 canvas=0   cover=0   
+d0  search-ph      #search::placeholder               n=1   worst  4.90 canvas=0   cover=0   
+d1  gonext-hover   .gonext-item b                     NOT MEASURED (present but never 90% in viewport)
+d1  map-dot-name   .map-dot .md-name                  n=22  worst  1.28 canvas=0   cover=0   
+d1  search-ph      #search::placeholder               n=1   worst  4.90 canvas=0   cover=0   
+
+WORST OBSERVED PER SITE (all draws)
+  map-dot-name     .map-dot .md-name                1.28 need 4.5 FAIL   2.1px on opaque paint ink [155, 147, 127] -> [153, 125, 71]
+  search-ph        #search::placeholder             4.90 need 4.5 pass  14.1px on opaque paint ink [139, 131, 114] -> [22, 20, 15]
+  gonext-hover     .gonext-item b                  18.40 need 4.5 pass  14.4px on opaque paint ink [255, 255, 255] -> [22, 20, 15]
+sites below floor: 1 of 3 measured
+
+NOT MEASURED (unverified by this instrument)
+  gonext-hover     .gonext-item b                 #/artist/leonardo-da-vinci present but never 90% in viewport
