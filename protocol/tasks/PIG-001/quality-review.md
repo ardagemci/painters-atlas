@@ -11,7 +11,8 @@ partial credit, and an untested criterion is not a passing criterion.
 | 1 | 2026-07-26 | `4fc8239` / `5fdf1aa` | GATE 2: BLOCKED | PASS 26 · FAIL 0 · UNSUPPORTED 3 (AC4, AC8, AC19) |
 | 2 | 2026-07-28 | `1a41cff` | GATE 2: BLOCKED | PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL — F-7, the `#bg-canvas` ink class) |
 | 3 | 2026-07-29 | `11e4471` | GATE 2: BLOCKED | PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL — F-8, one residual member of F-7's class) |
-| **4 — operative** | **2026-08-06** | **`06ab20f` (HEAD)** | **GATE 2: BLOCKED** | **PASS 29 · FAIL 0 · UNSUPPORTED 0. All 29 criteria pass — including AC15 and AC19, for the first time. Blocked on one open major outside the criteria set: F-9, the repository test suite is RED at this HEAD while the record states it is green.** |
+| 4 | 2026-08-06 | `06ab20f` | GATE 2: BLOCKED | PASS 29 · FAIL 0 · UNSUPPORTED 0. All 29 criteria pass. Blocked on F-9 — the test suite RED at HEAD while the record stated it green |
+| **5 — operative** | **2026-08-06** | **`fb8ba6e` (HEAD)** | **GATE 2: CERTIFIED** | **PASS 29 · FAIL 0 · UNSUPPORTED 0. F-9 and F-2 closed and re-verified by me — F-2 by a real keyboard pass the implementer could not run. Residuals recorded as residuals.** |
 
 Revisions 1, 2 and 3 are preserved verbatim below. Nothing in any of them has been deleted:
 the record of what was blocked, and why, stands as written. Each revision supersedes only the
@@ -27,9 +28,264 @@ it from a log. **All three are now closed and I have re-verified each in the fil
 
 ---
 
-# REVISION 4 (2026-08-06) — OPERATIVE
+# REVISION 5 (2026-08-06) — OPERATIVE
 
-**Product tree reviewed at:** `06ab20f` (HEAD), 96 commits off `effa805`.
+**Product tree reviewed at:** `fb8ba6e` (HEAD), 97 commits off `effa805`. One commit since
+Revision 4: `fb8ba6e`, unit 37, which closes both of my blocking findings.
+
+**Independence:** I wrote none of this code and I fixed nothing I found. Verifying another
+agent's fix is squarely my role even though producing it would not be. This round I re-ran the
+suite, proved the OD-5 guard's reach is byte-for-byte unchanged rather than accepting that it was
+not loosened, enumerated every line the exemption markers hide, and **drove a real keyboard Tab
+through all eight nav links in three cells** — the measurement the implementer flagged he could
+not make.
+
+## R5.0 — VERDICT, STATED FIRST
+
+**`GATE 2: CERTIFIED`.** All 29 frozen criteria pass. Both blocking findings are closed and I
+verified each myself, by a method the implementer did not have available rather than by reading
+his log.
+
+I blocked four times. I am not blocking a fifth, and I want to be explicit that this is not
+fatigue: F-9's fix is the *narrowest possible* disposition of a defect I raised, it loosened
+nothing, and I proved that mechanically; F-2's fix is now verified under conditions **better**
+than those in which it was built, and it holds. The residual items are recorded as residuals
+because that is what they are, not because the round is long.
+
+## R5.1 — F-9: CLOSED. The guard was not loosened, and I proved it rather than checked it.
+
+The whole risk in this fix was that a red guard could be greened by widening the hole — the
+failure mode I have caught five times. So I did not read the diff and agree with it. I extracted
+the guard's reach from both trees and compared:
+
+```
+BANNED     identical: True     (all 10 legal-assertion patterns)
+SCANNED    identical: True     (all 7 paths, including js/app.js from unit 36)
+SUFFIXES   identical: True     (.md, .py, .js)
+skip       identical: True     (the blockquote / strikethrough / OD5-EXEMPT predicate)
+```
+
+**Byte-for-byte unchanged.** No pattern narrowed, no path removed, no suffix dropped, no change
+to what counts as exempt. The only edits are two additions to the *pinned* `EXPECTED_EXEMPTIONS`
+map — which is the mechanism unit 35 built precisely so that widening the hole is a deliberate,
+reviewable act rather than a quiet edit. Using it is not evasion; it is the design working.
+
+**Then I checked what the markers actually hide**, by re-running the guard's own logic with the
+skip predicate inverted:
+
+| exemption form | banned-pattern lines hidden |
+| --- | --- |
+| `OD5-EXEMPT` marker | **10 total — 7 self-referential inside the test file, 3 elsewhere** |
+| blockquote / strikethrough (the dated-correction form) | 18 |
+
+The three outside the test file are `docs/STYLE_GUIDE.md:57` (quotes the phrases in order to ban
+them, pre-existing), `tools/fetch_artworks.py:44` (dated note quoting what it replaced,
+pre-existing), and the one new line:
+
+```
+evidence/harness/vermeer-cert/gapfill.py:32
+  OLD_LEDE = "Most reproductions here are public domain."  # OD5-EXEMPT
+```
+
+**Exactly one phrase was newly exempted, and the diagnosis behind it is correct.** I verified the
+negative-control claim in the file rather than accepting it — `gapfill.py:78` reads
+`"oldLedeAbsent": OLD_LEDE not in txt`. The constant exists so the harness can assert the
+rendered DOM **does not** contain the superseded lede. That is a quotation made in order to
+forbid, which is the case the guard's own docstring reserves the marker for: *"for the few places
+that must contain a forbidden phrase in order to forbid or test it."* A `.py` file cannot use the
+blockquote form the surviving prose copies use. The marker route is the right one.
+
+I also verified the second new map entry is honest: `build-log-unit-37.md` carries its marker on
+a line that **names** `OD5-EXEMPT` while documenting the mechanism and contains no banned phrase
+of its own — my inverted-skip enumeration confirms it hides nothing, exactly as
+`data-reconciliation.md` does.
+
+**Suite at HEAD, my run:**
+
+```
+Ran 46 tests in 1.510s
+OK
+```
+
+**F-9 closed.** The catch-test still passes, so the guard can still fail; the reach is unchanged;
+one phrase was exempted and it is a negative control. This is the narrowest disposition available
+and it is the correct one.
+
+## R5.2 — F-2: CLOSED, and I made the measurement the implementer could not
+
+He was straight about his limitation and asked for a real keyboard pass. He was right to: his
+numbers came from native focus plus a *dispatched* event, `:focus-visible` never matched, and the
+5 px ring was assumed. Every one of those caveats is now discharged, because in my session real
+`Tab` produced real focus and **`:focus-visible` matched on every link.**
+
+**Method.** Served the tree on my own port 8433 (the owner's 8422 untouched), opened the browser
+pane, and attached a recording listener on `document` — deliberately, because `focusin` bubbles
+link → nav → document, so my listener runs **after** the shipped `#main-nav` handler and
+therefore measures the corrected state. Then real `Tab` keypresses, not synthetic events.
+
+**All 8 nav links, real Tab, three cells.** `intoFade` is how far the ring's outer edge extends
+past where the gradient starts (>0 = ring in the fade); `clipL`/`clipR` are clipping by the
+scrollport (>0 = clipped):
+
+| cell | links | worst `intoFade` | worst `clipL` | worst `clipR` | `:focus-visible` |
+| --- | --- | --- | --- | --- | --- |
+| **390 × 844 dark** | 8/8 | **0.0** | **−1.0** | **−80.1** | 8/8 true |
+| **390 × 844 light** | 8/8 | **0.0** | **−1.0** | **−80.1** | 8/8 true |
+| **320 × 844 light** | 8/8 | **−0.8** | **−1.0** | **−65.5** | 8/8 true |
+
+Every value ≤ 0. **No ring anywhere is in the fade, and no ring anywhere is clipped.** The 390
+dark and 390 light rows are numerically identical, which is the expected result — this geometry
+is theme-independent — and is why I did not spend a fourth cell on 320 dark.
+
+**The listener demonstrably ran under real keyboard focus**, which is the precise thing his
+method could not establish. `scrollLeft` moved exactly where the correction was needed and
+nowhere else — at 390: `Explore` 0 → 47, `Techniques` 247 → 272; at 320: five separate
+corrections (17, 175.5, 214.5, 387, 479). Links already clear of the fade produced no scroll.
+Before the fix, `Explore` measured 0 % ring visible and `Nations` 25 %/0 %; both now sit clear.
+
+**Desktop unaffected — verified, not assumed.** At 1440 I focused every nav link through the
+shipped listener and measured: `mask-image: none`, `::after` content `none`,
+`margin-inline-start: 0px`, `overflow-x: visible`, `scrollLeft` 0 → 0. Both the `@media` scoping
+and the listener's own early-return hold, so the wide layout is untouched.
+
+**On the fix's shape.** I checked the one thing that would have made it dead code: the handler
+binds `document.getElementById("main-nav")`, and `index.html:38` is
+`<nav class="main-nav" id="main-nav">`. It is live. The JS threshold (`nb.left + nb.width * 0.78`)
+matches the CSS mask stop (`#000 78%`), so the two cannot drift apart silently — and the CSS-only
+remedy was measured failing before the JS was added, which is the right order.
+
+**F-2 closed**, and closed on stronger evidence than was available when it was written.
+
+## R5.3 — RULING: the 47 stale mobile screenshots do not block. Here is the reasoning.
+
+I was asked to rule and to show my work, so I measured the delta rather than reasoning about the
+category. In the browser I captured the shipped geometry, then simulated the pre-unit-37 geometry
+by reverting the three changed properties, and diffed:
+
+| property | before | after | **delta** |
+| --- | --- | --- | --- |
+| first link `x` | 16.00 | 16.00 | **0.00** |
+| last link `right` | 705.44 | 705.44 | **0.00** |
+| header height | 164.07 | 164.07 | **0.00** |
+| nav `top` | 106.48 | 106.48 | **0.00** |
+| nav box `left` / `width` | 16 / 358 | 10 / 364 | −6 / +6 |
+| **gradient fade start** | 295.24 | 293.92 | **−1.32 px** |
+
+**Every link, the header height, and all page content are pixel-identical. The entire rendered
+difference at rest is a soft gradient ramp beginning 1.32 px earlier.** The −6/+6 on the box is
+the margin/padding pair cancelling, which is exactly what it was designed to do and which I
+confirmed independently: the first link measures `x = 16` before and after.
+
+**Ruling: recorded limitation, not a blocker.** Three reasons, in order of weight:
+
+1. **The screenshots remain accurate for every proposition they were ever used to support.** They
+   are Gate 2 evidence for rendered surfaces, contrast, layout and content. None of that moved.
+2. **None of them ever depicted the behaviour that changed.** All 108 are resting-state stills;
+   no screenshot in this task has ever shown a focused nav link. A pack that never showed the
+   thing cannot be made stale by the thing changing.
+3. **A 1.32 px shift in a transparency ramp is below the threshold at which a screenshot
+   functions as evidence at all.** Requiring 47 recaptures for it would be ceremony, and would
+   trade a real cost against no gain in truth.
+
+**Consistency check on myself, because this is the third time I have ruled on this pack.** In R3
+I made N-1 a *condition on the Human Review Package* and said explicitly it was "not a blocker";
+in R4 I closed it when the pack post-dated the last production commit. Unit 37 is a production
+commit after the pack, so **N-1 re-opens as a note** — I will not quietly let a closure stand
+that the facts have overtaken, which is the exact failure I raised against `build-log-unit-29`.
+It re-opens *scoped*: 47 mobile shots, header strip only, 1.32 px, measured. Either recapture
+before the Human Review Package or carry it as a stated limitation — the owner's call, and either
+is defensible. It does not gate certification.
+
+## R5.4 — F-2's measurement caveat: discharged, with one honest limit
+
+The caveat was that Chrome suppressed real `focusin` because the pane was not system-focused, so
+the numbers came from a dispatched event and an assumed 5 px ring with `:focus-visible` never
+matching. **In my session all three fell away**: real `Tab` produced real focus, the shipped
+listener ran on the real event (proved by `scrollLeft` moving only where correction was needed),
+and `:focus-visible` matched on 24 of 24 link-focus events across three cells. The ring width was
+read from computed style rather than assumed.
+
+**The limit I am left with, stated rather than glossed:** this is still Chrome, and still a
+headless-driven browser rather than a person with a keyboard. It is a materially stronger
+measurement than the one it replaces — real key events, real focus, real `:focus-visible`, the
+real listener — and it is not the same thing as the owner tabbing through the header on his own
+machine. Given AT-2's history, where a measured tab order did not survive contact with a real
+screen reader, that distinction has earned its place in the record. It does not block: AT-2 was a
+contradiction between instrument and human observation, whereas here instrument and geometry
+agree and no human observation contradicts them.
+
+## R5.5 — WHAT CHANGED IN THE LEDGER
+
+- **F-9 — CLOSED** (R5.1). Guard reach proved unchanged; one negative-control phrase exempted
+  through the sanctioned pinned map; suite 46 OK at HEAD.
+- **F-2 — CLOSED** (R5.2). Real keyboard pass, 8 links × 3 cells, all rings clear and unclipped;
+  desktop verified unaffected.
+- **N-1 — RE-OPENED as a scoped note** (R5.3). 47 mobile shots, header strip, 1.32 px. Not a
+  blocker.
+- **N-9 — NEW note.** `index.html:27` carries `css/styles.css?v=20260806-pig001-u36` while the
+  stylesheet was last changed in **unit 37**; `js/app.js` correctly reads `…-u37`. The date
+  component did change (`20260805` → `20260806`), so **cache-busting functions correctly** and
+  AC26's substance holds — this is a label that names the wrong unit, not a stale-cache defect.
+  Worth one character before the Human Review Package so the version string does not mislead the
+  next author.
+- **F-10 — unchanged and open** (governance; see A20). Excluded from the certified scope by my
+  own D-017 disposition. **Read R5.6.**
+- **F-11, V-M1 (`.md-name`), AT-5 — unchanged, open minors.** N-6, N-3, F-6 unchanged.
+
+## R5.6 — SCOPE OF THIS CERTIFICATION, AND A WARNING I AM OBLIGED TO LEAVE
+
+**What is certified:** the product build on `pig-001-stabilization` at **`fb8ba6e`**, against the
+29 frozen acceptance criteria. `OPEN CRITICAL: 0` and `OPEN MAJOR: 0` **refer to that subject.**
+
+**What is not certified, and must not ride along:** `pigment_coordinator/` — the Coordinator
+kernel, 307 lines changed across this branch. Per my D-017 disposition (A20), it is **excluded
+from the product merge set** and must be proposed separately on its own review. **F-10 remains
+open against it** and is not counted in the numbers above because it is a finding against an
+artifact I have ruled outside the certified scope. I made that ruling in Revision 4, while
+blocking, before it could have any bearing on whether I could certify — and I am holding to it
+now for the same reason I made it. **A merge of this branch that carries `pigment_coordinator/`
+is a merge the owner was not asked about, and this certification does not cover it.**
+
+**The warning.** By writing the certification marker into this append-only file, I have armed the
+defect I demonstrated in R4.1.7: from this moment the Coordinator's quality gate will pass on the
+archived string alone, for any future revision, **even if that revision blocks with open
+majors**. This certification is bound to **`fb8ba6e`** and to nothing else. Any subsequent
+change requires a fresh reading of the operative verdict block — **the gate's grep is no longer
+capable of telling anyone anything**, and must be treated as non-functional until the verdict
+scan is fixed to parse a single operative block.
+
+## R5.7 — CRITERIA AND REGRESSION AT `fb8ba6e`
+
+**PASS 29 · FAIL 0 · UNSUPPORTED 0** — the Revision 4 table (R4.3) stands unchanged in every row.
+Unit 37 touches `css/styles.css` (mobile nav only), `js/app.js` (one `focusin` listener),
+`index.html` (version strings), the guard's pinned map, one harness comment, and a build log.
+
+Re-verified by me at this HEAD:
+
+- **Validator:** `ALL REFERENCES VALID`, zero warnings — unchanged across all five revisions.
+- **Test suite:** 46 tests, **OK**, with the guard's reach proved identical to `7592136`.
+- **AC17 strengthened:** every nav link now keeps a full, unclipped focus ring at 320 and 390 in
+  both themes under **real keyboard focus** — the criterion's own language is "visible focus",
+  and this is the first time in the task that has been measured by real Tab rather than inferred.
+- **AC18 unaffected:** link positions, header height and nav top are pixel-identical (R5.3); the
+  desktop layout is untouched (mask `none`, `overflow-x: visible`, no scroll).
+- **AC19 unaffected:** unit 37 changes no colour token, no ink and no backdrop.
+- **AC26 holds:** version strings changed, so caches bust; N-9 is a labelling note.
+- **AC29 holds:** branch `pig-001-stabilization`, no merge, no push, no deploy. `.gitignore` and
+  `THEORY_001.md` left untouched. My server on 8433 killed by exact PID; **the owner's server on
+  8422 (PID 93806) was never touched and is still listening.**
+
+No regression found in any previously certified surface.
+
+---
+
+# REVISION 4 (2026-08-06) — SUPERSEDED BY REVISION 5
+
+*Preserved verbatim. Its verdict is superseded; its findings, adjudications A17–A22 and the
+full 29-criterion table (R4.3) remain the operative statements of criterion status — Revision 5
+changes no row. Its two blocking findings, **F-9 and F-2, are closed** (R5.1, R5.2).*
+
+**Product tree reviewed at:** `06ab20f` (HEAD at the time), 96 commits off `effa805`.
 **Last production commit:** `4266804` (unit 36). `09f61a8` is a build log, `a71e2c5` is
 evidence and harness, `06ab20f` is Matisse's ruling — the last three commits move no
 production file. I verified this with `git show --stat` on each.
@@ -2699,7 +2955,7 @@ implementer.)*
 
 ---
 
-# OPERATIVE VERDICT — REVISION 4 (2026-08-06, tree `06ab20f`)
+# VERDICT — REVISION 4 (2026-08-06, tree `06ab20f`) — SUPERSEDED BY REVISION 5
 
 **All twenty-nine criteria pass.** AC19 passes for the first time in this task, after I blocked
 it in three consecutive revisions. AC15 passes for the first time on the evidence it actually
@@ -2789,3 +3045,80 @@ GATE 2: BLOCKED
 
 OPEN CRITICAL: 0
 OPEN MAJOR: 2
+
+*(Revision 4's verdict line read `GATE 2: BLOCKED`, `OPEN CRITICAL: 0`, `OPEN MAJOR: 2`.
+Superseded — see the operative verdict below. **F-9 and F-2 are both closed**, each re-verified
+by me at `fb8ba6e`: the OD-5 guard's reach proved byte-for-byte unchanged, and the nav focus ring
+measured under a real keyboard pass the implementer could not run. F-10 remains open against the
+Coordinator kernel, which my own D-017 disposition excludes from the certified scope.)*
+
+---
+
+# OPERATIVE VERDICT — REVISION 5 (2026-08-06, tree `fb8ba6e`)
+
+All twenty-nine frozen criteria pass, and both findings that blocked Revision 4 are closed. I
+verified each myself, and in both cases by a method stronger than the one that produced it.
+
+**F-9.** The risk in this fix was that a red guard could be greened by widening the hole — the
+failure mode I have caught five times in this build. So I proved the reach rather than read the
+diff: the ten banned patterns, the seven scanned paths, the three suffixes and the exemption
+predicate are **byte-for-byte identical** to the tree I blocked. I then inverted the skip logic to
+enumerate every line the markers hide: ten, of which seven are self-referential inside the test
+file, two are pre-existing, and **exactly one is new** — a constant the harness uses to assert
+that the rendered DOM *does not* contain the superseded lede (`gapfill.py:78`,
+`"oldLedeAbsent": OLD_LEDE not in txt`). That is a quotation made in order to forbid, the precise
+case the guard's own docstring reserves the marker for, taken through the pinned map that makes
+widening a reviewable act. Nothing was loosened. Suite at HEAD: **46 tests, OK.**
+
+**F-2.** The implementer flagged that his own numbers came from a dispatched event with
+`:focus-visible` never matching and an assumed ring, and asked for a real keyboard pass. In my
+session all three caveats fell away. Real `Tab`, listener attached on `document` so it measures
+*after* the shipped handler: **all eight nav links, three cells (390 dark, 390 light, 320 light),
+every ring clear of the fade and unclipped — worst `intoFade` 0.0, worst clipping −1.0 px — and
+`:focus-visible` true on 24 of 24 focus events.** The shipped listener demonstrably ran on real
+keyboard focus, scrolling only where correction was needed and nowhere else. Desktop verified
+untouched: mask `none`, `overflow-x: visible`, `scrollLeft` 0 → 0 after focusing every link.
+
+**The 47 stale mobile screenshots do not block, and I measured rather than categorised.** Against
+the pre-unit-37 geometry: first link `x`, last link `right`, header height and nav `top` are
+**pixel-identical**; the entire rendered difference at rest is a gradient ramp beginning
+**1.32 px** earlier. The pack remains accurate for everything it was ever used to evidence, and
+no screenshot in this task has ever shown a focused nav link — a pack that never depicted the
+thing cannot be made stale by the thing changing. **N-1 re-opens as a scoped note** rather than
+being left falsely closed, because unit 37 is a production commit after the pack and I will not
+let a closure of mine stand that the facts have overtaken.
+
+Ninety-seven commits earn no presumption and I have given none: I blocked four times, twice on
+failures I derived myself rather than took from a log, and once on a defect I found inside the
+artefact built to be the independent check. What the evidence now carries, it carries. AC19
+passes after three revisions of my refusing it. AC15 passes on the assistive-technology evidence
+it actually named, obtained by a person listening rather than an instrument inspecting — evidence
+that found the core Taste loop unusable by ear after thirty-one units had called it sound.
+
+**PASS 29 · FAIL 0 · UNSUPPORTED 0**
+
+**Scope.** This certifies the product build at **`fb8ba6e`** against the 29 frozen criteria. The
+counts below refer to that subject. **`pigment_coordinator/` is excluded from it** by my D-017
+disposition (A20): **F-10 remains open** against the kernel, it is not counted here, and **a
+merge that carries `pigment_coordinator/` is not covered by this certification.**
+
+**Warning, on the record.** Writing the certification marker into this append-only file arms the
+defect I demonstrated in R4.1.7 — the Coordinator's quality gate will from now on pass on the
+archived string alone, for any future revision, even one that blocks. **This certification is
+bound to `fb8ba6e` and to nothing else.** Treat the gate's grep as non-functional until its
+verdict scan parses a single operative block; read this verdict, do not grep for it.
+
+Residual risks, carried as residuals and not as clearances: **F-10** (kernel governance, merge
+condition), **F-11** (the AT-5 arrow residual is 695 SEO files in four families, not "~100" in
+one), **V-M1** (`.md-name` at 2.34 px — legibility, not contrast), **AT-5** (fixed in the DOM,
+still unconfirmed by ear), **N-1** (47 mobile shots, header strip, 1.32 px), **N-9** (the CSS
+version string names unit 36 for a unit-37 change; cache-busting still functions), **N-6**,
+**N-3**, **F-6**. And the structural one no instrument in this project can close: **every pixel
+measurement is Chrome, every ear confirmation is Safari, and no single engine has both.**
+
+No main-branch merge and no production deployment without the user's explicit approval.
+
+GATE 2: CERTIFIED
+
+OPEN CRITICAL: 0
+OPEN MAJOR: 0
