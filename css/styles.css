@@ -1206,6 +1206,11 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
   transition:all .25s var(--ease);
 }
 .branch-chip:hover{color:var(--ink);border-style:solid;border-color:var(--gold);transform:translateY(-2px)}
+/* AT-5, unit 34. Generated content lands in the accessible name in Safari, and
+   no aria-hidden span can reach a pseudo-element — which is why unit 33's
+   JS-side arrow fix missed this one. The chip carries an explicit aria-label
+   equal to its visible text (js/app.js, branch-list), so this glyph stays
+   decorative. Any new ::before glyph on a named element needs the same. */
 .branch-chip::before{content:"↳";color:var(--gold2);font-size:.7rem}
 
 /* ---------- genealogical trees ---------- */

@@ -851,7 +851,7 @@ function taxCard(item, type, count){
       <h3><a href="#/${type}/${item.id}">${esc(item.name)}</a></h3>
       <div class="card-meta">${item.period ? esc(item.period) + " · " : ""}${count} artist${count===1?"":"s"}</div>
       <div class="card-tagline">${esc(item.blurb)}</div>
-      ${kids.length ? `<div class="chips branch-list">${kids.map(k => `<a class="branch-chip" href="#/${type}/${k.id}">${esc(k.name)}</a>`).join("")}</div>` : ""}
+      ${kids.length ? `<div class="chips branch-list">${kids.map(k => `<a class="branch-chip" href="#/${type}/${k.id}" aria-label="${esc(k.name)}">${esc(k.name)}</a>`).join("")}</div>` : ""}
     </div>
   </article>`;
 }
@@ -3247,7 +3247,14 @@ function obDeckSay(){
   const w = ob.deck[ob.di];
   if(!w) return;
   const a = Ax[w.artistId];
-  say(`${w.title} — ${a.name}, ${w.year.display}. Artwork ${ob.di + 1} of 16. Admire, or pass.`);
+  /* AT-1 follow-on, unit 34. The owner listened to sixteen consecutive
+     announcements and asked for the count at the quarter points only. Card 1
+     keeps it because entering the deck says nothing else: obDeckSay() is the
+     single spoken event on `tones-done`, so without it a listener learns the
+     deck's length at card 4. Title, artist and year stay on every card. */
+  const n = ob.di + 1;
+  const pos = (n === 1 || n % 4 === 0) ? `Artwork ${n} of 16. ` : "";
+  say(`${w.title} — ${a.name}, ${w.year.display}. ${pos}Admire, or pass.`);
 }
 function viewPalette(){
   document.title = "Find your palette — Pigment";
