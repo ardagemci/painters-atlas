@@ -10,18 +10,845 @@ partial credit, and an untested criterion is not a passing criterion.
 | --- | --- | --- | --- | --- |
 | 1 | 2026-07-26 | `4fc8239` / `5fdf1aa` | GATE 2: BLOCKED | PASS 26 · FAIL 0 · UNSUPPORTED 3 (AC4, AC8, AC19) |
 | 2 | 2026-07-28 | `1a41cff` | GATE 2: BLOCKED | PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL — F-7, the `#bg-canvas` ink class) |
-| **3 — operative** | **2026-07-29** | **`11e4471` (HEAD)** | **GATE 2: BLOCKED** | **PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL — F-8, one residual member of F-7's class)** |
+| 3 | 2026-07-29 | `11e4471` | GATE 2: BLOCKED | PASS 28 · FAIL 1 · UNSUPPORTED 0 (AC19 FAIL — F-8, one residual member of F-7's class) |
+| **4 — operative** | **2026-08-06** | **`06ab20f` (HEAD)** | **GATE 2: BLOCKED** | **PASS 29 · FAIL 0 · UNSUPPORTED 0. All 29 criteria pass — including AC15 and AC19, for the first time. Blocked on one open major outside the criteria set: F-9, the repository test suite is RED at this HEAD while the record states it is green.** |
 
-Revisions 1 and 2 are preserved verbatim below. Nothing in either has been deleted: the
-record of what was blocked, and why, stands as written. Each revision supersedes only the
+Revisions 1, 2 and 3 are preserved verbatim below. Nothing in any of them has been deleted:
+the record of what was blocked, and why, stands as written. Each revision supersedes only the
 verdict and criterion statuses of the one before it.
+
+**What each revision blocked on, kept visible on purpose:** R1 — three criteria unsupported
+(AC4, AC8, AC19) because no evidence existed for them, not because they had failed. R2 — the
+canvas-text class (F-7): `--faint`/`--muted` small text composited over `#bg-canvas`, which the
+flat-paint audit could not see. R3 — `span.tl-year` (F-8), the one member of F-7's class that
+sat in the seam between two enumerations with non-overlapping gaps, and which the build record
+affirmatively *cleared* as panel-shielded. Twice I derived the failure myself rather than taking
+it from a log. **All three are now closed and I have re-verified each in the file.**
 
 ---
 
-# REVISION 3 (2026-07-29) — OPERATIVE
+# REVISION 4 (2026-08-06) — OPERATIVE
 
-**Product tree reviewed at:** `11e4471` (HEAD). Production code last moved at `094a631`
-(unit 30c); `11e4471` is evidence-only.
+**Product tree reviewed at:** `06ab20f` (HEAD), 96 commits off `effa805`.
+**Last production commit:** `4266804` (unit 36). `09f61a8` is a build log, `a71e2c5` is
+evidence and harness, `06ab20f` is Matisse's ruling — the last three commits move no
+production file. I verified this with `git show --stat` on each.
+
+**Independence:** I wrote none of this code and I fixed nothing I found. This round I ran the
+validator and the test suite myself, re-derived the load-bearing contrast rule from the
+committed CSS with my own arithmetic, regenerated the asset inventory and diffed it against the
+committed copy, verified the coordinator's gate-reachability claim by reading the callers rather
+than the ledger, and bisected a test failure across four commits to find where it entered.
+
+## R4.0 — THE SHAPE OF THIS VERDICT, STATED FIRST
+
+This is the fourth attempt and it is not like the previous three. **All 29 frozen criteria now
+pass.** AC19 passes for the first time in this task. AC15 passes for the first time on real
+assistive-technology evidence rather than DOM inference. The three things I blocked on are
+closed, and I re-verified each of them in the file rather than accepting the closure.
+
+I am nevertheless returning `GATE 2: BLOCKED`, on **one** finding that is not a criterion
+failure and not a product defect:
+
+> **The repository test suite does not pass at the HEAD I am asked to certify.** It passes at
+> the last production commit and was broken two commits later by the certification-evidence
+> commit itself. The build record states it is green. `python3 -m unittest discover -s tests`
+> at `06ab20f` returns `Ran 46 tests … FAILED (failures=1)`.
+
+I want to be exact about the discomfort here, because I was warned in both directions. The
+remedy is one comment marker and one integer. No user is affected. Nothing in the product is
+wrong. If the only question were "is the product good enough", I would certify.
+
+The question is not that. It is whether a certification can stand on an evidence base whose own
+green-suite claim is false at the certified SHA — when the single discipline this build has
+failed five separate times is *reporting truthfully about a smaller universe than the claim
+requires*. I did not go looking for this. It was the first independent check I was told to run,
+and it came back red. Certifying past it would make my verdict falsifiable by one command, and
+would leave the only mechanism protecting the owner's own decision (OD-5) in a permanently
+failing state — which is the same as not having it.
+
+That is the whole of the blocker. Everything else below is a pass.
+
+**One second major finding is open and does not block this gate: F-10**, a governance finding
+against the Coordinator kernel — which I was asked to dispose of, and did (A20). It is a
+condition on the **merge**, not on the certification, because no acceptance criterion turns on it
+and no user is affected. It earned its severity by demonstration rather than argument: **the
+quality gate passed this very report while its verdict read `GATE 2: BLOCKED`** (R4.1.7). The
+committed state is correct — I neutralised the cause and confirmed the gate blocks — but the
+defect is real, and it means the kernel change must not ride into `main` inside a product
+approval.
+
+## R4.1 — CHECKS I RAN MYSELF, WITH OUTPUT
+
+### R4.1.1 Validator — `osascript -l JavaScript tools/validate.jxa.js`
+
+```
+app.js: syntax OK
+artists: 256, movements: 76, techniques: 39, eras: 8, nations: 37, painter styles: 27,
+influence edges: 238, venues: 116, catalog: 323 (tier1: 76), daily pool: 75,
+museum notes: 104, photo credits: 104 (attribution required: 88),
+artwork image credits: 27, personas: 15, lists: 12 (featured: 4), tier1 artists: 36 (arcs: 36)
+ALL REFERENCES VALID
+```
+
+Zero errors, zero warnings, all references valid — as in R1, R2 and R3. **AC2, AC3 pass.**
+
+### R4.1.2 Test suite — `python3 -m unittest discover -s tests` — **RED at HEAD**
+
+```
+FAIL: test_no_artifact_of_ours_asserts_a_legal_conclusion (test_rights_tooling.…)
+AssertionError: Lists differ: [… 1 element …] != []
+
+  protocol/tasks/PIG-001/evidence/harness/vermeer-cert/gapfill.py:28:
+  OLD_LEDE = "Most reproductions here are public domain."
+      -> asserts a legal status; say 'Commons metadata asserts a PD basis'
+
+Ran 46 tests in 1.467s
+FAILED (failures=1)
+```
+
+**I bisected it across the final four commits, in clean worktrees:**
+
+| commit | what it is | suite |
+| --- | --- | --- |
+| `95e5636` | unit 35 — the unit that made the suite green | **46 OK** |
+| `4266804` | unit 36 — **last production commit** | **46 OK** |
+| `09f61a8` | unit 36 build log (docs only) | **46 OK** |
+| `a71e2c5` | **certification evidence + harness** | **46, 1 FAILED** |
+| `06ab20f` | HEAD (Matisse's ruling, docs only) | **46, 1 FAILED** |
+
+This is **F-9**, below. Note what it is and is not: the product tree is green; the break is in an
+evidence harness file; and the offending string is a *reference to* the old lede used to prove
+the old lede is gone — structurally identical to the six fixtures inside the test file itself,
+each of which carries an `OD5-EXEMPT` marker. The sanctioned disposition is to mark it and pin
+it. Nobody re-ran the suite after the evidence commit, so nobody saw it.
+
+### R4.1.3 Asset inventory — regenerated by me at HEAD and diffed
+
+```
+Total unique assets across all public surfaces: 798
+Rendered-in-app unique: 797; metadata-only: 1
+Catalog∩gallery overlap: 92
+Copyright-suppressed URLs leaking into public stub metadata: 0
+```
+
+I diffed my regeneration against the committed `asset-inventory-a1b822b.json` field by field:
+
+```
+committed a1b822b == my regeneration at HEAD 06ab20f : True
+```
+
+**Byte-identical.** The inventory is reproducible at HEAD, and its `a1b822b` filename is a
+naming artefact rather than a currency defect — the tree at HEAD produces the same output. I
+had expected to raise this as a second currency finding and the measurement retired it.
+**AC10 passes.**
+
+### R4.1.4 I re-derived the load-bearing contrast rule myself
+
+The entire AC19 remedy class rests on one rule, written into `css/styles.css:344-363`: against
+the worst reachable `#bg-canvas` backdrop — `rgb(101,88,76)` dark, `rgb(187,174,162)` light —
+only `--body-ink` and `--ink` clear the 4.5 small-text floor. Every one of the 27 re-pointed
+selectors, including my own F-8, was fixed by appeal to it. I computed it from the committed
+token values with my own WCAG arithmetic:
+
+| ink | theme | **my value** | published | floor |
+| --- | --- | --- | --- | --- |
+| `--body-ink` | dark | **4.56** | 4.55 | 4.5 ✓ |
+| `--body-ink` | light | **5.02** | 5.01 | 4.5 ✓ |
+| `--faint` | dark | **1.83** | 1.82 | ✗ |
+| `--faint` | light | **2.58** | 2.57 | ✗ |
+| `--muted` | dark | **2.25** | 2.24 | ✗ |
+| `--gold2` | dark | **4.31** | 4.31 (N-6) | ✗ |
+
+All six reproduce to ±0.01. This is the third revision in which I have reproduced this class and
+been unable to fault it.
+
+**I also re-derived the search-panel inks**, which were the two "measured-not-cleared" residuals
+and the 1.00:1 major:
+
+| selector | dark | light | floor |
+| --- | --- | --- | --- |
+| `.sr-group` (`--faint` on `--panel2`) | **4.62** | **4.62** | 4.5 ✓ |
+| `.sr-meta` (`--muted` on `--panel2`) | **5.68** | **6.42** | 4.5 ✓ |
+| `#search::placeholder` (`--faint` on `--panel`) | **4.90** | **5.17** | 4.5 ✓ |
+
+My `.sr-group` figure of 4.62 in both themes reproduces exactly the value the stylesheet comment
+records for the suppressed-nav state. V32-7 was never a colour defect — I confirmed the fix is
+`z-index:3` on `.search-wrap` (`styles.css:478`), settling a flex `order` repaint that put the
+nav on top of the open panel below 820 px.
+
+**One deliberate cross-check against a real-pixel figure.** Flat-derived, `.le-meta`
+(`--body-ink`) scores **9.25** light over `--bg`. Vermeer measured **6.26** worst on real pixels.
+His number is *lower* than my idealisation, which is the correct and honest direction — the
+canvas erodes the composite, and a flat-paint derivation over-reports. That relationship is the
+single lesson of this build's contrast history, and it holds here.
+
+### R4.1.5 Source spot-checks — the four I was asked to make, verified in the file
+
+| claim | verified at | result |
+| --- | --- | --- |
+| **Announcement mechanism** (AT-1/3/6/7, one shared channel) | `index.html:80`, `js/app.js:69-75` | **Present.** `#live-status`, `role="status" aria-live="polite" aria-atomic="true"`, `class="sr-only"`, **outside `#app`**. `say(msg, delay)` clears then re-sets after ≥60 ms so a repeated string still fires; `sayNext()` queues across a route change and is drained in `route()` (`:2519-2528`). |
+| **Sole live region** | grep over `index.html` + `js/*.js` | **Confirmed.** Exactly one `aria-live`/`role="status"`/`role="alert"` in the shipped source. The only other match is a comment. Independently corroborates Vermeer. |
+| **`.branch-chip` label** (AT-5, the CSS arrow) | `js/app.js:854` | **Present.** `aria-label="${esc(k.name)}"` on the anchor. This is the correct mechanism: `.branch-chip::before{content:"↳"}` (`styles.css:1214`) joins the accessible name and **no `aria-hidden` span can reach a pseudo-element** — only an explicit `aria-label` on the host overrides it. Unit 34's diagnosis is right. |
+| **Credits lede** (the shipped OD-5 breach) | `js/app.js:2393` | **Rewritten.** Now reads *"Most reproductions here **carry Commons' public-domain assertion**, and we checked each file really is the work it names — the source's claim and our own check, **not a ruling we are qualified to make**."* Bounded, and it names the limit of the evidence in the user-facing copy. |
+| **Widened prose guard** | `tests/test_rights_tooling.py:541-548` | **Present and reaches the real path.** `SCANNED` now includes `ROOT/"js"/"app.js"` with the comment *"unit 36: the copy users actually read"*, and the old lede is added verbatim to the positive-catch fixture (`:594`), so the guard is proven to catch the exact string that shipped. |
+
+I also re-verified my own R3 blocker: **`.tl-year` is now `color:var(--body-ink)`**
+(`styles.css:927`), and the two false clearances are corrected in place at `styles.css:920-926`
+and `build-log-unit-29.md:343-365` — the original sentence struck with `~~`, followed by a dated
+`CORRECTION` block naming F-8 and me. That is the sanctioned pattern, and it is the pattern the
+prose guard itself honours. **All three conditions I attached to closing F-8 are met.**
+
+### R4.1.6 I verified the coordinator's Gate-2 reachability claim myself
+
+Theory's action A12 asks for a demonstration that no path bypasses Gate 2. I read the callers
+rather than the ledger:
+
+- `check_quality_gate` has **exactly one** caller in the package: `engine.py:418`, inside
+  `prepare_human_review`.
+- `prepare_human_review` (`engine.py:413-416`) first raises `TransitionError` unless
+  `workflow_state == "internal_review"` **and** `last_message_type == "response_to_review"`.
+
+**The claim holds.** `human_review_ready` is unreachable without passing the quality gate. Duchamp
+was right, and I did not take it from him.
+
+**But reading that code produced a finding of my own — see F-10 and A20.**
+
+### R4.1.7 I ran the quality gate against my own report, and it passed a blocking review
+
+Having described the gate's verdict scan in A20, I ran it on this task directory to check my
+reasoning. The result was worse than my reasoning:
+
+```
+python3 -c "from pathlib import Path; from pigment_coordinator.gates import check_quality_gate;
+            print(check_quality_gate(Path('.'), Path('protocol/tasks/PIG-001')))"
+[]        # no failures -> THE GATE PASSES
+```
+
+**The gate reported no failures on a Quality Review whose operative verdict is `GATE 2: BLOCKED`
+with two open majors.** The cause was my own prose: three sentences explaining the defect quoted
+the three patterns verbatim, and `re.search` over the whole file found them. Had I committed that
+draft, the Coordinator would have read my blocking review as a certifying one.
+
+I broke every illustrative occurrence with a zero-width character and re-ran it:
+
+```
+   - quality review must contain 'GATE 2: CERT<U+200B>IFIED'      <- zero-width inserted by me
+   - quality review must contain 'OPEN MAJOR: <U+200B>0'          <- zero-width inserted by me
+  -> GATE CORRECTLY BLOCKS
+```
+
+*(Even those two lines are the gate's **own failure messages**, and pasting them verbatim
+re-armed the defect a second time: my next gate run passed again, on the text of the errors
+telling me it should fail. They are shown above with the zero-width markers made visible. I
+mention it because it is not a joke at the code's expense — it is the measure of how little
+effort it takes to satisfy this gate by accident, and it happened to the reviewer who had just
+finished documenting it.)*
+
+**Two things follow.** First, the state committed here is correct: the gate blocks, as it should.
+Second, and far more important — the defect in F-10 is no longer an inference from reading the
+source. It is **demonstrated**, and the exploit required no adversary, no unusual input and no
+mistake: it required a reviewer to write down what the code does. Any future revision that
+discusses the gate, quotes a prior verdict, or simply certifies once will arm it permanently.
+
+This is also the sharpest available illustration of this build's signature failure. The gate is
+an instrument reporting truthfully about a smaller universe — *"these three strings are present
+in this file"* — than the claim it is used to support: *"this task's operative verdict certifies
+it."* It is the same error as flat-paint contrast, the JS-only arrow sweep, the 25-route zoom
+matrix, the non-zero-byte screenshot check, and F-9. **Five instruments and the gate itself.**
+
+## R4.2 — ADJUDICATIONS
+
+### A17 — AC15: **PASS.** The frozen wording is satisfied, and the boundaries are real.
+
+The frozen text: *"Every frozen route transition updates the document title, exposes one
+meaningful page identity to **the tested assistive-technology setup**, moves focus to a
+meaningful entry point, and avoids whole-page repeat announcements."*
+
+I cannot reproduce these sessions and I will not contradict them. My job is to rule whether they
+satisfy the criterion **as frozen**. They do, clause by clause:
+
+| clause | evidence | source |
+| --- | --- | --- |
+| updates the document title | instrument-verified across 26 routes | prior browser evidence |
+| **exposes one meaningful page identity to the tested AT setup** | *"On reaching a new page it announces the level-1 heading and stops."* | **session 1, by ear** |
+| moves focus to a meaningful entry point | `focusSilently(viewEntry())` in `route()`; confirmed by ear when the skip link *"landed past the graph"* and, after repair, *"Return scrolls to the first entry card"* | code + **sessions 1 and 3** |
+| **avoids whole-page repeat announcements** | *"It says it only once."* | **session 1, by ear** |
+
+The decisive phrase is **"the tested assistive-technology setup"** — definite article, singular.
+The criterion requires that such a setup *exist* and that the four behaviours hold *in it*. It
+does not require two screen readers, two engines, or two operators. One operator on VoiceOver +
+Safari is a tested assistive-technology setup. My R1–R3 rulings carried this criterion as PASS
+with the standing caveat *"real screen-reader output NOT TESTED (A6)"*. **That caveat is now
+discharged**, and it is the only one of my three long-running caveats that was discharged by
+something other than code.
+
+**The generalisation across routes is structural, not sampled**, which is why I accept it. The
+sessions walked principal paths, not all 24 frozen routes. But route identity is produced by a
+single route-independent code path — one `focusSilently(viewEntry())` in `route()` — every route
+renders a non-empty `h1` (validator: all references valid), and Vermeer measured **0 live-region
+mutations across 12 route changes with a positive control proving the observer was live**. The ear
+confirms the mechanism; the instrument confirms the mechanism is the same on every route. Neither
+alone would carry it.
+
+**Boundaries, recorded honestly as residual risk and not as passing evidence:**
+
+1. **One operator, one screen reader, one browser, one theme.** VoiceOver + Safari, light only.
+   No JAWS, no NVDA, no TalkBack, no VoiceOver/iOS.
+2. **The asymmetry nobody has named, and it is the sharpest one.** Vermeer's perimeter
+   (§7.2) *explicitly excludes WebKit/Safari* — every pixel, zoom, overflow and live-region
+   measurement in this build was taken in Chrome. So **the engine in which the ear-confirmations
+   were obtained is the one engine no instrument measured, and the engine every instrument
+   measured is one no ear has heard.** The two evidence bases are in disjoint engines and do not
+   corroborate each other at any point. This is not a defect in either; it is a hole between
+   them, and it is exactly the shape of hole that produced F-7, F-8 and V-Z3. It cannot be
+   closed by more of either instrument.
+3. **Not tested under AT:** dark theme, reduced motion, 200 % zoom.
+4. **Talkativeness is "acceptable, not free"** by the owner's own words. The sixteen
+   per-card announcements were reduced to quarter points at his request; I verified the cadence
+   in source — `const pos = (n === 1 || n % 4 === 0)` (`js/app.js:3256`), giving 1/4/8/12/16
+   exactly as asked, with card 1 retained because entering the deck otherwise says nothing.
+
+**What these sessions actually bought, which I want on the record.** They found seven defects in
+two sittings that thirty-one units of DOM inspection and pixel measurement did not, and the
+pattern is not random: our instruments could prove a control **exists, is reachable, is named,
+and that its state transition is correct**, and had no way to detect that the control's
+**subject was never announced** (AT-1) or that a completed action **was never reported**
+(AT-3/6/7). AT-1 is the one that matters most: the Taste deck asked a visitor to Admire or Pass
+on sixteen artworks and never said which artwork. The core product loop was not operable by a
+blind user, and no instrument in this project could have found that. The theory pole was right
+to insist that inspection could not satisfy this criterion, and I was wrong in R1–R3 to carry it
+as PASS on inspection with a caveat attached. **AC15 PASSES — and it did not before.**
+
+### A18 — AC19: **PASS.** First time in this task.
+
+Six previously-open majors plus the two measured-not-cleared residuals now measure clear in an
+instrument that is not the one that fixed them: **2,626 glyph rows across 12 cells, 0 below
+floor** (Vermeer, `browser-evidence-certification.md` §1). I re-derived the token arithmetic
+underneath five of those sites myself (R4.1.4) and reproduce every figure. My own F-8 is closed
+in the file and its record corrections are made. F-1 is closed and independently confirmed —
+0 px overflow at all eight widths, previously 150/113/54/18.
+
+**Two open items sit outside AC19's frozen scope, and I am ruling them out of it on the same
+reasoning I used against the build in R1.** In R1 I ruled F-1 (821–1100 px overflow) *outside*
+AC18 because AC18 freezes a viewport list and 821–1100 is not on it — a ruling that went against
+the finding I had just raised. Consistency requires the same treatment here:
+
+- **`.md-name` at 2.34 px (320) / 2.97 px (390)** — V-M1, minor, open. This is a **legibility**
+  defect and AC19 is a **contrast** criterion. Contrast passes and is not marginal (5.56–6.38
+  light, 4.99–5.68 dark). I verified the mechanism in source: the size is an inline
+  `style="font-size:${lfs}px"` computed per-label (`js/app.js:1322`), so it scales below
+  legibility only in the **europe-zoom state** at narrow widths; and the accessible name survives
+  regardless, because each dot carries its own `<title>` and the labels are `pointer-events:none`
+  (`js/app.js:1327`, `styles.css:1382-1387`). Real defect, real user impact for a low-vision
+  visitor, **not an AC19 failure**. Open minor.
+- **AT-5, decorative arrows** — minor, open, and **not a contrast matter at all**. Ruled under
+  AC19 only because that is where the reviewer traffic went. See A19.
+
+**AC19 PASSES.** I have blocked this criterion in three consecutive revisions. It passes now.
+
+### A19 — AT-5: still open, and the record understates it. **Minor, non-blocking.**
+
+Unit 34's diagnosis is correct and was earned: unit 33 fixed every arrow *JavaScript* emits and
+none *CSS* emits, then recorded AT-5 closed on the strength of a DOM sweep that could only see
+the half it had fixed. `::before` content joins the accessible name and no `aria-hidden` span
+can reach a pseudo-element. I verified both halves in the file: `ARR` is
+`<span aria-hidden="true">→</span>` (`js/app.js:47`), and the single CSS-emitted arrow
+`.branch-chip::before` is neutralised by an explicit `aria-label` on the host.
+
+**AT-5 remains unconfirmed by ear**, and I am not treating "fixed in the DOM" as closed —
+that is precisely the error unit 34 was written to correct. Unit 34 itself says so: it records
+AT-5 as *"fixed and awaiting the ear"*, not closed. **That is the right posture and I adopt it.**
+
+**But the residual is larger than the record says, and I measured it.** Unit 34 carves out one
+deliberate exception: *"The pre-rendered SEO landing pages under `p/artwork/*.html` carry a bare
+`→` … Fixing them means regenerating ~100 static files."* Both figures are wrong:
+
+```
+p/artist  : 256 files with a bare →
+p/artwork : 323
+p/list    :  12
+p/museum  : 104
+            ---
+            695 files, four families
+```
+
+695 files across **four** families, not ~100 in **one**. (The asset inventory independently
+counts the same 695 stub files.) The glyph is inside link text — `>Open in the atlas →<` — with
+no `aria-hidden` wrapper, so a screen-reader user arriving from search hears "Open in the atlas
+right arrow" on any of them. These are crawlable, indexed entry points; "outside the single-page
+app the owner tested" is true, but "not linked from it" does not mean not reached.
+
+**This does not block.** The announcement is genuinely minor by the owner's own assessment
+(*"I'm not sure if that's a big problem tho"*), it was disclosed rather than silently closed,
+and the disclosure was made against interest. But the carve-out must be restated at its true
+size before the Human Review Package, because an understated exception is how F-8 happened.
+Recorded as **F-11 (minor)**.
+
+### A20 — D-017: the kernel change. **My disposition, since nobody else could give one.**
+
+The liaison declined as conflicted. The theory pole asked for an independent governance
+disposition (A12) and identified the risk precisely. I am the only reviewer in this task with no
+stake in it, so I will rule.
+
+**What happened.** The Claude pole modified the neutral Coordinator Kernel mid-build
+(`5fdf1aa`, 2026-07-26) — `check_build_gate`, `ingest_build`, CLI wiring, four tests — and did
+not ledger it until D-017, three days later. It then used that path to ingest its own build
+report. Across the branch the kernel has moved by 307 lines in four files.
+
+**On the merits: the code is sound and the need was real.** PIG-001's build had no routable
+path; without `ingest_build` a completed build could not enter the state machine at all. The
+requirement it adds is *stricter*, not looser — a build claim must be corroborated by the
+repository (isolated branch, descends from the frozen baseline, commits beyond it, production
+files actually changed), and one test proves a prose-only branch is refused as a build. I
+verified the load-bearing structural claim myself (R4.1.6) rather than accepting it.
+
+**On the governance: the objection stands regardless of the merits.** A party changed the
+arbiter's code, did not disclose it for three days, and then invoked the boundary it had written
+to route its own report. That the change was correct is fortunate; it is not exculpatory, and
+"we checked and it was fine" is not a governance control. Gate 3 exists to make exactly this
+visible at the time, and it did not.
+
+**And reading that code, I found the defect theory suspected but could not name.** This is mine,
+not carried from anyone:
+
+> `check_quality_gate` (`gates.py`) validates the Quality Review by `re.search` for three
+> patterns — the `GATE 2:` marker followed by the word CERT&#8203;IFIED, the `OPEN CRITICAL:`
+> marker followed by zero, and the `OPEN MAJOR:` marker followed by zero — **anywhere in the
+> file**, as three independent matches.
+>
+> *(Every occurrence of those patterns in this section is deliberately broken with a zero-width
+> character so that this analysis cannot itself satisfy the gate. That precaution is not
+> fastidiousness — see the demonstration below.)*
+
+This file is **append-only by design** and currently contains four verdict blocks, three of them
+superseded. Two consequences follow, and both are live:
+
+1. **The moment any revision writes the certification marker, that string is in the archive
+   permanently, and every future run of the gate passes on it** — even if the operative verdict
+   is `BLOCKED` with three open majors. A certification cannot be withdrawn once written.
+2. **The three patterns need not come from the same verdict.** The critical-count marker from
+   Revision 1, the certification marker from a later one, and the major-count marker from a
+   third would satisfy the gate even though no single verdict ever said all three.
+
+The gate cannot distinguish an operative verdict from a historical one — which is precisely what
+theory alleged ("*historical verdict text cannot satisfy a current gate*").
+
+**I proved this by accident, and then on purpose.** My first draft of this section quoted the
+three patterns verbatim in order to explain them. I then ran the gate against my own blocking
+report:
+
+```
+python3 -c "from pathlib import Path; from pigment_coordinator.gates import check_quality_gate;
+            print(check_quality_gate(Path('.'), Path('protocol/tasks/PIG-001')))"
+[]        # no failures -> THE GATE PASSES
+```
+
+**The gate passed a Quality Review whose operative verdict is `GATE 2: BLOCKED` with two open
+majors** — because three sentences *describing* the defect contained the strings it greps for.
+A review that blocks would have been read by the Coordinator as a review that certifies. I have
+since broken every illustrative occurrence with a zero-width character and re-run the gate to
+confirm it now blocks correctly (R4.1.7).
+
+This is no longer a theoretical weakness or an inference from reading the source. It is a
+demonstrated one, produced by the most ordinary act available to a reviewer: writing down what
+the code does.
+
+While there, a second one, which bears directly on the instrument-credibility question: the
+gate's browser-evidence check tests `path.stat().st_size == 0` and matches viewport/theme
+**substrings in filenames**. A blank-but-non-zero PNG named correctly passes. That is, at the
+gate level, the identical failure to the 16 blank screenshots that passed their own theme and
+viewport assertions.
+
+**DISPOSITION — four parts, and the first is the one that matters before any merge:**
+
+1. **The kernel change must be EXCLUDED from the product merge set.** `pigment_coordinator/` is
+   not a production surface — it is not in Gate 1's list (`js/`, `css/`, `index.html`, `p/`,
+   `tools/`, `sitemap.xml`, `robots.txt`), it ships nothing to users, and it affects no
+   acceptance criterion. But it **is** on `pig-001-stabilization`, so merging that branch as-is
+   carries it silently into `main` under cover of a product approval. **This code does not belong
+   in the product merge set**, and a merge that includes it is a merge the owner was not asked
+   about. Land it separately, on its own review, named as what it is: a change to the arbiter.
+2. **Before the kernel change is reused, the verdict scan must be fixed** to parse a single
+   operative verdict block rather than grep an append-only archive, and the screenshot check
+   strengthened beyond non-zero file size. Until then the quality gate is advisory.
+3. **The Gate 3 failure is recorded as sustained** — against the Synthesis Lead, as D-017
+   already assigns it, not against the implementer. The disclosure was late; it was still made,
+   by the party it implicates, and it was made in enough detail for me to check it. That is the
+   behaviour the constitution wants, arriving three days later than it should have.
+4. **D-017 does not block Gate 2.** It is not a product defect and no acceptance criterion turns
+   on it. It is a **condition on the merge**, not on the certification. Recorded as **F-10
+   (major, governance-scoped)** so that it cannot be discharged silently.
+
+**A note on my own instrument, since I have just impugned everyone else's.** The format I am
+required to end this report in — three literal strings in an append-only file — is itself the
+weakness described above. Whoever consumes this verdict must read the **operative** verdict
+block, not grep the file. I have labelled every superseded block explicitly. That is the most I
+can do from inside the report.
+
+### A21 — The theory pole's 13 requested actions
+
+Their round-3 review is the operative external standard. My assessment, action by action:
+
+| # | Requested action | Status | Basis |
+| --- | --- | --- | --- |
+| **A1** | Close V32-1…V32-7, independently remeasure every route/theme/viewport/state | **DISCHARGED** | 2,626 glyph rows, 12 cells, 0 below floor, by an instrument that did not author the fix; I re-derived five of the sites' arithmetic |
+| **A2** | Measure and disposition `.md-name`, `#search::placeholder`, `.gonext-item:hover b`, frozen focus indicators, populated visualization text — no inference from neighbours | **DISCHARGED** | all named selectors measured explicitly; `.md-name` characterised at 6 widths and given an open-minor disposition rather than a clearance. The "do not infer from neighbours" instruction is honoured — this is the F-8 lesson, applied |
+| **A3** | Correct F-1 and F-2, add 900/1024 checks, repeat the 200 % zoom matrix after final visual changes | **DISCHARGED (F-1) · PARTIAL (F-2)** | F-1 closed, 0 px at all 8 widths including 900 and 1024, confirmed independently. Zoom matrix re-run post-change, 26 routes × both themes. **F-2 (masked focus ring on the last nav link ≤820 px) I cannot find evidence of having been corrected** — it remains an open minor, as in R1–R3 |
+| **A4** | Regenerate inventories from final HEAD, explain every delta, disposition the 76th Tier 1 record | **DISCHARGED** | **I regenerated it myself at HEAD and it is byte-identical to the committed copy**; `beginning-noland` given an explicit no-asset disposition |
+| **A5** | One denominator glossary reconciling 799/798/797, 694/693, 104/103, 29/28/27, 695/679, 66/60 | **DISCHARGED** | `evidence/data-reconciliation.md`, each figure bound to value/commit/date/surface/meaning; `effa805` freeze left byte-stable |
+| **A6** | Replace verified-PD / genuinely-PD / jurisdictional assertions with bounded evidence language | **DISCHARGED IN SUBSTANCE** | 14 sites corrected; the shipped `#/credits` lede — the one breach users could read — rewritten and verified by me at `js/app.js:2393`. **The enforcement mechanism is currently failing: F-9** |
+| **A7** | **Make the complete repository test suite pass** | **NOT DISCHARGED at HEAD** | green at `4266804`, **red at `06ab20f`**. See F-9. Their acceptance criteria 1 and 3 both fail with it |
+| **A8** | A named real AT/browser transcript covering route identity, search, import conflicts, onboarding recovery, state controls, graph bypass | **DISCHARGED** | three sessions; every path they enumerated was reached, the import-conflict path across two sittings. See A17 |
+| **A9** | Refresh the screenshot pack only after the last production commit; complete N-8 against final surfaces | **DISCHARGED** | pack recaptured at `a71e2c5`, which post-dates the last production commit `4266804` — I verified the intervening commits touch no production file. **N-1 is closed.** N-8 delivered: PASS WITH NOTE |
+| **A10** | Commission a new independent Quality Review at final HEAD, all 29 criteria, every limitation | **DISCHARGED by this document** | — |
+| **A11** | Correct five-vs-six, commit-count, corpus-count, evidence-currency contradictions | **DISCHARGED** | six majors carried consistently since D-018; corpus figures reconciled in `data-reconciliation.md`; the 76-vs-75 and Guggenheim/Hirshhorn errors corrected **against both poles** |
+| **A12** | D-017 independent governance disposition; bind evidence to an exact SHA; demonstrate no path bypasses Gate 2; identify whether the kernel change is excluded from the merge | **DISCHARGED by A20** | I verified the no-bypass claim in the callers, gave the disposition, and answered the merge question: **excluded** |
+| **A13** | Return a `response_to_review`; do not merge, deploy or prepare `human_review_ready` while Gate 2 is uncertified | **HELD** | branch `pig-001-stabilization`, no merge, no push, no deploy; Gate 2 remains uncertified by this verdict |
+
+**11 discharged, 1 partial (A3/F-2), 1 not discharged (A7).**
+
+Two of their findings deserve explicit credit, because both were right and both were resisted
+by our evidence at the time: they were right that DOM inspection could not satisfy AC15 (it
+could not, and seven defects proved it), and right that the OD-5 language breach was a breach of
+the **owner's own decision** rather than a stylistic preference — including one instance that had
+shipped to users.
+
+### A22 — Instrument credibility: **trustworthy enough to certify against.** Qualified.
+
+I was asked to judge this one last time, and the honest answer has two halves.
+
+**The pattern is real and it recurred six times, not four.** Each instrument reported truthfully
+about a universe smaller than the claim it was used to support:
+
+| # | instrument | true of | used to support | caught by |
+| --- | --- | --- | --- | --- |
+| 1 | contrast audit | flat paint | all text | me (R2, F-7) |
+| 2 | unit 33's arrow sweep | JS-emitted glyphs | all arrows | **the owner's ear** |
+| 3 | zoom matrix "26/26" | 25 routes | 26 | Vermeer |
+| 4 | 16 screenshots | filename + non-zero size | rendered surfaces | its own operator |
+| 5 | **"46 tests, all passing"** | **the tree at `95e5636`** | **the tree at `06ab20f`** | **me, this revision** |
+| 6 | **the quality gate itself** | **"three strings appear in this file"** | **"the operative verdict certifies"** | **me, R4.1.7 — by running it on my own blocking report, which it passed** |
+
+**The fifth one is the reason I am blocking, and its location is what makes it serious.** It did
+not enter through a build unit. It entered through **the independent certification-evidence
+commit itself** — the artefact whose stated purpose was *"to give the independent Quality
+Reviewer something to certify against."* The instrument built to close the gap opened a new one,
+in the only mechanism guarding the owner's own decision, and it went unnoticed for two commits
+because nobody re-ran the suite at the SHA they were certifying.
+
+**The sixth is the one that should change how this pattern is understood.** It is not an
+instrument someone built badly — it is the arbiter's own gate, the last check standing between a
+blocking review and human review, and it fails in exactly the same shape as the five before it.
+That tells me the pattern is not a series of individual lapses by individual authors. It is what
+happens by default whenever a *proxy* is checked in place of the *thing*: string presence for
+verdict, flat paint for rendered pixels, JS nodes for glyphs, file size for image content, one
+commit for another. Nobody in this task was careless. The proxy is always cheaper than the thing,
+and it is always right until it is not.
+
+**And yet: yes, trustworthy enough.** Not from fatigue, and not because 96 commits earn it. On
+the evidence:
+
+- **Every one of the six was found and none was buried.** Three were found by the pole's own
+  people, one by the owner, two by me. Nobody defended a lost figure.
+- **Corrections were repeatedly made against interest.** Vermeer lowered Dürer's `.le-meta` from
+  6.50 to 6.26 — against his own colleague and toward a worse number — and discovered that the
+  inherited 26/26 had covered 25 while auditing his own inheritance. Unit 35 corrected the theory
+  pole's diagnosis *and* our own tense error *and* both poles' Guggenheim/Hirshhorn mistake.
+  Unit 34 recorded that unit 33 had marked a finding closed that was not closed. Matisse
+  overturned his own reasoning on which theme was marginal, and declined to claim a hover state
+  he had not seen. **Instruments that correct themselves against interest are the only kind worth
+  certifying against.**
+- **The method changed, not just the results.** Sampling was replaced by source-bounded
+  enumeration; a rule enforced by grep was replaced by a pinned test; a claimed fix was replaced
+  by a diagnosis of why the claim was structurally incapable of being true. Unit 34 is the model:
+  it did not patch the arrow, it explained why the previous patch could not have worked.
+- **The load-bearing arithmetic reproduces.** I have now re-derived this contrast class in three
+  separate revisions and cannot fault it.
+
+**What remains structurally unverifiable — named plainly, because certification should not imply
+these are covered:**
+
+1. **The engine gap (A17.2).** Every pixel measurement is Chrome; every ear confirmation is
+   Safari. Neither corroborates the other, and no amount of either closes it.
+2. **The canvas is `Math.random`-seeded.** It can be bounded from source, never sampled to
+   exhaustion. Everything rests on the corner-enumeration argument being *sound*, which I have
+   checked three times — not on any measurement.
+3. **Screen-reader behaviour is a rendering, not a fact.** One operator, one AT, one browser,
+   one theme. A second screen reader could produce a different transcript on identical DOM, and
+   nothing in this project would predict it.
+4. **The build's own signature failure mode cannot be instrumented away.** Every check has a
+   perimeter, and perimeters are invisible from inside. The only controls that worked were
+   *stating the perimeter explicitly* (Vermeer §7.2, unit 34's carve-out) and *having someone
+   outside it look*. Both are procedural, not technical, and both must survive into whatever
+   comes after this task.
+5. **`.md-name` in the europe-zoom state, and every unwalked interaction state.** State space is
+   not enumerable; route space is.
+
+**Verdict on the evidence base: trustworthy enough to certify against — once the fifth instance
+is closed rather than carried.** I would not have written that sentence at R2.
+
+## R4.3 — ACCEPTANCE CRITERIA — ALL 29, CURRENT
+
+**PASS 29 · FAIL 0 · UNSUPPORTED 0**
+
+| # | Criterion (abbrev.) | R1 | R2 | R3 | **R4** | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| AC1 | `effa805` baseline named, older labelled historical | PASS | PASS | PASS | **PASS** | unchanged |
+| AC2 | Validator: no errors, refs valid, unedited snapshot | PASS | PASS | PASS | **PASS** | **my run, R4.1.1** — 0 errors, 0 warnings |
+| AC3 | Two deck warnings cleared on merit or owner exception | PASS | PASS | PASS | **PASS** | my validator run confirms 0 warnings |
+| AC4 | Frozen first-user journey matrix, no broken transition | UNSUP | PASS | PASS | **PASS** | `browser-evidence-closing.md` §2 — 33 steps, 0 FAIL. Units 33/34/36 touch the deck and credits paths; the deck path is independently re-confirmed by VoiceOver session 3 |
+| AC5 | Import: per-field identify, explicit confirm, cancel/malformed preserves local | PASS | PASS | PASS | **PASS** | **strengthened** — session 2 confirms by ear: *"It asks what to keep… I can tell which one is mine… It names both"*; malformed path confirmed session 1 |
+| AC6 | Admire/Seen/Saved independent, accurate visible + programmatic state | PASS | PASS | PASS | **PASS** | unchanged |
+| AC7 | Five interruption checkpoints resume exactly | PASS | PASS | PASS | **PASS** | **strengthened** — session 1 by ear: *"It put me back where I was, not restarting"* |
+| AC8 | Storage failure: no false success, context preserved, retry/recovery | UNSUP | PASS | PASS | **PASS** | A8, my source trace |
+| AC9 | Invalid-route/no-match/empty/limit/failure preserve context + next action | PASS | PASS | PASS | **PASS** | unchanged; 26-route sweep clean |
+| AC10 | Frozen asset inventory, exact counts by surface + reachability | PASS | PASS | PASS | **PASS** | **my regeneration at HEAD is byte-identical to the committed inventory** (R4.1.3) |
+| AC11 | Item-level rights sample ≥100 incl. Tier1∪daily + all Matisse/Kahlo | PASS | PASS | PASS | **PASS** | 122 entries; `beginning-noland` no-asset disposition added |
+| AC12 | Mismatches/unresolved/out-of-sample stay explicitly unresolved | PASS | PASS | PASS | **PASS** | **strengthened by the 14-site OD-5 sweep**; substance is clean at HEAD — the *enforcement* is failing (F-9), not the language |
+| AC13 | Historical sample: 10 profiles, ≥5 eras/movements/nations, 20 edges | PASS | PASS | PASS | **PASS** | unchanged |
+| AC14 | Release language checked, no overclaim | PASS | PASS | PASS | **PASS** | **strengthened** — the shipped `#/credits` lede, the one overclaim users could read, is corrected and bounded |
+| AC15 | Title updates, one identity to the tested AT setup, focus to entry point, no repeat announcements | PASS* | PASS* | PASS* | **PASS** | **A17. Three human VoiceOver sessions — the caveat carried through R1–R3 ("real screen-reader output NOT TESTED") is discharged.** Boundaries recorded as residual risk |
+| AC16 | Selected/current/expanded/pressed/active: visible + programmatic | PASS | PASS | PASS | **PASS** | unchanged |
+| AC17 | Keyboard-operable with visible focus; bypass; no nested interactive | PASS | PASS | PASS | **PASS** | **strengthened** — the skip link was silent and is now *"skip to the atlas immediately"*, and the graph bypass confirmed by ear. F-2 remains an open minor (focus degraded, not absent) |
+| AC18 | 320/390/768/1280/1440 + 200 % zoom: reachable, no root overflow | PASS | PASS | PASS | **PASS** | **strengthened** — F-1 closed (0 px at all 8 widths, was 150/113/54/18); zoom matrix re-run post-change, and the inherited 26/26 corrected to a true 26 |
+| AC19 | Both themes pass AA for frozen text/control/focus/state pairs incl. browser-measured composites | UNSUP | FAIL | FAIL | **PASS** | **A18. First pass in this task.** 2,626 rows / 12 cells / 0 below floor, independent instrument; F-7 and F-8 closed and re-verified by me in the file; ink rule re-derived to ±0.01. `.md-name` legibility and AT-5 are open minors outside this criterion's contrast scope |
+| AC20 | Reduced motion preserves info/choices; canvas + viz have alternative + accessible name | PASS | PASS | PASS | **PASS** | unchanged. Reduced motion under AT is NOT TESTED — recorded, not relied on |
+| AC21 | Frozen fixture, six classes, no starvation, count/selection/dismissal/focus-return | PASS | PASS | PASS | **PASS** | **strengthened** — dismissal was silent (AT-3) and now *"announces everything needed"*; type-identification confirmed by ear; the combobox role reduced from three conflicting roles to one |
+| AC22 | Home Explore promise = Explore destination; every instrument reachable | PASS | PASS | PASS | **PASS** | unchanged |
+| AC23 | Named adjudicator reviews hierarchy/relationship/entrances/identity | PASS | PASS | PASS | **PASS** | **N-8 closed** — Matisse, PASS WITH NOTE, against rendered prose in both themes and viewports, correcting his own reasoning on which theme is marginal and declining to claim the hover state he did not observe |
+| AC24 | ≥1 relationship journey: named entities, relationship + consequence, onward path | PASS | PASS | PASS | **PASS** | **strengthened** — graph node naming confirmed richer under real AT than specified; Return-key activation confirmed session 2 |
+| AC25 | Every third-party runtime request identified; undisclosed fails | PASS | PASS | PASS | **PASS** (disclosure) | 26 routes, 0 console errors, 0 requests ≥400, `upload.wikimedia.org` only, 0 Google Fonts. Deployment-gated condition remains F-6 |
+| AC26 | Criterion-to-unit matrix, defect register, rollback, cache/versioning | PASS | PASS | PASS | **PASS** | `?v=20260805-pig001-u36` bumped for the last production commit; D-019 ledgered |
+| AC27 | Fresh IL assessment confirms buildability | PASS | PASS | PASS | **PASS** | unchanged |
+| AC28 | No legal conclusion from death year/host/attribution alone | PASS | PASS | PASS | **PASS** | substance clean at HEAD, including the shipped lede. The guard enforcing it is red (F-9) — a mechanism failure, not a substance failure |
+| AC29 | No production edit before `approved_for_build`; merge/deploy need approval | PASS | PASS | PASS | **PASS** | branch verified `pig-001-stabilization`; no merge, push or deploy; untracked files left alone |
+
+\* AC15 was carried PASS in R1–R3 on DOM inference with an explicit NOT-TESTED caveat (A6). R4 is
+the first revision in which it passes on the evidence the criterion actually names.
+
+## R4.4 — FINDINGS LEDGER
+
+### CRITICAL — 0
+
+### MAJOR — 2 open
+
+#### F-9 (major, **open**, **blocking**) · the repository test suite is RED at HEAD while the record says green
+
+**What.** `python3 -m unittest discover -s tests` at `06ab20f` returns
+`Ran 46 tests … FAILED (failures=1)`. The failing test is
+`TestProseLanguage.test_no_artifact_of_ours_asserts_a_legal_conclusion` — the OD-5 guard built
+in unit 35 and widened in unit 36. It fires on:
+
+```
+protocol/tasks/PIG-001/evidence/harness/vermeer-cert/gapfill.py:28:
+OLD_LEDE = "Most reproductions here are public domain."
+```
+
+**Where it entered** (my bisection, clean worktrees — R4.1.2): green at `95e5636` (unit 35),
+green at `4266804` (**last production commit**), green at `09f61a8`, **red at `a71e2c5`** — the
+certification-evidence commit — and red at HEAD.
+
+**What it is not, stated first and plainly.** Not a product defect. Not a user-facing OD-5
+breach. Not a failure of any of the 29 frozen criteria — I checked, and the frozen specification
+contains no test-suite requirement. The product tree is green. The string is a *reference to* the
+old lede, used by the harness to prove the old lede is gone — structurally identical to the six
+fixtures inside the test file itself, each carrying an `OD5-EXEMPT` marker.
+
+**Why it blocks anyway.**
+
+1. **The record states the opposite.** D-019 and the build evidence report record *"41 tests
+   with 5 failures becomes 46 with 0"*. That was true when written and is false at the SHA being
+   certified. A false clearance in the record is what made F-8 major, and the reasoning has to
+   apply to us as readily as to a stylesheet.
+2. **Theory's operative acceptance criteria fail with it** — #3 ("the complete repository test
+   suite passes with its executed test count reported") and #1 ("the validator, **tests**,
+   inventories, screenshots, implementation evidence, and Quality Review all correspond to that
+   SHA"). Requested action A7 is not discharged.
+3. **A red guard stops guarding.** This is the mechanism protecting the owner's own decision
+   (OD-5), and unit 35 built it on the explicit principle that *"a rule enforced only where a
+   test looks is not enforced."* A rule whose test is permanently red is equally unenforced —
+   people learn to skip a suite that is always failing. Leaving it red disables it for every
+   future change, which is a larger loss than the string.
+4. **It would make this certification falsifiable in one command.**
+
+**Reproduction.** `python3 -m unittest discover -s tests` at `06ab20f`.
+
+**Remedy — not applied by me, and small.** The sanctioned disposition already exists in the
+guard's design: append `# OD5-EXEMPT` to `gapfill.py:28` and add
+`"protocol/tasks/PIG-001/evidence/harness/vermeer-cert/gapfill.py": 1` to `EXPECTED_EXEMPTIONS`,
+so that widening the hole stays a deliberate, reviewable act. Alternatively reword the constant
+so it is not a bare assertion. **One line either way.**
+
+**The condition that matters more than the fix:** the suite must be **re-run at the final SHA,
+after the last evidence commit**, and its output bound to that SHA. This failure exists because
+the suite was run at the commit that fixed it and never again. That ordering requirement is the
+same one N-1 imposed on the screenshot pack — which was honoured this round, and should have
+been generalised.
+
+#### F-10 (major, **open**, governance-scoped — **does not block Gate 2**; blocks the merge) · the quality gate cannot tell an operative verdict from an archived one, and the kernel change is inside the product merge set
+
+Full reasoning at **A20**. In summary:
+
+- `check_quality_gate` greps an **append-only** review file for the certification marker and the
+  two zero-count markers as three independent matches. **Demonstrated, not inferred: the gate
+  passed this very report while its operative verdict was `GATE 2: BLOCKED`**, because three
+  sentences describing the defect contained the strings it greps for (A20, R4.1.7). Once any
+  revision writes a certification, it can never be withdrawn, and the three strings need not come from the same
+  verdict. **Inert only because I am blocking.**
+- The gate's browser-evidence check accepts any non-zero PNG whose filename contains the right
+  substrings — the same failure as the 16 blank screenshots.
+- `pigment_coordinator/` (307 lines changed across this branch) is **not a production surface**
+  and affects no criterion, but it sits on the branch and would ride into `main` under a product
+  approval. **It must be excluded from the product merge set and proposed separately.**
+
+**Disposition:** does **not** block Gate 2 — no criterion turns on it and no user is affected.
+It is a **condition on the merge**. Recorded as major so it cannot be discharged silently.
+
+### MAJOR — closed this revision
+
+#### F-8 (major) · `.tl-year` painting `--faint` over `#bg-canvas` on all 8 `#/era/*` routes — **CLOSED, re-verified by me**
+`css/styles.css:927` now reads `color:var(--body-ink)`. All three conditions I attached are met:
+(1) both false clearances corrected in place — `styles.css:920-926` and
+`build-log-unit-29.md:343-365`, the original sentence struck with `~~` and followed by a dated
+`CORRECTION` block naming the finding and me, not silently rewritten; (2) the five sibling sites
+re-checked by measurement rather than by reading — I re-derived three of them myself
+(`#search::placeholder` 4.90/5.17, `.sr-group` 4.62/4.62, `.sr-meta` 5.68/6.42); (3) the ink
+enumeration re-run over the `hero()` route families by someone other than its implementer.
+**Closed.**
+
+#### V32-1…V32-7, and the two measured-not-cleared residuals (major) · AC19 — **CLOSED, independently remeasured**
+2,626 glyph rows across 12 cells, 0 below floor, by an instrument that did not author the fixes.
+V32-7 was a stacking defect, not a colour one — `z-index:3` on `.search-wrap` (`styles.css:478`)
+settles a flex `order` repaint; I verified the fix and re-derived the ink at 4.62 in both themes.
+
+#### F-1 (was minor) · horizontal overflow at 821–1100 px — **CLOSED, confirmed independently**
+0 px at all eight widths including 900 and 1024, previously 150/113/54/18. Confirmed by an
+instrument that is not the one that fixed it, and probed on both document scroll width **and**
+per-element border boxes, because `body{overflow-x:hidden}` was clipping the symptom.
+
+#### AT-1, AT-2, AT-3, AT-4, AT-6, AT-7 (six of seven AT findings) — **CLOSED BY EAR**
+Confirmed by the operator in session 3, not by DOM assertion. AT-1 is the significant one: the
+core Taste loop is now operable by a blind user. I verified the mechanism in source — two
+deliberate halves (a labelled `role="group"` and per-button `aria-label`s for exploration; the
+live `obDeckSay()` for the card change that moves under a stationary focus), plus the owner's
+requested quarter-point cadence at `js/app.js:3256`.
+
+### MINOR — 4 open, none blocking
+
+#### F-2 (minor, open) · AC17 · the last nav destination's focus indicator is faded by the mask, ≤820 px
+Unchanged through four revisions. Theory asked for it (A3); I can find no evidence it was
+corrected. Focus is degraded, not absent. **Schedule it.**
+
+#### F-11 (minor, **new**) · AT-5 · the SEO-page arrow residual is 695 files in four families, not "~100" in one
+`build-log-unit-34.md:78-84` carves out *"`p/artwork/*.html` … ~100 static files"*. Measured by
+me: `p/artist` 256, `p/artwork` 323, `p/list` 12, `p/museum` 104 = **695**, corroborated by the
+asset inventory's own stub-file count. Each carries a bare `→` inside link text
+(`>Open in the atlas →<`) with no `aria-hidden`. These are crawlable entry points. The
+carve-out is honest in kind and wrong in size; restate it before the Human Review Package. See
+**A19**.
+
+#### V-M1 (minor, open) · `.md-name` renders at 2.34 px (320) / 2.97 px (390)
+Legibility, not contrast; europe-zoom state only; accessible name preserved via each dot's
+`<title>`. Outside AC19's frozen scope (**A18**), real for a low-vision user. Not fixed in this
+build, and correctly disclosed as not fixed.
+
+#### AT-5 (minor, open) · decorative arrows, **unconfirmed by ear**
+Fixed in the DOM for every JS- and CSS-emitted arrow in the app; **not re-heard**. Unit 34
+records it as *"fixed and awaiting the ear"* rather than closed, which is the correct posture
+after unit 33 recorded it closed when it was not. Do not close it on a DOM sweep.
+
+### NOTES
+
+- **N-1 — CLOSED.** The screenshot pack was recaptured at `a71e2c5`, which post-dates the last
+  production commit `4266804`; I verified the intervening commits move no production file. The
+  ordering condition I imposed in R3 was honoured. 64 screenshots recaptured, all four
+  viewport×theme cells present and non-empty.
+- **N-8 — CLOSED.** Matisse, PASS WITH NOTE. He corrected his own reasoning (light is the
+  marginal theme, not dark) and stated that the hover thickening is held *"on defence, not
+  observation"* because his browser hung before he could capture the frame. **I accept the note
+  as written**: the rule exists as specified at `styles.css:333-336`, the missing artefact is one
+  hover frame, and I agree it does not block. Recording an unobserved thing as unobserved is the
+  behaviour I want from an adjudicator.
+- **N-6 (open)** — dark `--gold2` at 4.31 against the absolute canvas ceiling. Reproduced by me
+  again this revision at 4.31. Disclosed and argued (D-29-7); the corner is geometrically
+  unreachable. Not a blocker; recorded so the margin stays visible.
+- **F-6 (open)** — deployment-gated third-party request condition (AC25). Unchanged.
+- **N-3 (open)** — unchanged.
+- **New note · the engine gap.** Every pixel measurement in this build is Chrome; every ear
+  confirmation is Safari. No single engine has both. See **A17.2** — this is the most consequential
+  uncovered area in the task and it cannot be closed with more of either instrument.
+
+## R4.5 — REGRESSION SWEEP AT HEAD
+
+- **Validator:** clean, zero warnings, all references valid — identical to R1, R2, R3.
+- **Test suite:** 46 tests, **1 failure** (F-9). 45 of 46 green, including all rights-tooling,
+  register-language, denominator and coordinator tests.
+- **Asset inventory:** regenerated by me at HEAD, **byte-identical** to the committed copy. 798
+  unique / 797 rendered / 0 copyright-suppressed URLs leaking into public metadata.
+- **26 routes:** 0 console errors, 0 warnings, 0 requests ≥400 of 107, 680 images 0 broken,
+  `upload.wikimedia.org` the only third-party host, 0 Google Fonts.
+- **Live region:** exactly one in the shipped source, outside `#app` — I grepped for all of
+  `aria-live`, `role="status"`, `role="alert"`. 0 mutations across 12 route changes with a
+  positive control proving the observer was live.
+- **Cache/versioning:** `?v=20260805-pig001-u36`, bumped at the last production commit.
+- **Branch discipline:** `pig-001-stabilization`, never `main`. No merge, no push, no deploy.
+  Untracked `THEORY_001.md`, `passport-test.html`, `.gitignore` left untouched.
+- **No regression found** in any previously certified surface. Units 33–36 close findings and
+  introduce none that I can measure — the single new defect this revision (F-9) is in evidence
+  code and was introduced by the evidence commit, not by a build unit.
+
+## R4.6 — PRESSURE, AND HOW I MADE THIS CALL
+
+I was told plainly that this is the fourth attempt, that ninety-six commits and three human
+sessions stand behind it, and — correctly — that manufacturing a blocker to avoid the discomfort
+of certifying is the same failure as certifying too readily. I have tried to hold both.
+
+**What I did not do.** I did not block on any of the 29 criteria. All 29 pass, and I moved AC19
+from FAIL to PASS and AC15 from a caveated PASS to a real one. I did not block on `.md-name`,
+which is a real defect I could have stretched into AC19 and did not, because AC19 is a contrast
+criterion and stretching it would have been exactly the manufacture I was warned about. I did not
+block on AT-5, F-2, F-11, N-6 or D-017's governance defect — each is real, each is recorded, none
+of them blocks. I did not block on the inventory's SHA label, which I expected to raise as a
+finding until I regenerated it and found it byte-identical.
+
+**What I did.** I ran the first check I was told to run and it came back red at the SHA I was
+asked to certify, against a record that says it is green. I bisected it to be sure it was real
+and to find where it entered, and it entered through the certification evidence itself. I then
+had to decide whether a one-line annotation in a harness file should stop this.
+
+The argument for certifying is strong: no user is affected, the product tree is green, the fix is
+trivial. The argument that decided it is that this build's one persistent failure — five times
+now — is a true report about a smaller universe than the claim it supports, and the fifth
+instance is a claim that the tests pass, made about a different commit than the one being
+certified, discovered inside the artefact built to be the independent check. If I certify past
+that, I am ruling that nobody needs to run the suite at the SHA they certify. That is the
+discipline theory asked for, the discipline the owner's OD-5 guard depends on, and the discipline
+whose absence produced every other finding in this ledger.
+
+**Blocking here costs one short round. Certifying here costs the meaning of the gate.** I have
+kept the blocker as narrow as I can make it: one finding, one line, one re-run, and an explicit
+statement that everything else is ready.
+
+I want the last word to be the other half of the truth, because it would be unjust to end on the
+blocker. **This is the strongest state PIG-001 has been in.** AC19 passes after three revisions
+of my refusing it. AC15 passes on the evidence it actually named, and the sessions that got it
+there found seven defects no instrument could have found — including one that made the core
+product loop unusable by a blind user. Six of seven were repaired and confirmed by ear. Every
+pole in this task corrected itself against interest at least once, some against their own
+colleagues. The one finding I am holding is a comment marker away from closed, and when it is
+closed I expect to certify.
+
+---
+
+# REVISION 3 (2026-07-29) — SUPERSEDED BY REVISION 4
+
+*Preserved verbatim. Its verdict is superseded; its findings and adjudications A13–A16 remain
+the record of what was blocked and why. Its blocking finding, F-8, is **closed** — see R4.4.
+Where Revision 4 changes a criterion status, R4.3 and R4.4 say so explicitly.*
+
+**Product tree reviewed at:** `11e4471` (HEAD at the time). Production code last moved at
+`094a631` (unit 30c); `11e4471` was evidence-only.
 
 **Independence:** I wrote none of this code and I fixed nothing I found. This round I ran
 two of the build's own instruments myself, on routes their authors did not walk, and I
@@ -1799,7 +2626,7 @@ overruled by unit 29 on measured grounds.)*
 
 ---
 
-# OPERATIVE VERDICT — REVISION 3 (2026-07-29, tree `11e4471`)
+# VERDICT — REVISION 3 (2026-07-29, tree `11e4471`) — SUPERSEDED BY REVISION 4
 
 Twenty-eight of twenty-nine criteria pass. The work since Revision 2 is the strongest in this
 task: unit 29 replaced my sampling argument with a source bound I re-derived myself and could
@@ -1862,3 +2689,103 @@ GATE 2: BLOCKED
 
 OPEN CRITICAL: 0
 OPEN MAJOR: 1
+
+*(Revision 3's verdict line read `GATE 2: BLOCKED`, `OPEN CRITICAL: 0`, `OPEN MAJOR: 1`.
+Superseded — see the operative verdict below. **F-8 is now closed**, re-verified by me in the
+file, with all three of the conditions I attached to it met: the two false clearances corrected
+in place rather than silently rewritten, the five sibling sites re-checked by measurement, and
+the ink enumeration re-run over the `hero()` route families by someone other than its
+implementer.)*
+
+---
+
+# OPERATIVE VERDICT — REVISION 4 (2026-08-06, tree `06ab20f`)
+
+**All twenty-nine criteria pass.** AC19 passes for the first time in this task, after I blocked
+it in three consecutive revisions. AC15 passes for the first time on the evidence it actually
+names — a tested assistive-technology setup — rather than on DOM inference with a caveat
+attached. Every finding I have ever blocked on is closed, and I re-verified each in the file
+rather than accepting its closure: F-7's class at all 27 call sites, F-8's declaration and both
+of the false clearances that had wrongly cleared it, and F-1's overflow at all eight widths.
+
+The three owner-operated VoiceOver sessions did what no instrument in this project could. They
+found that the Taste deck asked a blind visitor to Admire or Pass on sixteen artworks and never
+said which artwork — the core product loop, unusable by ear, invisible to thirty-one units of
+DOM and pixel work. Six of the seven defects they found are confirmed repaired by ear. I cannot
+reproduce that evidence and I have not tried to; I have ruled on whether it satisfies AC15 as
+frozen, and it does, with its boundaries recorded as residual risk rather than smoothed away —
+one operator, one screen reader, one browser, one theme, and an engine gap that no further
+measurement can close.
+
+I re-derived the load-bearing contrast rule from the committed CSS and reproduce all six of its
+figures to ±0.01. I regenerated the asset inventory at HEAD and it is byte-identical to the
+committed copy. I verified in the coordinator's own callers that no path reaches
+`human_review_ready` without passing this gate. The evidence base is trustworthy enough to
+certify against — a sentence I would not have written at Revision 2.
+
+**And the first check I was asked to run came back red at the SHA I am asked to certify.**
+
+`python3 -m unittest discover -s tests` at `06ab20f`: `Ran 46 tests … FAILED (failures=1)`. The
+record states the suite is green. It is green at the last production commit `4266804` and was
+broken two commits later — by the independent certification-evidence commit itself, in the OD-5
+guard, the one mechanism protecting the owner's own decision. Nobody re-ran the suite after it.
+
+That is the fifth time in this build an instrument has reported truthfully about a smaller
+universe than the claim it was used to support: contrast measured only flat paint; the arrow fix
+covered only JS-emitted glyphs; a zoom matrix that said 26 covered 25; sixteen blank screenshots
+passed their own theme and viewport assertions; and now "46 tests, all passing" is a true
+statement about a different commit than the one being certified. The first four were caught. This
+one entered through the artefact built to be the independent check.
+
+No user is affected. The product tree is green. The remedy is one comment marker and one pinned
+integer. I have weighed at length whether that should stop ninety-six commits and three human
+sessions, and it should — not because the string matters, but because certifying past it would
+rule that nobody needs to run the suite at the SHA they certify, and would leave a guard
+permanently red, which is the same as not having it. Blocking costs one short round. Certifying
+costs the meaning of the gate.
+
+**PASS 29 · FAIL 0 · UNSUPPORTED 0**
+
+Blocking finding, tied to its criterion:
+
+- **F-9 · no frozen criterion; theory's requested action A7 and acceptance criteria 1 and 3** —
+  the repository test suite fails at HEAD.
+  `TestProseLanguage.test_no_artifact_of_ours_asserts_a_legal_conclusion` fires on
+  `protocol/tasks/PIG-001/evidence/harness/vermeer-cert/gapfill.py:28`
+  (`OLD_LEDE = "Most reproductions here are public domain."`). Bisected by me in clean
+  worktrees: green at `95e5636`, green at `4266804` (last production commit), green at
+  `09f61a8`, **red at `a71e2c5`**, red at HEAD. **Remedy:** append `# OD5-EXEMPT` to that line
+  and pin it in `EXPECTED_EXEMPTIONS`, or reword the constant. **The condition that matters more
+  than the fix:** re-run the suite at the final SHA, *after* the last evidence commit, and bind
+  its output to that SHA — this failure exists only because the suite was run at the commit that
+  fixed it and never again.
+
+Open major, **not blocking Gate 2 — a condition on the merge**: **F-10** (A20, R4.1.7) — the
+quality gate greps an append-only review for verdict strings and cannot distinguish an operative
+verdict from an archived one. **This is demonstrated, not inferred: the gate passed this very
+report while its verdict was `GATE 2: BLOCKED` with two open majors**, because three sentences
+describing the defect contained the strings it greps for. I broke them with zero-width characters
+and confirmed the gate now blocks; the state committed here is correct. Its screenshot check also
+accepts any non-zero PNG with the right filename — the same failure as the 16 blank screenshots.
+And `pigment_coordinator/` is a change to the neutral arbiter, made by the pole it governs and
+disclosed late, that **must be excluded from the product merge set and proposed separately**.
+**Whoever consumes this verdict must read the operative block, not grep the file** — and until
+the scan is fixed, the quality gate should be treated as advisory rather than binding.
+
+Open minors, none blocking: **F-2** (masked focus ring, ≤820 px — requested by theory, still not
+corrected), **F-11** (the AT-5 SEO carve-out is 695 files in four families, not "~100" in one),
+**V-M1** (`.md-name` at 2.34 px, legibility not contrast), **AT-5** (fixed in the DOM, still
+unconfirmed by ear — do not close it on a DOM sweep). Open notes: **N-6**, **N-3**, **F-6**, and
+the engine gap — every pixel measurement is Chrome, every ear confirmation is Safari, and no
+single engine has both.
+
+**N-1 and N-8 are closed.** The screenshot pack post-dates the last production commit, and
+Matisse ruled PASS WITH NOTE while stating plainly that the hover thickening is held on defence
+rather than observation.
+
+When F-9 is closed and the suite is re-run and bound to the final SHA, I expect to certify.
+
+GATE 2: BLOCKED
+
+OPEN CRITICAL: 0
+OPEN MAJOR: 2
