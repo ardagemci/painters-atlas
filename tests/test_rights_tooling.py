@@ -482,7 +482,16 @@ class TestProseLanguage(unittest.TestCase):
     human-written build report, because nothing read the prose. A rule enforced
     only where a test looks is not enforced — so this class looks at the prose.
 
-    Scope is deliberately limited to artifacts THIS pole authors and may edit.
+    Unit 36 widened the scope to `js/app.js`. Unit 35 corrected fourteen
+    statements in evidence and docs and left the one breach that a visitor
+    actually reads — the `#/credits` lede — standing, because no scanned path
+    reached the shipped copy. Evidence disciplined, shipped prose not, is the
+    inversion this class exists to prevent, so the file that renders the pages
+    is now scanned whole: string literals and code comments alike, since both
+    are prose this pole wrote. Only `app.js` is scanned, not all of `js/`; the
+    data registries are generated records, governed by TestRegisterLanguage.
+
+    Scope is otherwise limited to artifacts THIS pole authors and may edit.
     Incoming theory messages, liaison analyses and the frozen specification are
     excluded: they quote the offending phrases in order to object to them or to
     forbid them, and they are history that must not be rewritten.
@@ -505,7 +514,8 @@ class TestProseLanguage(unittest.TestCase):
         # 6 fixture phrases in test_the_guard_actually_catches..., plus this
         # class's own docstring, this map's comment, and the two lines that
         # implement and count the marker. All self-referential; none is prose.
-        "tests/test_rights_tooling.py": 12,
+        # +1 in unit 36: the shipped #/credits lede added as a catch fixture
+        "tests/test_rights_tooling.py": 13,
     }
 
     #: Assertions of legal status. Each is a claim no evidence in this project
@@ -535,6 +545,7 @@ class TestProseLanguage(unittest.TestCase):
         ROOT / "tools",
         ROOT / "tests",
         ROOT / "README.md",
+        ROOT / "js" / "app.js",          # unit 36: the copy users actually read
     ]
     SUFFIXES = (".md", ".py", ".js")
 
@@ -578,7 +589,9 @@ class TestProseLanguage(unittest.TestCase):
                        "the fresco is PD",                                 # OD5-EXEMPT
                        "No PD image exists on Commons.",                   # OD5-EXEMPT
                        "this work is public domain",                       # OD5-EXEMPT
-                       "the image is rights-cleared"):                     # OD5-EXEMPT
+                       "the image is rights-cleared",                      # OD5-EXEMPT
+                       # unit 36: the shipped #/credits lede, verbatim
+                       "Most reproductions here are public domain."):      # OD5-EXEMPT
             self.assertTrue(
                 any(re.search(p, phrase, re.I) for p, _ in self.BANNED),
                 "guard does not catch: %r" % phrase)
@@ -590,7 +603,11 @@ class TestProseLanguage(unittest.TestCase):
                        "the exact-work check confirmed the depicted work",
                        "this audit's searches located no candidate",
                        "carries a Commons public-domain assertion",
-                       "resolution: asserted-by-commons; no legal conclusion"):
+                       "resolution: asserted-by-commons; no legal conclusion",
+                       # unit 36: the replacement lede, verbatim
+                       "Most reproductions here carry Commons' public-domain "
+                       "assertion, and we checked each file really is the work "
+                       "it names"):
             self.assertFalse(
                 [p for p, _ in self.BANNED if re.search(p, phrase, re.I)],
                 "bounded language wrongly flagged: %r" % phrase)

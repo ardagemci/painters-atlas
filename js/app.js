@@ -2374,7 +2374,7 @@ function viewCredits(){
   <section style="max-width:760px">
     <h2 class="sec-title">Wikimedia Commons</h2>
     <p>Every image in the atlas — the paintings and the buildings that hold them — comes from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>, the free media archive maintained by the Wikimedia Foundation and its volunteers. Pigment is not affiliated with Wikimedia; it is one of the many things Commons exists to make possible. Images load directly from Wikimedia's servers, as the <a href="#/privacy">Privacy</a> page explains.</p>
-    <p>Most of the paintings are old enough to be in the public domain, and the photographs of them are offered under public-domain or CC0 terms — no credit is required, and none of that is a legal clearance we claim on your behalf. Where a licence <em>does</em> ask for credit, the credit is rendered next to the picture, and repeated here.</p>
+    <p>Most of the paintings are old enough that Commons files them as public domain, and the photographs of them are offered under public-domain or CC0 terms — no credit is required, and none of that is a legal clearance we claim on your behalf. Where a licence <em>does</em> ask for credit, the credit is rendered next to the picture, and repeated here.</p>
   </section>
 
   <section style="max-width:760px">
@@ -2390,7 +2390,7 @@ function viewCredits(){
 
   <section style="max-width:760px">
     <h2 class="sec-title">Artwork images under a licence <span class="count">${imageIds.length} of ${shippedTotal} images in the atlas</span></h2>
-    <p class="page-lede" style="font-size:1rem">Most reproductions here are public domain. These ${imageIds.length} are photographs somebody licensed for reuse on condition of credit — usually a picture taken in the room, of a fresco, a ceiling or a sculpture, where the photographer's own work is part of what you see. The remaining ${freeImages} carry no attribution condition.</p>
+    <p class="page-lede" style="font-size:1rem">Most reproductions here carry Commons' public-domain assertion, and we checked each file really is the work it names — the source's claim and our own check, not a ruling we are qualified to make. These ${imageIds.length} are photographs somebody licensed for reuse on condition of credit — usually a picture taken in the room, of a fresco, a ceiling or a sculpture, where the photographer's own work is part of what you see. The remaining ${freeImages} carry no attribution condition.</p>
     <ul class="credit-list">
       ${imageIds.map(t => {
         const users = usage[t] || [];
