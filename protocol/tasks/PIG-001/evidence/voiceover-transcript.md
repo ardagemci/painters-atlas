@@ -178,3 +178,59 @@ told.**
 
 That is the finding this criterion was frozen to produce, and no amount of
 further DOM inspection would have produced it.
+
+---
+
+# Session 3 — verifying unit 33 by ear
+
+**Operator:** Arda · VoiceOver + Safari · `http://localhost:8422` serving
+`?v=20260805-pig001-u33` (verified before the session). Light theme.
+
+Unit 33 fixed all seven findings from sessions 1 and 2. None was verified by ear
+until now — the DOM assertions could prove the right words were in the page, not
+that anyone hears them.
+
+## Six of seven confirmed fixed
+
+| Finding | Was | Now observed |
+| --- | --- | --- |
+| **AT-2** skip link | silent; focused rect 120px above the viewport at t=0 | *"It says skip to the atlas immediately."* Return scrolls to the first entry card. The transition-timing diagnosis was correct. |
+| **AT-1** deck never named the artwork | *"I was on Monet's Stacks of Wheat but it does not announce it."* | Names **artwork, artist, year and position** ("artwork 3 of 16"). The core Taste loop is now operable by ear. |
+| **AT-3** Escape silent | *"It didn't say anything after I pressed esc."* | *"It announces everything needed. Whether the results closed or where I am."* |
+| **AT-4** three conflicting roles | *"list box pop-up, menu pop-up combo box"* | *"Simply as combo box now."* |
+| **AT-6** cancel silent | silent, then relocated | *"It says 'Nothing on this device has changed' after cancelling."* |
+| **AT-7** merge outcome unstated | never said which choice won | *"Yes it announces which one won. Yes I could tell."* |
+
+**Talkativeness — the question no instrument could answer.** The operator was
+asked directly whether sixteen consecutive per-card announcements had replaced
+silence with noise: *"It's not so talkative, even if it is not to the amount that
+presents a big issue."* Acceptable, not free.
+
+## Still open
+
+**AT-5 (minor) · arrows are still read aloud.** *"It announces right arrows
+still, I'm not sure if that's a big problem tho."* Unit 33 recorded this as
+fixed; **it is not fixed in the shipped build**. A claimed fix that does not hold
+under observation is the more serious half of this finding — the announcement
+itself is genuinely minor.
+
+## Operator design request — AT-1 follow-on
+
+> *"Maybe the artwork number in every card is unnecessary. We can only use in
+> 4th, 8th, 12th and 16th maybe."*
+
+Position is announced on all sixteen cards. The owner asks for it at quarter
+points only. This is a product judgement from the person who listened to it
+sixteen times, and is adopted as such rather than treated as a defect.
+
+## Non-defect, recorded to avoid a later false finding
+
+> *"If I press Return while on nav, it redirects to the section I'm on."*
+
+That is ordinary navigation behaviour, correct as designed.
+
+## Assessment
+
+Three sessions produced what thirty-three units of measurement could not: seven
+defects found, six confirmed repaired, one claimed-but-unrepaired caught, and one
+design refinement that only listening could motivate.
