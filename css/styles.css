@@ -1315,7 +1315,7 @@ html[data-theme="light"] .daily-detail b{color:#1b4a43}
   fill:var(--muted);font-family:var(--sans);font-size:10.5px;
   text-anchor:middle;pointer-events:none;transition:opacity .25s;
   paint-order:stroke fill;
-  stroke:var(--panel);stroke-width:.34em;stroke-linejoin:round;
+  stroke:var(--panel);stroke-width:.46em;stroke-linejoin:round;
 }
 .ig-node:hover circle{filter:brightness(1.25)}
 #ig-svg.focused .ig-node:not(.lit){opacity:.07}
