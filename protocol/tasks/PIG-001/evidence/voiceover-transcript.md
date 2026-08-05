@@ -113,3 +113,68 @@ change is silent (AT-3).
 
 The theory pole was right to insist the frozen wording — *a tested
 assistive-technology setup* — could not be satisfied by inspection.
+
+---
+
+# Session 2 — the import conflict path, and the graph retest
+
+**Operator:** Arda (human), VoiceOver + Safari, `http://localhost:8422`, light theme.
+Two seeded passports differing on all four non-mergeable fields.
+
+**Environment note, recorded because it nearly invalidated the session:** the
+first attempt failed because the Synthesis Lead restarted the web server through
+preview tooling that Safari cannot reach. The site was live for the agent and
+invisible to the operator. Replaced with an ordinary process bound on all
+interfaces. *"I verified it loads" is only ever true of the place you are
+standing.*
+
+## Confirmed — the build's most important fix works under assistive technology
+
+| Behaviour | Observed |
+| --- | --- |
+| **It asks rather than replacing** | *"It asks what to keep."* The silent-overwrite defect that unit 15 fixed is genuinely gone, confirmed by ear. |
+| **Whose value is whose is audible** | *"Yes I can tell which one is mine."* |
+| **Both personas are named** | *"It names both."* Not a vague "persona" — the two are distinguished by name, as designed. |
+| **Graph node activation** | Return on a focused painter navigates to that painter's page. Closes the NOT TESTED item from session 1 (the earlier script said "Return" without "key", so the operator pressed browser Back). |
+
+## AT-6 (major) · Cancelling says nothing and silently relocates you
+
+> *"It does not say nothing was changed after I clicked the cancel button
+> cause it redirected me to the Pigment homepage."*
+
+The cancel path is *functionally* correct — earlier instrumentation proved the
+stored passport is byte-identical after a cancel. But the user is never told
+that, and is moved to the homepage without explanation.
+
+For a sighted user the redirect is a visible cue. For a screen-reader user,
+cancelling an operation that threatened to overwrite their identity produces
+silence and a change of place. The one thing they need to hear — *nothing was
+changed* — is the one thing not said. The reassurance exists in the copy on the
+malformed-passport screen (session 1, item 8); it is missing on the path a user
+is far more likely to take deliberately.
+
+## AT-7 (major) · After merging, the outcome is not stated
+
+> *"It calls the Persona name as it gets to the Persona page, but did not
+> specify whether I kept my own or not."*
+
+The merge completes and the destination page names a persona, but nothing
+confirms which choice won. The user must infer the outcome of a decision they
+were explicitly asked to make. A choice that is solicited but whose result is not
+reported is only half an affordance.
+
+## The pattern across both sessions
+
+Three findings — AT-3 (dismissing search), AT-6 (cancelling an import), AT-7
+(completing a merge) — are one defect wearing three faces: **the application
+performs the correct action and does not say that it did.**
+
+Every instrument built during this task could verify that a control exists, is
+reachable, is named, and that its underlying state transition is correct. None
+could detect that the *result* was never announced. Combined with AT-1 (the
+onboarding never names the artwork being judged), the shape is consistent:
+**our evidence covered controls and state; it never covered what the user is
+told.**
+
+That is the finding this criterion was frozen to produce, and no amount of
+further DOM inspection would have produced it.
