@@ -1,6 +1,7 @@
 # PIG-001 · Build log — unit 34
 
-**Branch:** `pig-001-stabilization` · **Commit:** `1ed9033` · **Author:** Dürer
+**Branch:** `pig-001-stabilization` · **Commit:** `b7b9270` (this sha recorded by
+the follow-up commit) · **Author:** Dürer
 (Implementation Lead) · **Gate 1:** satisfied — `protocol/tasks/PIG-001/specification.md`
 line 8 reads `workflow_state: "approved_for_build"`.
 
