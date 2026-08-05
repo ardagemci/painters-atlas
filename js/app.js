@@ -2687,6 +2687,29 @@ app.addEventListener("focusin", e => {
   if(b.top  < w.top  || b.bottom > w.bottom) wrap.scrollTop += (b.top + b.bottom) / 2 - (w.top + w.bottom) / 2;
 });
 
+/* F-2: below 820 px the nav is one scrolling row under an edge-fade mask, and a
+   mask paints over the element's own box rather than over its content — so any
+   link that comes to rest in the faded last 22 % has its focus ring dimmed out
+   from under the keyboard user, whatever the scroll position. CSS alone cannot
+   reach this: `scroll-padding`/`scroll-margin` only bite when the browser runs
+   scroll-into-view, and it declines to run for a link that is already visible,
+   which is exactly the case here — the link is visible, it is just faded. So
+   scroll the row ourselves, and only as far as it takes to lift the ring clear
+   of where the gradient starts. The mask is left alone; the scroll affordance
+   is unchanged. The `.main-nav::after` strip is what makes the room to do it. */
+const mainNav = document.getElementById("main-nav");
+if(mainNav) mainNav.addEventListener("focusin", e => {
+  const a = e.target.closest && e.target.closest("a");
+  if(!a || !mainNav.contains(a)) return;
+  const ncs = getComputedStyle(mainNav);
+  if((ncs.maskImage || ncs.webkitMaskImage || "none") === "none") return;  /* wide layout: no fade */
+  const acs = getComputedStyle(a);
+  const ring = Math.max(5, (parseFloat(acs.outlineWidth) || 0) + (parseFloat(acs.outlineOffset) || 0));
+  const nb = mainNav.getBoundingClientRect();
+  const over = a.getBoundingClientRect().right + ring - (nb.left + nb.width * 0.78);
+  if(over > 0) mainNav.scrollLeft += Math.ceil(over);       /* ceil: never leave a subpixel of ring in the fade */
+});
+
 window.addEventListener("hashchange", route);
 
 /* ============================================================

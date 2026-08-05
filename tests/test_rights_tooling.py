@@ -511,6 +511,12 @@ class TestProseLanguage(unittest.TestCase):
         "tools/fetch_artworks.py": 1,       # dated note quoting what it replaced
         # names the marker while documenting the mechanism (D-019, §2.2)
         "protocol/tasks/PIG-001/evidence/data-reconciliation.md": 1,
+        # unit 37 (F-9): quotes unit 36's superseded #/credits lede as a
+        # negative control — the harness asserts the DOM does NOT contain it.
+        "protocol/tasks/PIG-001/evidence/harness/vermeer-cert/gapfill.py": 1,
+        # names the marker while recording what unit 37 added and why, exactly
+        # as data-reconciliation.md above does. Exempts no phrase of its own.
+        "protocol/tasks/PIG-001/evidence/build-log-unit-37.md": 1,
         # 6 fixture phrases in test_the_guard_actually_catches..., plus this
         # class's own docstring, this map's comment, and the two lines that
         # implement and count the marker. All self-referential; none is prose.

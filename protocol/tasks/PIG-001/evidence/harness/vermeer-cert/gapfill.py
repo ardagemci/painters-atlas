@@ -25,7 +25,11 @@ import zoom as Z                               # noqa: E402
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 NEW_LEDE = "carry Commons' public-domain assertion"
-OLD_LEDE = "Most reproductions here are public domain."
+# OLD_LEDE is the superseded #/credits lede, corrected in unit 36. It is quoted
+# verbatim because gap 2 asserts the rendered DOM does NOT contain it: this is a
+# negative control, not a claim this pole makes. Marked so the OD-5 prose guard
+# records the quotation instead of reading it as an assertion (unit 37, F-9).
+OLD_LEDE = "Most reproductions here are public domain."  # OD5-EXEMPT
 OLD_PD = "are old enough to be in the public domain"
 NEW_PD = "are old enough that Commons files them as public domain"
 
