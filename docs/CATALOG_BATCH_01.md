@@ -77,6 +77,8 @@ claims are sourced. A row is here only when both are done.*
 |---|---|---|---|---|---|---|
 | R1 | `the-tortoise-trainer` | Osman Hamdi Bey | turkey | 2 | `confirmed` | pd |
 | R2 | `stanczyk` | Jan Matejko | poland | 2 | `confirmed` | pd |
+| R3 | `senecio` | Paul Klee | switzerland | 2 | `confirmed` | pd |
+| R4 | `sunlight-in-the-blue-room` | Anna Ancher | denmark | 2 | `confirmed` | pd |
 
 **On the tier column.** Every record in this batch is Tier 2. `ARTWORK_SCHEMA.md`
 §8 admits a work to Tier 1 only through an editorial list, a Tier 1 artist's
@@ -159,6 +161,81 @@ region the coordinator flags as nearly empty. It is where the work honestly
 falls: nothing about *Stańczyk*'s means is experimental, and its subject being
 modern does not make its handling so.
 
+### R3 — `senecio`
+
+| field | value | source |
+|---|---|---|
+| title | Senecio | Commons `ObjectName` (*Senecio (Baldgreis)*); Wikidata **Q60497141** |
+| artistId | `paul-klee` | exists in `js/artists-*.js` |
+| year | display `1922`, sort `1922` | Commons `DateTimeOriginal` = 1922; Wikidata **P571** = 1922 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg/500px-Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Senecio_(Klee)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`. Klee died 1940 |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas, marouflage — see the medium disagreement below |
+| movements | `["expressionism","abstract-art"]` | inherited from the artist minus `der-blaue-reiter`, which the 1922 Bauhaus work postdates; see TAXONOMY |
+| nation | `switzerland` | artist record — **contested, see TAXONOMY** |
+| museum | `{ id:"kunstmuseum-basel", … }` — **NEW VENUE** | Wikidata **P195**/**P276** = Kunstmuseum Basel, inv. `1569`; Commons `Credit` = Kunstmuseum Basel |
+| dims | `40.3 × 37.4 cm` | Wikidata **P2048**/**P2049**; the Commons filename states the same |
+| tags | `["portrait","geometry","flatness","playful"]` | §5 vocabulary |
+| coords | `{ F:+35, D:-20, E:+65, C:+15, M:-70 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Paul Klee*,
+`ObjectName` names the work in German and English. Source file 3712 × 4046 px,
+credited to the holding institution.
+
+**Coordinates, on the merits.** A head, still legible as a head, assembled out
+of squares and wedges — the abstraction is in the construction, not the subject
+→ `F +35`. Nothing moves; the gaze is level → `D −20`. Bauhaus-period
+constructive method, colour laid down as a system → `E +65`. It is about
+facture and colour relation more than about a person, but it is not a thesis →
+`C +15`. Forty centimetres square, a hand-sized panel → `M −70`.
+
+**Medium disagreement, recorded rather than resolved.** The Commons filename
+asserts *oil on gauze*; Wikidata **P186** lists oil paint, canvas and
+marouflage. These are compatible readings of a gauze support laid down on
+board, but they are not the same statement, and the atlas has no `marouflage`
+technique id. `["oil-painting"]` is the narrowest claim both support.
+
+### R4 — `sunlight-in-the-blue-room`
+
+| field | value | source |
+|---|---|---|
+| title | Sunlight in the Blue Room | Commons `ObjectName`; Wikidata **Q18386367** |
+| artistId | `anna-ancher` | exists in `js/artists-*.js` |
+| year | display `1891`, sort `1891` | Commons `DateTimeOriginal` = 1891; Wikidata **P571** = 1891 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg/500px-Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Sunlight_in_the_Blue_Room` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas |
+| movements | `["impressionism"]` | artist carries `impressionism` + `realism`; see TAXONOMY on the missing Skagen node |
+| nation | `denmark` | artist record |
+| museum | `{ id:"skagens-museum", … }` — **NEW VENUE** | Wikidata **P195**/**P276** = Skagens Museum, inv. `222` |
+| dims | `65.2 × 58.8 cm` | Wikidata **P2048**/**P2049** |
+| tags | `["interior","quiet","everyday-life","blue"]` | §5 vocabulary |
+| coords | `{ F:-80, D:-70, E:-10, C:-45, M:-60 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Anna Ancher*,
+`ObjectName` = *Sunlight in the blue room*. Source file 7088 × 7958 px from the
+Google Cultural Institute at maximum zoom.
+
+**Coordinates, on the merits.** A seated child in a room, wholly legible →
+`F −80`. The event of the picture is sunlight reaching a wall → `D −70`. Danish
+naturalist means with an impressionist attention to light; the *subject* is
+modern, the handling is not → `E −10`. It asks to be felt rather than read →
+`C −45`. Sixty-five centimetres, a corner of a house → `M −60`.
+
+**Why Ancher and not Hammershøi.** Vilhelm Hammershøi carries three pool images
+and the larger present-day reputation. His two candidate files
+(*Dust Motes Dancing in the Sunbeams*, *Interior, Strandgade 30*) returned
+`confirmed` but **no Wikidata item resolves from either**, so collection,
+inventory number and dimensions would all have had to be asserted without a
+source. Ancher's file resolves to a Wikidata item with collection, inventory
+number and both dimensions. The choice is record strength, not merit ranking
+between the two painters, and not a gender correction — those would each be a
+different kind of thumb on the scale.
+
 ---
 
 ## NEW VENUES REQUIRED
@@ -169,6 +246,13 @@ and unreviewed; slug renames are forbidden.*
 | venue id | name | city | country | type | needed by |
 |---|---|---|---|---|---|
 | `national-museum-warsaw` | Muzeum Narodowe w Warszawie / National Museum in Warsaw | Warsaw | Poland | museum | R2 |
+| `kunstmuseum-basel` | Kunstmuseum Basel | Basel | Switzerland | museum | R3 |
+| `skagens-museum` | Skagens Museum | Skagen | Denmark | museum | R4 |
+
+Poland's registry entry is currently the Czartoryski Museum alone, present
+because it holds a Leonardo. `national-museum-warsaw` is the first Polish venue
+in this atlas that exists for Polish painting. Switzerland has **zero** venues
+today; `kunstmuseum-basel` is its first.
 
 ---
 
