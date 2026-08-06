@@ -1,0 +1,3 @@
+app.js: syntax OK
+artists: 256, movements: 76, techniques: 39, eras: 8, nations: 37, painter styles: 27, influence edges: 238, venues: 116, catalog: 323 (tier1: 76), daily pool: 75, museum notes: 104, photo credits: 104 (attribution required: 88), artwork image credits: 27, personas: 15, lists: 12 (featured: 4), tier1 artists: 36 (arcs: 36)
+ALL REFERENCES VALID

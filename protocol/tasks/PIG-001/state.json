@@ -198,19 +198,27 @@
       },
       "sequence": 16,
       "type": "message_routed"
+    },
+    {
+      "at": "2026-08-06T02:19:11Z",
+      "detail": {
+        "artifact": "protocol/tasks/PIG-001/human-review-package.md"
+      },
+      "sequence": 17,
+      "type": "human_review_prepared"
     }
   ],
   "human_decision": null,
-  "last_message_type": "response_to_review",
+  "last_message_type": "human_review_package",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 8,
+  "message_count": 9,
   "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
   "project": "pigment",
   "provider_calls": 6,
   "round": 3,
   "task_id": "PIG-001",
-  "updated_at": "2026-08-06T02:18:40Z",
+  "updated_at": "2026-08-06T02:19:11Z",
   "version": 1,
-  "workflow_state": "internal_review"
+  "workflow_state": "human_review_ready"
 }

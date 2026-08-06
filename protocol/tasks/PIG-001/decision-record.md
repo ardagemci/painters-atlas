@@ -314,3 +314,51 @@ Generated from validated Coordinator messages. Do not remove disputed history.
 - branch pig-001-stabilization, 98 commits off effa805; main untouched
 
 **Disposition:** `revision` -> `internal_review`
+
+## 3: human_review_package
+
+**Summary:** Pigment's internally reviewed implementation is ready for the product owner's decision.
+
+**Accepted points:**
+- user_outcome: A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand how actions affect it, and continue through Pigment's connected Atlas without silent state loss, inaccessible dead ends, misleading evidence claims, or unexplained transitions.
+- information_architecture: The existing 24-route hash IA, multi-door homepage, and all current entry doors are preserved unchanged this release; the shipped artist-first emphasis is retained provisionally and labeled unratified; no route, ID, slug, or stored-field renames.
+- principal_flow: The five frozen journeys (known-artist, artwork-led, editorial, personal Taste loop with five interruption checkpoints and exact-checkpoint recovery, Explore loop) per unrouted/ux-requirements.md under the revision's checkpoint and conflict-handling criteria.
+- All nine revision disputes are accepted; dispositions with verification evidence are in the proposal.
+- The revision's binding release constraints are adopted unchanged, including conservative release language and the prohibition on tuning taste data to silence validator warnings.
+- The revision's 29 acceptance criteria are adopted verbatim as this synthesis's acceptance_criteria.
+- Matisse (claude-visual-director) is named product adjudicator for AC23.
+- Claude's liaison packet acceptance (revision accepted point 13) is noted with thanks; D-011's real-parser rule remains standing.
+
+**Disputed points:**
+- Your 76-vs-75 Tier 1 finding has the right remedy but a wrong diagnosis: beginning-noland carries status 'copyright', so a register built from Commons-URL-bearing records correctly counts 75, and the test asserting 75 passes and was never among the five failures.
+- Your 66-vs-60 item was latent rather than live - the stale expectation was unreached because an earlier line aborted first. Fixed regardless, in the same pass.
+- Most of the denominators you listed were never inconsistent: they are different quantities at different commits and surfaces, and the arithmetic holds. One was genuinely wrong (694 cited in the present tense) and is corrected; another error belongs to both poles (Hirshhorn, not Guggenheim).
+- [minor] The residual arrow is 695 prerendered files across four families, not ~100 in one - our own record understated it and the Quality Reviewer measured the true figure.
+
+**Rationale:** You asked for correction and re-evidencing rather than a defence, and that is what this is. The build now passes all twenty-nine criteria and is certified by a reviewer who blocked it four times and wrote none of it. What we found along the way is worth more than the fixes: six separate instruments in this build reported truthfully about a smaller universe than the claim they supported, including the Coordinator's own quality gate. We name that pattern here rather than let it be rediscovered, and we record the residuals as residuals rather than resolving them by assertion.
+
+**Evidence:
+- branch pig-001-stabilization @ 5c684ae, 75 commits off effa805, 720 production files changed
+- branch pig-001-stabilization, 98 commits off effa805; main untouched
+- evidence/
+- protocol/tasks/PIG-001/evidence/ 106 screenshots, desktop/mobile x dark/light
+- protocol/tasks/PIG-001/evidence/browser-evidence-build.md, -build-r2.md, -closing.md, -final.md (four browser evidence passes)
+- protocol/tasks/PIG-001/evidence/browser-evidence-certification.md - 2626 glyph rows, 12 cells, 0 below floor; F-1 closed; 200% zoom 26 router cases
+- protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md (independent seam-closing enumeration: 33 routes x 4 cells, 15341 rows, 328 triples, 6 below floor)
+- protocol/tasks/PIG-001/evidence/build-log-unit-33.md, -34.md, -36.md, -37.md - the correction round with measured before and after per finding
+- protocol/tasks/PIG-001/evidence/build-log-wave-a.md through build-log-unit-31.md (31 units, deviation ledgers)
+- protocol/tasks/PIG-001/evidence/data-reconciliation.md - denominator glossary, 14 language corrections, 46 tests passing, inventory regeneration
+- protocol/tasks/PIG-001/evidence/rights-register.md, rights-remediation.md, museum-photo-rights.json, artwork-image-rights.json
+- protocol/tasks/PIG-001/evidence/visual-direction-and-adjudication.md and visual-ruling-d29-6.md (Matisse: AC23 adjudication, D-29-6 ruling)
+- protocol/tasks/PIG-001/evidence/visual-ruling-d29-6.md - N-8 verdict PASS WITH NOTE, with the adjudicator's correction to his own specification
+- protocol/tasks/PIG-001/evidence/voiceover-transcript.md - three sessions by the product owner on VoiceOver and Safari; seven defects found, six confirmed repaired by ear
+- protocol/tasks/PIG-001/quality-review.md (Van Eyck, three verdicts: BLOCKED / BLOCKED / BLOCKED, PASS 28 FAIL 1 at last writing)
+- protocol/tasks/PIG-001/quality-review.md revision 5 - GATE 2: CERTIFIED at fb8ba6e, PASS 29 FAIL 0 UNSUPPORTED 0, prior blocking verdicts preserved verbatim
+- protocol/tasks/PIG-001/unrouted/decision-record.md (D-001..D-016) and owner-decisions-r2.md (OD-1..OD-5)
+- protocol/tasks/PIG-001/unrouted/implementation-report-audit.json (Duchamp build_review: return_for_revision; Gate 1 verified end-to-end with an independently recomputed frozen-sha256 and a 5h17m margin before the first production edit)
+- protocol/tasks/PIG-001/unrouted/review-incoming-analysis.json - the liaison's verification of your claims, including the three we dispute
+- quality-review.md
+- validator at fb8ba6e: ALL REFERENCES VALID, zero warnings; python suite: 46 tests, OK
+- validator: ALL REFERENCES VALID, zero warnings (osascript -l JavaScript tools/validate.jxa.js)
+
+**Disposition:** `human_review_ready` -> `human_review_ready`
