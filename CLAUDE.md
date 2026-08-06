@@ -53,6 +53,7 @@ the invocation and file infrastructure and never change.
 | **Van Gogh** | `claude-content-editor` | Editorial voice per STYLE_GUIDE (optional specialist) | Content fields only |
 | **Seurat** | `claude-data-steward` | Data integrity + copyright compliance (optional specialist) | Data records only |
 | **Duchamp** | `claude-synthesis-liaison` | Liaison analyst: audits incoming theory and outgoing Claude artifacts for the Coordinator Kernel | No (analysis only) |
+| **Vasari** | `claude-curator` | Art-historical research and curatorial judgement: what belongs in the atlas, taxonomic coherence, influence attestation, coverage honesty | Data records only |
 
 The main Claude session acts as Synthesis Lead. It creates an agent team only
 when genuine inter-agent discussion is valuable, waits for required specialist
