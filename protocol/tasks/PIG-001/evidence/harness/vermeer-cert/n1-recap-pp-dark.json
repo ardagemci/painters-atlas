@@ -1,0 +1,22 @@
+[
+ {
+  "file": "passport-import-arrival__mobile-390x844__dark.png",
+  "theme": "dark",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "h1": "A passport arrived.",
+  "kicker": "Taste Passport \u00b7 import",
+  "bytes": 156772,
+  "note": "step 1"
+ },
+ {
+  "file": "passport-import-conflicts__mobile-390x844__dark.png",
+  "theme": "dark",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "h1": "Which of these should Pigment keep?",
+  "kicker": "Taste Passport \u00b7 import \u00b7 4 choices",
+  "bytes": 131026,
+  "note": "step 2 \u00b7 clicked"
+ }
+]

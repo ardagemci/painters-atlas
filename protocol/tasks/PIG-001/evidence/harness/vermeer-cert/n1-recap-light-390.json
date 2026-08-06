@@ -1,0 +1,347 @@
+[
+ {
+  "file": "home__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/",
+  "h1": "Find your place in the history of art.",
+  "navLinks": 8,
+  "images": {
+   "total": 519,
+   "broken": 0
+  },
+  "bytes": 120650,
+  "note": ""
+ },
+ {
+  "file": "artists__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/artists",
+  "h1": "All 256 painters",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 186760,
+  "note": ""
+ },
+ {
+  "file": "artist-leonardo__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/artist/leonardo-da-vinci",
+  "h1": "Leonardo da Vinci",
+  "navLinks": 10,
+  "images": {
+   "total": 18,
+   "broken": 0
+  },
+  "bytes": 218658,
+  "note": ""
+ },
+ {
+  "file": "artwork-david__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/artwork/david",
+  "h1": "David",
+  "navLinks": 8,
+  "images": {
+   "total": 6,
+   "broken": 0
+  },
+  "bytes": 241496,
+  "note": ""
+ },
+ {
+  "file": "explore__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/explore",
+  "h1": "Explore",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 131774,
+  "note": ""
+ },
+ {
+  "file": "timeline__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/timeline",
+  "h1": "The grand timeline",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 186592,
+  "note": ""
+ },
+ {
+  "file": "influences__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/influences",
+  "h1": "The influence graph",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 150639,
+  "note": ""
+ },
+ {
+  "file": "museums__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/museums",
+  "h1": "Museums",
+  "navLinks": 8,
+  "images": {
+   "total": 104,
+   "broken": 0
+  },
+  "bytes": 229385,
+  "note": ""
+ },
+ {
+  "file": "museum-louvre__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/museum/louvre",
+  "h1": "Mus\u00e9e du Louvre",
+  "navLinks": 8,
+  "images": {
+   "total": 17,
+   "broken": 0
+  },
+  "bytes": 263020,
+  "note": ""
+ },
+ {
+  "file": "lists__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/lists",
+  "h1": "Lists",
+  "navLinks": 8,
+  "images": {
+   "total": 12,
+   "broken": 0
+  },
+  "bytes": 260912,
+  "note": ""
+ },
+ {
+  "file": "palette__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/palette",
+  "h1": "Find your palette.",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 157926,
+  "note": ""
+ },
+ {
+  "file": "taste__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/taste",
+  "h1": "figurative + dramatic",
+  "navLinks": 8,
+  "images": {
+   "total": 12,
+   "broken": 0
+  },
+  "bytes": 105437,
+  "note": ""
+ },
+ {
+  "file": "daily__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/daily",
+  "h1": "Mont Sainte-Victoire Seen from Bib\u00e9mus",
+  "navLinks": 8,
+  "images": {
+   "total": 1,
+   "broken": 0
+  },
+  "bytes": 322636,
+  "note": ""
+ },
+ {
+  "file": "privacy__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/privacy",
+  "h1": "Privacy",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 206112,
+  "note": ""
+ },
+ {
+  "file": "credits__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/credits",
+  "h1": "Credits",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 203937,
+  "note": ""
+ },
+ {
+  "file": "invalid-route__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/no-such-page",
+  "h1": "Blank canvas",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 134533,
+  "note": ""
+ },
+ {
+  "file": "u27-museum-k20-dusseldorf__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/museum/k20-dusseldorf",
+  "h1": "Kunstsammlung Nordrhein-Westfalen (K20)",
+  "navLinks": 8,
+  "images": {
+   "total": 2,
+   "broken": 0
+  },
+  "bytes": 174562,
+  "note": ""
+ },
+ {
+  "file": "u27-museum-louvre__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/museum/louvre",
+  "h1": "Mus\u00e9e du Louvre",
+  "navLinks": 8,
+  "images": {
+   "total": 17,
+   "broken": 0
+  },
+  "bytes": 263020,
+  "note": ""
+ },
+ {
+  "file": "u27-museum-moderna-museet__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/museum/moderna-museet",
+  "h1": "Moderna Museet",
+  "navLinks": 8,
+  "images": {
+   "total": 10,
+   "broken": 0
+  },
+  "bytes": 244611,
+  "note": ""
+ },
+ {
+  "file": "u30-artist-caravaggio__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/artist/caravaggio",
+  "h1": "Caravaggio",
+  "navLinks": 10,
+  "images": {
+   "total": 20,
+   "broken": 0
+  },
+  "bytes": 204862,
+  "note": ""
+ },
+ {
+  "file": "u30-era-16th-century__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/era/16th-century",
+  "h1": "16th Century",
+  "navLinks": 10,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 216485,
+  "note": ""
+ },
+ {
+  "file": "passport-import-arrival__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoiLCJhZG1pcmF0aW9ucyI6W3siaWQiOiJkYXZpZCIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6InRoZS1uaWdodC13YXRjaCIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6InRoZS1zdGFycnktbmlnaHQiLCJhdCI6IjIwMjYtMDctMjlUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiJpbXByZXNzaW9uLXN1bnJpc2UiLCJhdCI6IjIwMjYtMDctMjlUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiJ0aGUta2lzcyIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6Imd1ZXJuaWNhIiwiYXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoifV0sIm5vdEZvck1lIjpbXSwic2VlbiI6W10sIndhbnRUb1NlZSI6W10sInNhdmVkIjpbXSwicHJvYmVzIjpbXSwicXVpeiI6bnVsbCwicGFsZXR0ZSI6bnVsbCwicGVyc29uYSI6eyJhZG9wdGVkIjoidGhlLWNvbG91cmlzdCIsImF0IjoxfSwidGFzdGVWZWN0b3IiOm51bGwsIm1pbGVzdG9uZXMiOnsib25ib2FyZGVkIjp0cnVlLCJjb25maWRlbmNlIjoic2tldGNoIn0sInRvbmVzIjpbImdvbGQiLCJ0ZWFsIl0sIm9uYm9hcmRpbmciOnsiZG9uZSI6dHJ1ZSwiYW5zd2VycyI6eyJhIjoxfX0sIm1hcmtlcnMiOnsic2VlbkludHJvIjp0cnVlfX0",
+  "h1": "A passport arrived.",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 176324,
+  "note": "step 1"
+ },
+ {
+  "file": "passport-import-conflicts__mobile-390x844__light.png",
+  "theme": "light",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "hash": "#/passport/eyJ2ZXJzaW9uIjoxLCJjcmVhdGVkQXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoiLCJhZG1pcmF0aW9ucyI6W3siaWQiOiJkYXZpZCIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6InRoZS1uaWdodC13YXRjaCIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6InRoZS1zdGFycnktbmlnaHQiLCJhdCI6IjIwMjYtMDctMjlUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiJpbXByZXNzaW9uLXN1bnJpc2UiLCJhdCI6IjIwMjYtMDctMjlUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiJ0aGUta2lzcyIsImF0IjoiMjAyNi0wNy0yOVQwMDowMDowMC4wMDBaIn0seyJpZCI6Imd1ZXJuaWNhIiwiYXQiOiIyMDI2LTA3LTI5VDAwOjAwOjAwLjAwMFoifV0sIm5vdEZvck1lIjpbXSwic2VlbiI6W10sIndhbnRUb1NlZSI6W10sInNhdmVkIjpbXSwicHJvYmVzIjpbXSwicXVpeiI6bnVsbCwicGFsZXR0ZSI6bnVsbCwicGVyc29uYSI6eyJhZG9wdGVkIjoidGhlLWNvbG91cmlzdCIsImF0IjoxfSwidGFzdGVWZWN0b3IiOm51bGwsIm1pbGVzdG9uZXMiOnsib25ib2FyZGVkIjp0cnVlLCJjb25maWRlbmNlIjoic2tldGNoIn0sInRvbmVzIjpbImdvbGQiLCJ0ZWFsIl0sIm9uYm9hcmRpbmciOnsiZG9uZSI6dHJ1ZSwiYW5zd2VycyI6eyJhIjoxfX0sIm1hcmtlcnMiOnsic2VlbkludHJvIjp0cnVlfX0",
+  "h1": "A passport arrived.",
+  "navLinks": 8,
+  "images": {
+   "total": 0,
+   "broken": 0
+  },
+  "bytes": 176324,
+  "note": "step 2 \u00b7 NO-BUTTON"
+ }
+]

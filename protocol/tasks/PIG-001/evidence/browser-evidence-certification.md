@@ -572,3 +572,103 @@ pattern-matched `pkill` were used at any point — that has bitten this task twi
 running.** The untracked `THEORY_001.md`, `passport-test.html`, the modified
 `.gitignore` and the two files under `protocol/tasks/PIG-001/` were left
 untouched; the commit uses explicit paths only.
+
+---
+
+# N-1 CLOSED — MOBILE PACK RECAPTURED AT HEAD
+
+**2026-08-06 · Vermeer · HEAD `4553b8e` (production tip `fb8ba6e`, unit 37)**
+
+The owner chose recapture over a stated limitation. Every mobile frame is retaken
+at HEAD and overwritten in place. Harness: `harness/vermeer-cert/n1recap.py`
+(21 routes × 2 themes + the dark-only `v32-` frame) and `harness/vermeer-cert/n1pp.py`
+(the two passport-import states); served from my own `python3 -m http.server 8447`.
+
+**Count — 47 of 47.** `git status` reports exactly 47 modified
+`*mobile-390x844*.png` and nothing else under `evidence/` but my four new
+assertion JSONs and the two scripts. The pack is 24 dark + 23 light (the
+`v32-influences-svg-labels` frame has only ever existed in dark; I did not invent
+a light twin).
+
+**Assertions — 47/47 passed, at shutter time, in the page.** Viewport set through
+`Emulation.setDeviceMetricsOverride`, never `--window-size` (headless Chrome
+clamps windows to a 500 px minimum on this Mac, which once produced 500 px
+*layouts* cropped into 390 px *files*). Every capture asserted
+`window.innerWidth === 390` and `documentElement.dataset.theme === <theme>` before
+the shutter, and each frame decodes to exactly 390×844. `0` broken images across
+729 image elements. Records: `n1-recap-{dark,light}-390.json`,
+`n1-recap-pp-{dark,light}.json`.
+
+**Blank-frame check — clean.** The fault I caught in myself last time was 16
+frames that passed their own theme and viewport assertions while being blank, so
+the same test was run again and then strengthened. Byte-size variance: smallest
+92 675 B (`taste__…__dark`), largest 322 636 B (`daily__…__light`) — no cluster at
+the bottom, no frame anywhere near the size a blank render compresses to. Beyond
+byte size I decoded all 47 PNGs in pure Python and counted distinct sampled
+colours: the *least* varied frame carries **444** distinct colours, the most 1 841.
+A blank frame yields one to three. **Zero blank frames.**
+
+Three pairs are byte-identical, and all three are expected aliases rather than a
+stuck renderer: `influences` ≡ `v32-influences-svg-labels` and
+`museum-louvre` ≡ `u27-museum-louvre` (dark and light) are two legacy names for
+the same route, captured in the same run.
+
+**One capture was wrong and was redone.** `passport-import-conflicts` first came
+out a duplicate of `passport-import-arrival`: the harness's seed passport leaves
+`quiz`, `palette` and `persona.adopted` empty, `ppFieldKey()` correctly treats an
+empty shell as "no decision", so `passportConflicts()` returned `[]` and the
+arrival screen offered "Merge into my passport" instead of "Choose what to keep".
+Step 2 never rendered. `n1pp.py` gives the local passport a decision in all four
+single-value fields and sends a payload differing in all four; the frame now shows
+kicker `Taste Passport · import · 4 choices`, h1 *"Which of these should Pigment
+keep?"*. Reported here because the first version passed every viewport and theme
+assertion while depicting the wrong screen — the same class of fault as the blank
+frames, caught by a content check rather than a geometry one.
+
+**Desktop — verified current, not assumed.** Unit 37 touched `css/styles.css`,
+`index.html` and `js/app.js`. Every changed CSS rule sits inside the ≤ 820 px
+block (`.main-nav` box widening, `scroll-padding-inline-end`, the `::after`
+strip); the `index.html` change is the two cache-busting query strings. The JS
+`focusin` handler early-returns when the nav carries no mask. Measured at
+1440×900 at HEAD: `maskImage: none`, and focusing each of the 8 nav links moves
+`scrollLeft` by **0 px for all 8** — the handler is inert at desktop, by its own
+guard, observed. **No desktop frame is stale; none was rewritten.**
+
+One correction to how that was tested. I first tried byte-comparing fresh 1440×900
+captures against the shipped ones; all 11 differed, which proves nothing — the
+home hero rotates its artwork and lazily-loaded imagery settles differently between
+runs, so desktop frames are not byte-reproducible across runs and byte identity is
+not a valid staleness test. The geometry measurement above is the evidence; the
+byte comparison is withdrawn.
+
+**What actually changed, and what did not.** Decoding predecessor against
+successor pixel by pixel: on `home__…__dark` 59.3 % of pixels differ (max channel
+Δ 201) and on `artists__…__dark` 33.9 % — the recapture is emphatically not a
+no-op, though most of that is the rotating hero and lazily-loaded imagery in the
+content area, not unit 37. In the header band (y 0–129) the picture is the
+opposite and is the honest finding: rows 0–38 are **pixel-identical**, and every
+differing header pixel is a glyph-edge antialiasing difference of max channel
+Δ 3–5 over a few dozen pixels. Van Eyck's measurement holds: the visible header
+delta between `a71e2c5` and `fb8ba6e` is sub-perceptual.
+
+That is expected, and it is worth stating plainly rather than dressing up.
+**No screenshot in this pack depicts a focused nav link**, so no screenshot can
+depict what unit 37 changed. The recapture fixes the *provenance* defect — the
+pack now demonstrably corresponds to the code that ships — it does not turn the
+pack into evidence for F-2. The evidence for F-2 is the measurement, taken at
+HEAD at 390×844: the nav carries `linear-gradient(90deg, rgb(0,0,0) 78% …)`,
+**5 of 8 links scroll the row on focus** (Explore 47 px, Movements 247, Techniques
+360, Eras 424, Nations 424), and afterwards **0 links are clipped and 0 focus
+rings remain inside the fade**. Unit 37 is live in the build these frames were
+taken from.
+
+**The pack now corresponds to `4553b8e`**, whose production files are those of
+`fb8ba6e` — unit 37, the certified SHA. It no longer predates any production
+commit.
+
+**Cleanup.** My server (`python3 -m http.server 8447`, **PID 21483**) was stopped
+by exact PID; every Chrome I started exited with its harness process. No wildcard
+`rm`, no pattern `pkill`. **The owner's server on port 8422 (PID 93806) was never
+contacted and is still listening.** `THEORY_001.md`, `passport-test.html`, the
+modified `.gitignore` and the two files under `protocol/tasks/PIG-001/` are
+untouched; the commit names every path explicitly.
