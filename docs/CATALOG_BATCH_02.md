@@ -109,6 +109,8 @@ claims are sourced. A row is here only when both are done.*
 | R8 | `red-and-white-plum-blossoms` | Ogata Kōrin | japan | 2 | `confirmed` | pd |
 | R9 | `oath-of-the-horatii` | Jacques-Louis David | france | 2 | `confirmed` | pd |
 | R10 | `the-raft-of-the-medusa` | Théodore Géricault | france | 2 | `confirmed` | pd |
+| R11 | `a-burial-at-ornans` | Gustave Courbet | france | 2 | `confirmed` | pd |
+| R12 | `a-sunday-afternoon-on-the-island-of-la-grande-jatte` | Georges Seurat | france | 2 | `confirmed` | pd |
 
 **On the tier column, and why it is not a dodge.** `ARTWORK_SCHEMA.md` §8 admits
 a work to Tier 1 only through an editorial list, a Tier 1 artist's essential
@@ -634,6 +636,106 @@ sail against the wind, and a sighting → `D +85`. The means are academic histor
 painting; the departure is what they are pointed at, not how they are handled →
 `E +10`. It is an indictment, but it lands in the stomach long before the mind →
 `C +20`. Seven metres of canvas; there is no larger register → `M +90`.
+
+### R11 — `a-burial-at-ornans`
+
+| field | value | source |
+|---|---|---|
+| title | A Burial at Ornans | Commons `ObjectName`; Wikidata **Q540488**; English Wikipedia article title |
+| artistId | `gustave-courbet` | exists in `js/artists-*.js` |
+| year | display `1849–1850`, sort `1849` | **Commons is used and Wikidata is rejected, which is the reverse of this batch's usual direction and needs saying.** Commons `DateTimeOriginal` = "1849-50.". Wikidata **P571** carries **two values, 1846 and 1841**, which are mutually inconsistent and neither of which matches Commons. An item carrying two contradictory inceptions is not a source that can be preferred over one carrying a single consistent statement |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg/500px-Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/A_Burial_at_Ornans` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas. The artist record's `palette-knife` and `impasto` are **not** inherited — no source read here asserts either of this canvas |
+| movements | `["realism"]` | artist record |
+| nation | `france` | artist record |
+| museum | `{ id:"musee-dorsay", name:"Musée d'Orsay", city:"Paris" }` — **venue exists** | Wikidata **P195**/**P276** = Musée d'Orsay; **P217** inv. `RF 325` |
+| dims | `315 × 668 cm` — **converted, see below** | Wikidata **P2048** = 3.15, **P2049** = 6.68, **unit `Q11573` (metre), not `Q174728` (centimetre)** |
+| tags | `["group-scene","mourning","everyday-life","monumental-scale"]` | §5 vocabulary |
+| coords | `{ F:-85, D:-15, E:+15, C:+30, M:+85 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Gustave
+Courbet*, `ObjectName` = *A Burial at Ornans*, `Credit` = Google Arts & Culture.
+Source file 6042 × 2777 px.
+
+**THE UNIT BUG — the most consequential finding in this batch, and it is not
+about a painting.** `ARTWORK_SCHEMA.md` §7 specifies baking `dims` from
+"P2048×P2049" and §3's example prints a bare `cm` string. **P2048 and P2049
+carry a unit qualifier and it is not always centimetres.** This item's values are
+`3.15` and `6.68` in **metres** (`Q11573`). A bake that reads the amounts and
+appends "cm" — which is precisely what the schema describes — would publish
+**"3.15 × 6.68 cm"** for a canvas six and a half metres wide: a Salon machine
+rendered as a postage stamp, on a live page, with no error anywhere.
+
+This is a *different and worse* failure than the one Batch 01 found. Batch 01's
+`osman-hamdi-bey :: Two Musician Girls` hazard (580 × 390) is a **magnitude**
+error, and a plausibility range catches it. This is a **unit** error, and a
+plausibility range makes it worse: 3.15 × 6.68 "cm" is a perfectly plausible
+size for a miniature, so a magnitude filter would wave it through. The two
+findings together give the rule: **read `Q174728` vs `Q11573` from the unit
+qualifier and convert, then range-check.** Neither check substitutes for the
+other.
+
+**Consequence.** Twenty-odd feet of canvas at the scale the Salon reserved for
+coronations, given to a village funeral in which nobody is ennobled, nothing is
+composed into a hierarchy, and the open grave is at the viewer's feet in the
+foreground. The consequential act is the transfer of scale and seriousness to a
+subject that had no claim on either — and unlike R10, which borrowed the
+apparatus for a national scandal, this one borrows it for nothing in particular,
+which is the more radical move. The atlas's graph runs
+`["gustave-courbet","edouard-manet","influenced"]` to a painter it holds.
+
+**Coordinates, on the merits.** Wholly figurative, portrait-accurate, life scale
+→ `F −85`. A funeral in which the drama is deliberately withheld — a row of
+people waiting → `D −15`. Coarser handling and a darker ground than the Salon
+liked, but the scandal was the subject and the size, not the brush → `E +15`.
+It is a polemic about who deserves a large painting → `C +30`. Six and a half
+metres → `M +85`.
+
+### R12 — `a-sunday-afternoon-on-the-island-of-la-grande-jatte`
+
+| field | value | source |
+|---|---|---|
+| id | `a-sunday-afternoon-on-the-island-of-la-grande-jatte` | §2 slug of the common English title. Long, and permanent once shipped — flagged for the Implementation Lead to confirm nothing in routing or OG assumes a slug length |
+| title | A Sunday Afternoon on the Island of La Grande Jatte | Wikidata **Q1044742**; English Wikipedia article title; the `js/artworks.js` key. The Commons filename reads *A Sunday on La Grande Jatte* — **do not derive the title from the filename** |
+| artistId | `georges-seurat` | exists in `js/artists-*.js` |
+| year | display `1884–1886`, sort `1884` | Commons `DateTimeOriginal` = "between 1884 and 1886" with earliest/latest qualifiers; Wikidata **P571** = 1884. The point date is the low end of the range — the two agree. Note the Commons **filename** says only "1884" |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/500px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/A_Sunday_Afternoon_on_the_Island_of_La_Grande_Jatte` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting","pointillism"]` — **the second is inherited, not asserted** | Wikidata **P186** = oil paint, canvas, and supports `oil-painting` only. `pointillism` comes from the artist record. This document has narrowed inherited techniques everywhere else and is **widening** here, deliberately: it is the one field where the atlas would be less truthful for being more cautious. Marked so a reviewer can reverse it. `broken-color` is **not** inherited — it is a different claim |
+| movements | `["neo-impressionism"]` | artist record carries `post-impressionism` + `neo-impressionism`. The narrower node is the accurate one for this work, and `post-impressionism` is a retrospective umbrella coined after the fact |
+| nation | `france` | artist record |
+| museum | `{ id:"art-institute-chicago", name:"Art Institute of Chicago", city:"Chicago" }` — **venue exists** | Wikidata **P195**/**P276** = Art Institute of Chicago; **P217** inv. `1926.224` |
+| dims | `207.5 × 308.1 cm` | Wikidata **P2048** = 207.5, **P2049** = 308.1 (unit Q174728, centimetre). **Sanity-checked** |
+| tags | `["landscape","group-scene","everyday-life","quiet"]` | §5 vocabulary |
+| coords | `{ F:-75, D:-55, E:+60, C:+35, M:+35 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Georges Seurat*,
+`ObjectName` names the work, `Credit` = Google Arts & Culture. Source file
+**20000 × 13313 px** — the second largest here.
+
+**Consequence.** A colour theory executed as a manufacturing method: separated
+dots of unmixed pigment left to combine in the eye rather than on the palette,
+applied over two years to a two-by-three-metre canvas of people standing
+perfectly still. The consequence is not a mood or a subject but a *procedure*
+that other painters could adopt wholesale, and did. The atlas can represent that
+lineage without adding anybody: `["georges-seurat","paul-signac","befriended"]`
+and `["georges-seurat","camille-pissarro","influenced"]` both point at painters
+already in the atlas, and the second is the more interesting edge because it runs
+from the younger man to the elder — a Neo-Impressionist conversion rather than a
+transmission down a generation. Neither edge carries a source, like all 238.
+
+**Coordinates, on the merits.** Every figure legible, and every figure flattened
+into profile or full-face and held rigid — figuration under visible strain →
+`F −75`. A frieze in which nothing moves, including the dog → `D −55`. The means
+are the invention, and the invention is systematic → `E +60`. It is a theory
+being demonstrated at scale, and the archaism of the poses is part of the
+argument → `C +35`. Two by three metres — public, but a park rather than a
+nation → `M +35`.
 
 ---
 
