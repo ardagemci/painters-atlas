@@ -83,6 +83,8 @@ claims are sourced. A row is here only when both are done.*
 | R6 | `the-artist-and-his-mother` | Arshile Gorky | armenia | 2 | `confirmed` | pd |
 | R7 | `lemminkainens-mother` | Akseli Gallen-Kallela | finland | 2 | `confirmed` | pd |
 | R8 | `the-lovers-abbasi` | Reza Abbasi | iran | 2 | `confirmed` | pd |
+| R9 | `birds-in-a-lotus-pond` | Bada Shanren | china | 2 | `confirmed` | pd |
+| R10 | `ssireum` | Kim Hong-do | korea | 2 | `confirmed` | pd |
 
 **On the tier column.** Every record in this batch is Tier 2. `ARTWORK_SCHEMA.md`
 §8 admits a work to Tier 1 only through an editorial list, a Tier 1 artist's
@@ -411,6 +413,90 @@ an argument: the Golestan Palace and the Reza Abbasi Museum in Tehran hold this
 tradition and are absent from the registry; the batch cannot fix that from the
 pool it was given.
 
+### R9 — `birds-in-a-lotus-pond`
+
+| field | value | source |
+|---|---|---|
+| title | Birds in a Lotus Pond | Commons `ObjectName` = *Birds in a lotus pond*. `js/artworks.js` keys it *Lotus and Birds* → set `worksKey:"Lotus and Birds"` |
+| artistId | `bada-shanren` | exists in `js/artists-*.js` |
+| year | display `1690`, sort `1690` | Commons `DateTimeOriginal` = 1690. No Wikidata item resolves; this is a single-source date and is recorded as such |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bada_Shanren_%28Zhu_Da%29_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg/500px-…` (full URL in `js/artworks.js`) | `js/artworks.js` |
+| image.page | `https://commons.wikimedia.org/wiki/File:Bada_Shanren_(Zhu_Da)_-_Birds_in_a_lotus_pond_-_1989.363.135_-_Metropolitan_Museum_of_Art.jpg` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["ink-wash"]` | artist record; no **P186** available |
+| movements | `["literati-painting"]` | artist record — an existing non-European node that does describe the work |
+| nation | `china` | artist record |
+| museum | `{ id:"met", name:"The Metropolitan Museum of Art", city:"New York" }` — **venue exists** | Commons `Credit` = Metropolitan Museum of Art; accession `1989.363.135` carried in the filename |
+| dims | *omitted* | no source read here states them |
+| tags | `["animal","quiet","monochrome","gesture"]` | §5 vocabulary |
+| coords | `{ F:-35, D:-30, E:+30, C:+5, M:-45 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Bada Shanren*,
+`ObjectName` = *Birds in a lotus pond*, `Credit` = the holding museum, and the
+accession number sits in the filename — the strongest identifier chain in the
+batch after R8's inscribed date. Source file 3891 × 1840 px.
+
+**Why not *Fish and Rocks*.** Bada's other pool entry (Cleveland Museum of Art
+`1953.247`) also returns `confirmed`, and it was rejected on rendering grounds:
+the source is a **36789 × 4833 px handscroll**, so the pool's own 960 px
+derivative is 960 × 126 — a strip, not a picture. See POOL DEFECTS; this is not
+in `IMAGE_RIGHTS_ROUTES.md` §1.6.
+
+**Coordinates, on the merits.** A bird is still a bird, but it is two strokes
+and a dot of an eye; the reduction is as far as figuration goes without leaving
+→ `F −35`. Empty paper, one perched bird, a sour stillness → `D −30`. Inside
+the literati tradition Bada is its individualist extreme, and the reduction was
+not the convention he inherited → `E +30`. It works on the eye before the mind
+→ `C +5`. Read at arm's length, unrolled → `M −45`.
+
+### R10 — `ssireum`
+
+| field | value | source |
+|---|---|---|
+| title | Ssireum | Commons `ObjectName` = *Danwon Ssireum*, `ImageDescription` = *Ssireum*. `js/artworks.js` keys it *Ssireum (Wrestling)* → set `worksKey:"Ssireum (Wrestling)"` |
+| artistId | `kim-hong-do` | exists in `js/artists-*.js` |
+| year | display `18th century`, sort `1780` | Commons `DateTimeOriginal` = **"Unknown date"**. The English Wikipedia article on the album places it in the late Joseon period, 18th century. **`sort:1780` is an ordering key inside Kim Hong-do's working life (1745–1806), not a date claim** |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Danwon_Ssireum.jpg/960px-Danwon_Ssireum.jpg` | `js/artworks.js` |
+| image.page | `https://commons.wikimedia.org/wiki/File:Danwon_Ssireum.jpg` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`. `Credit` points at Korea's `gongu.copyright.or.kr` open-content portal |
+| techniques | `["ink-wash","watercolor"]` | the album article states the leaves are "painted with light watercolor on Korean paper". **The artist record's `silk-painting` is not inherited** — this leaf is on paper |
+| movements | `["pungsokhwa"]` — **NEW MOVEMENT, see TAXONOMY** | replaces the artist record's `realism`, which is a European label on a Korean painter |
+| nation | `korea` | artist record |
+| museum | `{ id:"national-museum-korea", … }` — **NEW VENUE** | the English Wikipedia article on *Danwon pungsokdo cheop* states the album is held by the "National Museum of Korea located in Yongsan District, Seoul" |
+| dims | *omitted* | no source read here states them |
+| tags | `["group-scene","everyday-life","playful"]` | §5 vocabulary |
+| coords | `{ F:-85, D:+20, E:-30, C:-40, M:-70 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Kim Hong-do*,
+`ObjectName` = *Danwon Ssireum* (Danwon being his art name, already in the
+artist record's display name). Source file 3690 × 4442 px.
+
+**What the sources assert, and what they do not.** The English Wikipedia article
+on the album states it is "designated as the 527th National Treasure of South
+Korea", that it "contains 25 paintings", and that it is held by the National
+Museum of Korea. This document repeats those as **assertions of that article**;
+Korea operates more than one heritage register and no primary designation
+record was read here. The Commons file page carries no date, no dimensions and
+no accession number.
+
+**Coordinates, on the merits.** A ring of spectators and two wrestlers, every
+figure legible → `F −85`. A contest at its turning point, played for comedy
+rather than violence → `D +20`. Brush convention handled with complete
+assurance, on empty paper with no ground and no background — traditional means,
+brilliantly used → `E −30`. Observation and warmth carry it; there is no thesis
+→ `C −40`. An album leaf → `M −70`.
+
+**A note on the empty region.** Four of this batch's ten records fall below zero
+on `E` (R2 −60, R4 −10, R8 −55, R10 −30), which the coordinator flags as
+territory the existing 141 scored works barely occupy. None of the four was
+moved to get there. Three of them are works whose whole quality is mastery
+inside an inherited convention — which is a real and common way for a painting
+to be good, and the reason the region is empty is that the atlas has so far
+catalogued the European nineteenth and twentieth centuries, where novelty was
+the value being chased.
+
 ---
 
 ## NEW VENUES REQUIRED
@@ -425,6 +511,7 @@ and unreviewed; slug renames are forbidden.*
 | `skagens-museum` | Skagens Museum | Skagen | Denmark | museum | R4 |
 | `ngma-new-delhi` | National Gallery of Modern Art | New Delhi | India | museum | R5 |
 | `ateneum` | Ateneum Art Museum | Helsinki | Finland | museum | R7 |
+| `national-museum-korea` | National Museum of Korea | Seoul | South Korea | museum | R10 |
 
 Poland's registry entry is currently the Czartoryski Museum alone, present
 because it holds a Leonardo. `national-museum-warsaw` is the first Polish venue
