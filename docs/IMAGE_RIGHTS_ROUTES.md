@@ -198,70 +198,101 @@ are then confirmed by reading the actual Commons file page.
 
 **A caveat I am keeping visible: the automated pass over-flags.** It cannot
 recognise translated titles, so *Le Berceau* / *The Cradle*, *Der Bohnenesser* /
-*The Beaneater* and *Le Verrou* / *The Bolt* all surfaced as candidates and are
-correct images. It also cannot distinguish a series from its members. **This is
-why nothing below is asserted as a mismatch until the file page has been read.**
-The label on each row carries the uncertainty.
+*The Beaneater*, *Le Verrou* / *The Bolt*, *Der Turm der blauen Pferde* / *The
+Tower of Blue Horses* and roughly two dozen others surfaced as candidates and are
+**correct images**. It also cannot distinguish a series from its members
+(Piranesi's *Vedute di Roma* represented by *The Colosseum*; Géricault's
+*Portraits of the Insane* by *Portrait of a Kleptomaniac*). Those were removed by
+inspection before the shortlist below. **Nothing below is asserted as a mismatch
+that has not had its file page read.**
 
-## 1.6 Candidate mismatches
+## 1.6 Confirmed mismatches — 20 of 413
 
 Status values: `CONFIRMED MISMATCH` — file page read, depicts something other
 than the claimed work · `MATCH CONFIRMED` — file page read, does depict the
-claimed work · `UNRESOLVED` — checked, evidence insufficient ·
-`UNVERIFIED` — not yet checked against the file page.
+claimed work · `UNRESOLVED` — checked, evidence insufficient.
+
+**All twenty shortlisted candidates were checked against their Commons file
+page, and all twenty are confirmed defects.** None turned out to be a false
+alarm; one (C3) changed character on inspection. The shortlist was drawn from
+~70 machine-flagged candidates after translated titles and series members were
+removed by hand.
 
 ### Group A — Commons attributes the file to a *different artist*
 
-| # | Record | What Commons asserts the file is | Status |
-|---|---|---|---|
-| A1 | `ogata-korin` :: Irises (Kakitsubata-zu) | *Irises* — **Artist: Vincent van Gogh** | UNVERIFIED |
-| A2 | `berthe-morisot` :: Young Woman Powdering Her Face | *Young Woman Powdering Herself* — **Artist: Georges Seurat** | UNVERIFIED |
-| A3 | `amedeo-modigliani` :: Portrait of Chaim Soutine | *View of Céret* — **Artist: Chaïm Soutine** (a landscape *by* the sitter) | UNVERIFIED |
-| A4 | `claude-lorrain` :: The Enchanted Castle | *The Enchanted Castle* — **Artist: Francis Danby** (V&A) | UNVERIFIED |
-| A5 | `rachel-ruysch` :: Flower Still Life | *A Flower Still Life with Grapes, 1857* — **Artist: Amalie Kaercher** | UNVERIFIED |
-| A6 | `seker-ahmed-pasha` :: Forest (Woodland Scene) | *Forêt / Forest, c. 1902–04* — **Artist: Paul Cézanne** | UNVERIFIED |
-| A7 | `sesshu-toyo` :: Winter Landscape | *Winter Landscape with Brabrand Church* — **Artist: Christian David Gebauer** | UNVERIFIED |
-| A8 | `reza-abbasi` :: Portrait of a Dervish | *Portrait of the artist Reza 'Abbasi* — **by Mu'in Musavvir, 1676** (a portrait *of* him, by another hand) | UNVERIFIED |
-| A9 | `xu-beihong` :: Galloping Horse | *Animated race horse* — **photographs by Eadweard Muybridge**, animation by a Commons user; not a painting | **CONFIRMED MISMATCH** |
+**All nine confirmed against the Commons file page.**
 
-A9 is confirmed: the file page states *"Photos made by Eadweard Muybridge.
-Animation by User Waugsberg"*, describing an animated GIF from *Animal
-Locomotion* (1887). It is not a work by Xu Beihong and not a painting.
+| # | Record | What the file page states it is | Status |
+|---|---|---|---|
+| A1 | `ogata-korin` :: Irises (Kakitsubata-zu) | **Van Gogh**, *Irises*, 1889, oil on canvas, Getty Center | **CONFIRMED MISMATCH** |
+| A2 | `berthe-morisot` :: Young Woman Powdering Her Face | **Georges Seurat**, *Young Woman Powdering Herself*, 1888–90, Courtauld | **CONFIRMED MISMATCH** |
+| A3 | `amedeo-modigliani` :: Portrait of Chaim Soutine | **Chaïm Soutine**, *View of Céret*, 1922 — a landscape *by* the sitter | **CONFIRMED MISMATCH** |
+| A4 | `claude-lorrain` :: The Enchanted Castle | **Francis Danby**, *The Enchanted Castle*, c. 1841, V&A FA.66(O) | **CONFIRMED MISMATCH** |
+| A5 | `rachel-ruysch` :: Flower Still Life | **Amalie Kärcher** (1819–87), *A Flower Still Life with Grapes*, 1857 | **CONFIRMED MISMATCH** |
+| A6 | `seker-ahmed-pasha` :: Forest (Woodland Scene) | **Paul Cézanne**, *Forêt*, c. 1902–04, National Gallery of Canada | **CONFIRMED MISMATCH** |
+| A7 | `sesshu-toyo` :: Winter Landscape | **Christian David Gebauer**, *Winter Landscape with Brabrand Church*, 1831, ARoS | **CONFIRMED MISMATCH** |
+| A8 | `reza-abbasi` :: Portrait of a Dervish | *Portrait of the artist Reza 'Abbasi* **by Mu'in Musavvir**, 1676 — a portrait *of* him, by his student | **CONFIRMED MISMATCH** |
+| A9 | `xu-beihong` :: Galloping Horse | Animated GIF from **Muybridge**'s *Animal Locomotion* (1887); not a painting | **CONFIRMED MISMATCH** |
+
+Each of these renders on an artist page today as that artist's work. A2 shows a
+Seurat under Morisot's name; A6 shows a Cézanne as an Ottoman painting; A7 shows
+a Danish oil as a 15th-century Japanese ink landscape; A1 shows Van Gogh's
+*Irises* as Ogata Kōrin's screen. A3 and A8 share a distinct mechanism — the
+file depicts or was made by the *person named in our title*, so the sitter's name
+carried the match.
 
 ### Group B — right artist, but Commons names a *different work*
 
-| # | Record | What Commons asserts the file is | Status |
-|---|---|---|---|
-| B1 | `hans-holbein` :: Portrait of Henry VIII | *Portrait of **Anne of Cleves*** (Louvre) | UNVERIFIED |
-| B2 | `nicolas-poussin` :: The Four Seasons | *Self portrait of Nicolas Poussin* | UNVERIFIED |
-| B3 | `lucas-cranach` :: Adam and Eve | *Portrait of Princess Sibylle of Cleve* | UNVERIFIED |
-| B4 | `george-stubbs` :: Horse Attacked by a Lion | *Self-portrait* | UNVERIFIED |
-| B5 | `paula-modersohn-becker` :: Self-Portrait at Sixth Wedding Anniversary | *Old poor woman with a glass ball and poppies* | UNVERIFIED |
-| B6 | `mihri-musfik` :: Self-Portrait | *Leyla Turgut Portresi* — a portrait of a named sitter | UNVERIFIED |
-| B7 | `lyubov-popova` :: Textile designs, First State Factory | *Composition (1917)* — a painting, not textile design | UNVERIFIED |
-| B8 | `gustave-moreau` :: Oedipus and the Sphinx | *Étude pour la tête d'Œdipe* — a head study, not the painting | UNVERIFIED |
+**All eight confirmed against the Commons file page.**
 
-**Four of these eight are self-portrait confusions** (B2, B4, B5 and B6 in the
-reverse direction). That is the same failure the brief describes from the
-previous audit, and it has an obvious mechanism: `self` and `portrait` are in
-every painter's title list, so under the line-86 rule any self-portrait file
-matches almost any portrait record.
+| # | Record | What the file page states it is | Status |
+|---|---|---|---|
+| B1 | `hans-holbein` :: Portrait of Henry VIII | *Portrait of **Anne of Cleves***, c. 1539, Louvre — right painter, wrong sitter | **CONFIRMED MISMATCH** |
+| B2 | `nicolas-poussin` :: The Four Seasons | *Self portrait of Nicolas Poussin*, 1650, Louvre INV 7302 | **CONFIRMED MISMATCH** |
+| B3 | `lucas-cranach` :: Adam and Eve | *Portrait of Princess Sibylle of Cleve*, 1526, Schlossmuseum Weimar | **CONFIRMED MISMATCH** |
+| B4 | `george-stubbs` :: Horse Attacked by a Lion | *Self-portrait*, 1781, **enamel on Wedgwood plaque**, NPG 4575 | **CONFIRMED MISMATCH** |
+| B5 | `paula-modersohn-becker` :: Self-Portrait at Sixth Wedding Anniversary | *Old poor woman with a glass ball and poppies*, 1907 | **CONFIRMED MISMATCH** |
+| B6 | `mihri-musfik` :: Self-Portrait | *Leyla Turgut Portresi*, 1911–12, pastel on paper — a named sitter, not the artist | **CONFIRMED MISMATCH** |
+| B7 | `lyubov-popova` :: Textile designs, First State Factory | *Composition*, 1917, gouache on paper — a Suprematist work predating her 1923 textile work | **CONFIRMED MISMATCH** |
+| B8 | `gustave-moreau` :: Oedipus and the Sphinx | *Étude pour la tête d'Œdipe*, c. 1860, **pencil and white chalk** — a preparatory drawing | **CONFIRMED MISMATCH** |
+
+**Four of these eight are self-portrait confusions** (B2, B4, B5, and B6 in the
+reverse direction — a named sitter standing in for a self-portrait). That is the
+same failure the brief describes from the previous audit, and the mechanism is
+plain: `self` and `portrait` appear in almost every painter's title list, so
+under the line-86 rule any self-portrait file matches almost any portrait record,
+and vice versa.
+
+Note also that B4 and B8 are not paintings at all — an enamel plaque and a pencil
+drawing — and would misrepresent the medium even if the work were right.
 
 ### Group C — not a reproduction of the work at all
 
-| # | Record | What Commons asserts the file is | Status |
-|---|---|---|---|
-| C1 | `kurt-schwitters` :: Ursonate | *Kurt Schwitters, 1927* — a **photograph of the artist** | UNVERIFIED |
-| C2 | `emily-carr` :: Big Raven | *Emily Carr Canada stamp 1971* — a **postage stamp** | UNVERIFIED |
-| C3 | `utagawa-hiroshige` :: One Hundred Famous Views of Edo | a **side-by-side composite** of Hiroshige's *Evening Shower at Atake* and Van Gogh's 1887 oil copy | **CONFIRMED — partial** |
+**All three confirmed against the Commons file page.**
 
-C3 is confirmed and is subtler than the automated pass suggested. The file page
-shows the image contains **both** works side by side: Hiroshige's print *and*
-Van Gogh's *Bridge in the Rain, after Hiroshige* (Van Gogh Museum). So the
-claimed work is present, but the file is a comparison plate rather than a
-reproduction of the print — a §14 "exact artwork" failure, not a wrong-artist
-failure. **This is exactly why the file page has to be read before a row is
-called a mismatch**, and it is the reason the rest stay labelled UNVERIFIED.
+| # | Record | What the file page states it is | Status |
+|---|---|---|---|
+| C1 | `kurt-schwitters` :: Ursonate | a **photographic portrait of Schwitters** by Genja Jonas (1895–1938), published 1927 | **CONFIRMED MISMATCH** |
+| C2 | `emily-carr` :: Big Raven | a **1971 Canadian postage stamp** that reproduces *Big Raven* | **CONFIRMED MISMATCH** |
+| C3 | `utagawa-hiroshige` :: One Hundred Famous Views of Edo | a **side-by-side composite** of Hiroshige's *Evening Shower at Atake* and Van Gogh's 1887 oil copy | **CONFIRMED MISMATCH — partial** |
+
+C1 is a photograph *of the artist*, by a named photographer, standing in for a
+sound poem — a work that has no visual form to reproduce at all.
+
+C2 does depict the claimed painting, but as a **postage stamp**, which
+`PIGMENT.md` §14 names explicitly among the things an image must not be
+("souvenir … reproduction object"). It carries a second problem the metadata
+scan would not have caught: a 1971 stamp design is a separate later work with
+its own rights position, layered over a painting whose own status is a separate
+question.
+
+C3 is subtler than the automated flag suggested. The image contains **both**
+works side by side — Hiroshige's print *and* Van Gogh's *Bridge in the Rain,
+after Hiroshige* (Van Gogh Museum). The claimed work is present, so this is a
+§14 "exact artwork / full composition" failure rather than a wrong-artist one.
+**It is the case that justified reading every file page rather than trusting the
+metadata scan**, and the only one of the twenty whose character changed on
+inspection.
 
 ### Group D — §14 rendering defects (correct work, unsuitable file)
 
@@ -301,15 +332,26 @@ family"), which is not an obvious alternative title for *The Merry Family*.
 ## 1.7 What the pool verification means for scoping Direction A
 
 - **Link rot: zero.** No remediation cost.
-- **Wrong-image rate: ~20 candidates in 413 (≈ 5%)**, pending confirmation —
-  materially higher than an unaudited pool is usually assumed to be, and
-  concentrated exactly where the line-86 rule is weakest (generic titles,
-  self-portraits, series).
+- **Wrong-image rate: 20 confirmed in 413 (4.8%)**, plus 10 further §14
+  rendering defects (Group D) — about **7% of the pool is unusable as it
+  stands**. The errors concentrate exactly where the line-86 rule is weakest:
+  generic titles, self-portraits, series, and titles naming a person.
 - **Licence obligations: 20 entries** are CC BY / CC BY-SA, not public domain.
+  These are a *different* 20 with only partial overlap.
+- **Group E remains unresolvable from metadata** — serial-numbered filenames
+  needing a human to look at the image. `jan-steen :: The Merry Family` is the
+  most doubtful of them.
 - **Therefore Direction A's "close to mechanical" Tier 2 promotions are not
-  mechanical.** Every promoted record needs the file page read. At ~5% wrong and
-  ~5% obligation-carrying, a 120-record promotion would ship roughly a dozen
-  defects if promoted on the strength of the existing tooling.
+  mechanical.** A 120-record promotion made on the strength of the current
+  tooling would be expected to carry **roughly six wrong images and three more
+  with attribution obligations** into the catalog — where, unlike the artist
+  pages they sit on now, they would acquire canonical URLs, coordinates, and
+  entry into lists, the deck and the daily painting.
+
+The last point is the one I would press. These 20 wrong images are already
+visible on artist pages today. Promotion does not create the defect; it
+multiplies its surface area and makes it much more expensive to withdraw, since
+shipped artwork slugs are permanent (`ARTWORK_SCHEMA.md` §2).
 
 This does not argue against Direction A. It argues that the exact-work check has
 to be repaired **before** the promotion, not after.
@@ -523,14 +565,27 @@ unless an estate has affirmatively licensed a specific work.
 ## STATE OF VERIFICATION
 
 Complete: pool reconstruction (413/413), URL resolution (413/413), Commons
-licence assertions (413/413), death-date cross-check (141/141).
+licence assertions (413/413), death-date cross-check (141/141), and
+**file-page confirmation of all 20 shortlisted mismatches (20/20)**.
 
-Incomplete at time of writing: **18 of 20 candidate mismatches are labelled
-UNVERIFIED** — flagged by metadata, not yet confirmed against the Commons file
-page. A9 (Xu Beihong / Muybridge) and C3 (Hiroshige composite) are confirmed.
-Group E is unresolvable from metadata and needs human eyes. The automated pass
-over-flags on translated titles and series members, so **some UNVERIFIED rows
-will turn out to be correct images** — C3 already came back more nuanced than
-the flag suggested.
+Deliberately not attempted, and left for a human:
 
-No data file was modified. Validator not re-run because nothing was touched.
+- **Group E** — 7 records whose Commons filename is a serial number and whose
+  metadata says nothing. These need someone to look at the image. No amount of
+  metadata will settle them.
+- **The remaining ~340 pool entries were screened, not individually eyeballed.**
+  The screen tests our artist and title against Commons' own `ObjectName`,
+  `Artist` and `ImageDescription`. It would not catch a file that carries the
+  right title and artist in its metadata but reproduces a different version,
+  a copy, or a later replica — so **4.8% is a floor on the error rate, not a
+  measurement of it**.
+- **The atlas's own death years were not audited against an external source.**
+  They are the input to every public-domain assertion in the pool and they have
+  never been checked.
+- **No legal question was resolved**, by design: the photograph-of-a-flat-artwork
+  question, the two `ita-mibac` files, and every route in Part 2.
+
+No data file was modified in this pass; no image was added, replaced or
+promoted. The validator was not re-run because nothing it validates was touched
+— the last recorded run, in `ATLAS_COVERAGE.md`, reported `ALL REFERENCES VALID`
+and that remains the state of the tree.
