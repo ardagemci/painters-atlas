@@ -741,8 +741,8 @@ nation → `M +35`.
 
 ## NEW VENUES REQUIRED
 
-*Filled as records land. `ARTWORK_SCHEMA.md` §5b: registry additions are cheap
-and unreviewed; slug renames are forbidden.*
+*`ARTWORK_SCHEMA.md` §5b: registry additions are cheap and unreviewed; slug
+renames are forbidden.*
 
 | venue id | name | city | country | type | needed by |
 |---|---|---|---|---|---|
