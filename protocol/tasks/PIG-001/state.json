@@ -15,7 +15,7 @@
       "ux-requirements.md"
     ]
   },
-  "analyst_count": 6,
+  "analyst_count": 7,
   "build_authorized": true,
   "created_at": "2026-07-23T15:09:19Z",
   "events": [
@@ -169,19 +169,48 @@
       },
       "sequence": 13,
       "type": "message_routed"
+    },
+    {
+      "at": "2026-08-06T02:18:40Z",
+      "detail": {
+        "phase": "response_to_review",
+        "provider": "claude-build-command"
+      },
+      "sequence": 14,
+      "type": "provider_call_started"
+    },
+    {
+      "at": "2026-08-06T02:18:40Z",
+      "detail": {
+        "analyst_id": "synthesis-liaison",
+        "artifact": "protocol/tasks/PIG-001/analyses/007-synthesis-liaison.json",
+        "visibility": "audit_only"
+      },
+      "sequence": 15,
+      "type": "analyst_packet_routed"
+    },
+    {
+      "at": "2026-08-06T02:18:40Z",
+      "detail": {
+        "artifact": "protocol/tasks/PIG-001/response-to-theoretical-review.md",
+        "message_type": "response_to_review",
+        "provider": "claude-build-command"
+      },
+      "sequence": 16,
+      "type": "message_routed"
     }
   ],
   "human_decision": null,
-  "last_message_type": "review",
+  "last_message_type": "response_to_review",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 7,
+  "message_count": 8,
   "objective": "Bounded stabilization and evidence pass per THEORY_001: a first-time visitor can discover art, admire works, form and recover a local Taste Passport, and understand how their actions affect it. Recovered task; round-1 manual artifacts preserved under unrouted/.",
   "project": "pigment",
-  "provider_calls": 4,
+  "provider_calls": 6,
   "round": 3,
   "task_id": "PIG-001",
-  "updated_at": "2026-07-30T10:26:06Z",
+  "updated_at": "2026-08-06T02:18:40Z",
   "version": 1,
-  "workflow_state": "revision"
+  "workflow_state": "internal_review"
 }

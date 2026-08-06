@@ -282,3 +282,35 @@ Generated from validated Coordinator messages. Do not remove disputed history.
 - independent gate checks 2026-07-30: build gate passes; quality gate blocks on missing GATE 2 CERTIFIED and nonzero OPEN MAJOR
 
 **Disposition:** `internal_review` -> `revision`
+
+## 3: response_to_review
+
+**Summary:** GATE 2 CERTIFIED at fb8ba6e: PASS 29, FAIL 0, UNSUPPORTED 0, by the independent reviewer who blocked this build four times and wrote none of its code. All thirteen requested actions discharged, with action 9 qualified: the mobile screenshots predate the certified SHA. AC15 satisfied by three real VoiceOver sessions run by the product owner. Three of your claims are corrected with evidence; four of our own failures are recorded. Residuals named, including a non-functional gate in our own kernel code and one decision left to the owner.
+
+**Accepted points:**
+- Your review was correct on every substantive point, including two we had not caught: five failing tests at HEAD, and rights language exceeding what our evidence supports.
+- Your refusal to accept DOM inspection as a substitute for a tested assistive-technology setup was correct and produced the most valuable evidence in the task.
+- All thirteen requested actions are discharged; all twelve disputed points are closed, accepted, or corrected with evidence.
+- AC19 and AC15 pass for the first time, on independent remeasurement and on real human sessions respectively.
+- The bounded-language objection is conceded in full: we breached the product owner's own binding decision, and one breach was shipping to visitors.
+
+**Disputed points:**
+- Your 76-vs-75 Tier 1 finding has the right remedy but a wrong diagnosis: beginning-noland carries status 'copyright', so a register built from Commons-URL-bearing records correctly counts 75, and the test asserting 75 passes and was never among the five failures.
+- Your 66-vs-60 item was latent rather than live - the stale expectation was unreached because an earlier line aborted first. Fixed regardless, in the same pass.
+- Most of the denominators you listed were never inconsistent: they are different quantities at different commits and surfaces, and the arithmetic holds. One was genuinely wrong (694 cited in the present tense) and is corrected; another error belongs to both poles (Hirshhorn, not Guggenheim).
+- [minor] The residual arrow is 695 prerendered files across four families, not ~100 in one - our own record understated it and the Quality Reviewer measured the true figure.
+
+**Rationale:** You asked for correction and re-evidencing rather than a defence, and that is what this is. The build now passes all twenty-nine criteria and is certified by a reviewer who blocked it four times and wrote none of it. What we found along the way is worth more than the fixes: six separate instruments in this build reported truthfully about a smaller universe than the claim they supported, including the Coordinator's own quality gate. We name that pattern here rather than let it be rediscovered, and we record the residuals as residuals rather than resolving them by assertion.
+
+**Evidence:
+- protocol/tasks/PIG-001/quality-review.md revision 5 - GATE 2: CERTIFIED at fb8ba6e, PASS 29 FAIL 0 UNSUPPORTED 0, prior blocking verdicts preserved verbatim
+- protocol/tasks/PIG-001/evidence/voiceover-transcript.md - three sessions by the product owner on VoiceOver and Safari; seven defects found, six confirmed repaired by ear
+- protocol/tasks/PIG-001/evidence/browser-evidence-certification.md - 2626 glyph rows, 12 cells, 0 below floor; F-1 closed; 200% zoom 26 router cases
+- protocol/tasks/PIG-001/evidence/data-reconciliation.md - denominator glossary, 14 language corrections, 46 tests passing, inventory regeneration
+- protocol/tasks/PIG-001/evidence/build-log-unit-33.md, -34.md, -36.md, -37.md - the correction round with measured before and after per finding
+- protocol/tasks/PIG-001/evidence/visual-ruling-d29-6.md - N-8 verdict PASS WITH NOTE, with the adjudicator's correction to his own specification
+- protocol/tasks/PIG-001/unrouted/review-incoming-analysis.json - the liaison's verification of your claims, including the three we dispute
+- validator at fb8ba6e: ALL REFERENCES VALID, zero warnings; python suite: 46 tests, OK
+- branch pig-001-stabilization, 98 commits off effa805; main untouched
+
+**Disposition:** `revision` -> `internal_review`
