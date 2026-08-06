@@ -40,6 +40,16 @@ Pigment does not inherit the rationale — it starts a new use that would have t
 justify itself on its own facts, in Pigment's own jurisdiction, for Pigment's own
 purposes.
 
+**Wikipedia says this itself, in terms.** Its own reuse guidance states that
+*"what is fair use for Wikipedia may not be considered a fair use for your
+intended use of the content in another context"*, warns reusers that this may
+apply *"if you were using a Wikipedia article for a commercial use"*, notes that
+fair use is primarily a US doctrine that may not exist in other jurisdictions,
+and puts the burden squarely on the reuser: *"It is the responsibility of the
+reuser to determine how a license applies to the intended reuse."* We would not
+be finding a loophole in Wikipedia's policy; we would be doing the specific thing
+its policy tells us not to do.
+
 This is the dangerous case precisely *because* it looks legitimate. The file sits
 on a reputable source, next to files that genuinely are free, reachable by the
 same tooling, and the page that hosts it does not shout. A harvester that treats
@@ -374,43 +384,75 @@ See Part 0. **Wikipedia's fair-use images do not transfer.** Any route below tha
 appears to be working because "the image was on Wikipedia" is this trap and not a
 route.
 
-## 2.1 Freedom of panorama — *narrow for painters, real for a handful of murals*
+## 2.1 Freedom of panorama — *real, and it splits by jurisdiction rather than resolving*
 
-**What it permits.** Many countries allow photographs of works **permanently
-sited in public places** to be published without the copyright holder's consent.
-Where it applies, the *photograph* can be freely licensed even though the
-underlying work is in copyright.
+I revised this section after research. My first draft said freedom of panorama
+covers only buildings and sculpture and does nothing for painting. **That is
+wrong for the case that matters most here**, and the correction is the most
+substantive result in Part 2.
 
-**What it forbids, and why it barely helps a painting atlas.**
+**What it permits.** Many countries allow works **permanently sited in, or
+visible from, public places** to be photographed and reproduced without the
+rights holder's consent. Coverage of *two-dimensional* work varies but is not
+uniformly excluded:
 
-- It generally attaches to **buildings and sculpture**, not to paintings. A
-  painting hanging in a museum is neither permanently sited outdoors nor in a
-  public place in the relevant sense. **For easel painting — which is nearly all
-  of Pigment — freedom of panorama does essentially nothing.**
-- Scope varies enormously by country: some jurisdictions cover buildings only;
-  some cover sculpture too; some **exclude commercial use**, which is a live
-  problem because Pigment cannot guarantee its use stays non-commercial forever,
-  and Commons will not host a non-commercial-only file at all.
-- France and Italy are among the more restrictive, which is exactly where the
-  relevant modern murals are not.
+- **Mexico** permits *"reproduction, communication and distribution by means of
+  drawings, paintings, photographs and audiovisual processes of works that are
+  visible from public places"* — commercial use included, with "public place"
+  read broadly enough to include indoor venues open to the public. Commons
+  treats this as an acceptable freedom-of-panorama regime.
+- **Brazil** likewise permits reproduction of works permanently displayed in
+  public places, commercial use included.
+- **Switzerland** permits images of murals and graffiti, provided they cannot be
+  used for the same purpose as the original.
+- **France and Sweden exclude commercial use**; **Australia** covers sculpture
+  and artistic craftsmanship but *not* murals or graffiti.
 
-**What it would unlock, honestly.** The plausible candidates are **permanently
-sited public murals** — the Mexican muralists above all. Rivera, Orozco and
-Siqueiros painted public walls, and Mexico is a case where the term is life+100
-so the underlying works remain in copyright regardless. Orozco (d. 1949) is
-already inside the atlas's own cutoff by death date. Siqueiros (d. 1974) is the
-one where panorama would have to do the work.
+**This is live, not theoretical.** Commons hosts photographs of Siqueiros's
+murals — including *La Marcha de la Humanidad* at the Polyforum — under a
+freedom-of-panorama template that states plainly that the subject is *"a
+copyrighted architecture and/or artistic work permanently located in or visible
+from a public space in a country that provides Wikimedia Commons-acceptable
+freedom of panorama."* Note what that template concedes: **the mural is still
+copyrighted.** The file is hosted because of where the work stands, not because
+the work is free.
 
-**Evidence needed per work:** that the work is permanently sited; that it is in a
-public place as that country's statute defines it; that the country's provision
-covers *paintings/murals* and not only architecture; that it permits commercial
-use; and a photograph whose photographer has actually licensed it freely.
+**What it forbids, and the catch that decides the matter.** **United States
+freedom of panorama, 17 U.S.C. § 120, covers *architectural works only*.** It
+does not extend to murals, sculptures or monuments. So a photograph of a Mexican
+mural can be lawfully free in Mexico and simultaneously an infringing
+reproduction in the United States.
 
-**Reach: very small. Realistically a low single-digit number of works, possibly
-zero after the per-country test.** Residual risk: moderate-to-high, because the
-determination is per-country and per-work and the failure is silent.
+That is not a technicality for Pigment. It means the resulting status is
+**jurisdiction-split**: true where the work stands, false in a country where a
+static public website is plainly reachable. Every existing `status:"pd"` record
+in this atlas rests on a claim intended to hold generally; a panorama-sourced
+record would rest on a claim known not to hold in at least one major
+jurisdiction. **Those are different kinds of record and should not share a
+rendering token.**
 
-**Not a strategy. Worth naming only so it is not mistaken for one later.**
+**It also does nothing for easel painting**, which is nearly the whole atlas. A
+canvas hanging in a museum is not permanently sited in a public place in the
+relevant sense. Kahlo painted easel works; so did Picasso, Rothko, Pollock,
+Warhol, Matisse and Dalí in the works Pigment names.
+
+**Evidence needed per work:** that it is permanently sited; that it sits in a
+public place as that statute defines it; that the provision covers murals and
+not only architecture; that it permits commercial use; a photograph the
+photographer has actually freely licensed; and an explicit decision about the US
+position.
+
+**Reach: the Mexican muralists, and essentially nobody else.** Concretely that
+means Rivera (d. 1957) and Siqueiros (d. 1974) — Orozco (d. 1949) is already
+inside the atlas's own cutoff. `muralism` currently has exactly one artist. So
+this route plausibly unlocks **images for one to two artists' public murals**,
+none of them among the seven Tier 1 names, and each carrying a US position that
+would need a qualified opinion.
+
+**Residual risk: moderate-to-high, and of an unusual shape** — not "we might be
+wrong" but "we would be knowingly right in one country and wrong in another."
+That is an owner decision, not a data-steward decision, and I am escalating it
+rather than recommending it.
 
 ## 2.2 Deliberate free licensing by artists, estates and foundations
 
@@ -425,52 +467,81 @@ attribution plus share-alike for CC BY-SA — and share-alike's reach into a pag
 that merely displays an image is not something I can determine. A licence
 granted by someone who did not hold the rights grants nothing.
 
-**What it does *not* cover, and this is the common misreading.** **Museum
-open-access programmes release the museum's photography, not the artists'
-copyrights.** When the Met, the Rijksmuseum, the Art Institute of Chicago or the
-Smithsonian put collections under CC0 or "open access," what they can give away
-is their own rights in the reproduction. For an in-copyright painting the
-underlying work is still the artist's estate's, and those programmes are
-correspondingly limited to works the institution believes are out of copyright.
-**Open access therefore adds enormous value for pre-1955 work and close to none
-for the seven artists in question.** Anyone scoping this should expect the
-museum open-access route to return zero Picassos.
+**What it does *not* cover, and this is the common misreading — now checked.**
+**Museum open-access programmes release the museum's photography, not the
+artists' copyrights**, and the museums say so themselves:
+
+- **The Met** applies CC0 to images of works *"it believes to be in the public
+  domain"*. Its own FAQ states that not every image on its site is open access —
+  *"works by contemporary artists or those created more recently might still be
+  under copyright."* Separately it releases *catalogue data* for the whole
+  collection, in-copyright works included. **Data is not an image.**
+- **The Rijksmuseum** permits free commercial reuse of reproductions of public
+  domain objects, but states that where a copyright holder is listed, copyright
+  still applies, and that photographs of objects still under copyright are not
+  freely available.
+- **The Getty** released 88,000+ images under CC0 — again, its own photography
+  of works it treats as public domain.
+
+So open access is enormously valuable for pre-1955 work — it is, in effect, the
+supply behind the atlas's existing 385 public-domain assertions — and close to
+worthless for the seven. **Anyone scoping this should expect the museum
+open-access route to return zero Picassos**, by design rather than by oversight.
 
 **Evidence needed per work:** the specific licence, the specific work it covers,
 identification of the grantor and a reason to believe they held the right, and
 the grant's date and permanence.
 
-**Reach: unknown but probably very small for these seven specifically.** The
-major modern estates — the Picasso Administration, the Warhol Foundation, the
-Dalí foundation, the Matisse and Rothko estates — are known for *active*
-licensing programmes, which is the opposite posture from free release. **I would
-expect this route to unlock none of the seven and would not promise otherwise
-without checking each estate directly.** It may unlock other 20th-century names
-outside that list.
+**Reach: I searched for a major modern painter's estate that has free-licensed
+its artist's work, and found none.** That is a negative result from a limited
+search, not proof of absence — but it is consistent with the known posture of the
+Picasso Administration, the Warhol Foundation, the Dalí and Gala-Dalí
+foundations, and the Matisse, Rothko and Pollock-Krasner estates, all of which
+run *active licensing* programmes. Active licensing is the commercial opposite of
+free release. **My honest expectation is that this route unlocks none of the
+seven.**
 
-**This is the route I would actually pursue**, precisely because it is the only
-one where a positive answer is a document rather than an inference.
+**It is nevertheless the route I would pursue if any**, because it is the only
+one whose positive result is a **document** rather than an inference, and because
+the cost of asking is an email. It may also unlock 20th-century names outside
+that list — a living or recent artist with a personal reason to want their work
+seen is a much better prospect than a blue-chip estate.
 
 ## 2.3 Public domain by routes other than the death date
 
 Several genuine mechanisms, of very different value.
 
-**(a) US formalities — the strongest of these.** Works published in the US
-before 1929 are out of copyright there. Between 1929 and 1963, US copyright
-required **renewal**, and a large fraction was never renewed; publication without
-a copyright notice before 1978 could also forfeit protection. For an
-American-published work this can produce a public-domain status regardless of
-when the artist died. Pollock, Rothko and Warhol are US artists, so this is
-where it would bite if anywhere.
+**(a) US formalities — the strongest of these, and genuinely substantial.**
+Works published in the US before 1929 are out of copyright there. For works
+published 1929–1963, US law required a **renewal** filing in the 28th year, and
+the great majority never happened: of roughly 642,000 copyrights registered in
+that window only about 25% were renewed, and a 1961 Copyright Office study put
+renewals below 15%. Separately, **works published without a copyright notice
+between 1923 and 1977 forfeited protection outright.** For an American-published
+work this can produce public-domain status in the US regardless of when the
+artist died. Pollock, Rothko and Warhol are American, so this is where it would
+bite if anywhere.
 
-*But:* it turns on **publication**, a term of art. A painting exhibited in a
-gallery is not obviously "published"; whether reproduction in a catalogue counts,
-and with what notice, is a per-work factual question requiring renewal-record
-research. It also yields a US-only status, while Pigment's visitors are not.
-**Evidence needed:** the publication event, its date, the presence or absence of
-notice, and a renewal-record search. **Reach: unknown without per-work research;
-plausibly a small number of specific images rather than any artist's body of
-work.** This is real, and it is expensive per work.
+*But three things blunt it, and they blunt it hard for paintings:*
+
+1. **It turns on "publication," a term of art that fits paintings badly.**
+   Exhibiting a canvas in a gallery is not clearly publication. Whether a
+   reproduction in an exhibition catalogue published the *work*, and with what
+   notice, is a contested per-work factual question. The renewal statistics above
+   are drawn overwhelmingly from **books**, where publication is unambiguous —
+   quoting them at a painting is a category error and I flag my own use of them
+   as indicative only.
+2. **It yields a US-only status.** The work may remain in copyright in Europe on
+   the ordinary life+70 arithmetic. Same jurisdiction-split problem as §2.1.
+3. **The research is per work and archival** — a renewal-record search plus
+   evidence about the first publication event.
+
+**Evidence needed:** the publication event and its date, the presence or absence
+of notice, and a renewal search. **Reach: unknown without per-work research, and
+I will not estimate it.** Plausibly a handful of *specific images* — a magazine
+reproduction, a poster, an exhibition catalogue plate — rather than any artist's
+body of work. Note what that yields even on success: often a *reproduction* of
+the painting, not a good image of it.
 
 **(b) Government works.** Works by US federal employees in the course of duty are
 not under US copyright. This reaches WPA-adjacent and official art in some cases
@@ -513,21 +584,34 @@ they would be borderline cases needing care, not headline names.**
 
 Plainly: **very little, and nothing that changes the seven Tier 1 arcs.**
 
-- Freedom of panorama: a small number of public murals at best, possibly none
-  after per-country tests. Not Picasso, Warhol, Rothko, Pollock or Matisse.
-- Deliberate free licensing: the only clean route, and the estates concerned are
-  the least likely to have taken it. Expect zero of the seven; possible for
-  others.
-- US formalities: the most likely to yield *something*, per work, at real
-  research cost, and US-only.
-- Everything else: dead ends.
+Routes ranked by what they actually unlock:
 
-**The current `died ≤ 1955` rule is not what is keeping those seven artists
-imageless. Copyright is.** Loosening the rule would not produce images; it would
-only produce images sourced on weaker grounds. The honest framing for the owner
-is that the generative-cover and no-image states are not a workaround being
-applied while a better answer is found — for these artists they *are* the answer,
-unless an estate has affirmatively licensed a specific work.
+| Rank | Route | What it unlocks | Confidence |
+|---|---|---|---|
+| 1 | **Freedom of panorama (Mexico/Brazil-type regimes)** | public **murals** of Rivera and Siqueiros — 1–2 artists, none of the seven; images demonstrably exist on Commons today | High that files exist; **the US position is the open question** |
+| 2 | **US formalities (non-renewal / no notice)** | possibly a handful of specific published reproductions; US-only | Unknown — needs per-work archival research |
+| 3 | **Deliberate free licensing** | probably nothing from the seven's estates; possibly other 20th-c. names | Low for the seven; **the only route whose success is a document** |
+| 4 | Corrected death dates | at most 1–2 borderline artists, no headline names | Low value, near-zero cost |
+| — | Everything in §2.4 | nothing | Dead ends |
+
+**The `died ≤ 1955` rule is not what is keeping those seven artists imageless.
+Copyright is.** Loosening the rule would not produce a single image; it would
+only produce images sourced on weaker grounds. Not one of the four routes above
+reaches Picasso, Dalí, Kahlo, Pollock, Rothko, Warhol or Matisse — the muralist
+route is the only one that clearly works, and none of the seven painted public
+murals.
+
+So the honest framing for the owner is this: **the generative-cover and
+no-image states are not a stopgap being tolerated until someone finds the real
+answer. For these seven artists they are the answer**, unless a rights holder
+affirmatively licenses a specific work. The atlas's modern gap is a fact about
+copyright law, not a gap in our research or our nerve.
+
+One thing genuinely did change on investigation, and it is worth the owner's
+attention: **the muralists are reachable in a way I did not expect**, and
+`muralism` is a movement the curator already flagged as having exactly one
+artist. That is a real, small, concrete opportunity — and it comes attached to a
+jurisdiction split that needs a qualified human answer before anything ships.
 
 ---
 
@@ -546,21 +630,68 @@ unless an estate has affirmatively licensed a specific work.
    `PIGMENT.md` §14.** It is currently enforced by a schema rule and a code
    comment; it deserves to be a stated rule because it is the check that
    prevents the Part 0 failure.
-4. **If modern coverage is genuinely wanted, fund the estate-licensing enquiry
+4. **Decide the muralist question deliberately, or not at all (§2.1).** The
+   images exist on Commons under a template that says the work is still
+   copyrighted and free only where panorama applies. If the owner wants Rivera
+   and Siqueiros, that needs a qualified opinion on the US position **and** a
+   distinct `image.status` token, because it is not the same kind of claim as
+   the atlas's existing `pd` records. If he does not want to fund that opinion,
+   the right answer is to leave it, and I would not treat that as a loss.
+5. **If broader modern coverage is wanted, fund the estate-licensing enquiry
    (§2.2) and nothing else.** It is the only route whose positive result is a
-   document.
-5. **Route anything ambiguous to qualified human review.** Specifically: the
+   document. Expect it to come back empty for the seven.
+6. **Route anything ambiguous to qualified human review.** Specifically: the
    photograph-of-a-public-domain-painting question behind the 20 CC entries, the
-   two `ita-mibac` files, and any fair-use reasoning of any kind.
+   two `ita-mibac` files, the US position on panorama-sourced murals, and any
+   fair-use reasoning of any kind.
 
 **What I would not attempt.**
 
-- I would not harvest any image from a Wikipedia non-free/fair-use page.
-- I would not construct a fair-use rationale for Pigment.
+- I would not harvest any image from a Wikipedia non-free/fair-use page, under
+  any framing, for any purpose.
+- I would not construct a fair-use rationale for Pigment. Neither I nor anyone
+  else on this team is qualified to, and an informal one is worse than none
+  because it creates confidence without protection.
 - I would not loosen or reinterpret the `died ≤ 1955` rule to admit modern work.
+  The research gives no reason to, and the rule is not what is causing the gap.
+- I would not add panorama-sourced murals under the existing `pd` token, even
+  though the files are sitting on Commons right now and it would be easy.
 - I would not promote any pool entry into `js/catalog-*.js` on the strength of
   the current exact-work check.
 - I would not describe any record in this atlas as cleared or verified for use.
+
+## SOURCES
+
+Repository, read directly this session: `js/artworks.js`, `js/catalog-1..4.js`,
+`js/artists-1..17.js`, `tools/audit_artworks.py`, `tools/commons_rights.py`,
+`tools/fetch_artworks.py`, `PIGMENT.md` §14, `docs/ARTWORK_SCHEMA.md`,
+`docs/ATLAS_COVERAGE.md`, `protocol/tasks/PIG-001/owner-decisions-r2.md`.
+
+Wikimedia Commons API (`action=query&prop=imageinfo&iiprop=extmetadata`), 413
+files, 2026-08-06 — the licence, `ObjectName`, `Artist` and `Restrictions`
+assertions in §1.3, and the file pages confirming all 20 mismatches in §1.6.
+
+Web, per claim class:
+
+- **Fair use does not transfer** — `en.wikipedia.org/wiki/Wikipedia:Reusing_Wikipedia_content`,
+  and `Wikipedia:Non-free_content_criteria`. Basis for Part 0's quotations.
+- **Freedom of panorama, scope and country variation** —
+  `commons.wikimedia.org/wiki/Commons:Freedom_of_panorama/Europe` and
+  `/Americas`; `Commons:Copyright_rules_by_territory/Mexico` for Mexico's
+  life+100 term and its panorama provision.
+- **Panorama in practice** — `commons.wikimedia.org/wiki/Category:Polyforum_Cultural_Siqueiros`,
+  for the template wording conceding the murals remain copyrighted.
+- **US panorama limited to architecture** — 17 U.S.C. § 120.
+- **Museum open access covers only works believed public domain** — The Met's
+  image-resources and open-access policy pages; the Rijksmuseum's information
+  and data policy; the Getty CC0 release.
+- **US renewal and notice** — `en.wikipedia.org/wiki/Copyright_renewal_in_the_United_States`
+  and NYPL's 1923–1964 copyright history. **Renewal percentages there describe
+  books, not paintings**, and are cited as indicative only.
+
+**Negative result, recorded as such:** a search for a major modern painter's
+estate that has released work under a free licence returned nothing usable. That
+is a limited search, not proof of absence.
 
 ## STATE OF VERIFICATION
 
