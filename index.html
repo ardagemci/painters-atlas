@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pigment — An Atlas of Painters</title>
-<meta name="description" content="Pigment is an interactive atlas of painters — 246 artists, 315 masterpieces, museums, movements and an engine that maps your taste in art.">
+<meta name="description" content="Pigment is an interactive atlas of painters — 247 artists, 317 masterpieces, museums, movements and an engine that maps your taste in art. An editorial selection, not a complete history.">
 <link rel="canonical" href="https://ardagemci.github.io/painters-atlas/">
 <meta property="og:site_name" content="Pigment — An Atlas of Painters">
 <meta property="og:type" content="website">
@@ -16,16 +16,18 @@
 <meta name="twitter:title" content="Pigment — Find your place in the history of art">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/960px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='13' cy='14' r='9' fill='%23c9a45c'/%3E%3Ccircle cx='21' cy='19' r='7' fill='%237b3b43' fill-opacity='.85'/%3E%3Ccircle cx='19' cy='10' r='4' fill='%233e5570' fill-opacity='.9'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Fonts are self-hosted (SIL OFL 1.1, see assets/fonts/LICENSE.md). Pigment makes
+     no third-party runtime request: no preconnect, no remote stylesheet. -->
+<link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 /* restore saved theme before first paint to avoid flash */
 try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-theme") || "dark"; }catch(e){}
 </script>
-<link rel="stylesheet" href="css/styles.css?v=20260717-card1">
+<link rel="stylesheet" href="css/styles.css?v=20260806-pig001-u36">
 </head>
 <body>
+<button class="skip-link" data-skipto="main">Skip to the atlas</button>
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <header class="site-header">
@@ -44,13 +46,38 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
     <a href="#/nations" data-nav="nations">Nations</a>
   </nav>
   <div class="search-wrap">
-    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" aria-label="Search artists, movements, techniques, eras and nations">
-    <div id="search-results" class="search-results" hidden></div>
+    <!-- AT-4: VoiceOver announced this field as "list box pop-up, menu pop-up
+         combo box" — three roles for one control. Two of the three came from a
+         single attribute: aria-haspopup="listbox" maps to BOTH an AXHasPopup
+         flag (spoken as "menu pop-up") and an AXPopupValue of listbox (spoken
+         as "list box pop-up"). ARIA 1.2 gives role="combobox" an implicit
+         popup, so the attribute added no information and contradicted itself
+         out loud. Removed; role, aria-autocomplete, aria-expanded and
+         aria-controls are the pattern. -->
+    <input id="search" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-label="Search artists, artworks, lists, museums, movements, techniques, eras and nations">
+    <div id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden></div>
   </div>
-  <button id="theme-toggle" aria-label="Switch between dark and light mode" title="Dark / light mode">☀</button>
+  <button id="theme-toggle" aria-label="Light mode" aria-pressed="false" title="Dark / light mode">☀</button>
 </header>
 
-<main id="app" class="view-enter" aria-live="polite"></main>
+<main id="app" class="view-enter" tabindex="-1"></main>
+
+<!-- The results channel (AT-1, AT-3, AT-6, AT-7). The owner's two VoiceOver
+     sessions found one defect wearing four faces: the application performs the
+     correct action and never says that it did. Every instrument in this task
+     could verify that a control exists, is reachable, is named and that its
+     state transition is correct; none could detect that the RESULT was never
+     announced. This is the one place a result is spoken.
+     It lives OUTSIDE #app deliberately. The router replaces #app.innerHTML
+     wholesale on every render, and a live region that is created with its
+     content already in it is not reliably announced; a persistent node that is
+     mutated afterwards is. It is also NOT the region unit 25f removed for C-8:
+     that one wrapped the whole page and fired on every route change, so the
+     page was announced twice and the two channels disagreed. This one is
+     written only by the four explicit call sites in js/app.js — the deck
+     card, the search dismissal, the import cancel and the merge outcome — and
+     never by route() itself. -->
+<div id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -59,41 +86,43 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
       <strong>Pigment</strong> — eight centuries of painting, one atlas.
     </div>
     <nav class="footer-nav">
-      <a href="#/artists">Artists</a><a href="#/taste">Taste</a><a href="#/museums">Museums</a><a href="#/lists">Lists</a><a href="#/movements">Movements</a><a href="#/techniques">Techniques</a><a href="#/eras">Eras</a><a href="#/nations">Nations</a>
+      <a href="#/artists">Artists</a><a href="#/taste">Taste</a><a href="#/museums">Museums</a><a href="#/lists">Lists</a><a href="#/movements">Movements</a><a href="#/techniques">Techniques</a><a href="#/eras">Eras</a><a href="#/nations">Nations</a><a href="#/credits">Credits</a><a href="#/privacy">Privacy</a>
     </nav>
     <p class="footer-note">All cover artworks are generative interpretations painted in the browser — every visit mixes fresh pigment.</p>
   </div>
 </footer>
 
-<script src="js/taxonomy.js?v=20260718-luminism1"></script>
-<script src="js/worldmap.js"></script>
-<script src="js/artworks.js?v=20260718-luminism1"></script>
-<script src="js/influences.js?v=20260717-widen2"></script>
-<script src="js/venues.js"></script>
-<script src="js/catalog-1.js?v=20260713-imagefix2"></script>
+<script src="js/taxonomy.js?v=20260725-abex1"></script>
+<script src="js/worldmap.js?v=20260724-pig001"></script>
+<script src="js/artworks.js?v=20260725-pig001-rights"></script>
+<script src="js/influences.js?v=20260725-abex1"></script>
+<script src="js/venues.js?v=20260725-abex1"></script>
+<script src="js/catalog-1.js?v=20260725-pig001-rights"></script>
 <script src="js/catalog-2.js?v=20260713-exhibition7"></script>
-<script src="js/catalog-3.js?v=20260715-elevate1"></script>
-<script src="js/catalog-4.js?v=20260718-luminism1"></script>
+<script src="js/catalog-3.js?v=20260725-pig001-rights"></script>
+<script src="js/catalog-4.js?v=20260725-abex1"></script>
 <script src="js/tier1-artists.js?v=20260717-widen2"></script>
-<script src="js/artists-1.js"></script>
-<script src="js/artists-2.js"></script>
-<script src="js/artists-3.js"></script>
-<script src="js/artists-4.js"></script>
-<script src="js/artists-5.js"></script>
-<script src="js/artists-6.js"></script>
-<script src="js/artists-7.js"></script>
-<script src="js/artists-8.js"></script>
-<script src="js/artists-9.js"></script>
-<script src="js/artists-10.js"></script>
-<script src="js/artists-11.js"></script>
-<script src="js/artists-12.js"></script>
-<script src="js/artists-13.js"></script>
-<script src="js/artists-14.js"></script>
-<script src="js/artists-15.js"></script>
-<script src="js/artists-16.js"></script>
+<script src="js/artists-1.js?v=20260724-pig001"></script>
+<script src="js/artists-2.js?v=20260724-pig001"></script>
+<script src="js/artists-3.js?v=20260724-pig001"></script>
+<script src="js/artists-4.js?v=20260724-pig001"></script>
+<script src="js/artists-5.js?v=20260724-pig001"></script>
+<script src="js/artists-6.js?v=20260724-pig001"></script>
+<script src="js/artists-7.js?v=20260724-pig001"></script>
+<script src="js/artists-8.js?v=20260724-pig001"></script>
+<script src="js/artists-9.js?v=20260724-pig001"></script>
+<script src="js/artists-10.js?v=20260724-pig001"></script>
+<script src="js/artists-11.js?v=20260724-pig001"></script>
+<script src="js/artists-12.js?v=20260724-pig001"></script>
+<script src="js/artists-13.js?v=20260725-abex1"></script>
+<script src="js/artists-14.js?v=20260724-pig001"></script>
+<script src="js/artists-15.js?v=20260724-pig001"></script>
+<script src="js/artists-16.js?v=20260724-pig001"></script>
+<script src="js/artists-17.js?v=20260725-abex1"></script>
 <script src="js/lists-1.js?v=20260714-lists1"></script>
 <script src="js/personas.js?v=20260716-taste1"></script>
-<script src="js/museums-1.js?v=20260717-widen2"></script>
-<script src="js/app.js?v=20260717-seo1"></script>
+<script src="js/museums-1.js?v=20260725-abex1"></script>
+<script src="js/photo-credits.js?v=20260725-abex1"></script>
+<script src="js/app.js?v=20260806-pig001-u37"></script>
 </body>
 </html>

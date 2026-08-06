@@ -21,10 +21,10 @@ const me = argv.find(a => String(a).endsWith("build_seo.jxa.js")) || "tools/buil
 const base = String(me).replace(/tools\/+build_seo\.jxa\.js$/, "");
 var window = {};
 ["taxonomy.js","artworks.js","venues.js","catalog-1.js","catalog-2.js","catalog-3.js","catalog-4.js",
- "tier1-artists.js","lists-1.js","museums-1.js",
+ "tier1-artists.js","lists-1.js","museums-1.js","photo-credits.js",
  "artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
  "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js",
- "artists-14.js","artists-15.js","artists-16.js"]
+ "artists-14.js","artists-15.js","artists-16.js","artists-17.js"]
   .forEach(f => eval(read(base + "js/" + f)));
 
 const SITE = "https://ardagemci.github.io/painters-atlas/";
@@ -33,6 +33,34 @@ const A = window.ARTISTS, CAT = window.CATALOG, VEN = window.VENUES,
       T1 = window.TIER1 || {}, AW = window.ARTWORKS || {};
 const Ax = {}; A.forEach(a => Ax[a.id] = a);
 const Vx = {}; VEN.forEach(v => Vx[v.id] = v);
+
+/* ---- photo credit (js/photo-credits.js) ----
+   A prerendered stub shows the same photograph the app does, so it owes the
+   same credit. Same registries, same TASL shape; no URL global in JXA, so the
+   Commons title is parsed from the path by hand. */
+const PC = window.PHOTO_CREDITS || {}, IC = window.IMAGE_CREDITS || {};
+function commonsTitle(src){
+  if(!src) return null;
+  const m = String(src).match(/^[a-z]+:\/\/[^/]+(\/[^?#]*)/i);
+  const path = m ? m[1] : String(src).split(/[?#]/)[0];
+  const parts = path.split("/").filter(Boolean);
+  if(parts.indexOf("commons") < 0) return null;
+  const t = parts.indexOf("thumb");
+  const name = t >= 0 ? parts[t + 3] : parts[parts.length - 1];
+  if(!name) return null;
+  try { return "File:" + decodeURIComponent(name); } catch(e){ return "File:" + name; }
+}
+/* venueId is given only when `src` is that venue's building photograph */
+function creditHtml(src, label, venueId){
+  let c = null;
+  if(venueId && PC[venueId]) c = PC[venueId];
+  else { const t = commonsTitle(src); c = t ? IC[t] : null; }
+  if(!c) return "";
+  const bits = [c.author ? esc(label) + ": " + esc(c.author) : esc(label)];
+  bits.push(c.licenseUrl ? `<a href="${esc(c.licenseUrl)}" rel="license nofollow">${esc(c.license)}</a>` : esc(c.license));
+  if(c.page) bits.push(`<a href="${esc(c.page)}" rel="nofollow">file on Commons</a>`);
+  return `<p class="cred">${bits.join(" · ")}</p>`;
+}
 const catByArtist = {}, catByVenue = {};
 CAT.forEach(w => {
   (catByArtist[w.artistId] = catByArtist[w.artistId] || []).push(w);
@@ -87,6 +115,8 @@ a{color:#e8c98a;text-decoration:none}
 .rel{margin-top:28px;padding-top:14px;border-top:1px solid rgba(201,164,92,.25)}
 .rel a{display:inline-block;margin:3px 10px 3px 0}
 footer{margin-top:34px;color:#6e675a;font-size:.8rem}
+.cred{color:#9b937f;font-size:.78rem;margin:8px 0 0}
+.cred a{color:#c9b58a;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -124,7 +154,7 @@ CAT.forEach(w => {
     jsonld,
     bodyHtml: `<h1>${esc(w.title)}</h1>
 <p class="meta"><a href="${SITE}p/artist/${a.id}.html">${esc(a.name)}</a> · ${esc(w.year.display)}${venue ? " · " + esc(venue.name) + ", " + esc(venue.city) : ""}${w.dims ? " · " + esc(w.dims) : ""}</p>
-${img ? `<img src="${esc(img)}" alt="${esc(w.title)} by ${esc(a.name)}">` : ""}
+${img ? `<img src="${esc(img)}" alt="${esc(w.title)} by ${esc(a.name)}">` + creditHtml(img, "Image credit") : ""}
 <p>${esc(w.description || `One of the ${(catByArtist[a.id] || []).length} works by ${a.name} catalogued in Pigment, the interactive atlas of painters.`)}</p>
 ${w.notice ? `<ul>${w.notice.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
 ${rel ? `<div class="rel"><span class="k">More by ${esc(a.name.split(" ").pop())}</span><br>${rel}</div>` : ""}` }));
@@ -148,7 +178,7 @@ A.forEach(a => {
     jsonld,
     bodyHtml: `<h1>${esc(a.name)}</h1>
 <p class="meta">${esc(a.years)} · ${esc(a.tagline)}</p>
-${img ? `<img src="${esc(img)}" alt="Work by ${esc(a.name)}">` : ""}
+${img ? `<img src="${esc(img)}" alt="Work by ${esc(a.name)}">` + creditHtml(img, "Image credit") : ""}
 <p>${esc(t1 ? t1.why : firstSentence(a.life))}</p>
 <p>${esc(firstSentence(a.career))}</p>
 ${rel ? `<div class="rel"><span class="k">Works in the atlas</span><br>${rel}</div>` : ""}` }));
@@ -172,7 +202,7 @@ VEN.forEach(v => {
       url: SITE + "p/museum/" + v.id + ".html" },
     bodyHtml: `<h1>${esc(v.name)}</h1>
 <p class="meta">${esc(v.city)}${v.country ? " · " + esc(v.country) : ""}${note ? " · " + esc(note.hook) : ""}</p>
-${img ? `<img src="${esc(img)}" alt="${esc(v.name)}">` : ""}
+${img ? `<img src="${esc(img)}" alt="${esc(v.name)}">` + creditHtml(img, "Photograph", note && note.photo && note.photo.src === img ? v.id : null) : ""}
 <p>${esc(note && note.essay ? note.essay.split("\n\n")[0] : `${v.name} holds ${works.length} of the works catalogued in Pigment, the interactive atlas of painters.`)}</p>
 ${rel ? `<div class="rel"><span class="k">In the collection</span><br>${rel}</div>` : ""}` }));
 });
@@ -192,7 +222,7 @@ LISTS.forEach(l => {
       description: l.lede, numberOfItems: l.works.length, url: SITE + "p/list/" + l.id + ".html" },
     bodyHtml: `<h1>${esc(l.title)}</h1>
 <p class="meta">An editorial list · ${l.works.length} works</p>
-${img ? `<img src="${esc(img)}" alt="${esc(l.title)}">` : ""}
+${img ? `<img src="${esc(img)}" alt="${esc(l.title)}">` + creditHtml(img, "Image credit") : ""}
 <p>${esc(l.lede)}</p>
 ${rel ? `<div class="rel"><span class="k">The works</span><br>${rel}</div>` : ""}` }));
 });

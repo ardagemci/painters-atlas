@@ -3,6 +3,143 @@
    Dark-gallery design system
    ============================================================ */
 
+/* ---- Self-hosted webfonts (PIG-001 unit 20 / OD-3) ----------------------
+   Playfair Display and Inter, SIL Open Font License 1.1, committed under
+   assets/fonts/ (see assets/fonts/LICENSE.md). These are the same variable
+   woff2 files the browser previously fetched from fonts.gstatic.com; the
+   family / style / weight / unicode-range descriptors below are reproduced
+   verbatim from the Google Fonts css2 response so rendering is unchanged.
+   Only the latin and latin-ext subsets are shipped: the corpus contains no
+   Cyrillic, Greek or Vietnamese characters. No third-party runtime request. */
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('../assets/fonts/inter-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-italic-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-italic-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:800;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:800;
+  font-display:swap;
+  src:url('../assets/fonts/playfair-display-normal-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root{
   --bg:#0d0c0a;
   --bg-rgb:13,12,10;
@@ -12,17 +149,49 @@
   --ink:#ece6d9;
   --body-ink:#d8d2c4;
   --muted:#9b937f;
-  --faint:#6e675a;
+  --faint:#8b8372;
   --gold:#c9a45c;
   --gold2:#e8c98a;
   --wine:#c97b6a;
   --teal:#6fb3a8;
   --blue:#7d9cc0;
+  --rose:#ca6478;
+  --mauve:#d98ab0;
   --line:rgba(201,164,92,.16);
   --line2:rgba(236,230,217,.08);
   --shadow:0 18px 50px rgba(0,0,0,.55);
   --scroll1:#2c2820;
   --scroll2:#41392a;
+  /* The ink every hover state lifts to. It is a TOKEN and not a literal because
+     of V32-3: unit 29 closed the white-on-warm-paper hover defect with
+     `html[data-theme="light"] a:hover{color:var(--ink)}`, which is typed on the
+     element `a` and therefore structurally could not reach `<button class="chip">`
+     (1.21–1.32 in light, four routes) or `.gonext-item:hover b`. A per-theme
+     token cannot be scoped past by element type: any rule that lifts ink on
+     hover reads --hover-ink and is correct in both themes by construction.
+     (AC19 / V32-3 / u32 NOT TESTED 9) */
+  --hover-ink:#fff;
+  /* home-hero scrim, see .home-hero .hero-shade. Dark ink is light ink, so the
+     worst reachable backdrop is a fully opaque WHITE cover pixel: the veil has
+     to pull that down to rgb(61,60,59) before --gold, the darkest title stop,
+     clears the 3.0 large-text floor. */
+  --hero-veil:.80;
+  --hero-veil-edge:.30;
+  /* museum-band scrim, see .mu-hero-body. The band is the one place in the
+     atlas where text paints over a Wikimedia PHOTOGRAPH, so the veil is bounded
+     against a worst-case fully opaque photograph pixel — WHITE here, where the
+     ink is light. --muted, the darkest rung that paints in the band once the
+     crumbs take the cover rung, needs .864; .88 clears it at 4.75. (AC19/F-V1) */
+  --mu-veil:.88;
+  /* .hero cover scrim, see .hero-content. FOUR route families paint text over a
+     generated cover inside .hero — artist, movement/technique, era and nation
+     (hero() at js/app.js:831, called from :1826, :2042, :2099, :2158) — so this
+     is a .hero defect, not an artist-route one. Dark ink is light ink, so the
+     worst reachable backdrop is a fully opaque WHITE cover pixel. Binding ink is
+     --gold2 in .hero-sub a: it needs .691 to clear 4.5. --body-ink (crumbs, sep,
+     hero-sub, tagline) needs .675, and --ink at h1 needs .506 against the 3.0
+     large-text floor. (AC19 / V-F3) */
+  --hero-text-veil:.80;
   --serif:"Playfair Display","Didot","Bodoni 72",Georgia,serif;
   --sans:"Inter","Avenir Next","Segoe UI",system-ui,sans-serif;
   --ease:cubic-bezier(.22,.9,.3,1);
@@ -37,25 +206,88 @@ html[data-theme="light"]{
   --panel2:#f0e9da;
   --ink:#2b2620;
   --body-ink:#433c31;
-  --muted:#7a715e;
-  --faint:#a39a86;
-  --gold:#a8813c;
-  --gold2:#8a6a2e;
-  --wine:#a85544;
-  --teal:#2e7a6e;
-  --blue:#4a6e9e;
+  --muted:#585244;
+  --faint:#706755;
+  /* --gold is a 3:1 token: fills, rules, borders, focus indicators and LARGE
+     text only. In light it scores 3.40 / 3.71 / 3.31 on bg / panel / panel2, so
+     any use as small text fails AA. Every glyph-painting use below 24 px (or
+     below 18.66 px bold) must take --gold2. Audited at unit 26c: 51 var(--gold)
+     references — 22 fill, 21 UI, 2 large text, 6 small text, all six re-pointed.
+     --gold2 itself was #81632b until unit 29. On flat paper that scored 4.75, but
+     a{} paints over the generative #bg-canvas on every route, and the canvas's
+     worst reachable backdrop drops it to 2.58. #544019 is the first stop that
+     clears 4.5 against the canvas ceiling derived in js/app.js (4.55). (AC19/F-7) */
+  --gold:#9e7938;
+  --gold2:#544019;
+  --wine:#a05141;
+  --teal:#2b7368;
+  --blue:#476a98;
+  --rose:#b43e56;
+  --mauve:#b23a74;
   --line:rgba(168,129,60,.3);
   --line2:rgba(43,38,32,.12);
   --shadow:0 16px 44px rgba(94,74,40,.22);
   --scroll1:#d8cfba;
   --scroll2:#c2b696;
+  /* white on warm paper is 1.07–1.32; on this side of the theme the hover lift
+     goes DOWN, to the darkest ink. Same value unit 29 chose, now carried by the
+     token rather than by an `a`-typed selector. (AC19 / V32-3) */
+  --hover-ink:var(--ink);
+  /* light ink is dark ink, so the worst reachable backdrop is a fully opaque
+     BLACK cover pixel; the veil has to lift that to rgb(208,203,192) before
+     #81632b, the lightest title stop, clears 3.0. */
+  --hero-veil:.86;
+  --hero-veil-edge:.34;
+  /* the same museum-band veil, bounded against a worst-case fully opaque BLACK
+     photograph pixel, where light's dark ink is weakest. --muted needs .834
+     here; the shared .88 clears it at 5.03. One value serves both themes, so
+     the band's geometry is identical in each — only the token is per-theme. */
+  --mu-veil:.88;
+  /* the same .hero cover veil, bounded against a worst-case fully opaque BLACK
+     cover pixel, where light's dark ink is weakest. Light's binding ink is also
+     --gold2 (.hero-sub a); after unit 29 re-pointed it to #544019 it needs .740,
+     so V-F3's specified .74 lands it at exactly 4.50 — a bound with no margin at
+     all, and every other bound in this file is set with one. .80 clears it at
+     5.27. --body-ink needs .705 (5.80 here), --ink at h1 .472 (7.99). One value
+     serves both themes, as --mu-veil does, so the hero's geometry is identical
+     in each and only the composited tone differs. (AC19 / V-F3) */
+  --hero-text-veil:.80;
 }
 html[data-theme="light"] #bg-canvas{opacity:.6}
+/* The light hero is painted over the generative cover, whose pixels are mixed
+   fresh every visit — so it is bounded against a worst-case fully opaque BLACK
+   cover pixel, not against any sampled cover. Its stops are literals at the 3.0
+   large-text floor and are unchanged by unit 29's re-point of the small-text
+   link colour --gold2. Bound and floors are on .home-hero .hero-shade, where the
+   veil is set. (AC19 / F-2 / V2-1 / V2-2) */
 html[data-theme="light"] .home-hero-content h1{
-  background:linear-gradient(92deg,#5e451c,#a8813c 38%,#5e451c 62%,#8a6a2e);
+  background:linear-gradient(92deg,#4a3616,#81632b 38%,#4a3616 62%,#6b5122);
   background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;
 }
+/* a scrim cannot carry 4.5:1 small text in the worst case without effectively
+   hiding the cover, so the hero's small text goes up one rung in light instead.
+   (The cover credit is lifted in BOTH themes — see .home-hero-content .footer-note.) */
+html[data-theme="light"] .home-hero-content .kicker{color:var(--ink)}
+/* the credit's painter link is text inside the same block, and a{}'s --gold2
+   only reaches 3.23 against the bounding backdrop (a:hover's #fff, 1.73). It
+   takes the credit's own ink and carries its affordance on the underline, the
+   same treatment .img-credit a already uses for a credit-line link. */
+html[data-theme="light"] .home-hero-content .footer-note a{
+  color:var(--body-ink);text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:var(--line);
+}
+html[data-theme="light"] .home-hero-content .footer-note a:hover,
+html[data-theme="light"] .home-hero-content .footer-note a:focus-visible{
+  color:var(--ink);text-decoration-color:var(--gold);
+}
+/* Unit 29's `html[data-theme="light"] a:hover{color:var(--ink)}` stood here. It
+   was right about the value and wrong about the shape: typed on `a`, it left
+   `button.chip:hover` and `.gonext-item:hover b` painting #fff on warm paper
+   (V32-3, and unit 32's NOT TESTED 9). Both are now carried by --hover-ink at
+   the declaration site, so this element-typed override is retired rather than
+   widened — a selector list would have had the same defect one member later.
+   (AC19 / V32-3) */
 html[data-theme="light"] .card-art::after{
   background:linear-gradient(105deg,transparent 38%,rgba(255,253,245,.32) 50%,transparent 62%);
 }
@@ -74,7 +306,32 @@ body{
 }
 ::selection{background:var(--gold);color:#171307}
 a{color:var(--gold2);text-decoration:none}
-a:hover{color:#fff}
+a:hover{color:var(--hover-ink)}
+/* D-29-6 · Prose links carry an underline, not just a colour.
+   Unit 29 pushed every ink that clears the #bg-canvas ceiling into one narrow
+   band: link-vs-body separation is 1.10:1 in light and 1.06:1 in dark, so the
+   3:1 luminance technique for WCAG 1.4.1 (G183) is unreachable in either theme
+   without deleting the ink work. Colour therefore stops being the affordance and
+   the underline becomes it. Scoped to inline prose links only — classed anchors
+   (chips, cards, nav, entry-cards, diagram links) are distinguished by shape,
+   box or position and are excluded by :not([class]). The two credit surfaces
+   certified in units 26a and 28 keep their own rule and are excluded by class.
+   Resting colour is currentColor, not --line: --line renders at 1.16:1 against
+   the worst reachable canvas backdrop and cannot be the sole non-colour cue on
+   this surface. Geometry (underline + 2px offset) is unit 28's, unchanged.
+   (WCAG 1.4.1 / D-29-6 / Matisse ruling visual-ruling-d29-6.md) */
+#app p:not(.img-credit):not(.footer-note) a:not([class]){
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-decoration-color:currentColor;
+  text-underline-offset:2px;
+  text-decoration-skip-ink:auto;
+  transition:color .2s var(--ease),text-decoration-thickness .2s var(--ease);
+}
+#app p:not(.img-credit):not(.footer-note) a:not([class]):hover,
+#app p:not(.img-credit):not(.footer-note) a:not([class]):focus-visible{
+  text-decoration-thickness:2px;
+}
 img{max-width:100%}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em}
 p{margin:0 0 1em}
@@ -85,6 +342,25 @@ p{margin:0 0 1em}
 ::-webkit-scrollbar-thumb:hover{background:var(--scroll2)}
 
 /* ---------- ambient background ---------- */
+/* THE INK RULE FOR THIS SURFACE (unit 29, AC19/F-7). #bg-canvas is fixed to the
+   viewport at z-index:-1 behind every route, so it paints ABOVE the propagated
+   body background and BELOW all in-flow content: roughly a third of the site's
+   text composites over it (1,345 of 3,756 elements, 19 routes).
+   It is Math.random-seeded, so it cannot be settled by sampling — a 24-draw
+   model put light --muted at 4.47 and an 84-draw model at 4.07, still moving.
+   It is therefore bounded from its SOURCE (js/app.js:2749-2812): each layer's
+   alpha is continuous and both composite formulas are monotone in it, so the
+   extreme sits at a corner of the layer cube and all 2^8 corners are enumerable.
+   Worst reachable backdrop: rgb(101,88,76) dark, rgb(187,174,162) light.
+   Against that ceiling only --body-ink and --ink clear the 4.5 small-text floor
+   (--body-ink 4.55 dark / 5.01 light). --faint scores 1.82/2.57 and --muted
+   2.24/3.57, so NEITHER can carry small text here at any nearby value; lowering
+   this opacity does not rescue them either (--faint would need .11 dark / .06
+   light). Both tokens remain correct inside opaque panels, where pass 1 of
+   evidence/contrast-audit.py measures them clear — that is the distinction the
+   audit's flat-paint pass could not see, and why this class survived 28 units.
+   So: small text on the PAGE BACKGROUND takes --body-ink; --faint and --muted
+   are panel inks. */
 #bg-canvas{
   position:fixed;inset:0;width:100vw;height:100vh;
   z-index:-1;opacity:.5;pointer-events:none;
@@ -93,7 +369,7 @@ p{margin:0 0 1em}
 /* ---------- header ---------- */
 .site-header{
   position:sticky;top:0;z-index:50;
-  display:flex;align-items:center;gap:28px;
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px 28px;
   padding:14px 28px;
   background:rgba(var(--bg-rgb),.78);
   backdrop-filter:blur(14px);
@@ -113,12 +389,16 @@ p{margin:0 0 1em}
 }
 .brand-sub{
   font-family:var(--sans);font-size:.58rem;font-weight:400;
-  letter-spacing:.34em;color:var(--muted);text-transform:lowercase;margin-top:4px;
+  letter-spacing:.34em;color:var(--body-ink);text-transform:lowercase;margin-top:4px;
 }
-.main-nav{display:flex;gap:4px;flex:1}
+/* wrap, not scroll and not collapse: at 200 % text zoom the eight destinations
+   become two or three rows, all visible and keyboard-reachable, with no new
+   affordance to name for AT and no new focus order. `gap` is the row-gap /
+   column-gap shorthand, so the row gap is already the 4 px asked for. (AC18) */
+.main-nav{display:flex;flex-wrap:wrap;gap:4px;flex:1}
 .main-nav a{
   position:relative;padding:8px 14px;border-radius:8px;
-  color:var(--muted);font-size:.86rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--body-ink);font-size:.86rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
   transition:color .25s var(--ease);
 }
 .main-nav a::after{
@@ -127,11 +407,75 @@ p{margin:0 0 1em}
   transition:transform .3s var(--ease);
 }
 .main-nav a:hover{color:var(--ink)}
-.main-nav a:hover::after{transform:scaleX(1)}
-.main-nav a.active{color:var(--gold2)}
-.main-nav a.active::after{transform:scaleX(1)}
+.main-nav a:hover::after{transform:scaleX(1);opacity:.55}
+.main-nav a.active{color:var(--gold2);font-weight:700}
+.main-nav a.active::after{transform:scaleX(1);opacity:1;height:2px;background:var(--gold2)}
 
-.search-wrap{position:relative;flex-shrink:0;width:min(280px,30vw)}
+/* ---- skip navigation & the route live region (AC15, AC17) ---- */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+/* AT-2 — the header skip link, rebuilt on the pattern of the one that works.
+   Two skip controls ship here. `.skip-inline` (the graph bypass) was CONFIRMED
+   under VoiceOver/Safari by the owner: "when I clicked on skip the graph, it
+   skipped it". `.skip-link` was not announced at all, while Chrome recorded it
+   as the first tabbable element with a visible focus state — a flat
+   contradiction between measurement and observation. Measured, the two differ
+   in exactly one respect, and it is geometric: at the instant focus lands,
+   .skip-inline's rect is [128,390,262,34], inside the viewport, with no
+   transition; .skip-link's rect was [14,-120,140,38], ENTIRELY OUTSIDE the
+   viewport, reaching [14,14,…] only 180 ms later through `transition:top`. An
+   object whose rect lies outside the scroll view is exposed as offscreen, and
+   the focus move an AT queries is the one at t=0, not the one after the
+   animation. So the resting state is now the same 1 px in-viewport clip that
+   .skip-inline uses, the focus state applies with no geometric transition, and
+   the two bypasses are one pattern rather than two.
+   Ear-confirmation of the announcement remains outstanding — see the unit 33
+   build log; this fix is verified in the DOM and in geometry, not by hearing. */
+.skip-link{
+  position:fixed;left:14px;top:14px;z-index:140;
+  width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);
+  padding:0;border-radius:999px;
+  background:var(--panel2);color:var(--ink);border:1px solid var(--gold);
+  font-family:var(--sans);font-size:.85rem;box-shadow:var(--shadow);
+}
+.skip-link:focus{
+  width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;
+  padding:10px 18px;outline:2px solid var(--gold);outline-offset:3px;
+}
+/* the in-page bypass (past the influence graph): out of the way until tabbed to */
+/* The tokens sit on the base rule, not only on :focus — a rule that applies in
+   one state only leaves the control on the user-agent default (#000 on #efefef,
+   neither theme's colour) in every other state. This is .btn's treatment. (F-6) */
+.skip-inline{
+  position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);
+  background:var(--panel2);color:var(--gold2);border:1px solid var(--gold);
+  font-family:var(--sans);font-size:.82rem;
+}
+.skip-inline:focus{
+  position:static;width:auto;height:auto;max-width:100%;overflow:visible;clip:auto;clip-path:none;
+  display:inline-block;margin:0 0 10px;padding:8px 15px;border-radius:999px;
+  white-space:normal;                     /* grow to more lines at 200 %, never clip */
+  outline:2px solid var(--gold);outline-offset:3px;
+}
+/* programmatic focus targets: never a ring for the mouse, always one for the keyboard */
+#app h1:focus,#app:focus,#ig-end:focus{outline:none}
+#app h1:focus-visible,#app:focus-visible,#ig-end:focus-visible{
+  outline:2px solid var(--gold);outline-offset:5px;border-radius:3px;
+}
+
+/* V32-7 (= N-31-2) — a stacking defect, not a colour one. .sr-group measured
+   1.00 light / 1.04 dark at 390 and 4.62 the moment .main-nav was suppressed;
+   at 1440 it is 4.62 as shipped. The mechanism is the 820 px rule below, which
+   gives .main-nav `order:3`: flex `order` reorders PAINT order as well as
+   layout, so below 820 px the nav — whose <a>s are position:relative for their
+   underline, and so paint as positioned boxes — is painted after .search-wrap
+   and lands on top of the open panel. An explicit z-index settles it at every
+   width instead of leaving it to source order, and stays inside .site-header's
+   own z-index:50 stacking context. Coordinate note: this is the same surface as
+   the AT-3 dismissal announcement. (AC19 / AC21 / V32-7 / N-31-2) */
+.search-wrap{position:relative;z-index:3;flex-shrink:0;width:min(280px,30vw)}
 #search{
   width:100%;padding:9px 16px;
   background:var(--panel);border:1px solid var(--line2);border-radius:999px;
@@ -157,6 +501,10 @@ p{margin:0 0 1em}
 .search-results a:hover,.search-results a.sel{background:rgba(201,164,92,.13)}
 .search-results .sr-meta{font-size:.74rem;color:var(--muted);margin-left:auto;white-space:nowrap}
 .search-results .sr-empty{padding:14px;color:var(--muted);font-size:.88rem;text-align:center}
+.search-results .sr-more{
+  margin-top:4px;padding:8px 12px 4px;border-top:1px solid var(--line);
+  color:var(--faint);font-size:.72rem;
+}
 
 #theme-toggle{
   flex-shrink:0;width:38px;height:38px;border-radius:50%;
@@ -174,18 +522,18 @@ p{margin:0 0 1em}
   to{opacity:1;transform:none}
 }
 
-.breadcrumbs{font-size:.78rem;color:var(--faint);letter-spacing:.08em;margin-bottom:14px}
-.breadcrumbs a{color:var(--muted)}
+.breadcrumbs{font-size:.78rem;color:var(--body-ink);letter-spacing:.08em;margin-bottom:14px}
+.breadcrumbs a{color:var(--body-ink)}
 .breadcrumbs a:hover{color:var(--gold2)}
-.breadcrumbs .sep{margin:0 7px;color:var(--faint)}
+.breadcrumbs .sep{margin:0 7px;color:var(--body-ink)}
 
 .page-head{margin:6px 0 30px}
 .page-kicker{
-  font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+  font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold2);
   margin-bottom:10px;
 }
 h1.display{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;margin-bottom:.25em}
-.page-lede{max-width:680px;color:var(--muted);font-size:1.02rem}
+.page-lede{max-width:680px;color:var(--body-ink);font-size:1.02rem}
 
 section{margin:46px 0}
 .sec-title{
@@ -193,7 +541,12 @@ section{margin:46px 0}
   font-size:1.45rem;margin-bottom:20px;
 }
 .sec-title::before{content:"";width:30px;height:1px;background:var(--gold);flex-shrink:0}
-.sec-title .count{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--faint)}
+/* The count sits in normal flow on the page background, so its backdrop is the
+   generative #bg-canvas, not flat paint. --faint measures 3.59 light / 4.34 dark
+   there against a 4.5 floor. Unit 28 lifted it to --muted; unit 29 measured
+   --muted itself against the canvas ceiling (2.24 dark / 3.57 light) and moved
+   the whole class to --body-ink. (AC19 / F-27-2 / F-28-1 / F-7) */
+.sec-title .count{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--body-ink)}
 
 /* ---------- chips ---------- */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
@@ -205,7 +558,7 @@ section{margin:46px 0}
   background:rgba(255,255,255,.02);
   transition:transform .25s var(--ease),border-color .25s,background .25s,color .25s;
 }
-.chip:hover{transform:translateY(-2px);color:#fff}
+.chip:hover{transform:translateY(-2px);color:var(--hover-ink)}
 .chip::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .chip.m::before{background:var(--gold)}
 .chip.t::before{background:var(--teal)}
@@ -218,13 +571,13 @@ section{margin:46px 0}
 .chip.n:hover{border-color:var(--blue);background:rgba(125,156,192,.12)}
 .chip.a:hover{border-color:var(--gold2);background:rgba(232,201,138,.12)}
 .chip-label{
-  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--body-ink);
   margin:10px 0 2px;
 }
 
 /* ---------- cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px}
-.cards.wide{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr));gap:18px}
+.cards.wide{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
 .card{
   position:relative;
   background:var(--panel);
@@ -269,14 +622,54 @@ section{margin:46px 0}
   margin-bottom:34px;
 }
 .hero canvas{position:absolute;inset:0;width:100%;height:100%}
+/* .hero-shade no longer carries any contrast duty — the veil on .hero-content
+   below does — so it drops to a light tie between cover and page, exactly as
+   .mu-shade did at unit 27. It used to ramp .18 → .42 → .93 as a percentage of
+   .hero's HEIGHT while .hero-content is bottom-anchored, so the same element
+   landed at a different alpha on every subject: the breadcrumb row, the block's
+   first line, fell around 55–70 % of the hero where the ramp delivers only
+   .43–.61 against a requirement of .691 dark / .740 light. Left at .93 under the
+   new veil the two would composite to .986 and the cover would effectively be
+   gone, which is the outcome units 26a and 27 were careful to avoid. */
 .hero .hero-shade{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(var(--bg-rgb),.18) 0%,rgba(var(--bg-rgb),.42) 52%,rgba(var(--bg-rgb),.93) 100%);
+  background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30));
 }
-.hero-content{position:relative;padding:36px 38px 30px;width:100%}
-.hero-content .breadcrumbs{margin-bottom:8px;color:var(--muted)}
+/* The veil sits on the TEXT BLOCK, not on the hero box — the third instance of
+   the one geometry, after .home-hero .hero-shade (unit 26a) and .mu-hero-body
+   (unit 27), and deliberately not a fourth pattern. Anchored here, every glyph
+   in the block sits at exactly --hero-text-veil on all four hero families, on
+   every subject and at every viewport, instead of at a ramp position that
+   depends on how tall the subject's name, dates and tagline happen to be.
+   The 18 px feather is shorter than the smallest padding-top in the block
+   (22 px at ≤480 px, below), so no glyph can ever fall inside the ramp. The
+   bound ignores .hero-shade entirely: the shade only ever pulls the backdrop
+   further toward the page colour, which in both themes is the direction the
+   veil already moves it, so the veil alone is the conservative bound.
+   (AC19 / V-F3) */
+.hero-content{
+  position:relative;padding:36px 38px 30px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 18px,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 100%);
+}
+.hero-content .breadcrumbs{margin-bottom:8px;color:var(--body-ink)}
 .hero-content .breadcrumbs a{color:var(--body-ink)}
 .hero-content h1{font-size:3.6rem;font-weight:800;text-shadow:0 3px 24px rgba(var(--bg-rgb),.85)}
+/* The route's programmatic focus ring (#app h1:focus-visible, 2px solid --gold,
+   offset 5px) now lands on the veil rather than on an unbounded cover, and
+   light's --gold #9e7938 reads only 2.13 against the veiled bound rgb(194,189,178)
+   — under the 3.0 non-text floor of WCAG 1.4.11. This is not a regression: over a
+   dark cover the old .43–.61 ramp put the same ring lower still and left it
+   different on every subject. The veil makes it deterministic, so it is closed
+   here the same way and with the same colour unit 27 used for the museum band —
+   #6b5122, already the light home-hero title's darker stop, not a new value —
+   which clears at 3.96. Scoped to the hero: on ordinary light page paint the
+   shipped ring reads 3.40 and is left alone, and dark needs nothing (4.65
+   against its own veiled bound). The #app id is carried to outrank
+   #app h1:focus-visible. (AC19 / WCAG 1.4.11 / V-F3) */
+html[data-theme="light"] #app .hero-content h1:focus-visible{outline-color:#6b5122}
 .hero-sub{font-size:1rem;color:var(--body-ink);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
 .hero-sub a{color:var(--gold2)}
 .hero-tagline{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--body-ink);margin-top:6px}
@@ -292,7 +685,7 @@ section{margin:46px 0}
   background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:2px;
 }
 .why-kicker{
-  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);
   margin-bottom:10px;
 }
 .why-card p{
@@ -312,7 +705,7 @@ section{margin:46px 0}
 .gonext-item:last-child{border-bottom:none}
 .gonext-item b{color:var(--gold2);font-weight:500}
 .gonext-item span{color:var(--muted);font-size:.82rem}
-.gonext-item:hover b{color:#fff}
+.gonext-item:hover b{color:var(--hover-ink)}
 
 /* ---------- Tier 1 career arc — "the life, in acts" ---------- */
 .arc{margin-bottom:6px}
@@ -373,7 +766,7 @@ section{margin:46px 0}
   border-bottom:1px dashed var(--line2);
 }
 .facts li:last-child{border-bottom:none}
-.facts li::before{content:"✦";position:absolute;left:4px;color:var(--gold);font-size:.8rem;top:12px}
+.facts li::before{content:"✦";position:absolute;left:4px;color:var(--gold2);font-size:.8rem;top:12px}
 
 .side-panel{position:sticky;top:96px;display:flex;flex-direction:column;gap:26px}
 .panel{
@@ -386,7 +779,7 @@ section{margin:46px 0}
 }
 .work:last-child{border-bottom:none}
 .work .w-year{
-  font-family:var(--serif);font-size:.85rem;color:var(--gold);min-width:44px;text-align:right;
+  font-family:var(--serif);font-size:.85rem;color:var(--gold2);min-width:44px;text-align:right;
 }
 .work .w-title{font-size:.93rem;color:var(--body-ink);font-style:italic}
 .work.has-img{display:block;cursor:zoom-in;padding:12px 0}
@@ -425,9 +818,44 @@ section{margin:46px 0}
 .aw-btn.on{background:var(--gold);border-color:var(--gold);color:#171307;font-weight:500}
 .aw-btn.on:not(.primary){background:var(--teal);border-color:var(--teal)}
 .aw-empty{color:var(--muted);font-style:italic}
-.aw-provenance{font-size:.82rem;color:var(--faint);margin-top:22px}
+.aw-provenance{font-size:.82rem;color:var(--body-ink);margin-top:22px}
 .aw-card .card-art img{width:100%;height:100%;object-fit:cover;display:block}
 .mini-card .mc-img{width:52px;height:38px;border-radius:7px;flex-shrink:0;object-fit:cover}
+
+/* ---------- photo credit (attribution, not decoration) ----------
+   Quiet secondary metadata: it must be legible and its links reachable in both
+   themes, but it never competes with the picture or the prose.
+   The line is in normal flow on the page background, so its backdrop is the
+   generative #bg-canvas. --muted reaches only 4.18 against a 4.5 floor on the
+   base .mu-credit actually sits on, so this goes up one further rung to
+   --body-ink (5.85) — the same remedy unit 26a used for .home-hero-content
+   .footer-note a, and the rung .bio-block p already gives this line in artist
+   bios. Size and weight still separate it from the prose. (AC19 / F-28-1) */
+.img-credit{
+  font-size:.78rem;line-height:1.6;color:var(--body-ink);
+  letter-spacing:.02em;margin:0;
+}
+.img-credit a{color:var(--body-ink);text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:var(--line);transition:color .2s var(--ease),text-decoration-color .2s}
+.img-credit a:hover,.img-credit a:focus-visible{color:var(--gold2);text-decoration-color:var(--gold)}
+.mu-credit{margin:-4px 0 18px}
+.index-credit{margin-top:22px;max-width:74ch}
+#lightbox .lb-credit{display:block;margin-top:8px;font-style:normal;color:#b8b1a2}
+#lightbox .lb-credit a{color:#d9cfb6}
+#lightbox .lb-credit a:hover{color:var(--gold2)}
+
+/* the consolidated credits page (#/credits) */
+.credit-list{list-style:none;padding:0;margin:14px 0 0}
+.credit-list li{
+  padding:10px 0;border-top:1px solid var(--line2);
+  display:flex;flex-wrap:wrap;gap:2px 16px;align-items:baseline;
+}
+.credit-list li:first-child{border-top:0}
+.credit-list .cr-what{flex:1 1 240px;font-size:.95rem;color:var(--body-ink)}
+.credit-list .cr-what a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.credit-list .cr-what a:hover,.credit-list .cr-what a:focus-visible{color:var(--gold2)}
+.credit-list .img-credit{flex:1 1 280px}
+@media(max-width:640px){ .credit-list li{display:block} .credit-list .img-credit{margin-top:3px} }
 
 /* ---------- lightbox ---------- */
 #lightbox{
@@ -460,7 +888,7 @@ section{margin:46px 0}
 .mini-card:hover{background:rgba(201,164,92,.09)}
 .mini-card canvas{width:52px;height:38px;border-radius:7px;flex-shrink:0}
 .mini-card .mc-name{font-size:.9rem;color:var(--ink);line-height:1.25}
-.mini-card .mc-meta{font-size:.72rem;color:var(--muted)}
+.mini-card .mc-meta{font-size:.72rem;color:var(--body-ink)}
 
 /* ---------- taxonomy detail ---------- */
 .branch-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -486,7 +914,17 @@ section{margin:46px 0}
   opacity:0;pointer-events:none;transition:opacity .2s;
 }
 .tl-dot:hover .tl-tip{opacity:1}
-.tl-year{position:absolute;bottom:14px;font-size:.7rem;color:var(--faint);letter-spacing:.12em}
+/* --body-ink, not --faint (unit 31, AC19/F-8). `.timeline` above declares no
+   background, so these 11.2 px era years composite straight onto #bg-canvas on
+   all 8 #/era/* routes — the ink rule at #bg-canvas applies to them and only
+   --body-ink and --ink clear it. Unit 29 §7.1 listed .tl-year among the --faint
+   sites that survive "inside opaque panels"; that was false for this one, and
+   Van Eyck measured it at 4.06 light / 4.19 dark on real pixels against a 4.5
+   floor. Derived ceiling: --faint 1.83 dark / 2.58 light -> --body-ink 4.56 /
+   5.02. The other seven --faint declarations were re-measured in unit 31 and are
+   all panel-hosted — none touches this canvas. One of them still fails on its own
+   opaque paint (.tl2-year, on the 1 px gridline behind it, N-31-1). */
+.tl-year{position:absolute;bottom:14px;font-size:.7rem;color:var(--body-ink);letter-spacing:.12em}
 .tl-year.start{left:2%}
 .tl-year.end{right:2%}
 
@@ -498,8 +936,34 @@ section{margin:46px 0}
   text-align:center;margin-bottom:40px;
 }
 .home-hero canvas{position:absolute;inset:0;width:100%;height:100%}
-.home-hero .hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(var(--bg-rgb),.25),rgba(var(--bg-rgb),.88) 88%)}
+/* The layer behind this hero's text is NOT #bg-canvas (opacity .5/.6, and it is
+   outside .home-hero): it is the in-hero generative cover canvas at opacity 1,
+   verified in the DOM. So the only thing between a cover pixel and a glyph is
+   this scrim, and the composite backdrop is
+     B = cover * (1 - veil) + page * veil.
+   The covers regenerate every visit, so the veil is bounded against a worst-case
+   fully opaque cover pixel — white in dark (where the ink is light), black in
+   light (where the ink is dark) — not against any sampled cover.
+   Geometry: radii of 100 % of the box put the whole of .home-hero-content inside
+   the plateau at every viewport measured (worst normalised radius .58 at 390 px,
+   .49 at 1440 px), while the corners reach r = .707 and take ~23 % of the way to
+   --hero-veil-edge, so the cover still reads at the rounded frame.
+   Bound at the plateau — dark veil .80 / light veil .86:
+     title stops   dark 4.65 / 6.20 / 8.27 · light 6.62 / 3.46 / 4.60   floor 3.0
+     kicker        dark --gold2 6.84       · light --ink 9.27           floor 4.5
+     lede, credit  dark --body-ink 7.25    · light --body-ink 6.73      floor 4.5
+   (AC19 · V2-1 dark P1, V2-2 light margin) */
+.home-hero .hero-shade{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 100% 100% at 50% 50%,
+    rgba(var(--bg-rgb),var(--hero-veil)) 0%,
+    rgba(var(--bg-rgb),var(--hero-veil)) 62%,
+    rgba(var(--bg-rgb),var(--hero-veil-edge)) 100%);
+}
 .home-hero-content{position:relative;padding:60px 24px}
+/* --faint cannot reach 4.5 under any veil that leaves the cover visible (it needs
+   an alpha of .93), so the cover credit takes the body rung in both themes. */
+.home-hero-content .footer-note{color:var(--body-ink)}
 .home-hero-content .kicker{
   font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;
 }
@@ -534,7 +998,7 @@ section{margin:46px 0}
 }
 .entry-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--ec,var(--gold))}
 .entry-card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:var(--shadow)}
-.entry-card .ec-kicker{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ec,var(--gold))}
+.entry-card .ec-kicker{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ec,var(--gold2))}
 .entry-card h3{font-size:1.4rem;margin:10px 0 8px;color:var(--ink)}
 .entry-card p{font-size:.9rem;color:var(--muted);margin:0}
 .entry-card .ec-arrow{
@@ -542,7 +1006,9 @@ section{margin:46px 0}
   transition:transform .3s var(--ease);
 }
 .entry-card:hover .ec-arrow{transform:translateX(7px)}
+.ec-cover{position:absolute;inset:0;z-index:1;border-radius:inherit}
 .ec-surprise{
+  position:relative;z-index:2;
   margin-top:12px;padding:0;border:none;background:none;cursor:pointer;
   font-family:var(--sans);font-size:.8rem;color:var(--gold2);letter-spacing:.04em;
 }
@@ -563,7 +1029,7 @@ section{margin:46px 0}
 .daily-kicker{
   font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);margin-bottom:12px;
 }
-.daily-kicker span{color:var(--muted);letter-spacing:.12em}
+.daily-kicker span{color:var(--body-ink);letter-spacing:.12em}
 .daily-copy h2{font-size:2.4rem;margin:0 0 8px;letter-spacing:0}
 .daily-copy h2 a{color:var(--ink)}
 .daily-copy h2 a:hover{color:var(--gold2)}
@@ -572,14 +1038,32 @@ section{margin:46px 0}
 .daily-meta span{color:var(--body-ink)}
 .daily-note{font-family:var(--serif);font-size:1.03rem;line-height:1.72;color:var(--body-ink);max-width:62ch}
 .daily-detail{display:grid;gap:5px;margin:22px 0;padding-left:16px;border-left:2px solid var(--teal);max-width:58ch}
-.daily-detail b{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+/* the only small text on the site painted in --teal, and it sits on the page
+   background. --teal is a 3:1 fill token: 2.84 dark / 2.57 light against the
+   canvas ceiling. The block keeps its teal identity on the border-left; the
+   label takes a stop of the same hue that clears 4.5. (AC19/F-7) */
+.daily-detail b{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#b0dad3}
+html[data-theme="light"] .daily-detail b{color:#1b4a43}
 .daily-detail span{font-family:var(--serif);font-size:.96rem;line-height:1.55;color:var(--ink)}
 .daily-actions{margin:22px 0 14px}
 .daily-enter{display:inline-flex;align-items:center;gap:12px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
 .daily-enter span{font-size:1.2rem;transition:transform .25s var(--ease)}
 .daily-enter:hover span{transform:translateX(5px)}
+/* F-1 — `#/` overflowed horizontally by 150 / 113 / 54 / 18 px at 821 / 900 /
+   1024 / 1100 px, and this box was the whole of it. It was classified a note
+   because those widths fall outside the frozen viewport list; the theory pole's
+   position is that real people use them, and they are right.
+   The mechanism, measured rather than guessed: `min-height:390px` on a box with
+   `aspect-ratio:4/3` TRANSFERS through the ratio into a 390 x 4/3 = 520 px
+   minimum WIDTH, which the grid track cannot go below however narrow the
+   viewport. `body{overflow-x:hidden}` then hid the symptom — the page did not
+   scroll sideways, it silently clipped — which is why nothing caught it.
+   Removing the min-height removes the transferred minimum; the ratio alone
+   still gives the box its height from whatever width the track has, so at
+   1280 px and above the rendered geometry is unchanged (520 x 390), and below
+   that it shrinks instead of overflowing. (F-1) */
 .daily-media{
-  position:relative;display:flex;align-items:center;justify-content:center;min-height:390px;aspect-ratio:4/3;
+  position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;
   overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#0c0b09;
 }
 .daily-media img{width:100%;height:100%;display:block;object-fit:contain;transition:transform .5s var(--ease)}
@@ -591,7 +1075,7 @@ section{margin:46px 0}
 }
 .daily-page-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin:24px 0 30px}
 .daily-page-head h1{font-size:3.25rem;margin:0 0 8px}
-.daily-sequence{display:flex;align-items:center;gap:10px;color:var(--muted);flex:0 0 auto}
+.daily-sequence{display:flex;align-items:center;gap:10px;color:var(--body-ink);flex:0 0 auto}
 .daily-sequence b{font-family:var(--serif);font-size:2.4rem;color:var(--gold2);line-height:1}
 .daily-sequence span{font-size:.65rem;line-height:1.4;letter-spacing:.1em;text-transform:uppercase}
 .daily-stage{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:46px;align-items:center}
@@ -601,12 +1085,12 @@ section{margin:46px 0}
 }
 .daily-stage-media img{max-width:100%;max-height:74vh;display:block;object-fit:contain}
 .daily-stage-copy .daily-note{font-size:1.12rem}
-.daily-return{font-size:.75rem;color:var(--faint);font-style:italic;margin-top:18px}
+.daily-return{font-size:.75rem;color:var(--body-ink);font-style:italic;margin-top:18px}
 .daily-threads{padding-top:30px;border-top:1px solid var(--line2)}
 
 @media (max-width:820px){
   .daily-home{grid-template-columns:1fr;gap:28px;margin:34px -16px;padding:30px 16px}
-  .daily-media{order:-1;min-height:0;aspect-ratio:4/3}
+  .daily-media{order:-1;aspect-ratio:4/3}   /* min-height:0 retired with F-1 — nothing to reset */
   .daily-copy h2{font-size:1.9rem}
   .daily-page-head{align-items:start}
   .daily-page-head h1{font-size:2.45rem}
@@ -675,19 +1159,38 @@ section{margin:46px 0}
 }
 .era-tile:hover{transform:translateY(-5px);border-color:var(--line);box-shadow:var(--shadow)}
 .era-tile canvas{position:absolute;inset:0;width:100%;height:100%}
-.era-tile .et-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(var(--bg-rgb),.88))}
-.era-tile .et-label{position:relative;padding:12px 14px;width:100%}
+/* The fourth instance of the same defect, and the one Vermeer's closing
+   paragraph asked to be found by ENUMERATING the scrims rather than by waiting
+   for it to fail in someone's screenshot. .et-shade ramps transparent → .88 as a
+   percentage of .era-tile's HEIGHT while .et-label is bottom-anchored
+   (align-items:flex-end), so the same element sat at a different alpha on every
+   tile: measured before this change, light 1440×900, `b` — the era's name —
+   read 1.50 against its 4.5 floor and `span` 3.37, 12 of 16 elements below
+   floor. Same remedy as .hero-content and .mu-hero-body, same token, no new
+   value: the veil moves onto the TEXT BLOCK. --ink needs .472 and --body-ink
+   .705 in light, .675 in dark; --hero-text-veil .80 carries both. The feather
+   is 10 px here, not 18 — it must stay shorter than the block's padding-top,
+   which is 12 px on this tile. .et-shade drops to the same light cover/page tie
+   .mu-shade and .hero-shade take. (AC19 / V-F3 / WCAG 1.4.3) */
+.era-tile .et-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30))}
+.era-tile .et-label{
+  position:relative;padding:12px 14px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 10px,
+    rgba(var(--bg-rgb),var(--hero-text-veil)) 100%);
+}
 .era-tile .et-label b{font-family:var(--serif);font-size:1.05rem;font-weight:600;display:block;color:var(--ink)}
-.era-tile .et-label span{font-size:.7rem;color:var(--muted)}
+.era-tile .et-label span{font-size:.7rem;color:var(--body-ink)}
 
 /* ---------- filter bar ---------- */
 .filter-bar{
   display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:24px;
 }
-.filter-bar .f-label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+.filter-bar .f-label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--body-ink);margin-right:6px}
 .f-btn{
   padding:5px 14px;border-radius:999px;border:1px solid var(--line2);
-  background:transparent;color:var(--muted);font-family:var(--sans);font-size:.78rem;
+  background:transparent;color:var(--body-ink);font-family:var(--sans);font-size:.78rem;
   cursor:pointer;transition:all .25s var(--ease);
 }
 .f-btn:hover{color:var(--ink);border-color:var(--line)}
@@ -695,7 +1198,7 @@ section{margin:46px 0}
 .f-spacer{flex:1}
 
 /* ---------- tree (movements / techniques index) ---------- */
-.tree-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.tree-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px}
 .branch-chip{
   display:inline-flex;align-items:center;gap:7px;
   padding:4px 12px;border-radius:999px;font-size:.74rem;
@@ -703,7 +1206,12 @@ section{margin:46px 0}
   transition:all .25s var(--ease);
 }
 .branch-chip:hover{color:var(--ink);border-style:solid;border-color:var(--gold);transform:translateY(-2px)}
-.branch-chip::before{content:"↳";color:var(--gold);font-size:.7rem}
+/* AT-5, unit 34. Generated content lands in the accessible name in Safari, and
+   no aria-hidden span can reach a pseudo-element — which is why unit 33's
+   JS-side arrow fix missed this one. The chip carries an explicit aria-label
+   equal to its visible text (js/app.js, branch-list), so this glyph stays
+   decorative. Any new ::before glyph on a named element needs the same. */
+.branch-chip::before{content:"↳";color:var(--gold2);font-size:.7rem}
 
 /* ---------- genealogical trees ---------- */
 .tree-wrap{
@@ -729,13 +1237,13 @@ section{margin:46px 0}
 .tl2-leg{
   display:inline-flex;align-items:center;gap:7px;
   padding:4px 12px;border-radius:999px;border:1px solid var(--line2);
-  background:transparent;color:var(--muted);font-family:var(--sans);font-size:.76rem;
+  background:transparent;color:var(--body-ink);font-family:var(--sans);font-size:.76rem;
   cursor:pointer;transition:all .25s var(--ease);
 }
 .tl2-leg i{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0}
 .tl2-leg:hover{color:var(--ink);border-color:var(--line);transform:translateY(-1px)}
 .tl2-leg.on{color:var(--ink);border-color:var(--gold);background:rgba(201,164,92,.14)}
-.tl2-leg-more{font-style:italic;color:var(--gold);border-style:dashed}
+.tl2-leg-more{font-style:italic;color:var(--gold2);border-style:dashed}
 .tl2-wrap{
   overflow:auto;max-height:74vh;position:relative;
   border:1px solid var(--line2);border-radius:18px;background:var(--panel);
@@ -744,13 +1252,26 @@ section{margin:46px 0}
 .tl2-grid{position:absolute;top:0;bottom:0;width:1px;background:var(--line2)}
 .tl2-grid.c{background:var(--line)}
 .tl2-grid.now{background:var(--gold);opacity:.55}
+/* V32-5 / V32-6 (= N-31-1, confirmed independently at unit 32) — a flat-paint
+   geometry defect, not an ink one. The label is translateX(-50%)-centred on its
+   own 1 px .tl2-grid rule, so the rule passes THROUGH the glyphs: 3.78 light /
+   3.63 dark, recovering to 5.13–5.17 / 4.90 the moment the rule alone is
+   suppressed. The binding element differs by theme — in dark it is .tl2-year.now
+   in --gold2 over the gold `now` rule, in light it is plain --faint over the
+   century rule while .now passes at 4.76 — so an ink swap aimed at either one
+   leaves the other open. Instead the label takes its host surface with it: an
+   opaque --panel chip, which is .tl2-wrap's own background, so nothing changes
+   visually except that the rule now stops at the label instead of crossing it.
+   z-index is explicit because .tl2-grid is also absolutely positioned and later
+   in paint order would otherwise decide this. (AC19 / V32-5 / V32-6 / N-31-1) */
 .tl2-year{
-  position:absolute;transform:translateX(-50%);
+  position:absolute;transform:translateX(-50%);z-index:1;
+  padding:0 4px;background:var(--panel);border-radius:4px;
   font-family:var(--serif);font-size:.7rem;color:var(--faint);letter-spacing:.14em;
 }
 .tl2-year.t{top:8px}
 .tl2-year.b{bottom:6px}
-.tl2-year.now{color:var(--gold)}
+.tl2-year.now{color:var(--gold2)}
 .tl2-bar{
   position:absolute;display:block;border-radius:9px;
   overflow:hidden;white-space:nowrap;box-sizing:border-box;
@@ -767,13 +1288,39 @@ section{margin:46px 0}
   border:1px solid var(--line2);border-radius:18px;background:var(--panel);
 }
 #ig-svg{display:block}
-.ig-edge{stroke-width:1.3;stroke-opacity:.5;transition:stroke-opacity .25s,stroke-width .25s}
+/* the five relationship types resolve through the theme tokens, not through a
+   theme-invariant hex: one custom property per type, read by the edge stroke,
+   the arrowhead, the legend swatch and the inline label alike (AC19). */
+.e-taught{--rc:var(--gold2)}
+.e-influenced{--rc:var(--teal)}
+.e-befriended{--rc:var(--wine)}
+.e-rivaled{--rc:var(--rose)}
+.e-partners{--rc:var(--mauve)}
+.ig-arr{fill:var(--rc)}
+.ig-sw{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0;background:var(--rc)}
+.ig-rel{color:var(--rc);font-weight:500}
+.ig-edge{stroke:var(--rc);stroke-width:1.3;stroke-opacity:.5;transition:stroke-opacity .25s,stroke-width .25s}
 .ig-edge.hid{display:none}
 .ig-node{cursor:pointer}
 .ig-node circle{stroke:var(--panel);stroke-width:3;transition:opacity .25s,filter .2s}
+/* V32-1 / V32-2 — the label carries its own backdrop.
+   Measured 1.01–1.39 in all four cells at rest, and 2.72–3.29 for the focused
+   state's --ink relabelling. Suppression showed the ink is NOT the defect: on
+   .ig-wrap's --panel it clears at 6.02. What fails is what CROSSES it — the
+   .ig-edge relationship strokes AND the neighbouring .ig-node circles, which
+   are hard-coded movement-palette hexes rather than theme tokens, and hiding
+   only one of the two layers did not clear it. Re-inking the label cannot help
+   when the backdrop is an arbitrary saturated hex; nor can the graph's colour
+   identity be surrendered. So the glyph is given the surface it was designed
+   for: paint-order lays a --panel stroke under the fill, restoring the panel as
+   the measured backdrop wherever an edge or a circle passes behind the text.
+   Width is in `em` so it tracks the font size rather than a magic pixel, and
+   both the at-rest --muted and the focused --ink inherit it. (AC19/V32-1/V32-2) */
 .ig-node text{
   fill:var(--muted);font-family:var(--sans);font-size:10.5px;
   text-anchor:middle;pointer-events:none;transition:opacity .25s;
+  paint-order:stroke fill;
+  stroke:var(--panel);stroke-width:.46em;stroke-linejoin:round;
 }
 .ig-node:hover circle{filter:brightness(1.25)}
 #ig-svg.focused .ig-node:not(.lit){opacity:.07}
@@ -781,12 +1328,33 @@ section{margin:46px 0}
 #ig-svg.focused .ig-edge.lit{stroke-opacity:.95;stroke-width:2.2}
 #ig-svg.focused .ig-node.lit text{fill:var(--ink)}
 .ig-node.sel circle{stroke:var(--gold2);stroke-width:3}
+/* keyboard focus ring: sits outside the node, so it reads over the panel in both themes */
+.ig-node{outline:none}
+.ig-node circle.ig-ring{fill:none;stroke:none;stroke-width:2.5}
+.ig-node:focus circle.ig-ring{stroke:var(--gold2)}
+.ig-node:focus:not(:focus-visible) circle.ig-ring{stroke:none}
+/* a focused node must stay legible even while the rest of the graph is dimmed */
+#ig-svg.focused .ig-node:focus{opacity:1}
 .ig-info{
   margin-top:16px;padding:18px 22px;
   background:var(--panel);border:1px solid var(--line);border-radius:16px;
   animation:viewIn .3s var(--ease) both;
 }
 .ig-info strong{font-family:var(--serif);font-size:1.15rem}
+
+/* ---------- storage-failure notice (literal, dismissible, never a success message) ---------- */
+.pp-notice{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:60;
+  max-width:560px;margin:0 auto;padding:16px 20px;
+  background:var(--panel);border:1px solid var(--line2);border-radius:16px;
+  box-shadow:0 12px 44px rgba(0,0,0,.34);color:var(--ink);font-size:.94rem;line-height:1.5;
+}
+.pp-notice[hidden]{display:none}
+.pp-notice p{margin:0 0 12px}
+/* import conflict choices — one panel per single-value field that would be replaced */
+.pp-conflicts{display:grid;gap:14px;margin:20px 0 22px}
+.pp-choice{display:flex;flex-wrap:wrap;gap:8px}
+.pp-choice .f-btn{text-align:left}
 
 /* ---------- world map ---------- */
 .map-wrap{
@@ -801,8 +1369,23 @@ section{margin:46px 0}
 }
 .map-dot:hover circle{fill:rgba(201,164,92,.75)}
 .map-dot text{font-size:13px;text-anchor:middle;pointer-events:none}
-.map-dot .md-name{fill:var(--muted);font-family:var(--sans)}
-.map-hint{font-size:.74rem;color:var(--faint);font-style:italic;text-align:center;margin:8px 0 4px}
+/* The same class as V32-1, on the surface Vermeer named in unit 32's NOT TESTED
+   list 7 as "the most likely place a fifth SVG finding is hiding". It was: at
+   the europe zoom the dot label is crossed by its own gold .map-dot circle and
+   measured 1.28 dark@1440 (light@390 scraped 4.78). Same remedy, same reason —
+   the ink is fine on .map-land's --panel2, so the label carries that surface
+   with it. (AC19 / u32 NOT TESTED 7) */
+/* not `.map-dot .md-name` any more: the labels are lifted out of the dots into
+   a trailing <g class="md-labels"> so that no dot can paint over one. They
+   therefore need their own text-anchor and pointer-events, which they used to
+   inherit from `.map-dot text`. */
+.md-name{
+  fill:var(--muted);font-family:var(--sans);
+  text-anchor:middle;pointer-events:none;
+  paint-order:stroke fill;
+  stroke:var(--panel2);stroke-width:.34em;stroke-linejoin:round;
+}
+.map-hint{font-size:.74rem;color:var(--body-ink);font-style:italic;text-align:center;margin:8px 0 4px}
 .map-toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
 #map-dots{transition:opacity .3s ease}
 .eu-frame{
@@ -815,17 +1398,17 @@ section{margin:46px 0}
 /* ---------- 404 ---------- */
 .lost{text-align:center;padding:90px 20px}
 .lost h1{font-size:3rem}
-.lost p{color:var(--muted)}
+.lost p{color:var(--body-ink)}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--line2);background:rgba(var(--bg-rgb),.6)}
 .footer-inner{max-width:1240px;margin:0 auto;padding:34px 28px;display:flex;flex-direction:column;gap:12px}
-.footer-brand{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted)}
+.footer-brand{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--body-ink)}
 .footer-brand strong{color:var(--ink);font-family:var(--serif);letter-spacing:.1em}
 .footer-nav{display:flex;gap:18px;flex-wrap:wrap}
-.footer-nav a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.footer-nav a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--body-ink)}
 .footer-nav a:hover{color:var(--gold2)}
-.footer-note{font-size:.76rem;color:var(--faint);margin:0;font-style:italic}
+.footer-note{font-size:.76rem;color:var(--body-ink);margin:0;font-style:italic}
 
 /* ---------- responsive ---------- */
 @media (max-width:980px){
@@ -834,10 +1417,43 @@ section{margin:46px 0}
 }
 @media (max-width:820px){
   .site-header{flex-wrap:wrap;gap:10px;padding:12px 16px}
-  .main-nav{order:3;width:100%;overflow-x:auto;padding-bottom:2px}
+  /* .main-nav{flex:1} sets flex-basis:0%, which beats the width:100% below and
+     left the nav box 97 px wide; unit 25e's flex-wrap:wrap then turned that
+     narrow box from one scrolling row into eight stacked ones and took the
+     header from 109 px to 362 px, i.e. 43 % of an 844 px viewport (V2-4).
+     flex-basis is restored here and the wrap is switched off, so below 820 px
+     the row scrolls behind the mask affordance again, as it did before 25e.
+     The wrap stays in force above 820 px, where AC18 needs it at 200 % zoom. */
+  /* F-2 (unit 37): the edge fade is painted over the nav's own box, not over
+     its content, so whichever link the browser scrolls flush to the right edge
+     lands under the transparent end of the gradient and its focus ring is half
+     erased; `overflow-x:auto` clips the 5 px the ring sits outside the link box
+     on top of that. `::after` reserves a strip of scrollable space the width of
+     the fade past the last link: it gives the row somewhere to scroll to, so at
+     maximum scroll the strip and not a link is what sits under the gradient,
+     and the ring is no longer clipped by the scrollport. `scroll-padding-inline-end`
+     matches it, so a focused link that IS off-view is scrolled to stop with the
+     strip showing rather than flush — but measured, that reaches only off-view
+     links: Chrome runs no scroll-into-view for a link that is already visible
+     and merely faded, so the rest is done in app.js on `focusin`. The mask is
+     unchanged and still fades at every scroll position. */
+  .main-nav{order:3;flex:0 0 calc(100% + 6px);width:100%;flex-wrap:nowrap;
+    overflow-x:auto;padding-bottom:2px;
+    /* the scrollport clips at the padding box, and an outline is painted
+       outside the link's border box, so at scrollLeft 0 the first link lost the
+       left side of its ring. The box is widened 6 px to the left and the same
+       6 px given back as padding, so the ring has room to be painted and every
+       link stays exactly where it was (first link measured at x=16 before and
+       after). The row still ends flush with the header's content box. */
+    margin-inline-start:-6px;padding-inline-start:6px;
+    scroll-padding-inline-end:calc(22% + 10px);
+    -webkit-mask-image:linear-gradient(90deg,#000 78%,transparent);
+    mask-image:linear-gradient(90deg,#000 78%,transparent)}
+  .main-nav::after{content:"";flex:0 0 calc(22% + 10px)}
   .main-nav a{padding:6px 10px;font-size:.78rem;white-space:nowrap}
   .search-wrap{margin-left:auto;width:min(220px,52vw)}
   #app{padding:22px 16px 70px}
+  .strip{margin-left:-16px;margin-right:-16px}
   .hero-content{padding:24px 20px 20px}
   .hero-content h1{font-size:2.4rem}
 }
@@ -854,19 +1470,29 @@ section{margin:46px 0}
 }
 
 /* ---------- editorial lists ---------- */
-.list-card .lc-kicker{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.list-card .card-tagline{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.list-card .lc-kicker{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px}
+/* was a 3-line clamp, i.e. a fixed line count that destroyed 266-311 px of
+   tagline per card at 200 % text zoom. The three lines survive as a MINIMUM,
+   so the card grid keeps its rhythm, but the box now grows with the text. */
+.list-card .card-tagline{min-height:4.95em;overflow:visible}
 .list-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:38px;align-items:center;margin-bottom:36px}
 .list-hero-art{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
 .list-hero-art img,.list-hero-art canvas{width:100%;display:block}
 .list-entries{list-style:none;margin:0;padding:0;max-width:880px}
 .list-entry{display:grid;grid-template-columns:34px 132px 1fr auto;gap:20px;align-items:center;padding:18px 0;border-bottom:1px dashed var(--line2)}
 .list-entry:last-child{border-bottom:none}
-.le-num{font-family:var(--serif);color:var(--gold);font-size:1.2rem;text-align:right}
+.le-num{font-family:var(--serif);color:var(--gold2);font-size:1.2rem;text-align:right}
 .le-art{display:block;width:132px;height:100px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .le-art img,.le-art canvas{width:100%;height:100%;object-fit:cover;display:block}
 .le-body h3{margin:0 0 4px;font-size:1.12rem;font-family:var(--serif)}
-.le-meta{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+/* V32-4 — the second residual of F-7's class, and the F-8 seam exactly: unit
+   28/29's route list held #/lists but not #/list/<id>, so this selector was
+   never walked and kept --muted while 26 siblings were re-pointed. Its measured
+   backdrop is #bg-canvas with NO panel anywhere in the ancestry, and against
+   unit 29's derived canvas ceiling --muted is bounded at 3.57 light / 2.24 dark
+   — it fails by bound, not by sample. Only --body-ink and --ink clear the floor
+   over that surface. (AC19 / V32-4 / F-7) */
+.le-meta{font-size:.82rem;color:var(--body-ink);margin-bottom:6px}
 .le-note{margin:0;color:var(--body-ink);font-size:.92rem;font-style:italic;max-width:52ch}
 .le-adm{white-space:nowrap}
 .aw-lists{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -883,11 +1509,60 @@ section{margin:46px 0}
 .mu-collage.c1,.mu-collage.c2{grid-template-columns:repeat(2,1fr)}
 .mu-collage.c4{grid-template-columns:repeat(2,1fr)}
 .mu-collage img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
-.mu-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.18),rgba(var(--bg-rgb),.94) 80%)}
-.mu-hero-body{position:relative;padding:34px 38px 26px;width:100%}
+/* .mu-shade no longer carries any contrast duty — the veil below does — so it
+   drops to a light tie between photograph and page. It used to ramp to .94 by
+   80 % of .mu-hero, which put the photograph's own presence at the mercy of the
+   hero's height while still leaving the text block short of its floor. */
+.mu-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bg-rgb),.06),rgba(var(--bg-rgb),.30))}
+/* The veil sits on the TEXT BLOCK, not on the hero box, which is the whole
+   point: .mu-shade's alpha ramped as a percentage of .mu-hero, while
+   .mu-hero-body is bottom-anchored and its height varies with the venue name,
+   the hook and the founding year — so the same element landed at a different
+   alpha on every venue (.37–.51 where it needed .864). Anchored here, every
+   glyph in the band sits at exactly --mu-veil on all 104 venues, at every
+   viewport. The 18 px feather is shorter than the smallest top padding in the
+   band (22 px at ≤700 px), so no glyph can ever fall inside the ramp; above it
+   the photograph keeps far more of itself than the old .94 ramp left. */
+.mu-hero-body{
+  position:relative;padding:34px 38px 26px;width:100%;
+  background:linear-gradient(180deg,
+    rgba(var(--bg-rgb),0) 0,
+    rgba(var(--bg-rgb),var(--mu-veil)) 18px,
+    rgba(var(--bg-rgb),var(--mu-veil)) 100%);
+}
 .mu-hero-body h1{margin-bottom:.15em}
+/* Crumbs in the band paint over a photograph, so they take the rung the artist
+   hero already takes over its cover (.hero-content .breadcrumbs): --faint needs
+   a backdrop alpha of .93 dark / .98 light and cannot be carried by any veil
+   that leaves the photograph visible, while --muted and --body-ink clear at
+   --mu-veil. Outside the band .breadcrumbs keeps --faint on opaque page paint. */
+.mu-hero-body .breadcrumbs,
+.mu-hero-body .breadcrumbs .sep{color:var(--muted)}
+.mu-hero-body .breadcrumbs a{color:var(--body-ink)}
+.mu-hero-body .breadcrumbs a:hover{color:var(--gold2)}
 .mu-sub{color:var(--muted);font-size:.95rem;letter-spacing:.04em}
 .mu-hook{font-family:var(--serif);font-style:italic;color:var(--gold2);font-size:1.18rem;margin-top:10px}
+/* Light's --gold2 (#81632b) is the one token in the band that no usable veil can
+   carry: over a worst-case opaque photograph pixel it needs .975 to clear 4.5,
+   i.e. an opaque band. Inside the band light gold drops to #6b5122 — already the
+   light home-hero title's darker stop, not a new colour — which clears at 4.82,
+   and its hover to #4a3616 (7.44), that gradient's darkest stop. The global
+   a:hover{color:#fff} would otherwise paint white on warm paper here. Dark's
+   --gold2 needs only .69 and is left alone. (AC19 / F-V1) */
+html[data-theme="light"] .mu-hook,
+html[data-theme="light"] .mu-sub a,
+html[data-theme="light"] .mu-hero-body .breadcrumbs a:hover{color:#6b5122}
+html[data-theme="light"] .mu-sub a:hover{color:#4a3616}
+/* The route's programmatic focus ring (#app h1:focus-visible, 2px solid --gold)
+   lands on the veil, not on page paint, and light's --gold #9e7938 reads only
+   2.60 against the veiled bound — under the 3.0 non-text floor of WCAG 1.4.11.
+   It is not a regression (over a dark photograph the old thin scrim put the same
+   ring near 1.15) but the veil makes it deterministic, so it is fixed here with
+   the band gold this unit already introduced: 4.82. Scoped to the band — on
+   ordinary light page paint the shipped ring reads 3.40 and is left alone. Dark
+   needs nothing (6.19). The #app id is carried to outrank #app h1:focus-visible.
+   (AC19 / F-V1) */
+html[data-theme="light"] #app .mu-hero-body h1:focus-visible{outline-color:#6b5122}
 .mu-essay{max-width:74ch;margin:0 0 14px;font-size:1.05rem;line-height:1.85;color:var(--body-ink)}
 .mu-essay p:first-child::first-letter{
   font-family:var(--serif);font-size:3.3em;float:left;line-height:.82;
@@ -920,7 +1595,8 @@ section{margin:46px 0}
   transition:border-color .2s,transform .2s}
 .tone i{width:26px;height:26px;border-radius:50%;background:var(--tone);flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
 .tone:hover{transform:translateY(-2px)}
-.tone.on{border-color:var(--gold);background:rgba(201,164,92,.12);color:var(--ink)}
+.tone.on{border-color:var(--gold);background:rgba(201,164,92,.12);color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--gold)}
+.tone.on::after{content:"✓";margin-left:auto;color:var(--gold2);font-weight:700;font-size:.95rem;line-height:1}
 .ob-foot{display:flex;align-items:center;gap:18px;margin-top:18px}
 .aw-btn[disabled]{opacity:.4;cursor:not-allowed}
 .deck-progress{height:4px;border-radius:4px;background:var(--line2);margin:18px 0 22px;overflow:hidden}
@@ -949,7 +1625,7 @@ section{margin:46px 0}
 .persona-card.adopted{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.15)}
 .pc-band{height:10px}
 .pc-body{padding:14px 18px 16px}
-.pc-kind{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.pc-kind{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px}
 .pc-body h3{margin:0 0 6px;font-size:1.2rem}
 .pc-body p{margin:0 0 10px;color:var(--body-ink);font-size:.9rem}
 .tone-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px}

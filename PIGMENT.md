@@ -359,24 +359,30 @@ Dating may never be added. It is not part of the core promise.
 
 ## 12. Current Implementation Snapshot
 
-The numbers below are a dated snapshot, not permanent requirements. Run the validator for current counts.
+The numbers below are a dated snapshot, not permanent requirements. They go
+stale the moment someone adds a painter, so treat any figure here as
+"true on the date stamped below, and nowhere else." The validator is the only
+current source: `osascript -l JavaScript tools/validate.jxa.js`.
 
-As of 2026-07-16, `main` contains:
+**Snapshot taken 2026-07-25** on branch `pig-001-stabilization`, from validator
+output (the previous snapshot in this file was dated 2026-07-16 and had drifted
+by up to 12 records):
 
-- 235 artists
-- 314 canonical artworks
-- 73 Tier 1 artworks
+- 247 artists
+- 317 canonical artworks
+- 75 Tier 1 artworks
 - 36 Tier 1 exhibition artist profiles, all with career arcs
-- 74 movements
+- 75 movements
 - 39 techniques
 - 8 eras, from the 14th century to today
 - 37 nations
 - 115 registered venues
 - 103 museum notes/pages represented in the current museum index
-- 12 editorial lists
+- 12 editorial lists (4 featured)
 - 15 provisional Personas
-- 215 influence relationships
-- 73 eligible Painting-of-the-Day works
+- 225 influence relationships
+- 27 generative painter styles
+- 75 eligible Painting-of-the-Day works
 
 Implemented routes include:
 
@@ -468,7 +474,9 @@ Artwork accuracy is a product requirement, not a cosmetic detail.
 
 ## 15. Known Gaps and Provisional Decisions
 
-An LLM should not silently treat these as settled:
+An LLM should not silently treat these as settled. Gaps that were *promised in
+writing* and not delivered are tracked separately, with citations, in §19
+(Deferred-Promise Register):
 
 1. **Persona names are placeholders.** The prototypes may survive; labels and copy may change.
 2. **The onboarding deck is not fully adaptive yet.** The current implementation chooses the full deck upfront, while `docs/TASTE_MATH.md` describes later choices reacting to earlier responses.
@@ -551,3 +559,47 @@ The standard is:
 > Does this help someone discover art, understand what they are seeing, and recognize something about their own taste?
 
 If the answer is no, it probably does not belong in Pigment yet.
+
+## 19. Deferred-Promise Register
+
+Documentation promises things the build does not do yet. That is normal for a
+product mid-flight and dishonest only when unrecorded, so this is the record.
+Nothing here is a work item for the current stabilization task — it is a list
+of claims that must not be repeated as if they had shipped.
+
+Rule for contributors: **if you write a promise into a doc before the code
+exists, add it here in the same commit.** If you ship one, delete its row here
+in the same commit. A promise that appears in neither the build nor this table
+is a defect.
+
+Created 2026-07-25 (PIG-001 unit 21, acceptance criteria 14 and 26). "Where
+promised" cites the document that makes the claim; "Deferred to" names where
+the work is expected to be picked up, not a date.
+
+| # | Promise | Where promised | Current status in the build | Deferred to |
+| --- | --- | --- | --- | --- |
+| D-1 | **Response-adaptive onboarding deck** — anchor works first, then probes chosen against the most-uncertain axes | `docs/ADMIRE_SPEC.md` §6.2 (claim corrected in this unit), `docs/TASTE_MATH.md` §6 | Not implemented. `buildDeck()` runs once per session and builds a **stratified** deck up front; no code re-reads `admired`/`skipped` mid-deck. The composition rules are honored; the adaptivity is not. | §16 priority 1. Belongs with the taste-math work OD-4 flags as a candidate flagship, not to a stabilization pass. |
+| D-2 | **Museum "If you only have one hour" route** — 5–8 works ordered as a route, one sentence each | `docs/STYLE_GUIDE.md` §4.7 (called the hero unit of a museum page), `PIGMENT.md` §10 | Not implemented. Museum pages ship a collection grid. The Style Guide's strongest museum promise is the one thing museum pages do not do. | §16 priority 4. Needs curated editorial content per museum, not a component. |
+| D-3 | **Taste in the global navigation** | Implied by Taste's status as the core loop (`PIGMENT.md` §3, §8) | Partially shipped. The `#/taste` route exists and is reachable from the homepage and the footer nav, but **not** from the primary header nav (`index.html`, `.main-nav`), so the product's central promise is absent from its most persistent surface. | An information-architecture decision, not a bug fix. Needs Mondrian (UX) and Matisse (visual) before anyone adds a ninth nav item. |
+| D-4 | **Full Passport collections** — favorite artworks, artists, movements and museums; user lists; ratings and reflections; museum logs | `PIGMENT.md` §11, Phase 2 | Not implemented, and correctly so. The Passport currently holds admirations, seen, want-to-see, saved, quiz answers, coordinates, Persona and milestones in `localStorage` under `pigment.taste.v1`. Phase 2 explicitly depends on accounts, which is a deliberate not-yet. | Phase 2. Do not build pieces of it early — §18's rule about not adding entities for their own sake applies. |
+| D-5 | **Uncertainty interfaces** — showing the user how confident a taste reading is, and being honest about disputed attribution | `PIGMENT.md` §5 ("be honest about uncertainty, disputed attribution, and legends"), `docs/TASTE_MATH.md` (confidence machinery) | Not implemented as an interface. Confidence is computed internally; the UI presents a Persona and coordinates with no visible error bar, and nothing distinguishes a reading from 8 admirations from one from 40. | Belongs with the taste-math objective (OD-4). Reporting confidence is worthless until the number underneath it is trusted. |
+| D-6 | **Instrumentation** — how many people finish onboarding, how many share a result | `PIGMENT.md` §15.7, §16.8 | Not implemented, and undecided rather than merely unbuilt. There is no analytics of any kind, which is also currently a feature: after PIG-001 unit 20 the product makes **zero** third-party runtime requests, and any instrumentation would be the first thing to break that. | Requires an explicit product decision by the owner first (§16.8), including whether the privacy cost is worth paying. |
+| D-7 | **The fifth taste axis (`M`)** — stored but not surfaced | `PIGMENT.md` §15.10, `docs/TASTE_MATH.md` (five-axis model) | Partially shipped. `M` is computed and persisted; the public map emphasizes `F × D`. So the model is five-dimensional and the interface is two-dimensional, and the gap is unexplained to the user. | Unresolved by design, not by neglect. Same objective as D-1/D-5. |
+
+### Release-language rule (from this unit)
+
+Per owner decision OD-1, Pigment is an **editorial and personalized
+path-discovering tool**, not a comprehensive historical reference. Public copy
+and documentation must not claim, or let a reader infer:
+
+- historical-reference completeness ("comprehensive", "complete history",
+  "definitive", "every major painter") — the atlas is a curated selection with
+  a point of view, and its omissions are deliberate;
+- **rights clearance.** A death year plus a Wikimedia Commons licence template
+  is an *asserted* basis. No qualified rights determination has been made, and
+  per OD-5 unresolved entries stay labelled unresolved rather than quietly
+  becoming "cleared";
+- response-adaptive onboarding, accessibility conformance, privacy
+  certification, or legal readiness.
+
+Counts in any document are a dated snapshot. Date them, or do not write them.

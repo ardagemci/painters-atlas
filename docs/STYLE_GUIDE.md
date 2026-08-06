@@ -54,7 +54,7 @@ Pigment is playful but never careless. Trust is the product.
 1. **Hedge legends, state facts.** Legends get *reportedly, legend says, Vasari claims, the story goes.* Documented facts get plain statement. Never let a good story quietly upgrade itself into a fact.
 2. **Never invent quotes.** If a quote's attribution is shaky, say so ("attributed," "the quote varies; the wheelchair didn't").
 3. **Contested identities are stated as contested.** (Malevich: "Both Ukraine and Russia claim him.") Choose a primary filing, acknowledge the dispute, never flatten it.
-4. **Copyright is worn openly.** We show public-domain works and say so; generative covers are "interpretations painted in the browser," never passed off as the real thing.
+4. **Copyright is worn openly — and bounded.** We show works whose Commons metadata *asserts* a public-domain basis, and we say exactly that: what the source asserts, who the credit names, and what remains unresolved. Never write that a work "is public domain," "is cleared," or "is verified PD" — those are legal conclusions this project does not make and is not qualified to make (OD-5, AC12). <!-- OD5-EXEMPT: this line quotes the banned phrases in order to ban them; enforced by tests/test_rights_tooling.py TestProseLanguage --> Generative covers are "interpretations painted in the browser," never passed off as the real thing.
 5. **Uncertainty is content.** "No one knows why" is often the most interesting sentence available. Use it.
 6. **No fake precision.** "c. 1503–19" not "1503." If scholarship ranges, the date ranges.
 7. **When correcting the record, don't lecture.** One clause of correction, then move on.
@@ -100,7 +100,7 @@ Word budgets are targets, not laws — but a unit 2× over budget is a rewrite, 
 
 ### 4.7 Museum pages *(new)*
 - Informative, never brochure. The register: **a well-read friend who's been there twice and has opinions.**
-- The hero unit is **"If you only have one hour"** — 5–8 works, ordered as a route, one sentence each, honest about crowds ("you will not be alone with her").
+- The hero unit is **"If you only have one hour"** — 5–8 works, ordered as a route, one sentence each, honest about crowds ("you will not be alone with her"). **Not yet built** — museum pages currently ship a collection grid. This is a standing editorial target, not a description of the current page; see `PIGMENT.md` §19 D-2.
 - History: 60–100 words. Architecture: one paragraph only if the building matters. Fun facts: same rules as artist facts.
 
 ### 4.8 Persona descriptions *(Phase 1.5)*

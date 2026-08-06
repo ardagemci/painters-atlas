@@ -45,6 +45,11 @@
     page: "https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew",
     status: "pd"                            // "pd" | "generative" | "none"
   },
+  // `status:"pd"` is a *rendering* token, not a legal finding. It means only:
+  // this record carries a Commons URL whose file page asserts a public-domain
+  // basis, and js/app.js may therefore render it. `status:"copyright"`
+  // suppresses rendering. Neither value records a determination by this
+  // project, and neither may be described as cleared or verified (OD-5, AC12).
 
   coords: { F: -85, D: 92, E: -30, C: -20, M: 55 },  // TASTE_MATH §1; Tier 1 = explicit
   coordsSource: "override",                 // "inherited" | "override"

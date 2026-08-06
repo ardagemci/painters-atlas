@@ -97,7 +97,7 @@ Every deck must contain, from the Tier 1 artwork pool (great image + confident c
 - ≥3 pre-1700 · ≥3 19th-century · ≥3 early-modern
 - ≥2 non-European (ink, miniature, ukiyo-e…)
 - axis coverage: for each of the 5 axes, at least 2 works ≥ +40 and 2 works ≤ −40
-- deck delivery is **adaptive** (anchor quadrant works first, then probes on the most-uncertain axes — policy baked as JSON; see `TASTE_MATH.md` §6)
+- deck delivery is **stratified, chosen up front** — `buildDeck()` runs once per session and satisfies the composition rules above before the first card is shown. It does **not** react to your answers: nothing re-reads `admired`/`skipped` mid-deck. Response-adaptive delivery (anchor quadrant first, then probes on the most-uncertain axes — the policy `TASTE_MATH.md` §6 describes) is **not implemented**; see the deferred-promise register in `PIGMENT.md` §19.
 - Post-1955 taste (Pop, AbEx, contemporary) is probed by §7 signals and questions — **never inferred as absent merely because it couldn't be shown.**
 
 ### 6.3 Question → prior mapping (launch five)

@@ -217,6 +217,10 @@ window.MOVEMENTS = [
     palette:["#c43e2a","#e87a2e","#8a2634","#5e2a52","#1d1a18"],
     blurb:"Vast breathing colour — the sublime, stained into canvas.",
     desc:"The quieter wing of Abstract Expressionism abandoned gesture for immersion: Rothko's hovering rectangles, Newman's zips, Frankenthaler's poured stains. Scale was the argument — canvases big enough to fill vision and induce something like awe. Rothko wanted viewers to stand close enough to be inside." },
+  { id:"washington-color-school", name:"Washington Color School", parent:"color-field", period:"c. 1953–1970", style:"colorfield",
+    palette:["#2f6fb0","#e0533a","#f0c33c","#3f9e5c","#f3efe6"],
+    blurb:"Colour poured into raw canvas, two hundred miles from the New York noise.",
+    desc:"Washington had no galleries worth the name and no scene to perform for, which turned out to be an advantage. After seeing Frankenthaler's stained canvases in 1953, Morris Louis and Kenneth Noland abandoned the brush entirely and let thinned acrylic soak into unprimed cotton, so that image and support became one surface with no gesture on top. Across town, Alma Thomas arrived at her own answer in mosaics of colour. Cool where the New York School was hot — and just as radical." },
 
   // ---- Pop & after ----
   { id:"pop-art", name:"Pop Art", parent:null, period:"c. 1955–1975", style:"pop",

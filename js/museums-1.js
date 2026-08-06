@@ -542,5 +542,12 @@ window.MUSEUM_NOTES = {
 "glenstone": {
   hook: "Art, architecture and landscape, by appointment",
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Glenstone-2018-10-13-courtyard-1.jpg/960px-Glenstone-2018-10-13-courtyard-1.jpg",
-           page:"https://en.wikipedia.org/wiki/Glenstone" } }
+           page:"https://en.wikipedia.org/wiki/Glenstone" } },
+"hirshhorn": {
+  hook: "A concrete drum on the Mall, filled with the new",
+  founded: 1974,
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg/960px-Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg" },
+  essay: "Joseph Hirshhorn arrived from Latvia at six, one of thirteen children, sold newspapers on the Lower East Side and made a uranium fortune. He bought art the way he bought mining claims — in bulk, on instinct, thousands of works — and in 1966 handed the lot to the nation. Gordon Bunshaft gave the collection a windowless concrete cylinder on four squat piers, and the critics fell on it: Ada Louise Huxtable called the result neo-penitentiary modern. Half a century later the bunker has won. Its galleries curve so you can never see where a show ends, the inner ring is glass onto a courtyard fountain, and the sculpture garden sunk beside it holds Rodin and Bourgeois in the open air. Inside is the Smithsonian's museum of right now — including one of the first paintings Kenneth Noland ever aimed at a bullseye."
+}
 };

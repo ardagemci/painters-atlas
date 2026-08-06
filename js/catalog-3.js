@@ -529,7 +529,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"265 × 196 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg/500px-RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg",
           page:"https://en.wikipedia.org/wiki/Sistine_Madonna", status:"pd" },
-  coords:{ F:-85, D:-15, E:-30, C:-25, M:50 }, coordsSource:"override",
+  coords:{ F:-85, D:-15, E:-55, C:-25, M:50 }, coordsSource:"override",
   description:"Painted as a gift for a monastery altar, the Virgin walks off the clouds toward you with the Child — no throne, no architecture, just curtains pulled back on heaven as theatre. The nineteenth century made it Germany's obsession (Dresden bought it; Dostoevsky kept a print above his writing desk), but modernity chose the bottom edge: two bored putti leaning on the frame, the most reproduced cherubs on earth, forever waiting for the miracle to finish.",
   notice:["The two putti at the base — art history's most merchandised bystanders",
           "The 'clouds' behind the Virgin resolve into dozens of angel faces",

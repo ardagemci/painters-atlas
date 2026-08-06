@@ -240,5 +240,18 @@ window.INFLUENCES = [
   ["amedeo-modigliani","chaim-soutine","befriended"],
   ["ivan-aivazovsky","arkhip-kuindzhi","taught"],
   ["ilya-repin","vasily-surikov","befriended"],
-  ["ilya-repin","valentin-serov","taught"]
+  ["ilya-repin","valentin-serov","taught"],
+["hans-hofmann","lee-krasner","taught"],
+  ["hans-hofmann","helen-frankenthaler","taught"],
+  ["hans-hofmann","joan-mitchell","taught"],
+  ["helen-frankenthaler","morris-louis","influenced"],
+  ["helen-frankenthaler","kenneth-noland","influenced"],
+  ["morris-louis","kenneth-noland","befriended"],
+  ["kenneth-noland","alma-thomas","influenced"],
+  ["willem-de-kooning","franz-kline","befriended"],
+  ["jackson-pollock","philip-guston","befriended"],
+  ["mark-rothko","robert-motherwell","befriended"],
+  ["clyfford-still","mark-rothko","influenced"],
+  ["robert-motherwell","helen-frankenthaler","partners"],
+  ["josef-albers","kenneth-noland","taught"]
 ];
