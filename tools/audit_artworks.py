@@ -104,13 +104,15 @@ SELF_MARKERS = ("self portrait", "selfportrait", "self portr", "autoportrait",
 # Danish simply carries no English title to contradict ours, and the check
 # reports "unconfirmed" rather than rejecting. Entries are needed only where
 # Commons asserts a *different English* title for the same work.
+# Every entry below was needed: without it the shipped image is rejected, with
+# it the same image is confirmed. Word-spacing ("The Beaneater" / "The Bean
+# Eater") and English plurals ("Cloud Studies" / "Cloud Study") are handled by
+# the check itself and need no entry.
 TITLE_ALIASES = {
     "jean-honore-fragonard::The Bolt": ["Le Verrou", "The Lock"],
     "theodore-gericault::Portraits of the Insane": ["Portrait of a Kleptomaniac",
                                                     "Monomanies"],
     "claude-monet::Haystacks series": ["Meules", "Stacks of Wheat", "Wheatstacks"],
-    "annibale-carracci::The Beaneater": ["Il mangiafagioli", "The Bean Eater"],
-    "john-constable::Cloud Studies": ["Cloud Study"],
 }
 
 # artist-id::work-title -> wikipedia titles to trust first
@@ -274,11 +276,16 @@ def match_verdict(url, artist_name, titles, meta=None, article_title=""):
     filename — because in every one of the 20 confirmed mismatches, the file
     page said plainly what the file actually was.
 
-    `meta` is what commons_meta() / cr.describe_from_imageinfo() returned.
-    Metadata that failed to load must be passed as None, never as {}: an empty
-    field means Commons asserted nothing, which this function reads as
-    "unconfirmed" and a caller may accept. A request that timed out proves
-    nothing at all and must not reach a verdict — see the callers.
+    `meta` is what commons_meta() / cr.describe_from_imageinfo() returned. Do
+    not call this at all when that lookup failed: empty metadata reads as
+    "unconfirmed", which a caller may accept, whereas a request that timed out
+    proves nothing and must produce no verdict of any kind. Both callers skip
+    the candidate and set their `unverified` flag instead.
+
+    ImageDescription is deliberately *not* consulted. It is free prose, and
+    prose about the right painting is not evidence that this file is it: the
+    Emily Carr postage stamp's description reads "the stamp depicts Carr's
+    painting Big Raven", which would confirm the very file §14 excludes.
     """
     meta = meta or {}
     own = fold(" ".join(titles))
@@ -364,7 +371,7 @@ def try_wiki(cands, artist_name, titles):
             continue
         if not (any(w in text for w in ART_WORDS) or any(t in text for t in name_toks)):
             continue
-        img = re.sub(r"/\d+px-", "/500px-", thumb)
+        img = cr.strip_tracking(re.sub(r"/\d+px-", "/500px-", thumb))
         try:
             meta = commons_meta(img)
         except cr.Unverified as ex:
@@ -374,7 +381,7 @@ def try_wiki(cands, artist_name, titles):
         if match_verdict(img, artist_name, titles, meta, s.get("title", "")) != "confirmed":
             continue
         page = ((s.get("content_urls") or {}).get("desktop") or {}).get("page", "")
-        return {"img": img, "page": page}, unverified
+        return {"img": img, "page": cr.strip_tracking(page)}, unverified
     return None, unverified
 
 def try_commons(queries, artist_name, titles):
@@ -402,7 +409,7 @@ def try_commons(queries, artist_name, titles):
         pages = (d.get("query") or {}).get("pages") or {}
         for p in sorted(pages.values(), key=lambda p: p.get("index", 99)):
             ii = (p.get("imageinfo") or [{}])[0]
-            url = ii.get("thumburl", "")
+            url = cr.strip_tracking(ii.get("thumburl", ""))
             if not ii.get("mime", "").startswith("image/") or not url:
                 continue
             if ".djvu" in url.lower() or ".pdf" in url.lower():
@@ -411,7 +418,8 @@ def try_commons(queries, artist_name, titles):
             meta = cr.describe_from_imageinfo(ii)
             if match_verdict(url, artist_name, titles, meta) == "confirmed":
                 cr.capture_from_imageinfo(RIGHTS, p)
-                return {"img": url, "page": ii.get("descriptionurl", "")}, unverified
+                return {"img": url,
+                        "page": cr.strip_tracking(ii.get("descriptionurl", ""))}, unverified
     return None, unverified
 
 def main():
@@ -439,7 +447,8 @@ def main():
                     p = list(get_json(u)["query"]["pages"].values())[0]
                     ii = p["imageinfo"][0]
                     cr.capture_from_imageinfo(RIGHTS, p)
-                    works[title] = {"img": ii["thumburl"], "page": ii["descriptionurl"]}
+                    works[title] = {"img": cr.strip_tracking(ii["thumburl"]),
+                                    "page": cr.strip_tracking(ii["descriptionurl"])}
                     print(f"  {key} -> PINNED", flush=True)
                 except Exception as ex:
                     print(f"  {key} -> PIN FAILED ({ex}), kept", flush=True)

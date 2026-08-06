@@ -14,7 +14,7 @@ would need to be established*, not as a conclusion.
 **A note on one word.** The coordinator proposed `CLEARED` as a verification
 label. I have used **`MATCH CONFIRMED`** instead. "Cleared" is the exact word
 OD-5 forbids, and a reader skimming a table of image records would have no way
-to tell "cleared of the wrong-artwork suspicion" from "cleared for use." The
+to tell "cleared of the wrong-artwork suspicion" from "cleared for use." <!-- OD5-EXEMPT: quotes the banned label in order to reject it --> The
 distinction this document exists to protect is the one that label would blur.
 
 ---
@@ -548,7 +548,7 @@ not under US copyright. This reaches WPA-adjacent and official art in some cases
 but does not reach the studio work of the seven.
 
 **(c) Shorter-term jurisdictions.** Some countries run shorter terms, and a few
-works are public domain somewhere and not elsewhere. For a globally-reachable
+works are public domain somewhere and not elsewhere. <!-- OD5-EXEMPT: states the flat assertion in order to show it has no single truth value --> For a globally-reachable
 static site this creates a status that is true in one place and false in another
 — **which is a reason for caution rather than a route.** Note the inverse also
 bites: Mexico's life+100 is *why* Kahlo is unavailable, as

@@ -119,6 +119,45 @@ def strip_html(s):
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
 
 
+#: Query parameters that exist to identify the requester rather than the
+#: resource. Commons began appending ``utm_source`` to ``thumburl`` values; the
+#: parameter is not part of the file's address and nothing here needs it.
+TRACKING_PARAMS = (
+    "utm_", "ga_", "mc_", "pk_", "stm_",                # campaign families
+)
+TRACKING_EXACT = {
+    "gclid", "gbraid", "wbraid", "dclid", "fbclid", "msclkid", "yclid",
+    "twclid", "igshid", "ref_src", "ref_url", "s_kwcid", "_ga", "_gl",
+}
+
+
+def strip_tracking(url):
+    """Remove analytics parameters from a URL before anything stores or ships it.
+
+    A tracking parameter written into ``js/artworks.js`` is not a build-time
+    annoyance: the browser sends it back to the image host on every page view,
+    so a value the API happened to attach becomes a request *this site* makes
+    about its visitors. The shipped `#/privacy` disclosure (js/app.js, AC25)
+    names exactly one third-party host and no analytics of any kind; letting
+    these through would quietly make that page wrong.
+
+    Order and every non-tracking parameter are preserved, so a URL that needs
+    its query (thumbnail width, page anchors) survives untouched. Returns the
+    input unchanged when there is nothing to strip.
+    """
+    if not url or "?" not in url:
+        return url
+    parts = urllib.parse.urlsplit(url)
+    kept = [(k, v) for k, v in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+            if k.lower() not in TRACKING_EXACT
+            and not k.lower().startswith(TRACKING_PARAMS)]
+    query = urllib.parse.urlencode(kept)
+    if query == parts.query:
+        return url
+    return urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path,
+                                    query, parts.fragment))
+
+
 def commons_file_title(url):
     """Derive the Commons ``File:`` title from an upload.wikimedia.org URL.
 
@@ -154,8 +193,8 @@ def rights_from_imageinfo(ii):
     """
     ext = ii.get("extmetadata") or {}
     rec = {
-        "commons_file_page": ii.get("descriptionurl", ""),
-        "file_url": ii.get("url", ""),
+        "commons_file_page": strip_tracking(ii.get("descriptionurl", "")),
+        "file_url": strip_tracking(ii.get("url", "")),
         "mime": ii.get("mime", ""),
         "legal_conclusion": "none",
     }
