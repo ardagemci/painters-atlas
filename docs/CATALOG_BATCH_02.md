@@ -103,6 +103,8 @@ claims are sourced. A row is here only when both are done.*
 | R2 | `the-holy-trinity-masaccio` | Masaccio | italy | 2 | `confirmed` | pd |
 | R3 | `the-descent-from-the-cross-van-der-weyden` | Rogier van der Weyden | belgium | 2 | `confirmed` | pd |
 | R4 | `the-tempest` | Giorgione | italy | 2 | `confirmed` | pd |
+| R5 | `venus-of-urbino` | Titian | italy | 2 | `confirmed` | pd |
+| R6 | `lamentation-of-christ-mantegna` | Andrea Mantegna | italy | 2 | `confirmed` | pd |
 
 **On the tier column, and why it is not a dodge.** `ARTWORK_SCHEMA.md` §8 admits
 a work to Tier 1 only through an editorial list, a Tier 1 artist's essential
@@ -321,6 +323,97 @@ departure is in the conception, not the handling → `E +25`. Famously
 unreadable, which pulls it towards the conceptual, but it does its work on the
 eye before the mind gets a turn → `C +10`. Eighty-two centimetres, a private
 cabinet picture for one person at a time → `M −30`.
+
+### R5 — `venus-of-urbino`
+
+| field | value | source |
+|---|---|---|
+| title | Venus of Urbino | Commons `ObjectName` = *Venere di Urbino* / *Venus of Urbino*; Wikidata **Q727875** |
+| artistId | `titian` | exists in `js/artists-*.js` |
+| year | display `1538`, sort `1538` | Commons `DateTimeOriginal` = 1538; Wikidata **P571** = 1538 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/500px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Venus_of_Urbino` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`; `Restrictions` empty |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas. The artist record's `glazing` and `impasto` are **not** inherited |
+| movements | `["venetian-school"]` | as R4, and for the same reason: the artist record's `high-renaissance` is a Roman-Florentine periodisation |
+| nation | `italy` | artist record |
+| museum | `{ id:"uffizi", name:"Gallerie degli Uffizi", city:"Florence" }` — **venue exists** | Wikidata **P195**/**P276** = Uffizi Gallery; **P217** inv. `1437` |
+| dims | `119 × 165.5 cm` | Wikidata **P2048** = 119, **P2049** = 165.5 (unit Q174728, centimetre). **Sanity-checked** |
+| tags | `["nude","interior","tender","everyday-life"]` | §5 vocabulary |
+| coords | `{ F:-85, D:-25, E:-20, C:-35, M:-5 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Titian*,
+`ObjectName` names the work in six languages, `Credit` = Google Arts & Culture.
+Source file 3000 × 2110 px.
+
+**A metadata trap this file walked into and the tool did not.** The Commons
+`ImageDescription` for this file reads **"Toilet of Venus"** — a different
+Titian composition entirely, and one that exists in several versions. Nothing
+else on the page says so; `ObjectName`, `Artist` and the filename all say *Venere
+di Urbino*. `match_verdict` returned `confirmed` and was not misled, because it
+**deliberately does not consult `ImageDescription`** — the docstring gives the
+Emily Carr postage stamp as the reason. This is the first case in either batch
+where that design decision was load-bearing in the *helpful* direction, and it
+is worth recording as evidence for keeping the rule.
+
+**Consequence, with the descent labelled.** What is in the object: a nude on a
+bed in a contemporary domestic interior, meeting the viewer's eye, with two maids
+at a chest in the background — the mythological title carried by nothing except
+the title. The reclining-nude type this fixes is the one Western painting used
+for the next three hundred years. **The specific descent — Velázquez's Rokeby
+Venus, Goya's *Maja*, Manet's *Olympia* — is *conventional*** in the sense the
+curator brief requires: long-repeated in the literature, and **not sourced in
+this session**. It is recorded here as conventional rather than documented, and
+the Content Editor should carry that hedge through. The atlas's own graph gives
+Titian five outbound edges (`el-greco` taught; `rubens`, `velazquez`,
+`rembrandt`, `tintoretto` influenced) — the densest of any artist in this batch,
+and, like all 238, unsourced.
+
+**Coordinates, on the merits.** Wholly figurative, near life scale → `F −85`.
+Nothing happens; she has been looking at you for a while → `D −25`. Venetian oil
+handled with total command and no departure — the radicalism is in the address,
+not the means → `E −20`. It works on the body: skin against white linen, fur,
+the dog asleep → `C −35`. A metre and a half wide, a private picture for a
+bedchamber, however life-size the figure → `M −5`.
+
+### R6 — `lamentation-of-christ-mantegna`
+
+| field | value | source |
+|---|---|---|
+| id | `lamentation-of-christ-mantegna` | §2 disambiguation: the Lamentation is one of the most-painted subjects in the tradition and the atlas already holds Giotto's, named in his arc |
+| title | Lamentation of Christ | Wikidata **Q546297**; the English Wikipedia article title. Commons filename reads *The dead Christ and three mourners* → set `worksKey:"Lamentation of Christ"` and keep the `js/artworks.js` key |
+| artistId | `andrea-mantegna` | exists in `js/artists-*.js` |
+| year | display `c. 1470–1474`, sort `1470` | **Sources disagree, by thirteen years.** Commons `DateTimeOriginal` = "from 1470 until 1474" with `P580`/`P582` start/end qualifiers; Wikidata **P571** = 1483. The Commons range is recorded; **1483 is noted, not adopted**, and neither is preferred here on any ground except that the range is the weaker claim |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/The_dead_Christ_and_three_mourners%2C_by_Andrea_Mantegna.jpg/500px-The_dead_Christ_and_three_mourners%2C_by_Andrea_Mantegna.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Lamentation_of_Christ_(Mantegna)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["tempera"]` | Wikidata **P186** = tempera, canvas. The artist record's `fresco` is **not** inherited |
+| movements | `["early-renaissance"]` | artist record |
+| nation | `italy` | artist record |
+| museum | `{ id:"brera", name:"Pinacoteca di Brera", city:"Milan" }` — **venue exists** | Wikidata **P195**/**P276** = Pinacoteca di Brera; **P217** inv. `352` |
+| dims | `68 × 81 cm` | Wikidata **P2048** = 68, **P2049** = 81. **Sanity-checked** — and worth noticing that a picture this famous is smaller than a briefcase is wide |
+| tags | `["sacred","mourning","geometry","group-scene"]` | §5 vocabulary |
+| coords | `{ F:-80, D:+25, E:+60, C:+25, M:-10 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Andrea
+Mantegna*; the artist tie carries the match, since the filename gives a
+descriptive title rather than the catalogue one. Source file 2500 × 2076 px.
+
+**Consequence.** The body is laid feet-first towards the viewer and drawn in
+extreme foreshortening — the single hardest thing perspective can be asked to
+do, and done here on a figure whose proportions are visibly adjusted so that the
+feet do not swallow the head. That is a technical demonstration presented as a
+devotional image, and the atlas's own graph runs
+`["andrea-mantegna","albrecht-durer","influenced"]` to a painter it holds.
+
+**Coordinates, on the merits.** Wholly figurative, and the distortion is
+perspectival rather than expressive → `F −80`. A dead body and three weeping
+heads: charged, and completely without motion → `D +25`. The foreshortening is
+the experiment, and it is the reason the picture exists → `E +60`. It is a
+demonstration as much as a devotion, and it knows it → `C +25`. Sixty-eight
+centimetres, but staged to confront you at close range → `M −10`.
 
 ---
 
