@@ -526,24 +526,237 @@ today; `kunstmuseum-basel` is its first.
 share-alike obligations (`IMAGE_RIGHTS_ROUTES.md` §1.3). Any that surface in
 this batch are listed here and are **not** given the `pd` token.*
 
-| record | licence asserted | obligation |
-|---|---|---|
-| — | — | — |
+**None of the ten records is CC-licensed.** All ten return `pd` from
+`commons_rights.rights_for_urls`, with `Copyrighted: False`. That is not luck
+worth trusting, so the whole eleven-nation slice was swept rather than only the
+ten selections: **75 entries, 72 `pd`, three carrying share-alike obligations.**
+
+| record | licence asserted | obligation | note |
+|---|---|---|---|
+| `nakkas-osman` :: Hünername | **CC BY-SA 4.0** (`Copyrighted: True`) | attribution + share-alike | not selected |
+| `mihri-musfik` :: Self-Portrait | **CC BY-SA 4.0** (`Copyrighted: True`) | attribution + share-alike | **also** `IMAGE_RIGHTS_ROUTES.md` B6 — a confirmed mismatch |
+| `chaim-soutine` :: Le Petit Pâtissier | **CC BY-SA 3.0** (`Copyrighted: True`) | attribution + share-alike | not selected |
+
+None may take the `pd` token. `mihri-musfik :: Self-Portrait` shows that the
+§1.3 licence list and the §1.6 mismatch list **intersect**, and neither document
+cross-references the other; an entry can be both the wrong picture *and* a
+picture with conditions.
 
 ---
 
 ## TAXONOMY, TIER AND TECHNIQUE PROPOSALS
 
-*Filled as records land.*
+### T1 — `pungsokhwa` (NEW MOVEMENT) — replaces `realism` on Kim Hong-do
+
+Korean genre painting of the late Joseon period. This is one of the two
+taxonomic failures the curator brief names, and R10 cannot be written honestly
+without fixing it: `realism` is a nineteenth-century European movement name
+attached to an eighteenth-century Korean painter, and it describes nothing
+about how he worked.
+
+- **Kind of category:** a national school, not a style with a manifesto —
+  the same shape as `ukiyo-e`, `rinpa`, `literati-painting`,
+  `ottoman-miniature` and `persian-miniature`, all of which the taxonomy
+  already carries at top level with no parent. Precedent exists; no hierarchy
+  change is needed.
+- **Support:** the album this leaf belongs to is itself titled *Danwon
+  pungsokdo cheop* — the category name is in the primary object's own title,
+  which is about as well-attested as a grouping gets.
+- **Scope:** applies to Kim Hong-do and to Shin Yun-bok (not in the atlas;
+  named in `ATLAS_COVERAGE.md` §Gap 2 as absent).
+- **Also required:** the artist record `kim-hong-do` should move from
+  `["realism"]` to `["pungsokhwa"]`. `realism` itself stays in the taxonomy —
+  the defect is the application, not the node.
+- **Movement coords:** must be hand-scored before use (`TASTE_MATH.md` §1.2
+  makes movements the master data). Not scored here; scoring a movement from
+  one album leaf would be an invention.
+
+### T2 — `bauhaus` (NEW MOVEMENT) — proposed
+
+The atlas has **no Bauhaus node**, and it has Klee, Kandinsky and Josef Albers.
+The word "Bauhaus" appears sixteen times across `js/` — in artist records, in
+`js/tier1-artists.js` arcs, in a catalog record and in `js/museums-1.js` — which
+is `ATLAS_COVERAGE.md` §Gap 4's exact pattern: the prose names what the taxonomy
+does not contain.
+
+- **Kind of category:** an institution, and grouping by school is a pedagogical
+  convenience rather than a style claim — Klee, Kandinsky and Albers do not
+  paint alike. It should be added *as* that, not as a style sibling of
+  `expressionism`.
+- R3 therefore uses `["expressionism","abstract-art"]` and does **not** wait on
+  this proposal.
+
+### T3 — `skagen-painters` (NEW MOVEMENT) — proposed
+
+"Skagen" appears twenty-two times across `js/` and there is no node. The atlas
+holds Anna Ancher and P.S. Krøyer, both currently filed under `impressionism` +
+`realism`.
+
+- **Kind of category:** an artists' colony — a place and a period, not a
+  doctrine. Contested as a *movement*; uncontested as a grouping. Propose it
+  labelled as the latter.
+- R4 uses `["impressionism"]` and does not wait on this proposal.
+
+### T4 — technique proposals: **none**
+
+The only technique any record needed and the registry lacks is `marouflage`
+(R3). One record is not enough to justify a node, and the narrower
+`["oil-painting"]` is true of the same work. Two records went the other way and
+**narrowed** what the artist record would have supplied — R7 to `tempera` rather
+than the inherited oil, R10 dropping `silk-painting` for a leaf on paper. The
+inheritance default in `ARTWORK_SCHEMA.md` §3 is a convenience, and on
+non-European records it is wrong more often than it is right.
+
+### T5 — tier changes: **none proposed, in either direction**
+
+All ten records are Tier 2 because §8's one-pool rule does not admit them.
+**No demotion is proposed either, and that is a gap in this batch rather than a
+finding**: a demotion claim requires reading the existing 76 Tier 1 records
+against each other, which this batch did not do. Naming one on the strength of
+having read none would be the ranking-without-reasoning the brief warns about.
+
+### T6 — three `nation` fields flagged, none resolved here
+
+`ATLAS_COVERAGE.md` §2.4 already establishes that `nation` is a single string
+that cannot carry the truth. Three of this batch's artists demonstrate it:
+
+- **`paul-klee` → `switzerland`.** Contested in the literature; his citizenship
+  and his birthplace do not give the same answer. R3 does not depend on the
+  field and no source was read here that would settle it.
+- **`arshile-gorky` → `armenia`** and **`chaim-soutine` → `belarus`.** Both
+  record a birthplace for painters whose work belongs to Paris and New York.
+  R6 is defensible only because the *painting* is Armenian in subject; R8's
+  Soutine equivalent is not, which is why he was dropped.
+- **`matrakci-nasuh` → `turkey`**, named in the curator brief as recorded
+  wrongly for Ottoman Bosnian. Untouched by this batch and still wrong. Note
+  that `js/taxonomy.js` has no `bosnia` nation, so this cannot be fixed by
+  editing one field.
+
+### T7 — `orientalism` on Osman Hamdi Bey — flagged, not resolved
+
+R1 declines to inherit it, using `["realism"]` alone. `ATLAS_COVERAGE.md` §2.2
+records the general problem — the label coined *about* a European way of
+painting the East, applied to the painters it was coined about. Whether the
+artist record should keep it is a separate adjudication with real arguments on
+both sides, and this batch resolves it only for one artwork.
 
 ---
 
 ## POOL DEFECTS THIS BATCH FOUND
 
-*Anything wrong that §1.6 did not already record.*
+Five, none of them in `IMAGE_RIGHTS_ROUTES.md` §1.6.
+
+1. **`bada-shanren` :: Fish and Rocks — aspect-ratio defect.** The Commons
+   source is **36789 × 4833 px**, a handscroll. The pool's own derivative is
+   960 × 126 — a strip. `match_verdict` returns `confirmed`, correctly: the
+   file is the right work. It is still unusable as a hero. This is the Group D
+   failure class (correct work, unsuitable file) and Group D does not list it,
+   because a filename-and-metadata scan cannot see an aspect ratio.
+
+2. **`osman-hamdi-bey` :: Two Musician Girls — Wikidata dimension hazard.**
+   **P2048 = 580, P2049 = 390.** Read as centimetres that is a canvas nearly six
+   metres tall, which the work is not. `ARTWORK_SCHEMA.md` §7 plans to bake
+   `dims` from "P2048×P2049" with no sanity check, so a build would print
+   `580 × 390 cm` on a live page. Recommend the bake reject any painting
+   dimension over ~1000 cm or under ~1 cm rather than trusting the pair.
+
+3. **Three CC BY-SA entries inside the eleven zero-nations** (table above), one
+   of which is simultaneously a §1.6 confirmed mismatch. The two lists overlap
+   and neither points at the other.
+
+4. **`arshile-gorky` :: The Artist and His Mother — 1024 × 1227 px source**, the
+   smallest file examined here. Adequate for the 500/960 px renderings the
+   catalog uses; it would not survive a larger hero, and nothing in the pipeline
+   records a minimum.
+
+5. **`confirmed` does not mean *catalogable*, and the Direction A estimate
+   should say so.** Of twenty candidates checked, all twenty returned
+   `confirmed`, but only thirteen resolved to a Wikidata item carrying the
+   collection, date and dimensions a catalog record needs. The other seven —
+   including both Hammershøi candidates, Hodler's *Night*, Matejko's *Battle of
+   Grunwald* and Soutine's *Carcass of Beef* — would each need those facts
+   established by hand. **Caveat on this figure:** resolution was attempted via
+   English Wikipedia `pageprops` and `wbsearchentities`, which is not
+   exhaustive; some of the seven may have items this method missed. The
+   direction of the finding is safe, the ratio is not.
 
 ---
 
-## UNCERTAIN
+## NOT PROPOSED — considered and rejected
 
-*What could not be established, left standing rather than smoothed.*
+| candidate | why rejected |
+|---|---|
+| `ivan-aivazovsky` :: The Ninth Wave (armenia) | tidier record than R6 and a venue that already exists, but filing a Russian-Empire marine painting under `armenia` would put a national label on a work that does not carry one. See R6 |
+| `chaim-soutine` :: Carcass of Beef (belarus) | **the eleventh nation, dropped.** Same objection as Aivazovsky and no rescuing argument: a Paris picture in an American museum by a painter born in Smilavichy. Belarus stays at zero, honestly, rather than being taken off it by a label the work does not support. His other pool entry (*Le Petit Pâtissier*) is CC BY-SA 3.0 |
+| `vilhelm-hammershoi` :: Dust Motes Dancing in the Sunbeams (denmark) | `confirmed`, but no resolvable Wikidata item — collection, inventory and dimensions would all be unsourced. See R4 |
+| `bada-shanren` :: Fish and Rocks (china) | `confirmed`; rejected on aspect ratio. See POOL DEFECTS 1 |
+| `shen-zhou` :: Poet on a Mountaintop (china) | `confirmed`, with the fullest description of any Chinese candidate (album leaf, ink on paper, 38.7 × 60.3 cm, Nelson-Atkins). Lost to R9 only because its `Credit` is a third-party website while R9's is the holding museum plus an accession number. **The better candidate if a source for the Nelson-Atkins attribution is read** |
+| `raja-ravi-varma` :: Galaxy of Musicians (india) | `confirmed`; Wikidata gives collection (Jaganmohan Palace, Mysore) but no dimensions. Lost to R5 on completeness, not on significance — the two painters are not being ranked here |
+| `ferdinand-hodler` :: Night (switzerland) | `confirmed`; no resolvable Wikidata item |
+| `matrakci-nasuh` :: View of Istanbul (turkey) | `confirmed`, and the more interesting object — but its Wikidata item is a bare stub with no label, no date, no collection, and the `nation` field for its maker is one the brief already calls wrong |
+| a second record for Türkiye or Poland | the one-per-nation ceiling. Both nations hold the largest share of the pool and both are the owner's stated historical preferences; one record each is what the principle allows, and the principle was chosen before the counts were looked at |
+
+---
+
+## COVERAGE EFFECT
+
+- **Ten nations move from zero catalogued artworks to one.** The catalog's
+  nation coverage goes from 17 of 37 to 27 of 37.
+- **Six venues added, three of them firsts**: India, Korea and Switzerland
+  acquire their first venue in the registry; Poland acquires its first venue
+  that exists for Polish painting rather than for a Leonardo.
+- **China and Iran come off zero artworks while staying at zero venues** — both
+  records are held in New York. That is `ATLAS_COVERAGE.md` §Gap 3 showing up as
+  data, and it is not fixed by this batch.
+- **Not fixed:** everything in §Gap 2. Song and Yuan China, Mughal India,
+  Behzād, Jeong Seon, Momoyama Japan, historic Africa, Southeast Asia — none of
+  those painters is in the atlas, so none of them is in the pool, so no batch
+  drawn from the pool can reach them. This batch takes eleven *nations* off
+  zero; it does not take a single *tradition* off zero.
+- **Belarus stays at zero,** by decision, with the reasoning recorded.
+
+---
+
+## UNCERTAIN — left standing rather than smoothed
+
+1. **R6's date.** Two sources give a ten-year range and one gives 1931. The
+   range is recorded. Nothing read here explains the disagreement.
+2. **R10's date and dimensions.** Commons says "Unknown date"; the album article
+   says late Joseon, 18th century. `sort:1780` is an ordering key, not a claim.
+   No dimensions and no accession number were found for this leaf.
+3. **R10's designation.** "the 527th National Treasure of South Korea" is what
+   the English Wikipedia article asserts. Korea maintains more than one heritage
+   register and no primary record was read.
+4. **R1's sitter.** The claim that the tortoise trainer carries Osman Hamdi
+   Bey's own features is widely repeated and is not asserted here.
+5. **R3's medium.** Commons filename says oil on gauze; Wikidata says oil,
+   canvas and marouflage. Recorded as a disagreement.
+6. **R9's date** rests on a single source (Commons `DateTimeOriginal` = 1690);
+   no Wikidata item was found to corroborate it.
+7. **Every `pd` token in this document** records that a Commons file page
+   asserts a public-domain basis. It is not a determination by this project, and
+   `IMAGE_RIGHTS_ROUTES.md` §0 gives the two reasons Commons hosting should not
+   be over-trusted in either direction.
+
+---
+
+## VALIDATOR
+
+`osascript -l JavaScript tools/validate.jxa.js` at commit `90b0261`:
+
+```
+app.js: syntax OK
+artists: 256, movements: 76, techniques: 39, eras: 8, nations: 37,
+painter styles: 27, influence edges: 238, venues: 116, catalog: 323
+(tier1: 76), daily pool: 75, museum notes: 104, photo credits: 104
+(attribution required: 88), artwork image credits: 27, personas: 15,
+lists: 12 (featured: 4), tier1 artists: 36 (arcs: 36)
+ALL REFERENCES VALID
+```
+
+This document changes no registry, so the validator's role here is only to
+confirm that every id these records reference — `pera-museum`, `met`, `whitney`,
+the ten `artistId`s, and the movements and techniques named above — resolves in
+the tree as it stands. The six new venue ids and `pungsokhwa` do **not** resolve
+yet, by design: they are proposals, and the record that uses each one cannot be
+built until its row lands in `js/venues.js` or `js/taxonomy.js`.
