@@ -105,6 +105,8 @@ claims are sourced. A row is here only when both are done.*
 | R4 | `the-tempest` | Giorgione | italy | 2 | `confirmed` | pd |
 | R5 | `venus-of-urbino` | Titian | italy | 2 | `confirmed` | pd |
 | R6 | `lamentation-of-christ-mantegna` | Andrea Mantegna | italy | 2 | `confirmed` | pd |
+| R7 | `haboku-sansui` | Sesshū Tōyō | japan | 2 | `confirmed` | pd |
+| R8 | `red-and-white-plum-blossoms` | Ogata Kōrin | japan | 2 | `confirmed` | pd |
 
 **On the tier column, and why it is not a dodge.** `ARTWORK_SCHEMA.md` §8 admits
 a work to Tier 1 only through an editorial list, a Tier 1 artist's essential
@@ -414,6 +416,130 @@ heads: charged, and completely without motion → `D +25`. The foreshortening is
 the experiment, and it is the reason the picture exists → `E +60`. It is a
 demonstration as much as a devotion, and it knows it → `C +25`. Sixty-eight
 centimetres, but staged to confront you at close range → `M −10`.
+
+### R7 — `haboku-sansui`
+
+| field | value | source |
+|---|---|---|
+| id | `haboku-sansui` | **§2 applied to a work with no settled English title.** Commons `ObjectName` = *Haboku-Sansui, splashed-ink style landscape*; Wikidata **Q28418167**'s English label is *Haboku sansui*; the English Wikipedia article is at *Haboku sansui*; `js/artworks.js` keys it *Haboku (Splashed Ink) Landscape*. Three of the four use the romanised Japanese title, so that is the stable identifier and the slug follows it. Set `worksKey:"Haboku (Splashed Ink) Landscape"` |
+| title | Haboku Sansui (Splashed-Ink Landscape) | as above |
+| artistId | `sesshu-toyo` | exists in `js/artists-*.js` |
+| year | display `1495`, sort `1495` | **Three independent sources agree** — Commons `DateTimeOriginal` = 1495, Wikidata **P571** = 1495, and the English Wikipedia article states it "was made by the Japanese artist Sesshū Tōyō in 1495, in the Muromachi period". The firmest date in this batch |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sesshu_-_Haboku-Sansui_-_complete.jpg/960px-Sesshu_-_Haboku-Sansui_-_complete.jpg` | `js/artworks.js` |
+| image.page | `https://commons.wikimedia.org/wiki/File:Sesshu_-_Haboku-Sansui_-_complete.jpg` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["ink-wash","splashed-ink"]` | Wikidata **P186** = ink, paper. The English Wikipedia article calls it "a splashed-ink landscape painting" and "the ink wash painting" — **both technique ids are asserted by a source rather than inherited**, and `splashed-ink` is the work's own name |
+| movements | `["zen-painting"]` | artist record; the Wikipedia article on the artist describes work "infused with Zen Buddhist beliefs" |
+| nation | `japan` | artist record |
+| museum | `{ id:"tokyo-national-museum", name:"Tokyo National Museum", city:"Tokyo" }` — **NEW VENUE** | Wikidata **P195**/**P276** = Tokyo National Museum, **P217** inv. `A-282`; the English Wikipedia article states it is "currently held by the Tokyo National Museum" (two sources agree) |
+| dims | `148.6 × 32.7 cm` | Wikidata **P2048** = 148.6, **P2049** = 32.7. **Sanity-checked, and the check is informative:** 148.6 ÷ 32.7 = 4.54, and the source file is 7183 × 31957 px = 1 : 4.45. The stated dimensions and the image proportions agree, which is independent evidence that the file shows the whole scroll and not a crop |
+| tags | `["landscape","monochrome","gesture","quiet"]` | §5 vocabulary |
+| coords | `{ F:-20, D:+10, E:+50, C:0, M:-35 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Sesshū Tōyō*,
+`ObjectName` = *Haboku-Sansui, splashed-ink style landscape*, `Credit` =
+**e-Museum**, the Japanese national-institutions portal for designated cultural
+properties — the strongest `Credit` in this batch after R3's.
+
+**Heritage designation, recorded as an assertion.** Wikidata **P1435** carries
+*National Treasure of Japan* and *Important Cultural Property of Japan*; the
+English Wikipedia article states it "is classified as a National Treasure of
+Japan". Two sources agree. No primary designation record was read here, and this
+document does not go beyond what those two assert. (Batch 01 made the same
+qualification for the Korean National Treasure designation at R10; it was right
+to.)
+
+**A rendering hazard, not a match failure.** The pool's own derivative at 960 px
+wide is **960 × 4271** — a column four and a half times taller than it is wide.
+This is the same class of defect Batch 01 recorded for `bada-shanren :: Fish and
+Rocks` (a 36789 × 4833 handscroll rendering as a 960 × 126 strip), rotated
+ninety degrees. **The difference matters and should be recorded as such:** Bada's
+file is unusable because the derivative is unreadable at any layout width, while
+this one is the correct proportion of a real hanging scroll and simply needs a
+hero that does not assume landscape orientation. It is a layout requirement, not
+a reason to reject the file.
+
+**Consequence.** The English Wikipedia article on the artist states that Sesshū
+"is considered a great master of Japanese ink painting" and that his work, though
+"initially inspired by Chinese landscapes", "holds a distinctively Japanese
+style". That is the consequence claim in its sourced form: a Chinese idiom
+becoming a Japanese one in a single body of work. *Haboku sansui* is that
+argument at its limit — the reduction taken as far as the tradition ever took it.
+**The atlas holds Sesshū with zero influence edges**, in either direction; see
+COVERAGE EFFECT, where this turns out not to be an accident.
+
+**Coordinates, on the merits.** A cliff, a hut, a boat and two figures survive
+inside blots of wet ink that stop describing anything at the top of the sheet;
+this is as close to non-figuration as the fifteenth century gets anywhere →
+`F −20`. The brush moved fast, the scene is empty and nothing is happening; the
+energy is in the making, not the subject → `D +10`. Haboku is the deliberately
+most extreme manner available in the tradition, and this is its exemplar →
+`E +50`. Neither a thesis nor purely sensory — it is a demonstration of a manner,
+which sits at the middle → `C 0`. A metre and a half tall and a third of a metre
+wide, hung to be read close → `M −35`.
+
+### R8 — `red-and-white-plum-blossoms`
+
+| field | value | source |
+|---|---|---|
+| title | Red and White Plum Blossoms | Commons `ObjectName`; Wikidata **Q28154824**; English Wikipedia article title |
+| artistId | `ogata-korin` | exists in `js/artists-*.js` |
+| year | display `c. 1714–1715`, sort `1714` | **The work is undated, and the sources say so.** Commons `DateTimeOriginal` = "1700/1800" — a century, not a date. Wikidata **P571** = 1715. The English Wikipedia article states the work "is undated" and that "art historian Yūzō Yamane dates the work to 1714 or 1715, just before the artist's death", on the evidence of signature, technique and composition. The display value records the attributed range and the attribution is named; **`sort:1714` is an ordering key, not a date claim** |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg/500px-Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Red_and_White_Plum_Blossoms` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | ***omitted*** | **Deliberately.** Wikidata carries **no P186** for this item. The artist record offers `silk-painting`, `gold-leaf` and `ink-wash`: the first is **wrong** — the Wikipedia article states the work is "in coloured pigments on paper" — and the other two are unsourced by anything read here. Blank beats wrong (§7). See T-TECHNIQUE, which proposes the node this record actually needs |
+| movements | `["rinpa"]` | artist record, and independently supported: the English Wikipedia article on Rinpa states the style "was consolidated by brothers Ogata Kōrin (1658–1716) and Ogata Kenzan" |
+| nation | `japan` | artist record |
+| museum | `{ id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami" }` — **NEW VENUE** | Wikidata **P195**/**P276** = MOA Museum of Art; the Wikipedia article states it "resides in the MOA Museum of Art in the city of Atami in Shizuoka Prefecture" (two sources agree). **No inventory number** is carried by either |
+| dims | `156 × 172.2 cm` **per screen** — see the disagreement below | Wikidata **P2048** = 156, **P2049** = 172.2 |
+| tags | `["pattern","flatness","golden","gesture"]` | §5 vocabulary |
+| coords | `{ F:-25, D:-20, E:+45, C:-25, M:+30 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Ogata Kōrin*,
+`ObjectName` = *RED AND WHITE PLUM BLOSSOMS (National Treasure)*. Source file
+4001 × 1757 px.
+
+**Two disagreements, both recorded rather than resolved.**
+
+1. **Dimensions.** Wikidata gives 156 × 172.2 cm with no note of what it
+   measures. The English Wikipedia article gives **156.5 × 172.5 cm** and states
+   explicitly that this is the measurement of **each screen** of a pair. The
+   half-centimetre gap is trivial; **the missing word "each" is not.** A bake
+   that prints "156 × 172.2 cm" beside a single image of a two-screen pair states
+   something false about the object. Recommend the `dims` string for this record
+   read `156.5 × 172.5 cm (each of two screens)` and take the Wikipedia figure,
+   because it is the only one of the two that says what it is measuring.
+2. **What Kōrin's relation to Rinpa is.** The article on the work says the piece
+   is "exemplary of the Rinpa school that Kōrin cofounded"; the article on Rinpa
+   says the school "was created in 17th century Kyoto by Hon'ami Kōetsu and
+   Tawaraya Sōtatsu" and that "roughly fifty years later, the style was
+   consolidated by" Kōrin and his brother. **Those are different claims** —
+   founder versus consolidator — made by the same encyclopaedia about the same
+   painter. The second is the more specific and the more careful, and it is what
+   this document repeats; the first is noted, not adopted.
+
+**Consequence.** The object is a river drawn as flat repeating pattern between
+two trees whose bark is mottled by letting wet pigment bleed into wet — a
+decorative surface and a described natural fact refusing to be separated. The
+sourced consequence claim is the one above: the school this atlas already carries
+as a movement id, `rinpa`, was consolidated by this painter. **The atlas holds
+Kōrin with zero influence edges**, exactly as it holds Sesshū.
+
+**A technique the atlas cannot name.** The Wikipedia article states Kōrin
+"achieved the mottling texture on the trees using **tarashikomi**, a technique in
+which the painter applies a second layer of pigment or ink before the first layer
+has dried." The registry has no id for it. See T-TECHNIQUE.
+
+**Coordinates, on the merits.** Two trees and a stream, recognisable and
+radically stylised — the water is pure pattern with no attempt at water →
+`F −25`. Nothing happens; it is spring and it stays spring → `D −20`. The
+flattening, the pattern-as-water and the wet-into-wet mottling are all departures
+inside a decorative tradition that did not require them → `E +45`. It works
+entirely on the eye → `C −25`. A pair of screens over a metre and a half tall —
+room-scale, and domestic rather than civic → `M +30`.
 
 ---
 
