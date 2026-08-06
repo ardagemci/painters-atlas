@@ -165,6 +165,34 @@ def rights_from_imageinfo(ii):
     return rec
 
 
+#: extmetadata keys that describe *what the file depicts*, as opposed to who
+#: holds rights in it. Kept separate from EXTMETA_FIELDS on purpose: these feed
+#: the exact-artwork check in tools/audit_artworks.py, never the rights record,
+#: and adding them to a rights record would imply Commons' description is a
+#: rights assertion. It is not.
+DESCRIPTIVE_FIELDS = (
+    ("ObjectName", "object_name"),
+    ("ImageDescription", "description"),
+    ("Artist", "artist"),
+    ("Credit", "credit"),
+)
+
+
+def describe_from_imageinfo(ii):
+    """Flatten one ``imageinfo`` entry into what Commons says the file *depicts*.
+
+    Missing keys become empty strings. An empty field means Commons asserted
+    nothing, which is not the same as Commons asserting a negative — callers
+    must not read absence as evidence.
+    """
+    ext = (ii or {}).get("extmetadata") or {}
+    out = {}
+    for key, field in DESCRIPTIVE_FIELDS:
+        raw = (ext.get(key) or {}).get("value", "")
+        out[field] = strip_html(raw if isinstance(raw, str) else str(raw))
+    return out
+
+
 def _query_url(titles):
     params = {
         "action": "query",
