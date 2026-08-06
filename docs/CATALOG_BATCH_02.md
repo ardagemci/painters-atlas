@@ -746,39 +746,523 @@ and unreviewed; slug renames are forbidden.*
 
 | venue id | name | city | country | type | needed by |
 |---|---|---|---|---|---|
+| `santa-maria-novella` | Basilica di Santa Maria Novella | Florence | Italy | **church** | R2 |
+| `tokyo-national-museum` | Tokyo National Museum | Tokyo | Japan | museum | R7 |
+| `moa-museum-of-art` | MOA Museum of Art | Atami | Japan | museum | R8 |
+
+**Only three, and that is the point of the principle.** Batch 01's
+one-per-nation cut needed six new venues for ten records, because spreading
+across nations means spreading across collections. Ranking by consequence
+concentrates: nine of these twelve records land in venues the registry already
+carries (Uffizi ×2, Prado, Accademia Venice, Brera, Louvre ×2, Musée d'Orsay,
+Art Institute of Chicago).
+
+**Japan gets its first two venues that hold Japanese painting.** The registry's
+only existing Japanese entry is `nmwa-tokyo` — the National Museum of Western
+Art. That is the collecting-history point arriving as data for the second batch
+running: Batch 01 found Iran and China taking their first catalogued artworks
+while staying at zero venues because both works are in New York; this batch finds
+that the atlas's one Japanese venue existed for European pictures.
 
 ---
 
 ## CC-LICENSED IMAGES FLAGGED
 
-*Filled as records land.*
+**None of the twelve records is CC-licensed.** All twelve return `pd` from
+`commons_rights.rights_for_urls`, with `Copyrighted: False` and an empty
+`Restrictions` field.
+
+Rather than trust that, **the entire 413-entry pool was swept** — the first
+full enumeration of these files by name anywhere in the repository.
+`IMAGE_RIGHTS_ROUTES.md` §1.3 gives the counts and names only three of the
+twenty; the table below is the whole list, and **the count reproduces exactly**:
+385 `pd`, 8 `cc0`, and **20 carrying a live attribution or share-alike
+obligation**.
+
+| # | record | licence asserted | obligation |
+|---|---|---|---|
+| 1 | `andrea-mantegna` :: Camera degli Sposi | CC BY-SA 4.0 | attribution + share-alike |
+| 2 | `chaim-soutine` :: Le Petit Pâtissier | CC BY-SA 3.0 | attribution + share-alike |
+| 3 | `george-stubbs` :: The Anatomy of the Horse | CC BY-SA 4.0 | attribution + share-alike |
+| 4 | `henri-rousseau` :: The Sleeping Gypsy | CC BY 2.0 | attribution |
+| 5 | `jacob-van-ruisdael` :: The Windmill at Wijk bij Duurstede | CC BY-SA 4.0 | attribution + share-alike |
+| 6 | `jean-honore-fragonard` :: The Swing | CC BY-SA 4.0 | attribution + share-alike |
+| 7 | `joaquin-sorolla` :: Vision of Spain | CC BY-SA 3.0 | attribution + share-alike |
+| 8 | `joshua-reynolds` :: Mrs Siddons as the Tragic Muse | CC BY 2.0 | attribution |
+| 9 | `kathe-kollwitz` :: The Grieving Parents | CC BY 2.0 | attribution |
+| 10 | `kitagawa-utamaro` :: Woman Playing a Poppin | CC BY 2.0 | attribution |
+| 11 | `lyubov-popova` :: Textile designs, First State Factory | CC BY 2.0 | attribution |
+| 12 | `matthias-grunewald` :: The Isenheim Altarpiece | CC BY-SA 3.0 | attribution + share-alike |
+| 13 | `max-beckmann` :: Departure | CC BY 2.0 | attribution |
+| 14 | `mihri-musfik` :: Self-Portrait | CC BY-SA 4.0 | attribution + share-alike |
+| 15 | `nakkas-osman` :: Hünername | CC BY-SA 4.0 | attribution + share-alike |
+| 16 | `peter-paul-rubens` :: The Descent from the Cross | CC BY 3.0 | attribution |
+| 17 | `peter-paul-rubens` :: The Marie de' Medici Cycle | CC BY 4.0 | attribution |
+| 18 | `piero-della-francesca` :: The Legend of the True Cross | CC BY-SA 4.0 | attribution + share-alike |
+| 19 | `piero-della-francesca` :: The Resurrection | CC BY-SA 4.0 | attribution + share-alike |
+| 20 | `valentin-serov` :: Portrait of Ida Rubinstein | CC BY-SA 4.0 | attribution + share-alike |
+
+All twenty carry `Copyrighted: True`. **None may take the `pd` token.**
+
+**What the full list shows that the counts did not, and it bears directly on
+this batch's principle.** Five of the twenty are works that would have ranked
+high on a consequence test and are blocked by licence rather than by merit:
+**Grünewald's Isenheim Altarpiece**, **both** Piero della Francesca entries,
+**Mantegna's Camera degli Sposi**, and **Rubens's Descent from the Cross**. Six
+of the twelve painters affected are exactly the kind whose one great work is a
+wall or a chapel — and a wall has to be photographed by somebody standing in a
+room, which is where a photographer's copyright claim is most defensible and
+least like a flat scan. **The licence obligation and the fresco are correlated,
+and the correlation systematically biases any pool-drawn batch against
+monumental painting in situ.** That is a finding about the pool, not about art
+history, and it should be stated wherever the pool's coverage is discussed.
+
+Two entries also intersect other lists: `mihri-musfik :: Self-Portrait` is
+simultaneously `IMAGE_RIGHTS_ROUTES.md` B6 (a confirmed mismatch), and
+`piero-della-francesca :: The Resurrection`, `henri-rousseau :: The Sleeping
+Gypsy`, `jacob-van-ruisdael :: The Windmill` and `kathe-kollwitz :: The Grieving
+Parents` are all Group D rendering defects. Batch 01 noted that the §1.3 and
+§1.6 lists intersect and neither cross-references the other; **the overlap is
+five entries, not one.**
 
 ---
 
 ## TAXONOMY, TIER AND TECHNIQUE PROPOSALS
 
-*Filled as records land.*
+### T-TIER — a demotion, proposed plainly, and the structural finding behind it
+
+Batch 01 recorded "no tier change proposed" as a gap rather than a finding,
+because a demotion claim would need the existing Tier 1 records read against
+each other. **That is now done, and it did not require reading seventy-six
+records as prose.** `ARTWORK_SCHEMA.md` §8 states the test itself — a work is
+Tier 1 *iff* it belongs to an editorial list, a Tier 1 artist's essential works,
+the daily schedule, or the deck pool — so the test can be computed.
+
+**First, two of §8's four routes turn out to be circular.** In the shipped code,
+`DAILY_POOL` (`js/app.js:1443`) and `deckPool()` (`js/app.js:3107`) both begin
+`CAT.filter(w => w.tier === 1 …)`. They are *derived from* tier and therefore
+cannot justify it. §8's operative test reduces to two routes: **an editorial
+list, or a Tier 1 artist's arc `works[]`.**
+
+Computed against those two:
+
+| | count |
+|---|---|
+| Tier 1 records | 76 |
+| justified by an arc only | 37 |
+| justified by a list only | 2 |
+| justified by both | 34 |
+| **justified by neither — §8 orphans** | **3** |
+| **Tier 2 records that a list or an arc *does* name** | **242** |
+
+**PROPOSED DEMOTION — `beginning-noland`, Tier 1 → Tier 2.**
+
+- It is a §8 orphan: no list, no arc.
+- **It has no image.** `image:{ status:"copyright" }` — no `src`, no `page`.
+  Kenneth Noland died in 2010, so this is the copyright constraint working
+  correctly, not a sourcing failure.
+- Consequently it is excluded from `DAILY_POOL` and `deckPool()`, both of which
+  require `image.status === "pd"`, so the two derived routes cannot rescue it
+  either. It is Tier 1 and reachable by nothing.
+- Its `tags` are `["abstract","geometric","quiet","experimental"]`, of which
+  **three are not in the §5 vocabulary at all** (see T-TAGS).
+- **This is not a judgement on Noland.** Demotion here costs almost nothing:
+  §4 makes Tier 2 a real canonical page, promotion is purely additive, and the
+  URL never changes. What it buys is that the atlas stops spending a full
+  exhibition page on a record with no picture and no way in.
+
+**NOT proposed for demotion, and the reasoning matters more than the verdict.**
+The other two orphans are `nocturne-in-black-and-gold` (Whistler) and
+`lumber-schooners-penobscot-bay` (Fitz Henry Lane). Both are §8 orphans by the
+same computation. **Both should be given an inbound link instead**, because the
+defect is in the link graph rather than in the record: the Whistler is the
+picture Ruskin was sued over, it carries a `pd` image, an authored description
+and hand-scored coords, and it sits at `E +80` — the most experimental coordinate
+in the catalog and one the deck needs. Demoting it to make a rule come out even
+would be the mirror image of the error the brief forbids. **A rule that would
+demote the Whistler is a rule being applied without judgement, and saying so is
+the point of having a curator rather than a script.**
+
+**The larger finding, which is not a proposal but should not be buried.**
+**242 Tier 2 records are named by a list or a Tier 1 artist's arc** — that is,
+§8's "iff" is contradicted by the data seventy-nine times more often in the
+promotion direction than in the demotion direction. Tier is not being allocated
+by §8. It is being allocated by which records have had a description and three
+notice bullets written for them, which is exactly the "allocated by the order
+things were built rather than by judgement" the curator brief names. **The honest
+repair is to §8's wording, not to 242 records**: either the rule is a *ceiling*
+on what may become Tier 1 (in which case say so), or it is a *promise* that
+242 records currently break.
+
+**Also a spec/implementation mismatch, per CLAUDE.md §6.**
+`ARTWORK_SCHEMA.md` §9 requires "warn: Tier 1 record with zero inbound links".
+**`tools/validate.jxa.js` implements no such check** — the three orphans above
+are invisible to the suite, which reports `ALL REFERENCES VALID`.
+
+### T-TAGS — the §5 controlled vocabulary is not being enforced, and 130 records are outside it
+
+This is the largest taxonomic defect this batch found and it is squarely a
+curatorial one.
+
+`ARTWORK_SCHEMA.md` §5 defines the tag vocabulary as "one flat list … additions
+require a PR to this file — **no free-typing**." Checked against the shipped
+catalog: **130 of 323 records carry at least one tag outside the vocabulary.**
+The validator checks only that a Tier 1 record has ≥ 3 tags
+(`tools/validate.jxa.js:106`); **it never checks that a tag is in the list.**
+
+The most frequent off-vocabulary tags, and what they collide with:
+
+| off-vocabulary tag | uses | the vocabulary already has |
+|---|---|---|
+| `religious` | 41 | **`sacred`** — a straight synonym, splitting one concept in two |
+| `night` | 33 | **`nocturne`** — same |
+| `abstract` | 21 | **nothing** — a genuine gap, see below |
+| `experimental` | 6 | nothing (and it duplicates the `E` coordinate) |
+| `geometric` | 6 | **`geometry`** — an inflection, not a new idea |
+| `drip`, `dream`, `grief`, `figures`, `body`, `political`, `repetition`, `death`, … | 1–6 each | various |
+
+Three different failure shapes, needing three different fixes:
+
+1. **Synonym splits (`religious`/`sacred`, `night`/`nocturne`,
+   `geometric`/`geometry`).** These are pure damage: tag-driven list assembly,
+   mood search and "similar artworks" tie-breaking all silently see two
+   concepts where there is one, and `sacred` looks 41 records rarer than it is.
+   **Fix: normalise to the vocabulary term. No new node.** This is 80 of the
+   uses.
+2. **`abstract` (21 uses) is a real gap in the vocabulary, not a typo.** §5's
+   Form group runs `pattern · geometry · gesture · miniature-scale ·
+   monumental-scale · flatness · texture` and has no word for
+   non-representational. An atlas holding Kandinsky, Mondrian, Rothko, Pollock,
+   af Klint and Noland cannot describe half of what it holds. **Proposed: add
+   `abstract` to the §5 Form group by PR**, which is what §5's own governance
+   rule requires and what 21 records have already done without it.
+3. **The rest are one-off free-typing** and should be normalised or dropped.
+
+**Proposed enforcement:** add a validator check that every catalog tag resolves
+in the §5 list. It should ship as an **error, not a warn** — §5 is a governance
+rule about a namespace, and a governance rule nobody can breach noisily is not
+being enforced at all. Note this will fail the suite on 130 records the moment
+it lands, which is the correct behaviour and should be sequenced with the
+normalisation, not before it.
+
+### T-TECHNIQUE — `tarashikomi` proposed; and the registry's Western skew
+
+**Proposed: `tarashikomi` (NEW TECHNIQUE).** Applying a second layer of pigment
+or ink before the first has dried, so the two bleed into a mottled surface. R8
+needs it and the registry has no id for it.
+
+- **Source:** the English Wikipedia article on *Red and White Plum Blossoms*
+  states Kōrin "achieved the mottling texture on the trees using tarashikomi, a
+  technique in which the painter applies a second layer of pigment or ink before
+  the first layer has dried."
+- **Kind of category:** a named studio procedure, the same kind of node as
+  `sfumato`, `impasto` or `soak-stain` — not a style claim.
+- **Scope beyond one record:** it is a defining Rinpa procedure, so it reaches
+  Kōrin and the school the atlas already carries as `rinpa`. Batch 01 declined
+  `marouflage` on the grounds that one record does not justify a node; that test
+  is met here and it was not met there.
+
+**The finding underneath the proposal.** The 39-technique registry carries
+`squeegee`, `benday-dots`, `soak-stain`, `dripping`, `frottage`, `spray-paint`
+and `photomontage` — seven ids for twentieth-century Western studio procedures,
+several of which describe one artist each. Against `ink-wash`, `splashed-ink`,
+`silk-painting`, `miniature-painting` and `gold-leaf` for the whole of Asian and
+Islamic practice. **The registry is not neutral about which traditions deserve
+fine-grained vocabulary**, and R8 is what that costs: a National Treasure whose
+`techniques` field had to be left blank because the atlas has no word for what
+was done to it. This is the `ATLAS_COVERAGE.md` §2.1 defect appearing in the
+technique registry rather than the movement registry, where it has not
+previously been recorded.
+
+### T-TAXONOMY — `high-renaissance` dropped from two records, with reasoning
+
+R4 (Giorgione) and R5 (Titian) both use `["venetian-school"]` alone, dropping
+the `high-renaissance` their artist records carry.
+
+- `high-renaissance` is a **periodisation of Roman and Florentine practice**
+  around Leonardo, Raphael and Michelangelo. Applied to Venice it does not
+  describe a shared programme; it borrows a Central-Italian clock.
+- Both records are of works whose interest is precisely that they are *not*
+  doing what Rome was doing — a picture with no nameable subject, and a nude
+  addressed to the viewer in a domestic room.
+- **No hierarchy change is proposed.** `venetian-school` exists at top level and
+  `high-renaissance` stays in the taxonomy; the defect is application, not the
+  node — the same distinction Batch 01 drew for `realism` on Kim Hong-do.
+- **This is deliberately a smaller claim than Batch 01's T1.** `pungsokhwa` was
+  a European label on a non-European painter. This is a Central-Italian label on
+  an Italian painter, which is a much milder error, and it is proposed at the
+  artwork level only. **Whether the two artist records should also drop it is
+  not adjudicated here.**
+
+### T-NATION — two more anachronistic nation fields, flagged, not fixed
+
+Batch 01's T6 recorded three. Two more, both from this batch:
+
+- **`rogier-van-der-weyden` → `belgium`** (R3). Belgium was founded in 1830;
+  Rogier died in 1464 in a Brabantine city under Burgundian rule. The label is
+  four centuries early.
+- **`hans-holbein` → `germany`** (used by no record here, but the artist record
+  drives inheritance). Born in Augsburg, made his career in Basel and London,
+  and died in England — in an empire, not a Germany.
+
+Both are the same defect as `matrakci-nasuh → turkey`, which the curator brief
+names and which Batch 01 found could not be fixed by editing one field because
+`js/taxonomy.js` has no `bosnia`. **These two are worse in one respect and
+better in another:** worse because nobody has flagged them (they read as
+correct to a modern eye), better because there is no missing node — the honest
+answer is that `nation` is a single string being asked to carry a birthplace, a
+citizenship and a work's cultural home at once, which `ATLAS_COVERAGE.md` §2.4
+already establishes it cannot. **No record in this batch is proposed as a fix.**
+R3 uses `belgium` because the artist record says so and overriding it silently
+would hide the problem rather than record it.
+
+### T-GRAPH — the influence graph's coverage measured, since two records exposed it
+
+R7 and R8 are both by painters the atlas holds with **zero influence edges in
+either direction**, and R10 (Géricault) is a third. That prompted a measurement
+rather than an impression:
+
+| | artists | edge endpoints | per artist |
+|---|---|---|---|
+| European nations | 171 | 354 | **2.07** |
+| USA | 34 | 66 | 1.94 |
+| **Everywhere else** | **51** | **56** | **1.10** |
+
+**52 of 256 artists have no edge at all.** Japan has 10 artists and 10 edge
+endpoints; `iran`, `nigeria`, `south-africa`, `ethiopia`, `colombia`,
+`australia` and `czechia` have **zero edges between them**.
+
+Two honest qualifications, because this number is easy to over-read:
+
+1. **A ratio of 2.07 to 1.10 is a real skew but not a chasm**, and part of it is
+   a fact about the world rather than about this atlas: transmission inside the
+   European tradition is unusually well documented because that tradition wrote
+   a great deal about itself, starting with the book this agent is named after.
+2. **The edges that do cross traditions almost all run outward to Europe.**
+   `["utagawa-hiroshige","vincent-van-gogh","influenced"]` is the pattern — the
+   Japanese painter appears in the graph because a European copied him. That
+   shape means the graph records Japanese art's *effect on Europe* and not its
+   internal lineage, which is why Sesshū, who is the pivot of that internal
+   lineage, has no edge.
+
+**No edge is proposed here.** Adding `sesshu-toyo → ogata-korin` would be
+inventing a relationship to fix a statistic, and nothing read this session
+attests it. The finding is that the graph's silence is patterned, and the repair
+is research, not edges.
 
 ---
 
 ## POOL DEFECTS THIS BATCH FOUND
 
-*Filled as records land.*
+Six. **All six are in the build path rather than in the images** — which is the
+headline: Batch 01 found bad pictures, this batch found that the planned bake
+would corrupt good ones.
+
+1. **THE UNIT BUG (R11) — the most serious.** `P2048`/`P2049` carry a unit
+   qualifier. Courbet's *A Burial at Ornans* records `3.15` and `6.68` in
+   **metres** (`Q11573`), not centimetres (`Q174728`). `ARTWORK_SCHEMA.md` §7
+   bakes "P2048×P2049" and §3's example appends `cm`, which would publish
+   **"3.15 × 6.68 cm"** for a canvas six and a half metres wide. **A plausibility
+   range does not catch this and makes it worse** — 3.15 × 6.68 cm is a perfectly
+   plausible miniature. Required fix: read the unit qualifier and convert,
+   *then* range-check. Batch 01's `580 × 390` finding and this one are different
+   bugs needing different checks; neither substitutes for the other.
+
+2. **Multi-valued `P195`/`P276` are provenance chains, not alternatives (R4,
+   R3).** Q930137 (*The Tempest*) lists **Gallerie dell'Accademia, Vendramin
+   Collection, Manfrin Collection** for collection and **Hall VIII, Palazzo
+   Priuli Manfrin** for location. Q568847 (Rogier) lists five locations
+   including **El Escorial** and **El Pardo**. A bake taking the last value, or
+   the first non-empty of P276, files these paintings with sixteenth- and
+   nineteenth-century owners. §7 has no multiplicity rule.
+
+3. **`P195` granularity: "Department of Paintings of the Louvre" (R9, R10).**
+   Both Louvre records give a curatorial sub-organisation, not the museum. A
+   slug match against the label string will not find `louvre` and will either
+   drop the field or mint a venue row for a department.
+
+4. **`P2048`/`P2049` do not say what they measure (R8).** Q28154824 gives
+   `156 × 172.2` for *Red and White Plum Blossoms*; English Wikipedia gives
+   `156.5 × 172.5 cm` **for each of two screens**. The number is nearly right and
+   the statement is wrong. Any work that is a pair, a set or a polyptych has this
+   problem and nothing in the schema records it.
+
+5. **A tall-scroll rendering requirement (R7).** *Haboku sansui* is
+   7183 × 31957 px; the pool's 960 px derivative is **960 × 4271**. This is the
+   mirror of Batch 01's `bada-shanren :: Fish and Rocks` (960 × 126). **They need
+   opposite responses and should not be filed together:** Bada's derivative is
+   unreadable at any layout width and the file is unusable; this one is the true
+   proportion of a hanging scroll and needs a hero that does not assume landscape
+   orientation. Nothing in the pipeline records an aspect-ratio expectation in
+   either direction.
+
+6. **Titles must not be derived from filenames (R1, R6, R12).** Three of twelve
+   records have a Commons filename that disagrees with the catalogue title:
+   *Maestà* for the Ognissanti Madonna, *The dead Christ and three mourners* for
+   the Lamentation, and *A Sunday on La Grande Jatte, Georges Seurat, 1884* —
+   which also embeds a date narrower than either Commons or Wikidata asserts.
+   A quarter of this batch would be mistitled by a filename-derived bake.
+
+**And one non-defect worth recording as evidence.** R5's Commons
+`ImageDescription` reads "Toilet of Venus" — a different Titian composition —
+while `ObjectName`, `Artist` and the filename all say *Venere di Urbino*.
+`match_verdict` returned `confirmed` and was not misled, because it deliberately
+does not consult `ImageDescription`. That design decision was justified in the
+docstring by a case where reading the field would have caused a **false accept**
+(the Emily Carr stamp); this is the first recorded case where it prevented a
+**false reject**. It should not be relaxed.
 
 ---
 
 ## NOT PROPOSED — considered and rejected
 
-*Filled as records land.*
+| candidate | why rejected |
+|---|---|
+| `hans-holbein` :: The Ambassadors (germany) | **Screened, `confirmed`, and fully resolved** — Q1212937, National Gallery London, oil on oak panel, 207 × 209 cm, inv. NG1314, Commons and Wikidata both giving 1533. It is the best record in this batch that is not in it. Rejected on the principle: its consequence claim is the English portrait tradition (`["hans-holbein","nicholas-hilliard","influenced"]`), which is a *national school* rather than a change in what painting could do, and the batch had twelve slots. **This is the rejection this document is least confident about**, and it is recorded in full so the next batch can take it in one step |
+| `utagawa-hiroshige` :: Sudden Shower over Shin-Ōhashi | **`confirmed`, and rejected on record strength alone — which is uncomfortable, because its consequence is the best-documented in the whole pool.** Van Gogh copied this print in oil, both painters are in the atlas, and the edge `["utagawa-hiroshige","vincent-van-gogh","influenced"]` already exists. But the `image.page` is a Commons file page with no Wikidata link, and a **woodblock print exists in many impressions across many museums**: `wbsearchentities` returns three separate items for this design, two of them keyed to different accession numbers (1921.318, 1985.318). `museum` and `dims` could not be stated for *this* impression without inventing which one it is. Recommended for a later batch **once the print-impression problem has a schema answer** — it is a class problem, not a one-record problem, and every ukiyo-e record will hit it |
+| `matthias-grunewald` :: The Isenheim Altarpiece | **CC BY-SA 3.0.** A top-rank consequence candidate blocked by licence, not merit |
+| `piero-della-francesca` :: The Resurrection, The Legend of the True Cross | **Both CC BY-SA 4.0**, and *The Resurrection* is also a Group D detail crop. The same block |
+| `andrea-mantegna` :: Camera degli Sposi | **CC BY-SA 4.0.** Would have been the stronger Mantegna on consequence — the first fully illusionistic painted room — and R6 is in the batch partly because this one could not be |
+| `peter-paul-rubens` :: The Descent from the Cross | **CC BY 3.0**, and it would have collided with R3 on the slug |
+| `duccio` :: Maestà | Not screened. Rejected before screening on a records ground that is visible without a lookup: the Maestà was **dismembered** and its panels are dispersed across at least three countries, so `museum` and `dims` describe a fiction for any single file. The Rucellai Madonna would be the tractable Duccio |
+| `giotto` :: The Scrovegni (Arena) Chapel frescoes | A cycle, not a work. `dims` and `museum` are meaningless for it; the venue `scrovegni-chapel` already exists and should get a *museum* page rather than an artwork record |
+| a second work by any artist in this batch | Not by rule — **the principle imposes no per-artist cap** — but because no artist's second-strongest pool entry outranked another artist's strongest. If one had, it would be here |
+| `ito-jakuchu`, `kitagawa-utamaro`, `shen-zhou`, `uemura-shoen`, `theophanes-the-greek` | Considered on the consequence axis and **not screened** — an honest statement of what was and was not done. Theophanes is the most interesting of the five (a documented teaching relationship to Andrei Rublev, which the atlas's graph does not carry) and his single pool entry is a fresco *cycle*, the same problem as Giotto's Scrovegni |
+| any work chosen to alter the batch's national distribution | The principle forbids it in both directions. See COVERAGE EFFECT, where the distribution is reported instead |
 
 ---
 
 ## COVERAGE EFFECT
 
-*Filled as records land.*
+**The distribution, reported and not corrected.** The twelve records are:
+
+| nation | records |
+|---|---|
+| italy | 5 (R1, R2, R4, R5, R6) |
+| france | 4 (R9, R10, R11, R12) |
+| japan | 2 (R7, R8) |
+| belgium | 1 (R3) |
+
+**Nine of twelve are European and that is the honest output of the test.**
+Three things are true about it at once and none of them cancels the others:
+
+1. **It is inherited.** The pool is 413 images attached to artists this atlas
+   already holds, and the atlas's artist list is the residue of the same
+   collecting history `ATLAS_COVERAGE.md` §1 describes. A ranking cannot reach
+   Song China or Mughal India because no such painter is in the pool to rank.
+2. **It was not steered.** Sesshū and Kōrin are here on the same consequence
+   test that admits Giotto, not as a correction; Hiroshige was dropped on record
+   strength while a fully-resolved Holbein was also dropped, so the marginal
+   calls did not run one way.
+3. **The licence sweep shows a second, non-obvious filter.** Five of the twenty
+   CC-blocked pool entries are exactly the monumental works — Isenheim, both
+   Pieros, the Camera degli Sposi, Rubens's *Descent* — whose photographs are
+   hardest to argue are flat reproductions. **The pool is biased against
+   painting that lives on a wall**, in every tradition, and that is invisible in
+   the counts.
+
+**What this batch fixes:**
+
+- Twelve works of the first rank enter the catalog, which Batch 01's
+  one-per-nation ceiling structurally could not deliver.
+- **Japan gets its first two venues holding Japanese art** — the registry's only
+  prior Japanese entry is the National Museum of *Western* Art.
+- The catalog gains its **earliest records by a wide margin**: R1 at c. 1300 and
+  R2 at 1425–1426.
+- Italy's venue coverage deepens with `santa-maria-novella`, the registry's
+  first Florentine church.
+
+**What it does not fix, stated as plainly as Batch 01 stated its own:**
+
+- **Not one tradition comes off zero.** Same conclusion as Batch 01, same
+  reason: a batch drawn from the pool cannot reach a painter who is not in the
+  atlas. Song and Yuan China, Mughal India, Behzād, Jeong Seon, Momoyama Japan,
+  historic Africa and Southeast Asia remain absent from the *artist* registry,
+  and no catalog batch can touch that.
+- **Belarus, and the eleventh zero-nation Batch 01 left open.** Batch 01 left
+  Belarus at zero by decision, having declined to file Soutine's Paris pictures
+  under it. **This batch does not close that, and should not be read as having
+  tried:** it went looking for consequential works, not for the missing nation,
+  and Soutine's position has not changed — his other pool entry is CC BY-SA 3.0
+  (#2 in the licence table). Belarus is still at zero, still honestly.
+- **The Tier 1 record count does not move.** All twelve are Tier 2, and one
+  existing Tier 1 record is proposed for demotion, so depth in the atlas goes
+  *down* by one page. That is the correct direction: depth was being spent on a
+  record with no image and no way in.
+- **The influence graph's non-European silence is measured but not repaired.**
+  See T-GRAPH.
 
 ---
 
 ## UNCERTAIN — left standing rather than smoothed
 
-*Filled as records land.*
+1. **R6's date** — Commons says 1470–1474, Wikidata says 1483, thirteen years
+   apart. The range is recorded because it is the weaker claim. Nothing read
+   here explains the disagreement, and this document does not claim the range is
+   right.
+2. **R11's date** — Wikidata carries **two** inceptions, 1846 and 1841, which
+   contradict each other and both contradict Commons' 1849–50. Commons is used.
+   Why the item carries two is not established.
+3. **R10's date range** is the one place this batch preferred a looser reading
+   than its sources strictly support: both Commons and Wikidata say 1819, and
+   only the filename says 1818-19. The alternative is given in the record.
+4. **R8's date is an attribution, not a date.** The work is undated; Yamane's
+   1714-or-1715 is named as his, and `sort:1714` is an ordering key.
+5. **R8's dimensions and what they measure**, and **R8's relation to Rinpa**
+   (cofounder or consolidator) — two claims on which English Wikipedia
+   contradicts either Wikidata or itself. Recorded in the record.
+6. **R3's Wikidata identification** was reached by search, not by a link. It is
+   corroborated by the file's Prado `Credit` and by the item's own description
+   string, and it is weaker than the other eleven.
+7. **R7 and R8's heritage designations** are what Wikidata and English Wikipedia
+   assert. No primary Japanese designation record was read.
+8. **R5's descent to Velázquez, Goya and Manet** is recorded as *conventional*
+   — long-repeated in the literature, not sourced here.
+9. **R4's subject.** *The Tempest*'s identification is contested and no reading
+   is repeated here.
+10. **R10's Delacroix anecdote** is not asserted.
+11. **The consequence judgements themselves.** Each record's consequence
+    paragraph rests on what is visible in the object plus, where available, the
+    atlas's own influence graph. **Those 238 edges carry no source**, which is
+    this curator's own standing finding, so no consequence claim in this document
+    rests on an edge alone, and every one says which part is observation and
+    which is citation.
+12. **Every `pd` token here** records that a Commons file page asserts a
+    public-domain basis. It is not a determination by this project, and
+    `IMAGE_RIGHTS_ROUTES.md` §0 gives two reasons not to over-trust Commons
+    hosting in either direction.
+13. **The pool was screened, not looked at.** 393 of 413 entries have never been
+    seen by a human, and `IMAGE_RIGHTS_ROUTES.md` §STATE OF VERIFICATION records
+    that its 4.8% wrong-image rate is a **floor**, not a measurement. Twelve
+    records surviving `match_verdict` is evidence, not proof.
+
+---
+
+## VALIDATOR
+
+`osascript -l JavaScript tools/validate.jxa.js` at commit `cd9ed55`:
+
+```
+app.js: syntax OK
+artists: 256, movements: 76, techniques: 39, eras: 8, nations: 37,
+painter styles: 27, influence edges: 238, venues: 116, catalog: 323
+(tier1: 76), daily pool: 75, museum notes: 104, photo credits: 104
+(attribution required: 88), artwork image credits: 27, personas: 15,
+lists: 12 (featured: 4), tier1 artists: 36 (arcs: 36)
+ALL REFERENCES VALID
+```
+
+This document changes no registry, so the validator's role here is only to
+confirm that every id these records reference resolves in the tree as it stands:
+the nine existing venues (`uffizi`, `prado`, `accademia-venice`, `brera`,
+`louvre`, `musee-dorsay`, `art-institute-chicago`), the twelve `artistId`s, and
+the movements and techniques named above. The three new venue ids and
+`tarashikomi` do **not** resolve yet, by design — they are proposals, and each
+record that uses one cannot be built until its row lands in `js/venues.js` or
+`js/taxonomy.js`.
+
+**Read `ALL REFERENCES VALID` with the two gaps this batch found.** The suite
+does not implement §9's "Tier 1 record with zero inbound links" warn (three
+records qualify), and it does not check tags against the §5 vocabulary (130
+records fail). A clean validator run is evidence about references, and it is
+being read as evidence about correctness.
