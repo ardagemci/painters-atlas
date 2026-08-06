@@ -81,6 +81,8 @@ claims are sourced. A row is here only when both are done.*
 | R4 | `sunlight-in-the-blue-room` | Anna Ancher | denmark | 2 | `confirmed` | pd |
 | R5 | `three-girls` | Amrita Sher-Gil | india | 2 | `confirmed` | pd |
 | R6 | `the-artist-and-his-mother` | Arshile Gorky | armenia | 2 | `confirmed` | pd |
+| R7 | `lemminkainens-mother` | Akseli Gallen-Kallela | finland | 2 | `confirmed` | pd |
+| R8 | `the-lovers-abbasi` | Reza Abbasi | iran | 2 | `confirmed` | pd |
 
 **On the tier column.** Every record in this batch is Tier 2. `ARTWORK_SCHEMA.md`
 §8 admits a work to Tier 1 only through an editorial list, a Tier 1 artist's
@@ -332,6 +334,83 @@ the Whitney work and carries inv. `50.17`, which is what ties this file to one
 of the two. Any later change to `image.src` for this record must re-establish
 which version the new file shows; the title alone cannot.
 
+### R7 — `lemminkainens-mother`
+
+| field | value | source |
+|---|---|---|
+| title | Lemminkäinen's Mother | Commons `ObjectName`; Wikidata **Q3541051** |
+| artistId | `akseli-gallen-kallela` | exists in `js/artists-*.js` |
+| year | display `1897`, sort `1897` | Commons `DateTimeOriginal` = 1897; Wikidata **P571** = 1897 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gallen_Kallela_Lemminkainens_Mother.jpg/500px-Gallen_Kallela_Lemminkainens_Mother.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Lemmink%C3%A4inen's_Mother` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`. Gallen-Kallela died 1931 |
+| techniques | `["tempera"]` | Wikidata **P186** = tempera, canvas — **not** oil, which the artist's default list would have supplied first |
+| movements | `["symbolism"]` | artist carries `symbolism` + `art-nouveau`; see TAXONOMY on the missing Nordic node |
+| nation | `finland` | artist record |
+| museum | `{ id:"ateneum", … }` — **NEW VENUE** | Wikidata **P276** = Ateneum, **P195** = Finnish National Gallery, inv. `A I 640`; Commons `Credit` = kansallisgalleria.fi |
+| dims | `85.5 × 108.5 cm` | Wikidata **P2048**/**P2049** |
+| tags | `["mythological","mourning","nude","golden"]` | §5 vocabulary |
+| coords | `{ F:-80, D:+45, E:+20, C:+10, M:+25 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` =
+*Akseli Gallen-Kallela*, `ObjectName` = *Lemminkäinen's Mother*. Source file
+2244 × 1770 px, credited to the Finnish National Gallery's own site.
+
+**Note on the collection field.** Wikidata separates the owner (Finnish
+National Gallery) from the location (Ateneum). The venue registry is a *venue*
+registry (§5b), so `ateneum` is the correct reference and the owning body is not
+represented — a small loss the schema accepts by design.
+
+**Coordinates, on the merits.** A woman and a body, both wholly legible →
+`F −80`. The subject is a mother assembling her dismembered son beside the
+river of the dead: still, but not calm → `D +45`. Tempera revival, flattened
+and decoratively bounded, in deliberate opposition to salon oil → `E +20`. It
+carries an emblem, but it works on the body first → `C +10`. A metre wide,
+pitched at a national-epic register → `M +25`.
+
+### R8 — `the-lovers-abbasi`
+
+| field | value | source |
+|---|---|---|
+| title | The Lovers | Commons `ObjectName` = *The Lovers*; Wikidata **Q29385121**. `js/artworks.js` keys it *Two Lovers* → set `worksKey:"Two Lovers"` |
+| id | `the-lovers-abbasi` | §2: a generic title takes artist disambiguation. Bare `the-lovers` would collide with any later Magritte or Picasso record |
+| artistId | `reza-abbasi` | exists in `js/artists-*.js` |
+| year | display `1630`, sort `1630` | Commons `DateTimeOriginal`: "dated 8 Shawwal 1039 A.H. / May 21, 1630 A.D." — an inscribed date, the firmest in this batch. Wikidata **P571** = 1630 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Reza_Abbasi_-_Two_Lovers_%281630%29.jpg/500px-Reza_Abbasi_-_Two_Lovers_%281630%29.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/The_Lovers_(Abbasi)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["miniature-painting"]` | **narrowed deliberately.** The artist record adds `gouache` and `gold-leaf`; Wikidata carries no **P186** for this sheet and nothing read here states its medium, so the two specific claims are not inherited |
+| movements | `["persian-miniature"]` | artist record — an existing non-European node that does describe the work |
+| nation | `iran` | artist record |
+| museum | `{ id:"met", name:"The Metropolitan Museum of Art", city:"New York" }` — **venue exists** | Wikidata **P195**/**P276** = Metropolitan Museum of Art, inv. `50.164`; Commons `Credit` = "Metropolitan Museum of Art: entry 451023" |
+| dims | *omitted* | no **P2048**/**P2049**. Blank beats wrong |
+| tags | `["tender","pattern","miniature-scale","golden"]` | §5 vocabulary |
+| coords | `{ F:-70, D:-55, E:-55, C:-65, M:-80 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Reza Abbasi*,
+`ObjectName` = *The Lovers* with labels in five languages. Source file
+4012 × 6088 px. Note that Reza Abbasi's *other* two pool entries are both
+excluded: *Portrait of a Dervish* is `IMAGE_RIGHTS_ROUTES.md` A8 (a portrait
+*of* him by his pupil Mu'in Musavvir) and *Youth Reading* is Group E, an opaque
+serial filename.
+
+**Coordinates, on the merits.** Two figures entwined, entirely legible inside a
+flattened idiom that never pretended to depth → `F −70`. Nothing happens but
+the touching → `D −55`. Safavid album convention handled at the height of its
+tradition; the mastery is not novelty → `E −55`. It is a picture about how a
+sleeve feels against a shoulder → `C −65`. An album page, hand-held →
+`M −80`.
+
+**Iran stays at zero venues, and that is the finding.** This record takes Iran
+off zero *artworks* while leaving the venue registry's Iranian count at nought,
+because the only Reza Abbasi in this pool that survives the exact-work check is
+in New York. That is `ATLAS_COVERAGE.md` §Gap 3 arriving as data rather than as
+an argument: the Golestan Palace and the Reza Abbasi Museum in Tehran hold this
+tradition and are absent from the registry; the batch cannot fix that from the
+pool it was given.
+
 ---
 
 ## NEW VENUES REQUIRED
@@ -345,6 +424,7 @@ and unreviewed; slug renames are forbidden.*
 | `kunstmuseum-basel` | Kunstmuseum Basel | Basel | Switzerland | museum | R3 |
 | `skagens-museum` | Skagens Museum | Skagen | Denmark | museum | R4 |
 | `ngma-new-delhi` | National Gallery of Modern Art | New Delhi | India | museum | R5 |
+| `ateneum` | Ateneum Art Museum | Helsinki | Finland | museum | R7 |
 
 Poland's registry entry is currently the Czartoryski Museum alone, present
 because it holds a Leonardo. `national-museum-warsaw` is the first Polish venue
