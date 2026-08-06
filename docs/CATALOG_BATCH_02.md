@@ -101,6 +101,8 @@ claims are sourced. A row is here only when both are done.*
 |---|---|---|---|---|---|---|
 | R1 | `ognissanti-madonna` | Giotto di Bondone | italy | 2 | `confirmed` | pd |
 | R2 | `the-holy-trinity-masaccio` | Masaccio | italy | 2 | `confirmed` | pd |
+| R3 | `the-descent-from-the-cross-van-der-weyden` | Rogier van der Weyden | belgium | 2 | `confirmed` | pd |
+| R4 | `the-tempest` | Giorgione | italy | 2 | `confirmed` | pd |
 
 **On the tier column, and why it is not a dodge.** `ARTWORK_SCHEMA.md` §8 admits
 a work to Tier 1 only through an editorial list, a Tier 1 artist's essential
@@ -208,6 +210,117 @@ Nothing moves; this is a vertical hierarchy held still → `D −40`. The means
 built to be read — the eye-level vanishing point places the viewer inside the
 argument, and a painted tomb with an inscription sits beneath it → `C +30`. Life
 scale and above, on a church wall → `M +80`.
+
+### R3 — `the-descent-from-the-cross-van-der-weyden`
+
+| field | value | source |
+|---|---|---|
+| id | `the-descent-from-the-cross-van-der-weyden` | §2, and the collision is not hypothetical: a Wikidata title search for "The Descent from the Cross" returns **four** paintings — this one, Rembrandt's (Alte Pinakothek), Rubens's Antwerp triptych, and a Chassériau — plus the subject-matter item. Bare `the-descent-from-the-cross` would be indefensible |
+| title | The Descent from the Cross | Commons `ObjectName` = *El Descendimiento* / *The Descent from the Cross*; Wikidata **Q568847** |
+| artistId | `rogier-van-der-weyden` | exists in `js/artists-*.js` |
+| year | display `c. 1435–1438`, sort `1435` | **Sources disagree.** Commons `DateTimeOriginal` = "between 1435 and 1438" with `P1319`/`P1326` earliest/latest qualifiers; Wikidata **P571** = 1440. The Commons range is recorded; **1440 is noted, not adopted** |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/El_Descendimiento%2C_by_Rogier_van_der_Weyden%2C_from_Prado_in_Google_Earth.jpg/960px-El_Descendimiento%2C_by_Rogier_van_der_Weyden%2C_from_Prado_in_Google_Earth.jpg` | `js/artworks.js` |
+| image.page | `https://commons.wikimedia.org/wiki/File:El_Descendimiento,_by_Rogier_van_der_Weyden,_from_Prado_in_Google_Earth.jpg` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`; `Restrictions` empty |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, panel. The artist record's `glazing` is **not** inherited — no source read here asserts it of this work |
+| movements | `["early-netherlandish"]` | artist record |
+| nation | `belgium` | artist record — **anachronistic, flagged in T-NATION below, not silently corrected** |
+| museum | `{ id:"prado", name:"Museo Nacional del Prado", city:"Madrid" }` — **venue exists** | Wikidata **P195** = Museo del Prado; **P217** inv. `P002825`. Commons `Credit` = "The Prado in Google Earth", which ties the *file* to the same institution |
+| dims | `204.5 × 261.5 cm` | Wikidata **P2048** = 204.5, **P2049** = 261.5. **Sanity-checked** |
+| tags | `["sacred","group-scene","mourning","theatrical"]` | §5 vocabulary |
+| coords | `{ F:-85, D:+55, E:-10, C:-30, M:+45 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Rogier van der
+Weyden*, `ObjectName` names the work in six languages. Source file
+**30000 × 23277 px**, the largest in this batch.
+
+**How the Wikidata item was resolved, stated because it is weaker than R1's.**
+This record's `image.page` is a **Commons file page, not a Wikipedia article**,
+so the `pageprops → wikibase_item` route that resolved R1, R2 and R4 returns
+nothing. Q568847 was reached by `wbsearchentities`, whose own description string
+reads "painting by Rogier van der Weyden in the Museo del Prado", and the tie is
+corroborated by the file's `Credit` naming the Prado. That is a two-step
+identification rather than a link, and it is exactly the resolution method Batch
+01 warned was "not exhaustive". It is recorded so a later reviewer can re-test it
+rather than inherit it.
+
+**Consequence.** Rogier's effect is not a technique but a register: grief given
+the compositional weight of doctrine. Ten life-size figures are pressed into a
+shallow gilded box the depth of a carved shrine, and the Virgin's collapsed body
+is drawn as a near-exact rhyme of her son's — the invention is that the picture's
+*structure* is the emotion. The atlas's graph carries one inbound edge,
+`["jan-van-eyck","rogier-van-der-weyden","influenced"]`, and **no outbound edge
+at all**, which understates him considerably; see COVERAGE EFFECT.
+
+**Coordinates, on the merits.** Wholly figurative, life scale → `F −85`. Grief
+at full pitch, but arrested rather than moving — a tableau, not an action →
+`D +55`. Netherlandish panel practice at its height; superb, and not novel in
+its means → `E −10`. It works on the body first: you feel the swoon before you
+read the theology → `C −30`. Two and a half metres of altarpiece with figures at
+life size, but the emotional register is intimate → `M +45`.
+
+### R4 — `the-tempest`
+
+| field | value | source |
+|---|---|---|
+| title | The Tempest | Commons `ObjectName` = *La Tempesta* / *Tempest*; Wikidata **Q930137** |
+| artistId | `giorgione` | exists in `js/artists-*.js` |
+| year | display `c. 1505`, sort `1505` | Commons `DateTimeOriginal` = "circa 1505"; Wikidata **P571** = 1506. A one-year gap between a circa and a point date; the circa is recorded as the weaker and therefore truer claim |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Giorgione_-_Das_Gewitter.jpg/500px-Giorgione_-_Das_Gewitter.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/The_Tempest_(Giorgione)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas. The artist record's `glazing` and `sfumato` are **not** inherited |
+| movements | `["venetian-school"]` | artist record carries `venetian-school` + `high-renaissance`. **`high-renaissance` is deliberately dropped** — it is a Roman-and-Florentine periodisation, and the whole interest of this picture is that it is not doing what Rome was doing. See T-TAXONOMY |
+| nation | `italy` | artist record |
+| museum | `{ id:"accademia-venice", name:"Gallerie dell'Accademia", city:"Venice" }` — **venue exists** | Wikidata **P195**, first value; **P217** inv. `Cat.915` |
+| dims | `82 × 73 cm` | Wikidata **P2048** = 82, **P2049** = 73 (unit Q174728, centimetre). **Sanity-checked** |
+| tags | `["landscape","storm","unsettling","nude"]` | §5 vocabulary |
+| coords | `{ F:-70, D:+30, E:+25, C:+10, M:-30 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Giorgione*,
+`ObjectName` = *La Tempesta*. Source file 3329 × 3696 px. Note the file's
+`Credit` field reads simply **"Internet"** — the weakest provenance string of
+any file in this batch, and a defect flagged below.
+
+**A bake hazard this record exposes, and it would have shipped silently.**
+Wikidata Q930137 carries **three** values for `P195` (collection) — Gallerie
+dell'Accademia, **Vendramin Collection**, **Manfrin Collection** — and **two**
+for `P276` (location): "Hall VIII" and **"Palazzo Priuli Manfrin"**. Those are a
+*provenance chain*, not alternatives: the Vendramin and Manfrin entries are
+sixteenth- and nineteenth-century owners. `ARTWORK_SCHEMA.md` §7 plans to bake
+`museum` from "P276/P195" with no rule for multiplicity, so a bake taking the
+last value, or the first non-empty of P276, would file this painting in a
+Venetian palazzo it left in 1856. R3 shows the same shape — five `P276` values
+including El Escorial and El Pardo. **See POOL DEFECTS.**
+
+**Consequence, and the limit of what is asserted here.** What is visible in the
+object is that the landscape occupies most of the picture and carries its
+weather, while the two figures are given no attribute that identifies them and
+no action that connects them — a soldier or shepherd standing, a woman nursing,
+across a stream, under lightning. A picture with figures and no nameable subject
+was not a category Venetian painting had, and the line that runs from here to
+every later painting that is a *mood* rather than a story is the reason this work
+is in a batch about consequence.
+
+**The reception history is deliberately not summarised.** *The Tempest*'s
+identification is one of the most contested in the literature — the readings
+proposed for it are numerous and mutually exclusive — and **nothing read this
+session establishes any of them**, so none is repeated. The Content Editor
+should treat "nobody agrees what it shows" as the sourceable fact and resist the
+temptation to pick the most charming candidate. Both of the atlas's own Giorgione
+facts are thin: the graph carries one edge,
+`["giorgione","titian","befriended"]`, and nothing else.
+
+**Coordinates, on the merits.** Figures are present and legible but subordinate,
+and what they are doing is not → `F −70`. A storm is arriving and nobody is
+reacting to it; charge without event → `D +30`. Oil on canvas in the ordinary
+Venetian way, turned to a purpose the tradition had no category for — the
+departure is in the conception, not the handling → `E +25`. Famously
+unreadable, which pulls it towards the conceptual, but it does its work on the
+eye before the mind gets a turn → `C +10`. Eighty-two centimetres, a private
+cabinet picture for one person at a time → `M −30`.
 
 ---
 
