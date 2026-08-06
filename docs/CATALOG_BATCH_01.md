@@ -79,6 +79,8 @@ claims are sourced. A row is here only when both are done.*
 | R2 | `stanczyk` | Jan Matejko | poland | 2 | `confirmed` | pd |
 | R3 | `senecio` | Paul Klee | switzerland | 2 | `confirmed` | pd |
 | R4 | `sunlight-in-the-blue-room` | Anna Ancher | denmark | 2 | `confirmed` | pd |
+| R5 | `three-girls` | Amrita Sher-Gil | india | 2 | `confirmed` | pd |
+| R6 | `the-artist-and-his-mother` | Arshile Gorky | armenia | 2 | `confirmed` | pd |
 
 **On the tier column.** Every record in this batch is Tier 2. `ARTWORK_SCHEMA.md`
 §8 admits a work to Tier 1 only through an editorial list, a Tier 1 artist's
@@ -236,6 +238,100 @@ number and both dimensions. The choice is record strength, not merit ranking
 between the two painters, and not a gender correction — those would each be a
 different kind of thumb on the scale.
 
+### R5 — `three-girls`
+
+| field | value | source |
+|---|---|---|
+| title | Three Girls | Wikidata **Q7797494**. Commons `ObjectName` = *Group of Three Girls* → set `worksKey:"Three Girls"` and keep the `js/artworks.js` key |
+| artistId | `amrita-sher-gil` | exists in `js/artists-*.js` |
+| year | display `1935`, sort `1935` | Commons `DateTimeOriginal` = 1935; Wikidata **P571** = 1935 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Amrita_Sher-Gil_Group_of_Three_Girls.jpg/500px-Amrita_Sher-Gil_Group_of_Three_Girls.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Three_Girls_(painting)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`. Sher-Gil died 1941 |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas; Commons `ImageDescription` says oil on canvas |
+| movements | `["post-impressionism"]` | artist record |
+| nation | `india` | artist record |
+| museum | `{ id:"ngma-new-delhi", … }` — **NEW VENUE** | Wikidata **P195**/**P276** = National Gallery of Modern Art; Commons `ImageDescription` names NGMA, New Delhi |
+| dims | `99.5 × 73.5 cm` | Wikidata **P2048** = 99.5, **P2049** = 73.5; Commons `ImageDescription` gives the same pair as "73.5 × 99.5" |
+| tags | `["group-scene","quiet","everyday-life"]` | §5 vocabulary |
+| coords | `{ F:-85, D:-50, E:+10, C:-20, M:-35 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Amrita
+Sher-Gil*. Source file 2184 × 3007 px. The Commons description also records that
+the work won a gold medal from the Bombay Art Society; that is what the file
+page asserts, and this document does not go beyond it.
+
+**Coordinates, on the merits.** Three seated women, wholly legible → `F −85`.
+Nothing happens and nobody looks at anybody → `D −50`. École des Beaux-Arts
+training turned on an Indian subject: modern in colour and flattening,
+conventional in means → `E +10`. It works by mood and colour rather than by
+argument → `C −20`. A metre-high canvas, three figures at close range →
+`M −35`.
+
+**A label that survives scrutiny, unlike others in this atlas.**
+`post-impressionism` on Sher-Gil is a European movement name on a painter
+working in India — the exact shape of the defect `ATLAS_COVERAGE.md` §2.1
+records. Here it holds anyway: Sher-Gil trained in Paris and the influence runs
+through her own biography rather than being imposed by a cataloguer. That is
+the test, and it is why Kim Hong-do under `realism` (R10) fails it.
+
+### R6 — `the-artist-and-his-mother`
+
+| field | value | source |
+|---|---|---|
+| title | The Artist and His Mother | Commons `ObjectName`; Wikidata **Q64506673** |
+| artistId | `arshile-gorky` | exists in `js/artists-*.js` |
+| year | display `c. 1926–1936`, sort `1926` | **Sources disagree.** Commons `DateTimeOriginal` = "between 1926 and 1936" and the English Wikipedia article on Gorky reads "*The Artist and His Mother* (ca. 1926–1936)"; Wikidata **P571** = 1931. Two sources give the range and one gives a point date, so the range is recorded and the point date noted, not adopted |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Arshile_Gorky%2C_The_Artist_and_His_Mother.jpg/960px-Arshile_Gorky%2C_The_Artist_and_His_Mother.jpg` | `js/artworks.js` |
+| image.page | `https://commons.wikimedia.org/wiki/File:Arshile_Gorky,_The_Artist_and_His_Mother.jpg` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False`. Gorky died 1948 |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas |
+| movements | `["modernism"]` | **override.** The artist record carries `surrealism` + `abstract-expressionism`; this work precedes both phases of his development and inheriting them would misdate him |
+| nation | `armenia` | artist record — and see below, where the *work* supports it |
+| museum | `{ id:"whitney", name:"Whitney Museum of American Art", city:"New York" }` — **venue exists** | Wikidata **P195**/**P276** = Whitney, inv. `50.17` |
+| dims | *omitted* | Wikidata carries no **P2048**/**P2049**. Blank beats wrong (§7) |
+| tags | `["portrait","mourning","flatness"]` | §5 vocabulary |
+| coords | `{ F:-45, D:-25, E:+45, C:+25, M:-5 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Arshile Gorky*,
+`ObjectName` = *The Artist and His Mother*, and the Wikidata description names
+the Whitney accession. **Source file is only 1024 × 1227 px** — the smallest in
+this batch. It is adequate for the 500 px and 960 px renderings the catalog
+uses and would not survive a larger hero; flagged in POOL DEFECTS.
+
+**Coordinates, on the merits.** Two figures, frontal, recognisable, but pressed
+towards planes and outline → `F −45`. Arrested rather than dramatic; the pair
+do not move → `D −25`. The flattening, the scraped and re-laid surfaces, the
+refusal to finish over a decade → `E +45`. It is a reconstruction from memory
+and from a photograph, and it knows that about itself → `C +25`. Close to
+life-scale and frontally formal, which gives presence without scale → `M −5`.
+
+**Why Gorky and not Aivazovsky, for Armenia.** Ivan Aivazovsky is the more
+famous Armenian-descended painter in the pool and *The Ninth Wave* has the
+tidier record (Wikidata Q1070896, Russian Museum, inv. Ж-2202 — and
+`russian-museum` already exists, so it would have cost no new venue). It was
+rejected anyway. `ARTWORK_SCHEMA.md` §3 makes an artwork's `nation` a claim
+about *work-specific culture*, not about the painter's ancestry, and *The Ninth
+Wave* is a Russian-Empire marine painting held in St Petersburg; filing it under
+`armenia` would put a national label on a work that does not carry one, purely
+to take a counter off zero. Gorky's double portrait is Armenian in its subject:
+the English Wikipedia article on Gorky states that the *Artist and His Mother*
+paintings "are based on a childhood photograph taken in Van in which he is
+depicted standing beside his mother", and that "in the aftermath of the
+genocide, his mother died of starvation in Yerevan in 1919." On that record
+`nation:"armenia"` is a statement about the painting and not only about the
+painter. **Chaïm Soutine was dropped from this batch for the same reason in
+reverse** (see NOT PROPOSED).
+
+**Exact-work hazard, handled.** The same Wikipedia article records that *two*
+versions of this composition exist — one at the Whitney, "the other … in the
+National Gallery of Art in Washington, D.C." Wikidata Q64506673 is described as
+the Whitney work and carries inv. `50.17`, which is what ties this file to one
+of the two. Any later change to `image.src` for this record must re-establish
+which version the new file shows; the title alone cannot.
+
 ---
 
 ## NEW VENUES REQUIRED
@@ -248,6 +344,7 @@ and unreviewed; slug renames are forbidden.*
 | `national-museum-warsaw` | Muzeum Narodowe w Warszawie / National Museum in Warsaw | Warsaw | Poland | museum | R2 |
 | `kunstmuseum-basel` | Kunstmuseum Basel | Basel | Switzerland | museum | R3 |
 | `skagens-museum` | Skagens Museum | Skagen | Denmark | museum | R4 |
+| `ngma-new-delhi` | National Gallery of Modern Art | New Delhi | India | museum | R5 |
 
 Poland's registry entry is currently the Czartoryski Museum alone, present
 because it holds a Leonardo. `national-museum-warsaw` is the first Polish venue
