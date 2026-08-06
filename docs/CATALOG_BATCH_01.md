@@ -75,7 +75,89 @@ claims are sourced. A row is here only when both are done.*
 
 | # | artwork id | artist | nation | tier | verdict | licence asserted |
 |---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — |
+| R1 | `the-tortoise-trainer` | Osman Hamdi Bey | turkey | 2 | `confirmed` | pd |
+| R2 | `stanczyk` | Jan Matejko | poland | 2 | `confirmed` | pd |
+
+**On the tier column.** Every record in this batch is Tier 2. `ARTWORK_SCHEMA.md`
+§8 admits a work to Tier 1 only through an editorial list, a Tier 1 artist's
+essential works, the daily-painting schedule or the deck pool. None of these ten
+artists is in `js/tier1-artists.js`, no list yet reaches them, and manufacturing
+an inbound link so that a record could be called Tier 1 is the "make a count come
+out even" failure the curator brief forbids. Tier 2 is what the evidence
+supports; §4 makes promotion purely additive and the URL never changes.
+
+### R1 — `the-tortoise-trainer`
+
+| field | value | source |
+|---|---|---|
+| title | The Tortoise Trainer | Commons `ObjectName`; Wikidata **Q7769644** label |
+| artistId | `osman-hamdi-bey` | exists in `js/artists-*.js` |
+| year | display `1906`, sort `1906` | Commons `DateTimeOriginal` = 1906; Wikidata Q7769644 **P571** = 1906 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg/500px-Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/The_Tortoise_Trainer` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons `LicenseShortName` / `UsageTerms` assert a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas |
+| movements | `["realism"]` | see TAXONOMY below — the artist record's `orientalism` is *not* inherited here |
+| nation | `turkey` | artist record |
+| museum | `{ id:"pera-museum", name:"Pera Museum", city:"Istanbul" }` — **venue exists** | Wikidata **P195**/**P276** = Pera Museum; inv. `PM_GAP_PC.045` |
+| dims | `221.5 × 120 cm` | Wikidata **P2048**/**P2049**; Commons `ImageDescription` states the same |
+| tags | `["interior","quiet","monumental-scale"]` | `ARTWORK_SCHEMA.md` §5 vocabulary |
+| coords | `{ F:-85, D:-40, E:-25, C:+45, M:+10 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Osman Hamdi Bey*;
+`ObjectName` = *The Tortoise Trainer* in eleven languages. Source file
+9492 × 17758 px, `image/jpeg`, from Google Arts & Culture.
+
+**Coordinates, on the merits.** A single standing figure, fully legible →
+`F −85`. Nothing happens: the man waits, the tortoises do not hurry →
+`D −40`. Paris-academy means, conventionally handled → `E −25`. The picture is
+built to be *read* rather than felt — a man in Ottoman dress with a naqareh
+drum on his back, training animals that will not be trained — so it sits well
+onto the conceptual side, `C +45`. Near life-size on a tall canvas, but the
+register is a room rather than a hall → `M +10`.
+
+**Uncertain.** It is widely repeated that the trainer carries Osman Hamdi Bey's
+own features. This document does not assert it: no source read here establishes
+it, and the record above does not depend on it.
+
+### R2 — `stanczyk`
+
+| field | value | source |
+|---|---|---|
+| title | Stańczyk | Commons `ObjectName`; Wikidata **Q6609268** |
+| artistId | `jan-matejko` | exists in `js/artists-*.js` |
+| year | display `1862`, sort `1862` | Commons `DateTimeOriginal` = 1862; Wikidata **P571** = 1862 (agree) |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Jan_Matejko%2C_Sta%C5%84czyk.jpg/500px-Jan_Matejko%2C_Sta%C5%84czyk.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Sta%C5%84czyk_(painting)` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas |
+| movements | `["romanticism"]` | artist carries `romanticism` + `realism`; the work is Polish Romantic history painting |
+| nation | `poland` | artist record |
+| museum | `{ id:"national-museum-warsaw", … }` — **NEW VENUE** | Wikidata **P195**/**P276** = National Museum in Warsaw; inv. `MP 433 MNW` |
+| dims | `88 × 120 cm` | Wikidata **P2048**/**P2049** |
+| tags | `["historical","interior","lonely","red"]` | §5 vocabulary |
+| coords | `{ F:-85, D:+35, E:-60, C:+40, M:-15 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Jan Matejko*,
+`ObjectName` = *Stańczyk* with a Polish label naming the full title (the jester
+during a ball at the royal court). Source file 5766 × 4289 px. The Commons
+`Credit` field records the file as arriving through a GLAM-WIKI partnership
+between the National Museum in Warsaw and Wikimedia Polska — which is also the
+best evidence for the collection field.
+
+**Coordinates, on the merits.** Fully figurative, one seated man → `F −85`.
+The ball behind him is bright and busy while he is not; the drama is withheld
+rather than absent → `D +35`. Academic history painting in entirely
+nineteenth-century means → `E −60`. It is an argument in paint — the one man in
+the room who has read the dispatch — so `C +40`. A single figure, a private
+moment, a canvas about a metre wide → `M −15`.
+
+**Placement note (not a reason to change the number).** `E −60` sits in the
+region the coordinator flags as nearly empty. It is where the work honestly
+falls: nothing about *Stańczyk*'s means is experimental, and its subject being
+modern does not make its handling so.
 
 ---
 
@@ -86,7 +168,7 @@ and unreviewed; slug renames are forbidden.*
 
 | venue id | name | city | country | type | needed by |
 |---|---|---|---|---|---|
-| — | — | — | — | — | — | — |
+| `national-museum-warsaw` | Muzeum Narodowe w Warszawie / National Museum in Warsaw | Warsaw | Poland | museum | R2 |
 
 ---
 
