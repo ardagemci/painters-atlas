@@ -107,6 +107,8 @@ claims are sourced. A row is here only when both are done.*
 | R6 | `lamentation-of-christ-mantegna` | Andrea Mantegna | italy | 2 | `confirmed` | pd |
 | R7 | `haboku-sansui` | Sesshū Tōyō | japan | 2 | `confirmed` | pd |
 | R8 | `red-and-white-plum-blossoms` | Ogata Kōrin | japan | 2 | `confirmed` | pd |
+| R9 | `oath-of-the-horatii` | Jacques-Louis David | france | 2 | `confirmed` | pd |
+| R10 | `the-raft-of-the-medusa` | Théodore Géricault | france | 2 | `confirmed` | pd |
 
 **On the tier column, and why it is not a dodge.** `ARTWORK_SCHEMA.md` §8 admits
 a work to Tier 1 only through an editorial list, a Tier 1 artist's essential
@@ -540,6 +542,98 @@ flattening, the pattern-as-water and the wet-into-wet mottling are all departure
 inside a decorative tradition that did not require them → `E +45`. It works
 entirely on the eye → `C −25`. A pair of screens over a metre and a half tall —
 room-scale, and domestic rather than civic → `M +30`.
+
+### R9 — `oath-of-the-horatii`
+
+| field | value | source |
+|---|---|---|
+| title | Oath of the Horatii | Commons `ObjectName` (*Le Serment des Horaces*); Wikidata **Q476458** label = *The Oath of the Horatii*; English Wikipedia article at *Oath of the Horatii*, which is also the `js/artworks.js` key |
+| artistId | `jacques-louis-david` | exists in `js/artists-*.js` |
+| year | display `1784–1785`, sort `1784` | Commons `DateTimeOriginal` = "between 1784 and 1785" with earliest/latest qualifiers; Wikidata **P571** = 1784-01-01. The point date is the low end of the range — the two agree |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg/500px-Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/Oath_of_the_Horatii` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas. The artist record's `glazing` is **not** inherited |
+| movements | `["neoclassicism"]` | artist record |
+| nation | `france` | artist record |
+| museum | `{ id:"louvre", name:"Musée du Louvre", city:"Paris" }` — **venue exists** | Wikidata **P195** = **Department of Paintings of the Louvre** — see the bake note. **P217** carries *three* values: `INV. 3692`, `MR 1432`, `INV 3692`. The Commons filename independently carries `INV 3692 ; MR 1432`, which is the strongest identifier chain in this batch |
+| dims | `330 × 425 cm` | Wikidata **P2048** = 330, **P2049** = 425. **Sanity-checked** |
+| tags | `["historical","group-scene","theatrical","monumental-scale"]` | §5 vocabulary |
+| coords | `{ F:-85, D:+65, E:-35, C:+55, M:+70 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` =
+*Jacques-Louis David*, `ObjectName` = *Le Serment des Horaces*. Source file
+10051 × 7794 px.
+
+**A second bake hazard, distinct from R4's.** Wikidata's `P195` here is not
+"Louvre" but **"Department of Paintings of the Louvre"** — a sub-organisation.
+R10 carries the same value. A bake matching venue-registry slugs against the
+`P195` label string will not match `louvre`, and will either drop the museum
+field or invent a venue row for a curatorial department. R4's hazard was
+*too many* values; this one is *the wrong granularity of one value*. Both are
+listed in POOL DEFECTS.
+
+**Consequence.** The object argues by geometry: three sons, three arms, three
+swords converging on a single point held by the father, and the women collapsed
+in a separate curve to the right so that duty and grief do not share a shape.
+Every element that a history painting had been free to arrange for beauty is
+here arranged to make a proposition. The atlas's graph carries
+`["jacques-louis-david","jean-auguste-dominique-ingres","taught"]` — a
+**documented pupillage**, the strongest of the three edge classes and one of the
+few in the graph that would survive its own audit — and
+`["nicolas-poussin","jacques-louis-david","influenced"]` inbound.
+
+**Coordinates, on the merits.** Wholly figurative, life scale, nothing withheld
+→ `F −85`. Maximum tension held perfectly still: an oath at the instant before
+it is spoken → `D +65`. The means are academic on purpose — the picture's
+argument *is* a return to conventional means, which puts it firmly negative
+→ `E −35`. It is a diagram of a moral proposition and makes no secret of it →
+`C +55`. Three and a third metres by four and a quarter, pitched at a nation
+→ `M +70`.
+
+### R10 — `the-raft-of-the-medusa`
+
+| field | value | source |
+|---|---|---|
+| title | The Raft of the Medusa | Commons `ObjectName` (*La Balsa de la Medusa*); Wikidata **Q212616**; English Wikipedia article title |
+| artistId | `theodore-gericault` | exists in `js/artists-*.js` |
+| year | display `1818–1819`, sort `1818` | **Careful.** Commons `DateTimeOriginal` = 1819 and Wikidata **P571** = 1819 — two sources agreeing on a point date. The Commons **filename** carries "1818-19", which is a third statement and *not* a source in the sense the other two are. The display range is taken because two-year execution is what the filename and the general record both indicate; **if a reviewer prefers the strictly-sourced value, use `1819` for both fields** — this is the one date in the batch where this document has taken the looser reading, and it is flagged rather than buried |
+| image.src | `https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/JEAN_LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg/500px-JEAN_LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg` | `js/artworks.js` |
+| image.page | `https://en.wikipedia.org/wiki/The_Raft_of_the_Medusa` | `js/artworks.js` |
+| image.status | `pd` — a rendering token only | Commons asserts a public-domain basis; `Copyrighted: False` |
+| techniques | `["oil-painting"]` | Wikidata **P186** = oil paint, canvas. The artist record's `lithography` and `chiaroscuro` are **not** inherited — the first is a different medium entirely |
+| movements | `["romanticism"]` | artist record |
+| nation | `france` | artist record |
+| museum | `{ id:"louvre", name:"Musée du Louvre", city:"Paris" }` — **venue exists** | Wikidata **P195** = Department of Paintings of the Louvre (same granularity problem as R9); **P217** inv. `INV 4884` |
+| dims | `491 × 716 cm` | Wikidata **P2048** = 491, **P2049** = 716. **Sanity-checked** — 4.9 × 7.2 m is extreme but is the correct order for a Salon machine, and it is *the point of the picture*, so a bake rejecting it as implausible would be wrong. The sanity rule proposed in POOL DEFECTS is set wide enough to admit this |
+| tags | `["seascape","group-scene","storm","monumental-scale"]` | §5 vocabulary |
+| coords | `{ F:-85, D:+85, E:+10, C:+20, M:+90 }`, `coordsSource:"override"` | scored below |
+| tier | 2 | §8 |
+
+**Verdict.** `match_verdict` → `confirmed`. Commons `Artist` = *Jean Louis
+Théodore Géricault*, `ObjectName` = *La Balsa de la Medusa*, and the filename
+carries the holding museum. Source file 5872 × 4008 px.
+
+**Consequence.** A contemporary political scandal painted at the scale, and with
+the compositional machinery, that the Salon reserved for scripture and antiquity
+— a pyramid of the living and the dead straining toward a speck on the horizon,
+with no hero, no state, and no moral resolution at the apex. That transfer of
+*apparatus* from myth to news is the consequential act, and it is visible in the
+object rather than inferred. **The atlas's influence graph carries no Géricault
+edge in either direction** — see COVERAGE EFFECT.
+
+**Not asserted.** It is widely repeated that Delacroix posed for one of the
+figures. Nothing read here establishes it and the record above does not depend on
+it; it is left out, per the same rule that kept Osman Hamdi Bey's features out of
+Batch 01's R1.
+
+**Coordinates, on the merits.** Wholly figurative and anatomically insistent →
+`F −85`. Among the highest-drama objects the atlas could hold: bodies, a wave, a
+sail against the wind, and a sighting → `D +85`. The means are academic history
+painting; the departure is what they are pointed at, not how they are handled →
+`E +10`. It is an indictment, but it lands in the stomach long before the mind →
+`C +20`. Seven metres of canvas; there is no larger register → `M +90`.
 
 ---
 
