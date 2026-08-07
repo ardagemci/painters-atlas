@@ -163,6 +163,100 @@ visitor will actually read it.
 | 2 | Blue throughout, warmed only where the sun lands | 8 |
 | 3 | Sixty-five centimetres: a corner, not a scene | 7 |
 
+### B01-R5 — `three-girls` (Amrita Sher-Gil, 1935)
+
+**description** — 64 words
+
+> Three young women sit close together and not one of them looks at another, or
+> at you. Nothing happens. Sher-Gil trained in Paris and turned that training on
+> an Indian subject — modern in its colour and its flattening, conventional in
+> every other means — so the picture works by mood instead of by argument. A
+> metre of canvas, three figures, no story offered.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Nobody meets anybody's eye, including yours | 6 |
+| 2 | Modern in colour and flattening, conventional in means | 8 |
+| 3 | Reportedly won a gold medal from the Bombay Art Society | 10 `†` |
+
+*Hedge.* The medal is what the Commons file page states and the Curator declined
+to go beyond it, so bullet 3 takes `STYLE_GUIDE.md` §3.1's sanctioned hedge
+("reportedly") rather than the flat statement.
+
+### B01-R6 — `the-artist-and-his-mother` (Arshile Gorky, c. 1926–1936)
+
+**description** — 68 words
+
+> Gorky worked from a childhood photograph taken in Van: himself as a boy,
+> standing beside his mother. In the aftermath of the genocide she died of
+> starvation in Yerevan, in 1919. He painted this over roughly a decade and
+> never called it finished. The surfaces are scraped back and laid again, the
+> faces pressed towards outline and plane. Two versions exist. This is the one
+> at the Whitney.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Painted from a childhood photograph taken in Van | 8 |
+| 2 | Scraped back and repainted for a decade, never finished | 9 `†` |
+| 3 | A second version is in Washington | 6 |
+
+*Register.* `STYLE_GUIDE.md` §5: genocide gets no joke and no dramatic
+flourish either. Every sentence here is plain and declarative on purpose, and
+the em-dash — this project's signature turn — is deliberately absent from the
+whole record. The facts are the Curator's, from the English Wikipedia article
+on Gorky that he cites.
+
+*Note, not a doubt carried in copy.* The record's `year.display` is
+`c. 1926–1936` and the description's "roughly a decade" follows it. Wikidata's
+competing point date of 1931 (Batch 01 UNCERTAIN §1) is **not** surfaced in the
+prose — see FLAGS.
+
+### B01-R7 — `lemminkainens-mother` (Akseli Gallen-Kallela, 1897)
+
+**description** — 64 words
+
+> A mother kneels on the bank of the river of the dead and puts her dismembered
+> son back together. Gallen-Kallela painted it in 1897 in tempera rather than
+> salon oil — flattened, hard-edged, bounded like decoration — so that a scene
+> of that kind holds absolutely still. The stillness is not calm. Nothing in the
+> picture moves and everything in it is at pitch.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Tempera, not oil — a refusal of salon finish | 9 `†` |
+| 2 | The body is being assembled, not mourned | 7 |
+| 3 | Motionless, and not remotely calm | 5 |
+
+### B01-R8 — `the-lovers-abbasi` (Reza Abbasi, 1630)
+
+**description** — 67 words
+
+> Two figures fold into one another on a page you could hold in one hand.
+> Nothing happens but the touching — no depth, no room, no story arriving. Reza
+> Abbasi worked inside Safavid album convention at the height of it, and the
+> whole picture is about how a sleeve sits against a shoulder. The sheet carries
+> its own date: 8 Shawwal 1039, which is 21 May 1630.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The sheet is dated 8 Shawwal 1039 — 21 May 1630 | 11 `†` |
+| 2 | No depth is attempted; the idiom never wanted it | 9 `†` |
+| 3 | The real subject is the fall of cloth | 8 |
+
+*Why the date is the headline.* This is the one record in either batch whose
+date is inscribed on the object rather than inferred from it — the Curator
+calls it the firmest date in Batch 01. Everywhere else in these twenty-two
+records the copy has to hedge a date; here it can name the day, and that
+contrast is worth spending a bullet on.
+
 ---
 
 ## FLAGS
