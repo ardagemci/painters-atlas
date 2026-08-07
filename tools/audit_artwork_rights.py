@@ -11,7 +11,7 @@ shipped data files actually contain, resolves each one to its Commons file,
 and records the licence Commons asserts.
 
 Scope, stated precisely:
-  * `js/catalog-{1..4}.js`  — `image:{ src, page, status }`; only `status:"pd"`
+  * `js/catalog-{1..5}.js`  — `image:{ src, page, status }`; only `status:"pd"`
     records are read, because `js/app.js` renders an artwork image only when
     `w.image.status === "pd"`. A `status:"copyright"` record ships no image.
   * `js/artworks.js`        — `window.ARTWORKS[artistId][title].img`, the
@@ -44,7 +44,7 @@ sys.path.insert(0, HERE)
 
 import commons_rights as cr  # noqa: E402  (path set above)
 
-CATALOG_FILES = ["catalog-1.js", "catalog-2.js", "catalog-3.js", "catalog-4.js"]
+CATALOG_FILES = ["catalog-1.js", "catalog-2.js", "catalog-3.js", "catalog-4.js", "catalog-5.js"]
 GALLERY_FILE = "artworks.js"
 DEFAULT_OUT = os.path.join(
     ROOT, "protocol", "tasks", "PIG-001", "evidence", "artwork-image-rights.json"
@@ -137,7 +137,7 @@ def main():
     doc = {
         "generated": datetime.date.today().isoformat(),
         "author": "Durer (claude-implementation-lead), PIG-001 build unit 24",
-        "source": "js/catalog-{1..4}.js image{src,status:pd} + js/artworks.js img",
+        "source": "js/catalog-{1..5}.js image{src,status:pd} + js/artworks.js img",
         "method": (
             "Commons API extmetadata via tools/commons_rights.py; deduplicated by "
             "underlying Commons file; a transient failure is recorded as "

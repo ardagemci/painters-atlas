@@ -20,7 +20,7 @@ const argv = ObjC.unwrap($.NSProcessInfo.processInfo.arguments).map(a => ObjC.un
 const me = argv.find(a => String(a).endsWith("build_seo.jxa.js")) || "tools/build_seo.jxa.js";
 const base = String(me).replace(/tools\/+build_seo\.jxa\.js$/, "");
 var window = {};
-["taxonomy.js","artworks.js","venues.js","catalog-1.js","catalog-2.js","catalog-3.js","catalog-4.js",
+["taxonomy.js","artworks.js","venues.js","catalog-1.js","catalog-2.js","catalog-3.js","catalog-4.js","catalog-5.js",
  "tier1-artists.js","lists-1.js","museums-1.js","photo-credits.js",
  "artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
  "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js",

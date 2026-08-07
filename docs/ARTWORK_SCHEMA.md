@@ -82,7 +82,9 @@
 
 ## 4. Requirements by tier
 
-**Decision (Arda, July 2026): Tier 2 artworks get thin canonical pages — every admirable artwork has a real URL.** A thin page renders hero, identity line, action bar, provenance and the derived rails; description/notice are replaced by a single styled empty-state line (STYLE_GUIDE §4.10). Tier 2 → Tier 1 promotion is purely additive (write description + notice + coords override); the URL never changes.
+**Decision (Arda, July 2026): Tier 2 artworks get thin canonical pages — every admirable artwork has a real URL.** A thin page renders hero, identity line, action bar, provenance and the derived rails. Tier 2 → Tier 1 promotion is purely additive (write description + notice + coords override); the URL never changes.
+
+**Correction (August 2026): the renderer branches on `description`, not on `tier`.** `js/app.js:2072` renders **The picture** and **What to notice** whenever `w.description` is present, and falls back to the styled empty-state line (STYLE_GUIDE §4.10) when it is absent — it never consults `tier`. This paragraph previously read that description/notice "are replaced by a single styled empty-state line" *for Tier 2*, which described a tier gate the code does not implement. **The code is right and the wording was stale**, so the wording is corrected here rather than the code changed: a Tier 2 record that has been written about should show what was written. The consequence is that the table below states *what a tier requires*, not *what a tier may render* — a Tier 2 record may carry description, notice and explicit coords, and 22 of them now do (`js/catalog-5.js`), held at Tier 2 by §8's inbound-link rule alone. Flagged by the Content Editor in `docs/CATALOG_BATCH_COPY.md` OBSERVATIONS §2 and confirmed against the shipped renderer before this edit.
 
 | Field | Tier 1 (full page) | Tier 2 (thin page) |
 |---|---|---|

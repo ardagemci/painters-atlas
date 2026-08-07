@@ -560,6 +560,11 @@ window.MUSEUM_NOTES = {
    photographs are absent (a validator warning, not an error) — sourcing them is a
    rights exercise of its own, per docs/IMAGE_RIGHTS_ROUTES.md. */
 
+/* pera-museum is not a new venue — it has been in the registry since day one and
+   simply held no catalog work until batch 01 R1, which is what makes the hook
+   newly required. */
+"pera-museum":            { hook: "Istanbul's Pera, where the tortoise trainer waits" },
+
 "national-museum-warsaw": { hook: "Poland's own picture of itself, Stańczyk included" },
 "kunstmuseum-basel":      { hook: "Basel's collection, where Klee's Senecio hangs" },
 "skagens-museum":         { hook: "Where the Skagen painters kept their own work" },

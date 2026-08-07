@@ -284,6 +284,39 @@ CONTENT_LANE = {
 }
 
 
+#: THIRD LEDGER — the catalog batches (docs/CATALOG_BATCH_01.md, _02.md).
+#:
+#: Kept separate from CORRECTIONS and CONTENT_LANE for the same reason those two
+#: are separate from each other: a rights correction, an unrelated content lane
+#: and a planned catalog batch must never be mistakable for one another in the
+#: diff. This ledger records images that moved SURFACE, not images that arrived.
+#:
+#: All 22 files were already in the tree — they are pool entries on artist pages,
+#: counted in the `gallery` surface at the effa805 freeze. Landing them as catalog
+#: records puts the same URLs on the `catalog` surface as well, so:
+#:   * catalog_pd_rendered gains 22 entries;
+#:   * catalog_gallery_overlap rises by exactly 22, because every one of the 22 is
+#:     on both surfaces — which is also the check that no NEW asset came in;
+#:   * total_unique, rendered_unique and metadata_only_unique DO NOT MOVE, and if
+#:     any of them does, this batch introduced an image it did not declare.
+#: The list is emitted from js/catalog-5.js rather than typed, so it cannot drift
+#: from what actually shipped.
+CATALOG_BATCHES = {
+    "catalog_pd_rendered": {
+        "removed": [],
+        "added": [
+            # BEGIN catalog-5 pd images
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg/500px-Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Jan_Matejko%2C_Sta%C5%84czyk.jpg/500px-Jan_Matejko%2C_Sta%C5%84czyk.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg/500px-Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg/500px-Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Amrita_Sher-Gil_Group_of_Three_Girls.jpg/500px-Amrita_Sher-Gil_Group_of_Three_Girls.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Arshile_Gorky%2C_The_Artist_and_His_Mother.jpg/960px-Arshile_Gorky%2C_The_Artist_and_His_Mother.jpg",            # END catalog-5 pd images
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -301,7 +334,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -330,7 +363,7 @@ class TestAssetInventory(unittest.TestCase):
         self.assertEqual(c["total_unique"], 798)
         self.assertEqual(c["rendered_unique"], 797)      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
-        self.assertEqual(c["catalog_gallery_overlap"], 92)   # unchanged
+        self.assertEqual(c["catalog_gallery_overlap"], 98)   # unchanged
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -401,7 +434,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 257)
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 263)
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
