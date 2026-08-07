@@ -538,6 +538,66 @@ read. It is the single most tempting sentence available for this record and it
 is **not in the copy**, on the same rule that kept Osman Hamdi Bey's face out of
 B01-R1. Left out, not hedged: a hedge would still put the name on the page.
 
+### B02-R11 — `a-burial-at-ornans` (Gustave Courbet, 1849–1850)
+
+**description** — 67 words
+
+> Six and a half metres of canvas, the scale the Salon kept for coronations,
+> spent on a village funeral. Nobody is ennobled. Nothing is arranged into a
+> hierarchy — the mourners stand in a row and wait, and the open grave is at
+> your feet in the foreground. That was the scandal: not the brushwork, which is
+> coarse, but the size, and who Courbet thought deserved it.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The open grave sits at the viewer's feet | 8 |
+| 2 | A row of people waiting — the drama is withheld | 10 `†` |
+| 3 | Coronation scale, given to a village funeral | 7 |
+
+*The scale is written in words on purpose.* THE UNIT BUG (Batch 02 POOL DEFECT
+1) is live in the build path: Wikidata carries `3.15` and `6.68` in **metres**,
+and `ARTWORK_SCHEMA.md` §7 appends `cm`, so an unfixed bake prints
+"3.15 × 6.68 cm" for this canvas — a six-and-a-half-metre Salon machine
+rendered as a miniature, with no error raised anywhere. The description
+therefore states the scale in prose ("six and a half metres") rather than
+gesturing at the `dims` line. If the bug ships, the page contradicts itself
+visibly instead of lying quietly, and the copy is the thing that is right. This
+is not a substitute for the fix.
+
+### B02-R12 — `a-sunday-afternoon-on-the-island-of-la-grande-jatte` (Georges Seurat, 1884–1886)
+
+**description** — 67 words
+
+> Dots of unmixed colour, set side by side and left to mix in your eye instead
+> of on the palette — two years of that, across two by three metres. The park is
+> full of people and every one of them is frozen in profile or full face, stiff
+> as a frieze. Nothing moves, including the dog. The stiffness is not a failure;
+> it is the argument.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The colours mix in your eye, not the palette | 9 `†` |
+| 2 | Every figure is profile or full face, and rigid | 9 `†` |
+| 3 | Nothing moves, including the dog | 5 |
+
+---
+
+## TOTALS
+
+| | |
+|---|---|
+| records | **22** — Batch 01 × 10, Batch 02 × 12 |
+| `description` fields | 22, all within the 50–80 target |
+| shortest / longest description | 59 (B01-R2) / 74 (B02-R7) |
+| `notice` bullets | 66 (3 × 22), all ≤ 12 words |
+| bullets ≤ 8 words (STYLE_GUIDE §4.3) | 44 |
+| bullets 9–12 words (`†`, ARTWORK_SCHEMA §3) | 22 |
+| records spending a bullet on recorded doubt | 8 |
+
 ---
 
 ## FLAGS
