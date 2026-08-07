@@ -73,38 +73,53 @@ create routes". Start there.
 **Constraint:** the shipped artist-first entry hierarchy is owner-ratified
 (OD-2). A nav restructure must not quietly overturn it.
 
-## B2 · Actuality — news-aware curated lists
+## B2 · Actuality — the visual-rhyme ritual  **[owner refined 2026-08-07]**
 
-Owner: *"Pigment should be sensitive to live big news from the world across all
-media and have news-aware curated lists according to those"* — LeBron to the
-76ers (Philadelphia-related, King-related), Nolan's *Odyssey*, a Chanel runway or
-Paris Fashion Week, social-media trends, Gen-Z tendencies. *"Updated monthly
-news-aware lists."*
+**Not live news on the site.** A **monthly editorial ritual** that adds (a) a set
+of lists drawn from the existing catalog matching global news, and (b) a homepage
+card — clickable through to a full page — pairing **one artwork** with one piece
+of actuality, written as a brief, funny, educational article.
 
-**This is the most interesting request here and the one with the most
-constraints. All four are recorded so nobody discovers them mid-build:**
+**The mechanic is visual rhyme, not thematic association.** The reference is
+`@artsbutmakeitsports`. The joke is not "basketball, so let us find a sporting
+picture"; it is *this photograph and this painting are the same composition*, or
+the same situation four centuries apart. My earlier note framed this as thematic
+("LeBron to Philadelphia → Eakins") — **that is the weaker version and is
+superseded.**
 
-1. **No backend, no feed.** Pigment is a zero-dependency static site on GitHub
-   Pages. "Live news awareness" can only mean *a person or an agent curating on a
-   cadence*, then a deploy. Monthly is achievable; "live" is not, and the copy
-   must not imply otherwise.
-2. **Rights make illustration impossible.** LeBron, Nolan, a Chanel runway — none
-   has imagery Pigment can use. The `died ≤ 1955` rule and the audited routes
-   (`IMAGE_RIGHTS_ROUTES.md`) close this off completely.
-3. **Constraint 2 is probably the good version of the idea.** The list cannot
-   *illustrate* the news, so it must **answer** it out of the atlas: LeBron to
-   Philadelphia → Eakins, the Barnes, Philadelphia painting. Nolan's *Odyssey* →
-   the Odyssey in painting, Waterhouse, Böcklin, the Sirens. A Chanel runway →
-   Sonia Delaunay, textile and pattern, Klimt's dresses. **The news is the door;
-   the atlas is the room.** That is squarely inside OD-1's "editorial and
-   personalized path-discovering tool" and does not need a single new image.
-4. **This also solves an existing item.** The 12 editorial lists shipped in July
-   are owner-declared **placeholders** to be remade once the catalog is deep
-   enough. News-aware lists are a strong candidate for what replaces them, rather
-   than a separate feature bolted alongside.
+**A worked example that already exists in the atlas.** Owner's imagined case: a
+luxury house appoints a famous name to a creative role; pair it with something
+like a pope blessing Napoleon. That painting is real — David's *Coronation of
+Napoleon* (Louvre) — and `js/artists-3.js` already carries David and already says
+his *Coronation* **"contains a diplomatic fiction"**: Napoleon crowns himself
+while Pius VII sits behind him with his hand raised, and David painted in a
+mother who boycotted the ceremony. A brand hiring a celebrity to bless a decision
+it had already made is *exactly* that picture. The rhyme, the history and the
+joke are all already in the repository.
 
-**Not in any current phase of `PIGMENT.md` §11.** Needs placing before building —
-it reads as Phase 1 editorial, but it is genuinely new product surface.
+**Why this is strong for Pigment specifically:**
+- It needs **no new imagery** — the constraint that kills illustrating the news
+  is what forces the mechanic to be good.
+- It gives the **12 placeholder lists** (owner-declared, awaiting replacement) a
+  reason to exist and a renewable supply.
+- It is the most shareable surface the product would have, and share surfaces
+  were deferred in PIG-001 pending exactly this kind of content.
+- Gen-Z art-history learning through recognition rather than instruction, which
+  is closer to Pigment's "figures you can identify with" than a survey is.
+
+**Constraints that still hold:**
+1. No backend. Monthly cadence via curation and deploy; copy must never imply
+   live awareness.
+2. **Tone is a real risk.** `STYLE_GUIDE` forbids humour where warning, consent
+   or factual qualification is required, and the atlas "keeps the record" on hard
+   history (Degas's antisemitism, Gauguin's colonial ledger). A funny voice must
+   not be allowed to reach a painting whose subject cannot carry it. The rule
+   should be explicit before the first one ships.
+3. **Living people are named in the copy.** A joke about a real person's
+   appointment is commentary, not a factual claim, but the line between the two
+   needs stating — and nothing in the current OD-5 language rules covers it.
+4. Not in any phase of `PIGMENT.md` §11. Reads as Phase 1 editorial; needs
+   placing.
 
 ## B3 · Vasari is not in the atlas
 
