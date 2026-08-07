@@ -437,6 +437,65 @@ can get sharper; it should not get sharper before then.
 | 2 | The proportions are tuned so feet don't dominate | 8 |
 | 3 | 68 centimetres — narrower than a briefcase is wide | 8 |
 
+### B02-R7 — `haboku-sansui` (Sesshū Tōyō, 1495)
+
+**description** — 74 words
+
+> A cliff, a hut, a boat and two small figures — and above them the ink simply
+> stops describing anything, just fast wet blots on a sheet a metre and a half
+> tall. Haboku is the most extreme manner the tradition had, and Sesshū took it
+> to the edge in 1495. This is about as close to non-figuration as the fifteenth
+> century gets anywhere. Stand close: the whole landscape is a handful of
+> strokes.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The top of the sheet stops describing anything | 8 |
+| 2 | A cliff, a hut, a boat, two figures | 8 |
+| 3 | Two sources call it a National Treasure of Japan | 9 `†` |
+
+*Carrying the doubt.* Bullet 3 is Batch 02 UNCERTAIN §7. Wikidata and English
+Wikipedia both assert the designation and no primary Japanese record was read,
+so the bullet says *two sources call it* rather than *it is*. That is a weaker
+sentence and a truer one, and it costs the copy nothing.
+
+*On how this one is written.* "This is about as close to non-figuration as the
+fifteenth century gets anywhere" is the Curator's own consequence reading, and
+it is a claim about the painting, not about Japan. No sentence in this record
+introduces Sesshū as a representative of anywhere.
+
+### B02-R8 — `red-and-white-plum-blossoms` (Ogata Kōrin, c. 1714–1715)
+
+**description** — 64 words
+
+> A river runs down the middle as flat repeating pattern, with no attempt
+> whatsoever to look like water, and a plum tree stands on either bank. The bark
+> is mottled because Kōrin laid a second pigment down before the first had
+> dried — tarashikomi. It is spring, and it stays spring. Nothing else happens.
+> Two screens, each over a metre and a half tall.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The river is pattern; no attempt at water | 8 |
+| 2 | Mottled bark: wet pigment dropped into wet | 7 |
+| 3 | Undated — 1714 to 1715 is Yamane's attribution | 8 |
+
+*Carrying the doubt.* Bullet 3 is Batch 02 UNCERTAIN §4: the work is undated,
+the range is Yūzō Yamane's dating, and `sort:1714` is an ordering key. The
+bullet names the attributor, which is what turns a date into an attribution in
+the reader's hand.
+
+*The "each" that the dimensions do not say.* The description ends "Two screens,
+each over a metre and a half tall" — deliberately. POOL DEFECT 4 records that
+Wikidata's `156 × 172.2` does not state that it measures **one screen of a
+pair**, and that a bake printing it beside a single image would state something
+false about the object. The copy carries the word the metadata is missing, so
+the page is truthful even if the `dims` string ships wrong.
+
 ---
 
 ## FLAGS
