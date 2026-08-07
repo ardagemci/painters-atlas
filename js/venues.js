@@ -130,5 +130,19 @@ window.VENUES = [
   { id:"moderna-museet", name:"Moderna Museet", city:"Stockholm", country:"Sweden", type:"museum" },
   { id:"russian-museum", name:"State Russian Museum", city:"St Petersburg", country:"Russia", type:"museum" },
   { id:"glenstone", name:"Glenstone", city:"Potomac", country:"United States", type:"museum" },
-  { id:"hirshhorn", name:"Hirshhorn Museum and Sculpture Garden", city:"Washington, D.C.", country:"United States", type:"museum" }
+  { id:"hirshhorn", name:"Hirshhorn Museum and Sculpture Garden", city:"Washington, D.C.", country:"United States", type:"museum" },
+
+  /* ---- catalog batches 01–02 (docs/CATALOG_BATCH_01.md, docs/CATALOG_BATCH_02.md) ----
+     First entries in this registry for India, Korea and Switzerland; Poland's first
+     venue that exists for Polish painting rather than for a Leonardo; Japan's first
+     two venues that hold Japanese art (nmwa-tokyo is the museum of WESTERN art). */
+  { id:"national-museum-warsaw", name:"National Museum in Warsaw", city:"Warsaw", country:"Poland", type:"museum" },
+  { id:"kunstmuseum-basel", name:"Kunstmuseum Basel", city:"Basel", country:"Switzerland", type:"museum" },
+  { id:"skagens-museum", name:"Skagens Museum", city:"Skagen", country:"Denmark", type:"museum" },
+  { id:"ngma-new-delhi", name:"National Gallery of Modern Art", city:"New Delhi", country:"India", type:"museum" },
+  { id:"ateneum", name:"Ateneum Art Museum", city:"Helsinki", country:"Finland", type:"museum" },
+  { id:"national-museum-korea", name:"National Museum of Korea", city:"Seoul", country:"South Korea", type:"museum" },
+  { id:"santa-maria-novella", name:"Basilica di Santa Maria Novella", city:"Florence", country:"Italy", type:"church" },
+  { id:"tokyo-national-museum", name:"Tokyo National Museum", city:"Tokyo", country:"Japan", type:"museum" },
+  { id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami", country:"Japan", type:"museum" }
 ];

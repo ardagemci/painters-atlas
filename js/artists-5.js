@@ -27,7 +27,7 @@ window.ARTISTS.push(
     "In 1961 the Louvre exhibited him while alive — an honour France had never granted a painter."] },
 
 { id:"wassily-kandinsky", name:"Wassily Kandinsky", years:"1866–1944", born:1866, died:1944,
-  nation:"russia", eras:["20th-century"], movements:["expressionism","der-blaue-reiter","abstract-art"],
+  nation:"russia", eras:["20th-century"], movements:["expressionism","der-blaue-reiter","abstract-art","bauhaus"],
   techniques:["oil-painting","watercolor","woodblock"], style:"abstract",
   palette:["#2e5eaa","#e8c43e","#c4302a","#2e8a5e","#1d1a20"],
   tagline:"Painting as music — abstraction's loudest prophet",
@@ -79,7 +79,7 @@ window.ARTISTS.push(
     "She painted some works on the floor, walking around them — half a century before Pollock."] },
 
 { id:"paul-klee", name:"Paul Klee", years:"1879–1940", born:1879, died:1940,
-  nation:"switzerland", eras:["20th-century"], movements:["expressionism","der-blaue-reiter","abstract-art"],
+  nation:"switzerland", eras:["20th-century"], movements:["expressionism","der-blaue-reiter","abstract-art","bauhaus"],
   techniques:["watercolor","oil-painting","etching"], style:"geometric",
   palette:["#d9886e","#caa45c","#5e8a96","#a85e6e","#e8dcc0"],
   tagline:"Taking a line for a walk — wit, colour and ten thousand small miracles",

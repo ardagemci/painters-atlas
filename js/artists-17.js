@@ -102,7 +102,7 @@ window.ARTISTS = (window.ARTISTS || []).concat([
     "He and Helen Frankenthaler were married for thirteen years."] },
 
 { id:"josef-albers", name:"Josef Albers", years:"1888–1976", born:1888, died:1976,
-  nation:"germany", eras:["20th-century"], movements:["abstract-art","op-art","minimalism"],
+  nation:"germany", eras:["20th-century"], movements:["abstract-art","op-art","minimalism","bauhaus"],
   techniques:["oil-painting","flat-color","printmaking"], style:"geometric",
   palette:["#e0a12c","#c05a2a","#7a8f4a","#3f5d8a","#efe9dc"],
   tagline:"One square inside another, two thousand times",

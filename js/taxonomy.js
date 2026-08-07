@@ -336,7 +336,26 @@ window.MOVEMENTS = [
   { id:"art-informel", name:"Art Informel & Tachisme", parent:"abstract-art", period:"c. 1945–1965", style:"gestural",
     palette:["#1d1c22","#3e5570","#caa45c","#8a2634","#e8e0d0"],
     blurb:"Europe's answer to Action Painting — the stain, the scratch, the lightning stroke.",
-    desc:"In post-war Paris, painters abandoned geometry for raw matter and gesture: tachisme ('stain-ism'), lyrical abstraction, matter painting. Hans Hartung's whiplash black strokes — some made with garden sprayers and rakes — gave the movement its signature: energy itself, recorded at the speed of a nervous system." }
+    desc:"In post-war Paris, painters abandoned geometry for raw matter and gesture: tachisme ('stain-ism'), lyrical abstraction, matter painting. Hans Hartung's whiplash black strokes — some made with garden sprayers and rakes — gave the movement its signature: energy itself, recorded at the speed of a nervous system." },
+
+  // ---- catalog batch 01 taxonomy proposals (docs/CATALOG_BATCH_01.md §T1–T3) ----
+  // All three sit at top level with no parent, and deliberately so. `pungsokhwa`
+  // follows the precedent of ukiyo-e, rinpa, literati-painting, ottoman-miniature
+  // and persian-miniature — national schools carried at top level. `bauhaus` and
+  // `skagen-painters` are a school and a colony rather than styles, and filing
+  // either beneath a style node would make a claim neither one supports.
+  { id:"pungsokhwa", name:"Pungsokhwa", parent:null, period:"c. 1700–1900", style:"tonal",
+    palette:["#3e3a36","#d9cdb4","#8a6e46","#5e7a8a","#ece4d2"],
+    blurb:"Korean genre painting — late Joseon life, drawn on bare paper.",
+    desc:"Late Joseon Korea turned its brush on ordinary life: wrestling matches, ferry crossings, a schoolroom, work in the fields — figures set down on empty paper with no ground and no background, so that everything the picture has to say is carried by posture and by the gaps between people. Kim Hong-do's album Danwon pungsokdo cheop gives the category its name and its measure; Shin Yun-bok is its other pole. The atlas previously filed this painting under `realism`, a nineteenth-century European movement name that describes nothing about how it was made." },
+  { id:"bauhaus", name:"Bauhaus", parent:null, period:"1919–1933", style:"geometric",
+    palette:["#d92b1c","#f0c419","#1f4fa8","#1a1a1a","#ece8e0"],
+    blurb:"A school, not a style — the century's most consequential classroom.",
+    desc:"The Bauhaus is an institution rather than a manifesto, and grouping painters by it is a pedagogical convenience: Klee, Kandinsky and Josef Albers taught down the corridor from one another and do not paint alike. What they shared was a curriculum — colour and material treated as things to be studied from first principles, by everyone, before anything was designed. It closed under Nazi pressure in 1933 and its teachers scattered, which is how a German art school became the default grammar of modern design worldwide." },
+  { id:"skagen-painters", name:"The Skagen Painters", parent:null, period:"c. 1870–1910", style:"impressionist",
+    palette:["#7da8c9","#dce8f0","#e8b43a","#4a5e6e","#e8dcc8"],
+    blurb:"An artists' colony at the top of Denmark — a place, not a doctrine.",
+    desc:"From the 1870s painters gathered each summer at Skagen, the fishing town on Denmark's northern spit, drawn by a light that arrives off two seas at once. Anna Ancher, who was born there, and P.S. Krøyer, who arrived, painted its interiors and its shorelines with an attention to daylight learned from the French — but the group was a company rather than a programme, and calling it a movement claims more than it ever agreed on." }
 ];
 
 window.TECHNIQUES = [

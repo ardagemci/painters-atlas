@@ -114,7 +114,7 @@ window.ARTISTS = (window.ARTISTS || []).concat([
     "His etched self-portraits fetched Rembrandt-level prices during his lifetime — a comparison he did nothing to discourage."] },
 
 { id:"peder-severin-kroyer", name:"P.S. Krøyer", years:"1851–1909", born:1851, died:1909,
-  nation:"denmark", eras:["19th-century","20th-century"], movements:["impressionism","realism"],
+  nation:"denmark", eras:["19th-century","20th-century"], movements:["impressionism","realism","skagen-painters"],
   techniques:["oil-painting","alla-prima"], style:"impressionist",
   palette:["#7da8c9","#dce8f0","#c9a45c","#4a5e6e","#e8dcc8"],
   tagline:"The blue hour, bottled at Skagen",
@@ -128,7 +128,7 @@ window.ARTISTS = (window.ARTISTS || []).concat([
     "He was admitted to Copenhagen's academy at age nine — the youngest student anyone could remember."] },
 
 { id:"anna-ancher", name:"Anna Ancher", years:"1859–1935", born:1859, died:1935,
-  nation:"denmark", eras:["19th-century","20th-century"], movements:["impressionism","realism"],
+  nation:"denmark", eras:["19th-century","20th-century"], movements:["impressionism","realism","skagen-painters"],
   techniques:["oil-painting"], style:"impressionist",
   palette:["#c9d4e8","#e8b43a","#8a5e4a","#dce8f0","#4a4540"],
   tagline:"Sunlight on a blue wall, forever",

@@ -549,5 +549,24 @@ window.MUSEUM_NOTES = {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg/960px-Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Hirshhorn_Museum_and_Sculpture_Garden_-_exterior.jpg" },
   essay: "Joseph Hirshhorn arrived from Latvia at six, one of thirteen children, sold newspapers on the Lower East Side and made a uranium fortune. He bought art the way he bought mining claims — in bulk, on instinct, thousands of works — and in 1966 handed the lot to the nation. Gordon Bunshaft gave the collection a windowless concrete cylinder on four squat piers, and the critics fell on it: Ada Louise Huxtable called the result neo-penitentiary modern. Half a century later the bunker has won. Its galleries curve so you can never see where a show ends, the inner ring is glass onto a courtyard fountain, and the sculpture garden sunk beside it holds Rodin and Bourgeois in the open air. Inside is the Smithsonian's museum of right now — including one of the first paintings Kenneth Noland ever aimed at a bullseye."
-}
+},
+
+/* ---- catalog batches 01–02 ----
+   Hooks only. tools/validate.jxa.js errors on any venue that holds catalog works
+   and carries no note, so these nine are a build requirement, not an editorial
+   deliverable: neither batch specification nor docs/CATALOG_BATCH_COPY.md supplies
+   museum copy. Each hook is held to facts already sourced in those documents and
+   is flagged for the Content Editor in docs/corrections/batch-build.md. Building
+   photographs are absent (a validator warning, not an error) — sourcing them is a
+   rights exercise of its own, per docs/IMAGE_RIGHTS_ROUTES.md. */
+
+"national-museum-warsaw": { hook: "Poland's own picture of itself, Stańczyk included" },
+"kunstmuseum-basel":      { hook: "Basel's collection, where Klee's Senecio hangs" },
+"skagens-museum":         { hook: "Where the Skagen painters kept their own work" },
+"ngma-new-delhi":         { hook: "India's modern century, Sher-Gil near its centre" },
+"ateneum":                { hook: "Finland's national gallery, national epic on the walls" },
+"national-museum-korea":  { hook: "Seoul's Yongsan halls, where the Danwon album lives" },
+"santa-maria-novella":    { hook: "The Florentine church with Masaccio's wall in it" },
+"tokyo-national-museum":  { hook: "National treasures, Sesshū's splashed ink among them" },
+"moa-museum-of-art":      { hook: "Atami, keeping Kōrin's red and white plum screens" }
 };

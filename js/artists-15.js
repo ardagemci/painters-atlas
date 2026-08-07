@@ -209,7 +209,7 @@ window.ARTISTS.push(
     "Order of Culture, 1948: no woman had received it in its eleven prior years."] },
 
 { id:"kim-hong-do", name:"Kim Hong-do (Danwon)", years:"1745–c. 1806", born:1745, died:1806,
-  nation:"korea", eras:["18th-century","19th-century"], movements:["realism"],
+  nation:"korea", eras:["18th-century","19th-century"], movements:["pungsokhwa"],
   techniques:["ink-wash","silk-painting"], style:"naive",
   palette:["#d9cdb4","#8a6e46","#3e3a36","#5e6e5a","#ece4d2"],
   tagline:"Joseon's everyday genius — wrestling matches, schoolboys, smiles in ink",
