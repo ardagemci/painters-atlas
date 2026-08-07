@@ -38,7 +38,11 @@
     name: "Contarelli Chapel, San Luigi dei Francesi",
     city: "Rome"
   },
-  dims: "322 × 340 cm",                     // E: Wikidata P2048×P2049, optional
+  dims: "322 × 340 cm",                     // E: Wikidata P2048×P2049, optional.
+                                            // The unit is NOT assumed: read the unit
+                                            // qualifier, convert to cm, then range-check.
+                                            // See §7 "Dimensions" — appending a bare "cm"
+                                            // to the raw amounts is a shipped-defect path.
 
   image: {                                  // from the existing artworks pipeline
     src: "https://upload.wikimedia.org/...500px-...jpg",   // Commons bucket URL only
@@ -136,7 +140,36 @@ Empty states and captions follow STYLE_GUIDE §4.10.
 - **Relationship to `js/artworks.js` (image map):** during migration the bake script folds `img/page` into catalog records; `window.ARTWORKS` remains the source for *non-catalog* works shown on artist pages. End state: catalog wins where a record exists; artist-page works arrays gain optional `id:` refs to link into the catalog.
 - **Derived at load (app.js):** `CATALOG_BY_ID`, `CATALOG_BY_ARTIST`, `CATALOG_BY_TAG` — one pass, no build step needed.
 - **Bake tools:** `tools/build_catalog.py` (merge images + Wikidata enrichment + deckBucket derivation), reusing the audit's PINNED/override pattern and its rate-limit lessons (≥0.25 s, never delete on timeout).
-- **Wikidata enrichment (E fields):** by Commons file → P276/P195 (location/collection), P2048×P2049 (dims), P571 (inception). Misses stay blank — blank beats wrong.
+- **Wikidata enrichment (E fields):** by Commons file → P276/P195 (location/collection), P2048×P2049 (dims), P571 (inception). **Misses stay blank — blank beats wrong**, and every rule below resolves to "leave it blank" rather than to a guess.
+
+### 7.1 Bake rules (normative)
+
+*Added August 2026. Every rule here exists because `docs/CATALOG_BATCH_01.md` and `docs/CATALOG_BATCH_02.md` found a real record that the bake as previously specified would have corrupted. The named records are regression cases: a bake implementation should be tested against them before it writes anything.*
+
+**Dimensions (`dims`) — three checks, in this order. None substitutes for another.**
+
+1. **Read the unit qualifier and convert. Never append a bare `cm`.** `P2048` (height) and `P2049` (width) carry a unit qualifier, and it is not always centimetres. Convert `Q174728` (centimetre) as-is and `Q11573` (metre) by ×100. **Any other unit, or a missing qualifier, is a miss: leave `dims` blank.**
+   *Regression case:* Courbet, *A Burial at Ornans* (Q540488) records `3.15` × `6.68` with unit `Q11573` — **metres**. A bake that read the amounts and appended `cm` would publish "3.15 × 6.68 cm" for a canvas six and a half metres wide, on a live page, with no error raised anywhere.
+2. **Then range-check the converted centimetre values.** Reject the pair — leave `dims` blank — if either value is over ~1000 cm or under ~1 cm.
+   *Regression case:* `osman-hamdi-bey :: Two Musician Girls` carries `P2048` = 580, `P2049` = 390, which as centimetres is a canvas nearly six metres tall that the work is not.
+   *Counter-case the ceiling must admit:* Géricault, *The Raft of the Medusa*, 491 × 716 cm. A Salon machine is genuinely that large, and a tighter ceiling would reject a correct record.
+   **Order matters, and a range alone is not a substitute for rule 1.** The unit bug and the magnitude bug are different failures: 3.15 × 6.68 cm is a perfectly plausible miniature, so a plausibility range does not catch a unit error — it *launders* one. Convert first, range-check second.
+3. **The amounts do not say what they measure.** Wikidata gives no way to know whether a pair describes the whole object, one panel of a polyptych, or one screen of a pair. Where a work is a set, the bake's number is nearly right and its *statement* is wrong, and the record needs a hand-authored `dims` string.
+   *Regression case:* Ogata Kōrin, *Red and White Plum Blossoms* (Q28154824) gives `156 × 172.2`; the object is a **pair of screens** and the figure measures **one of them**.
+
+**Collection and location (`museum`) — multiplicity and granularity.**
+
+4. **Multi-valued `P195`/`P276` are provenance chains, not alternatives.** A bake that takes the last value, or the first non-empty of `P276`, will silently relocate paintings into collections they left centuries ago. **Where either property carries more than one value, the bake must not choose: leave `museum` blank and flag the record for hand resolution.**
+   *Regression cases:* Giorgione, *The Tempest* (Q930137) carries three `P195` values — Gallerie dell'Accademia, **Vendramin Collection**, **Manfrin Collection** — and two `P276` — Hall VIII and **Palazzo Priuli Manfrin**; the second and third of each are sixteenth- and nineteenth-century owners. Rogier van der Weyden, *The Descent from the Cross* (Q568847) carries five `P276` values including **El Escorial** and **El Pardo**.
+5. **A single value can still be the wrong granularity.** `P195` may name a curatorial sub-organisation rather than the venue. Matching a venue slug against the label string must therefore fail closed: **no match → leave `museum` blank; never mint a venue row from a `P195` label.**
+   *Regression case:* both Louvre records in Batch 02 (David, Géricault) give `P195` = **"Department of Paintings of the Louvre"**, which no slug match against `louvre` will find.
+
+**Title.**
+
+6. **Never derive `title` from the Commons filename.** Filenames carry descriptive, alternate or genre titles and sometimes embed a date narrower than any source asserts. Titles are authored (§2); the bake may propose, never write.
+   *Regression cases:* the Ognissanti Madonna files as *Maestà*; Mantegna's *Lamentation of Christ* as *The dead Christ and three mourners*; Seurat's *La Grande Jatte* as *A Sunday on La Grande Jatte, Georges Seurat, 1884*. A quarter of Batch 02 would have been mistitled.
+
+**Reporting.** Every blank produced by rules 1–5 is a *finding*, not a silent miss: the bake must list the records it declined to fill and why, so that hand authorship is scheduled rather than forgotten.
 
 ## 8. Tier 1 selection (the one-pool rule)
 
