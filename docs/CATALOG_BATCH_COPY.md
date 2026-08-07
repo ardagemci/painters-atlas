@@ -496,6 +496,48 @@ pair**, and that a bake printing it beside a single image would state something
 false about the object. The copy carries the word the metadata is missing, so
 the page is truthful even if the `dims` string ships wrong.
 
+### B02-R9 — `oath-of-the-horatii` (Jacques-Louis David, 1784–1785)
+
+**description** — 68 words
+
+> Three sons, three arms, three swords, all converging on the single point their
+> father holds. To the right the women have collapsed into a separate curve, so
+> that duty and grief do not share a shape. Everything a history painting used
+> to arrange for beauty, David arranges to make a proposition instead. The oath
+> has not been spoken yet. Four and a quarter metres, pitched at a nation.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Three arms, three swords, one point | 6 |
+| 2 | The women make a curve; the men make angles | 9 `†` |
+| 3 | The instant before the oath is spoken | 7 |
+
+### B02-R10 — `the-raft-of-the-medusa` (Théodore Géricault, 1818–1819)
+
+**description** — 63 words
+
+> Seven metres of canvas — the size the Salon reserved for scripture and
+> antiquity — given over to a news story. Bodies pile into a pyramid, the dead
+> at the base and the living straining up out of it, and at the apex there is no
+> hero, no state and no moral resolution: only a figure signalling at a speck on
+> the horizon.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Seven metres wide, at Salon scale, for contemporary news | 9 `†` |
+| 2 | The apex holds no hero and no state | 8 |
+| 3 | A speck on the horizon is the whole plot | 9 `†` |
+
+*Not asserted.* The story that Delacroix posed for one of the figures is
+Batch 02 UNCERTAIN §10 — widely repeated, established by nothing the Curator
+read. It is the single most tempting sentence available for this record and it
+is **not in the copy**, on the same rule that kept Osman Hamdi Bey's face out of
+B01-R1. Left out, not hedged: a hedge would still put the name on the page.
+
 ---
 
 ## FLAGS
