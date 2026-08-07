@@ -72,7 +72,96 @@ preference.**
 *Appended four at a time. A record is here only when both its fields are
 written and counted.*
 
-<!-- records follow -->
+**Counting rule**, stated so nobody has to guess: whitespace-separated tokens,
+with a standalone em-dash counted as a token. That is the conservative reading —
+it never reports a field as shorter than another rule would. `†` marks a
+`notice` bullet over 8 words (see BUDGET CONFLICT).
+
+---
+
+## BATCH 01
+
+### B01-R1 — `the-tortoise-trainer` (Osman Hamdi Bey, 1906)
+
+**description** — 61 words
+
+> A man in Ottoman dress stands stooped over his tortoises, a naqareh drum
+> slung on his back, waiting for them to learn something. They do not hurry.
+> Nothing in the picture moves at all. Osman Hamdi Bey built it to be read
+> rather than felt, and gave two and a quarter metres of canvas to the slowest
+> lesson in the room.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The drum on his back is a naqareh | 8 |
+| 2 | Nothing in this picture is in a hurry | 8 |
+| 3 | That the trainer wears the painter's own face — widely repeated, unestablished | 12 `†` |
+
+*Carrying the doubt.* Bullet 3 is Batch 01 UNCERTAIN §4. The Curator recorded
+that the identification is widely repeated and declined to assert it; the bullet
+repeats it as repetition and stops there. This is the more interesting sentence
+anyway — an unresolved face is better copy than a resolved one.
+
+### B01-R2 — `stanczyk` (Jan Matejko, 1862)
+
+**description** — 59 words
+
+> A court ball is going on through the doorway behind him, bright and busy. The
+> jester sits apart in red, out of the light, and does not perform. He has read
+> the dispatch; the dancers have not. Matejko painted it in 1862 in entirely
+> conventional means, and gave the loudest man at court the only silence in the
+> room.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The ball is bright; his corner is not | 8 |
+| 2 | In costume, and the only figure not performing | 8 |
+| 3 | He has read the dispatch; the dancers haven't | 8 |
+
+### B01-R3 — `senecio` (Paul Klee, 1922)
+
+**description** — 63 words
+
+> A head, still legible as a head, assembled out of squares and wedges the way
+> a bricklayer would build one. The gaze is level and it holds. Klee was
+> teaching at the Bauhaus in 1922, laying colour down as a system rather than
+> as a description — and the system came out amused. Forty centimetres square.
+> You could carry it under one arm.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | A head built from squares and wedges | 7 |
+| 2 | The gaze is level, and it holds yours | 8 |
+| 3 | Oil on gauze, or oil and canvas — sources disagree | 10 `†` |
+
+*Carrying the doubt.* Bullet 3 is Batch 01 UNCERTAIN §5 — the Commons filename
+and Wikidata disagree about the support, and the Curator recorded the
+disagreement rather than resolving it. The bullet does the same, in the place a
+visitor will actually read it.
+
+### B01-R4 — `sunlight-in-the-blue-room` (Anna Ancher, 1891)
+
+**description** — 64 words
+
+> A child sits in a blue room, and the event of the picture is sunlight
+> arriving on the wall behind her. That is the whole plot. Ancher painted it in
+> 1891 at sixty-five centimetres — a corner of a house rather than a scene —
+> and gave the light more attention than the sitter, which is why your eye goes
+> to the wall first.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The wall holds the light; the child holds still | 9 `†` |
+| 2 | Blue throughout, warmed only where the sun lands | 8 |
+| 3 | Sixty-five centimetres: a corner, not a scene | 7 |
 
 ---
 
