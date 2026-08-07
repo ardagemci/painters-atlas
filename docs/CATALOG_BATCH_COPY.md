@@ -257,6 +257,98 @@ calls it the firmest date in Batch 01. Everywhere else in these twenty-two
 records the copy has to hedge a date; here it can name the day, and that
 contrast is worth spending a bullet on.
 
+### B01-R9 — `birds-in-a-lotus-pond` (Bada Shanren, 1690)
+
+**description** — 61 words
+
+> One perched bird, made of two strokes and a dot for an eye, on a great deal
+> of empty paper. Bada Shanren painted inside the literati tradition and at its
+> far edge — the reduction was his, not the convention's. The mood is not
+> serene. It is sour, and the bird looks as though it has formed an opinion
+> about you.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The eye is a single dot, and it judges | 9 `†` |
+| 2 | Most of the sheet is left as paper | 8 |
+| 3 | The 1690 date rests on one source | 7 |
+
+*Carrying the doubt.* Bullet 3 is Batch 01 UNCERTAIN §6: no Wikidata item
+resolves and the year has one source behind it. The record's `year.display`
+prints a bare `1690`, which reads firmer than the evidence is, so the bullet is
+where the hedge has to live.
+
+### B01-R10 — `ssireum` (Kim Hong-do, 18th century)
+
+**description** — 70 words
+
+> Two wrestlers at the moment the contest tips, and a ring of spectators around
+> them, every one of them a separate person. There is no ground and no
+> background — just figures on empty paper. It is played for comedy rather than
+> violence. One leaf out of an album of 25. Nobody knows the year: no date
+> survives on the record, and the album is placed in the 18th century.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | No ground, no background — figures on bare paper | 9 `†` |
+| 2 | One leaf from an album of 25 | 7 |
+| 3 | The date is unknown; the century is a placing | 9 `†` |
+
+*Carrying the doubt.* Bullets 2–3 are Batch 01 UNCERTAIN §2. The record's
+`year.display` reads `18th century` and its `sort` is an ordering key, not a
+claim; the copy says so rather than letting `1780` leak into a sentence. The
+National Treasure designation (UNCERTAIN §3) is deliberately **not** in the
+copy — see FLAGS.
+
+*On how this one is written.* It is a picture of a wrestling match, and the
+copy treats it as a picture of a wrestling match. No sentence here explains
+Korea to anybody, and none of the eight first-for-their-nation records in Batch
+01 carries a word about being a first.
+
+---
+
+## BATCH 02
+
+### B02-R1 — `ognissanti-madonna` (Giotto, c. 1300–1305)
+
+**description** — 63 words
+
+> Gold ground, angels ranked by importance, everything the convention asked for
+> — and then a knee pushes out under the drapery and the whole thing changes.
+> Giotto kept the hierarchy of a Byzantine Maestà and threw the flatness away.
+> The throne is built in depth. The body has weight. Three and a quarter metres
+> of panel, made to be met across a church.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | A knee carries real weight under the drapery | 8 |
+| 2 | The throne is built in depth, not stacked | 8 |
+| 3 | Gold ground kept; the flatness thrown out | 7 |
+
+### B02-R2 — `the-holy-trinity-masaccio` (Masaccio, 1425–1426)
+
+**description** — 68 words
+
+> The architecture behind the figures is built in one-point perspective, and
+> the vanishing point sits at the eye level of someone standing in the church —
+> so the painted space is not a backdrop, it is the room you are in. A painted
+> tomb and its inscription run beneath. Masaccio put this on a wall around 1425,
+> and afterwards the tradition had to use it or refuse it.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The vanishing point sits at your standing eye level | 9 `†` |
+| 2 | A painted tomb and inscription run beneath | 7 |
+| 3 | This is a wall, not a panel | 7 |
+
 ---
 
 ## FLAGS
