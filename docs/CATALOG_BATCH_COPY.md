@@ -349,6 +349,94 @@ Korea to anybody, and none of the eight first-for-their-nation records in Batch
 | 2 | A painted tomb and inscription run beneath | 7 |
 | 3 | This is a wall, not a panel | 7 |
 
+### B02-R3 — `the-descent-from-the-cross-van-der-weyden` (Rogier van der Weyden, c. 1435–1438)
+
+**description** — 68 words
+
+> Ten figures at life size, packed into a box barely deeper than a carved
+> shrine — there is nowhere for any of them to go. The Virgin has collapsed,
+> and her body is drawn as a near-exact rhyme of her son's: same curve, same
+> fall, one directly above the other. That is the invention. The grief is not
+> performed by the faces; it is built into the composition.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | The Virgin's body rhymes with Christ's, curve for curve | 9 `†` |
+| 2 | Ten life-size figures in a shrine-shallow box | 7 |
+| 3 | Grief at full pitch, and nothing is moving | 8 |
+
+### B02-R4 — `the-tempest` (Giorgione, c. 1505)
+
+**description** — 64 words
+
+> A man stands on one bank, a woman nurses a child on the other, lightning goes
+> off behind them, and neither reacts. No figure carries an attribute that would
+> identify it; no action connects the two. The readings proposed for the subject
+> are numerous and mutually exclusive, and none has settled. Meanwhile the
+> landscape takes most of the picture and carries all its weather.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Lightning behind them, and nobody reacts | 6 |
+| 2 | No attribute identifies anyone in the picture | 7 |
+| 3 | The proposed readings are many, and mutually exclusive | 8 |
+
+*Carrying the doubt — the record where it mattered most.* Batch 02's spec is
+explicit that "nobody agrees what it shows" is the sourceable fact and warns the
+Content Editor off picking the most charming candidate. **No reading is named
+here.** The unreadability is written as the subject of the copy rather than as a
+caveat at the end of it, which is also the better sentence: a picture nobody can
+identify is more interesting than any of the identifications.
+
+### B02-R5 — `venus-of-urbino` (Titian, 1538)
+
+**description** — 65 words
+
+> A woman on a bed in an ordinary sixteenth-century bedroom, looking at you, and
+> looking as though she has been for some time. Two maids at a chest in the
+> background, a dog asleep, white linen and fur. Nothing here is mythological
+> except the word Venus in the title. The reclining nude that Western painting
+> used for the next three hundred years starts about here.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | She met your eye before you arrived | 7 |
+| 2 | The only mythology is in the title | 7 |
+| 3 | Two maids at a chest; a dog asleep | 8 |
+
+*What the last sentence does and does not claim.* Batch 02 UNCERTAIN §8 records
+the specific descent — the Rokeby Venus, the *Maja*, *Olympia* — as
+**conventional rather than sourced**, and the Curator asks that the hedge be
+carried through. So the copy makes the type claim the spec does state ("the
+reclining-nude type this fixes is the one Western painting used for the next
+three hundred years"), hedges it with "starts about here", and **names none of
+the three descendants.** If a later record sources one of them, that sentence
+can get sharper; it should not get sharper before then.
+
+### B02-R6 — `lamentation-of-christ-mantegna` (Andrea Mantegna, c. 1470–1474)
+
+**description** — 62 words
+
+> The body is laid out feet-first, straight at you, in the hardest thing
+> perspective can be asked to do. Then Mantegna adjusts it: the proportions are
+> visibly tuned so that the feet do not swallow the head. Three mourners weep
+> beside him. It is a technical demonstration wearing the clothes of a devotional
+> picture, and the whole thing is 68 centimetres wide.
+
+**notice** — 3 bullets
+
+| # | bullet | words |
+|---|---|---|
+| 1 | Feet-first foreshortening, the hardest problem perspective has | 7 |
+| 2 | The proportions are tuned so feet don't dominate | 8 |
+| 3 | 68 centimetres — narrower than a briefcase is wide | 8 |
+
 ---
 
 ## FLAGS
