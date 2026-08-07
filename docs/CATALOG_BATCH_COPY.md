@@ -435,7 +435,7 @@ can get sharper; it should not get sharper before then.
 |---|---|---|
 | 1 | Feet-first foreshortening, the hardest problem perspective has | 7 |
 | 2 | The proportions are tuned so feet don't dominate | 8 |
-| 3 | 68 centimetres — narrower than a briefcase is wide | 8 |
+| 3 | 68 centimetres — narrower than a briefcase is wide | 9 `†` |
 
 ### B02-R7 — `haboku-sansui` (Sesshū Tōyō, 1495)
 
@@ -594,12 +594,138 @@ is not a substitute for the fix.
 | `description` fields | 22, all within the 50–80 target |
 | shortest / longest description | 59 (B01-R2) / 74 (B02-R7) |
 | `notice` bullets | 66 (3 × 22), all ≤ 12 words |
-| bullets ≤ 8 words (STYLE_GUIDE §4.3) | 44 |
-| bullets 9–12 words (`†`, ARTWORK_SCHEMA §3) | 22 |
+| bullets ≤ 8 words (STYLE_GUIDE §4.3) | 45 |
+| bullets 9–12 words (`†`, ARTWORK_SCHEMA §3) | 21 |
 | records spending a bullet on recorded doubt | 8 |
+
+*These totals were recomputed from this file's own tables, not tallied by hand
+— an earlier hand count of the same two rows was wrong by two, and one bullet
+was under-declared by a word.* Re-verify with:
+
+```
+python3 - <<'EOF'
+import re
+t = open("docs/CATALOG_BATCH_COPY.md").read()
+rows = re.findall(r"^\| [123] \| (.+?) \| (\d+)( `†`)? \|$", t, re.M)
+assert all(len(x.split()) == int(n) for x, n, _ in rows), "declared count wrong"
+assert all(bool(d) == (int(n) > 8) for _, n, d in rows), "dagger wrong"
+print(len(rows), "bullets ·", sum(int(n) <= 8 for _, n, _ in rows), "at <=8")
+EOF
+```
 
 ---
 
 ## FLAGS
 
-<!-- filled as records land -->
+### F1 — Budget conflict, hit on 21 of 66 bullets
+
+See BUDGET CONFLICT above. Not resolved here, by choice. **Twenty-one bullets
+sit between 9 and 12 words**, legal under `ARTWORK_SCHEMA.md` §3 and over
+budget under `STYLE_GUIDE.md` §4.4→§4.3. Each is marked `†` with its count.
+
+Where a bullet could be cut to 8 without losing something the eye can find, it
+was. The 21 that remain are mostly bullets carrying a hedge — *"That the
+trainer wears the painter's own face — widely repeated, unestablished"* (12) is
+the extreme case, and it cannot reach 8 words while still saying both that the
+claim exists and that it is unestablished. **The 8-word rule and the
+uncertainty rule are in tension, and the uncertainty rule won every time.** If
+the adjudication comes down on 8, those bullets should be shortened by dropping
+the *claim*, not the hedge.
+
+### F2 — Nothing had to be left unwritten, but three records lost specifics
+
+No record defeated me. Twenty-two descriptions and 66 bullets are written and
+on budget. Three lost concrete detail I wanted and could not source:
+
+- **B01-R1** — the setting. The Curator gives a standing figure, Ottoman dress,
+  a naqareh drum and tortoises; he does not give the room, the palette, or the
+  number of tortoises. "Stands stooped over his tortoises" is as specific as the
+  specification allows. A count would have been the better sentence.
+- **B01-R4** — the light's source. "Sunlight arriving on the wall" is the
+  Curator's own phrase. Whether a window is in frame is not in his record, so
+  the copy does not put one there.
+- **B02-R6** — the mourners' placement. "Three weeping heads" is sourced;
+  *where* they sit in the frame is not, so the bullet says "beside him" and
+  claims no side.
+
+In each case the fix is a look at the picture, not a better writer.
+
+### F3 — Two recorded doubts deliberately not surfaced in visitor copy
+
+Both are real and both are in the Curator's UNCERTAIN sections. Neither is in
+the prose, and the reasoning should be reviewable:
+
+- **B01-R6, Gorky's date.** Two sources give c. 1926–1936, Wikidata gives 1931
+  (Batch 01 UNCERTAIN §1). The description says "over roughly a decade", which
+  follows the range the record itself adopts in `year.display`. Surfacing the
+  conflict would have cost the record's third bullet, and this record's three
+  bullets are carrying a genocide, a photograph and a second version. **If a
+  reviewer disagrees, bullet 3 is the one to trade.**
+- **B01-R10, the National Treasure designation.** The Curator records it as an
+  assertion of one English Wikipedia article, notes that Korea maintains more
+  than one heritage register, and states that no primary record was read. Given
+  a hedge that long, the honest options were a full sentence or nothing; the
+  copy takes nothing. Compare B02-R7, where **two** sources agree and the bullet
+  says so — the difference in treatment is deliberate and tracks the difference
+  in evidence.
+
+### F4 — What the copy does about THE UNIT BUG (B02-R11)
+
+Recorded in the record. Short version: the description states Courbet's scale in
+prose because the planned bake would print `3.15 × 6.68 cm` beside it. **Copy
+is not a fix for a build bug** and this flag is not a claim that it is; it only
+means the page will contradict itself where a visitor can see it, rather than
+publishing a Salon machine as a miniature in silence.
+
+### F5 — Ten first-for-their-nation records carry no word about being firsts
+
+Batch 01 takes ten nations off zero, and four of these painters are their
+nation's first record in the atlas. **No description or bullet mentions it**,
+none introduces a painter as representative of anywhere, and none reaches for
+the register that would make a Korean album leaf or a Safavid album page a
+cultural exhibit rather than a picture. B01-R10 and B02-R7 carry an explicit
+note to that effect so the choice is auditable rather than merely made.
+
+The test applied was symmetry: Giotto is not introduced as a representative of
+Italy, so Kim Hong-do is not introduced as a representative of Korea.
+
+---
+
+## OBSERVATIONS ON THE SPECIFICATIONS
+
+Four things a content editor noticed. None blocks the build.
+
+1. **These 22 records are now one field short of Tier 1, and the missing field
+   is not editorial.** `ARTWORK_SCHEMA.md` §4 requires Tier 1 to have explicit
+   `coords`, a description and 3 `notice` bullets. **All 22 already carry
+   `coordsSource:"override"` with hand-scored coordinates**, and this document
+   supplies the other two. So after this copy lands, every one of these records
+   meets §4's *field* requirements for Tier 1 and is held at Tier 2 only by §8's
+   inbound-link rule. That is the Curator's call and I am not contesting it —
+   but it is worth stating that the gap is now purely a link-graph fact, and it
+   is the same finding as Batch 02's T-TIER (242 Tier 2 records that a list or
+   an arc already names). **Writing this copy makes 22 more.**
+
+2. **Tier 2 pages may not render any of this.** `js/app.js:2072` branches on
+   `w.description` and renders the full block whenever it is present —
+   it does **not** check `tier`. So these fields will display on Tier 2 pages as
+   soon as they land, which contradicts §4's "description/notice are replaced by
+   a single styled empty-state line" for Tier 2. I read that as the code being
+   right and §4's wording being stale, and it is the reason this copy is worth
+   writing at all. Flagging per `PIGMENT.md` §17 rather than assuming.
+
+3. **`STYLE_GUIDE.md` §4.4 does not state a `notice` word budget in its own
+   words** — it delegates ("same rules as Look-for"), and §4.3's 8-word rule was
+   written for *artist and movement* traits, which are shorter by nature than a
+   work-specific observation. That looks less like a disagreement between two
+   documents than like a rule inherited into a context it was not written for.
+   Worth considering when §15.5 is adjudicated: the schema's 12 may not be a
+   competing budget so much as the correct one for this field.
+
+4. **The Curator's uncertainty sections are the best copy source in the
+   specification.** Six of the eight doubt-carrying bullets in this document are
+   lifted more or less directly from an UNCERTAIN entry. An inscribed date that
+   names a day, a medium two sources disagree about, a picture nobody can read —
+   these are *better* sentences than the confident versions would have been, and
+   they were free. That is `STYLE_GUIDE.md` §3.5 working exactly as written, and
+   it is worth saying because the constraint reads like a tax and is not one.
