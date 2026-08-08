@@ -233,8 +233,8 @@ window.MUSEUM_NOTES = {
 
 "vatican-museums": {
   hook: "The popes' collection, nine miles of it",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Museos_Vaticanos_-_Entrada_-_001.jpg/960px-Museos_Vaticanos_-_Entrada_-_001.jpg",
-           page:"https://commons.wikimedia.org/wiki/File:Museos_Vaticanos_-_Entrada_-_001.jpg" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Vatican_Museums_entrance_2016.jpg" }, },
 
 "pio-monte-della-misericordia": {
   hook: "Mercy, on permanent view since 1607",
@@ -303,8 +303,8 @@ window.MUSEUM_NOTES = {
 
 "kunsthistorisches": {
   hook: "The Habsburgs' trophy hall",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg/960px-AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg",
-           page:"https://commons.wikimedia.org/wiki/File:AT_13763_Exterior_of_the_Kunsthistorisches_Museum,_Vienna-4.jpg" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kunsthistorisches_Museum_Exterior.JPG/960px-Kunsthistorisches_Museum_Exterior.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:Kunsthistorisches_Museum_Exterior.JPG" }, },
 
 "stadel": {
   hook: "A merchant's Frankfurt, from Holbein to now",
@@ -373,8 +373,8 @@ window.MUSEUM_NOTES = {
 
 "st-bavo-cathedral": {
   hook: "Home of the most-stolen altarpiece on earth",
-  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg/960px-Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg",
-           page:"https://en.wikipedia.org/wiki/Saint_Bavo's_Cathedral%2C_Ghent" } },
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg/960px-Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Gent_-_Sint-Baafskathedraal_(48186851401).jpg" }, },
 
 "groeningemuseum": {
   hook: "Bruges' painters, still in Bruges",
@@ -563,15 +563,42 @@ window.MUSEUM_NOTES = {
 /* pera-museum is not a new venue — it has been in the registry since day one and
    simply held no catalog work until batch 01 R1, which is what makes the hook
    newly required. */
-"pera-museum":            { hook: "Istanbul's Pera, where the tortoise trainer waits" },
+"pera-museum":            {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Istanbul_Beyoglu_Pera_museum.jpg/960px-Istanbul_Beyoglu_Pera_museum.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Istanbul_Beyoglu_Pera_museum.jpg" },
+  hook: "Istanbul's Pera, where the tortoise trainer waits" },
 
-"national-museum-warsaw": { hook: "Poland's own picture of itself, Stańczyk included" },
-"kunstmuseum-basel":      { hook: "Basel's collection, where Klee's Senecio hangs" },
-"skagens-museum":         { hook: "Where the Skagen painters kept their own work" },
-"ngma-new-delhi":         { hook: "India's modern century, Sher-Gil near its centre" },
-"ateneum":                { hook: "Finland's national gallery, national epic on the walls" },
-"national-museum-korea":  { hook: "Seoul's Yongsan halls, where the Danwon album lives" },
-"santa-maria-novella":    { hook: "The Florentine church with Masaccio's wall in it" },
-"tokyo-national-museum":  { hook: "National treasures, Sesshū's splashed ink among them" },
+"national-museum-warsaw": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/WarsawNationalMuseumDSC_2528.JPG/960px-WarsawNationalMuseumDSC_2528.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:WarsawNationalMuseumDSC_2528.JPG" },
+  hook: "Poland's own picture of itself, Stańczyk included" },
+"kunstmuseum-basel":      {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg/960px-Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg" },
+  hook: "Basel's collection, where Klee's Senecio hangs" },
+"skagens-museum":         {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Skagens_museum.jpg/960px-Skagens_museum.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Skagens_museum.jpg" },
+  hook: "Where the Skagen painters kept their own work" },
+"ngma-new-delhi":         {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Jaipur_House_2019_(2).jpg" },
+  hook: "India's modern century, Sher-Gil near its centre" },
+"ateneum":                {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ateneum_main_facade.jpg/960px-Ateneum_main_facade.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Ateneum_main_facade.jpg" },
+  hook: "Finland's national gallery, national epic on the walls" },
+"national-museum-korea":  {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Front_view_of_national_museum_of_korea.jpg/960px-Front_view_of_national_museum_of_korea.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Front_view_of_national_museum_of_korea.jpg" },
+  hook: "Seoul's Yongsan halls, where the Danwon album lives" },
+"santa-maria-novella":    {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_Novella_(Florence)_-_Facade_(3).jpg" },
+  hook: "The Florentine church with Masaccio's wall in it" },
+"tokyo-national-museum":  {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg" },
+  hook: "National treasures, Sesshū's splashed ink among them" },
 "moa-museum-of-art":      { hook: "Atami, keeping Kōrin's red and white plum screens" }
 };

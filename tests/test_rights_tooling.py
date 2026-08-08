@@ -365,6 +365,84 @@ CATALOG_BATCHES = {
 }
 
 
+#: FOURTH LEDGER — museum building photographs, 2026-08-08.
+#:
+#: Separate from the three above for the same reason they are separate from each
+#: other. This is neither a rights correction (nothing here was a licence or
+#: wrong-artwork problem) nor corpus growth (no artist, work or venue arrived)
+#: nor a catalog batch (nothing moved surface). It is a *quality* remediation of
+#: the building photographs themselves, following the measured audit in
+#: docs/MUSEUM_PHOTO_AUDIT.md.
+#:
+#: THREE REPLACED. Each old file was an architectural detail that did not read as
+#: the building: the Kunsthistorisches file, despite being named "Exterior…", is
+#: a close-up of a marble inscription tablet; the Vatican and St Bavo files were
+#: likewise fragments. Replacements are landscape exterior views, verified by
+#: looking at each one rendered in a 16:10 card, not by filename.
+#:
+#: NINE ADDED. Venues that held catalogued works but had no photograph at all and
+#: fell back to a generative canvas. Note which ones they were — Finland, Korea,
+#: Poland, India, Turkey, Japan, Denmark, Switzerland, Italy: the venues holding
+#: the atlas's non-Western and smaller-nation works were the ones missing
+#: photographs.
+#:
+#: Every URL here had a `?utm_source=commons.wikimedia.org` tracking query string
+#: when it came back from the Commons API. It is stripped. A campaign tag on a
+#: shipped image URL is a third-party beacon, and this project self-hosts its
+#: fonts specifically to avoid those. The inventory is what caught it: the tagged
+#: URLs did not match their untagged rendered twins, so metadata_only_unique rose
+#: from 1 to 13 and the discrepancy surfaced as a count.
+#:
+#: Effect: museum_photos_rendered 104 -> 113, total_unique 798 -> 807,
+#: rendered_unique 797 -> 806. metadata_only_unique, catalog_gallery_overlap and
+#: suppressed_leaking_into_metadata do not move; if any of them does, this change
+#: introduced an asset it did not declare.
+MUSEUM_PHOTOGRAPHS = {
+    "museum_photos_rendered": {
+        "removed": [
+            U + "7/78/Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg/960px-Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg",
+            U + "8/85/Museos_Vaticanos_-_Entrada_-_001.jpg/960px-Museos_Vaticanos_-_Entrada_-_001.jpg",
+            U + "d/d4/AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg/960px-AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg",
+        ],
+        "added": [
+            U + "0/0e/Istanbul_Beyoglu_Pera_museum.jpg/960px-Istanbul_Beyoglu_Pera_museum.jpg",
+            U + "3/32/Front_view_of_national_museum_of_korea.jpg/960px-Front_view_of_national_museum_of_korea.jpg",
+            U + "4/43/Ateneum_main_facade.jpg/960px-Ateneum_main_facade.jpg",
+            U + "6/65/Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg/960px-Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg",
+            U + "6/6e/WarsawNationalMuseumDSC_2528.JPG/960px-WarsawNationalMuseumDSC_2528.JPG",
+            U + "9/91/Kunsthistorisches_Museum_Exterior.JPG/960px-Kunsthistorisches_Museum_Exterior.JPG",
+            U + "a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg",
+            U + "a/a7/Skagens_museum.jpg/960px-Skagens_museum.jpg",
+            U + "a/ae/Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg/960px-Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg",
+            U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
+            U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
+            U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+        ],
+    },
+    "prerender_metadata_refs": {
+        "removed": [
+            U + "7/78/Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg/960px-Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg",
+            U + "8/85/Museos_Vaticanos_-_Entrada_-_001.jpg/960px-Museos_Vaticanos_-_Entrada_-_001.jpg",
+            U + "d/d4/AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg/960px-AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-4.jpg",
+        ],
+        "added": [
+            U + "0/0e/Istanbul_Beyoglu_Pera_museum.jpg/960px-Istanbul_Beyoglu_Pera_museum.jpg",
+            U + "3/32/Front_view_of_national_museum_of_korea.jpg/960px-Front_view_of_national_museum_of_korea.jpg",
+            U + "4/43/Ateneum_main_facade.jpg/960px-Ateneum_main_facade.jpg",
+            U + "6/65/Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg/960px-Gent_-_Sint-Baafskathedraal_%2848186851401%29.jpg",
+            U + "6/6e/WarsawNationalMuseumDSC_2528.JPG/960px-WarsawNationalMuseumDSC_2528.JPG",
+            U + "9/91/Kunsthistorisches_Museum_Exterior.JPG/960px-Kunsthistorisches_Museum_Exterior.JPG",
+            U + "a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg",
+            U + "a/a7/Skagens_museum.jpg/960px-Skagens_museum.jpg",
+            U + "a/ae/Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg/960px-Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg",
+            U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
+            U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
+            U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -382,7 +460,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -408,8 +486,12 @@ class TestAssetInventory(unittest.TestCase):
         # confirmed wrong-artwork images and two corrected files added, giving
         # 797; ef8b2b3 then added the single Hirshhorn museum photograph, giving
         # 798. The +1 is the ONLY new public image asset in the content lane.
-        self.assertEqual(c["total_unique"], 798)
-        self.assertEqual(c["rendered_unique"], 797)      # 796 + the same Hirshhorn photo
+        # 798 -> 807: the museum-photograph remediation of 2026-08-08 (fourth
+        # ledger above) replaced three detail shots and added nine photographs to
+        # venues that had none. +12 -3 = +9 on both total and rendered; nothing
+        # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
+        self.assertEqual(c["total_unique"], 807)
+        self.assertEqual(c["rendered_unique"], 806)      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 114)   # unchanged
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -486,7 +568,7 @@ class TestSampleBasis(unittest.TestCase):
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 104)
+        self.assertEqual(len(rr.SURFACES["museum"]()), 113)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 528)
