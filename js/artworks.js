@@ -1650,9 +1650,9 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Joaqu%C3%ADn_Sorolla_y_Bastida_-_Triste_Herencia_%281899%29.jpg/500px-Joaqu%C3%ADn_Sorolla_y_Bastida_-_Triste_Herencia_%281899%29.jpg",
    "page": "https://en.wikipedia.org/wiki/Sad_Inheritance!"
   },
-  "Vision of Spain": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG/500px-Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG",
-   "page": "https://en.wikipedia.org/wiki/Vision_of_Spain"
+  "Vision of Spain: Catalonia": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg/500px-Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Catalu%C3%B1a._El_pescado,_por_Joaqu%C3%ADn_Sorolla.jpg"
   }
  },
  "vilhelm-hammershoi": {
@@ -1852,9 +1852,9 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Hanover_Merzbau.jpg/500px-Hanover_Merzbau.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Hanover_Merzbau.jpg"
   },
-  "Ursonate": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Kurt_Schwitters_1927.jpg/500px-Kurt_Schwitters_1927.jpg",
-   "page": "https://en.wikipedia.org/wiki/Kurt_Schwitters"
+  "Das Undbild": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/DasUndbild.jpg/500px-DasUndbild.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:DasUndbild.jpg"
   }
  },
  "grant-wood": {

@@ -109,7 +109,7 @@ window.ARTISTS.push(
   techniques:["collage","mixed-media"], style:"cubist",
   palette:["#8a6e4a","#3e4a5e","#c4302a","#d9cdb4","#1d1a16"],
   tagline:"Merz — a one-man movement built from tram tickets",
-  works:[{t:"Merzbild 1A (The Psychiatrist)",y:"1919"},{t:"The Merzbau",y:"1923–37 (destroyed)"},{t:"Ursonate",y:"1922–32"}],
+  works:[{t:"Merzbild 1A (The Psychiatrist)",y:"1919"},{t:"The Merzbau",y:"1923–37 (destroyed)"},{t:"Das Undbild",y:"1919"}],
   life:"A respectable Hanover landlord's son, Schwitters invented 'Merz' — his private Dada, named from a torn 'Kommerz' scrap — after Berlin's Dadaists rejected him as too bourgeois. Fleeing the Gestapo via Norway to Britain (and internment on the Isle of Man), he died in Kendal in 1948, one day after receiving British citizenship.",
   career:"His collages composed bus tickets, buttons and broken wood into chamber music; his Merzbau grew through his Hanover house for fourteen years as a walk-in grotto of plaster and memory — destroyed by a 1943 air raid, twice restarted in exile, never finished. The Ursonate, a forty-minute sonata of pure phonemes, stands at sound poetry's summit.",
   outside:"Interned on the Isle of Man, he charmed fellow refugees with readings and sculpted with leftover porridge when materials ran out. He supported his last years painting conventional Lake District portraits and landscapes — Merz by day, rent by evening.",

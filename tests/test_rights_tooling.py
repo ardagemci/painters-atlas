@@ -216,6 +216,19 @@ CORRECTIONS = {
             # Livioandronico2013's dome photograph, CC BY-SA 4.0. Replaced with
             # a photograph the photographer himself released under PD-self.
             U + "7/78/Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg/500px-Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg",
+            # 2026-08-08, owner-reported and confirmed by opening both files.
+            # Ursonate is a forty-minute SOUND POEM and was illustrated with a
+            # 1927 photographic portrait of Schwitters — the artist standing in
+            # for the work. Commons has no page of the published score; the only
+            # Ursonate images there are photographs of a 2024 performance. The
+            # slot now holds Das Undbild (1919), a real Merz assemblage. Ursonate
+            # keeps its place in his career prose, where a sound poem belongs.
+            U + "2/22/Kurt_Schwitters_1927.jpg/500px-Kurt_Schwitters_1927.jpg",
+            # Vision of Spain is a FOURTEEN-PANEL cycle at the Hispanic Society
+            # and was illustrated with a photograph of the room: ceiling, floor,
+            # orange walls, the murals small across the far side. No single frame
+            # represents the cycle, so the entry now names the panel it shows.
+            U + "a/ac/Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG/500px-Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG",
         ],
         "added": [
             U + "2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",   # unit 35, D-019 — see above
@@ -223,6 +236,8 @@ CORRECTIONS = {
             U + "d/db/Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg/500px-Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg",
             U + "f/f0/Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg/960px-Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg",
             U + "a/a5/Cupola_Duomo_Parma_Correggio.jpg/500px-Cupola_Duomo_Parma_Correggio.jpg",
+            U + "f/fc/DasUndbild.jpg/500px-DasUndbild.jpg",
+            U + "5/5f/Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg/500px-Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg",
         ],
     },
     # The stubs were re-emitted so public og:image/twitter:image metadata stops
@@ -434,6 +449,13 @@ MUSEUM_PHOTOGRAPHS = {
             U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
             U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
             U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+            # 2026-08-08, second pass: moa-museum-of-art. The first sweep left it
+            # on a generative cover because every Commons file found was the
+            # escalator tunnel. A second series (231007) turned out to hold real
+            # exteriors, and this one is what both the English and Japanese
+            # Wikipedia articles use as their lead. Every indexed venue now has a
+            # building photograph; the generative fallback is unused.
+            U + "2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
         ],
     },
     "prerender_metadata_refs": {
@@ -455,6 +477,61 @@ MUSEUM_PHOTOGRAPHS = {
             U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
             U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
             U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+            # 2026-08-08, second pass: moa-museum-of-art. The first sweep left it
+            # on a generative cover because every Commons file found was the
+            # escalator tunnel. A second series (231007) turned out to hold real
+            # exteriors, and this one is what both the English and Japanese
+            # Wikipedia articles use as their lead. Every indexed venue now has a
+            # building photograph; the generative fallback is unused.
+            U + "2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
+        ],
+    },
+}
+
+
+#: FIFTH LEDGER — artist share images, 2026-08-08 (owner decision).
+#:
+#: build_seo.jxa.js used to pick an artist's og:image by preferring any
+#: catalogued work. That meant the share image silently moved the moment an
+#: artist gained their first catalog record, and it had already moved for 49
+#: artists: Leonardo's preview was not the Mona Lisa, Van Gogh's was not The
+#: Starry Night, Munch's was not The Scream.
+#:
+#: The owner's ruling is that an artist keeps a designated hero. The artist
+#: record's `works:[]` array is already an ordered, hand-made statement of which
+#: pictures matter most, so the first listed work is treated as the designation,
+#: with an optional `hero:` override. artistImage() now reads
+#: hero -> works[] order -> any gallery image -> catalogued work.
+#:
+#: Nine of the twelve URLs below are ones CATALOG_BATCHES recorded as REMOVED
+#: from the metadata surface. They were removed only because of the rule this
+#: change reverses, so they return. That ledger is left exactly as written —
+#: it is the true record of what the catalog batches did — and this one composes
+#: on top of it. The order matters: batches took them out, the hero decision
+#: puts them back.
+#:
+#: The other three (af Klint, Whistler, Cezanne) are works whose artists' own
+#: `works[]` ordering now names them where the freeze had picked something else.
+#:
+#: No count moves. total_unique stays 807 and rendered_unique 806, because every
+#: URL here is already a rendered gallery asset — this change alters WHICH
+#: existing picture represents an artist, never how many pictures exist.
+ARTIST_HEROES = {
+    "prerender_metadata_refs": {
+        "removed": [],
+        "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+            U + "1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/500px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg",
+            U + "1/1b/Whistlers_Mother_high_res.jpg/500px-Whistlers_Mother_high_res.jpg",
+            U + "2/24/Riza-yi-Abbasi_008.jpg/960px-Riza-yi-Abbasi_008.jpg",
+            U + "2/2f/Young_Girls.jpg/500px-Young_Girls.jpg",
+            U + "3/38/Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg/960px-Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg",
+            U + "7/7e/Die_Zwitscher-Maschine_%28Twittering_Machine%29%2C_1922_-_Paul_Klee.jpg/500px-Die_Zwitscher-Maschine_%28Twittering_Machine%29%2C_1922_-_Paul_Klee.jpg",
+            U + "9/9c/Bada_Shanren_-_Fish_and_Rocks_-_1953.247_-_Cleveland_Museum_of_Art.tiff/lossy-page1-960px-Bada_Shanren_-_Fish_and_Rocks_-_1953.247_-_Cleveland_Museum_of_Art.tiff.jpg",
+            U + "9/9e/Tizian_041.jpg/500px-Tizian_041.jpg",
+            U + "a/af/La_Montagne_Sainte-Victoire_vue_de_la_carri%C3%A8re_Bib%C3%A9mus%2C_par_Paul_C%C3%A9zanne.jpg/960px-La_Montagne_Sainte-Victoire_vue_de_la_carri%C3%A8re_Bib%C3%A9mus%2C_par_Paul_C%C3%A9zanne.jpg",
+            U + "d/d8/Gallen-Kallela_The_defence_of_the_Sampo.png/500px-Gallen-Kallela_The_defence_of_the_Sampo.png",
+            U + "e/e9/Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg/500px-Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg",
         ],
     },
 }
@@ -477,7 +554,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -507,8 +584,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 807)
-        self.assertEqual(c["rendered_unique"], 806)      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 808)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 807)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -585,7 +662,7 @@ class TestSampleBasis(unittest.TestCase):
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 113)
+        self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 528)

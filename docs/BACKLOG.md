@@ -186,38 +186,30 @@ is not their best-known work, and it silently degrades the share image. **Owner
 decision:** should the share image follow the catalog, or should an artist keep
 a designated hero? Recorded in the `CATALOG_BATCHES` ledger so it is visible.
 
-## B6 · Schwitters and Sorolla — wrong images  **[verified by eye 2026-08-08]**
+## B6 · Schwitters and Sorolla — wrong images  **[DONE 2026-08-08]**
 
-Both **already exist** as artists with gallery images and no catalog records, so
-the additions are catalog work, not artist additions. But the owner reported the
-images as inappropriate, and all six were downloaded and **looked at**:
+All six were opened and looked at. Four were correct and kept — including the
+Merzbau photograph, since that work was destroyed in 1943 and survives only in
+photographs. Two were wrong and are replaced:
 
-| Artwork | Image | Verdict |
-| --- | --- | --- |
-| Schwitters — *Merzbild 1A* | the assemblage | correct |
-| Schwitters — *The Merzbau* | photograph of the installation | **correct** — the Merzbau was destroyed in 1943 and survives only in photographs |
-| Schwitters — *Ursonate* | `Kurt_Schwitters_1927.jpg` | **WRONG** — a photographic portrait of Schwitters standing in for a sound poem |
-| Sorolla — *Walk on the Beach* | the painting | correct |
-| Sorolla — *Sad Inheritance* | the painting | correct |
-| Sorolla — *Vision of Spain* | `visione della spagna ... 02.JPG` | **WRONG** — a gallery installation shot: ceiling, floor, orange walls, the murals small on the far side of a room |
+**Schwitters — *Ursonate*** was a **1927 photographic portrait of Schwitters**:
+the artist standing in for a forty-minute sound poem. Commons has no page of the
+published score; the only *Ursonate* images there are photographs of a 2024
+performance in Rudolstadt, which would have been a different error. The slot now
+holds ***Das Undbild*** (1919), a real Merz assemblage. **The Ursonate keeps its
+place in his career prose**, which is where a sound poem belongs — the atlas can
+say a thing exists without pretending to show it.
 
-**Two to replace, not six.**
+**Sorolla — *Vision of Spain*** was a **photograph of the room**: ceiling, floor,
+orange walls, the murals small across the far side. It is a fourteen-panel cycle
+and no single frame represents it, so the entry is renamed **"Vision of Spain:
+Catalonia"** and shows that panel (*Cataluña. El pescado*, public domain). His
+prose still says "fourteen monumental panels", so the cycle is not misread as one
+picture.
 
-*Ursonate* has no defensible image at all — it is a **sound poem**, and the
-honest options are a page of the published score (Merz 24, 1932) or removing the
-entry from the gallery. Substituting a portrait of the author is the same
-category error the atlas already corrected elsewhere.
-
-*Vision of Spain* is a **fourteen-panel mural cycle** at the Hispanic Society;
-no single frame represents it. Either a single named panel is chosen and
-labelled as that panel, or the entry is retitled to admit it is the room.
-
-**Instrument note.** Run through `match_verdict()` without `meta` or
-`article_title`, the matcher **rejected the correct** Merzbild (its filename does
-not contain the artist's name) and **did not flag either wrong image**. That is
-consistent with **A2** — the detector keys on the filename, and both wrong files
-are named plausibly. Called with its full inputs it may do better; the point
-stands that filename evidence did not survive contact with the pictures.
+**Method note.** Neither error was findable from the filename — both files were
+named plausibly. This is the third time in this sequence that opening the file
+changed the answer, after the museum photographs and the Caillebotte attribution.
 
 
 ---

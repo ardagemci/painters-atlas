@@ -187,7 +187,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","alla-prima"], style:"impressionist",
   palette:["#f2d9a0","#7ab0c4","#e8e0d0","#c4763e","#2e5e8a"],
   tagline:"Valencia at noon — nobody ever painted sunlight wetter",
-  works:[{t:"Walk on the Beach",y:"1909"},{t:"Sad Inheritance",y:"1899"},{t:"Vision of Spain",y:"1913–19"}],
+  works:[{t:"Walk on the Beach",y:"1909"},{t:"Sad Inheritance",y:"1899"},{t:"Vision of Spain: Catalonia",y:"1913–19"}],
   life:"Orphaned at two by cholera and raised by an aunt and locksmith uncle in Valencia, Sorolla painted his way to international stardom — gold medals, packed shows in Paris, London and New York. A stroke felled him mid-portrait in his garden in 1920; he died three years later at sixty, his Madrid house now one of Europe's most loved house-museums.",
   career:"His beach scenes — children glistening, mothers in white, oxen hauling sails out of a violet sea — made sunlight itself the protagonist, brushed wet and fast at full scale on the sand. Sad Inheritance, polio-stricken boys bathing under a monk's care, won Paris's Grand Prix. The Hispanic Society's Vision of Spain consumed his last decade: fourteen monumental panels painted province by province, on location.",
   outside:"He painted standing in the surf under a huge hat, canvases lashed against the wind, working 'like a man possessed by light'. His friendship-rivalry with the American Sargent ran on mutual awe; New York's 1909 Sorolla exhibition drew 160,000 visitors in a month.",

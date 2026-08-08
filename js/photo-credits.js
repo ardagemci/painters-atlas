@@ -7,9 +7,9 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 113
-     entries, 94 of which carry a licence requiring attribution; the
-     other 19 carry a Commons public-domain or CC0 assertion instead,
+     (js/venues.js). One entry per photograph in js/museums-1.js. 114
+     entries, 96 of which carry a licence requiring attribution; the
+     other 18 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
@@ -72,7 +72,7 @@ window.PHOTO_CREDITS = {
 "kode-bergen": { author:"Forbes Johnston", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:BERGEN_Norway_Lille_Lungeg%C3%A5rdsvannet_KODE_Art_Museum_Kunsthall_Grieghallen_Foreningsgaten_Nyg%C3%A5rdsg._etc_View_from_Mount_Floyen_2019-08-28_by_Forbes_Johnston_Flickr_Some_rights_reserved.jpg", required:true },
 "kroller-muller": { author:"Gerardus", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Entrance_Kr%C3%B6ller-M%C3%BCller_Museum.JPG" },
 "kunsthalle-mannheim": { author:"Immanuel Giel", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Kunsthalle_Mannheim_Eingangsportal.jpg" },
-"kunsthistorisches": { author:"C1815", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Kunsthistorisches_Museum_Exterior.JPG" },
+"kunsthistorisches": { author:"Hubertl", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:AT_13763_Exterior_of_the_Kunsthistorisches_Museum,_Vienna-4.jpg", required:true },
 "kunstmuseum-basel": { author:"Wladyslaw Sojka", license:"FAL", licenseUrl:"http://artlibre.org/licence/lal/en", page:"https://commons.wikimedia.org/wiki/File:Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg", required:true },
 "lazaro-galdiano": { author:"Luis García (Zaqarbal)", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Museo_L%C3%A1zaro_Galdiano_(Madrid)_02.jpg", required:true },
 "leopold-museum": { author:"Gugerell", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_07_Leopold_Museum_a.jpg" },
@@ -84,6 +84,7 @@ window.PHOTO_CREDITS = {
 "mfa-boston": { author:"ajay_suresh", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Museum_of_Fine_Arts,_Boston_(54954248311).jpg", required:true },
 "minneapolis-institute-of-art": { license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Facade_from_the_East,_Minneapolis_Institute_of_Arts_-_DPLA_-_ed3a5aee7eed55bb80f51eb4be6a763b.jpg" },
 "mnaa-lisbon": { author:"Fulviusbsas", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:MNAA.jpg", required:true },
+"moa-museum-of-art": { author:"663highland", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg", required:true },
 "moca-la": { author:"Grandave-1986", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Moca-exterior.jpg", required:true },
 "moderna-museet": { author:"Emmawickstrm", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:MODERN_MUSEUM_MODERNA_MUSEET_STOCKHOLM_(19).jpg", required:true },
 "moma": { author:"hibino", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:MoMa_NY_USA_1.jpg", required:true },
@@ -130,7 +131,7 @@ window.PHOTO_CREDITS = {
 "sfmoma": { author:"Beyond My Ken", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:2017_SFMOMA_from_Yerba_Buena_Gardens.jpg", required:true },
 "sistine-chapel": { author:"The original uploader was Snowdog at Italian Wikipedia", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg", required:true },
 "skagens-museum": { author:"Zejo", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Skagens_museum.jpg" },
-"st-bavo-cathedral": { author:"Fred Romero from Paris, France", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Gent_-_Sint-Baafskathedraal_(48186851401).jpg", required:true },
+"st-bavo-cathedral": { author:"Mylius", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Gent-Sint-Baafskathedraal_vom_Belfried_aus_gesehen.jpg", required:true },
 "st-johns-co-cathedral": { author:"Matthew Axiak", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:St_John%27s_Co-Cathedral,_Valletta_001.jpg", required:true },
 "st-peters-basilica": { author:"Alvesgaspar", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg", required:true },
 "stadel": { author:"DrKssn", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Frankfurt_Staedel_Museum_dk2243.jpg", required:true },
@@ -143,7 +144,7 @@ window.PHOTO_CREDITS = {
 "tretyakov": { author:"A.Savin", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Moscow_05-2012_TretyakovGallery.jpg", required:true },
 "uffizi": { author:"Verum3414", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Piazzale_degli_Uffizi_perspective_view,_Florence,_Italy,_August_2025.jpg", required:true },
 "van-gogh-museum": { author:"C messier", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Van_Gogh_Museum_7206_rt_HDR.jpg", required:true },
-"vatican-museums": { author:"MrPanyGoff", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Vatican_Museums_entrance_2016.jpg", required:true },
+"vatican-museums": { author:"Américo Toledano", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Museos_Vaticanos_-_Entrada_-_001.jpg", required:true },
 "villa-farnesina": { author:"Jean-Pierre Dalbéra from Paris, France", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:La_villa_Farnesina_(Rome)_(34029492720).jpg", required:true },
 "whitney": { author:"Jim.henderson", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Gansevoort_Whitney_April_2013_jeh.jpg" },
 "wien-museum": { author:"Christine Koblitz", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_Museum_Neu.jpg" },

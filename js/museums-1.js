@@ -600,5 +600,8 @@ window.MUSEUM_NOTES = {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg" },
   hook: "National treasures, Sesshū's splashed ink among them" },
-"moa-museum-of-art":      { hook: "Atami, keeping Kōrin's red and white plum screens" }
+"moa-museum-of-art":      {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg" },
+  hook: "Atami, keeping Kōrin's red and white plum screens" }
 };
