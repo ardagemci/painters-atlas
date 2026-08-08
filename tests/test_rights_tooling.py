@@ -460,6 +460,54 @@ MUSEUM_PHOTOGRAPHS = {
 }
 
 
+#: FIFTH LEDGER — artist share images, 2026-08-08 (owner decision).
+#:
+#: build_seo.jxa.js used to pick an artist's og:image by preferring any
+#: catalogued work. That meant the share image silently moved the moment an
+#: artist gained their first catalog record, and it had already moved for 49
+#: artists: Leonardo's preview was not the Mona Lisa, Van Gogh's was not The
+#: Starry Night, Munch's was not The Scream.
+#:
+#: The owner's ruling is that an artist keeps a designated hero. The artist
+#: record's `works:[]` array is already an ordered, hand-made statement of which
+#: pictures matter most, so the first listed work is treated as the designation,
+#: with an optional `hero:` override. artistImage() now reads
+#: hero -> works[] order -> any gallery image -> catalogued work.
+#:
+#: Nine of the twelve URLs below are ones CATALOG_BATCHES recorded as REMOVED
+#: from the metadata surface. They were removed only because of the rule this
+#: change reverses, so they return. That ledger is left exactly as written —
+#: it is the true record of what the catalog batches did — and this one composes
+#: on top of it. The order matters: batches took them out, the hero decision
+#: puts them back.
+#:
+#: The other three (af Klint, Whistler, Cezanne) are works whose artists' own
+#: `works[]` ordering now names them where the freeze had picked something else.
+#:
+#: No count moves. total_unique stays 807 and rendered_unique 806, because every
+#: URL here is already a rendered gallery asset — this change alters WHICH
+#: existing picture represents an artist, never how many pictures exist.
+ARTIST_HEROES = {
+    "prerender_metadata_refs": {
+        "removed": [],
+        "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+            U + "1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/500px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg",
+            U + "1/1b/Whistlers_Mother_high_res.jpg/500px-Whistlers_Mother_high_res.jpg",
+            U + "2/24/Riza-yi-Abbasi_008.jpg/960px-Riza-yi-Abbasi_008.jpg",
+            U + "2/2f/Young_Girls.jpg/500px-Young_Girls.jpg",
+            U + "3/38/Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg/960px-Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg",
+            U + "7/7e/Die_Zwitscher-Maschine_%28Twittering_Machine%29%2C_1922_-_Paul_Klee.jpg/500px-Die_Zwitscher-Maschine_%28Twittering_Machine%29%2C_1922_-_Paul_Klee.jpg",
+            U + "9/9c/Bada_Shanren_-_Fish_and_Rocks_-_1953.247_-_Cleveland_Museum_of_Art.tiff/lossy-page1-960px-Bada_Shanren_-_Fish_and_Rocks_-_1953.247_-_Cleveland_Museum_of_Art.tiff.jpg",
+            U + "9/9e/Tizian_041.jpg/500px-Tizian_041.jpg",
+            U + "a/af/La_Montagne_Sainte-Victoire_vue_de_la_carri%C3%A8re_Bib%C3%A9mus%2C_par_Paul_C%C3%A9zanne.jpg/960px-La_Montagne_Sainte-Victoire_vue_de_la_carri%C3%A8re_Bib%C3%A9mus%2C_par_Paul_C%C3%A9zanne.jpg",
+            U + "d/d8/Gallen-Kallela_The_defence_of_the_Sampo.png/500px-Gallen-Kallela_The_defence_of_the_Sampo.png",
+            U + "e/e9/Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg/500px-Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg",
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -477,7 +525,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])

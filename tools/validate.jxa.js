@@ -21,6 +21,9 @@ catch(e){ out.push("app.js SYNTAX ERROR: " + e.message); }
 ["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
  "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js","artists-14.js","artists-15.js","artists-16.js","artists-17.js"]
   .forEach(f => { try { eval(read(base + "js/" + f)); } catch(e){ out.push(f + " ERROR: " + e.message); } });
+/* The gallery pool. Loaded so an artist's optional `hero` can be checked against
+   the works that actually have an image, rather than against a title list. */
+try { eval(read(base + "js/artworks.js")); } catch(e){ out.push("artworks.js ERROR: " + e.message); }
 
 const A = window.ARTISTS || [], M = window.MOVEMENTS || [], T = window.TECHNIQUES || [],
       E = window.ERAS || [], N = window.NATIONS || [];
@@ -57,6 +60,12 @@ A.forEach(a => {
   if(!a.palette || a.palette.length !== 5 || a.palette.some(c => !/^#[0-9a-f]{6}$/i.test(c)))
     errs.push("artist " + a.id + ": bad palette " + (a.palette||[]).join(","));
   if(!a.works || a.works.length < 3) errs.push("artist " + a.id + ": <3 works");
+  /* An optional `hero` names the gallery work used as this artist's social
+     preview (tools/build_seo.jxa.js, artistImage). A hero that does not resolve
+     falls back silently to the works[] ordering, which looks like it worked — so
+     a typo here must fail loudly rather than quietly serve a different picture. */
+  if(a.hero && !(((window.ARTWORKS || {})[a.id] || {})[a.hero]))
+    errs.push("artist " + a.id + ": hero \"" + a.hero + "\" is not one of this artist's gallery works");
   if(!a.facts || a.facts.length < 3) errs.push("artist " + a.id + ": <3 facts");
 });
 

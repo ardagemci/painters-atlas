@@ -72,13 +72,26 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
 const trim160 = s => { s = String(s || "").replace(/\s+/g," ").trim(); return s.length <= 158 ? s : s.slice(0, 155).replace(/\s+\S*$/, "") + "…"; };
 const firstSentence = s => (String(s || "").match(/^.*?[.!?](\s|$)/) || [s || ""])[0].trim();
 
+/* The artist's social preview.
+
+   This used to prefer any catalogued work, which meant the share image moved
+   the moment an artist got their first catalog record — and it had already
+   moved for 49 artists. Leonardo's preview was not the Mona Lisa, Van Gogh's
+   was not The Starry Night, Munch's was not The Scream.
+
+   Owner decision, 2026-08-08: an artist keeps a designated hero. The artist
+   record's `works:[]` array is already an ordered, hand-made statement of which
+   pictures matter most, so the first listed work IS the designation; `hero:`
+   exists to override it where the first listed work is not the right share
+   image. Falling through to the catalog last keeps artists who have no gallery
+   entry from losing their preview entirely. */
 function artistImage(a){
-  const works = catByArtist[a.id] || [];
-  const pd = works.find(w => w.image && w.image.src && w.image.status === "pd");
-  if(pd) return pd.image.src;
   const aw = AW[a.id];
+  if(a.hero && aw && aw[a.hero]) return aw[a.hero].img;
+  if(aw && a.works) for(const w of a.works){ if(w && aw[w.t]) return aw[w.t].img; }
   if(aw) for(const k in aw) return aw[k].img;
-  return null;
+  const pd = (catByArtist[a.id] || []).find(w => w.image && w.image.src && w.image.status === "pd");
+  return pd ? pd.image.src : null;
 }
 
 function page(o){
