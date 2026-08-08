@@ -134,12 +134,42 @@ which has one artist), **Mehoffer**, **Aliye Berger**.
 
 ## B4 · Museum cards — cover photos don't fit
 
-Owner: *"Cover photos don't fit well into the card, there are ones that have
-empty space underneath the photo (Orsay, Louvre, Uffizi, etc.)"*
+Owner: *"Cover photos don't fit well into the card... checking whether all
+museums have an acceptable photo fitting well in the card."*
 
-A CSS aspect-ratio/object-fit defect on the museum index cards. Note the owner's
-standing rule: **museum cards show the building photograph, never an artwork**;
-the museum *page* hero is the artwork collage. Any fix keeps that.
+**Two problems, and only the first was CSS.**
+
+**(a) The frame defect — FIXED, commit `8aa3bba`.** The fill rule was scoped to
+`.aw-card`, so museum photographs and editorial list covers fell through to bare
+`img{max-width:100%}` inside a fixed 16:10 box. Wide photographs left a strip
+beneath; portrait ones overflowed and clipped. Verified in-browser: 104 of 104
+cards now fill exactly, and the check was confirmed non-vacuous by disabling the
+rule in-page (104 of 104 mismatched, worst gap 237.9px).
+
+**(b) The photographs themselves — OPEN, and this is the real answer to the
+owner's question.** All 104 were measured; full table in
+`docs/MUSEUM_PHOTO_AUDIT.md`. **Only 23 of 104 sit comfortably in a 16:10
+frame.** 22 are portrait, 6 are wider than 1.90.
+
+More important than the ratios: several are **architectural detail shots that do
+not read as the building at any crop** — `kunsthistorisches` is a close-up of a
+stone inscription tablet, `vatican-museums` a side doorway in a brick wall,
+`kunsthalle-mannheim` a red wall at close range. Meanwhile `munch`, the most
+extreme ratio in the whole set at 0.56, works perfectly because the photograph
+carries the museum's name in lit signage. **Ratio does not predict whether a card
+works.** The remaining review needs eyes, not arithmetic.
+
+**Ten indexed venues have no photograph at all** and render a generative canvas
+where a building should be: `ateneum`, `kunstmuseum-basel`, `moa-museum-of-art`,
+`national-museum-korea`, `national-museum-warsaw`, `ngma-new-delhi`,
+`pera-museum`, `santa-maria-novella`, `skagens-museum`, `tokyo-national-museum`.
+Note what that list is: Finland, Korea, Poland, India, Turkey, Japan, Denmark —
+**the venues holding the atlas's non-Western and smaller-nation works are the
+ones missing photographs.** That is the same collecting-history skew recorded in
+E3, showing up in a second surface.
+
+The owner's standing rule holds throughout: **museum cards show the building
+photograph, never an artwork**; the museum *page* hero is the artwork collage.
 
 ## B5 · Caillebotte — *Man at His Window* artwork page
 
