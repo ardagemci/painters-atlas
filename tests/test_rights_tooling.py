@@ -216,6 +216,19 @@ CORRECTIONS = {
             # Livioandronico2013's dome photograph, CC BY-SA 4.0. Replaced with
             # a photograph the photographer himself released under PD-self.
             U + "7/78/Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg/500px-Cathedral_%28Parma%29_-_Assumption_by_Correggio.jpg",
+            # 2026-08-08, owner-reported and confirmed by opening both files.
+            # Ursonate is a forty-minute SOUND POEM and was illustrated with a
+            # 1927 photographic portrait of Schwitters — the artist standing in
+            # for the work. Commons has no page of the published score; the only
+            # Ursonate images there are photographs of a 2024 performance. The
+            # slot now holds Das Undbild (1919), a real Merz assemblage. Ursonate
+            # keeps its place in his career prose, where a sound poem belongs.
+            U + "2/22/Kurt_Schwitters_1927.jpg/500px-Kurt_Schwitters_1927.jpg",
+            # Vision of Spain is a FOURTEEN-PANEL cycle at the Hispanic Society
+            # and was illustrated with a photograph of the room: ceiling, floor,
+            # orange walls, the murals small across the far side. No single frame
+            # represents the cycle, so the entry now names the panel it shows.
+            U + "a/ac/Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG/500px-Joaqu%C3%ACn_sorolla_y_bastida%2C_visione_della_spagna%2C_1911-19%2C_02.JPG",
         ],
         "added": [
             U + "2/2a/Sistine_ceiling.jpg/500px-Sistine_ceiling.jpg",   # unit 35, D-019 — see above
@@ -223,6 +236,8 @@ CORRECTIONS = {
             U + "d/db/Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg/500px-Karl_Bryullov_%28Bryullo%29_-_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_-_Google_Art_Project.jpg",
             U + "f/f0/Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg/960px-Matrak%C3%A7%C4%B1_Nasuh_-_%C4%B0stanbul.jpg",
             U + "a/a5/Cupola_Duomo_Parma_Correggio.jpg/500px-Cupola_Duomo_Parma_Correggio.jpg",
+            U + "f/fc/DasUndbild.jpg/500px-DasUndbild.jpg",
+            U + "5/5f/Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg/500px-Catalu%C3%B1a._El_pescado%2C_por_Joaqu%C3%ADn_Sorolla.jpg",
         ],
     },
     # The stubs were re-emitted so public og:image/twitter:image metadata stops
