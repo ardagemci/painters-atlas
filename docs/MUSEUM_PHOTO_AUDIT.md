@@ -104,7 +104,36 @@ to a generative canvas cover. The validator reports each one as a notice.
 `private-collection` is a sentinel and is filtered out of the index; the other
 ten are real venues showing a generative cover where a building should be.
 
-## What would resolve this
+## Resolved 2026-08-08 (commit `d46d463`)
+
+**Three replaced, nine added, three left alone deliberately.**
+
+| | outcome |
+| --- | --- |
+| `kunsthistorisches`, `vatican-museums`, `st-bavo-cathedral` | replaced with landscape exterior views |
+| the nine venues that had no photograph | photographed |
+| `moa-museum-of-art` | **still none** — every Commons file is the escalator tunnel interior; keeps its generative cover rather than ship a wrong picture |
+| `kunsthalle-mannheim`, `groeningemuseum` | **keep their weak photographs** — no better exterior exists on Commons |
+
+**Every candidate was rendered in a real 16:10 card and looked at.** That is
+what rejected five otherwise plausible files: the top Groeningemuseum hit is a
+framed *painting*, Kunsthalle Mannheim and Ateneum's first candidates were
+gallery interiors, and both MOA and Tokyo National Museum returned interior
+shots despite filenames saying otherwise. Filename evidence failed here exactly
+as it failed on the Schwitters and Sorolla images (backlog **B6**).
+
+**A tracker was stripped.** Every URL returned by the Commons API carried
+`?utm_source=commons.wikimedia.org&utm_campaign=…`. A campaign tag on a shipped
+image URL is a third-party beacon, and this project self-hosts its fonts
+specifically to avoid those. The asset inventory caught it: the tagged URLs did
+not match their untagged rendered twins, so `metadata_only_unique` rose from 1
+to 13 and the problem surfaced as a count rather than shipping silently.
+
+**Three stub pages still served the replaced photograph** in `og:image` and
+`twitter:image`; `p/` was re-emitted, so link previews no longer show the
+inscription tablet.
+
+## What would resolve the remainder
 
 1. Replace the detail-shot photographs listed above with recognisable exterior
    views, landscape where one exists.
