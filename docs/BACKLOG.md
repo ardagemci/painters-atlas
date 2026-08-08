@@ -171,11 +171,20 @@ E3, showing up in a second surface.
 The owner's standing rule holds throughout: **museum cards show the building
 photograph, never an artwork**; the museum *page* hero is the artwork collage.
 
-## B5 · Caillebotte — *Man at His Window* artwork page
+## B5 · Caillebotte — *Young Man at His Window*  **[DONE 2026-08-08, `f9fd9b9`]**
 
-Caillebotte **is** already an artist with gallery images and **0** catalog
-records. This is a catalog record, not an artist addition — exactly the
-Direction A work already in flight.
+Shipped as his first catalog record. Two facts were corrected on the way: the
+artist record dated the work **1875** (it is 1876), and I had assumed the Musée
+d'Orsay held it — the **J. Paul Getty Museum** bought it at Christie's in 2021
+for $53m, after France had declared it a national treasure.
+
+**New open question it raised.** `build_seo.jxa.js` prefers a *catalogued* work
+for an artist stub's `og:image`, so adding this record switched Caillebotte's
+social preview from **Paris Street; Rainy Day** — his most famous painting — to
+this one. That rule will fire again on every artist whose first catalog record
+is not their best-known work, and it silently degrades the share image. **Owner
+decision:** should the share image follow the catalog, or should an artist keep
+a designated hero? Recorded in the `CATALOG_BATCHES` ledger so it is visible.
 
 ## B6 · Schwitters and Sorolla — wrong images  **[verified by eye 2026-08-08]**
 

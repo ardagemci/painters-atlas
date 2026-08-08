@@ -343,4 +343,20 @@ window.CATALOG = (window.CATALOG || []).concat([
           "Nothing moves, including the dog"],
   tags:["landscape","group-scene","everyday-life","quiet"] }
 
+,
+{ id:"young-man-at-his-window", tier:2,
+  title:"Young Man at His Window", worksKey:"Man at His Window",
+  artistId:"gustave-caillebotte", year:{ display:"1876", sort:1876 },
+  movements:["impressionism"], techniques:["oil-painting"], nation:"france",
+  museum:{ id:"getty", name:"The Getty Center", city:"Los Angeles" },
+  dims:"117 \u00d7 82 cm",
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg/960px-Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg",
+          page:"https://en.wikipedia.org/wiki/Young_Man_at_His_Window", status:"pd" },
+  coords:{ F:-85, D:-55, E:15, C:-15, M:-45 }, coordsSource:"override",
+  description:"Ren\u00e9 Caillebotte stands at the window of the family apartment on the rue de Miromesnil, hands in his pockets, watching a woman cross the boulevard below. He is the painter\u2019s brother, and he blocks the view we came for. Caillebotte gives the street an engineer\u2019s exactness and gives the man nothing but a dark silhouette. Zola, seeing it at the 1876 Impressionist exhibition, called that exactness \u201canti-artistic\u201d. The complaint was the point. The picture is about the act of looking, and it puts you behind someone who will not turn round.",
+  notice:["The figure blocks the view entirely",
+          "Zola called its exactness anti-artistic",
+          "A French national treasure, sold abroad in 2021"],
+  tags:["interior","quiet","lonely","everyday-life"] }
+
 ]);
