@@ -134,12 +134,42 @@ which has one artist), **Mehoffer**, **Aliye Berger**.
 
 ## B4 · Museum cards — cover photos don't fit
 
-Owner: *"Cover photos don't fit well into the card, there are ones that have
-empty space underneath the photo (Orsay, Louvre, Uffizi, etc.)"*
+Owner: *"Cover photos don't fit well into the card... checking whether all
+museums have an acceptable photo fitting well in the card."*
 
-A CSS aspect-ratio/object-fit defect on the museum index cards. Note the owner's
-standing rule: **museum cards show the building photograph, never an artwork**;
-the museum *page* hero is the artwork collage. Any fix keeps that.
+**Two problems, and only the first was CSS.**
+
+**(a) The frame defect — FIXED, commit `8aa3bba`.** The fill rule was scoped to
+`.aw-card`, so museum photographs and editorial list covers fell through to bare
+`img{max-width:100%}` inside a fixed 16:10 box. Wide photographs left a strip
+beneath; portrait ones overflowed and clipped. Verified in-browser: 104 of 104
+cards now fill exactly, and the check was confirmed non-vacuous by disabling the
+rule in-page (104 of 104 mismatched, worst gap 237.9px).
+
+**(b) The photographs themselves — OPEN, and this is the real answer to the
+owner's question.** All 104 were measured; full table in
+`docs/MUSEUM_PHOTO_AUDIT.md`. **Only 23 of 104 sit comfortably in a 16:10
+frame.** 22 are portrait, 6 are wider than 1.90.
+
+More important than the ratios: several are **architectural detail shots that do
+not read as the building at any crop** — `kunsthistorisches` is a close-up of a
+stone inscription tablet, `vatican-museums` a side doorway in a brick wall,
+`kunsthalle-mannheim` a red wall at close range. Meanwhile `munch`, the most
+extreme ratio in the whole set at 0.56, works perfectly because the photograph
+carries the museum's name in lit signage. **Ratio does not predict whether a card
+works.** The remaining review needs eyes, not arithmetic.
+
+**Ten indexed venues have no photograph at all** and render a generative canvas
+where a building should be: `ateneum`, `kunstmuseum-basel`, `moa-museum-of-art`,
+`national-museum-korea`, `national-museum-warsaw`, `ngma-new-delhi`,
+`pera-museum`, `santa-maria-novella`, `skagens-museum`, `tokyo-national-museum`.
+Note what that list is: Finland, Korea, Poland, India, Turkey, Japan, Denmark —
+**the venues holding the atlas's non-Western and smaller-nation works are the
+ones missing photographs.** That is the same collecting-history skew recorded in
+E3, showing up in a second surface.
+
+The owner's standing rule holds throughout: **museum cards show the building
+photograph, never an artwork**; the museum *page* hero is the artwork collage.
 
 ## B5 · Caillebotte — *Man at His Window* artwork page
 
@@ -147,14 +177,39 @@ Caillebotte **is** already an artist with gallery images and **0** catalog
 records. This is a catalog record, not an artist addition — exactly the
 Direction A work already in flight.
 
-## B6 · Schwitters and Sorolla
+## B6 · Schwitters and Sorolla — wrong images  **[verified by eye 2026-08-08]**
 
-Both **already exist** as artists with gallery images and no catalog records.
-Same as B5: catalog records, not artist additions.
+Both **already exist** as artists with gallery images and no catalog records, so
+the additions are catalog work, not artist additions. But the owner reported the
+images as inappropriate, and all six were downloaded and **looked at**:
 
-**One complication:** Schwitters' shipped gallery image is one of the 20
-confirmed mismatches — *a photograph of Schwitters*, not a work by him. It needs
-replacing before a record can be built on it.
+| Artwork | Image | Verdict |
+| --- | --- | --- |
+| Schwitters — *Merzbild 1A* | the assemblage | correct |
+| Schwitters — *The Merzbau* | photograph of the installation | **correct** — the Merzbau was destroyed in 1943 and survives only in photographs |
+| Schwitters — *Ursonate* | `Kurt_Schwitters_1927.jpg` | **WRONG** — a photographic portrait of Schwitters standing in for a sound poem |
+| Sorolla — *Walk on the Beach* | the painting | correct |
+| Sorolla — *Sad Inheritance* | the painting | correct |
+| Sorolla — *Vision of Spain* | `visione della spagna ... 02.JPG` | **WRONG** — a gallery installation shot: ceiling, floor, orange walls, the murals small on the far side of a room |
+
+**Two to replace, not six.**
+
+*Ursonate* has no defensible image at all — it is a **sound poem**, and the
+honest options are a page of the published score (Merz 24, 1932) or removing the
+entry from the gallery. Substituting a portrait of the author is the same
+category error the atlas already corrected elsewhere.
+
+*Vision of Spain* is a **fourteen-panel mural cycle** at the Hispanic Society;
+no single frame represents it. Either a single named panel is chosen and
+labelled as that panel, or the entry is retitled to admit it is the room.
+
+**Instrument note.** Run through `match_verdict()` without `meta` or
+`article_title`, the matcher **rejected the correct** Merzbild (its filename does
+not contain the artist's name) and **did not flag either wrong image**. That is
+consistent with **A2** — the detector keys on the filename, and both wrong files
+are named plausibly. Called with its full inputs it may do better; the point
+stands that filename evidence did not survive contact with the pictures.
+
 
 ---
 
