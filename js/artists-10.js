@@ -135,7 +135,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","glazing"], style:"impressionist",
   palette:["#8a9bb0","#d9d3c4","#5e6e7a","#b06a42","#2e3440"],
   tagline:"Paris in the rain — the Impressionist who bankrolled Impressionism",
-  works:[{t:"Paris Street; Rainy Day",y:"1877"},{t:"The Floor Scrapers",y:"1875"},{t:"Man at His Window",y:"1875"}],
+  works:[{t:"Paris Street; Rainy Day",y:"1877"},{t:"The Floor Scrapers",y:"1875"},{t:"Man at His Window",y:"1876"}],
   life:"Heir to a textile fortune, Caillebotte painted, collected, sailed, gardened and underwrote the Impressionist exhibitions — often paying the rent and buying the unsold canvases. He died of a stroke at forty-five pruning roses in his Petit-Gennevilliers garden, leaving France a bequest that became the core of the Musée d'Orsay.",
   career:"The Floor Scrapers — shirtless workmen planing a parquet against the light — was rejected by the Salon for 'vulgar subject matter'; Paris Street; Rainy Day mapped the new Haussmann city with photographic plunge and umbrella-grey poise. Long filed as 'patron who painted', he has been re-rated as one of the movement's most original eyes.",
   outside:"Champion yachtsman and boat designer, rose-grower, and stamp collector of legend — the collection he built with his brother ended up, via a famous sale, in the British Library's founding philatelic holdings. His bequest of some 65 Impressionist masterpieces was fought over by the academy for years; France finally took about two-thirds.",

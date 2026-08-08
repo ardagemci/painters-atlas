@@ -306,6 +306,12 @@ CATALOG_BATCHES = {
         "removed": [],
         "added": [
             # BEGIN catalog-5 pd images
+            # 2026-08-08, appended to catalog-5.js: Caillebotte, Young Man at
+            # His Window. Same behaviour as the 22 above - the file was already a
+            # gallery pool entry, so it moves surface rather than arriving:
+            # catalog_gallery_overlap 114 -> 115 while total_unique and
+            # rendered_unique do not move.
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg/960px-Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg/500px-Osman_Hamdi_Bey_-_The_Tortoise_Trainer_-_Google_Art_Project.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Jan_Matejko%2C_Sta%C5%84czyk.jpg/500px-Jan_Matejko%2C_Sta%C5%84czyk.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg/500px-Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg",
@@ -349,6 +355,12 @@ CATALOG_BATCHES = {
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tizian_041.jpg/500px-Tizian_041.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Gallen-Kallela_The_defence_of_the_Sampo.png/500px-Gallen-Kallela_The_defence_of_the_Sampo.png",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg/500px-Giotto_di_Bondone_-_Scenes_with_decorative_bands_-_WGA09284.jpg",
+            # 2026-08-08 side-effect of the Caillebotte record: build_seo.jxa.js
+            # prefers a catalogued work for an artist stub's og:image, so
+            # p/artist/gustave-caillebotte.html switched from Paris Street;
+            # Rainy Day to Young Man at His Window. Recorded because it is a
+            # real change to what a scraper is handed, not a rights event.
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/500px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg",
         ],
         "added": [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg/500px-Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg",
@@ -360,6 +372,11 @@ CATALOG_BATCHES = {
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Reza_Abbasi_-_Two_Lovers_%281630%29.jpg/500px-Reza_Abbasi_-_Two_Lovers_%281630%29.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gallen_Kallela_Lemminkainens_Mother.jpg/500px-Gallen_Kallela_Lemminkainens_Mother.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/500px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
+            # 2026-08-08: the new p/artwork/young-man-at-his-window.html stub
+            # carries this file as og:image/twitter:image. It was already a
+            # rendered gallery asset, so this is a second surface for it and
+            # total_unique still does not move.
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg/960px-Gustave_Caillebotte_-_Jeune_homme_%C3%A0_sa_fen%C3%AAtre_%28B_32%29.jpg",
         ],
     },
 }
@@ -493,7 +510,7 @@ class TestAssetInventory(unittest.TestCase):
         self.assertEqual(c["total_unique"], 807)
         self.assertEqual(c["rendered_unique"], 806)      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
-        self.assertEqual(c["catalog_gallery_overlap"], 114)   # unchanged
+        self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -564,7 +581,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 279)
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 280)
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
