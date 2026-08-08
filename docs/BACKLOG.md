@@ -177,14 +177,39 @@ Caillebotte **is** already an artist with gallery images and **0** catalog
 records. This is a catalog record, not an artist addition — exactly the
 Direction A work already in flight.
 
-## B6 · Schwitters and Sorolla
+## B6 · Schwitters and Sorolla — wrong images  **[verified by eye 2026-08-08]**
 
-Both **already exist** as artists with gallery images and no catalog records.
-Same as B5: catalog records, not artist additions.
+Both **already exist** as artists with gallery images and no catalog records, so
+the additions are catalog work, not artist additions. But the owner reported the
+images as inappropriate, and all six were downloaded and **looked at**:
 
-**One complication:** Schwitters' shipped gallery image is one of the 20
-confirmed mismatches — *a photograph of Schwitters*, not a work by him. It needs
-replacing before a record can be built on it.
+| Artwork | Image | Verdict |
+| --- | --- | --- |
+| Schwitters — *Merzbild 1A* | the assemblage | correct |
+| Schwitters — *The Merzbau* | photograph of the installation | **correct** — the Merzbau was destroyed in 1943 and survives only in photographs |
+| Schwitters — *Ursonate* | `Kurt_Schwitters_1927.jpg` | **WRONG** — a photographic portrait of Schwitters standing in for a sound poem |
+| Sorolla — *Walk on the Beach* | the painting | correct |
+| Sorolla — *Sad Inheritance* | the painting | correct |
+| Sorolla — *Vision of Spain* | `visione della spagna ... 02.JPG` | **WRONG** — a gallery installation shot: ceiling, floor, orange walls, the murals small on the far side of a room |
+
+**Two to replace, not six.**
+
+*Ursonate* has no defensible image at all — it is a **sound poem**, and the
+honest options are a page of the published score (Merz 24, 1932) or removing the
+entry from the gallery. Substituting a portrait of the author is the same
+category error the atlas already corrected elsewhere.
+
+*Vision of Spain* is a **fourteen-panel mural cycle** at the Hispanic Society;
+no single frame represents it. Either a single named panel is chosen and
+labelled as that panel, or the entry is retitled to admit it is the room.
+
+**Instrument note.** Run through `match_verdict()` without `meta` or
+`article_title`, the matcher **rejected the correct** Merzbild (its filename does
+not contain the artist's name) and **did not flag either wrong image**. That is
+consistent with **A2** — the detector keys on the filename, and both wrong files
+are named plausibly. Called with its full inputs it may do better; the point
+stands that filename evidence did not survive contact with the pictures.
+
 
 ---
 
