@@ -1533,7 +1533,7 @@ function museumCard(v){
   const cw = works.find(w => w.image && w.image.src && w.image.status === "pd");
   const fa = works[0] && Ax[works[0].artistId];
   const note = MNOTES[v.id];
-  return `<article class="card list-card" data-href="#/museum/${v.id}">
+  return `<article class="card list-card mu-card" data-href="#/museum/${v.id}">
     <div class="card-art">${note && note.photo
       ? `<img loading="lazy" src="${note.photo.src}" alt="${esc(v.name)}">`
       : (fa ? canvasTag(fa.style, fa.palette, v.id, coverLabel(v.name)) : "")}</div>
