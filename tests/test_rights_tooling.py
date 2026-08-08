@@ -434,6 +434,13 @@ MUSEUM_PHOTOGRAPHS = {
             U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
             U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
             U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+            # 2026-08-08, second pass: moa-museum-of-art. The first sweep left it
+            # on a generative cover because every Commons file found was the
+            # escalator tunnel. A second series (231007) turned out to hold real
+            # exteriors, and this one is what both the English and Japanese
+            # Wikipedia articles use as their lead. Every indexed venue now has a
+            # building photograph; the generative fallback is unused.
+            U + "2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
         ],
     },
     "prerender_metadata_refs": {
@@ -455,6 +462,13 @@ MUSEUM_PHOTOGRAPHS = {
             U + "c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
             U + "d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
             U + "f/f8/Vatican_Museums_entrance_2016.jpg/960px-Vatican_Museums_entrance_2016.jpg",
+            # 2026-08-08, second pass: moa-museum-of-art. The first sweep left it
+            # on a generative cover because every Commons file found was the
+            # escalator tunnel. A second series (231007) turned out to hold real
+            # exteriors, and this one is what both the English and Japanese
+            # Wikipedia articles use as their lead. Every indexed venue now has a
+            # building photograph; the generative fallback is unused.
+            U + "2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
         ],
     },
 }
@@ -555,8 +569,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 807)
-        self.assertEqual(c["rendered_unique"], 806)      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 808)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 807)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -633,7 +647,7 @@ class TestSampleBasis(unittest.TestCase):
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 113)
+        self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 528)
