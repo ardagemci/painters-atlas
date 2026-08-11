@@ -81,53 +81,37 @@ Verified in-browser, both viewports and both themes: click, Escape (focus
 returns to the trigger), ArrowDown/Up/Home/End, Tab in all three directions,
 outside-click, and the active state across all 13 routes. No console errors.
 
-## B2 · Actuality — the visual-rhyme ritual  **[owner refined 2026-08-07]**
+## B2 · Actuality — the visual-rhyme ritual  **[SPECIFIED 2026-08-08 — 2 owner decisions block the first entry]**
 
-**Not live news on the site.** A **monthly editorial ritual** that adds (a) a set
-of lists drawn from the existing catalog matching global news, and (b) a homepage
-card — clickable through to a full page — pairing **one artwork** with one piece
-of actuality, written as a brief, funny, educational article.
+Full specification: **`docs/ACTUALITY.md`** — data shape, surfaces, cadence, tone
+rule, living-people rule, and the worked example.
 
-**The mechanic is visual rhyme, not thematic association.** The reference is
-`@artsbutmakeitsports`. The joke is not "basketball, so let us find a sporting
-picture"; it is *this photograph and this painting are the same composition*, or
-the same situation four centuries apart. My earlier note framed this as thematic
-("LeBron to Philadelphia → Eakins") — **that is the weaker version and is
-superseded.**
+**The worked example turned out to be entirely in the repository already.**
+`jacques-louis-david → "The Coronation of Napoleon"` is a gallery image today,
+and his prose already says the picture *"contains a diplomatic fiction"*. The
+painting's own joke is the one the format needs: **Napoleon crowns himself while
+the Pope sits behind him blessing nothing.** A brand hiring a famous face to
+bless a decision it had already made is that picture exactly.
 
-**A worked example that already exists in the atlas.** Owner's imagined case: a
-luxury house appoints a famous name to a creative role; pair it with something
-like a pope blessing Napoleon. That painting is real — David's *Coronation of
-Napoleon* (Louvre) — and `js/artists-3.js` already carries David and already says
-his *Coronation* **"contains a diplomatic fiction"**: Napoleon crowns himself
-while Pius VII sits behind him with his hand raised, and David painted in a
-mother who boycotted the ceremony. A brand hiring a celebrity to bless a decision
-it had already made is *exactly* that picture. The rhyme, the history and the
-joke are all already in the repository.
+**Two decisions block shipping, and both are yours:**
 
-**Why this is strong for Pigment specifically:**
-- It needs **no new imagery** — the constraint that kills illustrating the news
-  is what forces the mechanic to be good.
-- It gives the **12 placeholder lists** (owner-declared, awaiting replacement) a
-  reason to exist and a renewable supply.
-- It is the most shareable surface the product would have, and share surfaces
-  were deferred in PIG-001 pending exactly this kind of content.
-- Gen-Z art-history learning through recognition rather than instruction, which
-  is closer to Pigment's "figures you can identify with" than a survey is.
+1. **The tone rule.** `STYLE_GUIDE` forbids humour where warning or factual
+   qualification is required, and the atlas keeps the record on hard history. The
+   proposed rule is in `ACTUALITY.md` §5: comic register only when *both* the
+   news item and the painting can carry it, `sensitive:true` by default when
+   unsure. **Nothing should ship before this is ratified** — the failure mode is
+   a Pigment joke over a painting of someone's suffering, which no later edit
+   repairs.
+2. **Naming living people.** The copy will name real people. OD-5 covers images
+   and art-historical claims and says nothing about this. Proposed limits are in
+   §6.
 
-**Constraints that still hold:**
-1. No backend. Monthly cadence via curation and deploy; copy must never imply
-   live awareness.
-2. **Tone is a real risk.** `STYLE_GUIDE` forbids humour where warning, consent
-   or factual qualification is required, and the atlas "keeps the record" on hard
-   history (Degas's antisemitism, Gauguin's colonial ledger). A funny voice must
-   not be allowed to reach a painting whose subject cannot carry it. The rule
-   should be explicit before the first one ships.
-3. **Living people are named in the copy.** A joke about a real person's
-   appointment is commentary, not a factual claim, but the line between the two
-   needs stating — and nothing in the current OD-5 language rules covers it.
-4. Not in any phase of `PIGMENT.md` §11. Reads as Phase 1 editorial; needs
-   placing.
+**And a blocker I cannot remove myself:** a real entry must match a real, current
+news story. I have no verified current-news source here, and inventing a
+plausible one to demonstrate the format would be the same class of fabrication
+this project's standards exist to stop. **Everything in §§4–7 can be built and
+tested first**, using the David *Coronation* pairing as the fixture; the first
+published entry needs you to name the story, or to approve a source Pigment reads.
 
 ## B3 · The painters the atlas already named  **[DONE 2026-08-08]**
 
