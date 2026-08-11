@@ -19,7 +19,7 @@ catch(e){ out.push("app.js SYNTAX ERROR: " + e.message); }
 
 // load data files (eval = syntax + execution check)
 ["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
- "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js","artists-14.js","artists-15.js","artists-16.js","artists-17.js"]
+ "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js","artists-14.js","artists-15.js","artists-16.js","artists-17.js","artists-18.js"]
   .forEach(f => { try { eval(read(base + "js/" + f)); } catch(e){ out.push(f + " ERROR: " + e.message); } });
 /* The gallery pool. Loaded so an artist's optional `hero` can be checked against
    the works that actually have an image, rather than against a title list. */

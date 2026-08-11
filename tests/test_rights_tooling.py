@@ -537,6 +537,56 @@ ARTIST_HEROES = {
 }
 
 
+#: SIXTH LEDGER — the four painters the atlas already named, 2026-08-08.
+#:
+#: Backlog B3, and corpus growth rather than a correction: Giovanni Bellini,
+#: Andrea del Verrocchio, Giorgio Vasari and Jean-Léon Gérôme. Each was cited in
+#: Pigment's own prose — in another painter's life text, in a movement blurb, or
+#: in the name of the curator role itself — with no record of their own.
+#:
+#: Kept separate from CONTENT_LANE, which records one specific commit (ef8b2b3)
+#: and says so; folding a second growth event into it would make that entry a lie
+#: about its own cause.
+#:
+#: 15 gallery images arrive, all public domain, all verified by rendering them
+#: and looking. 4 artist stubs follow, each carrying its artist's first listed
+#: work as og:image under the hero rule in ARTIST_HEROES above. Nothing moves on
+#: the catalog surface: none of the four has a catalog record yet, so
+#: catalog_gallery_overlap must stay at 115 — if it moves, a record was added
+#: that this ledger did not declare.
+B3_NAMED_PAINTERS = {
+    "gallery_rendered": {
+        "removed": [],
+        "added": [
+            U + "0/08/Giovanni_Bellini_St_Francis_in_Ecstasy.jpg/500px-Giovanni_Bellini_St_Francis_in_Ecstasy.jpg",
+            U + "1/15/Workshop_of_Andrea_del_Verrocchio._Tobias_and_the_Angel._33x26cm._1470-75._NG_London.jpg/500px-Workshop_of_Andrea_del_Verrocchio._Tobias_and_the_Angel._33x26cm._1470-75._NG_London.jpg",
+            U + "1/17/Madonna-with-Child-by-Verrocchio.jpg/500px-Madonna-with-Child-by-Verrocchio.jpg",
+            U + "4/48/Vasari-Lorenzo.jpg/500px-Vasari-Lorenzo.jpg",
+            U + "5/52/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Bonaparte_Before_the_Sphinx.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Bonaparte_Before_the_Sphinx.jpg",
+            U + "6/60/Pala_di_san_zaccaria_01.jpg/500px-Pala_di_san_zaccaria_01.jpg",
+            U + "6/6b/Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg/500px-Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg",
+            U + "9/98/Vasari%2C_perseo_e_andromeda%2C_studiolo.jpg/500px-Vasari%2C_perseo_e_andromeda%2C_studiolo.jpg",
+            U + "a/a9/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg",
+            U + "b/bc/Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg/500px-Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
+            U + "c/c3/Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg/500px-Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg",
+            U + "c/c5/Jean-Leon_Gerome_Pollice_Verso.jpg/500px-Jean-Leon_Gerome_Pollice_Verso.jpg",
+            U + "d/d7/Feast_of_the_Gods_Giovanni_Bellini_1514.jpg/500px-Feast_of_the_Gods_Giovanni_Bellini_1514.jpg",
+            U + "d/d9/Italien_humanists_by_Giorgio_Vasari.jpg/500px-Italien_humanists_by_Giorgio_Vasari.jpg",
+            U + "e/ea/Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg/500px-Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg",
+        ],
+    },
+    "prerender_metadata_refs": {
+        "removed": [],
+        "added": [
+            U + "6/6b/Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg/500px-Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg",
+            U + "a/a9/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg",
+            U + "b/bc/Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg/500px-Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
+            U + "d/d9/Italien_humanists_by_Giorgio_Vasari.jpg/500px-Italien_humanists_by_Giorgio_Vasari.jpg",
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -554,7 +604,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -584,8 +634,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 808)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 807)   # +1: the same      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 823)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 822)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -665,7 +715,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 528)
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 543)
 
 
 class TestSuppression(unittest.TestCase):

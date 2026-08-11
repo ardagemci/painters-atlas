@@ -6,7 +6,7 @@ from pathlib import Path
 from pigment_coordinator.engine import Coordinator
 from pigment_coordinator.analysts import validate_analyst_packet
 from pigment_coordinator.errors import ConfigurationError, GateError, MessageValidationError, TransitionError
-from pigment_coordinator.gates import check_convergence
+from pigment_coordinator.gates import check_convergence, check_quality_review_text
 from pigment_coordinator.messages import validate_message
 from pigment_coordinator.providers import AnthropicProvider, FakeProvider, OpenAIProvider, ProviderRequest
 
@@ -67,7 +67,9 @@ class CoordinatorTest(unittest.TestCase):
 
         task_dir = self.repo / "protocol" / "tasks" / task_id
         (task_dir / "quality-review.md").write_text(
-            "GATE 2: CERTIFIED\nOPEN CRITICAL: 0\nOPEN MAJOR: 0\n",
+            "# Quality Review — PIG-TEST\n\n"
+            "## 7. Findings\nOPEN CRITICAL: 0\nOPEN MAJOR: 0\n\n"
+            "## 8. Gate 2 verdict\n**CERTIFIED**\n",
             encoding="utf-8",
         )
         for name in (
@@ -354,6 +356,80 @@ class CoordinatorTest(unittest.TestCase):
             "owner_report": {"visibility": "audit_only", "title": "Theory Liaison Report", "markdown": "No owner attention required."},
             "created_at": "2026-07-20T10:00:00Z",
         }
+
+
+CERTIFIED_REV = """# Quality Review — PIG-001
+
+## 7. Findings
+OPEN CRITICAL: 0
+OPEN MAJOR: 0
+
+## 8. Gate 2 verdict
+**CERTIFIED** — all criteria pass, validator passes, evidence attached.
+"""
+
+
+class TestQualityReviewVerdict(unittest.TestCase):
+    """C6. The gate used to grep the whole append-only file for the string
+    'GATE 2: CERTIFIED', so it failed in the dangerous direction: it passed
+    reviews it should have blocked. Each test below is one way it was fooled."""
+
+    def test_certified_review_passes(self):
+        self.assertEqual(check_quality_review_text(CERTIFIED_REV), [])
+
+    def test_archived_certification_does_not_certify_a_blocked_revision(self):
+        """The file is append-only. Revision 1 was CERTIFIED; revision 2 is
+        BLOCKED. The operative verdict is revision 2's."""
+        # rev 1 uses the literal string the OLD gate looked for, so this test is
+        # faithful to the real failure: this exact document passed the old gate.
+        rev1 = ("# Quality Review — PIG-001\n\n## 7. Findings\n"
+                "OPEN CRITICAL: 0\nOPEN MAJOR: 0\n\n"
+                "## 8. Gate 2 verdict\nGATE 2: CERTIFIED\n")
+        text = rev1 + """
+# Quality Review — PIG-001 (rev 2)
+
+## 7. Findings
+OPEN CRITICAL: 0
+OPEN MAJOR: 0
+
+## 8. Gate 2 verdict
+**BLOCKED** — the contrast finding reopened.
+"""
+        failures = check_quality_review_text(text)
+        self.assertTrue(any("BLOCKED" in f for f in failures), failures)
+
+    def test_prose_describing_a_verdict_is_not_a_verdict(self):
+        """This is how the defect was actually found: a sentence describing the
+        bug contained the very string the gate was looking for."""
+        text = """# Quality Review — PIG-001
+
+## 7. Findings
+OPEN CRITICAL: 0
+OPEN MAJOR: 0
+
+## 8. Gate 2 verdict
+The coordinator gate passes a report whose verdict reads BLOCKED because a
+sentence in it contains GATE 2: CERTIFIED. That is the finding.
+"""
+        failures = check_quality_review_text(text)
+        self.assertTrue(failures, "prose mentioning CERTIFIED must not certify")
+
+    def test_a_section_naming_both_verdicts_is_not_certification(self):
+        text = CERTIFIED_REV.replace(
+            "**CERTIFIED** — all criteria pass, validator passes, evidence attached.",
+            "**CERTIFIED** for the CSS units.\n**BLOCKED** for the accessibility units.")
+        failures = check_quality_review_text(text)
+        self.assertTrue(any("BLOCKED" in f for f in failures), failures)
+
+    def test_missing_verdict_section_fails(self):
+        failures = check_quality_review_text("# Quality Review — PIG-001\n\nNo verdict here.\n")
+        self.assertTrue(any("no 'Gate 2 verdict' section" in f for f in failures), failures)
+
+    def test_nonzero_open_findings_fail(self):
+        text = CERTIFIED_REV.replace("OPEN CRITICAL: 0", "OPEN CRITICAL: 2")
+        failures = check_quality_review_text(text)
+        self.assertTrue(any("OPEN CRITICAL" in f for f in failures), failures)
+
 
 
 if __name__ == "__main__":
