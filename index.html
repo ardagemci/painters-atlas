@@ -24,7 +24,7 @@
 /* restore saved theme before first paint to avoid flash */
 try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-theme") || "dark"; }catch(e){}
 </script>
-<link rel="stylesheet" href="css/styles.css?v=20260808-cards">
+<link rel="stylesheet" href="css/styles.css?v=20260808-nav2">
 </head>
 <body>
 <button class="skip-link" data-skipto="main">Skip to the atlas</button>
@@ -35,15 +35,25 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
     <span class="brand-dot" aria-hidden="true"></span>
     <span class="brand-text">Pigment<span class="brand-sub">an atlas of painters</span></span>
   </a>
-  <nav class="main-nav" id="main-nav">
+  <!-- Eight top-level destinations wrapped to two lines, and Movements and
+       Nations were each listed twice: once here and again inside the Explore
+       hub. The four taxonomy indexes and the three whole-atlas instruments now
+       live behind one disclosure, which ends the duplication rather than hiding
+       it, and Taste finally has a home outside the footer.
+
+       This is a W3C APG *disclosure navigation* menu, not a `menu`/`menuitem`
+       widget: the children stay ordinary links in an ordinary list, so a screen
+       reader reads them the way it read the flat nav that the owner's VoiceOver
+       sessions signed off. The button adds aria-expanded and nothing else. -->
+  <nav class="main-nav" id="main-nav" aria-label="Main">
     <a href="#/artists" data-nav="artists">Artists</a>
-    <a href="#/lists" data-nav="lists">Lists</a>
     <a href="#/museums" data-nav="museums">Museums</a>
-    <a href="#/explore" data-nav="explore">Explore</a>
-    <a href="#/movements" data-nav="movements">Movements</a>
-    <a href="#/techniques" data-nav="techniques">Techniques</a>
-    <a href="#/eras" data-nav="eras">Eras</a>
-    <a href="#/nations" data-nav="nations">Nations</a>
+    <a href="#/lists" data-nav="lists">Lists</a>
+    <div class="nav-group" id="explore-group">
+      <button type="button" class="nav-disclosure" id="explore-btn"
+              aria-expanded="false" aria-controls="explore-panel" data-nav="explore">Explore<span class="nav-caret" aria-hidden="true"></span></button>
+    </div>
+    <a href="#/taste" data-nav="taste">Taste</a>
   </nav>
   <div class="search-wrap">
     <!-- AT-4: VoiceOver announced this field as "list box pop-up, menu pop-up
@@ -59,6 +69,37 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
   </div>
   <button id="theme-toggle" aria-label="Light mode" aria-pressed="false" title="Dark / light mode">☀</button>
 </header>
+
+<!-- The Explore disclosure panel, controlled by #explore-btn in the header.
+
+     It lives here at body level rather than beside its button, and that is
+     forced, not stylistic. `.site-header` carries `backdrop-filter`, which makes
+     it the containing block for position:fixed descendants, so a panel inside it
+     was positioned against the header instead of the viewport; and on narrow
+     screens `.main-nav` is a horizontally scrolling row whose `overflow-x` and
+     mask clipped what was left. Measured at 390px the panel rendered as a
+     sliver under the header. At body level, position:fixed means the viewport
+     and nothing clips it.
+
+     The cost is that it no longer follows the button in DOM order, so Tab from
+     the button would skip it. js/app.js restores that: Tab from the trigger
+     enters the panel, Shift+Tab from the first link returns to the trigger, and
+     Tab off the last link continues to whatever follows the trigger. -->
+<div class="nav-panel" id="explore-panel" hidden>
+  <p class="np-head" id="np-browse">Browse</p>
+  <ul aria-labelledby="np-browse">
+    <li><a href="#/movements" data-nav="movements">Movements</a></li>
+    <li><a href="#/techniques" data-nav="techniques">Techniques</a></li>
+    <li><a href="#/eras" data-nav="eras">Eras</a></li>
+    <li><a href="#/nations" data-nav="nations">Nations</a></li>
+  </ul>
+  <p class="np-head" id="np-big">The big pictures</p>
+  <ul aria-labelledby="np-big">
+    <li><a href="#/explore" data-nav="explore">Everything at once</a></li>
+    <li><a href="#/timeline" data-nav="timeline">Timeline</a></li>
+    <li><a href="#/influences" data-nav="influences">Influences</a></li>
+  </ul>
+</div>
 
 <main id="app" class="view-enter" tabindex="-1"></main>
 
@@ -124,6 +165,6 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
 <script src="js/personas.js?v=20260716-taste1"></script>
 <script src="js/museums-1.js?v=20260808-moa"></script>
 <script src="js/photo-credits.js?v=20260808-moa"></script>
-<script src="js/app.js?v=20260808-cards"></script>
+<script src="js/app.js?v=20260808-nav2"></script>
 </body>
 </html>

@@ -2538,15 +2538,24 @@ document.addEventListener("click", e => {
   catch(err){ target.scrollIntoView(); }
 });
 
+/* The seven destinations that now live behind the Explore disclosure. Landing on
+   any of them lights the Explore trigger as well as the link inside the panel,
+   so the nav still tells you where you are even while the panel is shut. */
+const EXPLORE_CHILDREN = { movements:1, techniques:1, eras:1, nations:1, explore:1, timeline:1, influences:1 };
+
 function setNav(page){
   const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists",
-    explore:"explore", timeline:"explore", influences:"explore", movements:"movements", movement:"movements",
-    techniques:"techniques", technique:"techniques", eras:"eras", era:"eras", nations:"nations", nation:"nations" };
+    explore:"explore", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
+    techniques:"techniques", technique:"techniques", eras:"eras", era:"eras",
+    nations:"nations", nation:"nations", taste:"taste", passport:"taste" };
+  const cur = map[page];
   document.querySelectorAll("#main-nav a").forEach(a => {
-    const cur = a.dataset.nav === map[page];
-    a.classList.toggle("active", cur);
-    if(cur) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");   /* C1 */
+    const on = a.dataset.nav === cur;
+    a.classList.toggle("active", on);
+    if(on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");   /* C1 */
   });
+  const btn = document.getElementById("explore-btn");
+  if(btn) btn.classList.toggle("active", !!EXPLORE_CHILDREN[cur]);
 }
 
 function animateCounters(){
@@ -2709,6 +2718,99 @@ if(mainNav) mainNav.addEventListener("focusin", e => {
   const over = a.getBoundingClientRect().right + ring - (nb.left + nb.width * 0.78);
   if(over > 0) mainNav.scrollLeft += Math.ceil(over);       /* ceil: never leave a subpixel of ring in the fade */
 });
+
+/* ---- the Explore disclosure (B1) ----
+   W3C APG disclosure-navigation behaviour. Deliberately NOT a menu widget: the
+   panel holds ordinary links in ordinary lists, so a screen reader reads them
+   exactly as it read the flat nav the owner's VoiceOver passes signed off. The
+   button contributes aria-expanded and nothing more.
+
+   The panel is position:fixed because on narrow screens .main-nav is a
+   horizontally scrolling row (overflow-x:auto) and an absolutely positioned
+   panel would be clipped by that scrollport. Fixed escapes it, at the cost of
+   having to place the panel ourselves and re-place it if the page moves under
+   it — hence the scroll/resize handlers, which only run while it is open. */
+const exploreBtn = document.getElementById("explore-btn");
+const explorePanel = document.getElementById("explore-panel");
+if(exploreBtn && explorePanel){
+  const panelLinks = () => [...explorePanel.querySelectorAll("a")];
+  const isOpen = () => exploreBtn.getAttribute("aria-expanded") === "true";
+
+  function placePanel(){
+    const r = exploreBtn.getBoundingClientRect();
+    /* measure before deciding: the panel may be wider than the room to its right */
+    const w = explorePanel.offsetWidth;
+    const left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
+    explorePanel.style.left = left + "px";
+    explorePanel.style.top  = Math.round(r.bottom + 6) + "px";
+  }
+  function openPanel(){
+    if(isOpen()) return;
+    explorePanel.hidden = false;
+    exploreBtn.setAttribute("aria-expanded", "true");
+    placePanel();
+    window.addEventListener("scroll", placePanel, true);
+    window.addEventListener("resize", placePanel);
+  }
+  function closePanel(refocus){
+    if(!isOpen()) return;
+    exploreBtn.setAttribute("aria-expanded", "false");
+    explorePanel.hidden = true;
+    window.removeEventListener("scroll", placePanel, true);
+    window.removeEventListener("resize", placePanel);
+    if(refocus) exploreBtn.focus();
+  }
+
+  /* The panel is not a descendant of the trigger's group — see the note in
+     index.html — so "did focus leave the widget" has to consider both. */
+  const exploreGroup = document.getElementById("explore-group");
+  const inWidget = t => !!t && (exploreGroup.contains(t) || explorePanel.contains(t));
+  const afterTrigger = () => exploreGroup.nextElementSibling;   /* the Taste link */
+
+  exploreBtn.addEventListener("click", () => { isOpen() ? closePanel(false) : openPanel(); });
+
+  exploreBtn.addEventListener("keydown", e => {
+    if(e.key === "ArrowDown" || e.key === "Down"){
+      e.preventDefault(); openPanel();
+      const first = panelLinks()[0]; if(first) first.focus();
+      return;
+    }
+    /* DOM order puts the panel at the end of the document, so an unmanaged Tab
+       would jump straight past it to Taste. Send it into the panel instead. */
+    if(e.key === "Tab" && !e.shiftKey && isOpen()){
+      const first = panelLinks()[0];
+      if(first){ e.preventDefault(); first.focus(); }
+    }
+  });
+
+  explorePanel.addEventListener("keydown", e => {
+    const links = panelLinks(), i = links.indexOf(document.activeElement);
+    if(e.key === "ArrowDown" || e.key === "Down"){ e.preventDefault(); links[(i + 1) % links.length].focus(); }
+    else if(e.key === "ArrowUp" || e.key === "Up"){ e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
+    else if(e.key === "Home"){ e.preventDefault(); links[0].focus(); }
+    else if(e.key === "End"){ e.preventDefault(); links[links.length - 1].focus(); }
+    else if(e.key === "Tab" && e.shiftKey && i === 0){ e.preventDefault(); exploreBtn.focus(); }
+    else if(e.key === "Tab" && !e.shiftKey && i === links.length - 1){
+      /* leaving the end of the panel continues where the trigger left off */
+      const next = afterTrigger();
+      if(next){ e.preventDefault(); closePanel(false); next.focus(); }
+    }
+  });
+
+  /* Escape closes from the trigger or from inside the panel and returns focus to
+     the trigger — losing focus to <body> is the failure the owner heard in the
+     earlier VoiceOver passes. */
+  const onEsc = e => { if(e.key === "Escape" || e.key === "Esc"){ e.preventDefault(); closePanel(true); } };
+  exploreGroup.addEventListener("keydown", onEsc);
+  explorePanel.addEventListener("keydown", onEsc);
+
+  /* Tabbing or clicking clean out of the widget shuts it, without stealing focus. */
+  document.addEventListener("focusin", e => { if(isOpen() && !inWidget(e.target)) closePanel(false); });
+  document.addEventListener("pointerdown", e => { if(isOpen() && !inWidget(e.target)) closePanel(false); });
+  /* Following a link inside the panel navigates; the panel must not stay open
+     over the page that arrives. */
+  explorePanel.addEventListener("click", e => { if(e.target.closest("a")) closePanel(false); });
+}
 
 window.addEventListener("hashchange", route);
 
