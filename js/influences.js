@@ -253,5 +253,29 @@ window.INFLUENCES = [
   ["mark-rothko","robert-motherwell","befriended"],
   ["clyfford-still","mark-rothko","influenced"],
   ["robert-motherwell","helen-frankenthaler","partners"],
-  ["josef-albers","kenneth-noland","taught"]
+  ["josef-albers","kenneth-noland","taught"],
+
+  /* ---- added 2026-08-08 with the four painters of backlog B3 ----
+     The edge schema is [from, to, type] and carries no source field, which is
+     backlog E2 and is not fixed here. What can be done without re-typing shipped
+     infrastructure is to say, once, what these particular edges rest on. All six
+     are documented pupillage — a teaching relationship named in the standard
+     reference literature, not a stylistic resemblance inferred from the pictures:
+       verrocchio -> leonardo   Leonardo was apprenticed in his workshop and
+                                painted at least one angel in The Baptism of Christ.
+       bellini -> giorgione     both named as his pupils in the Venetian record;
+       bellini -> titian        Bellini ran the workshop they came through.
+       gerome -> osman-hamdi-bey, -> mary-cassatt
+                                Gérôme's teaching roll at the École des Beaux-Arts.
+       michelangelo -> vasari   Vasari worked in his orbit, wrote his Life, and
+                                designed his tomb. This one is the weakest of the
+                                six: it is documented association and advocacy
+                                rather than formal training, and it is typed
+                                "influenced" for that reason. */
+  ["andrea-del-verrocchio","leonardo-da-vinci","taught"],
+  ["giovanni-bellini","giorgione","taught"],
+  ["giovanni-bellini","titian","taught"],
+  ["jean-leon-gerome","osman-hamdi-bey","taught"],
+  ["jean-leon-gerome","mary-cassatt","taught"],
+  ["michelangelo","giorgio-vasari","influenced"]
 ];

@@ -24,7 +24,7 @@ var window = {};
  "tier1-artists.js","lists-1.js","museums-1.js","photo-credits.js",
  "artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
  "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js",
- "artists-14.js","artists-15.js","artists-16.js","artists-17.js"]
+ "artists-14.js","artists-15.js","artists-16.js","artists-17.js","artists-18.js"]
   .forEach(f => eval(read(base + "js/" + f)));
 
 const SITE = "https://ardagemci.github.io/painters-atlas/";

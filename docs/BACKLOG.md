@@ -129,16 +129,34 @@ joke are all already in the repository.
 4. Not in any phase of `PIGMENT.md` §11. Reads as Phase 1 editorial; needs
    placing.
 
-## B3 · Vasari is not in the atlas
+## B3 · The painters the atlas already named  **[DONE 2026-08-08]**
 
-Verified 2026-08-07: **0 artist record, 0 gallery images, 0 catalog records.**
-The curator role is named after a painter the collection does not contain.
+Four records added (`js/artists-18.js`), all public domain, 15 gallery images,
+each verified by rendering it and looking:
 
-Also absent and *named by the atlas's own prose* (the Curator's "holes the atlas
-dug itself"): **Verrocchio** (in Leonardo's own life text), **Bellini** (taught
-both Giorgione and Titian, who are both present), **Gérôme** (taught *both*
-Ottoman painters), **Orozco** and **Siqueiros** (named in the `muralism` blurb,
-which has one artist), **Mehoffer**, **Aliye Berger**.
+- **Giovanni Bellini** — Giorgione and Titian both came through his workshop,
+  and both were already here without him.
+- **Andrea del Verrocchio** — named in Leonardo's own life text. His record says
+  plainly that *very few paintings are certainly his*, and that Vasari's famous
+  story about Leonardo's angel ending his painting career is unevidenced.
+- **Giorgio Vasari** — the curator role is named after him. His `rinascita`
+  became, via Michelet, the word *Renaissance*.
+- **Jean-Léon Gérôme** — taught **Osman Hamdi Bey and Mary Cassatt**, both
+  already in the atlas.
+
+**A new movement, `academicism`,** was added because Gérôme had nowhere correct
+to live: the atlas carried `orientalism` but no node for the system that produced
+it. **This is also a candidate answer to A3** — the Ottoman and Indian painters
+currently filed as Orientalists were trained inside the academic system, which
+describes them in a way `orientalism` does not. Still the owner's call.
+
+**Six influence edges added**, all documented pupillage rather than stylistic
+resemblance, with their basis written into `js/influences.js` — the schema has no
+source field (**E2**), so a comment is the only place to put it. The
+Michelangelo→Vasari edge is flagged in that comment as the weakest of the six.
+
+**Still absent** and named by the atlas's prose: Orozco, Siqueiros (both in the
+`muralism` blurb, which still has one artist), Mehoffer, Aliye Berger.
 
 ## B4 · Museum cards — cover photos don't fit
 

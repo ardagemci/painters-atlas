@@ -249,6 +249,19 @@ window.MOVEMENTS = [
     palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
     blurb:"The sultan's picture-workshops — history, festivals and cities painted jewel-bright on paper.",
     desc:"In the nakkaşhane, the palace workshop, teams of miniaturists illustrated chronicles, campaign routes and forty-day festivals in flat, luminous colour — art meant for the turning page, not the wall. From Matrakçı Nasuh's figure-less city portraits to Levni's tulip-era elegance, it is one of painting's great parallel traditions, with its own rules of space, time and gold." },
+  /* Added 2026-08-08 with Jean-Léon Gérôme (backlog B3), who had nowhere correct
+     to live: the atlas carried `orientalism` but no node for the academic system
+     that produced it. The label is retrospective and was largely pejorative when
+     coined — the Salon painters did not call themselves this — so the blurb says
+     what it was rather than what its enemies said. It may also be the answer to
+     backlog A3: the Ottoman and Indian painters currently filed as Orientalists
+     were trained inside this system, which is a defensible description of them
+     in a way that `orientalism` is not. That remains the owner's call. */
+  { id:"academicism", name:"Academicism", parent:null, period:"c. 1800–1900", style:"neoclassical",
+    palette:["#b8933f","#7d3a2c","#e6dac2","#39506b","#211d18"],
+    blurb:"The Salon system — training, hierarchy and finish, taught as a profession.",
+    desc:"For a century the European academies decided what a picture was: history at the top, still life at the bottom, drawing before colour, and a surface polished until the brush disappeared. It produced the most famous and best-paid painters alive — Gérôme, Cabanel, Meissonier — and it trained nearly everyone who later rebelled against it. Modernism wrote it out of the story so thoroughly that its stars vanished for most of the twentieth century; they are back now, admired for their craft and argued about for their subjects." },
+
   { id:"orientalism", name:"Orientalism", parent:null, period:"c. 1820–1910", style:"metaphysical",
     palette:["#1f6e8a","#d9a83e","#b05e32","#3e4a6e","#e8d9b4"],
     blurb:"Europe paints the 'East' — and Osman Hamdi Bey paints back.",

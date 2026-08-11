@@ -2460,5 +2460,73 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Brace%27s_Rock%2C_by_Fitz_Henry_Lane%2C_1864%2C_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester%2C_MA_-_DSC01239.jpg/500px-Brace%27s_Rock%2C_by_Fitz_Henry_Lane%2C_1864%2C_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester%2C_MA_-_DSC01239.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Brace%27s_Rock,_by_Fitz_Henry_Lane,_1864,_oil_on_canvas_-_Cape_Ann_Museum_-_Gloucester,_MA_-_DSC01239.jpg"
   }
+ },
+ "giovanni-bellini": {
+  "Doge Leonardo Loredan": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg/500px-Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini,_portrait_of_Doge_Leonardo_Loredan.jpg"
+  },
+  "St Francis in the Desert": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Giovanni_Bellini_St_Francis_in_Ecstasy.jpg/500px-Giovanni_Bellini_St_Francis_in_Ecstasy.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_St_Francis_in_Ecstasy.jpg"
+  },
+  "San Zaccaria Altarpiece": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pala_di_san_zaccaria_01.jpg/500px-Pala_di_san_zaccaria_01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pala_di_san_zaccaria_01.jpg"
+  },
+  "The Feast of the Gods": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Feast_of_the_Gods_Giovanni_Bellini_1514.jpg/500px-Feast_of_the_Gods_Giovanni_Bellini_1514.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Feast_of_the_Gods_Giovanni_Bellini_1514.jpg"
+  }
+ },
+ "andrea-del-verrocchio": {
+  "The Baptism of Christ": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg/500px-Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Andrea_del_Verrocchio,_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg"
+  },
+  "Madonna and Child": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Madonna-with-Child-by-Verrocchio.jpg/500px-Madonna-with-Child-by-Verrocchio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Madonna-with-Child-by-Verrocchio.jpg"
+  },
+  "Tobias and the Angel": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Workshop_of_Andrea_del_Verrocchio._Tobias_and_the_Angel._33x26cm._1470-75._NG_London.jpg/500px-Workshop_of_Andrea_del_Verrocchio._Tobias_and_the_Angel._33x26cm._1470-75._NG_London.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Workshop_of_Andrea_del_Verrocchio._Tobias_and_the_Angel._33x26cm._1470-75._NG_London.jpg"
+  }
+ },
+ "giorgio-vasari": {
+  "Six Tuscan Poets": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Italien_humanists_by_Giorgio_Vasari.jpg/500px-Italien_humanists_by_Giorgio_Vasari.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Italien_humanists_by_Giorgio_Vasari.jpg"
+  },
+  "Self-Portrait": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg/500px-Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg"
+  },
+  "Portrait of Lorenzo de' Medici": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Vasari-Lorenzo.jpg/500px-Vasari-Lorenzo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vasari-Lorenzo.jpg"
+  },
+  "Perseus and Andromeda": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vasari%2C_perseo_e_andromeda%2C_studiolo.jpg/500px-Vasari%2C_perseo_e_andromeda%2C_studiolo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vasari,_perseo_e_andromeda,_studiolo.jpg"
+  }
+ },
+ "jean-leon-gerome": {
+  "The Snake Charmer": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg"
+  },
+  "Pollice Verso": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jean-Leon_Gerome_Pollice_Verso.jpg/500px-Jean-Leon_Gerome_Pollice_Verso.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jean-Leon_Gerome_Pollice_Verso.jpg"
+  },
+  "Bonaparte Before the Sphinx": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Bonaparte_Before_the_Sphinx.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Bonaparte_Before_the_Sphinx.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Bonaparte_Before_the_Sphinx.jpg"
+  },
+  "Cleopatra and Caesar": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg/500px-Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg"
+  }
  }
 };
