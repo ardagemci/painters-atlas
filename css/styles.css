@@ -411,6 +411,60 @@ p{margin:0 0 1em}
 .main-nav a.active{color:var(--gold2);font-weight:700}
 .main-nav a.active::after{transform:scaleX(1);opacity:1;height:2px;background:var(--gold2)}
 
+/* ---- the Explore disclosure (B1) ----
+   The trigger is styled to sit in the row as one of the links; it is a <button>
+   because it opens something rather than going somewhere, and only a button
+   carries aria-expanded honestly. Everything inside the panel stays a link. */
+.nav-group{position:relative;display:flex}
+.nav-disclosure{
+  position:relative;display:inline-flex;align-items:center;gap:7px;
+  padding:8px 14px;border:0;border-radius:8px;background:none;cursor:pointer;
+  font:inherit;color:var(--body-ink);font-size:.86rem;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  transition:color .25s var(--ease);
+}
+.nav-disclosure::after{
+  content:"";position:absolute;left:14px;right:26px;bottom:4px;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.nav-disclosure:hover{color:var(--ink)}
+.nav-disclosure:hover::after{transform:scaleX(1);opacity:.55}
+.nav-disclosure.active{color:var(--gold2);font-weight:700}
+.nav-disclosure.active::after{transform:scaleX(1);opacity:1;height:2px;background:var(--gold2)}
+.nav-caret{
+  width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .25s var(--ease);
+}
+.nav-disclosure[aria-expanded="true"] .nav-caret{transform:translateY(1px) rotate(-135deg)}
+
+.nav-panel{
+  position:fixed;z-index:60;min-width:210px;
+  padding:12px 10px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel);box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.nav-panel[hidden]{display:none}
+.nav-panel ul{list-style:none;margin:0 0 2px;padding:0}
+/* .64rem matches .lc-kicker, the established kicker size in this design; the
+   .6rem first used here was smaller than anything else the atlas ships. */
+.nav-panel .np-head{
+  margin:2px 10px 5px;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold2);
+}
+/* a heading that follows a list is a new group: give it air and a rule, or
+   "The big pictures" reads as though it belongs to Nations above it. */
+.nav-panel ul + .np-head{margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+.nav-panel li{margin:0}
+.nav-panel a{
+  display:block;padding:7px 10px;border-radius:7px;
+  color:var(--body-ink);font-size:.82rem;letter-spacing:.03em;
+  text-transform:none;font-weight:500;
+}
+.nav-panel a::after{content:none}          /* no underline sweep in the panel */
+.nav-panel a:hover{background:var(--panel2);color:var(--ink)}
+.nav-panel a.active{color:var(--gold2);font-weight:700;background:var(--panel2)}
+html[data-theme="light"] .nav-panel{box-shadow:0 18px 40px rgba(60,48,30,.18)}
+
 /* ---- skip navigation & the route live region (AC15, AC17) ---- */
 .sr-only{
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;

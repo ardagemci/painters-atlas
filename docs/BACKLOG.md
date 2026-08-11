@@ -44,34 +44,42 @@ infrastructure.
 
 # B. New requests, 2026-08-07
 
-## B1 · Navigation — reduce, group, and stop overlapping
+## B1 · Navigation — reduce, group, stop overlapping  **[DONE 2026-08-08]**
 
-Owner: *"elegant and essential sections at nav, should not be so crowded and
-reduced to 1 line instead of 2, overlap between explore and different nav
-sections, maybe nav sections should have subsections to group multiple sections
-under one, taste or my profile section."*
+**Artists · Museums · Lists · Explore ▾ · Taste** — five destinations, one line
+(measured: one distinct row at 1280px, where eight items previously wrapped to
+two).
 
-Four distinct asks:
-1. **Fit one line.** Eight top-level destinations currently wrap to two.
-2. **Resolve the Explore overlap.** `#/explore` already contains the timeline,
-   influence graph, movement trees and nation map, and several of those are
-   *also* top-level nav items. The duplication is real.
-3. **Group under subsections.** Requires a menu pattern the site does not have —
-   note the accessibility cost: the current nav is a flat list of links, which is
-   the most robust thing for a screen reader. Any disclosure pattern needs
-   `aria-expanded` and keyboard semantics, and the owner's VoiceOver sessions are
-   the standard it must meet.
-4. **A Taste / My Profile destination.** Taste is currently footer-only. This is
-   the *Atlas Coherence Pass* item deferred during PIG-001 (see the deferred
-   register) — it is already specified there, not new work from scratch.
+All four of the owner's asks are answered:
+1. **One line.** Eight top-level items became five.
+2. **The Explore overlap is gone.** Movements and Nations were each listed
+   twice — top level *and* inside the Explore hub. The four taxonomy indexes and
+   the three whole-atlas instruments now live in one place, grouped **Browse**
+   (Movements, Techniques, Eras, Nations) and **The big pictures** (Everything at
+   once, Timeline, Influences).
+3. **Subsections exist**, as a W3C APG *disclosure navigation* menu — not a
+   `menu`/`menuitem` widget. The children stay ordinary links in labelled lists,
+   so a screen reader reads them the way it read the flat nav the owner's
+   VoiceOver passes signed off; the button adds `aria-expanded` and nothing else.
+4. **Taste has a home** outside the footer.
 
-**Prior art in-repo:** the Curator's §4.3 conceptual tree in the original theory
-brief (Discover / Browse / Explore relationships / Taste / Search) was written for
-exactly this and explicitly marked "a conceptual model, not an instruction to
-create routes". Start there.
+Artist-first entry (OD-2) is untouched: Artists is still first.
 
-**Constraint:** the shipped artist-first entry hierarchy is owner-ratified
-(OD-2). A nav restructure must not quietly overturn it.
+**The panel had to leave the header, and that was forced.** `.site-header`
+carries `backdrop-filter`, which makes it the containing block for
+`position:fixed` descendants, so a panel inside it positioned itself against the
+header rather than the viewport; and on narrow screens `.main-nav` is a
+horizontally scrolling row whose `overflow-x` and mask clipped what remained.
+**Measured at 390px, the first build rendered the panel as a sliver under the
+header** — it looked correct at 1280px and was broken on a phone. The panel now
+sits at body level, where `position:fixed` means the viewport. The cost is DOM
+adjacency, so Tab handling is explicit: Tab from the trigger enters the panel,
+Shift+Tab from the first link returns to it, Tab off the last link continues to
+Taste.
+
+Verified in-browser, both viewports and both themes: click, Escape (focus
+returns to the trigger), ArrowDown/Up/Home/End, Tab in all three directions,
+outside-click, and the active state across all 13 routes. No console errors.
 
 ## B2 · Actuality — the visual-rhyme ritual  **[owner refined 2026-08-07]**
 
