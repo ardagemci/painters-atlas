@@ -237,10 +237,15 @@ changed the answer, after the museum photographs and the Caillebotte attribution
 - **C4** `tarashikomi` technique — proposed, not built.
 - **C5** The `abstract` tag and §5 vocabulary enforcement — would currently fail
   on ~130 shipped records; the Curator says sequence it after normalisation.
-- **C6** The Coordinator's quality gate is **non-functional**: it greps an
-  append-only file for verdict strings, so it now passes on the archived
-  "CERTIFIED" string regardless of the current verdict. Its scan must parse a
-  single operative block.
+- **C6 · DONE 2026-08-08.** The Coordinator's quality gate no longer greps.
+  `check_quality_review_text()` locates the operative revision (text after the
+  last `# Quality Review` heading), then its last `Gate 2 verdict` section, and
+  reads the verdict only from a line that *starts* with it — so prose about a
+  verdict is not a verdict, and BLOCKED anywhere in that section fails even if
+  CERTIFIED is also present. Six tests, each one a way the old gate was fooled.
+  Non-vacuity demonstrated: a document with rev 1 CERTIFIED and rev 2 BLOCKED
+  **passed** the old gate and fails the new one; so does the sentence that
+  described the bug.
 
 ---
 
