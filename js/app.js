@@ -1691,6 +1691,26 @@ function monthLabel(iso){
   return ["January","February","March","April","May","June","July","August",
           "September","October","November","December"][+m[2]-1] + " " + m[1];
 }
+/* Rhymes — the photo-to-painting comparison (ACTUALITY.md type 1). Named for
+   the mechanic the spec already describes: the news photograph and the painting
+   are the same picture. Empty until the first one ships, and the empty state
+   says why rather than pretending the section is merely new. */
+function viewRhymes(){
+  document.title = "Rhymes — Pigment";
+  const rhymes = ACT.filter(e => e.kind === "article");
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Once a month</div>
+    <h1 class="display">Rhymes</h1>
+    <p class="page-lede">A photograph from the news and a painting that turns out to be the same picture — the same composition, or the same human situation four centuries earlier. The writing is about the painting; the photograph just opens the door.</p>
+  </div>
+  ${rhymes.length ? `<div class="cards wide">${rhymes.map(actualityCard).join("")}</div>`
+   : `<div class="page-head" style="padding-top:0">
+        <p class="page-lede">Nothing here yet, and the reason is worth saying: Pigment cannot show you the photograph. Press images are licensed, and a repainting of one is still a derivative of it. A rhyme has to be <em>described</em> well enough that you see it — which is a writing problem, and it is being worked on.</p>
+        <p class="page-lede"><a href="#/actuality">The Actuality lists</a> are the part of this that already works.</p>
+      </div>`}`;
+}
+
 function viewActuality(){
   document.title = "Actuality — Pigment";
   return `
@@ -1736,18 +1756,26 @@ function viewList(id){
   const l = Lsx[id]; if(!l) return view404();
   document.title = l.title + " — Pigment";
   const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
-  const cimg = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  /* An Actuality list carries its own generated cover in a named painter's
+     manner (ACTUALITY.md §8a). The SAME image has to open the list page, or the
+     card and the page it opens show two different pictures. */
+  const act = ACT.find(e => e.listId === l.id);
+  const styleArtist = act && act.coverStyle ? Ax[act.coverStyle] : null;
+  const cimg = !styleArtist && cw && cw.image && cw.image.src && cw.image.status === "pd";
   const others = LISTS.filter(o => o.id !== l.id).sort(() => Math.random() - 0.5).slice(0, 3);
   return `
   <div class="list-hero">
     <div class="list-hero-art">${cimg
       ? `<img src="${cw.image.src}" alt="${esc(cw.title)}">`
-      : (ca ? canvasTag(ca.style, ca.palette, l.id, coverLabel(l.title), true) : "")}</div>
+      : (styleArtist
+        ? canvasTag(styleArtist.style, styleArtist.palette, act.id, coverLabel(l.title), true)
+        : (ca ? canvasTag(ca.style, ca.palette, l.id, coverLabel(l.title), true) : ""))}</div>
     <div class="list-hero-body">
       ${crumbs([["Atlas",""],["Lists","lists"],[l.title]])}
       <h1 class="display">${esc(l.title)}</h1>
       <p class="page-lede">${esc(l.lede)}</p>
       <div class="chip-label">${l.works.length} works — every one opens its own page</div>
+      ${act ? `<p class="list-newsline">${esc(act.newsline)} <a href="${esc(act.source.url)}" target="_blank" rel="noopener nofollow">${esc(act.source.name)}</a>${styleArtist ? ` · Cover generated in the manner of ${esc(styleArtist.name)}; it is not a painting and reproduces no photograph.` : ""}</p>` : ""}
       <div class="chips" style="margin-top:8px">${shareChip("p/list/" + l.id + ".html")}</div>
     </div>
   </div>
@@ -2535,6 +2563,7 @@ function route(){
     case "influences":  html = viewInfluences(); break;
     case "daily":       html = viewDaily(); break;
     case "actuality":  html = viewActuality(); break;
+    case "rhymes":     html = viewRhymes(); break;
     case "lists":       html = viewLists(); break;
     case "list":        html = viewList(id); break;
     case "palette":     html = viewPalette(); break;
@@ -2612,10 +2641,10 @@ document.addEventListener("click", e => {
 const EXPLORE_CHILDREN = { movements:1, techniques:1, eras:1, nations:1, explore:1, timeline:1, influences:1 };
 /* Landing anywhere under Lists lights the Lists trigger too, so the nav still
    says where you are while the panel is shut. */
-const LISTS_CHILDREN = { lists:1, actuality:1 };
+const LISTS_CHILDREN = { lists:1, actuality:1, rhymes:1 };
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"actuality",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"actuality", rhymes:"rhymes",
     explore:"explore", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras",
     nations:"nations", nation:"nations", taste:"taste", passport:"taste" };

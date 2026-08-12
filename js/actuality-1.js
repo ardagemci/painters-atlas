@@ -28,13 +28,13 @@ window.ACTUALITY = [
 
 { id:"lebron-to-philadelphia-2026",
   kind:"list",
-  published:"2026-09-01",
+  published:"2026-07-24",
   headline:"LeBron James signs with the Philadelphia 76ers",
   newsline:"Announced 24 July 2026: a two-year, $8m deal with a player option, at forty-one, for a record twenty-fourth NBA season alongside Joel Embiid and Tyrese Maxey.",
   source:{ name:"ESPN", url:"https://www.espn.com/nba/story/_/id/49440164/lebron-chooses-76ers-sign-2-year-8-million-contract" },
   hook:"The King goes to Philadelphia. So did a lot of paintings.",
   listId:"the-king-goes-to-philadelphia",
-  coverStyle:"mary-cassatt",   // generative, in her manner — no photograph is restyled
+  coverStyle:"mary-cassatt",   // generated in her manner; shown on BOTH the card and the list page
   sensitive:false }
 
 ];
