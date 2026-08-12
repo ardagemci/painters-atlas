@@ -1,9 +1,8 @@
 # Actuality — the visual-rhyme ritual
 
-*Specification, 2026-08-08. Backlog **B2**. This is new product surface: it is
-not in any phase of `PIGMENT.md` §11, and it needs two owner decisions before the
-first entry can ship. Written so that building it is a small job once those are
-made.*
+*Specification, 2026-08-08. Backlog **B2**. **Both rules ratified by the owner on
+2026-08-12** (§5 tone, §6 living people), and the product split into two types at
+the same time. The first list is built and live.*
 
 ---
 
@@ -22,6 +21,34 @@ curated, hand-written entry deployed on a cadence. Copy must never imply the sit
 knows what happened today.
 
 ---
+
+## 1a. Two products, not one
+
+**Type 1 — the comparison article.** `kind:"article"`. A news photograph and a
+painting that are *the same picture*. The connection is visual rhyme and only
+visual rhyme.
+
+- **The article is about the painting.** It is educational writing and it has to
+  be detailed and correct: what is happening in it, who made it and when, what to
+  look at, what most people do not know.
+- **One or two lines only** touch the news photograph, at the start or at the
+  end, and those are the funny ones. The joke opens or closes the door; it is not
+  the room.
+- **5–8 minutes of reading** — roughly 1,000–1,600 words.
+- Pigment cannot show the photograph. The rhyme is described, not displayed.
+
+**Type 2 — the blockbuster list.** `kind:"list"`. A story everybody already has
+an opinion about, answered with works joined to it by art-historical association
+rather than by visual rhyme: the city, the nickname, the institution, the idea.
+
+- Worked example, and the one that shipped: LeBron James to Philadelphia →
+  Philadelphia's own walls, and a king. A painting of an army marching from
+  Philadelphia to Boston would be the perfect Sixers–Celtics joke; the atlas does
+  not hold one, so the list says what the atlas *does* hold.
+- **Each work gets its own paragraph** — polished, not long. What is being
+  painted, a piece of its history, something most people would not know, and a
+  fact worth repeating. That is the `essay` field; `note` stays the one-line hook.
+- It is an ordinary `EDITORIAL_LISTS` entry, so it costs no new rendering.
 
 ## 2. Why the constraint is the feature
 
@@ -63,29 +90,32 @@ which is the proof that the format works on the atlas Pigment actually has.
 
 ---
 
-## 4. Data shape
+## 4. Data shape — as built
 
-A new registry, `js/actuality-1.js`, following the shape of `js/lists-1.js`:
+`js/actuality-1.js` holds the registry; `js/lists-1.js` holds the list a type-2
+entry points at.
 
 ```js
 window.ACTUALITY = [
-  { id:"…",                  // kebab, stable, becomes #/actuality/<id>
-    published:"2026-09-01",  // the cadence date, not "today"
-    hook:"…",                // ≤ 64 chars, the card line
-    workId:"…",              // catalog id, OR
-    worksKey:{ artistId:"…", title:"…" },   // a gallery work with no catalog record
-    story:"…",               // what happened, factual, no adjectives doing work
-    rhyme:"…",               // the pairing, 60–120 words, this is the piece
-    lists:["…"],             // ids in EDITORIAL_LISTS drawn along the same theme
-    sensitive:false }        // see §5 — true suppresses the comic register
+  { id:"…",                 // kebab, permanent → the archive at #/actuality
+    kind:"list",            // "list" (type 2) | "article" (type 1)
+    published:"2026-09-01", // the cadence date, never "today"
+    headline:"…",           // what happened, flat and factual
+    newsline:"…",           // only what the cited report states
+    source:{ name:"…", url:"…" },   // real, checkable, and actually read
+    hook:"…",               // the card line — this one may be funny
+    listId:"…",             // kind:"list"    → an EDITORIAL_LISTS id
+    workId:"…",             // kind:"article" → a catalog id
+    sensitive:false }       // see §5; default true when unsure
 ];
 ```
 
-`workId` **must** resolve, and the entry must not introduce a new image: the
-whole point is that the atlas already holds the picture. A validator rule should
-enforce both.
+An entry **never carries its own image**. The card borrows the cover of whatever
+it points at, which is by definition already in the atlas — so no Actuality entry
+can add an asset, and the inventory cannot move because of one.
 
----
+Type-2 list items gain an optional `essay` (200–900 chars, validator-bounded)
+beside the existing `note` (≤120 chars).
 
 ## 5. Tone — the rule that does not exist yet
 
@@ -105,9 +135,15 @@ and the painting can carry it.
   another story.
 - `sensitive:true` is the switch, and the default when unsure is `true`.
 
-This is the first owner decision. **Nothing should ship until the rule is
-ratified**, because the failure mode is a Pigment-branded joke over a painting of
-someone's suffering, and that is not recoverable by an edit afterwards.
+**RATIFIED by the owner, 2026-08-12.** This is now binding on every entry. The
+failure mode it prevents is a Pigment-branded joke over a painting of someone's
+suffering, which no later edit repairs.
+
+*Applied in the first list:* the Goya is the one work written straight, and its
+paragraph says why — a king painted without flattery is not a punchline. Manet's
+*Execution of Emperor Maximilian* was **considered and left out**: it is a
+genuinely apt Philadelphia-import joke and it is a firing squad, so the rule
+excludes it. That is the rule doing its job on its first outing.
 
 ## 6. Living people — the second gap
 
@@ -121,8 +157,14 @@ The copy will name real, living people: an executive, an athlete, a designer.
   character, private life, or anything not in the public report.
 - No entry about a person's legal trouble, health, family or death.
 
-OD-5's language rules cover images and art-historical claims. They say nothing
-about naming a living person, so this is the second owner decision.
+**RATIFIED by the owner, 2026-08-12.** OD-5's language rules cover images and
+art-historical claims and said nothing about naming a living person; this closes
+that gap and binds every entry.
+
+*Applied in the first list:* the entry names LeBron James, states the contract
+terms and the date exactly as ESPN reported them, and makes no claim about him
+beyond that. The joke is on the situation — a city receiving a famous arrival —
+and the paintings carry it.
 
 ---
 
@@ -142,16 +184,26 @@ was just reduced to five on purpose (**B1**) and should not grow back.
 
 ---
 
-## 8. What blocks the first entry
+## 8. Sourcing — resolved
 
-**I cannot write entry #1, and this is worth stating plainly.** A real entry must
-match a real, current news story. I have no verified current-news source in this
-environment, and inventing a plausible-sounding news event to demonstrate the
-format would be exactly the kind of fabrication the rest of this project's
-standards exist to prevent — the same failure as a filename that says "Exterior"
-over a photograph of an inscription tablet.
+The owner approved Google and Reuters as news sources on 2026-08-12, which
+removes the blocker this section used to record.
 
-So: the mechanism, the schema, the rules and the worked example are specifiable
-now. The first published pairing needs the owner to name the story, or to approve
-a source Pigment reads. Everything in §§4–7 can be built and tested before that
-happens, using the David *Coronation* example as the fixture.
+**The first entry was verified before a word of it was written.** A search
+returned the story; the ESPN report was then fetched and read, and the entry
+states only what that report states: signed with the Philadelphia 76ers,
+announced 24 July 2026, two years and $8m with a player option, his
+twenty-fourth NBA season, at forty-one, alongside Joel Embiid and Tyrese Maxey.
+Nothing in the entry comes from memory.
+
+That is the standing procedure: **search, then fetch and read the report, then
+write.** An entry whose source has not been read is not publishable, for the same
+reason a filename is not evidence that a picture is what it says it is.
+
+## 9. Still to build
+
+- **Type 1, the comparison article**, has a schema and a format here and no page
+  of its own yet. It needs a route and a long-form template; the list type reuses
+  `EDITORIAL_LISTS` and needed neither.
+- **A homepage surface.** Actuality currently lives at `#/actuality`, linked from
+  Lists. `PIGMENT.md` §11 still has no phase for any of this.

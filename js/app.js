@@ -17,6 +17,8 @@ const Vx = byId(window.VENUES || []);
 const catByArtist = {};
 CAT.forEach(w => (catByArtist[w.artistId] = catByArtist[w.artistId] || []).push(w));
 const LISTS = window.EDITORIAL_LISTS || [];
+/* B2. Actuality — the monthly ritual. See docs/ACTUALITY.md and js/actuality-1.js. */
+const ACT = (window.ACTUALITY || []).slice().sort((a,b) => (b.published||"").localeCompare(a.published||""));
 const Lsx = byId(LISTS);
 const listsByWork = {};
 LISTS.forEach(l => l.works.forEach(e => (listsByWork[e.id] = listsByWork[e.id] || []).push(l)));
@@ -1648,6 +1650,47 @@ function viewExplore(){
   </div>`;
 }
 
+/* ---------- actuality (B2) ---------- */
+/* An entry never carries its own picture: nothing here illustrates the news,
+   because Pigment cannot licence a news photograph. The card borrows the cover
+   of whatever the entry points at, which is always already in the atlas. */
+function actualityTarget(e){
+  if(e.kind === "list"){ const l = LISTS.find(x => x.id === e.listId); return l ? { href:"#/list/"+l.id, title:l.title, cover:CatX[l.cover] } : null; }
+  const w = CatX[e.workId]; return w ? { href:"#/artwork/"+w.id, title:w.title, cover:w } : null;
+}
+function actualityCard(e){
+  const t = actualityTarget(e); if(!t) return "";
+  const cw = t.cover, ca = cw && Ax[cw.artistId];
+  const img = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  return `<article class="card list-card" data-href="${t.href}">
+    <div class="card-art">${img
+      ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(t.title)}">`
+      : (ca ? canvasTag(ca.style, ca.palette, e.id, coverLabel(t.title)) : "")}</div>
+    <div class="card-body">
+      <div class="lc-kicker">${esc(e.kind === "list" ? "List" : "Article")} · ${esc(monthLabel(e.published))}</div>
+      <h3><a href="${t.href}">${esc(e.headline)}</a></h3>
+      <div class="card-tagline">${esc(e.hook)}</div>
+    </div>
+  </article>`;
+}
+function monthLabel(iso){
+  const m = /^(\d{4})-(\d{2})/.exec(iso || ""); if(!m) return "";
+  return ["January","February","March","April","May","June","July","August",
+          "September","October","November","December"][+m[2]-1] + " " + m[1];
+}
+function viewActuality(){
+  document.title = "Actuality — Pigment";
+  return `
+  <div class="page-head">
+    <div class="page-kicker">Once a month</div>
+    <h1 class="display">Actuality</h1>
+    <p class="page-lede">The news is the door; the atlas is the room. Each month we take one story the world is already having an opinion about, and answer it with paintings that were here long before it. Nothing on this page illustrates the news — it answers it.</p>
+  </div>
+  ${ACT.length ? `<div class="cards wide">${ACT.map(actualityCard).join("")}</div>
+  <p class="img-credit index-credit">Every entry links a dated, cited report to works already in the atlas. Pigment has no live feed and makes no claim to know what happened today.</p>`
+   : `<p class="page-lede">Nothing published yet.</p>`}`;
+}
+
 /* ---------- editorial lists ---------- */
 function listCard(l){
   const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
@@ -1671,6 +1714,7 @@ function viewLists(){
     <div class="page-kicker">Editorial</div>
     <h1 class="display">Lists</h1>
     <p class="page-lede">Guided walks through the atlas — each one a handful of works that talk to each other across the centuries. Follow a thread, admire what stops you, and let one list hand you to the next.</p>
+    <p class="page-lede" style="margin-top:-6px"><a href="#/actuality">Actuality</a> — the monthly list that answers a story in the news out of the atlas.</p>
   </div>
   <div class="cards wide">${LISTS.map(listCard).join("")}</div>`;
 }
@@ -1709,6 +1753,7 @@ function viewList(id){
           <h3><a href="#/artwork/${w.id}">${esc(w.title)}</a></h3>
           <div class="le-meta"><a href="#/artist/${a.id}">${esc(a.name)}</a> · ${esc(w.year.display)}</div>
           <p class="le-note">${esc(e.note)}</p>
+          ${e.essay ? `<p class="le-essay">${esc(e.essay)}</p>` : ""}
         </div>
         <button class="aw-btn le-adm ${on ? "on" : ""}" data-pp="admirations" data-ppid="${w.id}" aria-pressed="${on}">${on ? "Admired ✓" : "Admire"}</button>
       </li>`;
@@ -2476,6 +2521,7 @@ function route(){
     case "timeline":    html = viewTimeline(); break;
     case "influences":  html = viewInfluences(); break;
     case "daily":       html = viewDaily(); break;
+    case "actuality":  html = viewActuality(); break;
     case "lists":       html = viewLists(); break;
     case "list":        html = viewList(id); break;
     case "palette":     html = viewPalette(); break;
@@ -2553,7 +2599,7 @@ document.addEventListener("click", e => {
 const EXPLORE_CHILDREN = { movements:1, techniques:1, eras:1, nations:1, explore:1, timeline:1, influences:1 };
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"lists",
     explore:"explore", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras",
     nations:"nations", nation:"nations", taste:"taste", passport:"taste" };

@@ -119,37 +119,31 @@ Verified in-browser, both viewports and both themes: click, Escape (focus
 returns to the trigger), ArrowDown/Up/Home/End, Tab in all three directions,
 outside-click, and the active state across all 13 routes. No console errors.
 
-## B2 · Actuality — the visual-rhyme ritual  **[SPECIFIED 2026-08-08 — 2 owner decisions block the first entry]**
+## B2 · Actuality  **[BUILT AND LIVE 2026-08-12 — both rules ratified]**
 
-Full specification: **`docs/ACTUALITY.md`** — data shape, surfaces, cadence, tone
-rule, living-people rule, and the worked example.
+Spec: **`docs/ACTUALITY.md`**. Live at **`#/actuality`**, linked from Lists.
 
-**The worked example turned out to be entirely in the repository already.**
-`jacques-louis-david → "The Coronation of Napoleon"` is a gallery image today,
-and his prose already says the picture *"contains a diplomatic fiction"*. The
-painting's own joke is the one the format needs: **Napoleon crowns himself while
-the Pope sits behind him blessing nothing.** A brand hiring a famous face to
-bless a decision it had already made is that picture exactly.
+**Two products, per the owner's refinement.** Type 1 is the *comparison article*
+— visual rhyme, but the writing is about the **painting**: educational, detailed,
+5–8 minutes, with only one or two funny lines touching the news photo. Type 2 is
+the *blockbuster list* — works joined to the story by art-historical association,
+each with its own polished paragraph.
 
-**Two decisions block shipping, and both are yours:**
+**Type 2 shipped**: *The King Goes to Philadelphia*, answering LeBron James's
+move to the 76ers. Four works that already hang in the Philadelphia Museum of
+Art, a second Cassatt, and Goya's king. Verified before writing — the ESPN report
+was fetched and read, and the entry states only what it states.
 
-1. **The tone rule.** `STYLE_GUIDE` forbids humour where warning or factual
-   qualification is required, and the atlas keeps the record on hard history. The
-   proposed rule is in `ACTUALITY.md` §5: comic register only when *both* the
-   news item and the painting can carry it, `sensitive:true` by default when
-   unsure. **Nothing should ship before this is ratified** — the failure mode is
-   a Pigment joke over a painting of someone's suffering, which no later edit
-   repairs.
-2. **Naming living people.** The copy will name real people. OD-5 covers images
-   and art-historical claims and says nothing about this. Proposed limits are in
-   §6.
+**The rules did work on their first outing.** Goya is written straight and says
+why. **Manet's *Execution of Emperor Maximilian* was considered and left out** —
+a genuinely apt "imported ruler" joke, and a firing squad, so §5 excludes it.
 
-**And a blocker I cannot remove myself:** a real entry must match a real, current
-news story. I have no verified current-news source here, and inventing a
-plausible one to demonstrate the format would be the same class of fabrication
-this project's standards exist to stop. **Everything in §§4–7 can be built and
-tested first**, using the David *Coronation* pairing as the fixture; the first
-published entry needs you to name the story, or to approve a source Pigment reads.
+**A property worth keeping:** an Actuality entry borrows the cover of whatever it
+points at, so it can never introduce an image. Verified — the asset inventory did
+not move at all (836/835/1/115).
+
+**Still to build:** type 1 has a schema and a format and no page of its own yet;
+and none of this is placed in `PIGMENT.md` §11 phasing.
 
 ## B3 · The painters the atlas already named  **[DONE 2026-08-08]**
 
