@@ -1658,16 +1658,29 @@ function actualityTarget(e){
   if(e.kind === "list"){ const l = LISTS.find(x => x.id === e.listId); return l ? { href:"#/list/"+l.id, title:l.title, cover:CatX[l.cover] } : null; }
   const w = CatX[e.workId]; return w ? { href:"#/artwork/"+w.id, title:w.title, cover:w } : null;
 }
+/* `coverStyle` names a painter whose style and palette drive one of the atlas's
+   own generative covers, instead of borrowing an artwork's photograph.
+
+   This is the honest version of "make the news photo into a painting". Pigment
+   will not do that: a close restyling of a specific press photograph is a
+   derivative of that photograph, the person in it holds publicity rights, and
+   PIGMENT.md forbids presenting generated imagery as a real artwork. A
+   generative cover copies no photograph and depicts nobody — it is an abstract
+   field in a painter's palette, which the atlas already uses wherever a real
+   image is unavailable, and it is labelled as being in that painter's manner. */
 function actualityCard(e){
   const t = actualityTarget(e); if(!t) return "";
+  const styleArtist = e.coverStyle ? Ax[e.coverStyle] : null;
   const cw = t.cover, ca = cw && Ax[cw.artistId];
-  const img = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  const img = !styleArtist && cw && cw.image && cw.image.src && cw.image.status === "pd";
   return `<article class="card list-card" data-href="${t.href}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(t.title)}">`
-      : (ca ? canvasTag(ca.style, ca.palette, e.id, coverLabel(t.title)) : "")}</div>
+      : (styleArtist
+        ? canvasTag(styleArtist.style, styleArtist.palette, e.id, coverLabel(t.title))
+        : (ca ? canvasTag(ca.style, ca.palette, e.id, coverLabel(t.title)) : ""))}</div>
     <div class="card-body">
-      <div class="lc-kicker">${esc(e.kind === "list" ? "List" : "Article")} · ${esc(monthLabel(e.published))}</div>
+      <div class="lc-kicker">${esc(e.kind === "list" ? "List" : "Article")} · ${esc(monthLabel(e.published))}${styleArtist ? " · cover in the manner of " + esc(styleArtist.name.split(" ").pop()) : ""}</div>
       <h3><a href="${t.href}">${esc(e.headline)}</a></h3>
       <div class="card-tagline">${esc(e.hook)}</div>
     </div>
@@ -2597,20 +2610,29 @@ document.addEventListener("click", e => {
    any of them lights the Explore trigger as well as the link inside the panel,
    so the nav still tells you where you are even while the panel is shut. */
 const EXPLORE_CHILDREN = { movements:1, techniques:1, eras:1, nations:1, explore:1, timeline:1, influences:1 };
+/* Landing anywhere under Lists lights the Lists trigger too, so the nav still
+   says where you are while the panel is shut. */
+const LISTS_CHILDREN = { lists:1, actuality:1 };
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"lists",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"actuality",
     explore:"explore", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras",
     nations:"nations", nation:"nations", taste:"taste", passport:"taste" };
   const cur = map[page];
-  document.querySelectorAll("#main-nav a").forEach(a => {
+  /* The disclosure panels live at body level (see index.html), so they are NOT
+     inside #main-nav. Querying only #main-nav here silently dropped all nine
+     panel links from the active state and from aria-current — a regression
+     introduced when the panels moved out of the header. */
+  document.querySelectorAll("#main-nav a, .nav-panel a").forEach(a => {
     const on = a.dataset.nav === cur;
     a.classList.toggle("active", on);
     if(on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");   /* C1 */
   });
-  const btn = document.getElementById("explore-btn");
-  if(btn) btn.classList.toggle("active", !!EXPLORE_CHILDREN[cur]);
+  const eb = document.getElementById("explore-btn");
+  if(eb) eb.classList.toggle("active", !!EXPLORE_CHILDREN[cur]);
+  const lb = document.getElementById("lists-btn");
+  if(lb) lb.classList.toggle("active", !!LISTS_CHILDREN[cur]);
 }
 
 function animateCounters(){
@@ -2774,98 +2796,92 @@ if(mainNav) mainNav.addEventListener("focusin", e => {
   if(over > 0) mainNav.scrollLeft += Math.ceil(over);       /* ceil: never leave a subpixel of ring in the fade */
 });
 
-/* ---- the Explore disclosure (B1) ----
-   W3C APG disclosure-navigation behaviour. Deliberately NOT a menu widget: the
-   panel holds ordinary links in ordinary lists, so a screen reader reads them
-   exactly as it read the flat nav the owner's VoiceOver passes signed off. The
-   button contributes aria-expanded and nothing more.
+/* ---- nav disclosures (B1, extended for Actuality) ----
+   W3C APG disclosure-navigation behaviour, applied to every .nav-group in the
+   header. Deliberately NOT a menu widget: each panel holds ordinary links in
+   labelled lists, so a screen reader reads them the way it read the flat nav the
+   owner's VoiceOver passes signed off. The button contributes aria-expanded and
+   nothing more.
 
-   The panel is position:fixed because on narrow screens .main-nav is a
-   horizontally scrolling row (overflow-x:auto) and an absolutely positioned
-   panel would be clipped by that scrollport. Fixed escapes it, at the cost of
-   having to place the panel ourselves and re-place it if the page moves under
-   it — hence the scroll/resize handlers, which only run while it is open. */
-const exploreBtn = document.getElementById("explore-btn");
-const explorePanel = document.getElementById("explore-panel");
-if(exploreBtn && explorePanel){
-  const panelLinks = () => [...explorePanel.querySelectorAll("a")];
-  const isOpen = () => exploreBtn.getAttribute("aria-expanded") === "true";
+   Panels live at body level — see the note in index.html. .site-header carries
+   backdrop-filter, which makes it the containing block for position:fixed
+   descendants, and .main-nav is a horizontally scrolling row whose overflow-x
+   and mask clip anything inside it. Measured at 390px, a panel inside the header
+   rendered as a sliver. The cost of moving them out is DOM adjacency, so Tab is
+   managed explicitly below. */
+function wireNavDisclosure(group){
+  const btn = group.querySelector(".nav-disclosure");
+  const panel = document.getElementById(btn && btn.getAttribute("aria-controls"));
+  if(!btn || !panel) return;
+  const links = () => [...panel.querySelectorAll("a")];
+  const isOpen = () => btn.getAttribute("aria-expanded") === "true";
+  const inWidget = t => !!t && (group.contains(t) || panel.contains(t));
+  const afterTrigger = () => group.nextElementSibling;
 
-  function placePanel(){
-    const r = exploreBtn.getBoundingClientRect();
-    /* measure before deciding: the panel may be wider than the room to its right */
-    const w = explorePanel.offsetWidth;
-    const left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
-    explorePanel.style.left = left + "px";
-    explorePanel.style.top  = Math.round(r.bottom + 6) + "px";
+  function place(){
+    const r = btn.getBoundingClientRect();
+    const w = panel.offsetWidth;
+    panel.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + "px";
+    panel.style.top  = Math.round(r.bottom + 6) + "px";
   }
-  function openPanel(){
+  function open(){
     if(isOpen()) return;
-    explorePanel.hidden = false;
-    exploreBtn.setAttribute("aria-expanded", "true");
-    placePanel();
-    window.addEventListener("scroll", placePanel, true);
-    window.addEventListener("resize", placePanel);
+    closeAllNavPanels(group);          /* only one open at a time */
+    panel.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    place();
+    window.addEventListener("scroll", place, true);
+    window.addEventListener("resize", place);
   }
-  function closePanel(refocus){
+  function close(refocus){
     if(!isOpen()) return;
-    exploreBtn.setAttribute("aria-expanded", "false");
-    explorePanel.hidden = true;
-    window.removeEventListener("scroll", placePanel, true);
-    window.removeEventListener("resize", placePanel);
-    if(refocus) exploreBtn.focus();
+    btn.setAttribute("aria-expanded", "false");
+    panel.hidden = true;
+    window.removeEventListener("scroll", place, true);
+    window.removeEventListener("resize", place);
+    if(refocus) btn.focus();
   }
+  group._closeNavPanel = () => close(false);
 
-  /* The panel is not a descendant of the trigger's group — see the note in
-     index.html — so "did focus leave the widget" has to consider both. */
-  const exploreGroup = document.getElementById("explore-group");
-  const inWidget = t => !!t && (exploreGroup.contains(t) || explorePanel.contains(t));
-  const afterTrigger = () => exploreGroup.nextElementSibling;   /* the Taste link */
-
-  exploreBtn.addEventListener("click", () => { isOpen() ? closePanel(false) : openPanel(); });
-
-  exploreBtn.addEventListener("keydown", e => {
+  btn.addEventListener("click", () => { isOpen() ? close(false) : open(); });
+  btn.addEventListener("keydown", e => {
     if(e.key === "ArrowDown" || e.key === "Down"){
-      e.preventDefault(); openPanel();
-      const first = panelLinks()[0]; if(first) first.focus();
+      e.preventDefault(); open();
+      const first = links()[0]; if(first) first.focus();
       return;
     }
     /* DOM order puts the panel at the end of the document, so an unmanaged Tab
-       would jump straight past it to Taste. Send it into the panel instead. */
+       would jump straight past it. Send it into the panel instead. */
     if(e.key === "Tab" && !e.shiftKey && isOpen()){
-      const first = panelLinks()[0];
+      const first = links()[0];
       if(first){ e.preventDefault(); first.focus(); }
     }
   });
-
-  explorePanel.addEventListener("keydown", e => {
-    const links = panelLinks(), i = links.indexOf(document.activeElement);
-    if(e.key === "ArrowDown" || e.key === "Down"){ e.preventDefault(); links[(i + 1) % links.length].focus(); }
-    else if(e.key === "ArrowUp" || e.key === "Up"){ e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
-    else if(e.key === "Home"){ e.preventDefault(); links[0].focus(); }
-    else if(e.key === "End"){ e.preventDefault(); links[links.length - 1].focus(); }
-    else if(e.key === "Tab" && e.shiftKey && i === 0){ e.preventDefault(); exploreBtn.focus(); }
-    else if(e.key === "Tab" && !e.shiftKey && i === links.length - 1){
-      /* leaving the end of the panel continues where the trigger left off */
+  panel.addEventListener("keydown", e => {
+    const l = links(), i = l.indexOf(document.activeElement);
+    if(e.key === "ArrowDown" || e.key === "Down"){ e.preventDefault(); l[(i+1) % l.length].focus(); }
+    else if(e.key === "ArrowUp" || e.key === "Up"){ e.preventDefault(); l[(i-1+l.length) % l.length].focus(); }
+    else if(e.key === "Home"){ e.preventDefault(); l[0].focus(); }
+    else if(e.key === "End"){ e.preventDefault(); l[l.length-1].focus(); }
+    else if(e.key === "Tab" && e.shiftKey && i === 0){ e.preventDefault(); btn.focus(); }
+    else if(e.key === "Tab" && !e.shiftKey && i === l.length-1){
       const next = afterTrigger();
-      if(next){ e.preventDefault(); closePanel(false); next.focus(); }
+      if(next){ e.preventDefault(); close(false); next.focus(); }
     }
   });
-
-  /* Escape closes from the trigger or from inside the panel and returns focus to
-     the trigger — losing focus to <body> is the failure the owner heard in the
-     earlier VoiceOver passes. */
-  const onEsc = e => { if(e.key === "Escape" || e.key === "Esc"){ e.preventDefault(); closePanel(true); } };
-  exploreGroup.addEventListener("keydown", onEsc);
-  explorePanel.addEventListener("keydown", onEsc);
-
-  /* Tabbing or clicking clean out of the widget shuts it, without stealing focus. */
-  document.addEventListener("focusin", e => { if(isOpen() && !inWidget(e.target)) closePanel(false); });
-  document.addEventListener("pointerdown", e => { if(isOpen() && !inWidget(e.target)) closePanel(false); });
-  /* Following a link inside the panel navigates; the panel must not stay open
-     over the page that arrives. */
-  explorePanel.addEventListener("click", e => { if(e.target.closest("a")) closePanel(false); });
+  const onEsc = e => { if(e.key === "Escape" || e.key === "Esc"){ e.preventDefault(); close(true); } };
+  group.addEventListener("keydown", onEsc);
+  panel.addEventListener("keydown", onEsc);
+  document.addEventListener("focusin", e => { if(isOpen() && !inWidget(e.target)) close(false); });
+  document.addEventListener("pointerdown", e => { if(isOpen() && !inWidget(e.target)) close(false); });
+  panel.addEventListener("click", e => { if(e.target.closest("a")) close(false); });
 }
+function closeAllNavPanels(except){
+  document.querySelectorAll(".nav-group").forEach(g => {
+    if(g !== except && g._closeNavPanel) g._closeNavPanel();
+  });
+}
+document.querySelectorAll(".nav-group").forEach(wireNavDisclosure);
 
 window.addEventListener("hashchange", route);
 

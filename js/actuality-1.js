@@ -34,6 +34,7 @@ window.ACTUALITY = [
   source:{ name:"ESPN", url:"https://www.espn.com/nba/story/_/id/49440164/lebron-chooses-76ers-sign-2-year-8-million-contract" },
   hook:"The King goes to Philadelphia. So did a lot of paintings.",
   listId:"the-king-goes-to-philadelphia",
+  coverStyle:"mary-cassatt",   // generative, in her manner — no photograph is restyled
   sensitive:false }
 
 ];

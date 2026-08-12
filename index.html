@@ -48,7 +48,10 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
   <nav class="main-nav" id="main-nav" aria-label="Main">
     <a href="#/artists" data-nav="artists">Artists</a>
     <a href="#/museums" data-nav="museums">Museums</a>
-    <a href="#/lists" data-nav="lists">Lists</a>
+    <div class="nav-group" id="lists-group">
+      <button type="button" class="nav-disclosure" id="lists-btn"
+              aria-expanded="false" aria-controls="lists-panel" data-nav="lists">Lists<span class="nav-caret" aria-hidden="true"></span></button>
+    </div>
     <div class="nav-group" id="explore-group">
       <button type="button" class="nav-disclosure" id="explore-btn"
               aria-expanded="false" aria-controls="explore-panel" data-nav="explore">Explore<span class="nav-caret" aria-hidden="true"></span></button>
@@ -98,6 +101,22 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
     <li><a href="#/explore" data-nav="explore">Everything at once</a></li>
     <li><a href="#/timeline" data-nav="timeline">Timeline</a></li>
     <li><a href="#/influences" data-nav="influences">Influences</a></li>
+  </ul>
+</div>
+
+<!-- The Lists disclosure panel. Conceptual lists and Actuality lists are made
+     differently and read differently — one is a standing editorial idea, the
+     other answers a dated news story — so they are separated here rather than
+     poured into one index. Same body-level placement and same reason as the
+     Explore panel above. -->
+<div class="nav-panel" id="lists-panel" hidden>
+  <p class="np-head" id="np-lists">Lists</p>
+  <ul aria-labelledby="np-lists">
+    <li><a href="#/lists" data-nav="lists">All lists</a></li>
+  </ul>
+  <p class="np-head" id="np-act">Once a month</p>
+  <ul aria-labelledby="np-act">
+    <li><a href="#/actuality" data-nav="actuality">Actuality</a></li>
   </ul>
 </div>
 
@@ -163,10 +182,10 @@ try{ document.documentElement.dataset.theme = localStorage.getItem("pigment-them
 <script src="js/artists-17.js?v=20260807-batch12"></script>
 <script src="js/artists-18.js?v=20260808-a4"></script>
 <script src="js/lists-1.js?v=20260808-b2"></script>
-<script src="js/actuality-1.js?v=20260808-b2"></script>
+<script src="js/actuality-1.js?v=20260812-b2b"></script>
 <script src="js/personas.js?v=20260716-taste1"></script>
 <script src="js/museums-1.js?v=20260808-moa"></script>
 <script src="js/photo-credits.js?v=20260808-moa"></script>
-<script src="js/app.js?v=20260808-b2"></script>
+<script src="js/app.js?v=20260812-navfix"></script>
 </body>
 </html>

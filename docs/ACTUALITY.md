@@ -200,6 +200,39 @@ That is the standing procedure: **search, then fetch and read the report, then
 write.** An entry whose source has not been read is not publishable, for the same
 reason a filename is not evidence that a picture is what it says it is.
 
+## 8a. Covers — and why Pigment will not repaint the news photograph
+
+The obvious idea is to take the press photograph — LeBron in a Philadelphia
+jersey — and remake it in a painter's style for the entry cover. **Pigment does
+not do this, and an external generator does not make it safe.** Four separate
+problems, any one of which is enough:
+
+1. **Copyright.** Style is not protected; the photographer's *specific* framing,
+   pose and moment are. A recognisable restyling of one photograph is a
+   derivative work of it. Generating it in Midjourney moves where the
+   infringement happens, it does not remove it.
+2. **Publicity rights.** A living athlete's likeness is commercially valuable and
+   actively licensed. That claim is separate from copyright and survives the
+   image being "a painting".
+3. **Trademark.** The jersey, the wordmark and the team logo are not ours.
+4. **It spends the credibility the rest of the atlas is built on.** Every image
+   in Pigment is a real work with a documented source, and a long trail of this
+   project's work is spent catching images that were not what they claimed. A
+   synthesised pastiche on the most shareable surface in the product cuts against
+   exactly that, even labelled. `PIGMENT.md` already says it: *never present
+   generated imagery as the real artwork.*
+
+**What Pigment does instead.** The atlas already generates abstract covers from a
+painter's own style function and palette, wherever a real image is unavailable.
+An Actuality entry may set `coverStyle:"<artistId>"` and get one of those — in
+Mary Cassatt's manner for the Philadelphia entry, since she is the closest thing
+this list has to a local. It copies no photograph, depicts no person, claims to
+be no painting, and the card names it: *"cover in the manner of Cassatt."*
+
+If the owner wants a *painted illustration* of a news moment, the clean route is
+to commission or licence an original artwork, which owes nothing to a particular
+photograph — an editorial cost, not a technical problem.
+
 ## 9. Still to build
 
 - **Type 1, the comparison article**, has a schema and a format here and no page
