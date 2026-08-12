@@ -37,12 +37,23 @@ taught by Gérôme inside that system. The movement's own blurb and description
 were rewritten: they had centred on Osman Hamdi Bey as a member, and now name who
 is deliberately *not* filed there and why.
 
-**A4 · Single-valued `nation` cannot carry the truth.** `STYLE_GUIDE` §3.3/§7
-already mandate "primary filing + acknowledgment"; the prose honours it; the
-schema has no field for it; so the app renders one flag chip — a 🇹🇷 on a man who
-died in 1564. ~12 records are visibly wrong on a surface visitors see. The
-Curator recommends an **additive optional `nationNote`**, not re-typing shipped
-infrastructure.
+**A4 · RESOLVED 2026-08-08 — owner: follow the Curator.** Added an **additive
+optional `nationNote`**, exactly as recommended: the flag chip, the nation index
+and every shipped id are untouched, and the acknowledgment sits *beside* the flag
+rather than replacing it. Rendered on the artist identity line, deliberately not
+a link (it names a fact; it is not a second place to travel to), validator-bounded
+to a non-empty string ≤90 chars — a guard proved non-vacuous by feeding it a
+95-char note and a number.
+
+**15 records annotated**, chosen on a stricter test than the arithmetic one. A
+scan found **51** painters who died before their filed state existed, but "Italy"
+on Leonardo is museum convention and misleads no one. The notes go where the flag
+implies the wrong *people*, not merely the wrong century: five Ottoman painters
+filed 🇹🇷 (Matrakçı Nasuh was Bosnian-born), six Netherlandish and Flemish painters
+filed 🇧🇪 for a state founded in 1830, two filed 🇮🇳 for a republic founded in 1947,
+Ludwig Deutsch (Austrian by birth, French from 1919), and El Greco, whose Greek
+filing is right and whose career was entirely Spanish.
+
 
 ---
 

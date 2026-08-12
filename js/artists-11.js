@@ -92,7 +92,7 @@ window.ARTISTS.push(
     "The Sanok castle museum holds the world's largest collection of his work — by his own bequest."] },
 
 { id:"seker-ahmed-pasha", name:"Şeker Ahmed Paşa", years:"1841–1907", born:1841, died:1907,
-  nation:"turkey", eras:["19th-century","20th-century"], movements:["academicism","realism"],
+  nation:"turkey", nationNote:"Ottoman, not Republican Turkish — he died in 1907", eras:["19th-century","20th-century"], movements:["academicism","realism"],
   techniques:["oil-painting","glazing"], style:"tonal",
   palette:["#2e4a3e","#8a6e46","#d9c890","#5e3424","#e8e0c8"],
   tagline:"'Sugar' Ahmed — the gentle Paşa who brought the easel to Istanbul",
@@ -105,7 +105,7 @@ window.ARTISTS.push(
     "Turkish still-life painting effectively begins with his pomegranates and quinces."] },
 
 { id:"osman-hamdi-bey", name:"Osman Hamdi Bey", years:"1842–1910", born:1842, died:1910,
-  nation:"turkey", eras:["19th-century","20th-century"], movements:["academicism","realism"],
+  nation:"turkey", nationNote:"Ottoman, not Republican Turkish — he died in 1910", eras:["19th-century","20th-century"], movements:["academicism","realism"],
   techniques:["oil-painting","glazing"], style:"metaphysical",
   palette:["#1f6e8a","#d9a83e","#b05e32","#2e4a3e","#e8d9b4"],
   tagline:"The Tortoise Trainer — Orientalism, corrected from the inside",

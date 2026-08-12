@@ -1932,7 +1932,16 @@ function viewArtist(id){
     style:a.style, palette:a.palette, seed:a.id, salt:"hero",
     crumbs: crumbs([["Atlas",""],["Artists","artists"],[a.name]]),
     title:a.name,
+    /* A4. `nation` is single-valued, so the identity line can only ever show one
+       flag — and for a dozen painters that flag is wrong on a surface every
+       visitor sees: a 🇹🇷 on a man who died in 1564, three and a half centuries
+       before the Republic. STYLE_GUIDE §3.3/§7 already require "primary filing
+       plus acknowledgment"; the prose honours it and the schema had nowhere to
+       put it. `nationNote` is that place — additive, optional, and it does not
+       re-type the shipped infrastructure the flag chip and the nation index are
+       built on. The note sits beside the flag, not instead of it. */
     sub:`<span>${esc(a.years)}</span><a href="#/nation/${a.nation}">${nation ? nation.flag+" "+esc(nation.name) : ""}</a>` +
+        (a.nationNote ? `<span class="nation-note">${esc(a.nationNote)}</span>` : "") +
         a.eras.map(e => Ex[e] ? `<a href="#/era/${e}">${esc(Ex[e].name)}</a>` : "").join(""),
     tagline:a.tagline
   })}

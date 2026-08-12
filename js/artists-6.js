@@ -92,7 +92,7 @@ window.ARTISTS.push(
     "His Struggle series panel of Washington crossing the Delaware reframes the boat with unnamed rowers."] },
 
 { id:"amrita-sher-gil", name:"Amrita Sher-Gil", years:"1913–1941", born:1913, died:1941,
-  nation:"india", eras:["20th-century"], movements:["post-impressionism"],
+  nation:"india", nationNote:"Hungarian-Indian, born in Budapest; India became independent in 1947", eras:["20th-century"], movements:["post-impressionism"],
   techniques:["oil-painting"], style:"fauvist",
   palette:["#b0502e","#e8a85e","#6e3a32","#2e4a3e","#e8d4b0"],
   tagline:"Paris technique, Indian light — modern Indian painting's founding fire",

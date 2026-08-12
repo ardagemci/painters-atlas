@@ -1,7 +1,7 @@
 /* PIGMENT — artists 2/7 : Baroque & the 18th century */
 window.ARTISTS.push(
 { id:"peter-paul-rubens", name:"Peter Paul Rubens", years:"1577–1640", born:1577, died:1640,
-  nation:"belgium", eras:["17th-century"], movements:["flemish-baroque","baroque"],
+  nation:"belgium", nationNote:"Flemish, a subject of the Spanish Netherlands; Belgium dates from 1830", eras:["17th-century"], movements:["flemish-baroque","baroque"],
   techniques:["oil-painting","glazing","alla-prima"], style:"baroque",
   palette:["#a8412e","#e0b380","#3b5570","#d9cdb4","#5e3424"],
   tagline:"Painter, diplomat, one-man industry of abundance",
@@ -14,7 +14,7 @@ window.ARTISTS.push(
     "He wrote that he preferred small commissions 'entirely by my own hand' — then accepted every enormous one anyway."] },
 
 { id:"anthony-van-dyck", name:"Anthony van Dyck", years:"1599–1641", born:1599, died:1641,
-  nation:"belgium", eras:["17th-century"], movements:["flemish-baroque","baroque"],
+  nation:"belgium", nationNote:"Flemish, of Antwerp; Belgium dates from 1830", eras:["17th-century"], movements:["flemish-baroque","baroque"],
   techniques:["oil-painting","glazing","etching"], style:"baroque",
   palette:["#1d2430","#6e3a2a","#c8a86e","#8a9bb0","#e6dcc8"],
   tagline:"The man who taught aristocracy how to look effortless",

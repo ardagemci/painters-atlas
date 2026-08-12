@@ -158,7 +158,7 @@ window.ARTISTS = (window.ARTISTS || []).concat([
     "He usually painted the same composition twice, in watercolour and in oil."] },
 
 { id:"ludwig-deutsch", name:"Ludwig Deutsch", years:"1855–1935", born:1855, died:1935,
-  nation:"austria", eras:["19th-century","20th-century"],
+  nation:"austria", nationNote:"Austrian by birth, French by naturalisation from 1919", eras:["19th-century","20th-century"],
   movements:["orientalism","academicism"],
   techniques:["oil-painting"], style:"neoclassical",
   palette:["#b98b32","#8a3c2c","#e6d9bb","#35506b","#1c1814"],
