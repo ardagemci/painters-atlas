@@ -726,6 +726,11 @@ section{margin:46px 0}
 html[data-theme="light"] #app .hero-content h1:focus-visible{outline-color:#6b5122}
 .hero-sub{font-size:1rem;color:var(--body-ink);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
 .hero-sub a{color:var(--gold2)}
+/* A4. The acknowledgment beside a single-valued flag. Deliberately quieter than
+   the flag link it qualifies and not itself a link — it names a fact, it is not
+   a second place to travel to. --body-ink is the same token the rest of
+   .hero-sub uses and is contrast-checked at line 191. */
+.nation-note{color:var(--body-ink);font-size:.86rem;font-style:italic;opacity:.92}
 .hero-tagline{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--body-ink);margin-top:6px}
 
 /* ---------- Tier 1 artist overlay ---------- */

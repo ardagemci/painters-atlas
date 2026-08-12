@@ -66,6 +66,16 @@ A.forEach(a => {
      a typo here must fail loudly rather than quietly serve a different picture. */
   if(a.hero && !(((window.ARTWORKS || {})[a.id] || {})[a.hero]))
     errs.push("artist " + a.id + ": hero \"" + a.hero + "\" is not one of this artist's gallery works");
+  /* A4. Optional acknowledgment beside the single-valued flag. Kept short
+     because it renders inline on the identity line, and required to be prose
+     rather than a second nation id — it qualifies the filing, it does not
+     duplicate it. */
+  if(a.nationNote !== undefined){
+    if(typeof a.nationNote !== "string" || !a.nationNote.trim())
+      errs.push("artist " + a.id + ": nationNote must be a non-empty string");
+    else if(a.nationNote.length > 90)
+      errs.push("artist " + a.id + ": nationNote is " + a.nationNote.length + " chars (max 90)");
+  }
   if(!a.facts || a.facts.length < 3) errs.push("artist " + a.id + ": <3 facts");
 });
 

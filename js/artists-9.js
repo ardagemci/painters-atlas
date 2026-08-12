@@ -14,7 +14,7 @@ window.ARTISTS.push(
     "Constable: 'The sky is the chief organ of sentiment' — a lesson learned from Ruisdael."] },
 
 { id:"clara-peeters", name:"Clara Peeters", years:"c. 1589–after 1657", born:1589, died:1657,
-  nation:"belgium", eras:["17th-century"], movements:["flemish-baroque","baroque"],
+  nation:"belgium", nationNote:"Flemish, probably of Antwerp; Belgium dates from 1830", eras:["17th-century"], movements:["flemish-baroque","baroque"],
   techniques:["oil-painting","glazing"], style:"tonal",
   palette:["#1d1a16","#caa45c","#8a8276","#5e2a2a","#e8e0d0"],
   tagline:"Breakfast pieces with a secret — her own face in the pewter",
@@ -131,7 +131,7 @@ window.ARTISTS.push(
     "Architects from Adam to OMA cite him — the most influential architect who barely built."] },
 
 { id:"matrakci-nasuh", name:"Matrakçı Nasuh", years:"c. 1480–c. 1564", born:1480, died:1564,
-  nation:"turkey", eras:["16th-century"], movements:["ottoman-miniature"],
+  nation:"turkey", nationNote:"Ottoman, of Bosnian origin; the Republic of Turkey was three centuries away", eras:["16th-century"], movements:["ottoman-miniature"],
   techniques:["miniature-painting","gouache","watercolor"], style:"ornament",
   palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
   tagline:"The polymath who painted cities like maps that dream",
@@ -144,7 +144,7 @@ window.ARTISTS.push(
     "Historians mine his Istanbul view for buildings that no longer exist — art as urban archive."] },
 
 { id:"nakkas-osman", name:"Nakkaş Osman", years:"fl. 1560–1595", born:1535, died:1595,
-  nation:"turkey", eras:["16th-century"], movements:["ottoman-miniature"],
+  nation:"turkey", nationNote:"Ottoman court painter; the Republic of Turkey dates from 1923", eras:["16th-century"], movements:["ottoman-miniature"],
   techniques:["miniature-painting","gouache","gold-leaf"], style:"ornament",
   palette:["#8a2620","#1f6e8a","#caa43e","#2e4a3e","#e8dcc0"],
   tagline:"The sultan's chief eye — an empire documented in gold and lapis",
@@ -157,7 +157,7 @@ window.ARTISTS.push(
     "Wage registers list him for decades — art history reconstructed from payroll."] },
 
 { id:"levni", name:"Abdulcelil Levni", years:"c. 1680–1732", born:1680, died:1732,
-  nation:"turkey", eras:["18th-century"], movements:["ottoman-miniature"],
+  nation:"turkey", nationNote:"Ottoman, from Edirne; the Republic of Turkey dates from 1923", eras:["18th-century"], movements:["ottoman-miniature"],
   techniques:["miniature-painting","gouache","gold-leaf"], style:"ornament",
   palette:["#c4663a","#1f6e8a","#e8cd7a","#5e3450","#f0e8d8"],
   tagline:"The Tulip Era's last great miniaturist — colour was literally his name",

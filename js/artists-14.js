@@ -1,7 +1,7 @@
 /* PIGMENT — artists 14/14 : the 15th-century founders & one chess player */
 window.ARTISTS.push(
 { id:"jan-van-eyck", name:"Jan van Eyck", years:"c. 1390–1441", born:1390, died:1441,
-  nation:"belgium", eras:["15th-century"], movements:["early-netherlandish"],
+  nation:"belgium", nationNote:"Early Netherlandish; Belgium was founded four centuries after his death", eras:["15th-century"], movements:["early-netherlandish"],
   techniques:["oil-painting","glazing"], style:"renaissance",
   palette:["#7a1f2b","#1f3a5f","#caa43e","#2e4a3e","#e8dcc4"],
   tagline:"'As I can' — oil paint perfected, reality outdone",
@@ -14,7 +14,7 @@ window.ARTISTS.push(
     "Philip the Good stood godfather to his child and paid him 'for certain secret journeys' the ledgers decline to describe."] },
 
 { id:"rogier-van-der-weyden", name:"Rogier van der Weyden", years:"c. 1399–1464", born:1399, died:1464,
-  nation:"belgium", eras:["15th-century"], movements:["early-netherlandish"],
+  nation:"belgium", nationNote:"Early Netherlandish; Belgium dates from 1830", eras:["15th-century"], movements:["early-netherlandish"],
   techniques:["oil-painting","glazing"], style:"renaissance",
   palette:["#8a1f2b","#2e3e6e","#d9b46a","#5e2a2a","#e9ddc8"],
   tagline:"The painter of tears — emotion engineered with Flemish precision",

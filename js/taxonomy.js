@@ -264,8 +264,8 @@ window.MOVEMENTS = [
 
   { id:"orientalism", name:"Orientalism", parent:null, period:"c. 1820–1910", style:"metaphysical",
     palette:["#1f6e8a","#d9a83e","#b05e32","#3e4a6e","#e8d9b4"],
-    blurb:"Europe paints the 'East' — and Osman Hamdi Bey paints back.",
-    desc:"Academic Europe filled the Salons with imagined harems and bazaars: technically dazzling, often fantasy. The movement's most interesting painter worked from inside it — Osman Hamdi Bey, Ottoman archaeologist and museum founder, used Orientalist technique to show his own culture reading, debating and thinking, quietly correcting the genre from within." },
+    blurb:"Europe paints an 'East' it mostly assembled at home.",
+    desc:"A nineteenth-century European genre, not a place and not a people. Academic Europe filled the Salons with harems, bazaars and slave markets painted to a photographic finish — Gérôme and Ludwig Deutsch largely from studios in Paris, out of costumes, photographs and copied tilework, for scenes that never happened. John Frederick Lewis is the counter-case: he lived a decade in Cairo, and it shows. Linda Nochlin's The Imaginary Orient (1983) made Gérôme's Snake Charmer the standard argument against the whole enterprise, and Pigment files the painters and the argument together. Note who is NOT here: Osman Hamdi Bey, Şeker Ahmed Paşa and Raja Ravi Varma were once filed under this movement and are not Orientalists — they were trained inside the same academic system, two of them by Gérôme himself, and they painted their own societies. They are filed under Academicism." },
   { id:"pre-raphaelites", name:"Pre-Raphaelites", parent:null, period:"1848–c. 1900", style:"renaissance",
     palette:["#2e6e5e","#a83a4e","#caa43e","#3b5a8a","#e8dcc4"],
     blurb:"The brotherhood that rewound painting to before Raphael — jewel colour, medieval longing.",

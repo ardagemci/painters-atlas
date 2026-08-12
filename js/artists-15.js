@@ -235,7 +235,7 @@ window.ARTISTS.push(
     "Seoul's PX portrait stand also employed a young novelist's mother — Park Wan-suh later wrote him into her fiction."] },
 
 { id:"raja-ravi-varma", name:"Raja Ravi Varma", years:"1848–1906", born:1848, died:1906,
-  nation:"india", eras:["19th-century","20th-century"], movements:["realism","orientalism"],
+  nation:"india", nationNote:"Travancore, British India; the Republic of India dates from 1947", eras:["19th-century","20th-century"], movements:["academicism","realism"],
   techniques:["oil-painting","lithography"], style:"baroque",
   palette:["#8a2620","#caa43e","#2e6e5a","#5e3450","#e8d4b0"],
   tagline:"The gods in oil paint — and on every calendar in India",

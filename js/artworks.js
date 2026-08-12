@@ -2528,5 +2528,65 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg/500px-Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Cleopatra_and_Caesar_by_Jean-Leon-Gerome.jpg"
   }
+ },
+ "jose-clemente-orozco": {
+  "Zapatistas": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Clemente_Orozco,_Zapatistas,_1931,_MoMA.jpg"
+  },
+  "Prometheus": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg/500px-Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Prometheus_(1930)_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg"
+  },
+  "Barricade": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jos%C3%A9_Clemente_Orozco%2C_Barricade.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_Barricade.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Clemente_Orozco,_Barricade.jpg"
+  },
+  "The Subway": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Jos%C3%A9_Clemente_Orozco%2C_The_Subway.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_The_Subway.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Clemente_Orozco,_The_Subway.jpg"
+  }
+ },
+ "jozef-mehoffer": {
+  "Strange Garden": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg/500px-J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg"
+  },
+  "Zinnias": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/J%C3%B3zef_Mehoffer_-_Zinnias_-_MP_4274_MNW_-_National_Museum_in_Warsaw.jpg/500px-J%C3%B3zef_Mehoffer_-_Zinnias_-_MP_4274_MNW_-_National_Museum_in_Warsaw.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_Zinnias_-_MP_4274_MNW_-_National_Museum_in_Warsaw.jpg"
+  },
+  "Self-Portrait": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg/500px-J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg"
+  }
+ },
+ "john-frederick-lewis": {
+  "The Reception": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/John_frederick_lewis-reception1873.jpg/500px-John_frederick_lewis-reception1873.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_frederick_lewis-reception1873.jpg"
+  },
+  "Indoor Gossip, Cairo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg/500px-John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_(1804-1876)_-_Indoor_Gossip,_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg"
+  },
+  "Hhareem Life, Constantinople": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg/500px-John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_-_Hhareem_Life,_Constantinople.jpg"
+  },
+  "Sheik Hussein of Gebel Tor": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg/500px-John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg"
+  }
+ },
+ "ludwig-deutsch": {
+  "The Palace Guard": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ludwig_Deutsch-_The_Palace_Guard.jpg/500px-Ludwig_Deutsch-_The_Palace_Guard.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Deutsch-_The_Palace_Guard.jpg"
+  },
+  "The Girl with the Buffalo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg/500px-Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg"
+  }
  }
 };

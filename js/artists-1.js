@@ -106,7 +106,7 @@ window.ARTISTS.push(
     "He designed everything from daggers to chimney pieces for the court."] },
 
 { id:"pieter-bruegel", name:"Pieter Bruegel the Elder", years:"c. 1525–1569", born:1525, died:1569,
-  nation:"belgium", eras:["16th-century"], movements:["northern-renaissance"],
+  nation:"belgium", nationNote:"Netherlandish, of Antwerp and Brussels; Belgium dates from 1830", eras:["16th-century"], movements:["northern-renaissance"],
   techniques:["oil-painting","tempera"], style:"renaissance",
   palette:["#aeb9b4","#5b6e5a","#8a5a32","#32433f","#e8e3d3"],
   tagline:"Peasant weddings, proverb worlds and the first great snow in art",
@@ -132,7 +132,7 @@ window.ARTISTS.push(
     "He painted alla prima with unusually free, sketchy strokes for his era — restorers love him."] },
 
 { id:"el-greco", name:"El Greco", years:"1541–1614", born:1541, died:1614,
-  nation:"greece", eras:["16th-century","17th-century"], movements:["mannerism"],
+  nation:"greece", nationNote:"Cretan, and he signed in Greek — but his whole career was made in Toledo", eras:["16th-century","17th-century"], movements:["mannerism"],
   techniques:["oil-painting","tempera","glazing"], style:"expressionist",
   palette:["#2b3a52","#7b8fb0","#bfc8d8","#5e2430","#cfa44e"],
   tagline:"The Greek of Toledo — flames for figures, storms for skies",

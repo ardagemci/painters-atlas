@@ -277,5 +277,10 @@ window.INFLUENCES = [
   ["giovanni-bellini","titian","taught"],
   ["jean-leon-gerome","osman-hamdi-bey","taught"],
   ["jean-leon-gerome","mary-cassatt","taught"],
+  /* added with A3: Gérôme taught BOTH Ottoman painters in the atlas. Şeker Ahmed
+     Paşa was sent to Paris by Sultan Abdülaziz to study under Gustave Boulanger
+     and Gérôme, per the standard biography. */
+  ["jean-leon-gerome","seker-ahmed-pasha","taught"],
+  ["john-frederick-lewis","jean-leon-gerome","influenced"],
   ["michelangelo","giorgio-vasari","influenced"]
 ];

@@ -21,24 +21,62 @@ and movement* traits and was inherited into a work-specific field, so 12 may be
 the correct rule rather than a competing one. His `†` markers are in
 `CATALOG_BATCH_COPY.md` so either rule can be applied without re-counting.
 
-**A2 · The 12 undetected mismatches.** `audit_artworks.py`'s `suspect` detector
-flags 8 of the 20 known wrong images; the other 12 name the artist in the
-filename, so nothing asks the matcher about them. The repaired `match_verdict()`
-catches all 20 *on demand*. Widening `suspect` sends those 12 to re-resolution —
-which **is** the decision to replace them, not a step toward it.
+**A2 · IN PROGRESS — owner: replace them. One pass done, and it failed
+instructively.**
 
-**A3 · `orientalism` is applied to painters the term excludes by definition.**
-Two Ottoman painters and one Indian one carry it; the atlas contains **zero**
-actual European Orientalists. Osman Hamdi Bey's tagline reads *"Orientalism,
-corrected from the inside"* while his `movements` array files him **as** an
-Orientalist. Fixing it requires deciding what those painters are instead.
+The authoritative list is `IMAGE_RIGHTS_ROUTES.md` §1.6: **20 confirmed
+mismatches** in three groups. **C1 (Schwitters' *Ursonate*) is fixed**; 19 remain.
 
-**A4 · Single-valued `nation` cannot carry the truth.** `STYLE_GUIDE` §3.3/§7
-already mandate "primary filing + acknowledgment"; the prose honours it; the
-schema has no field for it; so the app renders one flag chip — a 🇹🇷 on a man who
-died in 1564. ~12 records are visibly wrong on a surface visitors see. The
-Curator recommends an **additive optional `nationNote`**, not re-typing shipped
-infrastructure.
+I ran an automated sourcing pass over all 19 — Commons search, public-domain
+filter, top candidate — and then looked at the results instead of shipping them.
+**It should not be shipped, and the reasons are worth keeping:**
+
+- **2 of 19 proposals were byte-identical to the file being replaced.**
+  Commons' search ranks the existing wrong file first *because* it is titled
+  after the artist and work we are searching for — the same property that made
+  those 12 invisible to the `suspect` detector in the first place. `hans-holbein`
+  and `gustave-moreau` both proposed their own defect back.
+- **`reza-abbasi`** returned the same *depicted* work under a different filename
+  (a portrait *of* Reza by his pupil — defect A8 again).
+- **`claude-lorrain`** returned a line engraving, not the National Gallery
+  painting.
+- **`sesshu-toyo`** and **`xu-beihong`** returned genuine works by the right
+  artist that are **not the work the record names** — which would fix the
+  attribution and break the title.
+
+**What this means for the remaining 19:** it is per-record curatorial work, not a
+batch job. Several will need the *record retitled* rather than the image swapped,
+exactly as *Vision of Spain* did. Whoever picks it up should add one cheap guard
+first: **assert that a proposed replacement URL differs from the one it replaces**
+— that alone would have caught two of nineteen.
+
+**A3 · RESOLVED 2026-08-08 — owner: add the real ones, re-file the rest.**
+`orientalism` now contains exactly three European Orientalists and nobody else:
+**Gérôme**, **John Frederick Lewis** (who actually lived a decade in Cairo, and
+never painted a nude) and **Ludwig Deutsch** (who painted most of his Egypt in a
+Paris studio). Şeker Ahmed Paşa, Osman Hamdi Bey and Raja Ravi Varma moved to
+**`academicism`** — the defensible description, since two of the three were
+taught by Gérôme inside that system. The movement's own blurb and description
+were rewritten: they had centred on Osman Hamdi Bey as a member, and now name who
+is deliberately *not* filed there and why.
+
+**A4 · RESOLVED 2026-08-08 — owner: follow the Curator.** Added an **additive
+optional `nationNote`**, exactly as recommended: the flag chip, the nation index
+and every shipped id are untouched, and the acknowledgment sits *beside* the flag
+rather than replacing it. Rendered on the artist identity line, deliberately not
+a link (it names a fact; it is not a second place to travel to), validator-bounded
+to a non-empty string ≤90 chars — a guard proved non-vacuous by feeding it a
+95-char note and a number.
+
+**15 records annotated**, chosen on a stricter test than the arithmetic one. A
+scan found **51** painters who died before their filed state existed, but "Italy"
+on Leonardo is museum convention and misleads no one. The notes go where the flag
+implies the wrong *people*, not merely the wrong century: five Ottoman painters
+filed 🇹🇷 (Matrakçı Nasuh was Bosnian-born), six Netherlandish and Flemish painters
+filed 🇧🇪 for a state founded in 1830, two filed 🇮🇳 for a republic founded in 1947,
+Ludwig Deutsch (Austrian by birth, French from 1919), and El Greco, whose Greek
+filing is right and whose career was entirely Spanish.
+
 
 ---
 
