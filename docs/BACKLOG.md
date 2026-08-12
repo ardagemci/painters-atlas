@@ -21,11 +21,34 @@ and movement* traits and was inherited into a work-specific field, so 12 may be
 the correct rule rather than a competing one. His `†` markers are in
 `CATALOG_BATCH_COPY.md` so either rule can be applied without re-counting.
 
-**A2 · The 12 undetected mismatches.** `audit_artworks.py`'s `suspect` detector
-flags 8 of the 20 known wrong images; the other 12 name the artist in the
-filename, so nothing asks the matcher about them. The repaired `match_verdict()`
-catches all 20 *on demand*. Widening `suspect` sends those 12 to re-resolution —
-which **is** the decision to replace them, not a step toward it.
+**A2 · IN PROGRESS — owner: replace them. One pass done, and it failed
+instructively.**
+
+The authoritative list is `IMAGE_RIGHTS_ROUTES.md` §1.6: **20 confirmed
+mismatches** in three groups. **C1 (Schwitters' *Ursonate*) is fixed**; 19 remain.
+
+I ran an automated sourcing pass over all 19 — Commons search, public-domain
+filter, top candidate — and then looked at the results instead of shipping them.
+**It should not be shipped, and the reasons are worth keeping:**
+
+- **2 of 19 proposals were byte-identical to the file being replaced.**
+  Commons' search ranks the existing wrong file first *because* it is titled
+  after the artist and work we are searching for — the same property that made
+  those 12 invisible to the `suspect` detector in the first place. `hans-holbein`
+  and `gustave-moreau` both proposed their own defect back.
+- **`reza-abbasi`** returned the same *depicted* work under a different filename
+  (a portrait *of* Reza by his pupil — defect A8 again).
+- **`claude-lorrain`** returned a line engraving, not the National Gallery
+  painting.
+- **`sesshu-toyo`** and **`xu-beihong`** returned genuine works by the right
+  artist that are **not the work the record names** — which would fix the
+  attribution and break the title.
+
+**What this means for the remaining 19:** it is per-record curatorial work, not a
+batch job. Several will need the *record retitled* rather than the image swapped,
+exactly as *Vision of Spain* did. Whoever picks it up should add one cheap guard
+first: **assert that a proposed replacement URL differs from the one it replaces**
+— that alone would have caught two of nineteen.
 
 **A3 · RESOLVED 2026-08-08 — owner: add the real ones, re-file the rest.**
 `orientalism` now contains exactly three European Orientalists and nobody else:
