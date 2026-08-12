@@ -182,4 +182,37 @@ window.EDITORIAL_LISTS = [
     { id:"tree-of-life-stoclet", note:"The family trade — his father was a gilder — made immortal." },
     { id:"beethoven-frieze", note:"A choir of angels waiting at the end of a gold corridor." },
     { id:"gold-marilyn-monroe", note:"A Byzantine icon of celebrity, painted by an altar boy." }] }
+,
+
+/* ---- Actuality, September 2026 (docs/ACTUALITY.md, product type 2) ----
+   The blockbuster-news list. The news is the door; the atlas is the room. No
+   image here is new and none illustrates the news — it cannot, and that
+   constraint is what forces the list to answer out of the collection instead.
+   Tone: light, because a basketball signing carries it. Goya's king is the one
+   entry written straight, and the essay says why. */
+{ id:"the-king-goes-to-philadelphia", featured:false,
+  title:"The King Goes to Philadelphia",
+  lede:"On 24 July 2026 LeBron James signed with the 76ers — forty-one years old, twenty-fourth season, two years and eight million dollars. Philadelphia has been receiving famous arrivals for a while. Five things already hanging in the city, and one very uneasy king.",
+  cover:"the-large-bathers",
+  works:[
+    { id:"woman-with-a-pearl-necklace",
+      note:"Pennsylvania's own Impressionist, on a Philadelphia wall.",
+      essay:"Cassatt was born in Allegheny City, Pennsylvania in 1844 and trained at the Pennsylvania Academy of the Fine Arts in Philadelphia before Paris got her — so of everything in this list she is the closest thing to a local. The picture is a loge scene: a woman in a theatre box, fan down, half-turned, and behind her a mirror carrying the rest of the auditorium in a golden blur. What it is actually about is the traffic of looking. She has come to watch, she is being watched, and Cassatt puts you in the third position, watching the watching. It is 81 by 60 centimetres, which is small for how much social machinery it contains." },
+    { id:"the-large-bathers",
+      note:"The biggest Cézanne on earth, and the city bought it.",
+      essay:"Cézanne worked on the three Grandes Baigneuses through the last years of his life, and this is the largest — two and a half metres across, unfinished in the sense that Cézanne finished almost nothing. The bodies are not really bodies; they are wedges arranged to make the trees lean the way he wanted. Look at how the trunks bend inward at the top: he is building an architecture out of people, which is roughly what Cubism took from him a few years later. Philadelphia acquired it, and it is now the single object most often given as the reason to go to the museum at all." },
+    { id:"the-burning-of-the-houses",
+      note:"Turner watched Parliament burn, then sold the fire twice.",
+      essay:"On the night of 16 October 1834 the Palace of Westminster caught fire and most of London came out to watch. Turner watched from the river, sketching in a rented boat, and afterwards made two oil paintings of it — this one, and another now in Cleveland. What he cared about was not the building. The architecture is barely there: it is a smear of heat, reflected in the Thames, with the crowd reduced to a dark shoal on the bridge. It is one of the moments where you can see nineteenth-century painting deciding that light matters more than things." },
+    { id:"little-dancer-aged-fourteen",
+      note:"Real hair, a real skirt, and Paris was appalled.",
+      essay:"Degas modelled Marie van Goethem, a fourteen-year-old student at the Paris Opéra ballet school, in wax — then dressed the figure in a real bodice, a real tutu and a real hair ribbon, and put a wig of actual hair on her head. When it was shown in 1881 the critics were not charmed. They called her ugly, they read vice into her face, and one of them compared her to a specimen in a medical museum. The sculpture is now the most reproduced thing Degas ever made. Philadelphia's is one of the bronzes cast after his death; the wax original is in Washington." },
+    { id:"the-boating-party",
+      note:"Cassatt's most muscular picture: all effort, no small talk.",
+      essay:"This is the other Cassatt here and the tougher one. A man rows, his back filling the bottom-left corner in a single dark mass, and a woman holds a child who is sprawled and heavy in the way real children are. The composition is straight out of the Japanese prints Cassatt had been studying: the high viewpoint, the boat sliced by the frame, the flat blocks of colour with no shadow in them. Nobody is charming anybody. It is a picture about physical work and the weight of a tired kid, painted by an artist usually filed under tenderness." },
+    { id:"charles-iv-of-spain-and-his-family",
+      note:"A king who ordered his own portrait, and got this one.",
+      essay:"The one non-Philadelphian here, on the strength of a nickname. Goya painted the Spanish royal family in 1800–01 at nearly three metres wide, and the result has puzzled people ever since: the king is soft and vacant, the queen is placed dead centre where the monarch should be, and the whole group stands in a flat brown gloom, wearing a fortune in sashes and medals. Goya himself is at the back-left in shadow at his easel — the same trick Velázquez pulls in Las Meninas, quoted deliberately. Whether he was mocking them or simply painting what he saw is still argued; the court accepted it and paid." }
+  ] }
+
 ];

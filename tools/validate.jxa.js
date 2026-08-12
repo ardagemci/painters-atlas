@@ -163,6 +163,15 @@ LST.forEach(function(l){
     if(seenW[e.id]) errs.push(tag + ": duplicate work " + e.id);
     seenW[e.id] = 1;
     if(!e.note || e.note.length > 120) errs.push(tag + ": note missing or over 120 chars for " + e.id);
+    /* B2. Optional longer paragraph, used by Actuality lists. Bounded at both
+       ends: under 200 chars it is not a paragraph and belongs in `note`, over
+       900 it is an article and belongs on its own page. */
+    if(e.essay !== undefined){
+      if(typeof e.essay !== "string" || e.essay.trim().length < 200)
+        errs.push(tag + ": essay for " + e.id + " must be a paragraph of 200+ chars (use note for one-liners)");
+      else if(e.essay.length > 900)
+        errs.push(tag + ": essay for " + e.id + " is " + e.essay.length + " chars (max 900)");
+    }
   });
   if(!l.cover || !seenW[l.cover]) errs.push(tag + ": cover must be one of the list's own works");
 });
