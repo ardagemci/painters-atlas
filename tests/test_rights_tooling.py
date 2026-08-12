@@ -573,6 +573,18 @@ B3_NAMED_PAINTERS = {
             U + "d/d7/Feast_of_the_Gods_Giovanni_Bellini_1514.jpg/500px-Feast_of_the_Gods_Giovanni_Bellini_1514.jpg",
             U + "d/d9/Italien_humanists_by_Giorgio_Vasari.jpg/500px-Italien_humanists_by_Giorgio_Vasari.jpg",
             U + "e/ea/Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg/500px-Giorgio_Vasari_-_Self-Portrait_-_WGA24284.jpg",
+            # second pass, same B3 event: Orozco, Siqueiros, Mehoffer and
+            # Aliye Berger. Only 7 images arrive for 4 painters, because
+            # Siqueiros (d. 1974) and Berger (d. 1974) are still in copyright
+            # and carry generative covers with no reproduction — which is why
+            # only 2 of the 4 new stubs contribute an og:image.
+            U + "3/38/Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg",
+            U + "4/43/J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg/500px-J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg",
+            U + "9/90/J%C3%B3zef_Mehoffer_-_Zinnias_-_MP_4274_MNW_-_National_Museum_in_Warsaw.jpg/500px-J%C3%B3zef_Mehoffer_-_Zinnias_-_MP_4274_MNW_-_National_Museum_in_Warsaw.jpg",
+            U + "9/96/Jos%C3%A9_Clemente_Orozco%2C_The_Subway.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_The_Subway.jpg",
+            U + "b/b7/Jos%C3%A9_Clemente_Orozco%2C_Barricade.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_Barricade.jpg",
+            U + "e/e2/Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg/500px-Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg",
+            U + "e/e9/J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg/500px-J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg",
         ],
     },
     "prerender_metadata_refs": {
@@ -582,6 +594,13 @@ B3_NAMED_PAINTERS = {
             U + "a/a9/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg/500px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Le_charmeur_de_serpents.jpg",
             U + "b/bc/Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg/500px-Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
             U + "d/d9/Italien_humanists_by_Giorgio_Vasari.jpg/500px-Italien_humanists_by_Giorgio_Vasari.jpg",
+            # second pass, same B3 event: Orozco, Siqueiros, Mehoffer and
+            # Aliye Berger. Only 7 images arrive for 4 painters, because
+            # Siqueiros (d. 1974) and Berger (d. 1974) are still in copyright
+            # and carry generative covers with no reproduction — which is why
+            # only 2 of the 4 new stubs contribute an og:image.
+            U + "3/38/Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg/500px-Jos%C3%A9_Clemente_Orozco%2C_Zapatistas%2C_1931%2C_MoMA.jpg",
+            U + "e/e9/J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg/500px-J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg",
         ],
     },
 }
@@ -634,8 +653,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 823)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 822)   # +1: the same      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 830)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 829)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -715,7 +734,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 543)
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 550)
 
 
 class TestSuppression(unittest.TestCase):
