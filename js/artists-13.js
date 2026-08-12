@@ -174,7 +174,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","watercolor"], style:"fauvist",
   palette:["#2e8a5e","#b0703a","#e8c89a","#3e3a30","#8a3a4e"],
   tagline:"Tutu, the 'African Mona Lisa' — Negritude in oil and bronze",
-  works:[{t:"Tutu",y:"1974"},{t:"Anyanwu",y:"1954–55"},{t:"The Dancers (Agbogho Mmuo series)",y:"1940s–80s"}],
+  works:[{t:"Tutu",y:"1973"},{t:"Anyanwu",y:"1954–55"},{t:"The Dancers (Agbogho Mmuo series)",y:"1940s–80s"}],
   life:"Son of an Onitsha sculptor of Igbo ritual art, Enwonwu took a first-class Slade education to a career lived between worlds: Britain's galleries and Nigeria's independence, imperial commissions and African cultural nationalism. The first African artist to achieve global celebrity, he became independent Nigeria's cultural standard-bearer and died in Lagos in 1994.",
   career:"His Anyanwu — a bronze sun-goddess rising in welcome — stands at the National Museum in Lagos and the UN in New York: the new nation cast in confidence. The 1974 portrait Tutu, an Ife princess painted in profile serenity, became Nigeria's grail when all three versions vanished; one surfaced in a London flat in 2017 and sold for £1.2M as the country watched the auction live.",
   outside:"Queen Elizabeth II sat for him in 1956 — an African artist sculpting the empire's sovereign made world news and divided opinion exactly as he intended. He wrote and lectured on Negritude with Senghor's circle, demanding African modernism be modern and African without apology or permission.",

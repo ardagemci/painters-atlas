@@ -359,4 +359,74 @@ window.CATALOG = (window.CATALOG || []).concat([
           "A French national treasure, sold abroad in 2021"],
   tags:["interior","quiet","lonely","everyday-life"] }
 
+,
+
+/* Added 2026-08-12 for the Actuality list (docs/ACTUALITY.md). Enwonwu died in
+   1994, so the work is in copyright: image.status "copyright" with no src, and
+   the page carries a generative cover. It is also the catalog's FIRST African
+   record — the artists were here, the works were not. */
+{ id:"tutu-enwonwu", tier:2,
+  title:"Tutu", worksKey:"Tutu",
+  artistId:"ben-enwonwu", year:{ display:"1973", sort:1973 },
+  movements:["contemporary-art"], techniques:["oil-painting"], nation:"nigeria",
+  museum:{ id:"private-collection", name:"Private collection", city:"—" },
+  image:{ status:"copyright" },
+  coords:{ F:-80, D:-30, E:10, C:-10, M:-35 }, coordsSource:"override",
+  description:"A young woman turns her head over her shoulder and looks past you, in a green wrapper against a flat ground. She is Adetutu Ademiluyi, an Ife princess, and Enwonwu painted her in 1973 in a manner that is neither European portraiture nor traditional Igbo sculpture but argues with both. The picture became the most reproduced image in modern Nigerian art, and then it disappeared for forty years.",
+  notice:["Three versions were painted; all vanished after 1975",
+          "Found in a north London flat in late 2017",
+          "Still in copyright, so this page shows no reproduction"],
+  tags:["portrait","quiet","would-hang"] }
+
+,
+
+/* Added 2026-08-12 for the August Actuality list. Rousseau died in 1910 and is
+   public domain; Tarsila do Amaral died in 1973 and is not, so her record is
+   flagged as in-copyright and carries a generative cover.
+   NB: this comment deliberately avoids writing that flag out as a literal
+   key/value pair — tools/asset_inventory.py counts the string wherever it
+   appears, so a comment quoting it inflates copyright_refs by one. */
+{ id:"the-dream-rousseau", tier:2,
+  title:"The Dream", worksKey:"The Dream",
+  artistId:"henri-rousseau", year:{ display:"1910", sort:1910 },
+  movements:["naive-art","post-impressionism"], techniques:["oil-painting"], nation:"france",
+  museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" },
+  dims:"204.5 \u00d7 298.5 cm",
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Henri_Rousseau_005.jpg/500px-Henri_Rousseau_005.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:Henri_Rousseau_005.jpg", status:"pd" },
+  coords:{ F:-70, D:-20, E:35, C:-30, M:20 }, coordsSource:"override",
+  description:"A woman reclines on a Paris sofa in the middle of a jungle, and neither she nor the jungle finds this odd. Lions watch, a snake charmer plays in the half-dark, and every leaf is drawn with the patience of a man copying from life \u2014 which he was, only the life was in a hothouse. Rousseau finished it months before he died, and told a critic the woman was dreaming herself there.",
+  notice:["He never left France, let alone saw a jungle",
+          "Painted from the Paris botanical gardens and picture books",
+          "Finished months before his death in 1910"],
+  tags:["landscape","unsettling","monumental-scale","nude"] },
+
+{ id:"tiger-in-a-tropical-storm", tier:2,
+  title:"Tiger in a Tropical Storm (Surprised!)", worksKey:"Tiger in a Tropical Storm",
+  artistId:"henri-rousseau", year:{ display:"1891", sort:1891 },
+  movements:["naive-art","post-impressionism"], techniques:["oil-painting"], nation:"france",
+  museum:{ id:"national-gallery-london", name:"The National Gallery", city:"London" },
+  dims:"129.8 \u00d7 161.9 cm",
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Surprised-Rousseau.jpg/500px-Surprised-Rousseau.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:Surprised-Rousseau.jpg", status:"pd" },
+  coords:{ F:-70, D:35, E:30, C:-25, M:5 }, coordsSource:"override",
+  description:"His first jungle, and the storm is doing most of the work: silver rain drawn in diagonal lines straight across the canvas, grasses bent flat, and a tiger caught mid-pounce with its eyes wide. Critics laughed at the flat leaves and the toy-like beast. The bent grass and the rain are, in fact, exactly observed \u2014 he had watched storms, if not tigers.",
+  notice:["His first jungle painting, and the critics laughed",
+          "The rain is drawn as literal silver lines",
+          "Nobody has agreed what surprised the tiger"],
+  tags:["landscape","storm","unsettling"] },
+
+{ id:"abaporu", tier:2,
+  title:"Abaporu", worksKey:"Abaporu",
+  artistId:"tarsila-do-amaral", year:{ display:"1928", sort:1928 },
+  movements:["modernism"], techniques:["oil-painting"], nation:"brazil",
+  museum:{ id:"private-collection", name:"Private collection", city:"\u2014" },
+  image:{ status:"copyright" },
+  coords:{ F:-45, D:-25, E:55, C:5, M:10 }, coordsSource:"override",
+  description:"A seated figure with an enormous foot in the foreground and a tiny head against a hot sun and a cactus. Tarsila painted it as a birthday present for her husband, the poet Oswald de Andrade, who took one look and wrote the Cannibalist Manifesto around it: Brazil should devour foreign influence and digest it into something its own. The title is Tupi\u2013Guarani for the man who eats people.",
+  notice:["The painting came first; the manifesto came after",
+          "Abaporu is Tupi\u2013Guarani for man-eater",
+          "Still in copyright, so this page shows no reproduction"],
+  tags:["portrait","monumental-scale","unsettling"] }
+
 ]);

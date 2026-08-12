@@ -643,6 +643,42 @@ A3_ORIENTALISM = {
 }
 
 
+#: EIGHTH LEDGER — Actuality expansion, 2026-08-12.
+#:
+#: The owner's direction: an Actuality list may add whatever the atlas needs to
+#: answer the story properly, rather than being limited to what is already here.
+#: News as an acquisition driver.
+#:
+#: Two lists. The LeBron entry grew from 6 works to 10 with side-plots — the
+#: helicopter commute (Bruegel's Icarus), the arena's five names (Bruegel's Tower
+#: of Babel), the Hinkie Process (Bruegel's Hunters in the Snow) and Embiid
+#: (Enwonwu's Tutu). A second list answers INPE's Amazon deforestation figures
+#: with Rousseau, Tarsila do Amaral, Bosch, af Klint and Klimt.
+#:
+#: Only TWO images arrive, both Rousseau, and only ONE is new to the atlas —
+#: Surprised! was already in his gallery pool, so catalog_gallery_overlap moves
+#: 115 -> 116 while total_unique moves 836 -> 837. Everything else was either
+#: already catalogued or is in copyright: Tutu (d. 1994) and Abaporu (d. 1973)
+#: carry no reproduction, which is why copyright_refs moves 66 -> 68 and the
+#: rendered surfaces do not move for them at all.
+ACTUALITY_EXPANSION = {
+    "catalog_pd_rendered": {
+        "removed": [],
+        "added": [
+            U + "1/16/Henri_Rousseau_005.jpg/500px-Henri_Rousseau_005.jpg",
+            U + "f/fa/Surprised-Rousseau.jpg/500px-Surprised-Rousseau.jpg",
+        ],
+    },
+    "prerender_metadata_refs": {
+        "removed": [],
+        "added": [
+            U + "1/16/Henri_Rousseau_005.jpg/500px-Henri_Rousseau_005.jpg",
+            U + "f/fa/Surprised-Rousseau.jpg/500px-Surprised-Rousseau.jpg",
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -660,7 +696,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -690,17 +726,22 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 836)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 835)   # +1: the same      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 837)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 836)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
-        self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
+        self.assertEqual(c["catalog_gallery_overlap"], 116)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
         # elegy-to-the-spanish-republic-108, mars-dust, the-gate-hofmann. A rise
         # here is correct behaviour: it means works that may not be rendered were
         # recorded as such rather than silently given an image.
-        self.assertEqual(c["copyright_refs"], 66)
+        # 66 -> 67: the Actuality expansion of 2026-08-12 added Enwonwu's Tutu,
+        # the catalog's first African record. He died in 1994, so it carries
+        # image:{status:"copyright"} with no src — which is why this number moves
+        # and total_unique/rendered_unique do not. A record that added a picture
+        # would have moved those too.
+        self.assertEqual(c["copyright_refs"], 68)
 
 
 class TestSampleBasis(unittest.TestCase):
@@ -764,7 +805,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 280)
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 282)
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.

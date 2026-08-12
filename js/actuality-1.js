@@ -37,4 +37,17 @@ window.ACTUALITY = [
   coverStyle:"mary-cassatt",   // generated in her manner; shown on BOTH the card and the list page
   sensitive:false }
 
+,
+
+{ id:"amazon-deforestation-2026",
+  kind:"list",
+  published:"2026-08-10",
+  headline:"Amazon deforestation falls to its lowest in a decade",
+  newsline:"Reported 10 July 2026 by Brazil's National Institute for Space Research (INPE): 1,295 square kilometres cleared between January and June 2026, a 38% fall on the same period in 2025 and the lowest figure for that stretch since 2016.",
+  source:{ name:"AFP via Phys.org", url:"https://phys.org/news/2026-07-brazil-deforestation-amazon.html" },
+  hook:"Good news about a forest. Painters have been inventing them for centuries.",
+  listId:"the-forest-that-stopped-shrinking",
+  coverStyle:"henri-rousseau",
+  sensitive:false }
+
 ];

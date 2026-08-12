@@ -192,7 +192,7 @@ window.EDITORIAL_LISTS = [
    entry written straight, and the essay says why. */
 { id:"the-king-goes-to-philadelphia", featured:false,
   title:"The King Goes to Philadelphia",
-  lede:"On 24 July 2026 LeBron James signed with the 76ers — forty-one years old, twenty-fourth season, two years and eight million dollars. Philadelphia has been receiving famous arrivals for a while. Five things already hanging in the city, and one very uneasy king.",
+  lede:"On 24 July 2026 LeBron James signed with the 76ers — forty-one, twenty-fourth season, two years and eight million dollars. Philadelphia has been receiving famous arrivals for a while. The city's own walls, a king, a building that keeps changing its name, a very bad hunting trip, and a man falling out of the sky.",
   cover:"the-large-bathers",
   works:[
     { id:"woman-with-a-pearl-necklace",
@@ -213,6 +213,47 @@ window.EDITORIAL_LISTS = [
     { id:"charles-iv-of-spain-and-his-family",
       note:"A king who ordered his own portrait, and got this one.",
       essay:"The one non-Philadelphian here, on the strength of a nickname. Goya painted the Spanish royal family in 1800–01 at nearly three metres wide, and the result has puzzled people ever since: the king is soft and vacant, the queen is placed dead centre where the monarch should be, and the whole group stands in a flat brown gloom, wearing a fortune in sashes and medals. Goya himself is at the back-left in shadow at his easel — the same trick Velázquez pulls in Las Meninas, quoted deliberately. Whether he was mocking them or simply painting what he saw is still argued; the court accepted it and paid." }
+    ,
+    { id:"fall-of-icarus",
+      note:"A man falls out of the sky. Nobody looks up.",
+      essay:"Reports have LeBron keeping a home well outside Philadelphia and commuting in, which is the most twenty-first-century detail in the whole story and also a very old subject. Look at the bottom right of this panel: two pale legs disappearing into the water, the smallest thing in the picture. That is Icarus. Everything else simply carries on — the ploughman leans into his furrow, the shepherd gazes up in the wrong direction, a ship sails past the splash. Auden built a poem on exactly that indifference. One caution the atlas owes you: the attribution is unsettled, and many scholars now read the Brussels panel as a copy after a lost Bruegel rather than his own hand." },
+    { id:"the-tower-of-babel",
+      note:"Five names in thirty years, and still the same building.",
+      essay:"The arena the Sixers play in has been the CoreStates Center, the First Union Center, the Wachovia Center, the Wells Fargo Center, and since September 2025 the Xfinity Mobile Arena. Bruegel painted the original story about a naming project that will not hold. What makes it his rather than a Sunday-school illustration is that he treats it as a construction site: cranes, scaffolding, ant-sized labourers, a king arriving to inspect progress — and arches at the bottom that are already crumbling while the upper floors go up. The joke is structural, not theological. The thing was built wrong from the first course, and more building does not fix it." },
+    { id:"hunters-in-the-snow",
+      note:"The Process, painted in 1565: home with almost nothing.",
+      essay:"Three hunters come back through deep snow with one thin fox between them and a line of beaten dogs. Down in the valley everyone else is skating, playing, lighting fires — which is the cruelty of it: the whole town is enjoying the winter these men just failed in. Philadelphia spent the mid-2010s deliberately losing under Sam Hinkie, trading present seasons for future draft picks, and \u201cTrust the Process\u201d is what the fans called it while it hurt. This is what that looks like from inside. Bruegel painted it as one panel in a cycle of the months, so the empty-handed return is not the end of anything; it is January, and the series keeps going." },
+    { id:"tutu-enwonwu",
+      note:"Lost for forty years, found in a north London flat.",
+      essay:"Joel Embiid was born in Yaound\u00e9 and did not pick up a basketball until he was fifteen. Ben Enwonwu\u2019s Tutu is the painting that made the West look properly at modern African art, and it took its time: painted in 1973 of Adetutu Ademiluyi, an Ife princess, it disappeared after 1975, and in late 2017 a north London family carried it into Bonhams for a valuation without knowing what they had. It sold in February 2018 for \u00a31,205,000. Enwonwu died in 1994, so the work is still in copyright and this page carries a generative cover instead of a reproduction \u2014 Pigment can tell you about the picture and cannot show it to you. It is also the first African work in this catalog, which says something about the atlas rather than about African painting." }
+  ] }
+
+,
+
+/* ---- Actuality, August 2026 ---- */
+{ id:"the-forest-that-stopped-shrinking", featured:false,
+  title:"The Forest That Stopped Shrinking",
+  lede:"On 10 July 2026 Brazil's space agency reported 1,295 square kilometres of Amazon cleared between January and June \u2014 down 38% on the year before, and the lowest for that stretch since 2016. Six paintings about forests, and what people have wanted from them.",
+  cover:"the-dream-rousseau",
+  works:[
+    { id:"the-dream-rousseau",
+      note:"The most famous jungle in art, painted by a man who never saw one.",
+      essay:"Rousseau worked as a Paris customs officer and never left France. Every jungle he painted \u2014 and he painted about twenty \u2014 came out of the hothouses at the Jardin des Plantes, illustrated magazines, and the taxidermy at the natural history museum. He told people he had served in Mexico; he had not. The Dream is the last of them, finished months before he died in 1910: a woman on a Paris sofa in the middle of the vegetation, lions watching, a snake charmer somewhere in the dark. The leaves are drawn one at a time with total seriousness. It is an invented forest that has convinced more people of the idea of a rainforest than most real photographs of one." },
+    { id:"tiger-in-a-tropical-storm",
+      note:"The first jungle, and Paris thought it was a joke.",
+      essay:"Nineteen years earlier, his first: a tiger in the grass with rain drawn straight across the canvas as literal silver lines. The Salon critics were merciless about the flat leaves and the toy tiger. What they missed is that the storm is observed \u2014 the grasses bend the right way, the light is the right dirty grey. He had watched storms; he simply had no tiger. Nobody has ever settled what surprised it, and the National Gallery has been asked so often that the label declines to say." },
+    { id:"abaporu",
+      note:"Brazil painting Brazil, and telling Europe to be eaten.",
+      essay:"Tarsila do Amaral painted this in 1928 as a birthday present for her husband, the poet Oswald de Andrade: a figure with a colossal foot, a tiny head, a cactus, a hot sun. He looked at it and wrote the Cannibalist Manifesto around it \u2014 the argument that Brazil should not imitate European culture but devour it and digest it into something of its own. The title is Tupi\u2013Guarani for the man who eats people. It is the counterweight to Rousseau: not a European dreaming the tropics, but the tropics answering back. She died in 1973, so her work is still in copyright and this page carries a generative cover rather than a reproduction." },
+    { id:"the-garden-of-earthly-delights",
+      note:"Paradise, then what people did with it.",
+      essay:"Bosch's triptych runs left to right: a quiet Eden with God introducing Adam and Eve, then a vast central panel of naked figures among impossible fruit and birds, then hell. The reading everyone reaches for \u2014 pleasure punished \u2014 is probably too neat; the middle panel is not obviously a warning, and scholars have argued about it for five centuries. What is not in doubt is the shape of it. It is the oldest picture in this list, and it is about a green place that does not stay the way it started." },
+    { id:"tree-of-knowledge-no-1",
+      note:"Af Klint drew the tree as a diagram of everything.",
+      essay:"Hilma af Klint made her abstractions from 1906 and told almost nobody, leaving instructions that the work should not be shown until twenty years after her death. The Tree of Knowledge sheets are among the most legible things she made: a trunk, roots, a canopy, birds \u2014 but organised as a chart, symmetrical, colour-coded, closer to a botanical plate crossed with a spiritual diagram than to a landscape. She was drawing the idea of a tree rather than any particular one, which is a very different thing from Rousseau and worth putting beside him." },
+    { id:"tree-of-life-stoclet",
+      note:"A tree in gold, designed to be walked past in a dining room.",
+      essay:"Klimt's Tree of Life is a design for the dining room of the Palais Stoclet in Brussels \u2014 mosaic, marble, metal, made to be seen while eating. The branches spiral into flat gold curls that stop pretending to be branches about halfway up. It belongs here as the opposite pole from the INPE satellite: the forest reduced entirely to pattern and ornament, beautiful and completely weightless, hung on the wall of a private house by a family with enough money to commission an entire building around it." }
   ] }
 
 ];
