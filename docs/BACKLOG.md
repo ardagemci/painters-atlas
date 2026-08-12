@@ -27,11 +27,15 @@ filename, so nothing asks the matcher about them. The repaired `match_verdict()`
 catches all 20 *on demand*. Widening `suspect` sends those 12 to re-resolution —
 which **is** the decision to replace them, not a step toward it.
 
-**A3 · `orientalism` is applied to painters the term excludes by definition.**
-Two Ottoman painters and one Indian one carry it; the atlas contains **zero**
-actual European Orientalists. Osman Hamdi Bey's tagline reads *"Orientalism,
-corrected from the inside"* while his `movements` array files him **as** an
-Orientalist. Fixing it requires deciding what those painters are instead.
+**A3 · RESOLVED 2026-08-08 — owner: add the real ones, re-file the rest.**
+`orientalism` now contains exactly three European Orientalists and nobody else:
+**Gérôme**, **John Frederick Lewis** (who actually lived a decade in Cairo, and
+never painted a nude) and **Ludwig Deutsch** (who painted most of his Egypt in a
+Paris studio). Şeker Ahmed Paşa, Osman Hamdi Bey and Raja Ravi Varma moved to
+**`academicism`** — the defensible description, since two of the three were
+taught by Gérôme inside that system. The movement's own blurb and description
+were rewritten: they had centred on Osman Hamdi Bey as a member, and now name who
+is deliberately *not* filed there and why.
 
 **A4 · Single-valued `nation` cannot carry the truth.** `STYLE_GUIDE` §3.3/§7
 already mandate "primary filing + acknowledgment"; the prose honours it; the

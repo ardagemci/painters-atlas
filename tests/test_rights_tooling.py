@@ -606,6 +606,43 @@ B3_NAMED_PAINTERS = {
 }
 
 
+#: SEVENTH LEDGER — A3, the Orientalism correction, 2026-08-08.
+#:
+#: The atlas applied `orientalism` to two Ottoman painters and one Indian one
+#: and contained no actual European Orientalists — so the movement described
+#: nobody in it and mislabelled everybody in it. Osman Hamdi Bey's tagline read
+#: "Orientalism, corrected from the inside" while his movements array filed him
+#: AS an Orientalist.
+#:
+#: Owner decision: add the real ones, then re-file the three. John Frederick
+#: Lewis and Ludwig Deutsch join Gérôme, and Şeker Ahmed Paşa, Osman Hamdi Bey
+#: and Raja Ravi Varma move to `academicism` — which is where they belong on the
+#: evidence, since two of the three were taught by Gérôme inside that system.
+#:
+#: Only the two new painters bring images; the re-filing moves no asset at all.
+#: 6 gallery images, 2 stubs. catalog_gallery_overlap stays 115.
+A3_ORIENTALISM = {
+    "gallery_rendered": {
+        "removed": [],
+        "added": [
+            U + "0/02/John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg/500px-John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg",
+            U + "0/0c/John_frederick_lewis-reception1873.jpg/500px-John_frederick_lewis-reception1873.jpg",
+            U + "4/40/John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg/500px-John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg",
+            U + "8/86/Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg/500px-Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg",
+            U + "a/ac/John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg/500px-John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg",
+            U + "f/f0/Ludwig_Deutsch-_The_Palace_Guard.jpg/500px-Ludwig_Deutsch-_The_Palace_Guard.jpg",
+        ],
+    },
+    "prerender_metadata_refs": {
+        "removed": [],
+        "added": [
+            U + "0/0c/John_frederick_lewis-reception1873.jpg/500px-John_frederick_lewis-reception1873.jpg",
+            U + "f/f0/Ludwig_Deutsch-_The_Palace_Guard.jpg/500px-Ludwig_Deutsch-_The_Palace_Guard.jpg",
+        ],
+    },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -623,7 +660,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -653,8 +690,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 830)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 829)   # +1: the same      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 836)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 835)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 115)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -734,7 +771,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 550)
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 556)
 
 
 class TestSuppression(unittest.TestCase):

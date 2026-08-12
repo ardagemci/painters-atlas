@@ -2560,5 +2560,33 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg/500px-J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_Self-portrait_-_MP_403_MNW_-_National_Museum_in_Warsaw.jpg"
   }
+ },
+ "john-frederick-lewis": {
+  "The Reception": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/John_frederick_lewis-reception1873.jpg/500px-John_frederick_lewis-reception1873.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_frederick_lewis-reception1873.jpg"
+  },
+  "Indoor Gossip, Cairo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg/500px-John_Frederick_Lewis_%281804-1876%29_-_Indoor_Gossip%2C_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_(1804-1876)_-_Indoor_Gossip,_Cairo_-_O.1961.1_-_Whitworth_Art_Gallery.jpg"
+  },
+  "Hhareem Life, Constantinople": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg/500px-John_Frederick_Lewis_-_Hhareem_Life%2C_Constantinople.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_-_Hhareem_Life,_Constantinople.jpg"
+  },
+  "Sheik Hussein of Gebel Tor": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg/500px-John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:John_Frederick_Lewis_-_Sheik_Hussein_of_Gebel_Tor_and_His_Son_-_Google_Art_Project.jpg"
+  }
+ },
+ "ludwig-deutsch": {
+  "The Palace Guard": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ludwig_Deutsch-_The_Palace_Guard.jpg/500px-Ludwig_Deutsch-_The_Palace_Guard.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Deutsch-_The_Palace_Guard.jpg"
+  },
+  "The Girl with the Buffalo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg/500px-Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg"
+  }
  }
 };

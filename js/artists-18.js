@@ -139,4 +139,37 @@ window.ARTISTS = (window.ARTISTS || []).concat([
     "Her sister was the painter Fahrelnissa Zeid.",
     "Her work is still in copyright, so this page carries a generative cover, not a reproduction."] }
 
+,
+
+{ id:"john-frederick-lewis", name:"John Frederick Lewis", years:"1804–1876", born:1804, died:1876,
+  nation:"britain", eras:["19th-century"],
+  movements:["orientalism"],
+  techniques:["oil-painting","watercolor"], style:"neoclassical",
+  palette:["#c9a24a","#7d4a2e","#e4d8bd","#3f5f5a","#221c16"],
+  tagline:"He actually lived there — ten years in Cairo, and it shows",
+  works:[{t:"The Reception",y:"1873"},{t:"Indoor Gossip, Cairo",y:"1873"},{t:"Hhareem Life, Constantinople",y:"1857"},{t:"Sheik Hussein of Gebel Tor",y:"c. 1842"}],
+  life:"Lewis trained in London among animal painters and topographers, then left for the Mediterranean and kept going. From about 1841 he lived roughly a decade in Cairo, in a traditional Ottoman mansion, dressed and housed as his neighbours were — Thackeray visited and wrote him up as having gone completely native. He came back to England in 1851 and spent the rest of his life painting the place he had left.",
+  career:"The residence is the whole point of his work. Where most Orientalist painters assembled the East in a Paris studio from props and photographs, Lewis had watched the light come through a real mashrabiya screen, and his pictures set a standard of architectural and textile accuracy that the genre had not had. Gérôme's later work is generally reckoned to show his influence. He worked the same composition twice, in watercolour and in oil, and the watercolours are often the better picture.",
+  outside:"He is the counter-example inside his own genre, and worth stating precisely: unlike many Orientalist painters, who took a salacious interest in the women of the region, Lewis never painted a nude, and his own wife modelled for several of the harem scenes. Critics have described the result as imagining the harem as a place of almost English domesticity — which is its own kind of invention, and a gentler one.",
+  facts:["He lived about ten years in a traditional mansion in Cairo, not in a Paris studio.",
+    "He never painted a nude — unusual in a genre that traded on them.",
+    "His wife modelled for several of his harem interiors.",
+    "Gérôme's later work is generally held to show his influence, not the other way round.",
+    "He usually painted the same composition twice, in watercolour and in oil."] },
+
+{ id:"ludwig-deutsch", name:"Ludwig Deutsch", years:"1855–1935", born:1855, died:1935,
+  nation:"austria", eras:["19th-century","20th-century"],
+  movements:["orientalism","academicism"],
+  techniques:["oil-painting"], style:"neoclassical",
+  palette:["#b98b32","#8a3c2c","#e6d9bb","#35506b","#1c1814"],
+  tagline:"Egypt assembled in a Paris studio, down to the last tile",
+  works:[{t:"The Palace Guard",y:"c. 1892"},{t:"The Girl with the Buffalo",y:"c. 1900"},{t:"The Nubian Guard",y:"c. 1895"}],
+  life:"Born in Vienna and trained at its Academy from 1872, he moved to Paris in 1878 and joined the circle of Orientalist painters working there. He travelled to Egypt several times between 1885 and 1898. In 1919 he took French citizenship and began signing himself Louis.",
+  career:"Deutsch is the clearest case of how the genre actually worked. Most of his paintings were made in his Paris studio, not on location: a costume here, a photograph there, a tile pattern copied exactly, and the whole assembled into a scene that never took place. The craft is not in question — the surfaces are extraordinary, and the architectural detail is often accurate enough to identify. What is in question is what the accuracy is doing, which is roughly Nochlin's argument about the genre as a whole.",
+  outside:"Very little of his work is on Wikimedia Commons in the public domain, so this page shows two pictures where it might show twenty. The gap is a fact about photographic rights and museum digitisation, not about how much he painted.",
+  facts:["He painted most of his Egypt in a studio in Paris.",
+    "He visited Egypt several times between 1885 and 1898, and worked from what he brought back.",
+    "He became a French citizen in 1919 and signed himself Louis thereafter.",
+    "The architectural detail is often accurate enough to identify the building."] }
+
 ]);
