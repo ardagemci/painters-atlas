@@ -41,10 +41,10 @@ window.ACTUALITY = [
 
 { id:"amazon-deforestation-2026",
   kind:"list",
-  published:"2026-08-10",
+  published:"2026-08-09",
   headline:"Amazon deforestation falls to its lowest in a decade",
-  newsline:"Reported 10 July 2026 by Brazil's National Institute for Space Research (INPE): 1,295 square kilometres cleared between January and June 2026, a 38% fall on the same period in 2025 and the lowest figure for that stretch since 2016.",
-  source:{ name:"AFP via Phys.org", url:"https://phys.org/news/2026-07-brazil-deforestation-amazon.html" },
+  newsline:"Reported 9 August 2026: Brazil's National Institute for Space Research recorded 2,874 square kilometres of Amazon clearing alerts between 1 August 2025 and 31 July 2026 \u2014 36% below the previous twelve months, 55.6% below the ten-year average, and the lowest since 2012\u201313. These are DETER alerts; the official PRODES rate follows in October or November.",
+  source:{ name:"Mongabay", url:"https://news.mongabay.com/2026/08/amazon-deforestation-alerts-fall-to-lowest-level-since-2013-brazilian-data-show/" },
   hook:"Good news about a forest. Painters have been inventing them for centuries.",
   listId:"the-forest-that-stopped-shrinking",
   coverStyle:"henri-rousseau",

@@ -117,6 +117,41 @@ can add an asset, and the inventory cannot move because of one.
 Type-2 list items gain an optional `essay` (200–900 chars, validator-bounded)
 beside the existing `note` (≤120 chars).
 
+## 4a. Cadence and spread — one story per month, and vary the beat
+
+**One entry per month, dated to the month the story was reported.** The cadence
+is the product; a month with two entries and a hole beside it is not a monthly
+ritual, it is two posts.
+
+This was got wrong on the first attempt and is worth recording. The Amazon entry
+was filed as August while citing a report published **10 July** — the same month
+as the LeBron signing. Two July entries, no August. The fix was not to move the
+list but to find the story's *August* moment: INPE's DETER annual figure, 2,874
+km² for the year to 31 July, published **9 August 2026**. Same subject, right
+month, better numbers.
+
+`tools/validate.jxa.js` now enforces both halves — a second entry in a month
+fails, and so does a gap between the first and last months. Both were checked by
+deliberately breaking them.
+
+**Spread the topics.** A ritual that is only ever sport becomes a sports blog
+with paintings in it. Rotate across **politics, finance, art and museums, sport,
+cinema, television, fashion, music, science, and the culture stories everyone
+argues about for a week.** Two consecutive months in the same field is a signal
+to look harder at the month, not a licence.
+
+Running record, so the imbalance is visible rather than remembered:
+
+| Month | Story | Field |
+| --- | --- | --- |
+| 2026-07 | LeBron James to the 76ers | sport |
+| 2026-08 | Amazon deforestation alerts at a decade low | environment / science |
+
+**Groundbreaking, not merely reported.** The test is whether someone would use
+the story to date the month afterwards. A signing that ends a twenty-three-year
+association and a forest turning a corner both pass; a product launch or a
+mid-table result does not.
+
 ## 5. Tone — the rule that does not exist yet
 
 `STYLE_GUIDE` forbids humour where warning, consent or factual qualification is

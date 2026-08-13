@@ -1691,20 +1691,20 @@ function monthLabel(iso){
   return ["January","February","March","April","May","June","July","August",
           "September","October","November","December"][+m[2]-1] + " " + m[1];
 }
-/* Rhymes — the photo-to-painting comparison (ACTUALITY.md type 1). Named for
+/* Echoes — the photo-to-painting comparison (ACTUALITY.md type 1). Named for
    the mechanic the spec already describes: the news photograph and the painting
    are the same picture. Empty until the first one ships, and the empty state
    says why rather than pretending the section is merely new. */
-function viewRhymes(){
-  document.title = "Rhymes — Pigment";
-  const rhymes = ACT.filter(e => e.kind === "article");
+function viewEchoes(){
+  document.title = "Echoes — Pigment";
+  const echoes = ACT.filter(e => e.kind === "article");
   return `
   <div class="page-head">
     <div class="page-kicker">Once a month</div>
-    <h1 class="display">Rhymes</h1>
+    <h1 class="display">Echoes</h1>
     <p class="page-lede">A photograph from the news and a painting that turns out to be the same picture — the same composition, or the same human situation four centuries earlier. The writing is about the painting; the photograph just opens the door.</p>
   </div>
-  ${rhymes.length ? `<div class="cards wide">${rhymes.map(actualityCard).join("")}</div>`
+  ${echoes.length ? `<div class="cards wide">${echoes.map(actualityCard).join("")}</div>`
    : `<div class="page-head" style="padding-top:0">
         <p class="page-lede">Nothing here yet, and the reason is worth saying: Pigment cannot show you the photograph. Press images are licensed, and a repainting of one is still a derivative of it. A rhyme has to be <em>described</em> well enough that you see it — which is a writing problem, and it is being worked on.</p>
         <p class="page-lede"><a href="#/actuality">The Actuality lists</a> are the part of this that already works.</p>
@@ -2563,7 +2563,7 @@ function route(){
     case "influences":  html = viewInfluences(); break;
     case "daily":       html = viewDaily(); break;
     case "actuality":  html = viewActuality(); break;
-    case "rhymes":     html = viewRhymes(); break;
+    case "echoes":     html = viewEchoes(); break;
     case "lists":       html = viewLists(); break;
     case "list":        html = viewList(id); break;
     case "palette":     html = viewPalette(); break;
@@ -2641,10 +2641,10 @@ document.addEventListener("click", e => {
 const EXPLORE_CHILDREN = { movements:1, techniques:1, eras:1, nations:1, explore:1, timeline:1, influences:1 };
 /* Landing anywhere under Lists lights the Lists trigger too, so the nav still
    says where you are while the panel is shut. */
-const LISTS_CHILDREN = { lists:1, actuality:1, rhymes:1 };
+const LISTS_CHILDREN = { lists:1, actuality:1, echoes:1 };
 
 function setNav(page){
-  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"actuality", rhymes:"rhymes",
+  const map = { artists:"artists", artist:"artists", artwork:"artists", museums:"museums", museum:"museums", lists:"lists", list:"lists", actuality:"actuality", echoes:"echoes",
     explore:"explore", timeline:"timeline", influences:"influences", movements:"movements", movement:"movements",
     techniques:"techniques", technique:"techniques", eras:"eras", era:"eras",
     nations:"nations", nation:"nations", taste:"taste", passport:"taste" };

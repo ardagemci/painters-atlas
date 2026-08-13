@@ -149,6 +149,40 @@ DAILY.forEach(function(w){
 // editorial lists integrity
 try { eval(read(base + "js/lists-1.js")); } catch(e){ out.push("lists-1.js ERROR: " + e.message); }
 const LST = window.EDITORIAL_LISTS || [];
+/* B2 Actuality. One story per month, dated to the month it was reported — the
+   cadence IS the product, and two entries in one month with a gap beside them
+   is the failure it is easiest to ship without noticing. */
+try { eval(read(base + "js/actuality-1.js")); } catch(e){ out.push("actuality-1.js ERROR: " + e.message); }
+const ACTL = window.ACTUALITY || [];
+(function(){
+  const seen = {};
+  ACTL.forEach(function(e){
+    const tag = "actuality " + e.id;
+    if(!/^[a-z0-9-]+$/.test(e.id || "")) errs.push(tag + ": non-kebab id");
+    if(["list","article"].indexOf(e.kind) === -1) errs.push(tag + ": kind must be list or article");
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(e.published || "")) errs.push(tag + ": published must be YYYY-MM-DD");
+    if(!e.source || !e.source.name || !e.source.url) errs.push(tag + ": needs a named, linked source");
+    if(e.kind === "list" && !ids(LST)[e.listId]) errs.push(tag + ": listId not in EDITORIAL_LISTS: " + e.listId);
+    if(e.kind === "article" && !catIds[e.workId]) errs.push(tag + ": workId not in catalog: " + e.workId);
+    if(e.coverStyle && !aIdsMap[e.coverStyle]) errs.push(tag + ": coverStyle is not an artist id: " + e.coverStyle);
+    const month = String(e.published || "").slice(0, 7);
+    if(seen[month]) errs.push(tag + ": a second entry for " + month + " (already: " + seen[month] + ") — one story per month");
+    else seen[month] = e.id;
+  });
+  /* and no missing months between the first and last */
+  const months = ACTL.map(function(e){ return String(e.published || "").slice(0,7); }).filter(Boolean).sort();
+  if(months.length > 1){
+    let cur = months[0];
+    while(cur < months[months.length - 1]){
+      let y = +cur.slice(0,4), m = +cur.slice(5,7) + 1;
+      if(m > 12){ m = 1; y++; }
+      cur = y + "-" + (m < 10 ? "0" + m : m);
+      if(cur <= months[months.length-1] && months.indexOf(cur) === -1)
+        errs.push("actuality: no entry for " + cur + " — the cadence is monthly and has a hole");
+    }
+  }
+})();
+
 dup(LST, "list");
 LST.forEach(function(l){
   const tag = "list " + l.id;

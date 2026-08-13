@@ -233,7 +233,7 @@ window.EDITORIAL_LISTS = [
 /* ---- Actuality, August 2026 ---- */
 { id:"the-forest-that-stopped-shrinking", featured:false,
   title:"The Forest That Stopped Shrinking",
-  lede:"On 10 July 2026 Brazil's space agency reported 1,295 square kilometres of Amazon cleared between January and June \u2014 down 38% on the year before, and the lowest for that stretch since 2016. Six paintings about forests, and what people have wanted from them.",
+  lede:"On 9 August 2026 Brazil's space agency reported 2,874 square kilometres of Amazon clearing alerts for the year to 31 July \u2014 down 36%, and the lowest since 2012\u201313. Six paintings about forests, and what people have wanted from them.",
   cover:"the-dream-rousseau",
   works:[
     { id:"the-dream-rousseau",
