@@ -22,8 +22,10 @@ the frozen specification, and `protocol/PROTOCOL.md` first.
   prefers-reduced-motion behavior.
 - Inspect for regressions, layout collisions, broken interactions, and
   incomplete states across existing routes, not just new ones.
-- Run `osascript -l JavaScript tools/validate.jxa.js` (or `node
-  tools/validate.js` where Node exists) and include full output.
+- Run `osascript -l JavaScript tools/validate.jxa.js` and include full output.
+  Check the exit code, not just the text: 0 is clean, 1 is any error or load
+  failure. A run reporting `INCONCLUSIVE` did not pass — a data file failed to
+  parse, so the checks ran on an incomplete corpus.
 - Report findings by severity: **critical** (blocks), **major** (blocks
   human_review_ready), **minor**, **note** — each reproducible.
 - **Certify or refuse Gate 2**: the task may not reach

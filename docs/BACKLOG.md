@@ -12,14 +12,17 @@ Items marked **DECISION** cannot be resolved by an agent.
 
 # A. Owner decisions outstanding
 
-**A1 · The `notice` word budget.** `STYLE_GUIDE` §4.3 implies ≤8 words;
-`ARTWORK_SCHEMA` §3 says ≤12; the validator checks neither. 21 of the 66 new
-bullets sit at 9–12 and shipped at 12, because the existing corpus already does
-(`catalog-1.js` opens with a 9-word bullet). **Not declared resolved.** The
-Content Editor's argument is worth weighing: §4.3's rule was written for *artist
-and movement* traits and was inherited into a work-specific field, so 12 may be
-the correct rule rather than a competing one. His `†` markers are in
-`CATALOG_BATCH_COPY.md` so either rule can be applied without re-counting.
+**A1 · RESOLVED 2026-08-17 — owner: 12 words.** `ARTWORK_SCHEMA` §3 governs the
+work-level `notice`. The Content Editor's argument carried: `STYLE_GUIDE` §4.3's
+≤8 was written for *artist and movement* traits and was inherited into a
+work-specific field by accident, so 12 is the correct rule rather than a
+competing one. The 21 bullets sitting at 9–12 need no revision, and the `†`
+markers in `CATALOG_BATCH_COPY.md` are no longer load-bearing.
+
+Two things must ship together for this to be real, both Phase 0 of the build-
+lane work: `STYLE_GUIDE` §4.3 narrows explicitly to artist and movement traits,
+and the validator gains the check it has never had. Until that check exists the
+budget is still enforced by nobody.
 
 **A2 · RESOLVED 2026-08-12. All 20 confirmed mismatches are cleared.**
 
@@ -282,6 +285,64 @@ changed the answer, after the museum photographs and the Caillebotte attribution
   Non-vacuity demonstrated: a document with rev 1 CERTIFIED and rev 2 BLOCKED
   **passed** the old gate and fails the new one; so does the sentence that
   described the bug.
+- **C7 · DONE 2026-08-17. `tools/validate.jxa.js` can now fail.** Found while
+  wiring the autonomous lane. The script ended on `out.join("\n")` — it *returned* its
+  report as a string and never exits non-zero, so `osascript` exits 0 whether
+  the data is clean or broken. Verified empirically on a scratch copy: pointing
+  `leonardo-da-vinci` at a nonexistent nation produces
+  `ERRORS: artist leonardo-da-vinci: bad nation atlantis` **and exit code 0**.
+  `tools/validate.js` (Node) does this correctly with `process.exit(1)`.
+
+  This mattered beyond automation: `CLAUDE.md` Gate 2 names this command as a
+  build-blocking check, and it was incapable of blocking anything a script reads.
+  Every green it ever reported to a shell was unconditional. Same species as
+  **C6** — a gate that reports pass when it should fail.
+
+  **A second, compounding defect found in the same pass.** Sixteen of the
+  eval-load `catch` blocks pushed their failure into `out` (the printed report)
+  rather than into `errs` (the counted errors), so a data file that would not
+  parse was *reported and not counted*. Worse, its records were then simply
+  absent, every reference check below it ran on a smaller corpus, and the run
+  could still end on `ALL REFERENCES VALID` — a parse failure made the validator
+  **more** likely to pass.
+
+  Fixed together: load failures are tracked in their own `loadErrs` list, the
+  report goes to stdout through an explicit `emit()`, and the script ends on
+  `$.exit(errs.length || loadErrs.length ? 1 : 0)`. A run on incomplete data now
+  ends `INCONCLUSIVE`, never `ALL REFERENCES VALID` — the checks did pass, on the
+  wrong corpus. Six tests in `tests/test_validate_jxa.py`, non-vacuous in both
+  directions per the standard **C6** set: one case proves the suite does not fail
+  unconditionally, three prove it does not pass unconditionally, and two guard
+  the shape of the fix against a later tidy-up.
+
+  **Phase 0b, same day: `tools/validate.js` deleted.** Gate 2 offered it as an
+  equivalent alternative and it was not one. Last current **2026-07-02**, when
+  the atlas held 227 painters against today's 266. It loaded neither
+  `artists-16/17/18` — **35 artists, 13% of the atlas** — nor any of fourteen
+  other registries: all five catalogs (350 artworks), `venues.js` (125),
+  `influences.js` (246 edges), `museums-1`, `lists-1`, `actuality-1`,
+  `personas`, `photo-credits`, `tier1-artists`, `artworks`.
+
+  The landmine was in `pigment_coordinator/cli.py`, which preferred it:
+
+  ```python
+  if shutil.which("node"):
+      return "node tools/validate.js"        # ← checked first
+  ```
+
+  It worked only because this Mac has no Node. A `brew install node` would have
+  silently downgraded the Coordinator's Gate 2 to a validator covering 87% of
+  the artists and none of the artworks — no warning, no error, a weaker gate.
+
+  The plan said *extract a shared core*; that was wrong once the owner chose a
+  local launchd host over CI. There is no Node here to test a Node adapter
+  against, and GitHub Actions macOS runners run `osascript` anyway, so the
+  portable variant had no consumer in any future either. Shipping half a
+  refactored **grader** untested is the exact failure this phase exists to
+  remove. Deleted instead, per owner decision 2026-08-17. Three tests in
+  `SingleValidatorTest` keep it gone: the file stays deleted, `default_validator`
+  never returns a command containing `node`, and no doc or agent brief points a
+  reader at it.
 
 ---
 

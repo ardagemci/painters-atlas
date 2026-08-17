@@ -68,8 +68,14 @@ CLAUDE.md §5 only.
 ## Verification requirements
 
 After edits, run the validator (`osascript -l JavaScript
-tools/validate.jxa.js` or `node tools/validate.js`) to confirm no record
-was structurally broken, and re-count budgets for every touched record.
+tools/validate.jxa.js`) to confirm no record was structurally broken, and
+re-count budgets for every touched record. It exits 0 only on a clean run;
+treat a non-zero exit or an `INCONCLUSIVE` verdict as a failure to fix, not a
+warning to note.
+
+The work-level `notice` budget is **12 words** (`ARTWORK_SCHEMA` §3), settled
+by the owner on 2026-08-17. `STYLE_GUIDE` §4.3's ≤8 governs artist and movement
+traits only.
 
 ## Output format
 

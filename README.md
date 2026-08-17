@@ -40,12 +40,12 @@ python3 tools/fetch_artworks.py     # writes js/artworks.js
 Check data integrity after edits:
 
 ```sh
-# macOS (no Node needed)
 osascript -l JavaScript tools/validate.jxa.js
-
-# or with Node
-node tools/validate.js
 ```
+
+Exits 0 when clean, 1 on any error or load failure. It is the only validator —
+a Node variant existed until 2026-08-17 and was deleted for checking a third of
+the data.
 
 ## Dipolar development coordinator
 
