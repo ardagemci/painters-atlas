@@ -49,6 +49,7 @@ refusal is seen.
 | `verifier` | The exact commands that decide correctness. A writ with no verifier is not a writ |
 | `may_write` | Path globs the run may edit. Binding — exceeds Gate 1, never widens it |
 | `may_not` | Paths named explicitly for the reader's benefit; the sealed set applies regardless |
+| `tools` | Optional allowlist passed to `--allowedTools`. Omitted means a conservative default. Grant the fewest tools the class needs — a read-and-report writ has no use for subagents or schedulers |
 | `max_diff` | Line ceiling. Exceeding it aborts the run rather than truncating the work |
 | `max_turns`, `max_budget_usd` | Per-run ceilings passed to the harness |
 | `abort_if` | Conditions that stop the run and file a report |

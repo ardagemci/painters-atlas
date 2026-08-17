@@ -206,42 +206,60 @@ class RunnerGuardTest(unittest.TestCase):
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
-    The first draft was a bash wrapper around a `python3 - <<'PY'` heredoc,
-    which fed the *script* to stdin instead of the event. Every parse threw, an
-    `except: exit(0)` swallowed it, and the hook allowed all thirteen
-    adversarial cases while looking correctly installed -- backlog C7's defect
-    class, reproduced inside the control built to prevent it. These cases exist
-    because nothing short of them caught it.
+    Two live defects shaped this class. The first draft was a bash wrapper
+    around a `python3 - <<'PY'` heredoc, which fed the *script* to stdin instead
+    of the event; every parse threw, an `except: exit(0)` swallowed it, and the
+    hook allowed all thirteen adversarial cases while looking installed. The
+    second asked whether "/.claude/" appeared anywhere in the path string, which
+    sealed the user's global ~/.claude/ config and any unrelated checkout with a
+    protocol/ directory -- it refused the harness's own plan file and aborted a
+    real run. Substring matching on paths is not scoping.
     """
 
     HOOK = ROOT / ".claude" / "hooks" / "sealed-set.py"
 
-    def decide(self, event, lane3=True):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        base = Path(self.temporary.name)
+        self.worktree = base / "tree"       # what the run owns
+        self.origin = base / "checkout"     # the live repository
+        self.elsewhere = base / "elsewhere"  # neither
+        for d in (self.worktree, self.origin, self.elsewhere):
+            d.mkdir(parents=True)
+        self.addCleanup(self.temporary.cleanup)
+
+    def decide(self, event, lane3=True, scoped=True):
+        env = {**os.environ, "PIGMENT_LANE3": "1" if lane3 else "0"}
+        if scoped:
+            env["PIGMENT_LANE3_ROOT"] = str(self.worktree)
+            env["PIGMENT_LANE3_REPO"] = str(self.origin)
+        else:
+            env.pop("PIGMENT_LANE3_ROOT", None)
+            env.pop("PIGMENT_LANE3_REPO", None)
         result = subprocess.run(
             [sys.executable, str(self.HOOK)],
             input=json.dumps(event) if isinstance(event, dict) else event,
-            capture_output=True, text=True, timeout=30,
-            env={**os.environ, "PIGMENT_LANE3": "1" if lane3 else "0"},
+            capture_output=True, text=True, timeout=30, env=env,
         )
         return "deny" if '"permissionDecision": "deny"' in result.stdout else "allow"
 
     def write(self, path):
-        return {"tool_name": "Edit", "tool_input": {"file_path": path}}
+        return {"tool_name": "Edit", "tool_input": {"file_path": str(path)}}
 
     def bash(self, command):
         return {"tool_name": "Bash", "tool_input": {"command": command}}
 
-    # ── Lane II must never be touched ───────────────────────────────────────
+    # ── Lane II is never touched ────────────────────────────────────────────
     def test_lane_two_is_never_blocked(self):
-        """§0 reserves verifier edits for Lane II, with the user present. A hook
-        that fired in every session would block the work it exists to protect."""
-        for path in ["CLAUDE.md", "tools/validate.jxa.js", "tools/lane3-run.sh"]:
-            self.assertEqual(self.decide(self.write(path), lane3=False), "allow", path)
+        """§0 reserves verifier edits for Lane II, with the user present."""
+        for name in ("CLAUDE.md", "tools/validate.jxa.js", "tools/lane3-run.sh"):
+            self.assertEqual(self.decide(self.write(self.worktree / name),
+                                         lane3=False), "allow", name)
         self.assertEqual(self.decide("not json at all", lane3=False), "allow")
 
-    # ── The suite is not passing unconditionally ────────────────────────────
-    def test_sealed_writes_are_refused(self):
-        for path in [
+    # ── Inside the worktree: the sealed set applies ─────────────────────────
+    def test_sealed_paths_in_the_worktree_are_refused(self):
+        for name in [
             "CLAUDE.md", "PIGMENT.md",
             "tools/validate.jxa.js", "tools/audit_artworks.py",
             "tools/lane3-run.sh", "tools/lane3_writ.py",
@@ -249,20 +267,40 @@ class SealedHookTest(unittest.TestCase):
             ".claude/settings.json",
             ".claude/hooks/sealed-set.py",
             "protocol/writs/W-001.md",
-            "/Users/someone/painters-atlas/CLAUDE.md",
         ]:
-            self.assertEqual(self.decide(self.write(path)), "deny", path)
+            self.assertEqual(self.decide(self.write(self.worktree / name)),
+                             "deny", name)
 
-    def test_leading_dot_slash_does_not_unseal(self):
-        """str.lstrip('./') strips those characters in any order, which turned
-        '.claude/agents/x.md' into 'claude/agents/x.md' and un-sealed the whole
-        agent directory. It must be a prefix strip."""
-        self.assertEqual(self.decide(self.write("./.claude/agents/x.md")), "deny")
-        self.assertEqual(self.decide(self.write(".claude/agents/x.md")), "deny")
+    def test_permitted_work_in_the_worktree_passes(self):
+        for name in ("protocol/runs/2026-08-17-W-001.md", "js/artists-1.js",
+                     "css/styles.css", "docs/BACKLOG.md"):
+            self.assertEqual(self.decide(self.write(self.worktree / name)),
+                             "allow", name)
+
+    # ── Outside the worktree ────────────────────────────────────────────────
+    def test_the_live_checkout_is_the_wrong_workspace(self):
+        """Gate 4: a run works in its worktree and nowhere else."""
+        for name in ("js/artists-1.js", "CLAUDE.md"):
+            self.assertEqual(self.decide(self.write(self.origin / name)),
+                             "deny", name)
+
+    def test_paths_outside_both_trees_are_out_of_scope(self):
+        """The bug that aborted a live run: the harness's own plan file lives in
+        the user's global ~/.claude/, which is nothing to do with this repo."""
+        for name in (".claude/plans/foo.md", "protocol/notes.md", "scratch.txt"):
+            self.assertEqual(self.decide(self.write(self.elsewhere / name)),
+                             "allow", name)
+
+    # ── Failing closed ──────────────────────────────────────────────────────
+    def test_unscoped_run_denies_everything(self):
+        """Armed but not told which tree it owns: it cannot tell inside from
+        outside, so it refuses rather than guessing."""
+        self.assertEqual(
+            self.decide(self.write(self.worktree / "js/artists-1.js"), scoped=False),
+            "deny",
+        )
 
     def test_unparseable_input_fails_closed(self):
-        """A guard that cannot read its own input does not get to wave things
-        through -- that is precisely how the first draft failed silently."""
         for junk in ["not json at all", "", "[]", '{"tool_input": "a string"}']:
             self.assertEqual(self.decide(junk), "deny", repr(junk))
 
@@ -277,19 +315,11 @@ class SealedHookTest(unittest.TestCase):
         ]:
             self.assertEqual(self.decide(self.bash(command)), "deny", command)
 
-    # ── The suite is not failing unconditionally ────────────────────────────
-    def test_permitted_work_still_passes(self):
-        self.assertEqual(self.decide(self.write("protocol/runs/2026-08-17-W-001.md")), "allow")
-        self.assertEqual(self.decide(self.write("js/artists-1.js")), "allow")
-        self.assertEqual(self.decide({"tool_name": "Read",
-                                      "tool_input": {"file_path": "CLAUDE.md"}}), "allow")
-
     def test_verifiers_can_still_be_executed(self):
-        """Running a sealed file is the whole point; only writing it is refused."""
+        """Running a sealed file is the point; only writing it is refused."""
         for command in [
             "osascript -l JavaScript tools/validate.jxa.js",
             "python3 tools/validate_agent_system.py",
-            "python3 tools/audit_artwork_rights.py --help",
         ]:
             self.assertEqual(self.decide(self.bash(command)), "allow", command)
 
@@ -335,6 +365,56 @@ class SealedBackstopTest(unittest.TestCase):
     def test_the_runner_arms_the_hook(self):
         self.assertIn("export PIGMENT_LANE3=1", self.script)
         self.assertIn(".claude/hooks/sealed-set.py", self.script)
+
+
+class RunnerCompletenessTest(unittest.TestCase):
+    """Three defects a live run exposed, each now with a test that would catch it."""
+
+    def setUp(self):
+        self.script = (ROOT / "tools" / "lane3-run.sh").read_text(encoding="utf-8")
+
+    def test_the_runner_commits_its_work(self):
+        """The worktree is deleted on exit, so uncommitted work never happened.
+        Without this the runner pushed a branch with zero commits and reported
+        success -- the validator-that-could-not-fail, at the other end."""
+        # Matched loosely on purpose: the invocation is
+        # `git -c user.name=... \` newline `commit -q -m ...`, so the literal
+        # "git commit" never appears in the source.
+        self.assertIn("commit -q -m", self.script)
+        self.assertIn("git add -A", self.script)
+        commit_at = self.script.index("commit -q -m")
+        for check in ("SEALED_TOUCHED", "VERIFY_FAILED"):
+            self.assertLess(
+                self.script.index(check), commit_at,
+                "%s must be decided before anything is committed" % check,
+            )
+
+    def test_the_runner_scopes_the_hook(self):
+        """Armed without roots, the hook denies everything and the run is useless."""
+        for name in ("PIGMENT_LANE3=1", "PIGMENT_LANE3_ROOT", "PIGMENT_LANE3_REPO"):
+            self.assertIn("export %s" % name, self.script)
+
+    def test_the_prompt_states_which_mode_it_is(self):
+        """A run saw the hook armed against a writ reading 'proposed', could not
+        reconcile the two, and aborted. It had no way to know it was a rehearsal."""
+        self.assertIn("MODE_NOTE", self.script)
+        self.assertIn("DRY RUN", self.script)
+        self.assertIn("REAL RUN", self.script)
+        self.assertIn("${MODE_NOTE}", self.script)
+
+    def test_tool_use_is_an_allowlist(self):
+        """One run spawned two subagents and scheduled two wakeups under a
+        read-two-verifiers-and-report writ."""
+        self.assertIn("--allowedTools", self.script)
+        self.assertNotIn("Agent", self.script.split("TOOLS=")[1].split("\n")[0])
+
+    def test_shipped_writ_grants_the_fewest_tools_it_needs(self):
+        fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
+        tools = fields.get("tools", [])
+        self.assertTrue(tools, "W-001 should name its tools explicitly")
+        for forbidden in ("Agent", "ScheduleWakeup", "WebFetch", "WebSearch", "Edit"):
+            self.assertNotIn(forbidden, tools,
+                             "an observation-only writ has no use for %s" % forbidden)
 
 
 class SettingsRegistrationTest(unittest.TestCase):
