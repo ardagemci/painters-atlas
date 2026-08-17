@@ -1854,6 +1854,20 @@ function viewHome(){
   ${daily ? dailyHome(daily) : ""}
 
   ${(() => {
+    /* B2. Actuality on the front door. It was reachable only through the Lists
+       submenu — the most shareable surface in the product, two clicks deep. The
+       newest entry gets the homepage; the rest live in the archive. */
+    const e = ACT[0];
+    if(!e) return "";
+    const t = actualityTarget(e); if(!t) return "";
+    return `<section>
+      <h2 class="sec-title">Actuality <span class="count">the news, answered out of the atlas</span></h2>
+      <div class="cards wide">${actualityCard(e)}</div>
+      <a class="chip-label" style="display:block;margin-top:14px" href="#/actuality">every month so far ${ARR}</a>
+    </section>`;
+  })()}
+
+  ${(() => {
     const feat = LISTS.filter(l => l.featured).slice(0, 4);
     return feat.length ? `<section>
       <h2 class="sec-title">Lists <span class="count">guided walks through the atlas</span></h2>

@@ -240,6 +240,25 @@ ${img ? `<img src="${esc(img)}" alt="${esc(l.title)}">` + creditHtml(img, "Image
 ${rel ? `<div class="rel"><span class="k">The works</span><br>${rel}</div>` : ""}` }));
 });
 
+/* ---- index.html's own description, generated ----
+   It was hand-typed and said "247 artists, 317 masterpieces" long after the
+   atlas held 266 and 350 — on the homepage, in every search result, and in
+   every social card. A number a human retypes is a number that goes stale, so
+   this rewrites it from the live registries on every build. The sentence around
+   it stays fixed; only the counts move. */
+(function(){
+  const path = base + "index.html";
+  const html = read(path);
+  const venues = VEN.filter(v => !SENTINELS[v.id] && (catByVenue[v.id] || []).length).length;
+  const desc = "Pigment is an interactive atlas of painters — " + A.length + " artists, " +
+    CAT.length + " catalogued works, " + venues + " museums and churches, movements, " +
+    "and an engine that maps your taste in art. An editorial selection, not a complete history.";
+  const re = /<meta name="description" content="[^"]*">/;
+  if(!re.test(html)) throw new Error("index.html has no meta description to regenerate");
+  const next = html.replace(re, '<meta name="description" content="' + esc(desc) + '">');
+  if(next !== html) write(path, next);
+})();
+
 /* ---- sitemap + robots ---- */
 const today = new Date().toISOString().slice(0, 10);
 write(base + "sitemap.xml",
