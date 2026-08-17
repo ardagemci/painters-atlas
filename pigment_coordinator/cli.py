@@ -12,11 +12,19 @@ from .providers import FakeProvider, providers_from_environment
 
 
 def default_validator() -> str:
+    """The repository has exactly one validator, and it is JXA.
+
+    This once preferred a Node variant whenever Node was on PATH. That file was
+    deleted on 2026-08-17: stale since 2026-07-02, it loaded neither
+    `artists-16/17/18` nor any of the fourteen other registries, so a machine
+    with Node installed would have silently run Gate 2 against 87% of the
+    artists and none of the artworks. Do not reintroduce a second validator
+    here — a fallback grader that checks less is worse than no fallback at all.
+    Override with PIGMENT_VALIDATOR_COMMAND if some host genuinely needs one.
+    """
     configured = os.environ.get("PIGMENT_VALIDATOR_COMMAND")
     if configured is not None:
         return configured
-    if shutil.which("node"):
-        return "node tools/validate.js"
     if shutil.which("osascript"):
         return "osascript -l JavaScript tools/validate.jxa.js"
     return ""

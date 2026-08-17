@@ -24,8 +24,8 @@ image sourcing carries real legal constraints. Read `CLAUDE.md`,
   compositions preferred, attribution kept close to the record, generative
   covers never presented as real artworks, hand-corrected images pinned in
   `tools/audit_artworks.py`, no URL declared dead on timeout/429.
-- Run and interpret the pipeline: `tools/validate.jxa.js` /
-  `tools/validate.js`, `tools/audit_artworks.py`, `tools/fetch_artworks.py`,
+- Run and interpret the pipeline: `tools/validate.jxa.js` (the only validator),
+  `tools/audit_artworks.py`, `tools/fetch_artworks.py`,
   `tools/build_seo.jxa.js` — and report when tooling and data disagree.
 - Review data-touching diffs for schema conformance (A/I/E/D field
   discipline per ARTWORK_SCHEMA) and duplication of canonical records.

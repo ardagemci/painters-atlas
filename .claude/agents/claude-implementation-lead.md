@@ -31,9 +31,9 @@ before edits.
 - Work on an isolated branch or worktree, never directly on `main`; keep
   commits scoped and reviewable.
 - Run checks during implementation: `osascript -l JavaScript
-  tools/validate.jxa.js` (no Node on this Mac; in sandboxes with Node use
-  `node tools/validate.js`), plus a local serve
-  (`python3 -m http.server 8421 -d .`) to smoke-test.
+  tools/validate.jxa.js` — the only validator, and it exits non-zero on
+  failure — plus a local serve (`python3 -m http.server 8421 -d .`) to
+  smoke-test.
 - Document every deviation forced by technical constraints in the Build
   Evidence Report and Decision Record (Gate 3) — never silently change
   product intent.
