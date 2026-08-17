@@ -1,6 +1,16 @@
 // data integrity check via macOS JavaScriptCore:
 //   osascript -l JavaScript tools/validate.jxa.js
+//
+// Exits 1 on any error or load failure, 0 only on a clean run. Until 2026-08-17
+// this script ended by *returning* its report, so osascript exited 0 on broken
+// data and every automated green it reported was unconditional (backlog C7).
+// The report therefore goes to stdout explicitly, before the exit.
 ObjC.import("Foundation");
+ObjC.import("stdlib");
+function emit(s){
+  const d = $.NSString.alloc.initWithUTF8String(s + "\n").dataUsingEncoding($.NSUTF8StringEncoding);
+  $.NSFileHandle.fileHandleWithStandardOutput.writeData(d);
+}
 function read(p){
   const s = $.NSString.stringWithContentsOfFileEncodingError(p, $.NSUTF8StringEncoding, null);
   if(s.isNil()) throw new Error("cannot read " + p);
@@ -12,18 +22,25 @@ const me = argv.find(a => String(a).endsWith("validate.jxa.js")) || "tools/valid
 const base = String(me).replace(/tools\/+validate\.jxa\.js$/, "");
 var window = {};
 const out = [];
+/* A file that will not parse is not a warning. Its records are simply absent,
+   so every reference check below then runs on less data and can still come back
+   clean — a parse failure used to make this script *more* likely to pass. Load
+   failures are tracked separately from `errs` so the verdict can say the run was
+   inconclusive rather than valid. */
+const loadErrs = [];
+function loadFail(msg){ loadErrs.push(msg); }
 
 // parse-check app.js without executing it
 try { new Function(read(base + "js/app.js")); out.push("app.js: syntax OK"); }
-catch(e){ out.push("app.js SYNTAX ERROR: " + e.message); }
+catch(e){ loadFail("app.js SYNTAX ERROR: " + e.message); }
 
 // load data files (eval = syntax + execution check)
 ["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
  "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js","artists-14.js","artists-15.js","artists-16.js","artists-17.js","artists-18.js"]
-  .forEach(f => { try { eval(read(base + "js/" + f)); } catch(e){ out.push(f + " ERROR: " + e.message); } });
+  .forEach(f => { try { eval(read(base + "js/" + f)); } catch(e){ loadFail(f + " ERROR: " + e.message); } });
 /* The gallery pool. Loaded so an artist's optional `hero` can be checked against
    the works that actually have an image, rather than against a title list. */
-try { eval(read(base + "js/artworks.js")); } catch(e){ out.push("artworks.js ERROR: " + e.message); }
+try { eval(read(base + "js/artworks.js")); } catch(e){ loadFail("artworks.js ERROR: " + e.message); }
 
 const A = window.ARTISTS || [], M = window.MOVEMENTS || [], T = window.TECHNIQUES || [],
       E = window.ERAS || [], N = window.NATIONS || [];
@@ -82,12 +99,12 @@ A.forEach(a => {
 const warns = [];
 
 // venue registry + artwork catalog integrity (ARTWORK_SCHEMA v1)
-try { eval(read(base + "js/venues.js")); } catch(e){ out.push("venues.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-1.js")); } catch(e){ out.push("catalog-1.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-2.js")); } catch(e){ out.push("catalog-2.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-3.js")); } catch(e){ out.push("catalog-3.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-4.js")); } catch(e){ out.push("catalog-4.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-5.js")); } catch(e){ out.push("catalog-5.js ERROR: " + e.message); }
+try { eval(read(base + "js/venues.js")); } catch(e){ loadFail("venues.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-1.js")); } catch(e){ loadFail("catalog-1.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-2.js")); } catch(e){ loadFail("catalog-2.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-3.js")); } catch(e){ loadFail("catalog-3.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-4.js")); } catch(e){ loadFail("catalog-4.js ERROR: " + e.message); }
+try { eval(read(base + "js/catalog-5.js")); } catch(e){ loadFail("catalog-5.js ERROR: " + e.message); }
 const VEN = window.VENUES || [], CAT = window.CATALOG || [];
 const VENUE_TYPES = { museum:1, church:1, palace:1, site:1 };
 dup(VEN, "venue"); dup(CAT, "artwork");
@@ -147,12 +164,12 @@ DAILY.forEach(function(w){
 });
 
 // editorial lists integrity
-try { eval(read(base + "js/lists-1.js")); } catch(e){ out.push("lists-1.js ERROR: " + e.message); }
+try { eval(read(base + "js/lists-1.js")); } catch(e){ loadFail("lists-1.js ERROR: " + e.message); }
 const LST = window.EDITORIAL_LISTS || [];
 /* B2 Actuality. One story per month, dated to the month it was reported — the
    cadence IS the product, and two entries in one month with a gap beside them
    is the failure it is easiest to ship without noticing. */
-try { eval(read(base + "js/actuality-1.js")); } catch(e){ out.push("actuality-1.js ERROR: " + e.message); }
+try { eval(read(base + "js/actuality-1.js")); } catch(e){ loadFail("actuality-1.js ERROR: " + e.message); }
 const ACTL = window.ACTUALITY || [];
 (function(){
   const seen = {};
@@ -213,7 +230,7 @@ if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
   warns.push("fewer than 3 featured lists for the homepage");
 
 // museum notes integrity
-try { eval(read(base + "js/museums-1.js")); } catch(e){ out.push("museums-1.js ERROR: " + e.message); }
+try { eval(read(base + "js/museums-1.js")); } catch(e){ loadFail("museums-1.js ERROR: " + e.message); }
 const MN = window.MUSEUM_NOTES || {};
 Object.keys(MN).forEach(function(vid){
   const tag = "museum-note " + vid, n = MN[vid];
@@ -232,7 +249,7 @@ Object.keys(MN).forEach(function(vid){
 // photo credits: the attribution registry must cover every photograph we show
 // (js/photo-credits.js, generated by tools/build_photo_credits.py). An uncredited
 // attribution-required photograph is a licence breach, so it is an error, not a warning.
-try { eval(read(base + "js/photo-credits.js")); } catch(e){ out.push("photo-credits.js ERROR: " + e.message); }
+try { eval(read(base + "js/photo-credits.js")); } catch(e){ loadFail("photo-credits.js ERROR: " + e.message); }
 const PC = window.PHOTO_CREDITS || {}, IC = window.IMAGE_CREDITS || {};
 Object.keys(MN).forEach(function(vid){
   if(!MN[vid].photo) return;
@@ -267,7 +284,7 @@ VEN.forEach(function(v){
 });
 
 // Phase 1.5: personas, onboarding data, deck-pool gates (ADMIRE_SPEC §6.2)
-try { eval(read(base + "js/personas.js")); } catch(e){ out.push("personas.js ERROR: " + e.message); }
+try { eval(read(base + "js/personas.js")); } catch(e){ loadFail("personas.js ERROR: " + e.message); }
 const PS = window.PERSONAS || [];
 dup(PS, "persona");
 if(PS.length < 12 || PS.length > 16) errs.push("personas: launch set must be 12-16, have " + PS.length);
@@ -308,7 +325,7 @@ if(POOL.filter(function(w){ return w.year.sort >= 1880 && w.year.sort <= 1935; }
 });
 
 // Tier 1 artist overlay integrity
-try { eval(read(base + "js/tier1-artists.js")); } catch(e){ out.push("tier1-artists.js ERROR: " + e.message); }
+try { eval(read(base + "js/tier1-artists.js")); } catch(e){ loadFail("tier1-artists.js ERROR: " + e.message); }
 const T1 = window.TIER1 || {};
 const GN_TYPES = { artist:1, movement:1, technique:1, work:1 };
 Object.keys(T1).forEach(function(aid){
@@ -345,7 +362,7 @@ Object.keys(T1).forEach(function(aid){
 });
 
 // influence graph integrity
-try { eval(read(base + "js/influences.js")); } catch(e){ out.push("influences.js ERROR: " + e.message); }
+try { eval(read(base + "js/influences.js")); } catch(e){ loadFail("influences.js ERROR: " + e.message); }
 const aIds = ids(A), EDGE_TYPES = { taught:1, influenced:1, befriended:1, rivaled:1, partners:1 };
 const seenEdges = {};
 (window.INFLUENCES || []).forEach(function(e, i){
@@ -377,5 +394,12 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
   " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
-out.push(errs.length ? "ERRORS:\n  " + errs.join("\n  ") : "ALL REFERENCES VALID");
-out.join("\n");
+if(loadErrs.length) out.push("LOAD FAILURES — a data file did not parse, so every check above ran on incomplete data:\n  " + loadErrs.join("\n  "));
+/* "ALL REFERENCES VALID" is the clean-run string other tools match on; it is
+   emitted only when nothing failed and nothing was missing. A load failure is
+   never valid, only inconclusive — the checks did pass, on the wrong corpus. */
+out.push(errs.length     ? "ERRORS:\n  " + errs.join("\n  ")
+       : loadErrs.length ? "INCONCLUSIVE — reference checks ran on incomplete data"
+       :                   "ALL REFERENCES VALID");
+emit(out.join("\n"));
+$.exit((errs.length || loadErrs.length) ? 1 : 0);
