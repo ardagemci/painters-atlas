@@ -52,10 +52,12 @@ unattended work whose central safeguard is prose.
 
 1. Read this writ from `main` and confirm `status: granted`.
 2. Work in an isolated branch or worktree (Gate 4). Never on `main`.
-3. Stay inside `may_write`. The sealed set —`tools/validate*`,
-   `tools/audit_*.py`, `CLAUDE.md`, `PIGMENT.md`, `protocol/`, `.claude/` — is
-   unwritable in every writ, enforced by hook. The single carve-out is
-   `protocol/runs/`, where the run writes its own report.
+3. Stay inside `may_write`. The sealed set — `tools/validate*`,
+   `tools/audit_*.py`, `tools/lane3*`, `CLAUDE.md`, `PIGMENT.md`, `protocol/`,
+   `.claude/` — is unwritable in every writ, enforced by hook. The single
+   carve-out is `protocol/runs/`, where the run writes its own report.
+   `tools/lane3*` is in the set because it holds the authorization checks: a run
+   that can rewrite its own runner needs no other exploit.
 4. Run every command in `verifier`. All must pass.
 5. Have the diff reviewed by an agent that did not write it (Van Eyck).
 6. Push the branch. **Stop.** Lane III never merges; the user merges.

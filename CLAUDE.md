@@ -29,11 +29,19 @@ workflow state governs Lane I unless it says otherwise.
    no run. Unwritted work waits in Lane II until someone writes the writ.
 
 **The sealed set.** No Lane III run may write to `tools/validate*`,
-`tools/audit_*.py`, `CLAUDE.md`, `PIGMENT.md`, `protocol/` (outside its own run
-report), or `.claude/`. A run that needs one of these changed records it as a
-finding; it never makes the change. This is enforced by hook rather than by
-instruction, because an agent that can edit its own grader can make any change
-pass. Verifier edits happen in Lane II, with the user present.
+`tools/audit_*.py`, `tools/lane3*`, `CLAUDE.md`, `PIGMENT.md`, `protocol/`
+(outside its own run report), or `.claude/`. A run that needs one of these
+changed records it as a finding; it never makes the change. This is enforced by
+hook rather than by instruction, because an agent that can edit its own grader
+can make any change pass. Verifier edits happen in Lane II, with the user
+present.
+
+The set covers the *harness* as well as the grader. `tools/lane3-run.sh` holds
+every authorization check in the lane — that the writ came from `main`, that it
+is granted, that the hook exists, that the diff stayed under its ceiling — so a
+run able to rewrite its own runner would need no other exploit. Sealing the
+validator while leaving the runner writable secures the lock and leaves the door
+off its hinges.
 
 **Lane III never merges.** Runs push a branch and stop; the user merges. No
 clause about deployment is relaxed by this section — a lane that cannot merge
