@@ -21,38 +21,38 @@ and movement* traits and was inherited into a work-specific field, so 12 may be
 the correct rule rather than a competing one. His `†` markers are in
 `CATALOG_BATCH_COPY.md` so either rule can be applied without re-counting.
 
-**A2 · 13 of 20 fixed, 7 still wrong on the live site.**
+**A2 · RESOLVED 2026-08-12. All 20 confirmed mismatches are cleared.**
 
-Register: `IMAGE_RIGHTS_ROUTES.md` §1.6. C1 (Schwitters) fixed earlier; **twelve
-more replaced 2026-08-12**, each chosen by rendering it and looking at it:
-Ogata Kōrin, Morisot, Modigliani, Ruysch, Şeker Ahmed Paşa, Holbein, Cranach,
-Stubbs, Modersohn-Becker, Popova, Moreau, Hiroshige.
+Register: `IMAGE_RIGHTS_ROUTES.md` §1.6. Thirteen were replaced with the correct
+picture. The last seven could not be, because **for five of them the work the
+record named has no public-domain photograph on Commons at all** — so the record
+was retitled to a work that does, the remedy *Vision of Spain* needed:
 
-**A guard now runs on every replacement:** the proposed file must differ from the
-file it replaces. It exists because an earlier pass handed two records their own
-defect back — Commons ranks the existing wrong file first *precisely because* it
-is titled after the artist and work you are searching for, which is the same
-property that hid these twelve from the `suspect` detector in the first place.
-
-**One half-fix was caught by the inventory, not by me.** Kōrin's *Irises* exists
-twice — a gallery entry and a catalog record — and fixing only the gallery left
-the catalog still showing Van Gogh's *Irises*. `catalog_gallery_overlap` fell
-116 → 115 and named it. Both fixed.
-
-**Still wrong, and still being served:**
-
-| Record | Why the automated pass failed |
+| was | is now |
 | --- | --- |
-| `claude-lorrain` :: The Enchanted Castle | search keeps returning a line engraving, not the National Gallery painting |
-| `sesshu-toyo` :: Winter Landscape | candidates are Sesshū ink landscapes but not demonstrably *this* scroll |
-| `reza-abbasi` :: Portrait of a Dervish | returns the same depicted work again — a portrait **of** Reza by his pupil |
-| `xu-beihong` :: Galloping Horse | returned a photograph of a shopping-mall display |
-| `nicolas-poussin` :: The Four Seasons | returned a book scan |
-| `mihri-musfik` :: Self-Portrait | no self-portrait on Commons; needs the **record retitled** |
-| `emily-carr` :: Big Raven | returned a blank journal scan |
+| Claude Lorrain, *The Enchanted Castle* | *Landscape with Narcissus and Echo*, 1644, NG London |
+| Reza Abbasi, *Portrait of a Dervish* | *Young Man with a Sword*, 1622–24, Detroit |
+| Poussin, *The Four Seasons* | *The Adoration of the Golden Calf*, c. 1633–34, NG London |
+| Emily Carr, *Big Raven* | *Forest, British Columbia*, 1931–32 |
+| Mihri Müşfik, *Self-Portrait* | *Portrait of a Woman*, undated |
 
-Three of these seven need the **record retitled** rather than the image swapped,
-the way *Vision of Spain* did. They are hand work, not search work.
+**Two have no usable image in any form**, so the gallery entry was removed and
+the work keeps its place in the artist's `works[]` with no picture — the honest
+state rather than a gap: **Sesshū's *Winter Landscape*** (there is no
+public-domain Sesshū on Commons at all) and **Xu Beihong's *Galloping Horse***.
+
+**Two caveats carried, not smoothed:**
+- The Detroit file page says the Reza Abbasi is **"possibly by"** him. The
+  gallery schema has no attribution field, so it is recorded here.
+- Mihri Müşfik's replacement is **untitled and undated on Commons** — described
+  only as "Turkish art". The generic title is deliberate, not a guess.
+
+**Method notes worth keeping.** A retitle that keeps the old year silently
+invents a fact: all five carried the *previous* work's date until they were
+checked against the file pages — Claude Lorrain would have read 1664 for a 1644
+painting. And regex surgery on `artworks.js` produced malformed JSON twice; the
+file round-trips exactly through `json.dumps(indent=1)`, so structural edits
+should parse, modify and re-serialise rather than pattern-match.
 
 **A3 · RESOLVED 2026-08-08 — owner: add the real ones, re-file the rest.**
 `orientalism` now contains exactly three European Orientalists and nobody else:

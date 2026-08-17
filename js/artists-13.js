@@ -57,7 +57,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","watercolor"], style:"postimpressionist",
   palette:["#1f4a2e","#3e7a46","#5e8a96","#8ab05e","#2e3440"],
   tagline:"Rainforest in motion — the Pacific coast's late, great voice",
-  works:[{t:"Big Raven",y:"1931"},{t:"Indian Church",y:"1929"},{t:"Above the Gravel Pit",y:"1937"}],
+  works:[{t:"Forest, British Columbia",y:"1931–32"},{t:"Indian Church",y:"1929"},{t:"Above the Gravel Pit",y:"1937"}],
   life:"Born in Victoria, British Columbia, Carr studied in San Francisco, London and Paris, then spent decades unsellable — running a boarding house ('The House of All Sorts'), breeding sheepdogs, barely painting. A 1927 meeting with the Group of Seven — Lawren Harris's 'You are one of us' — relaunched her at fifty-six; heart attacks turned her to writing, and her first book won Canada's top literary prize. She died at seventy-three.",
   career:"Her journeys to First Nations villages produced the totem and longhouse canvases she saw as documents of cultures under siege; her late forests dispense with poles altogether — cedars swirling like green fire, sky scribbled in oil-on-paper gasoline washes of her own invention. Canada's modernist landscape has two inventors, and one wore a hairnet and pushed a pram full of monkey.",
   outside:"The pram carried Woo, her Javanese monkey, alongside sheepdogs, a white rat and a cockatoo, through Victoria's scandalised streets. Klee Wyck — 'Laughing One', the name Nuu-chah-nulth communities gave her — won the Governor General's Award in 1941; her journals remain Canadian literature's backbone.",

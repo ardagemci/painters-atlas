@@ -745,6 +745,55 @@ A2_WRONG_ARTWORKS = {
 }
 
 
+#: TENTH LEDGER — A2 completed, 2026-08-12. All twenty are now resolved.
+#:
+#: The last seven could not be fixed by swapping an image, because for five of
+#: them the work the record NAMED has no public-domain photograph on Commons at
+#: all. So the record was retitled to a work that does — the same remedy Sorolla's
+#: Vision of Spain needed:
+#:
+#:   claude-lorrain   The Enchanted Castle    -> Landscape with Narcissus and Echo
+#:   reza-abbasi      Portrait of a Dervish   -> Young Man with a Sword (Detroit)
+#:   nicolas-poussin  The Four Seasons        -> The Adoration of the Golden Calf
+#:   emily-carr       Big Raven               -> Forest, British Columbia
+#:   mihri-musfik     Self-Portrait           -> Portrait of a Woman
+#:
+#: And two have NO usable image in any form, so the gallery entry is removed and
+#: the work keeps its place in the artist's works[] with no picture — which is
+#: the honest state, not a gap:
+#:
+#:   sesshu-toyo      Winter Landscape   (no PD Sesshu on Commons at all)
+#:   xu-beihong       Galloping Horse    (his paintings are not on Commons as PD)
+#:
+#: 5 in, 7 out. total_unique 837 -> 835, rendered 836 -> 834, overlap unmoved.
+A2_RETITLES = {
+    "gallery_rendered": { "removed": [
+            "https://upload.wikimedia.org/wikipedia/commons/0/05/Muybridge_race_horse_animated_184px.gif",
+            "https://upload.wikimedia.org/wikipedia/commons/b/ba/Emily_Carr_Canada_stamp_1971.jpg",
+            U + "6/6a/Francis_Danby_%281793-1861%29_-_The_Enchanted_Castle_-_FA.66%28O%29_-_Victoria_and_Albert_Museum.jpg/500px-Francis_Danby_%281793-1861%29_-_The_Enchanted_Castle_-_FA.66%28O%29_-_Victoria_and_Albert_Museum.jpg",
+            U + "7/74/Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg/500px-Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg",
+            U + "7/75/Winter_Landscape_with_Brabrand_Church.jpg/500px-Winter_Landscape_with_Brabrand_Church.jpg",
+            U + "d/d9/Nicolas_Poussin_078.jpg/500px-Nicolas_Poussin_078.jpg",
+            U + "e/e9/Portrait_of_the_artist_Reza_%27Abbasi_by_Mu%27in_Musavvir%2C_Isfahan%2C_Iran%2C_signed_and_dated_19_April_1676.jpg/960px-Portrait_of_the_artist_Reza_%27Abbasi_by_Mu%27in_Musavvir%2C_Isfahan%2C_Iran%2C_signed_and_dated_19_April_1676.jpg",
+        ], "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/5/5f/Painting_by_Mihri_M%C3%BC%C5%9Ffik.jpg",
+            U + "5/51/Riza-i_Abbasi_Young_Man_with_a_Sword_-_Detroit_Institute_of_Arts.jpg/500px-Riza-i_Abbasi_Young_Man_with_a_Sword_-_Detroit_Institute_of_Arts.jpg",
+            U + "6/65/Landscape_with_Narcissus_and_Echo.jpg/500px-Landscape_with_Narcissus_and_Echo.jpg",
+            U + "9/95/Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg/500px-Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg",
+            U + "b/b2/The_Adoration_of_the_Golden_Calf_%E2%80%93_Nicolas_Poussin.jpg/500px-The_Adoration_of_the_Golden_Calf_%E2%80%93_Nicolas_Poussin.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [
+            "https://upload.wikimedia.org/wikipedia/commons/0/05/Muybridge_race_horse_animated_184px.gif",
+            "https://upload.wikimedia.org/wikipedia/commons/b/ba/Emily_Carr_Canada_stamp_1971.jpg",
+            U + "7/74/Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg/500px-Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg",
+        ], "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/5/5f/Painting_by_Mihri_M%C3%BC%C5%9Ffik.jpg",
+            U + "9/95/Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg/500px-Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg",
+            U + "b/b1/Xu_Beihong_yugongyishan.jpg/960px-Xu_Beihong_yugongyishan.jpg",
+        ] },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -762,7 +811,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -792,8 +841,8 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 837)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 836)   # +1: the same      # 796 + the same Hirshhorn photo
+        self.assertEqual(c["total_unique"], 835)   # +1: the MOA Atami photograph
+        self.assertEqual(c["rendered_unique"], 834)   # +1: the same      # 796 + the same Hirshhorn photo
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         self.assertEqual(c["catalog_gallery_overlap"], 116)   # +1: the Caillebotte record
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
@@ -878,7 +927,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 114)
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 556)
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 554)
 
 
 class TestSuppression(unittest.TestCase):

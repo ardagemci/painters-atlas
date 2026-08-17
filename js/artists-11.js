@@ -122,7 +122,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","pastel"], style:"impressionist",
   palette:["#8a4a4e","#d9b4be","#5e7a8e","#e9ddc4","#3a3430"],
   tagline:"The first lady of Turkish painting — from the palace to a potter's field",
-  works:[{t:"Self-Portrait",y:"c. 1910"},{t:"Portrait of Mustafa Kemal Atatürk",y:"c. 1923"},{t:"Woman in White",y:"c. 1920s"}],
+  works:[{t:"Portrait of a Woman",y:"undated"},{t:"Portrait of Mustafa Kemal Atatürk",y:"c. 1923"},{t:"Woman in White",y:"c. 1920s"}],
   life:"Born into an aristocratic Istanbul household — her father a pasha and professor of medicine — Mihri Rasim defied convention serially: studying art in Rome and Paris, marrying and divorcing on her own terms, and becoming the Ottoman Empire's first prominent woman painter. Emigrating in the 1920s, she died poor and forgotten in New York in 1954, reportedly buried in a potter's field.",
   career:"As director of drawing at the new Women's Fine Arts School in Istanbul (1914), she fought through scandalous innovations — live models for female students among them — and trained the republic's first generation of women artists. Her pastel portraits, fluent and psychologically direct, ranged from Istanbul society to, reportedly, Pope Benedict XV in Rome and Atatürk in Ankara.",
   outside:"Her salon connected Pierre Loti's Istanbul to Roman and Parisian studios; her great-nephew's archives and a wave of recent retrospectives have been reassembling a career history mislaid for half a century.",

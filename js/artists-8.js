@@ -174,7 +174,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","glazing","etching"], style:"romantic",
   palette:["#f2d9a0","#a8c4d9","#5e7250","#b06a42","#f4ecd8"],
   tagline:"The man who taught Europe what sunset means",
-  works:[{t:"Seaport with the Embarkation of the Queen of Sheba",y:"1648"},{t:"Landscape with Aeneas at Delos",y:"1672"},{t:"The Enchanted Castle",y:"1664"}],
+  works:[{t:"Seaport with the Embarkation of the Queen of Sheba",y:"1648"},{t:"Landscape with Aeneas at Delos",y:"1672"},{t:"Landscape with Narcissus and Echo",y:"1644"}],
   life:"Born Claude Gellée in Lorraine, orphaned young, he reached Rome reportedly as a pastry cook and stayed for life, drawing in the Campagna at dawn and dusk. Unmarried, semi-literate, wholly devoted to light, he became Europe's most sought-after landscapist and died in Rome at about seventy-eight.",
   career:"Claude invented the ideal landscape as theatre of light: harbours dissolving into golden haze, classical ruins framing the sun itself — the first painter to stare it down on canvas. English milords bought him by the gallery wall; for two centuries gardeners landscaped estates, and tourists viewed scenery, through his eyes.",
   outside:"Plagued by forgers, he kept the Liber Veritatis — a notebook of drawings recording every authentic painting, nearly 200 sheets now in the British Museum: art history's first catalogue raisonné, made in self-defence. The tinted 'Claude glass' tourists used to view landscapes bears his name.",

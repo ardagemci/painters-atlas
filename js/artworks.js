@@ -336,9 +336,9 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nicolas_Poussin_-_L%27Enl%C3%A8vement_des_Sabines_%281634-5%29.jpg/960px-Nicolas_Poussin_-_L%27Enl%C3%A8vement_des_Sabines_%281634-5%29.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_L%27Enl%C3%A8vement_des_Sabines_(1634-5).jpg"
   },
-  "The Four Seasons": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Nicolas_Poussin_078.jpg/500px-Nicolas_Poussin_078.jpg",
-   "page": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)"
+  "The Adoration of the Golden Calf": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/The_Adoration_of_the_Golden_Calf_%E2%80%93_Nicolas_Poussin.jpg/500px-The_Adoration_of_the_Golden_Calf_%E2%80%93_Nicolas_Poussin.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Golden_Calf_%E2%80%93_Nicolas_Poussin.jpg"
   }
  },
  "antoine-watteau": {
@@ -1208,9 +1208,9 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Claude_Lorrain_-_Landscape_with_Aeneas_at_Delos_-_WGA05015.jpg/960px-Claude_Lorrain_-_Landscape_with_Aeneas_at_Delos_-_WGA05015.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Claude_Lorrain_-_Landscape_with_Aeneas_at_Delos_-_WGA05015.jpg"
   },
-  "The Enchanted Castle": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Francis_Danby_%281793-1861%29_-_The_Enchanted_Castle_-_FA.66%28O%29_-_Victoria_and_Albert_Museum.jpg/500px-Francis_Danby_%281793-1861%29_-_The_Enchanted_Castle_-_FA.66%28O%29_-_Victoria_and_Albert_Museum.jpg",
-   "page": "https://en.wikipedia.org/wiki/The_Enchanted_Castle_(painting)"
+  "Landscape with Narcissus and Echo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Landscape_with_Narcissus_and_Echo.jpg/500px-Landscape_with_Narcissus_and_Echo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Landscape_with_Narcissus_and_Echo.jpg"
   }
  },
  "judith-leyster": {
@@ -1778,9 +1778,9 @@ window.ARTWORKS = {
   }
  },
  "mihri-musfik": {
-  "Self-Portrait": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg/500px-Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg"
+  "Portrait of a Woman": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Painting_by_Mihri_M%C3%BC%C5%9Ffik.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Painting_by_Mihri_M%C3%BC%C5%9Ffik.jpg"
   },
   "Portrait of Mustafa Kemal Atatürk": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Atarturk_-_Mihri_M%C3%BC%C5%9Ffik_Han%C4%B1m.jpg",
@@ -1872,9 +1872,9 @@ window.ARTWORKS = {
   }
  },
  "emily-carr": {
-  "Big Raven": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Emily_Carr_Canada_stamp_1971.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Emily_Carr_Canada_stamp_1971.jpg"
+  "Forest, British Columbia": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg/500px-Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Emily_Carr_(1931%E2%80%9332)_Forest,_British_Columbia.jpg"
   },
   "Indian Church": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Emily_Carr_Indian_Church.jpg/500px-Emily_Carr_Indian_Church.jpg",
@@ -2070,10 +2070,6 @@ window.ARTWORKS = {
   }
  },
  "xu-beihong": {
-  "Galloping Horse": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/0/05/Muybridge_race_horse_animated_184px.gif",
-   "page": "https://commons.wikimedia.org/wiki/File:Muybridge_race_horse_animated_184px.gif"
-  },
   "The Foolish Old Man Removes the Mountains": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Xu_Beihong_yugongyishan.jpg/960px-Xu_Beihong_yugongyishan.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Xu_Beihong_yugongyishan.jpg"
@@ -2087,10 +2083,6 @@ window.ARTWORKS = {
   "Long Scroll of Landscapes (Sansui Chōkan)": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Landscapes_of_the_Four_Seasons_by_Sesshu_%28Mori_Museum%29.jpg/960px-Landscapes_of_the_Four_Seasons_by_Sesshu_%28Mori_Museum%29.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Landscapes_of_the_Four_Seasons_by_Sesshu_(Mori_Museum).jpg"
-  },
-  "Winter Landscape": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Winter_Landscape_with_Brabrand_Church.jpg/500px-Winter_Landscape_with_Brabrand_Church.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Winter_Landscape_with_Brabrand_Church.jpg"
   }
  },
  "ogata-korin": {
@@ -2160,9 +2152,9 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Reza_Abbasi_-_Two_Lovers_%281630%29.jpg/500px-Reza_Abbasi_-_Two_Lovers_%281630%29.jpg",
    "page": "https://en.wikipedia.org/wiki/The_Lovers_(Abbasi)"
   },
-  "Portrait of a Dervish": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Portrait_of_the_artist_Reza_%27Abbasi_by_Mu%27in_Musavvir%2C_Isfahan%2C_Iran%2C_signed_and_dated_19_April_1676.jpg/960px-Portrait_of_the_artist_Reza_%27Abbasi_by_Mu%27in_Musavvir%2C_Isfahan%2C_Iran%2C_signed_and_dated_19_April_1676.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_the_artist_Reza_%27Abbasi_by_Mu%27in_Musavvir,_Isfahan,_Iran,_signed_and_dated_19_April_1676.jpg"
+  "Young Man with a Sword": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Riza-i_Abbasi_Young_Man_with_a_Sword_-_Detroit_Institute_of_Arts.jpg/500px-Riza-i_Abbasi_Young_Man_with_a_Sword_-_Detroit_Institute_of_Arts.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Riza-i_Abbasi_Young_Man_with_a_Sword_-_Detroit_Institute_of_Arts.jpg"
   }
  },
  "giotto": {

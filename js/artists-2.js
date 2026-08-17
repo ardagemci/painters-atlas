@@ -96,7 +96,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","glazing"], style:"neoclassical",
   palette:["#3b5a8a","#b0703a","#6e8a5a","#d9c8a4","#2e3a2c"],
   tagline:"Reason's painter — antiquity rebuilt one wax figurine at a time",
-  works:[{t:"Et in Arcadia Ego",y:"c. 1638"},{t:"The Abduction of the Sabine Women",y:"c. 1634"},{t:"The Four Seasons",y:"1660–64"}],
+  works:[{t:"Et in Arcadia Ego",y:"c. 1638"},{t:"The Abduction of the Sabine Women",y:"c. 1634"},{t:"The Adoration of the Golden Calf",y:"c. 1633–34"}],
   life:"A Norman farmer's son who walked to Paris and then, at thirty, to Rome, Poussin stayed there for the rest of his life — apart from a miserable two-year recall to decorate the Louvre, which he fled. Frugal and severe, he lived quietly with his wife near the Spanish Steps, painting slowly for a circle of learned collectors until his hands shook too much to hold a brush.",
   career:"Poussin composed like a philosopher: stoic shepherds, measured tragedies and landscapes ordered like arguments. He built miniature stage sets with wax figures to perfect each composition, sometimes taking years per canvas. French academic doctrine canonised him as the patron saint of line over colour — and three centuries later Cézanne declared his ambition was 'to redo Poussin from nature.'",
   outside:"His letters constitute a treatise on art and conduct; visitors found him discoursing on the ruins as 'a professor of antiquity.' He declined court honours, observing that the climb at court was paved with humiliations he preferred to study at a distance.",

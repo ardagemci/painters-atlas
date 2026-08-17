@@ -265,7 +265,7 @@ window.ARTISTS.push(
   techniques:["miniature-painting","gouache","gold-leaf"], style:"ornament",
   palette:["#1f6e8a","#c4663a","#caa43e","#5e3450","#e8dcc0"],
   tagline:"Isfahan's dreaming line — the Persian miniature's last great master",
-  works:[{t:"Youth Reading",y:"c. 1625–26"},{t:"Two Lovers",y:"1630"},{t:"Portrait of a Dervish",y:"c. 1600"}],
+  works:[{t:"Youth Reading",y:"c. 1625–26"},{t:"Two Lovers",y:"1630"},{t:"Young Man with a Sword",y:"1622–24"}],
   life:"Son of a court painter, Reza rose young in Shah Abbas the Great's Isfahan workshop and was honoured with the royal epithet 'Abbasi'. Mid-career he abruptly quit the court for years among wrestlers, dervishes and street company — to his biographers' scandal — before returning, deepened, to serve until his death in 1635.",
   career:"He turned the Persian tradition from crowded manuscript epics toward the single-page album leaf: a youth swaying like his own calligraphic outline, lovers entwined in three colours and gold, dervishes drawn with a reed pen's pressure changes doing the work of paint. His line — elastic, musical, slightly ironic — defined the Isfahan school and every Persian drawing after.",
   outside:"The wrestler years gave him subjects court art had ignored: labourers, pilgrims, sharp-eyed old men sketched with documentary affection. Tehran's museum of the classical book arts bears his name; his Two Lovers leaf is among the Met's most reproduced Islamic works.",
