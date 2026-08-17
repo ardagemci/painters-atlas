@@ -162,11 +162,47 @@ perl -e 'alarm shift; exec @ARGV' "$WALL_CLOCK" \
 RUN_EXIT=$?
 set -e
 
+# What the run actually consumed, reported every time and not only on failure.
+# The ceilings in a writ are guesses until a run has been measured; W-001 shipped
+# with max_turns:10 against work that needs 25-30, so three runs were killed
+# mid-sentence and nothing said which limit did it.
+if [ -s "$SCRATCH/result.json" ]; then
+  USAGE="$(python3 -c '
+import json, sys
+try: d = json.load(open(sys.argv[1]))
+except Exception: sys.exit(0)
+turns, cost = d.get("num_turns"), d.get("total_cost_usd")
+bits = []
+if turns is not None: bits.append("%s turns" % turns)
+if cost is not None: bits.append("$%.2f" % cost)
+sub = d.get("subtype")
+if sub and sub != "success": bits.append("stopped: %s" % sub)
+print(" · ".join(bits))
+' "$SCRATCH/result.json" 2>/dev/null || true)"
+  [ -n "$USAGE" ] && note "used ${USAGE}  (ceilings: $(field max_turns) turns, \$$(field max_budget_usd))"
+fi
+
 if [ "$RUN_EXIT" -eq 142 ]; then
   note "ABORTED: exceeded the ${WALL_CLOCK}s wall clock"
 elif [ "$RUN_EXIT" -ne 0 ]; then
   note "ABORTED: harness exited ${RUN_EXIT}"
-  head -20 "$SCRATCH/harness.err" >&2 || true
+  # stderr alone can be empty even on a real failure — the SDK often reports
+  # the actual reason inside the result JSON on stdout instead (is_error,
+  # subtype, permission_denials, the model's own "result" text). Show both,
+  # or the abort is a code with no explanation.
+  [ -s "$SCRATCH/harness.err" ] && head -20 "$SCRATCH/harness.err" >&2
+  if [ -s "$SCRATCH/result.json" ]; then
+    python3 -c '
+import json, sys
+try:
+    d = json.load(open(sys.argv[1]))
+except Exception as e:
+    sys.exit(0)
+print(json.dumps({k: d.get(k) for k in
+    ("is_error", "subtype", "stop_reason", "api_error_status",
+     "permission_denials", "result")}, indent=2))
+' "$SCRATCH/result.json" >&2 || cat "$SCRATCH/result.json" >&2
+  fi
 fi
 
 # ── Sealed-set backstop · the guarantee the hook only approximates ──────────
@@ -205,6 +241,10 @@ fi
 
 # ── Outcome ─────────────────────────────────────────────────────────────────
 if [ "$DRY_RUN" -eq 1 ]; then
+  if [ "$RUN_EXIT" -ne 0 ] || [ "$VERIFY_FAILED" -ne 0 ]; then
+    note "dry run did NOT complete cleanly — see the abort above. Nothing to propose."
+    exit 1
+  fi
   note "dry run complete — proposed diff follows, nothing was kept"
   ( cd "$TREE" && git diff main ) || true
   exit 0

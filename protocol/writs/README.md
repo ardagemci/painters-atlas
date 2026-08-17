@@ -51,7 +51,7 @@ refusal is seen.
 | `may_not` | Paths named explicitly for the reader's benefit; the sealed set applies regardless |
 | `tools` | Optional allowlist passed to `--allowedTools`. Omitted means a conservative default. Grant the fewest tools the class needs — a read-and-report writ has no use for subagents or schedulers |
 | `max_diff` | Line ceiling. Exceeding it aborts the run rather than truncating the work |
-| `max_turns`, `max_budget_usd` | Per-run ceilings passed to the harness |
+| `max_turns`, `max_budget_usd` | Per-run ceilings passed to the harness. **Measure these; do not guess them.** W-001 shipped with `max_turns: 10` against work that needs 25–30, and three runs were killed mid-sentence — twice at the moment before writing their output. A ceiling below the work it authorizes does not bound the run, it wastes it. The runner prints turns and cost on every run; set the ceiling from a run that finished, with headroom |
 | `abort_if` | Conditions that stop the run and file a report |
 | `granted_by`, `granted_at` | Filled by the user in the granting commit |
 

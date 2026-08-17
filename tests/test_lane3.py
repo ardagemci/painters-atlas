@@ -408,6 +408,30 @@ class RunnerCompletenessTest(unittest.TestCase):
         self.assertIn("--allowedTools", self.script)
         self.assertNotIn("Agent", self.script.split("TOOLS=")[1].split("\n")[0])
 
+    def test_the_runner_reports_what_the_run_consumed(self):
+        """Three runs died against a ceiling and nothing said which one."""
+        self.assertIn("num_turns", self.script)
+        self.assertIn("total_cost_usd", self.script)
+        self.assertIn("ceilings:", self.script)
+
+    def test_a_failed_dry_run_does_not_report_success(self):
+        """The success message used to print before RUN_EXIT was consulted, so
+        an aborted rehearsal announced 'dry run complete' and exited 0. Fifth
+        instance of this shape in one afternoon."""
+        outcome = self.script[self.script.index("Outcome"):]
+        dry_block = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
+        complete_at = dry_block.index("dry run complete")
+        guard_at = dry_block.index("RUN_EXIT")
+        self.assertLess(
+            guard_at, complete_at,
+            "the abort check must precede the success message",
+        )
+
+    def test_shipped_writ_ceilings_clear_observed_usage(self):
+        """25-26 turns were observed; a ceiling under that truncates the work."""
+        fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(int(fields["max_turns"]), 30)
+
     def test_shipped_writ_grants_the_fewest_tools_it_needs(self):
         fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
         tools = fields.get("tools", [])
