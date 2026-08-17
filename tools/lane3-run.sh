@@ -23,7 +23,7 @@ DRY_RUN=0
 [ "$MODE" = "--dry-run" ] && DRY_RUN=1
 
 LOCK="/tmp/pigment-lane3.lock"
-HOOK=".claude/hooks/sealed-set.sh"
+HOOK=".claude/hooks/sealed-set.py"
 SETTINGS=".claude/settings.json"
 CLAUDE_BIN="${PIGMENT_CLAUDE_BIN:-claude}"
 WALL_CLOCK="${PIGMENT_LANE3_TIMEOUT:-900}"
@@ -110,6 +110,11 @@ Binding constraints, in order of precedence:
 PROMPT_END
 )"
 
+# PIGMENT_LANE3 is what arms the sealed-set hook. The hook inherits this from
+# the harness process, and the agent's own Bash calls are sibling children of
+# it — unsetting the variable in a tool call cannot reach the hook's copy.
+export PIGMENT_LANE3=1
+
 set +e
 perl -e 'alarm shift; exec @ARGV' "$WALL_CLOCK" \
   "$CLAUDE_BIN" -p "$PROMPT" \
@@ -127,6 +132,24 @@ if [ "$RUN_EXIT" -eq 142 ]; then
 elif [ "$RUN_EXIT" -ne 0 ]; then
   note "ABORTED: harness exited ${RUN_EXIT}"
   head -20 "$SCRATCH/harness.err" >&2 || true
+fi
+
+# ── Sealed-set backstop · the guarantee the hook only approximates ──────────
+# The hook decides Write and Edit exactly, but a Bash command is a program and
+# no pattern settles what an arbitrary program writes. Git does: this asks the
+# finished worktree which files actually moved. Complete, unbypassable from
+# inside the run, and it runs before any outcome is declared — a run that
+# touched the sealed set is void no matter how green its verifiers came back.
+SEALED_TOUCHED="$(cd "$TREE" && git diff --name-only main \
+  | grep -E '^(tools/validate|tools/audit_|tools/lane3|CLAUDE\.md|PIGMENT\.md|\.claude/|protocol/)' \
+  | grep -v '^protocol/runs/' || true)"
+if [ -n "$SEALED_TOUCHED" ]; then
+  note "VOID: the run modified the sealed set —"
+  printf '  %s\n' $SEALED_TOUCHED >&2
+  note "discarding the branch. This is a finding about the run, not about Pigment."
+  cleanup_tree
+  git branch -D "$BRANCH" >/dev/null 2>&1 || true
+  exit 1
 fi
 
 # ── Verification · the writ's own commands decide, not the agent ────────────

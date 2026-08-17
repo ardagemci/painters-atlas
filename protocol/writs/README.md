@@ -27,11 +27,17 @@ A run reads writs from `main`, never from its own branch, so a branch cannot
 widen its own authorization.
 
 **Precondition on every grant.** No writ may move to `granted` until the
-sealed-set `PreToolUse` hook exists and has been shown to refuse a write to
-`tools/validate*`. `CLAUDE.md` §0 says the sealed set is enforced by hook rather
-than by instruction; until that hook is real the sentence is a promise, tracked
-as **D-8** in `PIGMENT.md` §19. A writ granted before then would be authorizing
-unattended work whose central safeguard is prose.
+sealed-set hook has been **observed refusing** a write to `tools/validate*`
+inside a live run — not merely until the file exists. The runner checks the
+weaker condition, because a script can only check what it can see; the stronger
+one is yours.
+
+The distinction is the point. `.claude/hooks/sealed-set.py` currently passes 29
+tests and has never been exercised by a real harness. Its first draft passed
+review, looked installed, and allowed all thirteen adversarial cases, because a
+heredoc had quietly redirected the input it was meant to read. Only an
+adversarial test caught it. **D-8** in `PIGMENT.md` §19 stays open until a live
+refusal is seen.
 
 ## Required fields
 
