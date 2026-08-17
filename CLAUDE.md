@@ -5,6 +5,48 @@ Constitution. Read this file first, then `PIGMENT.md` (product vision and
 builder context) and the relevant contract in `docs/`. This file governs *how*
 the Claude team works; `PIGMENT.md` governs *what* Pigment is.
 
+## 0. Build Lanes
+
+Work reaches Pigment through three lanes. **This section scopes every clause
+below it:** a rule that names the Coordinator, a frozen specification, or a
+workflow state governs Lane I unless it says otherwise.
+
+| Lane | For | Authorized by | Ends at |
+| --- | --- | --- | --- |
+| **I — Protocol** | Changes to what Pigment *is*: identity, audience, promises, navigation shape, taxonomy structure, new product surfaces | Coordinator freeze → `approved_for_build` | Human Review Package |
+| **II — Direct** | Work needing judgement but not a theory round: content, curation, visible fixes, exploration | The user is in the session | The user's call, in the moment |
+| **III — Autonomous** | Only work whose correctness is fully decided by the sealed verifier set | A writ in `protocol/writs/` marked `status: granted` | A pushed branch and a run report — **never a merge** |
+
+**Routing.** Three questions, in order. The first *yes* assigns the lane.
+
+1. Does it change what Pigment claims to be, who it is for, or what it
+   promises? → **Lane I.** Includes anything touching `PIGMENT.md` §19's
+   Deferred-Promise Register or the release-language rule.
+2. Would a person have to look at the result to know it is right? →
+   **Lane II.** Taste, truth about a real historical work, and "does this page
+   look right" are not machine-decidable in this repository today.
+3. Otherwise → **Lane III**, if and only if a granted writ covers it. No writ,
+   no run. Unwritted work waits in Lane II until someone writes the writ.
+
+**The sealed set.** No Lane III run may write to `tools/validate*`,
+`tools/audit_*.py`, `CLAUDE.md`, `PIGMENT.md`, `protocol/` (outside its own run
+report), or `.claude/`. A run that needs one of these changed records it as a
+finding; it never makes the change. This is enforced by hook rather than by
+instruction, because an agent that can edit its own grader can make any change
+pass. Verifier edits happen in Lane II, with the user present.
+
+**Lane III never merges.** Runs push a branch and stop; the user merges. No
+clause about deployment is relaxed by this section — a lane that cannot merge
+cannot deploy, so §1's approval requirement stands unchanged.
+
+**Gates 2, 3 and 4 bind all three lanes.** Gate 2's checklist is Lane III's
+merge-readiness report. Gate 3's Decision Record is the Lane III run ledger.
+Gate 4's isolation is what makes an autonomous mistake cost nothing, and is the
+reason the lane is affordable at all.
+
+**Abort.** §5's escalation list is also Lane III's abort list: a run that meets
+any of those conditions stops and files a report rather than proceeding.
+
 ## 1. The Dipolar Model
 
 Pigment is developed by two complementary poles:
@@ -60,25 +102,40 @@ when genuine inter-agent discussion is valuable, waits for required specialist
 reports before declaring convergence, and never lets the Quality Reviewer
 approve work it implemented itself.
 
+In Lane III the session is a run orchestrator, not a Synthesis Lead: it may
+execute a granted writ and report, and may not widen one, write a new one, or
+grant its own. The rule that the Quality Reviewer never approves its own
+implementation is what makes the lane's two-tier verification real — Dürer
+implements, Van Eyck reviews a diff it did not write.
+
 ## 3. Workflow States and Hard Gates
 
 States: `intake → theory → challenge → theory_revision → final_synthesis →
 awaiting_build_approval → approved_for_build → building → internal_review →
 revision → human_review_ready → approved | rejected | blocked`.
 
-**Gate 1 — no implementation before `approved_for_build`.**
-No production file (`js/`, `css/`, `index.html`, `p/`, `tools/`, `sitemap.xml`,
-`robots.txt`) may be edited for a feature until the Coordinator has frozen the
-specification and the task record at `protocol/tasks/<task_id>/` shows
-`workflow_state: approved_for_build`. Before any feature edit, the
-Implementation Lead must verify that file exists and states that state.
+**Gate 1 — no implementation before authorization.**
+Authorization is lane-specific (§0), and the production paths are the same in
+every lane: `js/`, `css/`, `index.html`, `p/`, `tools/`, `sitemap.xml`,
+`robots.txt`.
+
+- **Lane I** — no production file may be edited for a feature until the
+  Coordinator has frozen the specification and the task record at
+  `protocol/tasks/<task_id>/` shows `workflow_state: approved_for_build`.
+  Before any feature edit, the Implementation Lead must verify that file exists
+  and states that state.
+- **Lane II** — the user's presence in the session is the authorization.
+- **Lane III** — the authorization is a granted writ, and the writ's
+  `may_write` list is binding: a run may not edit a path the writ does not
+  name, even a path this gate would otherwise allow.
+
 Analysis, prototypes in scratch space, and protocol artifacts are always
 allowed. Risky implementation work requires plan approval before edits.
 
 **Gate 2 — no `human_review_ready` with failing critical checks.**
 The state may not advance to `human_review_ready` unless: all acceptance
-criteria in the frozen specification pass; `tools/validate.jxa.js` (or
-`node tools/validate.js`) passes; the Quality Review reports zero open
+criteria in the frozen specification pass; `osascript -l JavaScript
+tools/validate.jxa.js` exits 0; the Quality Review reports zero open
 critical or major findings; and browser evidence (screenshots at desktop and
 mobile viewports) is attached. The Quality Reviewer, not the Implementation
 Lead, certifies this gate.
