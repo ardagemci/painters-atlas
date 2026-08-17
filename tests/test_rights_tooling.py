@@ -679,6 +679,72 @@ ACTUALITY_EXPANSION = {
 }
 
 
+#: NINTH LEDGER — A2, the wrong-artwork replacements, 2026-08-12.
+#:
+#: IMAGE_RIGHTS_ROUTES.md §1.6 records 20 confirmed mismatches. C1 was fixed
+#: earlier; twelve more are fixed here, and SEVEN remain — they are listed in
+#: BACKLOG A2 and are still wrong on the live site.
+#:
+#: Every replacement was chosen by rendering it and looking at it, and every one
+#: passed a guard that a proposed file must differ from the file it replaces.
+#: That guard exists because an earlier automated pass proposed two records'
+#: own defects back at them: Commons ranks the existing wrong file first
+#: PRECISELY because it is titled after the artist and work being searched, the
+#: same property that hid these from the suspect detector to begin with.
+#:
+#: One half-fix was caught by the inventory rather than by me. Ogata Korin's
+#: Irises exists twice — a gallery entry and a catalog record — and fixing only
+#: the gallery left the catalog still showing Van Gogh's Irises.
+#: catalog_gallery_overlap fell 116 -> 115 and named the problem. Both are fixed,
+#: and the overlap is back at 116.
+#:
+#: A pure swap: 12 out and 12 in on the gallery surface, 1 for 1 on catalog,
+#: 3 for 3 on the stubs. No count moves.
+A2_WRONG_ARTWORKS = {
+    "gallery_rendered": { "removed": [
+            U + "3/36/Gustave_Moreau_-_%C3%89tude_t%C3%AAte_d%27%C5%92dipe.JPG/500px-Gustave_Moreau_-_%C3%89tude_t%C3%AAte_d%27%C5%92dipe.JPG",
+            U + "3/38/Young_Woman_Powdering_Herself_Georges_Seurat.jpg/500px-Young_Woman_Powdering_Herself_Georges_Seurat.jpg",
+            U + "3/3e/Irises-Vincent_van_Gogh.jpg/500px-Irises-Vincent_van_Gogh.jpg",
+            U + "4/42/Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_%28Louvre%29.jpg/500px-Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_%28Louvre%29.jpg",
+            U + "6/6d/Cha%C3%AFm_Soutine_-_Vue_de_C%C3%A9ret.jpg/500px-Cha%C3%AFm_Soutine_-_Vue_de_C%C3%A9ret.jpg",
+            U + "7/72/Lucas_Cranach_d.%C3%84._-_Bildnis_der_Prinzessin_Sibylle_von_Cleve_%281526%2C_Klassik_Stiftung_Weimar%29.jpg/960px-Lucas_Cranach_d.%C3%84._-_Bildnis_der_Prinzessin_Sibylle_von_Cleve_%281526%2C_Klassik_Stiftung_Weimar%29.jpg",
+            U + "8/86/Paula_Modersohn-Becker_001.jpg/500px-Paula_Modersohn-Becker_001.jpg",
+            U + "a/a3/Forest%2C_a_painting_by_Paul_C%C3%A9zanne%2C_circa_1902-1904.png/500px-Forest%2C_a_painting_by_Paul_C%C3%A9zanne%2C_circa_1902-1904.png",
+            U + "a/a8/George_Stubbs_-_self_portrait.jpg/500px-George_Stubbs_-_self_portrait.jpg",
+            U + "b/b5/Composition_%281917%29_-_Liubova_Popova_%281889-1924%29_%2845056449312%29.jpg/960px-Composition_%281917%29_-_Liubova_Popova_%281889-1924%29_%2845056449312%29.jpg",
+            U + "b/b8/Hiroshige_Van_Gogh_2.JPG/500px-Hiroshige_Van_Gogh_2.JPG",
+            U + "d/dc/Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg/500px-Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg",
+        ], "added": [
+            U + "0/04/Adam_and_Eve_%28UK_CIA_P-1947-LF-77%29.jpg/500px-Adam_and_Eve_%28UK_CIA_P-1947-LF-77%29.jpg",
+            U + "0/04/Henry_VIII_of_England%2C_by_Hans_Holbein.jpg/500px-Henry_VIII_of_England%2C_by_Hans_Holbein.jpg",
+            U + "1/13/Fabric_Designs_by_Popova_04.jpg/500px-Fabric_Designs_by_Popova_04.jpg",
+            U + "2/2a/Amedeo_Modigliani_-_Chaim_Soutine_%281917%29.jpg/500px-Amedeo_Modigliani_-_Chaim_Soutine_%281917%29.jpg",
+            U + "2/2f/Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_WGA16201.jpg/500px-Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_WGA16201.jpg",
+            U + "4/45/George_Stubbs_-_Horse_Devoured_by_a_Lion_-_Google_Art_Project.jpg/500px-George_Stubbs_-_Horse_Devoured_by_a_Lion_-_Google_Art_Project.jpg",
+            U + "4/46/Irises_screen_2.jpg/500px-Irises_screen_2.jpg",
+            U + "4/48/Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg/500px-Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg",
+            U + "9/90/Morisot_jeune_femme_se_poudrant.jpg/500px-Morisot_jeune_femme_se_poudrant.jpg",
+            U + "c/cc/Hiroshige_Atake_sous_une_averse_soudaine.jpg/500px-Hiroshige_Atake_sous_une_averse_soudaine.jpg",
+            U + "d/d7/Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg/500px-Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg",
+            U + "d/db/Ahmed-Forest.jpg/500px-Ahmed-Forest.jpg",
+        ] },
+    "catalog_pd_rendered": { "removed": [
+            U + "3/3e/Irises-Vincent_van_Gogh.jpg/500px-Irises-Vincent_van_Gogh.jpg",
+        ], "added": [
+            U + "4/46/Irises_screen_2.jpg/500px-Irises_screen_2.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [
+            U + "3/3e/Irises-Vincent_van_Gogh.jpg/500px-Irises-Vincent_van_Gogh.jpg",
+            U + "8/86/Paula_Modersohn-Becker_001.jpg/500px-Paula_Modersohn-Becker_001.jpg",
+            U + "d/dc/Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg/500px-Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg",
+        ], "added": [
+            U + "4/46/Irises_screen_2.jpg/500px-Irises_screen_2.jpg",
+            U + "4/48/Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg/500px-Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg",
+            U + "d/d7/Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg/500px-Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg",
+        ] },
+}
+
+
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
 
@@ -696,7 +762,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])

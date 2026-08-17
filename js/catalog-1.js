@@ -821,8 +821,8 @@ window.CATALOG = (window.CATALOG || []).concat([
   movements:["post-impressionism"], techniques:["oil-painting"], nation:"netherlands",
   museum:{ id:"getty", name:"J. Paul Getty Museum", city:"Los Angeles" },
   dims:"74.3 × 94.3 cm",
-  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/500px-Irises-Vincent_van_Gogh.jpg",
-          page:"https://en.wikipedia.org/wiki/Irises_(painting)", status:"pd" },
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Irises_screen_2.jpg/500px-Irises_screen_2.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:Irises_screen_2.jpg", status:"pd" },
   tags:["landscape","quiet","would-hang"] },
 
 { id:"almond-blossom", tier:2,

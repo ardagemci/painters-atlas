@@ -111,8 +111,8 @@ window.ARTWORKS = {
    "page": "https://en.wikipedia.org/wiki/The_Ambassadors_(Holbein)"
   },
   "Portrait of Henry VIII": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_%28Louvre%29.jpg/500px-Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_%28Louvre%29.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Henry_VIII_of_England%2C_by_Hans_Holbein.jpg/500px-Henry_VIII_of_England%2C_by_Hans_Holbein.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Henry_VIII_of_England,_by_Hans_Holbein.jpg"
   },
   "Portrait of Erasmus": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Hans_Holbein_d._J._%28Werkstatt%29_-_Bildnis_des_Erasmus_von_Rotterdam_%28ca._1530%29.jpg/960px-Hans_Holbein_d._J._%28Werkstatt%29_-_Bildnis_des_Erasmus_von_Rotterdam_%28ca._1530%29.jpg",
@@ -699,8 +699,8 @@ window.ARTWORKS = {
    "page": "https://en.wikipedia.org/wiki/Summer's_Day"
   },
   "Young Woman Powdering Her Face": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Young_Woman_Powdering_Herself_Georges_Seurat.jpg/500px-Young_Woman_Powdering_Herself_Georges_Seurat.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Young_Woman_Powdering_Herself_Georges_Seurat.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Morisot_jeune_femme_se_poudrant.jpg/500px-Morisot_jeune_femme_se_poudrant.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Morisot_jeune_femme_se_poudrant.jpg"
   }
  },
  "mary-cassatt": {
@@ -971,8 +971,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Amedeo_Modigliani_025.jpg"
   },
   "Portrait of Chaim Soutine": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Cha%C3%AFm_Soutine_-_Vue_de_C%C3%A9ret.jpg/500px-Cha%C3%AFm_Soutine_-_Vue_de_C%C3%A9ret.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Cha%C3%AFm_Soutine_-_Vue_de_C%C3%A9ret.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Amedeo_Modigliani_-_Chaim_Soutine_%281917%29.jpg/500px-Amedeo_Modigliani_-_Chaim_Soutine_%281917%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Amedeo_Modigliani_-_Chaim_Soutine_(1917).jpg"
   }
  },
  "egon-schiele": {
@@ -1065,8 +1065,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Lucas_Cranach_d.%C3%84._-_Martin_Luther,_1528_(Veste_Coburg).jpg"
   },
   "Adam and Eve": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Lucas_Cranach_d.%C3%84._-_Bildnis_der_Prinzessin_Sibylle_von_Cleve_%281526%2C_Klassik_Stiftung_Weimar%29.jpg/960px-Lucas_Cranach_d.%C3%84._-_Bildnis_der_Prinzessin_Sibylle_von_Cleve_%281526%2C_Klassik_Stiftung_Weimar%29.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Lucas_Cranach_d.%C3%84._-_Bildnis_der_Prinzessin_Sibylle_von_Cleve_(1526,_Klassik_Stiftung_Weimar).jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Adam_and_Eve_%28UK_CIA_P-1947-LF-77%29.jpg/500px-Adam_and_Eve_%28UK_CIA_P-1947-LF-77%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Adam_and_Eve_(UK_CIA_P-1947-LF-77).jpg"
   },
   "The Judgment of Paris": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lucas_Cranach_the_Elder_-_The_Judgment_of_Paris_-_Google_Art_Project.jpg/960px-Lucas_Cranach_the_Elder_-_The_Judgment_of_Paris_-_Google_Art_Project.jpg",
@@ -1271,8 +1271,8 @@ window.ARTWORKS = {
  },
  "rachel-ruysch": {
   "Flower Still Life": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg/500px-Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes%2C_1857.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Amalie_Kaercher_-_A_Flower_Still_Life_with_Grapes,_1857.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg/500px-Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Rachel_Ruysch_-_Still-Life_with_Flowers_-_WGA20555.jpg"
   },
   "Roses, Convolvulus, Poppies and Other Flowers": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Roses%2C_Convolvulus%2C_Poppies%2C_and_Other_Flowers_in_an_Urn_on_a_Stone_Ledge_-_Rachel_Ruysch_-_Google_Cultural_Institute.jpg/960px-Roses%2C_Convolvulus%2C_Poppies%2C_and_Other_Flowers_in_an_Urn_on_a_Stone_Ledge_-_Rachel_Ruysch_-_Google_Cultural_Institute.jpg",
@@ -1341,8 +1341,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Stubbs_Anatomy_of_the_Horse_2.JPG"
   },
   "Horse Attacked by a Lion": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/George_Stubbs_-_self_portrait.jpg/500px-George_Stubbs_-_self_portrait.jpg",
-   "page": "https://en.wikipedia.org/wiki/George_Stubbs"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/George_Stubbs_-_Horse_Devoured_by_a_Lion_-_Google_Art_Project.jpg/500px-George_Stubbs_-_Horse_Devoured_by_a_Lion_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:George_Stubbs_-_Horse_Devoured_by_a_Lion_-_Google_Art_Project.jpg"
   }
  },
  "joseph-wright-of-derby": {
@@ -1473,8 +1473,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Hiroshige,_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake,_1857.jpg"
   },
   "One Hundred Famous Views of Edo": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hiroshige_Van_Gogh_2.JPG/500px-Hiroshige_Van_Gogh_2.JPG",
-   "page": "https://commons.wikimedia.org/wiki/File:Hiroshige_Van_Gogh_2.JPG"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Hiroshige_Atake_sous_une_averse_soudaine.jpg/500px-Hiroshige_Atake_sous_une_averse_soudaine.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hiroshige_Atake_sous_une_averse_soudaine.jpg"
   }
  },
  "ivan-aivazovsky": {
@@ -1567,8 +1567,8 @@ window.ARTWORKS = {
    "page": "https://en.wikipedia.org/wiki/The_Apparition_(Moreau%2C_Mus%C3%A9e_national_Gustave_Moreau)"
   },
   "Oedipus and the Sphinx": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Gustave_Moreau_-_%C3%89tude_t%C3%AAte_d%27%C5%92dipe.JPG/500px-Gustave_Moreau_-_%C3%89tude_t%C3%AAte_d%27%C5%92dipe.JPG",
-   "page": "https://en.wikipedia.org/wiki/Oedipus_and_the_Sphinx"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_WGA16201.jpg/500px-Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_WGA16201.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_WGA16201.jpg"
   },
   "Jupiter and Semele": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jupiter_and_Semele_by_Gustave_Moreau.jpg/500px-Jupiter_and_Semele_by_Gustave_Moreau.jpg",
@@ -1759,8 +1759,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Ahmed-Fruit.jpg"
   },
   "Forest (Woodland Scene)": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Forest%2C_a_painting_by_Paul_C%C3%A9zanne%2C_circa_1902-1904.png/500px-Forest%2C_a_painting_by_Paul_C%C3%A9zanne%2C_circa_1902-1904.png",
-   "page": "https://en.wikipedia.org/wiki/Forest_(painting)"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Ahmed-Forest.jpg/500px-Ahmed-Forest.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ahmed-Forest.jpg"
   }
  },
  "osman-hamdi-bey": {
@@ -2045,8 +2045,8 @@ window.ARTWORKS = {
    "page": "https://commons.wikimedia.org/wiki/File:Lyubov_Popova,_Space-Force_Construction_(1921).jpg"
   },
   "Textile designs, First State Factory": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Composition_%281917%29_-_Liubova_Popova_%281889-1924%29_%2845056449312%29.jpg/960px-Composition_%281917%29_-_Liubova_Popova_%281889-1924%29_%2845056449312%29.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Composition_(1917)_-_Liubova_Popova_(1889-1924)_(45056449312).jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Fabric_Designs_by_Popova_04.jpg/500px-Fabric_Designs_by_Popova_04.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fabric_Designs_by_Popova_04.jpg"
   }
  },
  "shen-zhou": {
@@ -2095,8 +2095,8 @@ window.ARTWORKS = {
  },
  "ogata-korin": {
   "Irises (Kakitsubata-zu)": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/500px-Irises-Vincent_van_Gogh.jpg",
-   "page": "https://en.wikipedia.org/wiki/Irises_(painting)"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Irises_screen_2.jpg/500px-Irises_screen_2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Irises_screen_2.jpg"
   },
   "Red and White Plum Blossoms": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg/500px-Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg",
@@ -2375,8 +2375,8 @@ window.ARTWORKS = {
  },
  "paula-modersohn-becker": {
   "Self-Portrait at Sixth Wedding Anniversary": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Paula_Modersohn-Becker_001.jpg/500px-Paula_Modersohn-Becker_001.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:Paula_Modersohn-Becker_001.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg/500px-Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paula_Moderson-Becker_-_Selbstbildnis_am_6_Hochzeitstag_-_1906.jpeg"
   },
   "Self-Portrait with Amber Necklace": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Paula_Modersohn-Becker_-_Selbstbildnis_als_Halbakt_mit_Bernsteinkette_II.jpg/500px-Paula_Modersohn-Becker_-_Selbstbildnis_als_Halbakt_mit_Bernsteinkette_II.jpg",

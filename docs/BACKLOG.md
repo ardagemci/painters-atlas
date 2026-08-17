@@ -21,34 +21,38 @@ and movement* traits and was inherited into a work-specific field, so 12 may be
 the correct rule rather than a competing one. His `†` markers are in
 `CATALOG_BATCH_COPY.md` so either rule can be applied without re-counting.
 
-**A2 · IN PROGRESS — owner: replace them. One pass done, and it failed
-instructively.**
+**A2 · 13 of 20 fixed, 7 still wrong on the live site.**
 
-The authoritative list is `IMAGE_RIGHTS_ROUTES.md` §1.6: **20 confirmed
-mismatches** in three groups. **C1 (Schwitters' *Ursonate*) is fixed**; 19 remain.
+Register: `IMAGE_RIGHTS_ROUTES.md` §1.6. C1 (Schwitters) fixed earlier; **twelve
+more replaced 2026-08-12**, each chosen by rendering it and looking at it:
+Ogata Kōrin, Morisot, Modigliani, Ruysch, Şeker Ahmed Paşa, Holbein, Cranach,
+Stubbs, Modersohn-Becker, Popova, Moreau, Hiroshige.
 
-I ran an automated sourcing pass over all 19 — Commons search, public-domain
-filter, top candidate — and then looked at the results instead of shipping them.
-**It should not be shipped, and the reasons are worth keeping:**
+**A guard now runs on every replacement:** the proposed file must differ from the
+file it replaces. It exists because an earlier pass handed two records their own
+defect back — Commons ranks the existing wrong file first *precisely because* it
+is titled after the artist and work you are searching for, which is the same
+property that hid these twelve from the `suspect` detector in the first place.
 
-- **2 of 19 proposals were byte-identical to the file being replaced.**
-  Commons' search ranks the existing wrong file first *because* it is titled
-  after the artist and work we are searching for — the same property that made
-  those 12 invisible to the `suspect` detector in the first place. `hans-holbein`
-  and `gustave-moreau` both proposed their own defect back.
-- **`reza-abbasi`** returned the same *depicted* work under a different filename
-  (a portrait *of* Reza by his pupil — defect A8 again).
-- **`claude-lorrain`** returned a line engraving, not the National Gallery
-  painting.
-- **`sesshu-toyo`** and **`xu-beihong`** returned genuine works by the right
-  artist that are **not the work the record names** — which would fix the
-  attribution and break the title.
+**One half-fix was caught by the inventory, not by me.** Kōrin's *Irises* exists
+twice — a gallery entry and a catalog record — and fixing only the gallery left
+the catalog still showing Van Gogh's *Irises*. `catalog_gallery_overlap` fell
+116 → 115 and named it. Both fixed.
 
-**What this means for the remaining 19:** it is per-record curatorial work, not a
-batch job. Several will need the *record retitled* rather than the image swapped,
-exactly as *Vision of Spain* did. Whoever picks it up should add one cheap guard
-first: **assert that a proposed replacement URL differs from the one it replaces**
-— that alone would have caught two of nineteen.
+**Still wrong, and still being served:**
+
+| Record | Why the automated pass failed |
+| --- | --- |
+| `claude-lorrain` :: The Enchanted Castle | search keeps returning a line engraving, not the National Gallery painting |
+| `sesshu-toyo` :: Winter Landscape | candidates are Sesshū ink landscapes but not demonstrably *this* scroll |
+| `reza-abbasi` :: Portrait of a Dervish | returns the same depicted work again — a portrait **of** Reza by his pupil |
+| `xu-beihong` :: Galloping Horse | returned a photograph of a shopping-mall display |
+| `nicolas-poussin` :: The Four Seasons | returned a book scan |
+| `mihri-musfik` :: Self-Portrait | no self-portrait on Commons; needs the **record retitled** |
+| `emily-carr` :: Big Raven | returned a blank journal scan |
+
+Three of these seven need the **record retitled** rather than the image swapped,
+the way *Vision of Spain* did. They are hand work, not search work.
 
 **A3 · RESOLVED 2026-08-08 — owner: add the real ones, re-file the rest.**
 `orientalism` now contains exactly three European Orientalists and nobody else:
