@@ -83,21 +83,46 @@ shlock -f "$LOCK" -p $$ || die "another run holds ${LOCK}; not starting a second
 BASE="$(git rev-parse --short main)"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 BRANCH="lane3/${WRIT_ID}-${STAMP}"
+# --session-id must be a UUID; the harness rejects anything else. The
+# human-readable writ/timestamp label stays on the branch name and in the
+# notes below — it just can't double as the session id.
+SESSION_ID="$(uuidgen | tr 'A-Z' 'a-z')"
 TREE="$SCRATCH/tree"
 git worktree add -q -b "$BRANCH" "$TREE" main \
   || die "could not create an isolated worktree; refusing to run in place."
 cleanup_tree() { git worktree remove --force "$TREE" 2>/dev/null || true; }
 trap 'cleanup_tree; rm -rf "$SCRATCH"; rm -f "$LOCK"' EXIT
 
-note "writ ${WRIT_ID} (${STATUS}) · base ${BASE} · branch ${BRANCH}"
+note "writ ${WRIT_ID} (${STATUS}) · base ${BASE} · branch ${BRANCH} · session ${SESSION_ID}"
 [ "$DRY_RUN" -eq 1 ] && note "DRY RUN — proposes a diff, writes nothing, pushes nothing"
 
 # ── The run ─────────────────────────────────────────────────────────────────
+# Same permission mode for both: the worktree (Gate 4) is what makes this
+# safe, not the mode. "plan" would stop the agent from writing anything at
+# all, even into the disposable worktree, so a dry run could never show a
+# real proposed diff — it would just prove the guards and verifiers ran.
 PERMISSION_MODE="dontAsk"
-[ "$DRY_RUN" -eq 1 ] && PERMISSION_MODE="plan"
+
+# The mode has to be stated. A run once saw PIGMENT_LANE3 armed and the hook
+# firing while the writ read `proposed`, could not reconcile the two, and
+# aborted — correctly, on the information it had. It had no way to know it was
+# a rehearsal because the prompt never said so.
+if [ "$DRY_RUN" -eq 1 ]; then
+  MODE_NOTE="This is a DRY RUN — a rehearsal of an ungranted writ (status: ${STATUS}).
+  Do the work as specified so the owner can read a real proposed diff. Your
+  worktree is disposable and nothing you write here will be committed, pushed
+  or merged. The sealed set still applies and the hook is armed, deliberately:
+  a rehearsal that skipped the guards would rehearse the wrong thing.
+  Do NOT abort merely because the writ is not granted — that is expected here."
+else
+  MODE_NOTE="This is a REAL RUN of a granted writ. Your work will be committed
+  to ${BRANCH} and left for the owner to review. It will not be merged."
+fi
 
 PROMPT="$(cat <<PROMPT_END
 You are executing Lane III writ ${WRIT_ID} under CLAUDE.md §0.
+
+${MODE_NOTE}
 
 $(cat "$SCRATCH/writ.md")
 
@@ -107,13 +132,22 @@ Binding constraints, in order of precedence:
   3. Stop at ${BRANCH}. Never merge, never push, never touch main.
   4. Abort and report on any abort_if condition or CLAUDE.md §5 condition.
   5. A partial result with an honest report beats a green you had to widen.
+  6. Do the writ and only the writ. No subagents, no scheduling, no side quests.
 PROMPT_END
 )"
 
-# PIGMENT_LANE3 is what arms the sealed-set hook. The hook inherits this from
-# the harness process, and the agent's own Bash calls are sibling children of
-# it — unsetting the variable in a tool call cannot reach the hook's copy.
+# PIGMENT_LANE3 arms the sealed-set hook; the two roots tell it what the run
+# owns. Without them the hook cannot tell inside from outside and denies
+# everything — which is the correct failure, but a useless run.
 export PIGMENT_LANE3=1
+export PIGMENT_LANE3_ROOT="$TREE"
+export PIGMENT_LANE3_REPO="$REPO"
+
+# An allowlist, not a blocklist. A read-and-report writ has no business
+# spawning subagents or scheduling wakeups, and one run did both.
+TOOLS="$(field tools 2>/dev/null | paste -sd, - 2>/dev/null || true)"
+[ -n "$TOOLS" ] || TOOLS="Read,Grep,Glob,Bash,Write,Edit"
+note "tools: ${TOOLS}"
 
 set +e
 perl -e 'alarm shift; exec @ARGV' "$WALL_CLOCK" \
@@ -122,7 +156,8 @@ perl -e 'alarm shift; exec @ARGV' "$WALL_CLOCK" \
     --max-turns "$(field max_turns)" \
     --max-budget-usd "$(field max_budget_usd)" \
     --permission-mode "$PERMISSION_MODE" \
-    --session-id "lane3-${WRIT_ID}-${STAMP}" \
+    --allowedTools "$TOOLS" \
+    --session-id "$SESSION_ID" \
     > "$SCRATCH/result.json" 2> "$SCRATCH/harness.err"
 RUN_EXIT=$?
 set -e
@@ -179,6 +214,23 @@ if [ "$RUN_EXIT" -ne 0 ] || [ "$VERIFY_FAILED" -ne 0 ]; then
   note "run did not pass. Branch ${BRANCH} kept for inspection; nothing merged."
   trap 'rm -rf "$SCRATCH"; rm -f "$LOCK"' EXIT   # keep the worktree
   exit 1
+fi
+
+# ── Commit · without this the whole run evaporates ──────────────────────────
+# The worktree is deleted by the EXIT trap, so work that is not committed is
+# work that never happened. This step was missing: a passing run used to push a
+# branch with zero commits and report success — the same shape of defect as the
+# validator that could not fail, arriving at the other end of the pipeline.
+if [ -n "$(cd "$TREE" && git status --porcelain)" ]; then
+  ( cd "$TREE" \
+    && git add -A \
+    && git -c user.name="pigment-lane3" -c user.email="lane3@pigment.local" \
+         commit -q -m "lane3(${WRIT_ID}): ${STAMP}" \
+         -m "Autonomous run under writ ${WRIT_ID}, base ${BASE}, session ${SESSION_ID}.
+Verifiers passed. Sealed set untouched. Not reviewed by a person." )
+  note "committed $(cd "$TREE" && git rev-parse --short HEAD) on ${BRANCH}"
+else
+  note "the run produced no changes — nothing to commit. Branch ${BRANCH} is empty."
 fi
 
 # Lane III never merges. Pushing is outward-facing and stays opt-in.

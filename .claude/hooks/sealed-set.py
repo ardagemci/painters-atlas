@@ -51,25 +51,82 @@ BASH_WRITE_SHAPES = re.compile(
 )
 
 
-def is_sealed(path):
-    """protocol/ is sealed except the run's own report directory."""
-    if not path:
+def real(path):
+    """Absolute and symlink-resolved. macOS hands out /var/folders temp dirs
+    that are symlinks into /private/var, so comparing unresolved paths silently
+    fails to match."""
+    return os.path.realpath(os.path.abspath(os.path.expanduser(path)))
+
+
+def under(path, root):
+    if not root:
         return False
-    path = path.replace("\\", "/")
-    # Strip a leading "./" as a *prefix*. str.lstrip("./") strips those two
-    # characters in any order, which quietly turned ".claude/agents/x.md" into
-    # "claude/agents/x.md" and un-sealed the whole agent directory.
-    while path.startswith("./"):
-        path = path[2:]
-    for marker in ("protocol/runs/",):
-        if marker in path:
-            return False
-    if "protocol/" in path:
-        return True
-    return any(
-        path.startswith(prefix) or ("/" + prefix) in path
-        for prefix in SEALED_PREFIXES
-    )
+    root = real(root).rstrip("/") + "/"
+    return (real(path) + "/").startswith(root)
+
+
+def relative_to(path, root):
+    return real(path)[len(real(root).rstrip("/")) + 1:].replace("\\", "/")
+
+
+def is_sealed_within_tree(relative):
+    """`relative` is already anchored to the run's worktree root.
+
+    protocol/ is sealed except the run's own report directory.
+    """
+    if not relative:
+        return False
+    if relative.startswith("protocol/"):
+        return not relative.startswith("protocol/runs/")
+    return any(relative.startswith(prefix) for prefix in SEALED_PREFIXES)
+
+
+def classify(path):
+    """Where does this write land, and is it allowed?
+
+    Anchoring matters more than the prefix list. An earlier version asked
+    whether "/.claude/" appeared anywhere in the string, which sealed the user's
+    global ~/.claude/ config and any unrelated checkout that happened to have a
+    protocol/ directory -- it refused the harness's own plan file and broke a
+    live run. Substring matching on paths is not scoping.
+
+    Returns (decision, reason).
+    """
+    worktree = os.environ.get("PIGMENT_LANE3_ROOT")
+    origin = os.environ.get("PIGMENT_LANE3_REPO")
+
+    if not worktree or not origin:
+        return "deny", (
+            "The sealed-set hook is armed but was not told which tree the run "
+            "owns (PIGMENT_LANE3_ROOT / PIGMENT_LANE3_REPO are unset), so it "
+            "cannot scope this write. A guard that cannot tell inside from "
+            "outside denies."
+        )
+
+    # The run owns its worktree and nothing else. Writing into the real
+    # checkout is not a sealed-set question -- it is the wrong workspace, and
+    # Gate 4 exists precisely so an autonomous mistake costs nothing.
+    if under(path, origin):
+        return "deny", (
+            "%s is in the live repository. A Lane III run works only inside its "
+            "own worktree (%s); writing to the checkout would put unreviewed "
+            "work where the owner did not put it." % (path, worktree)
+        )
+
+    if under(path, worktree):
+        relative = relative_to(path, worktree)
+        if is_sealed_within_tree(relative):
+            return "deny", (
+                "%s is in the sealed set (CLAUDE.md §0). A Lane III run records "
+                "a needed change to a verifier, a constitution or the harness as "
+                "a finding in its report; it never makes the change. An agent "
+                "that can edit its own grader can make any change pass." % relative
+            )
+        return "allow", ""
+
+    # Outside both trees: the harness's own scratch, plan files, temp dirs.
+    # Not this hook's business. It guards Pigment, not the filesystem.
+    return "allow", ""
 
 
 def deny(reason):
@@ -112,13 +169,10 @@ def main():
 
     if tool in WRITE_TOOLS:
         target = data.get("file_path") or data.get("notebook_path") or ""
-        if is_sealed(target):
-            deny(
-                "%s is in the sealed set (CLAUDE.md §0). A Lane III run records "
-                "a needed change to a verifier, a constitution or the harness as "
-                "a finding in its report; it never makes the change. An agent "
-                "that can edit its own grader can make any change pass." % target
-            )
+        if target:
+            decision, reason = classify(target)
+            if decision == "deny":
+                deny(reason)
 
     elif tool == "Bash":
         command = data.get("command", "")
