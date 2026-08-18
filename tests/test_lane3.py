@@ -427,6 +427,19 @@ class RunnerCompletenessTest(unittest.TestCase):
             "the abort check must precede the success message",
         )
 
+    def test_the_proposed_diff_includes_new_files(self):
+        """`git diff` is silent on untracked files, and a W-001 report is
+        precisely that: a brand-new file under protocol/runs/. Without an
+        intent-to-add the runner printed "proposed diff follows" over nothing,
+        every time, whatever the run had actually written."""
+        outcome = self.script[self.script.index("Outcome"):]
+        dry = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
+        self.assertIn("git add -N", dry)
+        self.assertLess(
+            dry.index("git add -N"), dry.index("git diff main"),
+            "the intent-to-add must precede the diff it exists to populate",
+        )
+
     def test_shipped_writ_ceilings_clear_observed_usage(self):
         """25-26 turns were observed; a ceiling under that truncates the work."""
         fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
