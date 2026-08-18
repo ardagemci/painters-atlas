@@ -32,12 +32,17 @@ inside a live run — not merely until the file exists. The runner checks the
 weaker condition, because a script can only check what it can see; the stronger
 one is yours.
 
-The distinction is the point. `.claude/hooks/sealed-set.py` currently passes 29
-tests and has never been exercised by a real harness. Its first draft passed
-review, looked installed, and allowed all thirteen adversarial cases, because a
-heredoc had quietly redirected the input it was meant to read. Only an
-adversarial test caught it. **D-8** in `PIGMENT.md` §19 stays open until a live
-refusal is seen.
+The distinction is the point, and the hook is a worked example of why. Its
+first draft passed review, looked correctly installed, and allowed all thirteen
+adversarial cases, because a heredoc had quietly redirected the input it was
+meant to read. Only an adversarial test caught it.
+
+Where it stands: the **permit** side is proven live — a W-001 rehearsal wrote
+its report into `protocol/runs/` and the hook stayed out of the way. The
+**deny** side is covered by tests but has not been observed since the scoping
+fix; the one live refusal on record came from the earlier version and was a
+false positive on a path outside the repository. `W-002` exists to close that
+gap. **D-8** in `PIGMENT.md` §19 stays open until it does.
 
 ## Required fields
 
@@ -49,6 +54,7 @@ refusal is seen.
 | `verifier` | The exact commands that decide correctness. A writ with no verifier is not a writ |
 | `may_write` | Path globs the run may edit. Binding — exceeds Gate 1, never widens it |
 | `may_not` | Paths named explicitly for the reader's benefit; the sealed set applies regardless |
+| `probe` | Optional. `true` marks an adversarial writ that deliberately attempts what the guards should refuse. A probe may only run with `--dry-run`, whatever its `status` says — the field is the safety property, not the status. A probe has no legitimate granted form |
 | `tools` | Optional allowlist passed to `--allowedTools`. Omitted means a conservative default. Grant the fewest tools the class needs — a read-and-report writ has no use for subagents or schedulers |
 | `max_diff` | Line ceiling. Exceeding it aborts the run rather than truncating the work |
 | `max_turns`, `max_budget_usd` | Per-run ceilings passed to the harness. **Measure these; do not guess them.** W-001 shipped with `max_turns: 10` against work that needs 25–30, and three runs were killed mid-sentence — twice at the moment before writing their output. A ceiling below the work it authorizes does not bound the run, it wastes it. The runner prints turns and cost on every run; set the ceiling from a run that finished, with headroom |
@@ -77,6 +83,23 @@ condition, a failing verifier after its bounded retries, or a `may_write`
 violation **stops and reports**. A partial branch with an honest report is a
 good outcome. A branch that reached green by narrowing what green means is the
 failure this whole structure exists to prevent.
+
+## Probe writs
+
+A probe is a writ whose deliverable is a set of refusals. `W-002` attempts to
+write to `CLAUDE.md`, to the validator, to the runner, and to the live checkout,
+and reports whether each was refused — then writes its own report, which must be
+*permitted*. Both halves matter: a guard that refuses everything is as useless as
+one that permits everything, and only the pair shows it discriminates.
+
+They exist because this repository has learned, repeatedly and expensively, that
+a control which has never been observed failing is not known to work. Six
+separate guards here reported success while doing nothing, and every one was
+caught by asserting a specific failure rather than by reading the code.
+
+`probe: true` makes a probe structurally incapable of a real run. Do not remove
+the field to "test it properly"; the dry run *is* the proper test, and the
+disposable worktree is what makes attempting a violation safe to do at all.
 
 ## Writing a new writ
 

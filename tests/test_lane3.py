@@ -203,6 +203,88 @@ class RunnerGuardTest(unittest.TestCase):
         self.assertIn("malformed", result.stderr)
 
 
+class ProbeWritTest(unittest.TestCase):
+    """W-002 attempts sealed writes on purpose, to close PIGMENT.md §19 D-8.
+
+    That is only safe in a worktree that is thrown away, so a probe must be
+    incapable of a real run — and incapable structurally, not by convention.
+    """
+
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.repo = Path(self.temporary.name) / "repo"
+        (self.repo / "tools").mkdir(parents=True)
+        (self.repo / "protocol" / "writs").mkdir(parents=True)
+        for tool in ("lane3-run.sh", "lane3_writ.py"):
+            target = self.repo / "tools" / tool
+            target.write_bytes((ROOT / "tools" / tool).read_bytes())
+            target.chmod(0o755)
+        subprocess.run(["git", "init", "-q", "-b", "main"], cwd=self.repo, check=True,
+                       capture_output=True)
+        self.addCleanup(self.temporary.cleanup)
+
+    def commit_writ(self, name, text):
+        (self.repo / "protocol" / "writs" / (name + ".md")).write_text(text, encoding="utf-8")
+        for args in (["add", "-A"],
+                     ["-c", "user.email=t@t", "-c", "user.name=t", "commit", "-m", "w"]):
+            subprocess.run(["git", *args], cwd=self.repo, check=True, capture_output=True)
+
+    def run_lane3(self, *args):
+        return subprocess.run(
+            ["bash", str(self.repo / "tools" / "lane3-run.sh"), *args],
+            cwd=self.repo, capture_output=True, text=True, timeout=60,
+        )
+
+    def test_a_granted_probe_still_refuses_a_real_run(self):
+        """The field is the safety property, not the status. A probe with
+        `granted` typed into it by accident must still be inert."""
+        self.commit_writ("W-900", writ(
+            writ_id="W-900", probe="true", status="granted",
+            granted_by="ardagemci", granted_at="2026-08-18"))
+        result = self.run_lane3("W-900")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("probe: true", result.stderr)
+        self.assertIn("no legitimate granted form", result.stderr)
+
+    def test_a_non_probe_writ_is_unaffected(self):
+        """Non-vacuity: the guard must not simply refuse everything."""
+        self.commit_writ("W-901", writ(writ_id="W-901", status="proposed"))
+        result = self.run_lane3("W-901")
+        self.assertIn("not 'granted'", result.stderr)
+        self.assertNotIn("probe", result.stderr)
+
+
+class ShippedProbeTest(unittest.TestCase):
+    """The state of W-002 as committed."""
+
+    def setUp(self):
+        self.fields = lane3_writ.parse(
+            (ROOT / "protocol/writs/W-002.md").read_text(encoding="utf-8"))
+
+    def test_it_is_marked_a_probe_and_stays_ungranted(self):
+        self.assertEqual(self.fields.get("probe"), "true")
+        self.assertEqual(self.fields["status"], "proposed")
+        self.assertFalse(self.fields.get("granted_by"),
+                         "a probe writ has no legitimate granted form")
+
+    def test_it_may_still_only_write_the_report(self):
+        """Attempting sealed writes does not widen what it is allowed to keep."""
+        self.assertEqual(self.fields["may_write"], ["protocol/runs/**"])
+
+    def test_it_probes_both_directions(self):
+        """A guard that refuses everything is as useless as one that permits
+        everything; the probe has to show it discriminates."""
+        body = (ROOT / "protocol/writs/W-002.md").read_text(encoding="utf-8")
+        self.assertIn("permitted", body)
+        self.assertIn("wrong workspace", body)
+
+    def test_the_runner_swaps_the_first_constraint_for_a_probe(self):
+        script = (ROOT / "tools" / "lane3-run.sh").read_text(encoding="utf-8")
+        self.assertIn("CONSTRAINT_ONE", script)
+        self.assertIn("ADVERSARIAL PROBE", script)
+        self.assertIn("Never to the sealed set.", script)
+
+
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
