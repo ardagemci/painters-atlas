@@ -246,7 +246,11 @@ if [ "$DRY_RUN" -eq 1 ]; then
     exit 1
   fi
   note "dry run complete — proposed diff follows, nothing was kept"
-  ( cd "$TREE" && git diff main ) || true
+  # `git diff` is silent on brand-new files until they're at least
+  # intent-to-added — and a report under protocol/runs/ is exactly that: a
+  # new, untracked file. Without -N this printed "proposed diff follows"
+  # over nothing, every time, regardless of what the run actually wrote.
+  ( cd "$TREE" && git add -N . >/dev/null 2>&1; git diff main ) || true
   exit 0
 fi
 
