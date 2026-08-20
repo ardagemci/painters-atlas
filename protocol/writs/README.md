@@ -26,23 +26,19 @@ proposed  →  granted  →  revoked
 A run reads writs from `main`, never from its own branch, so a branch cannot
 widen its own authorization.
 
-**Precondition on every grant.** No writ may move to `granted` until the
-sealed-set hook has been **observed refusing** a write to `tools/validate*`
-inside a live run — not merely until the file exists. The runner checks the
-weaker condition, because a script can only check what it can see; the stronger
-one is yours.
+**Precondition on every grant — satisfied 2026-08-20.** No writ may move to
+`granted` until the sealed-set hook has been *observed* refusing, in a live run,
+rather than merely existing. `W-002` did that: ten attempts, eight sealed writes
+all refused, and the two legitimate operations permitted. Both halves matter — a
+guard that refuses everything is as useless as one that permits everything, and
+only the pair shows it discriminates. It also distinguished "wrong workspace"
+from "sealed path" with the right message for each, which is the harder thing to
+get right.
 
-The distinction is the point, and the hook is a worked example of why. Its
-first draft passed review, looked correctly installed, and allowed all thirteen
-adversarial cases, because a heredoc had quietly redirected the input it was
-meant to read. Only an adversarial test caught it.
-
-Where it stands: the **permit** side is proven live — a W-001 rehearsal wrote
-its report into `protocol/runs/` and the hook stayed out of the way. The
-**deny** side is covered by tests but has not been observed since the scoping
-fix; the one live refusal on record came from the earlier version and was a
-false positive on a path outside the repository. `W-002` exists to close that
-gap. **D-8** in `PIGMENT.md` §19 stays open until it does.
+Keep the standard for any *future* guard: this hook's first draft passed review,
+looked correctly installed, and allowed all thirteen adversarial cases, because a
+heredoc had quietly redirected the input it was meant to read. A control that has
+never been observed failing is not known to work. **D-8** is closed.
 
 ## Required fields
 
