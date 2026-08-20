@@ -54,7 +54,10 @@ class ParserTest(unittest.TestCase):
     def test_parses_the_shipped_writ(self):
         fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
         self.assertEqual(fields["writ_id"], "W-001")
-        self.assertEqual(fields["status"], "proposed")
+        # Not pinned to a value: `status` is the one field designed to change,
+        # and a test asserting it stays "proposed" fails the moment the writ is
+        # granted -- which is the mechanism working, not a regression.
+        self.assertIn(fields["status"], lane3_writ.STATUSES)
         self.assertEqual(fields["may_write"], ["protocol/runs/**"])
         self.assertEqual(len(fields["verifier"]), 2)
 
