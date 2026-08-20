@@ -518,9 +518,24 @@ class RunnerCompletenessTest(unittest.TestCase):
         dry = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
         self.assertIn("git add -N", dry)
         self.assertLess(
-            dry.index("git add -N"), dry.index("git diff main"),
+            dry.index("git add -N"), dry.index("diff main"),
             "the intent-to-add must precede the diff it exists to populate",
         )
+
+    def test_the_human_facing_diff_does_not_page(self):
+        """git pipes terminal output through less, which waits for a keypress
+        the caller does not know to give. The run then holds its lock and its
+        worktree while looking finished, and the next invocation is refused
+        with "another run holds the lock" -- a failure two steps from its
+        cause. Only the diff printed for a human is affected; the two piped
+        into grep already suppress the pager."""
+        outcome = self.script[self.script.index("Outcome"):]
+        dry = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
+        printed = [ln for ln in dry.splitlines()
+                   if "diff main" in ln and "|" not in ln.replace("||", "")]
+        self.assertTrue(printed, "expected a diff printed straight to the terminal")
+        for line in printed:
+            self.assertIn("--no-pager", line, line.strip())
 
     def test_shipped_writ_ceilings_clear_observed_usage(self):
         """25-26 turns were observed; a ceiling under that truncates the work."""

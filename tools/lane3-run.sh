@@ -270,7 +270,12 @@ if [ "$DRY_RUN" -eq 1 ]; then
   # intent-to-added — and a report under protocol/runs/ is exactly that: a
   # new, untracked file. Without -N this printed "proposed diff follows"
   # over nothing, every time, regardless of what the run actually wrote.
-  ( cd "$TREE" && git add -N . >/dev/null 2>&1; git diff main ) || true
+  # --no-pager, and not optional. This prints to a human's terminal, so git
+  # pipes it through less — which waits for a keypress the caller does not
+  # know to give. The run then sits holding the lock and its worktree while
+  # looking finished, and the next invocation is refused with "another run
+  # holds the lock": a failure two steps from its cause.
+  ( cd "$TREE" && git add -N . >/dev/null 2>&1; git --no-pager diff main ) || true
   exit 0
 fi
 
