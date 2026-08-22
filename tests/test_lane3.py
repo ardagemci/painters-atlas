@@ -438,6 +438,49 @@ class ScheduleTest(unittest.TestCase):
         self.assertIn("tools/lane3", hook)
 
 
+class ShippedWritsTest(unittest.TestCase):
+    """Standing checks over every writ in the registry, W-003 included."""
+
+    def writs(self):
+        for path in sorted((ROOT / "protocol" / "writs").glob("W-*.md")):
+            yield path.name, lane3_writ.parse(path.read_text(encoding="utf-8"))
+
+    def test_every_shipped_writ_is_well_formed(self):
+        for name, fields in self.writs():
+            self.assertEqual(lane3_writ.validate(fields), [], name)
+
+    def test_no_writ_grants_itself_a_dangerous_tool(self):
+        """A writ that could rewrite production data by invoking a tool is a
+        writ whose may_write list is decorative."""
+        for name, fields in self.writs():
+            self.assertNotIn("Agent", fields.get("tools", []), name)
+            self.assertNotIn("ScheduleWakeup", fields.get("tools", []), name)
+
+    def test_w003_forbids_the_tool_that_rewrites_artworks(self):
+        """tools/audit_artworks.py has no read-only mode: it rewrites
+        js/artworks.js in place. A rights audit that invoked it would repair
+        the thing it was sent to observe."""
+        body = (ROOT / "protocol/writs/W-003.md").read_text(encoding="utf-8")
+        fields = lane3_writ.parse(body)
+        self.assertTrue(any("audit_artworks" in c for c in fields["abort_if"]),
+                        "invoking it must be an abort condition, not advice")
+        self.assertIn("forbidden", body)
+
+    def test_w003_honours_the_transient_failure_rule(self):
+        """PIGMENT.md §14: a timeout or 429 is not a dead URL. A run that
+        reports 200 dead images because Commons throttled it has produced a lie
+        that costs a person a day to disprove."""
+        body = (ROOT / "protocol/writs/W-003.md").read_text(encoding="utf-8")
+        self.assertIn("transient", body.lower())
+        self.assertIn("429", body)
+
+    def test_w003_reports_and_does_not_repair(self):
+        fields = dict(self.writs())["W-003.md"]
+        self.assertEqual(fields["may_write"], ["protocol/runs/**"])
+        for guarded in ("js/**", "docs/**", "tools/**"):
+            self.assertIn(guarded, fields["may_not"])
+
+
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
