@@ -265,10 +265,30 @@ changed the answer, after the museum photographs and the Caillebotte attribution
 
 # C. Carried forward — small, specified, nobody blocked
 
-- **C1** The ten museum-note hooks the Implementation Lead had to author to land
-  the batch (the validator errors on a venue holding works with no note) are the
-  only visitor-facing copy in that batch the Content Editor did not write. They
-  should be reviewed as his.
+- **C1 · DONE 2026-08-22. The ten hooks reviewed as the Content Editor's, nine
+  rewritten.** These were the only visitor-facing sentences in the batch build he
+  did not write (`docs/corrections/batch-build.md` D-1), authored to satisfy a
+  validator that errors on a venue holding works with no note.
+
+  **The review has a finding, not just edits.** The Editor's own hooks
+  characterise the *institution*: "A palace that surrendered to paintings"
+  (Louvre), "Where 'modern' became the canon" (MoMA), "Mellon's gift, with his
+  name left off", "The offices where the Renaissance filed itself". **Eight of
+  the ten named Pigment's own catalog record instead** — "where the tortoise
+  trainer waits", "where Klee's Senecio hangs", "Sher-Gil near its centre",
+  "where the Danwon album lives", "Sesshū's splashed ink among them". That is an
+  inventory label, not a characterisation: it describes what *we* happen to hold,
+  it goes stale the moment the catalog moves, and it is the tell of writing to
+  clear a check rather than to say what a place is.
+
+  Nine rewritten to characterise the institution, each fact verified before use —
+  Basel holds *the oldest public art collection in the world* (Amerbach Cabinet,
+  bought by the city in 1661); the Ateneum building housed the art school and the
+  national gallery together until 1991; Tokyo National is Japan's oldest and
+  largest; NGMA occupies a maharaja's residence. **`skagens-museum` was left
+  alone** — "Where the Skagen painters kept their own work" already
+  characterises, and changing it to prove a point would be the same error in the
+  other direction.
 - **C2 · DONE 2026-08-22. Numbered families are discovered, not listed.**
   `catalog-5.js` was named in five places and `artists-18.js` in three, so a new
   `catalog-6.js` would be loaded by whichever lists someone remembered and
