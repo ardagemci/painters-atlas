@@ -256,12 +256,18 @@ print(json.dumps({k: d.get(k) for k in
 fi
 
 # ── Sealed-set backstop · the guarantee the hook only approximates ──────────
+# Compared against $BASE, the commit this worktree was created from — never
+# against the branch ref `main`, which advances under a running job. A W-003
+# dry run was voided for "modifying protocol/writs/W-003.md" when main simply
+# moved beneath it mid-run: the worktree held the old file, main held the new
+# one, and the diff blamed the run for a change someone else committed. Asking
+# git a subtly wrong question, exactly like `commit -- <path>` before it.
 # The hook decides Write and Edit exactly, but a Bash command is a program and
 # no pattern settles what an arbitrary program writes. Git does: this asks the
 # finished worktree which files actually moved. Complete, unbypassable from
 # inside the run, and it runs before any outcome is declared — a run that
 # touched the sealed set is void no matter how green its verifiers came back.
-SEALED_TOUCHED="$(cd "$TREE" && git diff --name-only main \
+SEALED_TOUCHED="$(cd "$TREE" && git diff --name-only "$BASE" \
   | grep -E '^(tools/validate|tools/audit_|tools/lane3|CLAUDE\.md|PIGMENT\.md|\.claude/|protocol/)' \
   | grep -v '^protocol/runs/' || true)"
 if [ -n "$SEALED_TOUCHED" ]; then
@@ -289,7 +295,7 @@ while IFS= read -r command; do
 done <<< "$(field verifier)"
 
 # ── Diff ceiling ────────────────────────────────────────────────────────────
-CHANGED=$(cd "$TREE" && git diff --shortstat main | grep -oE '[0-9]+ insertion|[0-9]+ deletion' | grep -oE '[0-9]+' | paste -sd+ - | bc 2>/dev/null || echo 0)
+CHANGED=$(cd "$TREE" && git diff --shortstat "$BASE" | grep -oE '[0-9]+ insertion|[0-9]+ deletion' | grep -oE '[0-9]+' | paste -sd+ - | bc 2>/dev/null || echo 0)
 MAX_DIFF="$(field max_diff)"
 if [ "${CHANGED:-0}" -gt "$MAX_DIFF" ]; then
   note "ABORTED: diff is ${CHANGED} lines against a ${MAX_DIFF} ceiling"
@@ -312,7 +318,7 @@ if [ "$DRY_RUN" -eq 1 ]; then
   # know to give. The run then sits holding the lock and its worktree while
   # looking finished, and the next invocation is refused with "another run
   # holds the lock": a failure two steps from its cause.
-  ( cd "$TREE" && git add -N . >/dev/null 2>&1; git --no-pager diff main ) || true
+  ( cd "$TREE" && git add -N . >/dev/null 2>&1; git --no-pager diff "$BASE" ) || true
   exit 0
 fi
 
@@ -341,10 +347,10 @@ fi
 # empty" whenever the tree was clean -- which is exactly what it looks like
 # after a run commits its own work. The first real W-001 run wrote a report,
 # committed it, and was announced as having produced nothing.
-COMMITS="$(cd "$TREE" && git rev-list --count "main..HEAD" 2>/dev/null || echo 0)"
+COMMITS="$(cd "$TREE" && git rev-list --count "$BASE..HEAD" 2>/dev/null || echo 0)"
 if [ "${COMMITS:-0}" -gt 0 ]; then
   note "${BRANCH}: ${COMMITS} commit(s) — $(cd "$TREE" && git --no-pager log --oneline -1 HEAD)"
-  note "  files: $(cd "$TREE" && git diff --name-only main..HEAD | tr '\n' ' ')"
+  note "  files: $(cd "$TREE" && git diff --name-only "$BASE"..HEAD | tr '\n' ' ')"
 else
   note "the run produced nothing — ${BRANCH} has no commits."
 fi
@@ -354,7 +360,7 @@ fi
 # unmerged branch is a record the next run cannot read. This is the one thing
 # the harness writes to main, it is append-only, it is a single line, and it
 # says what happened rather than changing anything about Pigment.
-REPORT_FILE="$(cd "$TREE" && git diff --name-only main..HEAD | grep -E '^protocol/runs/.*\.md$' | head -1 | xargs -I{} basename {} 2>/dev/null || true)"
+REPORT_FILE="$(cd "$TREE" && git diff --name-only "$BASE"..HEAD | grep -E '^protocol/runs/.*\.md$' | head -1 | xargs -I{} basename {} 2>/dev/null || true)"
 LEDGER_LINE="$(python3 tools/lane3_ledger.py \
   --writ "$WRIT_ID" --base "$BASE" --branch "$BRANCH" --outcome clean \
   --report "${REPORT_FILE:-none}" \

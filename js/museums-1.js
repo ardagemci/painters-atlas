@@ -566,16 +566,16 @@ window.MUSEUM_NOTES = {
 "pera-museum":            {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Istanbul_Beyoglu_Pera_museum.jpg/960px-Istanbul_Beyoglu_Pera_museum.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Istanbul_Beyoglu_Pera_museum.jpg" },
-  hook: "Istanbul's Pera, where the tortoise trainer waits" },
+  hook: "A museum of Orientalism, in the quarter once called Pera" },
 
 "national-museum-warsaw": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/WarsawNationalMuseumDSC_2528.JPG/960px-WarsawNationalMuseumDSC_2528.JPG",
            page:"https://commons.wikimedia.org/wiki/File:WarsawNationalMuseumDSC_2528.JPG" },
-  hook: "Poland's own picture of itself, Stańczyk included" },
+  hook: "Poland's own picture of itself" },
 "kunstmuseum-basel":      {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg/960px-Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg" },
-  hook: "Basel's collection, where Klee's Senecio hangs" },
+  hook: "The oldest public art collection in the world, since 1661" },
 "skagens-museum":         {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Skagens_museum.jpg/960px-Skagens_museum.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Skagens_museum.jpg" },
@@ -583,25 +583,25 @@ window.MUSEUM_NOTES = {
 "ngma-new-delhi":         {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Jaipur_House_2019_%282%29.jpg/960px-Jaipur_House_2019_%282%29.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Jaipur_House_2019_(2).jpg" },
-  hook: "India's modern century, Sher-Gil near its centre" },
+  hook: "A maharaja's residence, nationalised for modern art" },
 "ateneum":                {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ateneum_main_facade.jpg/960px-Ateneum_main_facade.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Ateneum_main_facade.jpg" },
-  hook: "Finland's national gallery, national epic on the walls" },
+  hook: "The art school and the national gallery, one building" },
 "national-museum-korea":  {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Front_view_of_national_museum_of_korea.jpg/960px-Front_view_of_national_museum_of_korea.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Front_view_of_national_museum_of_korea.jpg" },
-  hook: "Seoul's Yongsan halls, where the Danwon album lives" },
+  hook: "Founded in 1945; moved to Yongsan sixty years on" },
 "santa-maria-novella":    {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg/960px-Santa_Maria_Novella_%28Florence%29_-_Facade_%283%29.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_Novella_(Florence)_-_Facade_(3).jpg" },
-  hook: "The Florentine church with Masaccio's wall in it" },
+  hook: "Alberti's facade on a Dominican preaching church" },
 "tokyo-national-museum":  {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg" },
-  hook: "National treasures, Sesshū's splashed ink among them" },
+  hook: "Japan's oldest national museum, and its largest" },
 "moa-museum-of-art":      {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
            page:"https://commons.wikimedia.org/wiki/File:231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg" },
-  hook: "Atami, keeping Kōrin's red and white plum screens" }
+  hook: "A hillside above Atami, entered by escalator" }
 };

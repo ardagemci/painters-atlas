@@ -356,6 +356,27 @@ class LedgerTest(unittest.TestCase):
         Saying so is the difference between a known gap and a silent one."""
         self.assertIn("WARNING: ledger line built but not committed", self.script)
 
+    def test_comparisons_anchor_to_the_base_commit_not_the_branch(self):
+        """`main` advances under a running job. A W-003 dry run was voided for
+        "modifying protocol/writs/W-003.md" when main simply moved mid-run: the
+        worktree held the old file, main held the new one, and the diff blamed
+        the run for someone else's commit. $BASE is captured once and cannot
+        move; the branch ref can."""
+        code = "\n".join(ln for ln in self.script.splitlines()
+                         if not ln.lstrip().startswith("#"))
+        offenders = [ln.strip() for ln in code.splitlines()
+                     if ("git diff" in ln or "rev-list" in ln)
+                     and re.search(r'(?<![\w$"])main(?![\w"])', ln)]
+        self.assertEqual(offenders, [],
+                         "these compare against a ref that moves:\n  " +
+                         "\n  ".join(offenders))
+
+    def test_the_base_is_captured_once(self):
+        self.assertIn('BASE="$(git rev-parse --short main)"', self.script)
+        base_at = self.script.index('BASE="$(git rev-parse')
+        self.assertLess(base_at, self.script.index("git worktree add"),
+                        "the base must be pinned before the worktree exists")
+
     def test_verifier_output_is_captured_not_discarded(self):
         """The counts the ledger records are printed by the validator."""
         self.assertIn("VERIFIER_LOG", self.script)
@@ -615,7 +636,7 @@ class SealedBackstopTest(unittest.TestCase):
 
     def test_the_backstop_exists_and_voids_the_run(self):
         self.assertIn("SEALED_TOUCHED", self.script)
-        self.assertIn("git diff --name-only main", self.script)
+        self.assertIn('git diff --name-only "$BASE"', self.script)
         self.assertIn("VOID", self.script)
 
     def test_the_backstop_classifies_paths_correctly(self):
@@ -714,7 +735,7 @@ class RunnerCompletenessTest(unittest.TestCase):
         dry = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
         self.assertIn("git add -N", dry)
         self.assertLess(
-            dry.index("git add -N"), dry.index("diff main"),
+            dry.index("git add -N"), dry.index("diff \"$BASE\""),
             "the intent-to-add must precede the diff it exists to populate",
         )
 
@@ -728,7 +749,7 @@ class RunnerCompletenessTest(unittest.TestCase):
         outcome = self.script[self.script.index("Outcome"):]
         dry = outcome[outcome.index('if [ "$DRY_RUN" -eq 1 ]'):]
         printed = [ln for ln in dry.splitlines()
-                   if "diff main" in ln and "|" not in ln.replace("||", "")]
+                   if 'diff "$BASE"' in ln and "|" not in ln.replace("||", "")]
         self.assertTrue(printed, "expected a diff printed straight to the terminal")
         for line in printed:
             self.assertIn("--no-pager", line, line.strip())
