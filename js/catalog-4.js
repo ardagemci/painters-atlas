@@ -517,7 +517,24 @@ window.CATALOG = (window.CATALOG || []).concat([
   tags:["night","golden","historical","would-hang"],
   related:["the-starry-night","cafe-terrace-at-night"] },
 /* ---------- Abstract Expressionism, second rank + the Washington colourists ---------- */
-{ id:"beginning-noland", tier:1, title:"Beginning", worksKey:"Beginning",
+/* Tier 1 -> Tier 2, 2026-08-22 (backlog C3), per the Curator's proposal in
+   CATALOG_BATCH_02. Not a judgement on Noland. The record has no image
+   (image.status "copyright" — he died in 2010, so the constraint is working),
+   which excludes it from DAILY_POOL and deckPool(), both of which require
+   status "pd"; and it is a §8 orphan named by no list and no Tier 1 arc. It was
+   therefore a full exhibition page with no picture and no way in. §4 makes
+   Tier 2 a real canonical page, promotion is purely additive, and the URL does
+   not change — so the demotion costs the record nothing and stops the atlas
+   spending depth where nothing can reach it.
+
+   Deliberately NOT demoted, and the reasoning matters more than the verdict:
+   nocturne-in-black-and-gold and lumber-schooners-penobscot-bay are orphans by
+   the same computation and should be given an inbound link instead. The
+   Whistler is the picture Ruskin was sued over, carries a pd image and
+   hand-scored coords, and sits at E +80 — the most experimental coordinate in
+   the catalog, which the deck needs. A rule that would demote it is a rule
+   applied without judgement. */
+{ id:"beginning-noland", tier:2, title:"Beginning", worksKey:"Beginning",
   artistId:"kenneth-noland", year:{ display:"1958", sort:1958 },
   movements:["color-field","washington-color-school"], techniques:["acrylic-painting","soak-stain","flat-color"], nation:"usa",
   museum:{ id:"hirshhorn", name:"Hirshhorn Museum and Sculpture Garden", city:"Washington, D.C." },

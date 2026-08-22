@@ -299,8 +299,30 @@ changed the answer, after the museum photographs and the Caillebotte attribution
   loaded zero files, and the validator reported `artists: 0, catalog: 0` while
   still running all its reference checks. It exited 1 only because C7's fix had
   landed. Elements are now unwrapped individually.
-- **C3** `beginning-noland` tier demotion — proposed by the Curator, not built.
-- **C4** `tarashikomi` technique — proposed, not built.
+- **C3 · DONE 2026-08-22.** `beginning-noland` Tier 1 → Tier 2, per the
+  Curator's proposal. It had **no image** (`status:"copyright"` — Noland died in
+  2010, so the constraint is working), which excludes it from `DAILY_POOL` and
+  `deckPool()`, and it is a §8 orphan named by no list and no arc: a full
+  exhibition page with no picture and no way in. Tier 1 count 76 → 75. Its
+  description, notice and coords are untouched and still render — §4 makes Tier 2
+  a real page and promotion is purely additive. **The two other orphans were
+  deliberately not demoted** and the reasoning is in the record: the Whistler is
+  the picture Ruskin was sued over and sits at `E +80`, the most experimental
+  coordinate in the catalog. A rule that would demote it is a rule applied
+  without judgement.
+- **C4 · DONE 2026-08-22.** `tarashikomi` added — a second pigment dropped into
+  the first before it dries. Techniques 39 → 40. It was needed by a record that
+  had shipped with **no `techniques` field at all**, because the registry had no
+  word for what was done to it: Kōrin's *Red and White Plum Blossoms*, a National
+  Treasure. Now carried by that record and by Kōrin's artist page.
+
+  **The finding underneath it is recorded in `js/taxonomy.js` itself**, next to
+  the new id. The registry held `squeegee`, `benday-dots`, `soak-stain`,
+  `dripping`, `frottage`, `spray-paint` and `photomontage` — seven ids for
+  twentieth-century Western studio procedures, several describing one artist
+  each — against five for the whole of Asian and Islamic practice. The registry
+  is not neutral about which traditions get fine-grained vocabulary, and this is
+  the `ATLAS_COVERAGE.md` §2.1 defect showing up in the technique registry.
 - **C5** The `abstract` tag and §5 vocabulary enforcement — would currently fail
   on ~130 shipped records; the Curator says sequence it after normalisation.
 - **C6 · DONE 2026-08-08.** The Coordinator's quality gate no longer greps.

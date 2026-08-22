@@ -388,6 +388,23 @@ window.TECHNIQUES = [
     palette:["#23201c","#8a8276","#caa45c","#5e2a2a","#e8e0d0"],
     blurb:"'At first attempt' — wet-into-wet painting finished in one sitting.",
     desc:"Skipping the old layered process, alla prima painters work wet paint into wet, committing to each stroke. It rewards nerve and economy: Hals's flashing cuffs, Manet's black coats, Sargent's silk — bravura made permanent." },
+  /* Added 2026-08-22 (backlog C4). Proposed in CATALOG_BATCH_02 T-TECHNIQUE and
+     needed by a record that had to ship with NO techniques field at all, because
+     the registry had no word for what was done to it: Kōrin's Red and White Plum
+     Blossoms, a National Treasure.
+
+     The finding underneath the proposal is worth keeping in the file it is about.
+     The registry carried `squeegee`, `benday-dots`, `soak-stain`, `dripping`,
+     `frottage`, `spray-paint` and `photomontage` — seven ids for twentieth-century
+     Western studio procedures, several describing one artist each — against
+     `ink-wash`, `splashed-ink`, `silk-painting`, `miniature-painting` and
+     `gold-leaf` for the whole of Asian and Islamic practice. The registry is not
+     neutral about which traditions get fine-grained vocabulary. */
+  { id:"tarashikomi", name:"Tarashikomi", parent:"ink-wash", style:"ornament",
+    palette:["#2f4f45","#c9a227","#8a5a3b","#e6dcc4","#1d2b28"],
+    blurb:"A second pigment dropped into the first before it dries.",
+    desc:"The painter lays down ink or colour and, while it is still wet, drops a second layer into it. The two bleed rather than blend, and the surface mottles in a way no brush could draw — bark, cloud, stone, water. It is a defining Rinpa procedure: Sōtatsu used it, Kōrin made it structural, and the school taught it as a way of getting texture without drawing texture. Because the effect happens in the drying rather than in the hand, no two passages are ever quite repeatable." },
+
   { id:"sfumato", name:"Sfumato", parent:"oil-painting", style:"renaissance",
     palette:["#3b2f1e","#6b5635","#a08552","#d6c39a","#5a6b5d"],
     blurb:"Leonardo's smoke — contours melted until they disappear.",

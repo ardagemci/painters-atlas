@@ -171,7 +171,7 @@ window.ARTISTS.push(
 
 { id:"ogata-korin", name:"Ogata Kōrin", years:"1658–1716", born:1658, died:1716,
   nation:"japan", eras:["17th-century","18th-century"], movements:["rinpa"],
-  techniques:["gold-leaf","ink-wash","silk-painting"], style:"ornament",
+  techniques:["tarashikomi","gold-leaf","ink-wash","silk-painting"], style:"ornament",
   palette:["#caa43e","#2e4a8a","#2e6e5a","#e8cd7a","#8a2620"],
   tagline:"Irises on gold — design raised to the level of weather",
   works:[{t:"Irises (Kakitsubata-zu)",y:"c. 1701–05"},{t:"Red and White Plum Blossoms",y:"c. 1712–15"},{t:"Wind God and Thunder God (after Sōtatsu)",y:"c. 1700s"}],

@@ -271,7 +271,7 @@ window.CATALOG = (window.CATALOG || []).concat([
 { id:"red-and-white-plum-blossoms", tier:2,
   title:"Red and White Plum Blossoms",
   artistId:"ogata-korin", year:{ display:"c. 1714–1715", sort:1714 },
-  movements:["rinpa"], nation:"japan",
+  movements:["rinpa"], techniques:["tarashikomi","gold-leaf"], nation:"japan",
   museum:{ id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami" },
   dims:"156.5 × 172.5 cm (each of two screens)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg/500px-Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg",
