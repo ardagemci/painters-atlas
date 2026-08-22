@@ -362,6 +362,10 @@ LEDGER_LINE="$(python3 tools/lane3_ledger.py \
 if [ -n "$LEDGER_LINE" ]; then
   mkdir -p "$(dirname "$LEDGER_REL")"
   printf '%s\n' "$LEDGER_LINE" >> "$LEDGER_REL"
+  # `git commit -- <path>` only matches paths git already tracks, and the very
+  # first ledger line creates the file — so the pathspec matched nothing, the
+  # commit failed, and the line sat untracked on main. Stage it explicitly.
+  git add -- "$LEDGER_REL"
   git -c user.name="pigment-lane3" -c user.email="lane3@pigment.local" \
       commit -q -m "ledger(${WRIT_ID}): ${STAMP}" -- "$LEDGER_REL" \
     && note "ledger appended on main ($(git rev-parse --short HEAD))" \
