@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Scheduled Lane III run. Install with:
+
+    cp tools/com.pigment.lane3.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.pigment.lane3.plist
+
+  Stop it with `launchctl unload` on the same path. Removing the file, or
+  revoking W-001 in protocol/writs/, both also stop it — three independent
+  off switches, none of which needs this file to be understood.
+
+  StartCalendarInterval, not StartInterval: a laptop that was asleep at the
+  scheduled minute runs the job once on wake, rather than firing every tick it
+  missed. A week away should not queue seven runs.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.pigment.lane3</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ardagemci/Claude/painters-atlas/tools/lane3-cron.sh</string>
+    <string>W-001</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/ardagemci/Claude/painters-atlas</string>
+
+  <!-- 09:17, not 09:00. Every scheduled job in the world fires on the hour. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>17</integer>
+  </dict>
+
+  <!-- Never at load, and never restarted on exit. A run is a discrete event;
+       anything that retries a failing run on a timer turns one broken night
+       into a bill. -->
+  <key>RunAtLoad</key>   <false/>
+  <key>KeepAlive</key>   <false/>
+
+  <key>ProcessType</key>    <string>Background</string>
+  <key>LowPriorityIO</key>  <true/>
+  <key>Nice</key>           <integer>5</integer>
+
+  <!-- The wrapper writes its own timestamped log; these catch anything that
+       escapes it, which is exactly the class of failure hardest to find. -->
+  <key>StandardOutPath</key>
+  <string>/Users/ardagemci/Library/Logs/pigment/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ardagemci/Library/Logs/pigment/launchd.err.log</string>
+</dict>
+</plist>
