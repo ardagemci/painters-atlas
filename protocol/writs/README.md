@@ -69,7 +69,12 @@ never been observed failing is not known to work. **D-8** is closed.
    that can rewrite its own runner needs no other exploit.
 4. Run every command in `verifier`. All must pass.
 5. Have the diff reviewed by an agent that did not write it (Van Eyck).
-6. Push the branch. **Stop.** Lane III never merges; the user merges.
+6. **Stop.** Do not commit or push: the runner commits the run's work onto
+   the branch, and pushing is opt-in via `PIGMENT_LANE3_PUSH`, default off.
+   Lane III never merges; the user merges. The first real run pushed to
+   origin because this line said to while the runner's own constraint said
+   never — the run obeyed the writ, correctly, and the contradiction was
+   the defect.
 7. Append one line to `protocol/runs/ledger.jsonl` and write the run report.
 
 ## Abort rather than proceed
