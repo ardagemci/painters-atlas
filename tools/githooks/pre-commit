@@ -1,0 +1,29 @@
+#!/bin/bash
+# Refuse a commit that breaks the atlas's internal references.
+#
+# This is the free, instant version of what the scheduled robot was doing, and
+# strictly better at it: it catches the breakage at the moment you create it,
+# not the next morning. One second, no tokens, no network.
+#
+# Enabled by: git config core.hooksPath tools/githooks
+# Bypass once, deliberately: git commit --no-verify
+set -uo pipefail
+
+# Only when something it can actually judge is staged. A prose commit should
+# not pay for a data check.
+STAGED="$(git diff --cached --name-only)"
+echo "$STAGED" | grep -qE '^(js/|tools/validate)' || exit 0
+
+command -v osascript >/dev/null 2>&1 || exit 0   # not macOS: nothing to run
+
+OUT="$(osascript -l JavaScript tools/validate.jxa.js 2>&1)"; CODE=$?
+if [ "$CODE" -ne 0 ]; then
+  echo "─────────────────────────────────────────────────────────"
+  echo "$OUT" | grep -vE '^(app\.js: syntax OK|artists: )' 
+  echo "─────────────────────────────────────────────────────────"
+  echo "pre-commit: the validator failed, so this commit is refused."
+  echo "  Fix the reference above, or commit with --no-verify if you"
+  echo "  genuinely mean to leave it broken."
+  exit 1
+fi
+exit 0
