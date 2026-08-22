@@ -288,6 +288,70 @@ class ShippedProbeTest(unittest.TestCase):
         self.assertIn("Never to the sealed set.", script)
 
 
+class LedgerTest(unittest.TestCase):
+    """The ledger is the harness's record, not the run's. (see tools/lane3_ledger.py)
+
+    When the run wrote it, it wrote it inside a worktree that Lane III never
+    merges -- so the next run branched from a `main` where it did not exist, and
+    every run reported "first run, no baseline". Two real runs produced two
+    individually correct and collectively useless reports before this surfaced.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "tools"))
+        import lane3_ledger
+        self.mod = lane3_ledger
+        self.script = (ROOT / "tools" / "lane3-run.sh").read_text(encoding="utf-8")
+
+    VALIDATOR = ("app.js: syntax OK\n"
+                 "artists: 266, movements: 80, techniques: 39, eras: 8, nations: 37, "
+                 "painter styles: 27, influence edges: 246, venues: 125, "
+                 "catalog: 350 (tier1: 76), daily pool: 75, museum notes: 114, "
+                 "photo credits: 114 (attribution required: 96), artwork image credits: 28, "
+                 "personas: 15, lists: 14 (featured: 4), tier1 artists: 36 (arcs: 36)\n"
+                 "ALL REFERENCES VALID\n")
+
+    def test_counts_come_out_of_the_validator_summary(self):
+        counts = self.mod.parse_counts(self.VALIDATOR)
+        self.assertEqual(counts["artists"], 266)
+        self.assertEqual(counts["catalog"], 350)
+        self.assertEqual(counts["influence_edges"], 246)
+        self.assertEqual(counts["venues"], 125)
+
+    def test_parenthetical_counts_are_not_lost(self):
+        """`catalog: 350 (tier1: 76)` carries two numbers, not one."""
+        counts = self.mod.parse_counts(self.VALIDATOR)
+        self.assertEqual(counts["tier1"], 76)
+        self.assertEqual(counts["featured"], 4)
+        self.assertEqual(counts["attribution_required"], 96)
+
+    def test_a_missing_count_is_dropped_not_fatal(self):
+        """The ledger is evidence, not a gate; the verifiers already decided."""
+        self.assertEqual(self.mod.parse_counts("nothing useful here"), {})
+
+    def test_the_runner_reads_the_previous_entry_from_main(self):
+        self.assertIn('git show "main:${LEDGER_REL}"', self.script)
+        self.assertIn("PREV_NOTE", self.script)
+        self.assertIn("${PREV_NOTE}", self.script)
+
+    def test_the_runner_appends_the_ledger_to_main(self):
+        self.assertIn("lane3_ledger.py", self.script)
+        ledger_at = self.script.index("LEDGER_LINE=")
+        for earlier in ("VERIFY_FAILED", "SEALED_TOUCHED"):
+            self.assertLess(self.script.index(earlier), ledger_at,
+                            "%s must be decided before anything is recorded" % earlier)
+
+    def test_verifier_output_is_captured_not_discarded(self):
+        """The counts the ledger records are printed by the validator."""
+        self.assertIn("VERIFIER_LOG", self.script)
+        self.assertNotIn('( cd "$TREE" && eval "$command" ) >/dev/null', self.script)
+
+    def test_the_writ_no_longer_tells_the_run_to_write_a_ledger(self):
+        body = (ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8")
+        self.assertIn("do not write the ledger", body.lower())
+        self.assertNotIn("Append one line to `protocol/runs/ledger.jsonl`", body)
+
+
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
