@@ -341,6 +341,21 @@ class LedgerTest(unittest.TestCase):
             self.assertLess(self.script.index(earlier), ledger_at,
                             "%s must be decided before anything is recorded" % earlier)
 
+    def test_the_first_ledger_line_can_actually_be_committed(self):
+        """`git commit -- <path>` matches only tracked paths, and the first
+        ledger line is what creates the file. The pathspec matched nothing, the
+        commit failed, and the line sat untracked on main -- caught only because
+        the runner warns rather than assuming its own commit worked."""
+        block = self.script[self.script.index("LEDGER_LINE="):]
+        self.assertIn('git add -- "$LEDGER_REL"', block)
+        self.assertLess(block.index("git add --"), block.index('commit -q -m "ledger'),
+                        "the ledger must be staged before it is committed")
+
+    def test_a_failed_ledger_commit_is_reported(self):
+        """The run passed and the report is committed; only the record failed.
+        Saying so is the difference between a known gap and a silent one."""
+        self.assertIn("WARNING: ledger line built but not committed", self.script)
+
     def test_verifier_output_is_captured_not_discarded(self):
         """The counts the ledger records are printed by the validator."""
         self.assertIn("VERIFIER_LOG", self.script)
