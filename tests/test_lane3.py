@@ -367,6 +367,77 @@ class LedgerTest(unittest.TestCase):
         self.assertNotIn("Append one line to `protocol/runs/ledger.jsonl`", body)
 
 
+class ScheduleTest(unittest.TestCase):
+    """The launchd job. (Phase 4)
+
+    A scheduled run fails differently from a hand-run one: nobody is watching,
+    the environment is not a login shell, and the machine may have been asleep.
+    Each of those is a way for the job to look installed and do nothing, which
+    is this repository's established failure mode.
+    """
+
+    PLIST = ROOT / "tools" / "com.pigment.lane3.plist"
+    WRAPPER = ROOT / "tools" / "lane3-cron.sh"
+
+    def plist_value(self, key):
+        out = subprocess.run(["plutil", "-extract", key, "json", "-o", "-", str(self.PLIST)],
+                             capture_output=True, text=True)
+        return json.loads(out.stdout) if out.returncode == 0 else None
+
+    def test_the_plist_is_valid(self):
+        checked = subprocess.run(["plutil", "-lint", str(self.PLIST)],
+                                 capture_output=True, text=True)
+        self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
+
+    def test_a_sleeping_mac_does_not_queue_a_week_of_runs(self):
+        """StartInterval fires every missed tick on wake; StartCalendarInterval
+        fires once. On a laptop that difference is seven runs and seven bills."""
+        self.assertIsNotNone(self.plist_value("StartCalendarInterval"))
+        self.assertIsNone(self.plist_value("StartInterval"))
+
+    def test_a_failing_run_is_not_retried_on_a_timer(self):
+        """KeepAlive would turn one broken night into a bill."""
+        self.assertFalse(self.plist_value("KeepAlive"))
+        self.assertFalse(self.plist_value("RunAtLoad"))
+
+    def test_it_schedules_off_the_hour(self):
+        minute = self.plist_value("StartCalendarInterval").get("Minute")
+        self.assertNotIn(minute, (0, 30), "every job in the world fires on the hour")
+
+    def test_it_invokes_the_wrapper_with_a_writ(self):
+        args = self.plist_value("ProgramArguments")
+        self.assertIn("lane3-cron.sh", args[1])
+        self.assertTrue(args[2].startswith("W-"), "a writ must be named explicitly")
+
+    def test_the_wrapper_repairs_path_before_looking_for_claude(self):
+        """launchd gives a job /usr/bin:/bin and no ~/.zshrc, so the CLI in
+        ~/.local/bin is not on PATH. A runner that works by hand and fails only
+        at 09:17 is the least debuggable shape of failure."""
+        text = self.WRAPPER.read_text(encoding="utf-8")
+        self.assertLess(text.index("export PATH="), text.index("command -v claude"))
+        self.assertIn(".local/bin", text)
+
+    def test_the_wrapper_stops_cleanly_when_the_cli_is_missing(self):
+        """Exercised, not asserted: run it with an empty environment."""
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run(
+                ["/bin/bash", str(self.WRAPPER), "W-001"],
+                env={"HOME": tmp + "/nohome", "PATH": "/usr/bin:/bin",
+                     "PIGMENT_LANE3_LOG_DIR": tmp},
+                capture_output=True, text=True, timeout=60,
+            )
+            self.assertEqual(result.returncode, 1)
+            log = Path(tmp, "lane3.log").read_text(encoding="utf-8")
+            self.assertIn("no 'claude' on PATH", log)
+            self.assertIn("PATH=", log, "log the PATH it actually had, or the "
+                                        "failure is unfixable from the log alone")
+
+    def test_the_wrapper_is_in_the_sealed_set(self):
+        """It matches tools/lane3*, so a run cannot rewrite its own scheduler."""
+        hook = (ROOT / ".claude" / "hooks" / "sealed-set.py").read_text(encoding="utf-8")
+        self.assertIn("tools/lane3", hook)
+
+
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
