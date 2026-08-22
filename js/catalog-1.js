@@ -34,7 +34,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Judith's forearms carry real anatomical strain — this is labour",
           "Blood sprays in arcs, not decorous trickles",
           "The maid is young and strong — a co-conspirator, not a witness"],
-  tags:["sacred","group-scene","unsettling","theatrical","chiaroscuro","night"],
+  tags:["sacred","group-scene","unsettling","theatrical","chiaroscuro","nocturne"],
   related:["the-calling-of-saint-matthew","saturn-devouring-his-son"] },
 
 { id:"the-starry-night", tier:1,
@@ -268,7 +268,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Saturn's eyes show terror, not appetite",
           "It was a mural in a dining room — dinner faced this",
           "The darkness isn't background; it's the whole world"],
-  tags:["mythological","unsettling","night","monochrome","fever-dream"],
+  tags:["mythological","unsettling","nocturne","monochrome","fever-dream"],
   related:["the-scream","judith-slaying-holofernes","the-third-of-may-1808"] },
 
 { id:"the-third-of-may-1808", tier:1,
@@ -284,7 +284,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The firing squad has no faces; the victims have nothing but",
           "One lantern is the only light source — war by lamplight",
           "Measure the man in white: kneeling, he's the size of a giant"],
-  tags:["historical","unsettling","night","candlelit"],
+  tags:["historical","unsettling","nocturne","candlelit"],
   related:["the-second-of-may-1808","saturn-devouring-his-son"] },
 
 { id:"the-arnolfini-portrait", tier:1,
@@ -485,7 +485,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"145 × 195 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Judith_Beheading_Holofernes-Caravaggio_%28c.1598-9%29.jpg/500px-Judith_Beheading_Holofernes-Caravaggio_%28c.1598-9%29.jpg",
           page:"https://en.wikipedia.org/wiki/Judith_Beheading_Holofernes_(Caravaggio)", status:"pd" },
-  tags:["historical","unsettling","night"] },
+  tags:["historical","unsettling","nocturne"] },
 
 { id:"the-entombment-of-christ", tier:2,
   title:"The Entombment of Christ",
@@ -495,7 +495,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"300 × 203 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/The_Entombment_of_Christ-Caravaggio_%28c.1602-3%29.jpg/500px-The_Entombment_of_Christ-Caravaggio_%28c.1602-3%29.jpg",
           page:"https://en.wikipedia.org/wiki/The_Entombment_of_Christ_(Caravaggio)", status:"pd" },
-  tags:["religious","night","monumental-scale"] },
+  tags:["sacred","nocturne","monumental-scale"] },
 
 { id:"death-of-the-virgin", tier:2,
   title:"Death of the Virgin",
@@ -505,7 +505,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"369 × 245 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Death_of_the_Virgin-Caravaggio_%281606%29.jpg/500px-Death_of_the_Virgin-Caravaggio_%281606%29.jpg",
           page:"https://en.wikipedia.org/wiki/Death_of_the_Virgin_(Caravaggio)", status:"pd" },
-  tags:["religious","unsettling","red"] },
+  tags:["sacred","unsettling","red"] },
 
 { id:"the-seven-works-of-mercy", tier:2,
   title:"The Seven Works of Mercy",
@@ -515,7 +515,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"390 × 260 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Caravaggio_-_Sette_opere_di_Misericordia.jpg/500px-Caravaggio_-_Sette_opere_di_Misericordia.jpg",
           page:"https://en.wikipedia.org/wiki/The_Seven_Works_of_Mercy_(Caravaggio)", status:"pd" },
-  tags:["religious","night","monumental-scale"] },
+  tags:["sacred","nocturne","monumental-scale"] },
 
 { id:"the-beheading-of-saint-john", tier:1,
   title:"The Beheading of Saint John the Baptist", worksKey:"The Beheading of Saint John the Baptist",
@@ -530,7 +530,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The signature in the Baptist's blood — the only one of his life",
           "Two prisoners watch from the barred window at right",
           "Half the canvas is empty darkness — silence at mural scale"],
-  tags:["religious","unsettling","night","monumental-scale"],
+  tags:["sacred","unsettling","nocturne","monumental-scale"],
   related:["the-calling-of-saint-matthew","judith-slaying-holofernes"] },
 
 { id:"david-with-the-head-of-goliath", tier:1,
@@ -546,7 +546,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Goliath's face is Caravaggio's — a self-portrait as severed head",
           "David's expression is pity, not victory",
           "The sword's inscription H-AS OS: 'humility slays pride'"],
-  tags:["portrait","unsettling","night"],
+  tags:["portrait","unsettling","nocturne"],
   related:["the-beheading-of-saint-john","judith-slaying-holofernes"] },
 
 /* ——— The Rembrandt wing ——— */
@@ -569,7 +569,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"160 × 128 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/500px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
           page:"https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee", status:"pd" },
-  tags:["religious","storm","night"] },
+  tags:["sacred","storm","nocturne"] },
 
 { id:"danae-rembrandt", tier:2,
   title:"Danaë",
@@ -656,7 +656,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The father's hands don't match — one fatherly, one motherly",
           "The son's feet: one shoe worn through, one fallen off",
           "The elder brother at right, withholding what the father gives"],
-  tags:["religious","tender","golden"],
+  tags:["sacred","tender","golden"],
   related:["the-jewish-bride","the-trinity"] },
 
 { id:"self-portrait-at-63", tier:2,
@@ -689,7 +689,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"43 × 30 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg/500px-Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Witches%27_Sabbath_(Goya%2C_1798)", status:"pd" },
-  tags:["unsettling","night","candlelit"] },
+  tags:["unsettling","nocturne","candlelit"] },
 
 { id:"the-sleep-of-reason", tier:2,
   title:"The Sleep of Reason Produces Monsters",
@@ -699,7 +699,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"21.6 × 15.2 cm (plate)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Francisco_Jos%C3%A9_de_Goya_y_Lucientes_-_The_sleep_of_reason_produces_monsters_%28No._43%29%2C_from_Los_Caprichos_-_Google_Art_Project.jpg/500px-Francisco_Jos%C3%A9_de_Goya_y_Lucientes_-_The_sleep_of_reason_produces_monsters_%28No._43%29%2C_from_Los_Caprichos_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Sleep_of_Reason_Produces_Monsters", status:"pd" },
-  tags:["unsettling","night","lonely"] },
+  tags:["unsettling","nocturne","lonely"] },
 
 { id:"charles-iv-of-spain-and-his-family", tier:2,
   title:"Charles IV of Spain and His Family",
@@ -783,7 +783,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"80.7 × 65.3 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du_Forum%29_1888.jpg/500px-Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du_Forum%29_1888.jpg",
           page:"https://en.wikipedia.org/wiki/Caf%C3%A9_Terrace_at_Night", status:"pd" },
-  tags:["night","everyday-life","golden"] },
+  tags:["nocturne","everyday-life","golden"] },
 
 { id:"the-bedroom", tier:2,
   title:"Bedroom in Arles",
@@ -803,7 +803,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"72.4 × 92.1 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vincent_Willem_van_Gogh_076.jpg/500px-Vincent_Willem_van_Gogh_076.jpg",
           page:"https://en.wikipedia.org/wiki/The_Night_Caf%C3%A9", status:"pd" },
-  tags:["interior","night","unsettling"] },
+  tags:["interior","nocturne","unsettling"] },
 
 { id:"self-portrait-with-bandaged-ear", tier:2,
   title:"Self-Portrait with Bandaged Ear",
@@ -1083,7 +1083,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"140.3 × 140.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Vassily_Kandinsky%2C_1926_-_Several_Circles%2C_Gugg_0910_25.jpg/960px-Vassily_Kandinsky%2C_1926_-_Several_Circles%2C_Gugg_0910_25.jpg",
           page:"https://en.wikipedia.org/wiki/Several_Circles", status:"pd" },
-  tags:["pattern","quiet","night"] },
+  tags:["pattern","quiet","nocturne"] },
 
 { id:"composition-x", tier:2,
   title:"Composition X",
@@ -1093,7 +1093,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"130 × 195 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Vassily_Kandinsky%2C_1939_-_Composition_10.jpg/500px-Vassily_Kandinsky%2C_1939_-_Composition_10.jpg",
           page:"https://en.wikipedia.org/wiki/Composition_X", status:"pd" },
-  tags:["night","pattern","unsettling"] },
+  tags:["nocturne","pattern","unsettling"] },
 
 { id:"bridge-over-a-pond-of-water-lilies", tier:2,
   title:"Bridge over a Pond of Water Lilies",
@@ -1303,7 +1303,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"91.4 × 122.2 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Joseph_Mallord_William_Turner_-_Fishermen_at_Sea_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Fishermen_at_Sea_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Fishermen_at_Sea", status:"pd" },
-  tags:["night","storm","lonely"] },
+  tags:["nocturne","storm","lonely"] },
 
 { id:"hannibal-crossing-the-alps", tier:2,
   title:"Snow Storm: Hannibal and his Army Crossing the Alps",
@@ -1323,7 +1323,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"92 × 123 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons", status:"pd" },
-  tags:["historical","red","night"] },
+  tags:["historical","red","nocturne"] },
 
 { id:"the-fighting-temeraire", tier:1,
   title:"The Fighting Temeraire", worksKey:"The Fighting Temeraire",
@@ -1413,7 +1413,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"25.7 × 38 cm (ōban print)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Katsushika_Hokusai%2C_tempesta_sotto_la_vetta%2C_dalla_serie_delle_36_vedute_del_monte_fuji%2C_1831_ca.jpg/500px-Katsushika_Hokusai%2C_tempesta_sotto_la_vetta%2C_dalla_serie_delle_36_vedute_del_monte_fuji%2C_1831_ca.jpg",
           page:"https://en.wikipedia.org/wiki/Thunderstorm_Beneath_the_Summit", status:"pd" },
-  tags:["landscape","storm","night"] },
+  tags:["landscape","storm","nocturne"] },
 
 { id:"kajikazawa", tier:2,
   title:"Kajikazawa in Kai Province",
@@ -1485,7 +1485,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"159 × 126 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/500px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg",
           page:"https://en.wikipedia.org/wiki/Judith_Slaying_Holofernes_(Artemisia_Gentileschi,_Naples)", status:"pd" },
-  tags:["historical","unsettling","night"] },
+  tags:["historical","unsettling","nocturne"] },
 
 { id:"self-portrait-as-saint-catherine", tier:2,
   title:"Self-Portrait as Saint Catherine of Alexandria",
@@ -1505,7 +1505,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"92.9 × 72.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Artemisia_Gentileschi_-_Lucretia_-_J._Paul_Getty_Museum.jpg/500px-Artemisia_Gentileschi_-_Lucretia_-_J._Paul_Getty_Museum.jpg",
           page:"https://commons.wikimedia.org/wiki/File:Artemisia_Gentileschi_-_Lucretia_-_J._Paul_Getty_Museum.jpg", status:"pd" },
-  tags:["historical","unsettling","night"] },
+  tags:["historical","unsettling","nocturne"] },
 
 { id:"judith-and-her-maidservant-detroit", tier:1,
   title:"Judith and Her Maidservant with the Head of Holofernes", worksKey:"Judith and her Maidservant",
@@ -1520,7 +1520,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Judith's hand shields the candle — the light obeys the plot",
           "Both women look off-frame: the danger is where you can't see",
           "The head sits half-bagged, handled like laundry — chillingly practical"],
-  tags:["historical","night","candlelit","unsettling"],
+  tags:["historical","nocturne","candlelit","unsettling"],
   related:["judith-slaying-holofernes","judith-beheading-holofernes"] },
 
 { id:"esther-before-ahasuerus", tier:2,
@@ -1543,7 +1543,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"90 × 222 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg/500px-Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg",
           page:"https://en.wikipedia.org/wiki/Annunciation_(Leonardo)", status:"pd" },
-  tags:["religious","quiet","golden"] },
+  tags:["sacred","quiet","golden"] },
 
 { id:"ginevra-de-benci", tier:2,
   title:"Ginevra de' Benci",
@@ -1563,7 +1563,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"199 × 122 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/500px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
           page:"https://en.wikipedia.org/wiki/Virgin_of_the_Rocks", status:"pd" },
-  tags:["religious","night","unsettling"] },
+  tags:["sacred","nocturne","unsettling"] },
 
 { id:"lady-with-an-ermine", tier:1,
   title:"Lady with an Ermine", worksKey:"Lady with an Ermine",
@@ -1599,7 +1599,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"63 × 45 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg/500px-La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg",
           page:"https://en.wikipedia.org/wiki/La_Belle_Ferronni%C3%A8re", status:"pd" },
-  tags:["portrait","quiet","night"] },
+  tags:["portrait","quiet","nocturne"] },
 
 { id:"the-last-supper", tier:1,
   title:"The Last Supper", worksKey:"The Last Supper",
@@ -1614,7 +1614,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Thirteen different reactions — read the table like a sentence",
           "Judas grips his purse and knocks over the salt",
           "Every perspective line converges on Christ's right temple"],
-  tags:["religious","historical","monumental-scale"],
+  tags:["sacred","historical","monumental-scale"],
   related:["mona-lisa","the-creation-of-adam"] },
 
 { id:"saint-john-the-baptist-leonardo", tier:2,
@@ -1625,7 +1625,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"69 × 57 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg/500px-Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg",
           page:"https://en.wikipedia.org/wiki/Saint_John_the_Baptist_(Leonardo)", status:"pd" },
-  tags:["religious","night","unsettling"] },
+  tags:["sacred","nocturne","unsettling"] },
 
 /* ——— The Michelangelo wing ——— */
 
@@ -1637,7 +1637,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"47 × 34.9 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Michelangelo_Buonarroti_-_The_Torment_of_Saint_Anthony_-_Google_Art_Project.jpg/500px-Michelangelo_Buonarroti_-_The_Torment_of_Saint_Anthony_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Torment_of_Saint_Anthony", status:"pd" },
-  tags:["religious","unsettling","historical"] },
+  tags:["sacred","unsettling","historical"] },
 
 { id:"pieta", tier:2,
   title:"Pietà",
@@ -1647,7 +1647,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"marble, 174 × 195 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Pieta_de_Michelangelo_-_Vaticano.jpg/500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
           page:"https://en.wikipedia.org/wiki/Piet%C3%A0_(Michelangelo)", status:"pd" },
-  tags:["religious","tender","grief"] },
+  tags:["sacred","tender","mourning"] },
 
 { id:"entombment-michelangelo", tier:2,
   title:"The Entombment (unfinished)",
@@ -1657,7 +1657,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"161.7 × 149.9 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Entombment_Michelangelo.jpg/500px-Entombment_Michelangelo.jpg",
           page:"https://en.wikipedia.org/wiki/The_Entombment_(Michelangelo)", status:"pd" },
-  tags:["religious","historical","unsettling"] },
+  tags:["sacred","historical","unsettling"] },
 
 { id:"david", tier:2,
   title:"David",
@@ -1677,7 +1677,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"diameter 120 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Tondo_Doni%2C_por_Miguel_%C3%81ngel.jpg/500px-Tondo_Doni%2C_por_Miguel_%C3%81ngel.jpg",
           page:"https://en.wikipedia.org/wiki/Doni_Tondo", status:"pd" },
-  tags:["religious","golden","pattern"] },
+  tags:["sacred","golden","pattern"] },
 
 { id:"sistine-chapel-ceiling", tier:1,
   title:"Sistine Chapel Ceiling", worksKey:"Sistine Chapel Ceiling",
@@ -1692,7 +1692,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["He painted Noah first, God last — watch the figures grow bolder",
           "The late panels' figures are twice the size of the early ones",
           "Find the ignudi: twenty nudes holding up nothing, magnificently"],
-  tags:["religious","monumental-scale","historical"],
+  tags:["sacred","monumental-scale","historical"],
   related:["the-creation-of-adam","the-last-judgment"] },
 
 { id:"the-creation-of-adam", tier:1,
@@ -1708,7 +1708,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The fingers do not touch — the gap is the subject",
           "God's cloak outlines a human brain; decide for yourself",
           "Adam's finger hangs limp, God's is charged: read the current's direction"],
-  tags:["religious","monumental-scale","tender"],
+  tags:["sacred","monumental-scale","tender"],
   related:["sistine-chapel-ceiling","the-trinity"] },
 
 { id:"the-last-judgment", tier:2,
@@ -1719,7 +1719,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"1370 × 1200 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Last_Judgement_%28Michelangelo%29.jpg/500px-Last_Judgement_%28Michelangelo%29.jpg",
           page:"https://en.wikipedia.org/wiki/The_Last_Judgment_(Michelangelo)", status:"pd" },
-  tags:["religious","unsettling","monumental-scale"] },
+  tags:["sacred","unsettling","monumental-scale"] },
 
 /* ——— The Bosch wing ——— */
 
@@ -1731,7 +1731,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"93 × 31 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Hieronymus_Bosch%2C_Death_and_the_Miser%2C_c._1485-1490%2C_NGA_41645.jpg/500px-Hieronymus_Bosch%2C_Death_and_the_Miser%2C_c._1485-1490%2C_NGA_41645.jpg",
           page:"https://en.wikipedia.org/wiki/Death_and_the_Miser", status:"pd" },
-  tags:["unsettling","night","interior"] },
+  tags:["unsettling","nocturne","interior"] },
 
 { id:"ship-of-fools", tier:2,
   title:"The Ship of Fools",
@@ -1761,7 +1761,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"120 × 150 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hieronymus_Bosch-_The_Seven_Deadly_Sins_and_the_Four_Last_Things.JPG/500px-Hieronymus_Bosch-_The_Seven_Deadly_Sins_and_the_Four_Last_Things.JPG",
           page:"https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_and_the_Four_Last_Things", status:"pd" },
-  tags:["religious","pattern","unsettling"] },
+  tags:["sacred","pattern","unsettling"] },
 
 { id:"temptation-of-saint-anthony", tier:2,
   title:"The Temptation of St Anthony", worksKey:"The Temptation of St Anthony",
@@ -1771,7 +1771,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"131 × 238 cm (triptych, open)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Temptation_of_St_Anthony_%28Bosch%29.jpg/500px-The_Temptation_of_St_Anthony_%28Bosch%29.jpg",
           page:"https://en.wikipedia.org/wiki/The_Temptation_of_St_Anthony_(Bosch)", status:"pd" },
-  tags:["religious","unsettling","night"] },
+  tags:["sacred","unsettling","nocturne"] },
 
 { id:"the-haywain-triptych", tier:1,
   title:"The Haywain Triptych", worksKey:"The Haywain Triptych",
@@ -1786,7 +1786,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Everyone holds hay — trace it from pope to pickpocket",
           "The wagon's pullers are demons; not one person notices",
           "On top of the load: lovers, a praying angel, a demon piping through his nose"],
-  tags:["religious","everyday-life","unsettling","pattern"],
+  tags:["sacred","everyday-life","unsettling","pattern"],
   related:["the-garden-of-earthly-delights","temptation-of-saint-anthony"] },
 
 /* ——— The van Eyck wing ——— */
@@ -1804,7 +1804,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The meadow is painted flower by flower — botanists have counted some 75 species",
           "The Lamb's restored face stares straight at you; it unsettles on purpose",
           "The lower-left panel is a 1945 copy; the original is art's great cold case"],
-  tags:["religious","monumental-scale","golden","historical"],
+  tags:["sacred","monumental-scale","golden","historical"],
   related:["the-arnolfini-portrait","the-trinity"] },
 
 { id:"man-in-a-red-turban", tier:2,
@@ -1825,7 +1825,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"92.7 × 36.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg/500px-Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg",
           page:"https://en.wikipedia.org/wiki/Annunciation_(van_Eyck,_Washington)", status:"pd" },
-  tags:["religious","golden","interior"] },
+  tags:["sacred","golden","interior"] },
 
 { id:"madonna-of-chancellor-rolin", tier:2,
   title:"Madonna of Chancellor Rolin",
@@ -1835,7 +1835,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"66 × 62 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Louvre%29.webp/500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Louvre%29.webp.png",
           page:"https://en.wikipedia.org/wiki/Madonna_of_Chancellor_Rolin", status:"pd" },
-  tags:["religious","interior","golden"] },
+  tags:["sacred","interior","golden"] },
 
 { id:"margaret-van-eyck", tier:2,
   title:"Portrait of Margaret van Eyck",
@@ -1855,7 +1855,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"31 × 14 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Jan_van_Eyck_-_The_Madonna_in_the_Church_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_-_The_Madonna_in_the_Church_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Madonna_in_the_Church", status:"pd" },
-  tags:["religious","golden","quiet"] },
+  tags:["sacred","golden","quiet"] },
 
 /* ——— The Cézanne wing ——— */
 

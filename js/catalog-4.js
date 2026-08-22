@@ -141,7 +141,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The ground is red because the sermon was, not the grass",
           "The tree trunk divides real women from shared vision",
           "The wrestlers come from Hokusai's sketchbooks, via Brittany"],
-  tags:["religious","red","pattern","would-hang"],
+  tags:["sacred","red","pattern","would-hang"],
   related:["where-do-we-come-from","the-yellow-christ"] },
 
 { id:"the-yellow-christ", tier:2,
@@ -152,7 +152,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"91.1 × 73.4 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Paul_Gauguin_-_The_Yellow_Christ_%28Le_Christ_jaune%29_1889.jpg/500px-Paul_Gauguin_-_The_Yellow_Christ_%28Le_Christ_jaune%29_1889.jpg",
           page:"https://en.wikipedia.org/wiki/The_Yellow_Christ", status:"pd" },
-  tags:["religious","golden","pattern"] },
+  tags:["sacred","golden","pattern"] },
 
 { id:"ia-orana-maria", tier:2,
   title:"Ia Orana Maria (Hail Mary)",
@@ -162,7 +162,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"113.7 × 87.6 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Paul_Gauguin_Ia_Orana_Maria_%28Hail_Mary%29_The_Metropolitan_Museum_of_Art1.jpg/500px-Paul_Gauguin_Ia_Orana_Maria_%28Hail_Mary%29_The_Metropolitan_Museum_of_Art1.jpg",
           page:"https://en.wikipedia.org/wiki/Ia_Orana_Maria", status:"pd" },
-  tags:["religious","golden","tender"] },
+  tags:["sacred","golden","tender"] },
 
 { id:"vahine-no-te-tiare", tier:2,
   title:"Vahine no te tiare (Woman with a Flower)",
@@ -192,7 +192,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"116.1 × 134.6 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Paul_Gauguin-_Manao_tupapau_%28The_Spirit_of_the_Dead_Keep_Watch%29.JPG/500px-Paul_Gauguin-_Manao_tupapau_%28The_Spirit_of_the_Dead_Keep_Watch%29.JPG",
           page:"https://en.wikipedia.org/wiki/Spirit_of_the_Dead_Watching", status:"pd" },
-  tags:["nude","night","unsettling"] },
+  tags:["nude","nocturne","unsettling"] },
 
 { id:"nevermore", tier:2,
   title:"Nevermore",
@@ -409,7 +409,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"322.5 × 230 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Ilya_Repin_-_Sadko_-_Google_Art_Project_levels_adjustment_2.jpg/500px-Ilya_Repin_-_Sadko_-_Google_Art_Project_levels_adjustment_2.jpg",
           page:"https://en.wikipedia.org/wiki/Sadko_(painting)", status:"pd" },
-  tags:["historical","night","monumental-scale"] },
+  tags:["historical","nocturne","monumental-scale"] },
 
 { id:"religious-procession-in-kursk", tier:2,
   title:"Religious Procession in Kursk Governorate",
@@ -514,7 +514,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["Three ghost-figures watch from the lower edge — find them",
           "The rocket is a scatter of gold flecks: abstraction, in 1875",
           "Titled like music on purpose — subject demoted, sensation promoted"],
-  tags:["night","golden","historical","would-hang"],
+  tags:["nocturne","golden","historical","would-hang"],
   related:["the-starry-night","cafe-terrace-at-night"] },
 /* ---------- Abstract Expressionism, second rank + the Washington colourists ---------- */
 /* Tier 1 -> Tier 2, 2026-08-22 (backlog C3), per the Curator's proposal in
@@ -544,20 +544,20 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The canvas between the rings is bare cotton, not white paint",
           "Edges are hand-brushed, not taped — the geometry is warm, not machined",
           "Colour sits in the cloth rather than on it, so nothing casts a shadow"],
-  tags:["abstract","geometric","quiet","experimental"],
+  tags:["abstract","geometry","quiet","experimental"],
   related:["composition-vii"] },
 
 { id:"chief-kline", tier:2, title:"Chief", artistId:"franz-kline",
   year:{ display:"1950", sort:1950 }, movements:["abstract-expressionism","action-painting"],
   techniques:["oil-painting","gestural-abstraction"], nation:"usa",
   museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" }, image:{ status:"copyright" },
-  coords:{ F:90, D:85, E:55, C:5, M:55 }, tags:["abstract","black-and-white","monumental-scale"] },
+  coords:{ F:90, D:85, E:55, C:5, M:55 }, tags:["abstract","monochrome","monumental-scale"] },
 
 { id:"elegy-to-the-spanish-republic-108", tier:2, title:"Elegy to the Spanish Republic, 108", artistId:"robert-motherwell",
   year:{ display:"1965–67", sort:1965 }, movements:["abstract-expressionism"],
   techniques:["oil-painting","gestural-abstraction"], nation:"usa",
   museum:{ id:"moma", name:"The Museum of Modern Art", city:"New York" }, image:{ status:"copyright" },
-  coords:{ F:80, D:70, E:45, C:45, M:70 }, tags:["abstract","black-and-white","political"] },
+  coords:{ F:80, D:70, E:45, C:45, M:70 }, tags:["abstract","monochrome","political"] },
 
 { id:"city-limits-guston", tier:2, title:"City Limits", artistId:"philip-guston",
   year:{ display:"1969", sort:1969 }, movements:["expressionism"],
@@ -569,7 +569,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   year:{ display:"1959–60", sort:1959 }, movements:["abstract-expressionism","color-field"],
   techniques:["oil-painting","impasto"], nation:"usa",
   museum:{ id:"guggenheim-ny", name:"Solomon R. Guggenheim Museum", city:"New York" }, image:{ status:"copyright" },
-  coords:{ F:85, D:45, E:50, C:15, M:25 }, tags:["abstract","geometric","would-hang"] },
+  coords:{ F:85, D:45, E:50, C:15, M:25 }, tags:["abstract","geometry","would-hang"] },
 
 { id:"mars-dust", tier:2, title:"Mars Dust", artistId:"alma-thomas",
   year:{ display:"1972", sort:1972 }, movements:["color-field","washington-color-school"],

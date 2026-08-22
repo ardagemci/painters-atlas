@@ -45,7 +45,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"111 × 134 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Botticelli_-_Adoration_of_the_Magi_%28Zanobi_Altar%29_-_Uffizi.jpg/500px-Botticelli_-_Adoration_of_the_Magi_%28Zanobi_Altar%29_-_Uffizi.jpg",
           page:"https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(Botticelli)", status:"pd" },
-  tags:["religious","historical","golden"] },
+  tags:["sacred","historical","golden"] },
 
 { id:"venus-and-mars", tier:2,
   title:"Venus and Mars",
@@ -65,7 +65,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"⌀ 118 cm (tondo)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Magnificat_Madonna_-_Botticelli_%28uffici%29_b.jpg/500px-Magnificat_Madonna_-_Botticelli_%28uffici%29_b.jpg",
           page:"https://en.wikipedia.org/wiki/Madonna_of_the_Magnificat", status:"pd" },
-  tags:["religious","golden","tender"] },
+  tags:["sacred","golden","tender"] },
 
 { id:"calumny-of-apelles", tier:2,
   title:"Calumny of Apelles",
@@ -85,7 +85,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"108.6 × 74.9 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mystic_Nativity%2C_Sandro_Botticelli.jpg/500px-Mystic_Nativity%2C_Sandro_Botticelli.jpg",
           page:"https://en.wikipedia.org/wiki/The_Mystical_Nativity", status:"pd" },
-  tags:["religious","golden","unsettling"] },
+  tags:["sacred","golden","unsettling"] },
 
 { id:"idealized-portrait-of-a-lady", tier:2,
   title:"Idealized Portrait of a Lady (Simonetta Vespucci as Nymph)",
@@ -149,7 +149,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"24.5 × 19 cm (engraving)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Albrecht_D%C3%BCrer%2C_Knight%2C_Death_and_Devil%2C_1513%2C_NGA_6637.jpg/500px-Albrecht_D%C3%BCrer%2C_Knight%2C_Death_and_Devil%2C_1513%2C_NGA_6637.jpg",
           page:"https://en.wikipedia.org/wiki/Knight%2C_Death_and_the_Devil", status:"pd" },
-  tags:["unsettling","historical","night"] },
+  tags:["unsettling","historical","nocturne"] },
 
 { id:"praying-hands", tier:2,
   title:"Praying Hands",
@@ -159,7 +159,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"29.1 × 19.7 cm (brush drawing)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Albrecht_D%C3%BCrer_-_Praying_Hands%2C_1508_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Praying_Hands%2C_1508_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Praying_Hands_(D%C3%BCrer)", status:"pd" },
-  tags:["religious","quiet","tender"] },
+  tags:["sacred","quiet","tender"] },
 
 { id:"four-horsemen", tier:2,
   title:"The Four Horsemen of the Apocalypse",
@@ -169,7 +169,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"39.4 × 28.1 cm (woodcut)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/D%C3%BCrer_Apocalypse_0.jpg/500px-D%C3%BCrer_Apocalypse_0.jpg",
           page:"https://en.wikipedia.org/wiki/Apocalypse_(D%C3%BCrer)", status:"pd" },
-  tags:["religious","storm","unsettling"] },
+  tags:["sacred","storm","unsettling"] },
 
 { id:"adam-and-eve-durer", tier:2,
   title:"Adam and Eve",
@@ -179,7 +179,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"24.8 × 19.2 cm (engraving)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg/500px-Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg",
           page:"https://en.wikipedia.org/wiki/Adam_and_Eve_(D%C3%BCrer)", status:"pd" },
-  tags:["nude","religious","pattern"] },
+  tags:["nude","sacred","pattern"] },
 
 { id:"great-piece-of-turf", tier:2,
   title:"Great Piece of Turf",
@@ -320,7 +320,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The boy pointing at the miracle is El Greco's son — the signature is on his handkerchief",
           "Count the white ruffs: Toledo's establishment, painted from life",
           "The soul rises as a translucent infant through a birth-canal of cloud"],
-  tags:["religious","historical","monumental-scale","golden"],
+  tags:["sacred","historical","monumental-scale","golden"],
   related:["view-of-toledo","the-calling-of-saint-matthew"] },
 
 { id:"view-of-toledo", tier:1,
@@ -347,7 +347,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"224.8 × 199.4 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/El_Greco%2C_The_Vision_of_Saint_John_%281608-1614%29.jpg/500px-El_Greco%2C_The_Vision_of_Saint_John_%281608-1614%29.jpg",
           page:"https://en.wikipedia.org/wiki/The_Vision_of_Saint_John", status:"pd" },
-  tags:["religious","unsettling","storm"] },
+  tags:["sacred","unsettling","storm"] },
 
 { id:"disrobing-of-christ", tier:2,
   title:"The Disrobing of Christ (El Espolio)",
@@ -357,7 +357,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"285 × 173 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/El_Expolio%2C_por_El_Greco.jpg/500px-El_Expolio%2C_por_El_Greco.jpg",
           page:"https://en.wikipedia.org/wiki/The_Disrobing_of_Christ", status:"pd" },
-  tags:["religious","red","unsettling"] },
+  tags:["sacred","red","unsettling"] },
 
 { id:"laocoon-el-greco", tier:2,
   title:"Laocoön",
@@ -377,7 +377,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"319 × 180 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/La_adoraci%C3%B3n_de_los_pastores_%28El_Greco%29.jpg/500px-La_adoraci%C3%B3n_de_los_pastores_%28El_Greco%29.jpg",
           page:"https://en.wikipedia.org/wiki/Adoration_of_the_Shepherds_(El_Greco%2C_Madrid)", status:"pd" },
-  tags:["religious","night","candlelit"] },
+  tags:["sacred","nocturne","candlelit"] },
 
 { id:"nobleman-hand-on-chest", tier:2,
   title:"The Nobleman with his Hand on his Chest",
@@ -387,7 +387,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"82 × 66 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/El_caballero_de_la_mano_en_el_pecho.jpg/500px-El_caballero_de_la_mano_en_el_pecho.jpg",
           page:"https://en.wikipedia.org/wiki/The_Nobleman_with_his_Hand_on_his_Chest", status:"pd" },
-  tags:["portrait","quiet","night"] },
+  tags:["portrait","quiet","nocturne"] },
 
 /* ——— The Manet wing ——— */
 
@@ -481,7 +481,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"55.5 × 40.5 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg/500px-Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Berthe_Morisot_with_a_Bouquet_of_Violets", status:"pd" },
-  tags:["portrait","tender","night"] },
+  tags:["portrait","tender","nocturne"] },
 
 { id:"the-railway", tier:2,
   title:"The Railway",
@@ -534,7 +534,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   notice:["The two putti at the base — art history's most merchandised bystanders",
           "The 'clouds' behind the Virgin resolve into dozens of angel faces",
           "Saint Sixtus's papal tiara sits on the ledge, inside the painted theatre"],
-  tags:["religious","tender","monumental-scale","would-hang"],
+  tags:["sacred","tender","monumental-scale","would-hang"],
   related:["the-school-of-athens","madonna-of-the-magnificat"] },
 
 { id:"la-fornarina", tier:2,
@@ -555,7 +555,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"410 × 279 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/500px-Transfiguration_Raphael.jpg",
           page:"https://en.wikipedia.org/wiki/Transfiguration_(Raphael)", status:"pd" },
-  tags:["religious","monumental-scale","storm"] },
+  tags:["sacred","monumental-scale","storm"] },
 
 { id:"baldassare-castiglione", tier:2,
   title:"Portrait of Baldassare Castiglione",
@@ -575,7 +575,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"113 × 88 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Raphael_-_Madonna_in_the_Meadow_-_Google_Art_Project.jpg/500px-Raphael_-_Madonna_in_the_Meadow_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Madonna_del_Prato_(Raphael)", status:"pd" },
-  tags:["religious","tender","landscape"] },
+  tags:["sacred","tender","landscape"] },
 
 { id:"raphael-self-portrait", tier:2,
   title:"Self-Portrait",
@@ -595,7 +595,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"174 × 121 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg/500px-Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg",
           page:"https://en.wikipedia.org/wiki/The_Marriage_of_the_Virgin_(Raphael)", status:"pd" },
-  tags:["religious","historical","pattern"] },
+  tags:["sacred","historical","pattern"] },
 
 { id:"triumph-of-galatea", tier:2,
   title:"The Triumph of Galatea",

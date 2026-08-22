@@ -343,8 +343,38 @@ changed the answer, after the museum photographs and the Caillebotte attribution
   each — against five for the whole of Asian and Islamic practice. The registry
   is not neutral about which traditions get fine-grained vocabulary, and this is
   the `ATLAS_COVERAGE.md` §2.1 defect showing up in the technique registry.
-- **C5** The `abstract` tag and §5 vocabulary enforcement — would currently fail
-  on ~130 shipped records; the Curator says sequence it after normalisation.
+- **C5 · HALF DONE 2026-08-22 — the mechanical half. The rest is an owner
+  decision, by design.** The Curator's "~130 records" was exact: **130 of 350**
+  records carried at least one tag outside the `ARTWORK_SCHEMA` §5 vocabulary,
+  across **50** distinct off-list tags, 18 of them Tier 1.
+
+  **Eight pure synonym merges applied** — no judgement in any of them, each a
+  term the vocabulary already has under another name: `religious`→`sacred` (41),
+  `night`→`nocturne` (33), `geometric`→`geometry` (6), `grief`→`mourning` (5),
+  `myth`→`mythological` (2), `biblical`→`sacred` (2),
+  `black-and-white`→`monochrome` (2), `animals`→`animal` (1). Checked first that
+  **nothing reads these strings by name** — no list, persona or app logic — so a
+  rename could not break a surface. **130 → 61 records, 50 → 43 tags.**
+
+  **What remains is genuinely two owner decisions, and §5 says so itself**
+  ("additions require a PR to this file — no free-typing"), which makes it Lane I
+  rather than something to settle in passing:
+
+  1. **Thirteen concepts the vocabulary lacks**, by use: `abstract` (21) — C5's
+     named case, and the atlas has a whole abstract wing with no word for it —
+     `experimental` (6), `dream` (6), `drip` (6), `figures` (5), `body` (4),
+     `political` (4), `repetition` (4), `death` (4), `double-image` (3),
+     `spiritual` (3), `black` (3), `meditative` (3). **Adopt or map?**
+  2. **Thirty free-typed one-offs** used once or twice — `tiger`, `bullfight`,
+     `circus`, `handprint`, `icon-corner`, `wound`, `time`… **Remove or keep?**
+
+  **A contradiction in the schema found on the way.** `ARTWORK_SCHEMA` line 68's
+  own worked example uses `tags: ["chiaroscuro", …]`, and **`chiaroscuro` is not
+  in the §5 list beneath it.** The document teaches a tag it forbids. Worth
+  settling with the two decisions above rather than separately.
+
+  **The validator rule stays unwritten until those land** — that is the Curator's
+  sequencing, and it is right: enforcing today would fail 61 shipped records.
 - **C6 · DONE 2026-08-08.** The Coordinator's quality gate no longer greps.
   `check_quality_review_text()` locates the operative revision (text after the
   last `# Quality Review` heading), then its last `Gate 2 verdict` section, and
