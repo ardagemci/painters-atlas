@@ -75,7 +75,17 @@ never been observed failing is not known to work. **D-8** is closed.
    origin because this line said to while the runner's own constraint said
    never — the run obeyed the writ, correctly, and the contradiction was
    the defect.
-7. Append one line to `protocol/runs/ledger.jsonl` and write the run report.
+7. Write the run report. **Do not write the ledger** — the runner appends that
+   to `main` after the run passes.
+
+The ledger is the one thing the harness writes to `main`, and it is deliberate.
+A run branches from `main`, and Lane III never merges, so anything the run
+recorded in its own worktree is gone before the next run starts. When the ledger
+was the run's job, every run read an empty `main`, reported "first run, no
+baseline", and the drift comparison W-001 exists for could never happen — twice,
+correctly, and uselessly. Isolation and accumulation were in tension and the
+harness is where that resolves: it records what happened, it never changes
+Pigment, and it is the only party that knows what a run cost.
 
 ## Abort rather than proceed
 

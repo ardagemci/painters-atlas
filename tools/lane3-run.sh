@@ -139,6 +139,25 @@ else
   CONSTRAINT_ONE="Write only to paths in may_write. Never to the sealed set."
 fi
 
+# The previous run, read from main. A run cannot find this itself: its worktree
+# branches from main, where the ledger it wrote last time never landed, because
+# Lane III never merges. That is why every run reported "first run, no baseline"
+# forever and the drift comparison this writ exists for could not happen.
+LEDGER_REL="protocol/runs/ledger.jsonl"
+PREV_ENTRY="$(git show "main:${LEDGER_REL}" 2>/dev/null \
+  | grep "\"writ\": \"${WRIT_ID}\"" | tail -1 || true)"
+if [ -n "$PREV_ENTRY" ]; then
+  printf '%s\n' "$PREV_ENTRY" > "$SCRATCH/previous.json"
+  PREV_NOTE="The most recent recorded run of this writ is below. Diff today's counts
+against it; that comparison is the point of this writ. The runner supplied it —
+do not go looking for a ledger in your worktree, there is none by design.
+
+$(cat "$SCRATCH/previous.json")"
+else
+  PREV_NOTE="No previous run of this writ is recorded on main. Today establishes
+the baseline. Say so plainly rather than implying a comparison happened."
+fi
+
 # Written to a file with a plain heredoc, then read back — deliberately NOT
 # `PROMPT="$(cat <<END ... END)"`. A heredoc nested inside command substitution
 # is parsed for quotes by this bash, so a single apostrophe anywhere in the
@@ -151,6 +170,10 @@ You are executing Lane III writ ${WRIT_ID} under CLAUDE.md §0.
 ${MODE_NOTE}
 
 $(cat "$SCRATCH/writ.md")
+
+## Previous run
+
+${PREV_NOTE}
 
 Binding constraints, in order of precedence:
   1. ${CONSTRAINT_ONE}
@@ -252,10 +275,17 @@ fi
 
 # ── Verification · the writ's own commands decide, not the agent ────────────
 VERIFY_FAILED=0
+VERIFIER_LOG="$SCRATCH/verifiers.txt"
+: > "$VERIFIER_LOG"
 while IFS= read -r command; do
   [ -n "$command" ] || continue
   note "verifier: ${command}"
-  ( cd "$TREE" && eval "$command" ) >/dev/null 2>&1 || { VERIFY_FAILED=1; note "  FAILED"; }
+  # Captured, not discarded: the registry counts the ledger records are printed
+  # by the validator, and the runner is the only party that both runs it and is
+  # trusted to record what it said.
+  if out="$( cd "$TREE" && eval "$command" 2>&1 )"; then ec=0; else ec=$?; fi
+  printf '### %s exit=%s\n%s\n' "$command" "$ec" "$out" >> "$VERIFIER_LOG"
+  [ "$ec" -eq 0 ] || { VERIFY_FAILED=1; note "  FAILED"; }
 done <<< "$(field verifier)"
 
 # ── Diff ceiling ────────────────────────────────────────────────────────────
@@ -317,6 +347,27 @@ if [ "${COMMITS:-0}" -gt 0 ]; then
   note "  files: $(cd "$TREE" && git diff --name-only main..HEAD | tr '\n' ' ')"
 else
   note "the run produced nothing — ${BRANCH} has no commits."
+fi
+
+# ── Ledger · the harness records; the run does not ──────────────────────────
+# Appended to main, not to the branch, because a record that only exists on an
+# unmerged branch is a record the next run cannot read. This is the one thing
+# the harness writes to main, it is append-only, it is a single line, and it
+# says what happened rather than changing anything about Pigment.
+REPORT_FILE="$(cd "$TREE" && git diff --name-only main..HEAD | grep -E '^protocol/runs/.*\.md$' | head -1 | xargs -I{} basename {} 2>/dev/null || true)"
+LEDGER_LINE="$(python3 tools/lane3_ledger.py \
+  --writ "$WRIT_ID" --base "$BASE" --branch "$BRANCH" --outcome clean \
+  --report "${REPORT_FILE:-none}" \
+  --result "$SCRATCH/result.json" --verifiers "$VERIFIER_LOG" 2>/dev/null || true)"
+if [ -n "$LEDGER_LINE" ]; then
+  mkdir -p "$(dirname "$LEDGER_REL")"
+  printf '%s\n' "$LEDGER_LINE" >> "$LEDGER_REL"
+  git -c user.name="pigment-lane3" -c user.email="lane3@pigment.local" \
+      commit -q -m "ledger(${WRIT_ID}): ${STAMP}" -- "$LEDGER_REL" \
+    && note "ledger appended on main ($(git rev-parse --short HEAD))" \
+    || note "WARNING: ledger line built but not committed; main may be dirty"
+else
+  note "WARNING: could not build a ledger line for this run"
 fi
 
 # Lane III never merges. Pushing is outward-facing and stays opt-in.
