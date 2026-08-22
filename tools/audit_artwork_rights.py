@@ -33,6 +33,7 @@ Stdlib only, plus tools/commons_rights.py (also stdlib).
 import argparse
 import collections
 import json
+import glob
 import os
 import re
 import sys
@@ -44,7 +45,12 @@ sys.path.insert(0, HERE)
 
 import commons_rights as cr  # noqa: E402  (path set above)
 
-CATALOG_FILES = ["catalog-1.js", "catalog-2.js", "catalog-3.js", "catalog-4.js", "catalog-5.js"]
+# C2. Discovered, not listed. This file named the catalogs explicitly, so a new
+# catalog-6.js would have been audited by some tools and silently skipped by the
+# rights audit — the place a miss is least visible.
+CATALOG_FILES = [os.path.basename(p) for p in sorted(
+    glob.glob(os.path.join(ROOT, "js", "catalog-*.js")),
+    key=lambda p: int(re.search(r"catalog-(\d+)", p).group(1)))]
 GALLERY_FILE = "artworks.js"
 DEFAULT_OUT = os.path.join(
     ROOT, "protocol", "tasks", "PIG-001", "evidence", "artwork-image-rights.json"

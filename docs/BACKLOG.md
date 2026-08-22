@@ -269,9 +269,36 @@ changed the answer, after the museum photographs and the Caillebotte attribution
   the batch (the validator errors on a venue holding works with no note) are the
   only visitor-facing copy in that batch the Content Editor did not write. They
   should be reviewed as his.
-- **C2** `catalog-5.js` is enumerated **by name in four separate places**. A
-  future `catalog-6.js` will be silently missed by whichever list someone
-  forgets — and the rights audit is where a miss would be least visible.
+- **C2 · DONE 2026-08-22. Numbered families are discovered, not listed.**
+  `catalog-5.js` was named in five places and `artists-18.js` in three, so a new
+  `catalog-6.js` would be loaded by whichever lists someone remembered and
+  silently skipped by the rest — and the quiet ones were the rights audit and the
+  validator, where a miss is least visible. Not hypothetical: adding
+  `artists-18.js` this month meant editing three files, and forgetting one would
+  have left four painters invisible to a tool still reporting success.
+
+  Both JXA tools gained a `familyFiles(prefix)` that lists `js/` and sorts
+  **numerically**, so `catalog-10` follows `catalog-9`. `audit_artwork_rights.py`
+  globs. `asset_inventory.py` already did. **`index.html` cannot glob** — no
+  build step, the browser gets the file as written — so `build_seo.jxa.js`
+  regenerates its `<script>` tags from the same discovery, preserving each file's
+  existing `?v=` string so cache-busting is not reset.
+
+  Proved by dropping a real `catalog-6.js` and `artists-19.js` into `js/` and
+  changing nothing else: validator 266→267 artists and 350→351 works, 744→746
+  stubs, both tags written into `index.html` automatically, and `catalog-6.js`
+  present in the rights audit's file list. Removed again, everything returned.
+
+  Five tests in `tests/test_file_discovery.py`, non-vacuous in both directions:
+  restoring a hard-coded list fails two of them, and switching the sort from
+  numeric to lexical fails a third.
+
+  **A defect in the first attempt, worth keeping.** `ObjC.unwrap` on an NSArray
+  does *not* unwrap its members, and `String()` on one yields
+  `[id __NSCFString]` — so the filename filter matched nothing, every family
+  loaded zero files, and the validator reported `artists: 0, catalog: 0` while
+  still running all its reference checks. It exited 1 only because C7's fix had
+  landed. Elements are now unwrapped individually.
 - **C3** `beginning-noland` tier demotion — proposed by the Curator, not built.
 - **C4** `tarashikomi` technique — proposed, not built.
 - **C5** The `abstract` tag and §5 vocabulary enforcement — would currently fail

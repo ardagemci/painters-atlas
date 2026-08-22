@@ -20,11 +20,21 @@ const argv = ObjC.unwrap($.NSProcessInfo.processInfo.arguments).map(a => ObjC.un
 const me = argv.find(a => String(a).endsWith("build_seo.jxa.js")) || "tools/build_seo.jxa.js";
 const base = String(me).replace(/tools\/+build_seo\.jxa\.js$/, "");
 var window = {};
-["taxonomy.js","artworks.js","venues.js","catalog-1.js","catalog-2.js","catalog-3.js","catalog-4.js","catalog-5.js",
- "tier1-artists.js","lists-1.js","museums-1.js","photo-credits.js",
- "artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
- "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js",
- "artists-14.js","artists-15.js","artists-16.js","artists-17.js","artists-18.js"]
+/* C2. Numbered data families are DISCOVERED, never listed — see the note in
+   tools/validate.jxa.js. Elements are unwrapped individually: ObjC.unwrap on the
+   array does not unwrap its members. */
+function familyFiles(prefix){
+  const all = (ObjC.unwrap($.NSFileManager.defaultManager
+    .contentsOfDirectoryAtPathError(base + "js", $())) || []).map(f => ObjC.unwrap(f));
+  return all
+    .filter(f => new RegExp("^" + prefix + "-\\d+\\.js$").test(f))
+    .sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0]));
+}
+
+["taxonomy.js","artworks.js","venues.js","tier1-artists.js","lists-1.js","actuality-1.js",
+ "museums-1.js","photo-credits.js"]
+  .concat(familyFiles("catalog"))
+  .concat(familyFiles("artists"))
   .forEach(f => eval(read(base + "js/" + f)));
 
 const SITE = "https://ardagemci.github.io/painters-atlas/";
@@ -239,6 +249,34 @@ ${img ? `<img src="${esc(img)}" alt="${esc(l.title)}">` + creditHtml(img, "Image
 <p>${esc(l.lede)}</p>
 ${rel ? `<div class="rel"><span class="k">The works</span><br>${rel}</div>` : ""}` }));
 });
+
+/* ---- index.html's script tags for the numbered families, generated ----
+   C2. The page listed catalog-1..5 and artists-1..18 by hand. index.html cannot
+   glob — there is no build step and the browser gets the file as written — so
+   the list is regenerated here instead, from the same discovery the tools use.
+   Adding js/catalog-6.js now needs no edit anywhere: the tools find it and this
+   writes the tag. Existing ?v= strings are preserved per file so cache-busting
+   is not silently reset. */
+(function(){
+  const path = base + "index.html";
+  let html = read(path);
+  ["catalog", "artists"].forEach(function(prefix){
+    const files = familyFiles(prefix);
+    if(!files.length) return;
+    const tagRe = new RegExp('<script src="js/' + prefix + '-\\d+\\.js(\\?v=[^"]*)?"></script>\\n?', "g");
+    const existing = {};
+    (html.match(tagRe) || []).forEach(function(t){
+      const m = t.match(new RegExp('js/(' + prefix + '-\\d+\\.js)(\\?v=[^"]*)?'));
+      if(m) existing[m[1]] = m[2] || "";
+    });
+    const block = files.map(function(f){
+      return '<script src="js/' + f + (existing[f] || "") + '"></script>';
+    }).join("\n") + "\n";
+    let first = true;
+    html = html.replace(tagRe, function(){ if(first){ first = false; return block; } return ""; });
+  });
+  write(path, html);
+})();
 
 /* ---- index.html's own description, generated ----
    It was hand-typed and said "247 artists, 317 masterpieces" long after the

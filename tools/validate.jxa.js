@@ -27,6 +27,29 @@ const out = [];
    clean — a parse failure used to make this script *more* likely to pass. Load
    failures are tracked separately from `errs` so the verdict can say the run was
    inconclusive rather than valid. */
+/* C2. Numbered data families are DISCOVERED, never listed.
+
+   `catalog-5.js` was named in five separate places and `artists-18.js` in three.
+   A new `catalog-6.js` is then picked up by whichever lists someone remembers
+   and silently skipped by the rest — and the quiet ones are the rights audit and
+   the validator, where a miss is least visible. This session hit it directly:
+   adding artists-18.js meant editing three files, and forgetting one would have
+   left 4 painters invisible to a tool that still reported success.
+
+   Sorted numerically, not lexically, so catalog-10 follows catalog-9. */
+function familyFiles(prefix){
+  const dir = base + "js";
+  /* Each element comes back as an ObjC string; ObjC.unwrap on the ARRAY does not
+     unwrap its members, and String() on one yields "[id __NSCFString]". Unwrap
+     per element or the filter silently matches nothing — which is how the first
+     version of this returned zero files and reported "artists: 0". */
+  const all = (ObjC.unwrap($.NSFileManager.defaultManager
+    .contentsOfDirectoryAtPathError(dir, $())) || []).map(f => ObjC.unwrap(f));
+  return all
+    .filter(f => new RegExp("^" + prefix + "-\\d+\\.js$").test(f))
+    .sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0]));
+}
+
 const loadErrs = [];
 function loadFail(msg){ loadErrs.push(msg); }
 
@@ -35,8 +58,7 @@ try { new Function(read(base + "js/app.js")); out.push("app.js: syntax OK"); }
 catch(e){ loadFail("app.js SYNTAX ERROR: " + e.message); }
 
 // load data files (eval = syntax + execution check)
-["taxonomy.js","artists-1.js","artists-2.js","artists-3.js","artists-4.js","artists-5.js","artists-6.js","artists-7.js",
- "artists-8.js","artists-9.js","artists-10.js","artists-11.js","artists-12.js","artists-13.js","artists-14.js","artists-15.js","artists-16.js","artists-17.js","artists-18.js"]
+["taxonomy.js"].concat(familyFiles("artists"))
   .forEach(f => { try { eval(read(base + "js/" + f)); } catch(e){ loadFail(f + " ERROR: " + e.message); } });
 /* The gallery pool. Loaded so an artist's optional `hero` can be checked against
    the works that actually have an image, rather than against a title list. */
@@ -100,11 +122,9 @@ const warns = [];
 
 // venue registry + artwork catalog integrity (ARTWORK_SCHEMA v1)
 try { eval(read(base + "js/venues.js")); } catch(e){ loadFail("venues.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-1.js")); } catch(e){ loadFail("catalog-1.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-2.js")); } catch(e){ loadFail("catalog-2.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-3.js")); } catch(e){ loadFail("catalog-3.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-4.js")); } catch(e){ loadFail("catalog-4.js ERROR: " + e.message); }
-try { eval(read(base + "js/catalog-5.js")); } catch(e){ loadFail("catalog-5.js ERROR: " + e.message); }
+familyFiles("catalog").forEach(function(f){
+  try { eval(read(base + "js/" + f)); } catch(e){ loadFail(f + " ERROR: " + e.message); }
+});
 const VEN = window.VENUES || [], CAT = window.CATALOG || [];
 const VENUE_TYPES = { museum:1, church:1, palace:1, site:1 };
 dup(VEN, "venue"); dup(CAT, "artwork");
