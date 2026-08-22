@@ -450,8 +450,28 @@ changed the answer, after the museum photographs and the Caillebotte attribution
 Documented in `protocol/tasks/PIG-001/quality-review.md` rev 5 and carried
 knowingly, not forgotten:
 
-- **D1** Decorative arrows are DOM-fixed but **unconfirmed by ear**; a bare arrow
-  persists in **695 prerendered files** across four families.
+- **D1 · DONE 2026-08-22.** The bare arrow is gone from all **746** prerendered
+  files — it had grown from the 695 recorded here as the atlas grew. The SPA was
+  fixed for AT-5 (the owner heard *"or surprise me →"* announced as *"or surprise
+  me right arrow"*) and gained an `ARR` constant; **the stub template kept a bare
+  arrow**, so the defect the fix existed for survived in every generated page.
+  The template now wraps it exactly as `js/app.js` does.
+
+  **The middot separators were deliberately left alone.** They were never raised
+  in a VoiceOver pass and the SPA uses 55 of them unhidden — hiding them here
+  would invent a fix for an unobserved problem and make the stubs disagree with
+  the app they mirror.
+
+  **A second defect found in the same pass: `build_seo.jxa.js` never pruned.** It
+  only ever wrote, so a deleted or renamed record left its page in `p/`, still
+  served at its URL and still committed, while the sitemap quietly stopped
+  listing it. Found because two stubs from this session's own C2 discovery probe
+  outlived the probe's data files and were committed. The builder now removes any
+  stub this run did not write, and reports the count; `p/` counts now match the
+  registries exactly (266/350/114/14).
+
+  Four tests in `tests/test_prerender_hygiene.py`, non-vacuous both ways:
+  reintroducing a bare arrow fails one, planting an orphan stub fails another.
 - **D2** `.md-name` renders at **2.34px** at 320px width in one zoom state —
   legibility, not contrast.
 - **D3** Accessibility evidence rests on **one operator, one screen reader, one

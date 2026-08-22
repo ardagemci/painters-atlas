@@ -104,6 +104,14 @@ function artistImage(a){
   return pd ? pd.image.src : null;
 }
 
+/* Decorative punctuation is hidden from assistive technology, matching
+   js/app.js's ARR constant. Backlog D1: the SPA was fixed for AT-5 — "or
+   surprise me →" was announced as "or surprise me right arrow" — but the stub
+   template kept a bare arrow, so the defect survived in every prerendered file.
+   The middot separators below are deliberately NOT changed: they were never
+   raised in a VoiceOver pass and the SPA uses 55 of them unhidden, so hiding
+   them here would invent a fix for an unobserved problem and make the stubs
+   disagree with the app they mirror. */
 function page(o){
   // o: { path, appRoute, title, desc, img, jsonld, bodyHtml }
   const url = SITE + o.path;
@@ -146,7 +154,7 @@ footer{margin-top:34px;color:#6e675a;font-size:.8rem}
 <main>
 <div class="k">Pigment · an atlas of painters</div>
 ${o.bodyHtml}
-<a class="cta" href="${SITE}#/${o.appRoute}">Open in the atlas →</a>
+<a class="cta" href="${SITE}#/${o.appRoute}">Open in the atlas <span aria-hidden="true">&#8594;</span></a>
 <footer>Pigment — find your place in the history of art. <a href="${SITE}">Home</a></footer>
 </main>
 </body>
@@ -155,7 +163,13 @@ ${o.bodyHtml}
 
 const urls = [];
 let count = 0;
-function emit(path, html){ write(base + path, html); urls.push(SITE + path); count++; }
+/* what this run wrote, so the prune above can remove anything it did not */
+const emitted = {};
+let pruned = 0;
+function emit(path, html){
+  write(base + path, html); urls.push(SITE + path); count++;
+  emitted[String(path).replace(/^p\//, "")] = 1;   /* "artist/rembrandt.html" */
+}
 
 /* ---- artworks ---- */
 CAT.forEach(w => {
@@ -250,6 +264,32 @@ ${img ? `<img src="${esc(img)}" alt="${esc(l.title)}">` + creditHtml(img, "Image
 ${rel ? `<div class="rel"><span class="k">The works</span><br>${rel}</div>` : ""}` }));
 });
 
+/* ---- prune stubs whose record no longer exists ----
+   This script only ever wrote; it never removed. A record that is deleted or
+   whose id changes leaves its page behind in p/, still served at its URL and
+   still committed, while the sitemap silently stops listing it. Found via
+   backlog D1: two stubs from a discovery probe survived the probe's data files
+   and were committed.
+
+   Only the four generated families are touched, only .html is considered, and
+   the emitted set is the authority — a file is removed exactly when this run
+   did not write it. */
+(function(){
+  const fm = $.NSFileManager.defaultManager;
+  let removed = 0;
+  ["artist", "artwork", "museum", "list"].forEach(function(fam){
+    const dir = base + "p/" + fam;
+    const files = (ObjC.unwrap(fm.contentsOfDirectoryAtPathError(dir, $())) || []).map(f => ObjC.unwrap(f));
+    files.forEach(function(f){
+      if(!/\.html$/.test(f)) return;
+      if(emitted[fam + "/" + f]) return;
+      fm.removeItemAtPathError(dir + "/" + f, $());
+      removed++;
+    });
+  });
+  pruned = removed;
+})();
+
 /* ---- index.html's script tags for the numbered families, generated ----
    C2. The page listed catalog-1..5 and artists-1..18 by hand. index.html cannot
    glob — there is no build step and the browser gets the file as written — so
@@ -306,4 +346,4 @@ write(base + "sitemap.xml",
 ${urls.map(u => `<url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}
 </urlset>`);
 write(base + "robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-"emitted " + count + " stub pages + sitemap (" + (urls.length + 1) + " urls) + robots.txt";
+"emitted " + count + " stub pages" + (pruned ? ", pruned " + pruned + " orphaned" : "") + " + sitemap (" + (urls.length + 1) + " urls) + robots.txt";
