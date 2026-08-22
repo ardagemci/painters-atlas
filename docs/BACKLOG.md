@@ -472,8 +472,27 @@ knowingly, not forgotten:
 
   Four tests in `tests/test_prerender_hygiene.py`, non-vacuous both ways:
   reintroducing a bare arrow fails one, planting an orphan stub fails another.
-- **D2** `.md-name` renders at **2.34px** at 320px width in one zoom state —
-  legibility, not contrast.
+- **D2 · CONFIRMED, NOT FIXED — needs a decision I should not make blind.**
+  Re-derived from measured geometry rather than re-observed: the nations map has
+  `viewBox="0 0 1000 420"` and renders **258 css px wide at a 320px viewport**, a
+  scale of **0.258**. Europe labels are sized `9.5 / mag` in *user units*, so they
+  render at **9.5 × 0.258 = 2.45px** — matching the 2.34px recorded here. The
+  cause is that label size is fixed in user units while the SVG scales with its
+  container, so the whole map shrinking takes the text with it.
+
+  **I could not reach the state to look at it.** The Europe zoom runs through a
+  750ms `requestAnimationFrame` transition, and rAF is throttled in the headless
+  browser pane — the animation never completes, the viewBox stays on world, and
+  no labels render. A direct rAF probe timed out, which is the evidence for that.
+  So the arithmetic is confirmed and the *appearance* is not.
+
+  **The fix is a legibility floor, and which floor is a visual judgement.** The
+  label duplicates the dot's `<title>`, so hiding one below the floor costs
+  assistive technology nothing and costs sighted users an unreadable smudge.
+  `mapDecollide()` already runs post-render and is the right place. **Owner
+  decision needed:** hide labels below ~9px, or hold them at a minimum rendered
+  size and let them collide more at narrow widths? Shipping either without
+  seeing it is the thing this backlog exists to prevent.
 - **D3** Accessibility evidence rests on **one operator, one screen reader, one
   browser**. Structurally: every pixel measurement is Chrome, every ear
   confirmation is Safari — the two evidence bases corroborate each other nowhere.
