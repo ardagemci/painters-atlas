@@ -139,7 +139,13 @@ else
   CONSTRAINT_ONE="Write only to paths in may_write. Never to the sealed set."
 fi
 
-PROMPT="$(cat <<PROMPT_END
+# Written to a file with a plain heredoc, then read back — deliberately NOT
+# `PROMPT="$(cat <<END ... END)"`. A heredoc nested inside command substitution
+# is parsed for quotes by this bash, so a single apostrophe anywhere in the
+# prompt ("the owner's call") is an unterminated string and the whole script
+# fails to parse. Prompt text is prose written by humans; it will contain
+# apostrophes. A plain redirect has no such rule.
+cat > "$SCRATCH/prompt.txt" <<PROMPT_END
 You are executing Lane III writ ${WRIT_ID} under CLAUDE.md §0.
 
 ${MODE_NOTE}
@@ -149,12 +155,13 @@ $(cat "$SCRATCH/writ.md")
 Binding constraints, in order of precedence:
   1. ${CONSTRAINT_ONE}
   2. Run every verifier command. All must pass. Do not edit a verifier.
-  3. Stop at ${BRANCH}. Never merge, never push, never touch main.
+  3. Stop at ${BRANCH}. Do NOT commit, push or merge — the runner commits your
+     work, and whether the branch ever leaves this machine is the owner's call.
   4. Abort and report on any abort_if condition or CLAUDE.md §5 condition.
   5. A partial result with an honest report beats a green you had to widen.
   6. Do the writ and only the writ. No subagents, no scheduling, no side quests.
 PROMPT_END
-)"
+PROMPT="$(cat "$SCRATCH/prompt.txt")"
 
 # PIGMENT_LANE3 arms the sealed-set hook; the two roots tell it what the run
 # owns. Without them the hook cannot tell inside from outside and denies
@@ -297,9 +304,19 @@ if [ -n "$(cd "$TREE" && git status --porcelain)" ]; then
          commit -q -m "lane3(${WRIT_ID}): ${STAMP}" \
          -m "Autonomous run under writ ${WRIT_ID}, base ${BASE}, session ${SESSION_ID}.
 Verifiers passed. Sealed set untouched. Not reviewed by a person." )
-  note "committed $(cd "$TREE" && git rev-parse --short HEAD) on ${BRANCH}"
+fi
+
+# Whether the branch has anything on it is a question about the branch, not
+# about the working tree. This used to report "nothing to commit, branch is
+# empty" whenever the tree was clean -- which is exactly what it looks like
+# after a run commits its own work. The first real W-001 run wrote a report,
+# committed it, and was announced as having produced nothing.
+COMMITS="$(cd "$TREE" && git rev-list --count "main..HEAD" 2>/dev/null || echo 0)"
+if [ "${COMMITS:-0}" -gt 0 ]; then
+  note "${BRANCH}: ${COMMITS} commit(s) — $(cd "$TREE" && git --no-pager log --oneline -1 HEAD)"
+  note "  files: $(cd "$TREE" && git diff --name-only main..HEAD | tr '\n' ' ')"
 else
-  note "the run produced no changes — nothing to commit. Branch ${BRANCH} is empty."
+  note "the run produced nothing — ${BRANCH} has no commits."
 fi
 
 # Lane III never merges. Pushing is outward-facing and stays opt-in.

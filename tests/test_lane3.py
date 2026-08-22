@@ -540,6 +540,48 @@ class RunnerCompletenessTest(unittest.TestCase):
         for line in printed:
             self.assertIn("--no-pager", line, line.strip())
 
+    def test_branch_emptiness_is_decided_by_commits_not_a_dirty_tree(self):
+        """The first real run wrote a report, committed it, and was announced as
+        having produced nothing -- because the runner asked `git status
+        --porcelain`, which is clean precisely when a run has committed its own
+        work. Whether a branch has anything on it is a question about the
+        branch."""
+        self.assertIn("rev-list --count", self.script)
+        self.assertIn("has no commits", self.script)
+        empty_msg = self.script.index("has no commits")
+        counted = self.script.index("rev-list --count")
+        self.assertLess(counted, empty_msg,
+                        "the count must be taken before the verdict is printed")
+
+    def test_only_the_runner_may_push(self):
+        """Three sources disagreed and the run obeyed the writ, correctly: W-001
+        and the writs README both said 'push the branch' while the runner's own
+        constraint said never push and its PIGMENT_LANE3_PUSH gate defaulted
+        off. The first real run pushed to origin. One push path now."""
+        self.assertIn("PIGMENT_LANE3_PUSH", self.script)
+        self.assertIn("Do NOT commit, push or merge", self.script)
+        for doc in ("protocol/writs/W-001.md", "protocol/writs/README.md"):
+            text = (ROOT / doc).read_text(encoding="utf-8")
+            self.assertNotIn("Push the branch", text,
+                             "%s still instructs the run to push" % doc)
+
+    def test_the_prompt_survives_an_apostrophe(self):
+        """A heredoc nested inside $( ) is parsed for quotes by macOS bash, so
+        one apostrophe in the prompt made the entire script unparseable. Prompt
+        text is prose; it will contain apostrophes. Written via a plain
+        redirect now, and this asserts the structure rather than the absence."""
+        self.assertIn('cat > "$SCRATCH/prompt.txt"', self.script)
+        # Comments are allowed to name the broken form; code is not.
+        code = "\n".join(ln for ln in self.script.splitlines()
+                         if not ln.lstrip().startswith("#"))
+        self.assertNotIn('PROMPT="$(cat <<', code)
+        block = self.script[self.script.index('cat > "$SCRATCH/prompt.txt"'):
+                            self.script.index('PROMPT="$(cat "$SCRATCH/prompt.txt")"')]
+        self.assertIn("'", block, "keep an apostrophe here: it is the regression")
+        checked = subprocess.run(["bash", "-n", str(ROOT / "tools" / "lane3-run.sh")],
+                                 capture_output=True, text=True)
+        self.assertEqual(checked.returncode, 0, checked.stderr)
+
     def test_shipped_writ_ceilings_clear_observed_usage(self):
         """25-26 turns were observed; a ceiling under that truncates the work."""
         fields = lane3_writ.parse((ROOT / "protocol/writs/W-001.md").read_text(encoding="utf-8"))
