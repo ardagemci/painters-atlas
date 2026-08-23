@@ -566,6 +566,10 @@ class WritFourTest(unittest.TestCase):
     def setUp(self):
         self.body = (ROOT / "protocol/writs/W-004.md").read_text(encoding="utf-8")
         self.fields = lane3_writ.parse(self.body)
+        # Prose wraps. Asserting on a literal substring of a hand-wrapped
+        # paragraph tests the line breaks, not the meaning -- this failed on
+        # "leave the\nrecord exactly as it is", which is present and correct.
+        self.prose = " ".join(self.body.replace("*", "").split())
 
     def test_it_may_touch_only_the_catalog_and_its_own_report(self):
         allowed = set(self.fields["may_write"])
@@ -595,14 +599,14 @@ class WritFourTest(unittest.TestCase):
     def test_it_forbids_guessing_a_replacement(self):
         """Five records in A2 carry permanent caveats because a gap was filled
         with something that looked right."""
-        self.assertIn("never guessed", self.body)
-        self.assertIn("leave the record exactly as it is", self.body)
+        self.assertIn("never guessed", self.prose)
+        self.assertIn("leave the record exactly as it is", self.prose)
 
     def test_it_carries_the_a2_formatting_warning(self):
         """A diff where every line moved is a diff nobody can review, and
         review is the only thing between this and A2 happening again."""
-        self.assertIn("do not reformat", self.body.lower())
-        self.assertIn("A2", self.body)
+        self.assertIn("do not reformat", self.prose.lower())
+        self.assertIn("A2", self.prose)
 
     def test_it_stays_ungranted_until_a_person_signs(self):
         self.assertEqual(self.fields["status"], "proposed")
