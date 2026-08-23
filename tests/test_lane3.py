@@ -554,6 +554,61 @@ class ShippedWritsTest(unittest.TestCase):
             self.assertIn(guarded, fields["may_not"])
 
 
+class WritFourTest(unittest.TestCase):
+    """W-004 is the first writ allowed to change a production file.
+
+    It gets that permission because an external authority decides the right
+    answer: the correct `image.page` is the Commons file page the record's own
+    `image.src` resolves to. Nothing about it is a judgement. These tests guard
+    the boundary that makes that true.
+    """
+
+    def setUp(self):
+        self.body = (ROOT / "protocol/writs/W-004.md").read_text(encoding="utf-8")
+        self.fields = lane3_writ.parse(self.body)
+
+    def test_it_may_touch_only_the_catalog_and_its_own_report(self):
+        allowed = set(self.fields["may_write"])
+        self.assertEqual(allowed - {"protocol/runs/**"},
+                         {"js/catalog-%d.js" % n for n in range(1, 6)})
+        for guarded in ("js/artworks.js", "js/taxonomy.js", "js/app.js",
+                        "tools/**", "docs/**"):
+            self.assertIn(guarded, self.fields["may_not"])
+
+    def test_its_success_is_decided_by_a_gate_that_fails_today(self):
+        """A writ whose verifier already passes cannot tell you it worked."""
+        self.assertTrue(any("check_image_pages" in v and "--require-commons" in v
+                            for v in self.fields["verifier"]),
+                        "the gate must be one of its verifiers")
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "check_image_pages.py"),
+             "--require-commons"], capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(result.returncode, 1,
+                         "if this passes before W-004 runs, the gate is vacuous")
+
+    def test_changing_anything_but_the_page_field_aborts(self):
+        aborts = " ".join(self.fields["abort_if"]).lower()
+        self.assertIn("image.page", aborts)
+        self.assertIn("record count changes", aborts)
+        self.assertIn("audit_artworks", aborts)
+
+    def test_it_forbids_guessing_a_replacement(self):
+        """Five records in A2 carry permanent caveats because a gap was filled
+        with something that looked right."""
+        self.assertIn("never guessed", self.body)
+        self.assertIn("leave the record exactly as it is", self.body)
+
+    def test_it_carries_the_a2_formatting_warning(self):
+        """A diff where every line moved is a diff nobody can review, and
+        review is the only thing between this and A2 happening again."""
+        self.assertIn("do not reformat", self.body.lower())
+        self.assertIn("A2", self.body)
+
+    def test_it_stays_ungranted_until_a_person_signs(self):
+        self.assertEqual(self.fields["status"], "proposed")
+        self.assertFalse(self.fields.get("granted_by"))
+
+
 class SealedHookTest(unittest.TestCase):
     """The PreToolUse hook. (PIGMENT.md §19 D-8)
 
