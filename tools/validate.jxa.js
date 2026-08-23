@@ -249,6 +249,29 @@ LST.forEach(function(l){
 if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
   warns.push("fewer than 3 featured lists for the homepage");
 
+/* E4. The onboarding deck opens by picking one anchor per F×D quadrant from the
+   works it can actually show (Tier 1 + coordinates + a public-domain image). Two
+   of those four quadrants are currently held up by ONE picture each — see
+   docs/TASTE_AUDIT.md §7. Losing it degrades the deck's opening silently, with
+   no error anywhere, so the count is reported on every run.
+
+   A warning rather than an error: the thin state is pre-existing and largely
+   structural (29 of 35 abstract works are in copyright and cannot be shown), so
+   failing the build would block on a condition no data edit can clear. */
+(function(){
+  const deck = CAT.filter(function(w){
+    return w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src;
+  });
+  [["F+D+",1,1],["F+D-",1,-1],["F-D+",-1,1],["F-D-",-1,-1]].forEach(function(q){
+    const name = q[0], sf = q[1], sd = q[2];
+    const n = deck.filter(function(w){ return sf * w.coords.F >= 25 && sd * w.coords.D >= 25; }).length;
+    if(n === 0) errs.push("deck quadrant " + name + " has NO qualifying work — buildDeck cannot anchor it");
+    else if(n < 2) warns.push("deck quadrant " + name + " rests on a single work (" + n + "); losing it degrades the deck silently");
+  });
+  const abstract = deck.filter(function(w){ return w.coords.F >= 30; }).length;
+  if(abstract < 3) warns.push("deck pool has only " + abstract + " works at F>=30; buildDeck's §6.2 quota asks for 3");
+})();
+
 // museum notes integrity
 try { eval(read(base + "js/museums-1.js")); } catch(e){ loadFail("museums-1.js ERROR: " + e.message); }
 const MN = window.MUSEUM_NOTES || {};

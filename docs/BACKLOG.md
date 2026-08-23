@@ -519,11 +519,41 @@ Mughal painting, Behzād, Joseon before Kim Hong-do, Momoyama/Edo beyond ukiyo-e
 and Rinpa, historic Africa, Southeast Asia, colonial Latin America. The holding
 institutions are simply not in the venue registry.
 
-**E4 · The taste mathematics — deferred, name agreed (Kandinsky).** The owner
-regards the scoring model as potentially Pigment's main product. Measured facts
-as of 2026-08-06: **141 of 323** works carry coordinates; the **F and E axes
-correlate at +0.60** (two of five axes measuring much the same thing); **E has
-mean +44 with almost nothing negative** — which is why the deck-pool warning kept
-recurring, and why "fix the content" was treating a symptom. The first job is
-measurement, not revolution: audit the coordinates, test discrimination by
-simulation, and only then consider new frameworks.
+**E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
+framework proposed.** The instruction was measurement first, and this is it.
+Coverage is **168 of 350** records (48%); the deck pool — Tier 1 *and* coords
+*and* a public-domain image — is **75 works**.
+
+**The headline finding reframes every previous attempt at this.** Of those 75,
+**70 sit on the figurative side of F; five do not.** Not because abstraction went
+unscored: **35 works are scored `F ≥ 0` and 29 of them are in copyright.** The
+public-domain cutoff and the abstract turn in painting are the same historical
+event — abstract works here have a median date of **1950** against 1882 for
+figurative ones. **No amount of cataloguing fixes this.** Every past "the deck
+pool is thin at F+" warning was this, which is why filling it never worked.
+
+**The F–E correlation is real, and the obvious explanation is wrong.** r = +0.60
+over all 168. Testing whether the abstract cluster causes it: within the
+**figurative half alone** it *rises* to **+0.68**; within the abstract half it is
+**−0.08**. So it is a scoring habit among figurative pictures — the less
+straightforwardly representational, the more experimental they get scored — and
+it is **the one defect here that rescoring could actually fix**.
+
+**E is softer than recorded.** Its positive mean is mostly corpus composition
+(81 of 168 scored works are post-1900); by period it rises monotonically,
+1500–1699 sitting at −4.0. But pre-1500 averages **+18.5**, which means E is
+being read as *"innovative for its time"* while `ADMIRE_SPEC` §3's wording
+permits an absolute reading too. **A user who says they like "classical" cannot
+know which question they answered.** That ambiguity is in the spec.
+
+**F is bimodal**: 84 works at the extremes, 38 across the entire middle third. It
+behaves like a flag, not a dimension. **D, C and M are the healthy axes** — all
+near-balanced in both directions.
+
+**Guard shipped.** The deck's opening picks one anchor per F×D quadrant, and
+**two of the four rested on a single work each** — F+D+ is Kandinsky's
+*Composition VII*, alone. The validator now reports quadrant counts every run:
+a warning below two, an **error at zero**. Proved by flipping that Kandinsky's F
+sign, which produced `deck quadrant F+D+ has NO qualifying work` and exit 1.
+A warning rather than an error at one, because the thin state is structural and
+failing the build would block on a condition no data edit can clear.
