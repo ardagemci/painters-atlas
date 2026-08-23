@@ -361,9 +361,15 @@ fi
 # the harness writes to main, it is append-only, it is a single line, and it
 # says what happened rather than changing anything about Pigment.
 REPORT_FILE="$(cd "$TREE" && git diff --name-only "$BASE"..HEAD | grep -E '^protocol/runs/.*\.md$' | head -1 | xargs -I{} basename {} 2>/dev/null || true)"
+# A writ may publish its own summary as JSON alongside the report. The runner
+# cannot compute this — what counts as a finding is the writ's business, not
+# the harness's — so it is recorded verbatim and never interpreted.
+FINDINGS_REL="$(cd "$TREE" && git diff --name-only "$BASE"..HEAD | grep -E '^protocol/runs/.*\.json$' | grep -v ledger | head -1 || true)"
+FINDINGS_ARG=""
+[ -n "$FINDINGS_REL" ] && FINDINGS_ARG="--findings $TREE/$FINDINGS_REL"
 LEDGER_LINE="$(python3 tools/lane3_ledger.py \
   --writ "$WRIT_ID" --base "$BASE" --branch "$BRANCH" --outcome clean \
-  --report "${REPORT_FILE:-none}" \
+  --report "${REPORT_FILE:-none}" $FINDINGS_ARG \
   --result "$SCRATCH/result.json" --verifiers "$VERIFIER_LOG" 2>/dev/null || true)"
 if [ -n "$LEDGER_LINE" ]; then
   mkdir -p "$(dirname "$LEDGER_REL")"

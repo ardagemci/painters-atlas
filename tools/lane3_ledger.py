@@ -51,6 +51,24 @@ def parse_counts(text):
     return counts
 
 
+def read_findings(path):
+    """A writ's own summary, when it produced one.
+
+    The runner cannot compute this: what counts as a finding is the writ's
+    business, not the harness's. W-003 writes a JSON with a `summary` block;
+    anything shaped like that is recorded verbatim and never interpreted.
+    """
+    if not path:
+        return None
+    try:
+        with open(path, encoding="utf-8") as handle:
+            data = json.load(handle)
+    except Exception:
+        return None
+    summary = data.get("summary")
+    return summary if isinstance(summary, dict) else None
+
+
 def harness_usage(path):
     try:
         with open(path, encoding="utf-8") as handle:
@@ -66,6 +84,8 @@ def main(argv=None):
         p.add_argument("--" + flag, required=True)
     p.add_argument("--result")
     p.add_argument("--verifiers")
+    p.add_argument("--findings", help="a JSON file the run produced; its "
+                                      "`summary` block is recorded verbatim")
     p.add_argument("--abort-reason", default=None)
     args = p.parse_args(argv)
 
@@ -92,7 +112,16 @@ def main(argv=None):
         "branch": args.branch,
         "outcome": args.outcome,
         "verifiers": verifiers,
-        "counts": parse_counts(verifier_text),
+        # Namespaced deliberately. These are scraped from whatever the
+        # verifiers printed, which for every writ so far is the validator's
+        # registry summary — so `attribution_required` here means "photo
+        # credits requiring attribution" (96), while W-003's own report uses
+        # that exact phrase for "artwork images under CC-BY" (7). Two
+        # unrelated quantities under one name is worse than a missing number:
+        # a missing number is visibly missing, and this one is present,
+        # plausible, and wrong.
+        "registry": parse_counts(verifier_text),
+        "findings": read_findings(args.findings),
         "turns": turns,
         "cost_usd": cost,
         "stop_reason": subtype,
