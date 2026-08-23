@@ -329,6 +329,58 @@ class LedgerTest(unittest.TestCase):
         """The ledger is evidence, not a gate; the verifiers already decided."""
         self.assertEqual(self.mod.parse_counts("nothing useful here"), {})
 
+    def test_scraped_counts_are_namespaced_away_from_findings(self):
+        """`attribution_required` meant 96 in the ledger (photo credits, from
+        the validator) and 7 in W-003's report (artwork images under CC-BY).
+        Two unrelated quantities under one name is worse than a missing
+        number: a missing number is visibly missing."""
+        import lane3_ledger
+        line = json.loads(subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "lane3_ledger.py"),
+             "--writ", "W-T", "--base", "abc", "--branch", "b",
+             "--outcome", "clean", "--report", "r.md"],
+            capture_output=True, text=True).stdout)
+        self.assertIn("registry", line)
+        self.assertIn("findings", line)
+        self.assertNotIn("counts", line, "the ambiguous key must be gone")
+
+    def test_a_writ_can_publish_its_own_findings(self):
+        """What counts as a finding is the writ's business, not the harness's."""
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp, "w.json")
+            f.write_text(json.dumps({"summary": {"entries": 282,
+                                                 "declared_page_wrong": 258}}))
+            line = json.loads(subprocess.run(
+                [sys.executable, str(ROOT / "tools" / "lane3_ledger.py"),
+                 "--writ", "W-003", "--base", "abc", "--branch", "b",
+                 "--outcome", "clean", "--report", "r.md", "--findings", str(f)],
+                capture_output=True, text=True).stdout)
+            self.assertEqual(line["findings"]["declared_page_wrong"], 258)
+            self.assertEqual(line["findings"]["entries"], 282)
+
+    def test_a_malformed_findings_file_is_dropped_not_fatal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp, "bad.json"); f.write_text("not json")
+            line = json.loads(subprocess.run(
+                [sys.executable, str(ROOT / "tools" / "lane3_ledger.py"),
+                 "--writ", "W-T", "--base", "a", "--branch", "b",
+                 "--outcome", "clean", "--report", "r.md", "--findings", str(f)],
+                capture_output=True, text=True).stdout)
+            self.assertIsNone(line["findings"])
+
+    def test_the_runner_hands_over_a_published_findings_file(self):
+        self.assertIn("--findings", self.script)
+        self.assertIn("FINDINGS_REL", self.script)
+        self.assertIn("grep -v ledger", self.script,
+                      "the ledger itself is not a findings file")
+
+    def test_the_shipped_ledger_uses_the_new_shape(self):
+        """Migrated in the same commit; a half-renamed ledger is unreadable."""
+        for line in (ROOT / "protocol/runs/ledger.jsonl").read_text().strip().splitlines():
+            d = json.loads(line)
+            self.assertIn("registry", d, d["run_id"])
+            self.assertNotIn("counts", d, d["run_id"])
+
     def test_the_runner_reads_the_previous_entry_from_main(self):
         self.assertIn('git show "main:${LEDGER_REL}"', self.script)
         self.assertIn("PREV_NOTE", self.script)
