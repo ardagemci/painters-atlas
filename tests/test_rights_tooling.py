@@ -793,6 +793,67 @@ A2_RETITLES = {
         ] },
 }
 
+#: Catalog Batch 03 (docs/CATALOG_BATCH_03.md), 2026-08-24 — js/catalog-6.js.
+#: Twelve works by twelve painters the atlas already leaned on and could not
+#: show a picture by, selected on measured inbound gravity. Backlog E1.
+#:
+#: NO NEW ARTWORK IMAGE ENTERS THE TREE. All twelve were already js/artworks.js
+#: gallery entries, audited and rendering on artist pages; a catalog record
+#: moves an image onto a second surface rather than adding an asset. So
+#: catalog_pd_rendered gains 12 and catalog_gallery_overlap moves with it, while
+#: total_unique and rendered_unique do not move for any of them. Same behaviour
+#: as the 22 records of Batch 01/02 above, and the reason a catalog batch is the
+#: cheapest honest way to grow the atlas.
+#:
+#: The two MUSEUM photographs below are a different matter and are the batch's
+#: only new assets: total_unique 835 -> 837, rendered_unique 834 -> 836.
+#:
+#: The prerender surface moves by FOUR, not twelve, and the arithmetic is worth
+#: keeping. Each artwork stub carries its own og:image, but build_seo.jxa.js
+#: also uses a pd catalog work as its artist's stub hero — so for eight of these
+#: twelve the URL was already on the metadata surface before the record existed.
+#: The four that were not are Rubens, Gérôme, Marc and Mondrian, whose artist
+#: heroes are other paintings (Rubens's is the CC BY Descent from the Cross,
+#: which is why it was never a catalog candidate). Plus the two museum
+#: photographs below: 4 + 2 = 6.
+CATALOG_BATCH_03 = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            U + "0/02/La_Libert%C3%A9_guidant_le_peuple_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_129_-_apr%C3%A8s_restauration_2024.jpg/500px-La_Libert%C3%A9_guidant_le_peuple_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_129_-_apr%C3%A8s_restauration_2024.jpg",
+            U + "3/32/Franz_Marc-The_fate_of_the_animals-1913.jpg/500px-Franz_Marc-The_fate_of_the_animals-1913.jpg",
+            U + "5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg/500px-John_Constable_-_The_Hay_Wain_%281821%29.jpg",
+            U + "8/80/Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg/500px-Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg",
+            U + "8/82/Camille_Pissarro%2C_The_Boulevard_Montmartre_at_Night%2C_1897.jpg/960px-Camille_Pissarro%2C_The_Boulevard_Montmartre_at_Night%2C_1897.jpg",
+            U + "a/a4/Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg/960px-Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg",
+            U + "a/ae/Portrait_de_Charles_1er%2C_roi_d%27Angleterre%2C_%C3%A0_la_chasse_-_Antoon_van_Dyck_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1236_%3B_MR_666.jpg/500px-Portrait_de_Charles_1er%2C_roi_d%27Angleterre%2C_%C3%A0_la_chasse_-_Antoon_van_Dyck_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1236_%3B_MR_666.jpg",
+            U + "c/c5/Jean-Leon_Gerome_Pollice_Verso.jpg/500px-Jean-Leon_Gerome_Pollice_Verso.jpg",
+            U + "d/d9/El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg/500px-El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg",
+            U + "d/df/La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg/500px-La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg",
+            U + "d/df/Nicolas_Poussin_-_Et_in_Arcadia_ego_%28deuxi%C3%A8me_version%29.jpg/960px-Nicolas_Poussin_-_Et_in_Arcadia_ego_%28deuxi%C3%A8me_version%29.jpg",
+            U + "e/e4/Henri_de_Toulouse-Lautrec%2C_At_the_Moulin_Rouge.jpg/500px-Henri_de_Toulouse-Lautrec%2C_At_the_Moulin_Rouge.jpg",
+        ] },
+    #: Two venues the batch had to open, because Pollice Verso and Gray Tree are
+    #: held by museums the registry did not contain — the E3 gap, met head on
+    #: rather than dodged by picking easier paintings. Both notes carry a
+    #: building photograph and both photographs require attribution (CC BY-SA
+    #: 2.0 Chanel Wheeler; CC BY-SA 4.0 Choinowski), credited in
+    #: js/photo-credits.js. The Den Haag file was picked by LOOKING at it: the
+    #: obvious candidate, "Den Haag - Gemeentemuseum (39788683042).jpg", is a
+    #: painting hanging inside the building, not the building.
+    "museum_photos_rendered": { "removed": [], "added": [
+            U + "2/27/Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg/960px-Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg",
+            U + "3/3e/Kunstmuseum_Den_Haag.jpg/960px-Kunstmuseum_Den_Haag.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "2/27/Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg/960px-Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg",
+            U + "3/32/Franz_Marc-The_fate_of_the_animals-1913.jpg/500px-Franz_Marc-The_fate_of_the_animals-1913.jpg",
+            U + "3/3e/Kunstmuseum_Den_Haag.jpg/960px-Kunstmuseum_Den_Haag.jpg",
+            U + "8/80/Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg/500px-Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg",
+            U + "c/c5/Jean-Leon_Gerome_Pollice_Verso.jpg/500px-Jean-Leon_Gerome_Pollice_Verso.jpg",
+            U + "d/d9/El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg/500px-El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -811,7 +872,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -841,10 +902,19 @@ class TestAssetInventory(unittest.TestCase):
         # ledger above) replaced three detail shots and added nine photographs to
         # venues that had none. +12 -3 = +9 on both total and rendered; nothing
         # else moves. Full measurement: docs/MUSEUM_PHOTO_AUDIT.md.
-        self.assertEqual(c["total_unique"], 835)   # +1: the MOA Atami photograph
-        self.assertEqual(c["rendered_unique"], 834)   # +1: the same      # 796 + the same Hirshhorn photo
+        # 835 -> 837 and 834 -> 836: Catalog Batch 03 opened two venues the
+        # registry did not hold — Phoenix Art Museum and Kunstmuseum Den Haag —
+        # and their building photographs are the ONLY genuinely new assets in
+        # that batch. Its twelve artworks moved no total at all: every one was
+        # already a js/artworks.js gallery image, so they land on
+        # catalog_gallery_overlap instead.
+        self.assertEqual(c["total_unique"], 837)   # +2: the two new museum photographs
+        self.assertEqual(c["rendered_unique"], 836)   # +2: the same, both rendered
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
-        self.assertEqual(c["catalog_gallery_overlap"], 116)   # +1: the Caillebotte record
+        # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
+        # pool. This number moving while total_unique holds is the signature of
+        # a catalog batch done from the audited pool rather than from new images.
+        self.assertEqual(c["catalog_gallery_overlap"], 128)   # +12: Catalog Batch 03
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -920,11 +990,11 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 282)
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 294)   # +12: Catalog Batch 03
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 114)
+        self.assertEqual(len(rr.SURFACES["museum"]()), 116)   # +2: Phoenix, Kunstmuseum Den Haag
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 554)

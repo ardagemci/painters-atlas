@@ -2,19 +2,19 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-08-08
+   Generated: 2026-08-24
 
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 114
-     entries, 96 of which carry a licence requiring attribution; the
+     (js/venues.js). One entry per photograph in js/museums-1.js. 116
+     entries, 98 of which carry a licence requiring attribution; the
      other 18 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
      Commons file title as derived from the image URL (see commonsTitle() in
-     js/app.js). 28 entries. Files whose Commons metadata asserts a
+     js/app.js). 24 entries. Files whose Commons metadata asserts a
      public-domain or CC0 basis are deliberately absent: that assertion carries
      no attribution obligation, and the existing "image via Wikimedia Commons"
      source link already names their origin.
@@ -74,6 +74,7 @@ window.PHOTO_CREDITS = {
 "kunsthalle-mannheim": { author:"Immanuel Giel", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Kunsthalle_Mannheim_Eingangsportal.jpg" },
 "kunsthistorisches": { author:"Hubertl", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:AT_13763_Exterior_of_the_Kunsthistorisches_Museum,_Vienna-4.jpg", required:true },
 "kunstmuseum-basel": { author:"Wladyslaw Sojka", license:"FAL", licenseUrl:"http://artlibre.org/licence/lal/en", page:"https://commons.wikimedia.org/wiki/File:Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg", required:true },
+"kunstmuseum-den-haag": { author:"Choinowski", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Kunstmuseum_Den_Haag.jpg", required:true },
 "lazaro-galdiano": { author:"Luis García (Zaqarbal)", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Museo_L%C3%A1zaro_Galdiano_(Madrid)_02.jpg", required:true },
 "leopold-museum": { author:"Gugerell", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_07_Leopold_Museum_a.jpg" },
 "louvre": { author:"Benh LIEU SONG (Flickr)", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg", required:true },
@@ -112,6 +113,7 @@ window.PHOTO_CREDITS = {
 "palazzo-barberini": { author:"PubblicUsername", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Palazzo_Barberini_-_esterno.jpg", required:true },
 "pera-museum": { author:"Tatiana Matlina", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Istanbul_Beyoglu_Pera_museum.jpg", required:true },
 "philadelphia-museum-of-art": { author:"User:Rgordon6~commonswiki", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Philadelphia_Museum_of_Art_2005.jpg" },
+"phoenix-art-museum": { author:"Chanel Wheeler", license:"CC BY-SA 2.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/2.0", page:"https://commons.wikimedia.org/wiki/File:Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg", required:true },
 "pio-monte-della-misericordia": { author:"Giuseppe Guida", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Pio_Monte_della_Misericordia._(8067).jpg", required:true },
 "prado": { author:"Emilio J. Rodríguez Posada", license:"CC BY-SA 2.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/2.0", page:"https://commons.wikimedia.org/wiki/File:Museo_del_Prado_2016_(25185969599).jpg", required:true },
 "pushkin-museum": { author:"user:Ghirlandajo", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Gmii.jpg", required:true },
@@ -157,17 +159,14 @@ window.IMAGE_CREDITS = {
 "File:Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_(1st_Floor)_-_The_Windmill_at_Wijk_bij_Duurstede_c._1670_by_Jacob_van_Ruisdael.png": { author:"Txllxt TxllxT", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_(1st_Floor)_-_The_Windmill_at_Wijk_bij_Duurstede_c._1670_by_Jacob_van_Ruisdael.png", required:true },
 "File:Arezzo_Piero_general_04.JPG": { author:"Miguel Hermoso Cuesta", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Arezzo_Piero_general_04.JPG", required:true },
 "File:Chaïm_soutine,_il_piccolo_pasticcere,_1922-23_ca..JPG": { author:"Sailko", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Cha%C3%AFm_soutine,_il_piccolo_pasticcere,_1922-23_ca..JPG", required:true },
-"File:Composition_(1917)_-_Liubova_Popova_(1889-1924)_(45056449312).jpg": { author:"Pedro Ribeiro Simões from Lisboa, Portugal", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Composition_(1917)_-_Liubova_Popova_(1889-1924)_(45056449312).jpg", required:true },
 "File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg": { author:"Regan Vercruysse from Stewartsville, New Jersey, USA", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg", required:true },
 "File:Flickr_-_…trialsanderrors_-_Utamaro,_Young_lady_blowing_on_a_poppin,_1790.jpg": { author:"…trialsanderrors", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Flickr_-_%E2%80%A6trialsanderrors_-_Utamaro,_Young_lady_blowing_on_a_poppin,_1790.jpg", required:true },
 "File:Grieving_parents_(16127037905).jpg": { author:"Thomas Quine", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Grieving_parents_(16127037905).jpg", required:true },
 "File:Ida_Rubinstein_by_V._Serov_(GRM)_FRAME_by_shakko_01.jpg": { author:"Shakko", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Ida_Rubinstein_by_V._Serov_(GRM)_FRAME_by_shakko_01.jpg", required:true },
 "File:Isenheimer_Altar_(Colmar)_jm01221_deriv.jpg": { author:"joergens.mi", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Isenheimer_Altar_(Colmar)_jm01221_deriv.jpg", required:true },
-"File:Joaquìn_sorolla_y_bastida,_visione_della_spagna,_1911-19,_02.JPG": { author:"Sailko", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Joaqu%C3%ACn_sorolla_y_bastida,_visione_della_spagna,_1911-19,_02.JPG", required:true },
 "File:Katsushika_Hokusai,_tempesta_sotto_la_vetta,_dalla_serie_delle_36_vedute_del_monte_fuji,_1831_ca.jpg": { author:"Sailko", license:"CC BY 3.0", licenseUrl:"https://creativecommons.org/licenses/by/3.0", page:"https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai,_tempesta_sotto_la_vetta,_dalla_serie_delle_36_vedute_del_monte_fuji,_1831_ca.jpg", required:true },
 "File:Mantegna_-_Camera_degli_Sposi.jpg": { author:"Gonzaloferjar", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Mantegna_-_Camera_degli_Sposi.jpg", required:true },
 "File:Max_Beckmann,_Departure.jpg": { author:"Max Beckmann", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Max_Beckmann,_Departure.jpg", required:true },
-"File:Mihri_Hanım_-_Leyla_Turgut_Portresi.jpg": { author:"Emre481", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Mihri_Han%C4%B1m_-_Leyla_Turgut_Portresi.jpg", required:true },
 "File:Mrs._Siddons_as_the_Tragic_Muse_(3051182537).jpg": { author:"Joshua Reynolds", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Mrs._Siddons_as_the_Tragic_Muse_(3051182537).jpg", required:true },
 "File:Osman_I_miniature_by_Nakkaş_Osman.jpg": { author:"Nakkaş Osman", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Osman_I_miniature_by_Nakka%C5%9F_Osman.jpg", required:true },
 "File:Paul_gauguin,_vahine_no_te_tiare_(la_donna_coi_fiori),_1891,_MIN_1828,_02.jpg": { author:"Francesco Bini", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Paul_gauguin,_vahine_no_te_tiare_(la_donna_coi_fiori),_1891,_MIN_1828,_02.jpg", required:true },
@@ -175,7 +174,6 @@ window.IMAGE_CREDITS = {
 "File:Piero_della_Francesca_The_Resurrection_detail_VlRan.jpg": { author:"VlRan", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_The_Resurrection_detail_VlRan.jpg", required:true },
 "File:Pieta_de_Michelangelo_-_Vaticano.jpg": { author:"original file by Stanislav Traykov", license:"CC BY 2.5", licenseUrl:"https://creativecommons.org/licenses/by/2.5", page:"https://commons.wikimedia.org/wiki/File:Pieta_de_Michelangelo_-_Vaticano.jpg", required:true },
 "File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg": { author:"carulmare", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg", required:true },
-"File:Sistine_Chapel_ceiling_02_(brightened).jpg": { author:"Antoine Taveneaux", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Sistine_Chapel_ceiling_02_(brightened).jpg", required:true },
 "File:Stubbs_Anatomy_of_the_Horse_2.JPG": { author:"Warburg1866", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Stubbs_Anatomy_of_the_Horse_2.JPG", required:true },
 "File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg": { author:"GoldenArtists", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg", required:true },
 "File:The_Swing_(P430).jpg": { author:"Ajc994", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Swing_(P430).jpg", required:true },
