@@ -39,6 +39,13 @@ class CensusTest(unittest.TestCase):
         "pollice-verso", "charles-i-at-the-hunt", "madame-x",
         "the-fate-of-the-animals", "the-boulevard-montmartre-at-night",
         "gray-tree", "et-in-arcadia-ego", "the-hay-wain", "at-the-moulin-rouge",
+        # Catalog Batch 04, js/catalog-7.js, 2026-08-24 (docs/CATALOG_BATCH_04.md)
+        "bal-du-moulin-de-la-galette", "the-bolt", "mr-and-mrs-andrews",
+        "the-gleaners", "the-heart-of-the-andes",
+        "frescoes-of-the-transfiguration-novgorod",
+        "portrait-of-doge-leonardo-loredan", "madame-de-pompadour",
+        "the-embarkation-for-cythera", "forest-british-columbia",
+        "the-papal-palace-avignon", "the-beaneater",
     }
 
     def test_it_finds_every_public_domain_record(self):

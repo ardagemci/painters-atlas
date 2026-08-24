@@ -854,6 +854,70 @@ CATALOG_BATCH_03 = {
 }
 
 
+#: Catalog Batch 04 (docs/CATALOG_BATCH_04.md), 2026-08-24 — js/catalog-7.js.
+#: The Batch 03 ranking re-run over the 113 painters still holding audited
+#: gallery images and no record. Backlog E1.
+#:
+#: Same economics as Batch 03, and they are the point: all twelve artwork images
+#: were ALREADY js/artworks.js gallery entries, so catalog_pd_rendered gains 12
+#: and catalog_gallery_overlap moves 128 -> 140 while total_unique does not move
+#: for a single one of them.
+#:
+#: The FOUR museum photographs are the batch's only new assets: total_unique
+#: 837 -> 841, rendered_unique 836 -> 840. Batch 03 predicted this cost would
+#: rise as the ranking moved away from the Louvre and it did — two new venues
+#: became four (Wallace Collection, Vancouver Art Gallery, Palazzo Colonna, and
+#: the Church of the Transfiguration on Ilyina Street in Veliky Novgorod, which
+#: is the E3 gap in its purest form: a 1378 fresco cycle whose holding building
+#: had no registry row).
+#:
+#: prerender_metadata_refs moves by TEN: six artwork stubs whose og:image was not
+#: already on the surface as their artist's stub hero (Signac, Gainsborough,
+#: Fragonard, Church, Boucher, Carracci), plus the four museum photographs. For
+#: the other six the artist hero was already this work.
+#:
+#: One image in this batch was WRONG when first written and the census caught it.
+#: js/catalog-7.js originally carried a Signac file named "..._-_Google_Art_
+#: Project.jpg" that does not exist on Commons; the real gallery file is
+#: "..._-_1909.jpg". tools/audit_artwork_rights.py reported it as `missing` and
+#: as used_in ['js/catalog-7.js'] alone — a catalog image that its own artist's
+#: gallery does not also carry is the signature of an invented URL.
+CATALOG_BATCH_04 = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/a/ac/Eleutherius_of_Illyria_%281378%2C_Theophanes_the_Greek%29.jpg",
+            U + "1/1f/Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg/500px-Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",
+            U + "2/28/L%27Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/500px-L%27Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg",
+            U + "3/30/Paul_Signac_-_Avignon._Soir_%28le_ch%C3%A2teau_des_Papes%29_-_1909.jpg/960px-Paul_Signac_-_Avignon._Soir_%28le_ch%C3%A2teau_des_Papes%29_-_1909.jpg",
+            U + "5/52/Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg/500px-Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg",
+            U + "5/5f/Le_Verrou_-_Jean-Honor%C3%A9_Fragonard_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1974_2.jpg/500px-Le_Verrou_-_Jean-Honor%C3%A9_Fragonard_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1974_2.jpg",
+            U + "6/6b/Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg/500px-Giovanni_Bellini%2C_portrait_of_Doge_Leonardo_Loredan.jpg",
+            U + "6/6f/Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg/500px-Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg",
+            U + "7/78/Church_Heart_of_the_Andes.jpg/500px-Church_Heart_of_the_Andes.jpg",
+            U + "9/95/Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg/500px-Emily_Carr_%281931%E2%80%9332%29_Forest%2C_British_Columbia.jpg",
+            U + "9/97/Fran%C3%A7ois_Boucher_-_Madame_de_Pompadour%2C_1759.jpg/960px-Fran%C3%A7ois_Boucher_-_Madame_de_Pompadour%2C_1759.jpg",
+            U + "a/ae/Carracci_-_Der_Bohnenesser.jpeg/500px-Carracci_-_Der_Bohnenesser.jpeg",
+        ] },
+    "museum_photos_rendered": { "removed": [], "added": [
+            U + "6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
+            U + "b/bd/Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg/960px-Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg",
+            U + "c/c0/Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg/960px-Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg",
+            U + "c/c5/Palazzo_Colonna_-_panoramio.jpg/960px-Palazzo_Colonna_-_panoramio.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "3/30/Paul_Signac_-_Avignon._Soir_%28le_ch%C3%A2teau_des_Papes%29_-_1909.jpg/960px-Paul_Signac_-_Avignon._Soir_%28le_ch%C3%A2teau_des_Papes%29_-_1909.jpg",
+            U + "5/52/Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg/500px-Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg",
+            U + "5/5f/Le_Verrou_-_Jean-Honor%C3%A9_Fragonard_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1974_2.jpg/500px-Le_Verrou_-_Jean-Honor%C3%A9_Fragonard_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1974_2.jpg",
+            U + "6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
+            U + "7/78/Church_Heart_of_the_Andes.jpg/500px-Church_Heart_of_the_Andes.jpg",
+            U + "9/97/Fran%C3%A7ois_Boucher_-_Madame_de_Pompadour%2C_1759.jpg/960px-Fran%C3%A7ois_Boucher_-_Madame_de_Pompadour%2C_1759.jpg",
+            U + "a/ae/Carracci_-_Der_Bohnenesser.jpeg/500px-Carracci_-_Der_Bohnenesser.jpeg",
+            U + "b/bd/Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg/960px-Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg",
+            U + "c/c0/Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg/960px-Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg",
+            U + "c/c5/Palazzo_Colonna_-_panoramio.jpg/960px-Palazzo_Colonna_-_panoramio.jpg",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -872,7 +936,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -908,13 +972,17 @@ class TestAssetInventory(unittest.TestCase):
         # that batch. Its twelve artworks moved no total at all: every one was
         # already a js/artworks.js gallery image, so they land on
         # catalog_gallery_overlap instead.
-        self.assertEqual(c["total_unique"], 837)   # +2: the two new museum photographs
-        self.assertEqual(c["rendered_unique"], 836)   # +2: the same, both rendered
+        # 837 -> 841 and 836 -> 840: Catalog Batch 04 opened FOUR more venues
+        # (Wallace Collection, Vancouver Art Gallery, Palazzo Colonna, and the
+        # Church of the Transfiguration on Ilyina Street). Their photographs are
+        # again the only new assets; the twelve artworks moved no total.
+        self.assertEqual(c["total_unique"], 841)   # +4: Batch 04's museum photographs
+        self.assertEqual(c["rendered_unique"], 840)   # +4: the same, all rendered
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 128)   # +12: Catalog Batch 03
+        self.assertEqual(c["catalog_gallery_overlap"], 140)   # +12 again: Catalog Batch 04
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -990,11 +1058,11 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 294)   # +12: Catalog Batch 03
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 306)   # +12 again: Catalog Batch 04
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 116)   # +2: Phoenix, Kunstmuseum Den Haag
+        self.assertEqual(len(rr.SURFACES["museum"]()), 120)   # +4: Batch 04's venues
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 554)
