@@ -529,17 +529,42 @@ inside an E1 batch. Each needs a venue row, a museum note with a hook, and a
 verified building photograph. Expect the ratio to rise as batches move away from
 the Louvre.
 
-**Still open: 182 painters with no record, 113 of them holding audited images.**
-Run the ranking again and take the next twelve.
+**Batch 04 shipped the same day** (`docs/CATALOG_BATCH_04.md`, `js/catalog-7.js`):
+the same ranking re-run, twelve more records, `js/venues.js` **+4**. Two things
+it settled that Batch 03 left open:
 
-*Standing warning, now with four instances.* `confirmed` does not mean
-catalogable. Batch 01: of 20 candidates all 20 confirmed, only 13 resolved to a
-usable Wikidata item. Batch 03: all 12 resolved, and **three carried a wrong
+- **The tie.** Seven painters tied at 11 points with *identical* values on all
+  three signals, so the measure could not choose. Broken by a second-order form
+  of the same question — how many of a painter's influence edges land on a
+  painter who already has a record — which separated 3, 2, 1, 1, 1, 0, 0. Signac
+  came top of that because one of his edges runs to **Delacroix, catalogued in
+  Batch 03**: the graph tightens as the atlas fills. Precedent now, not a fresh
+  judgement each time.
+- **Vasari is a standing exclusion**, recorded once so no future batch re-argues
+  it. *Six Tuscan Poets* is filed as an editorial-list idea instead, which is the
+  honest route to Tier 1 under `ARTWORK_SCHEMA` §8.
+
+**Still open: 170 painters with no record, 101 of them holding audited images.**
+Run the ranking again and take the next twelve. Budget **five** new venues: the
+cost went two-in-twelve, then four-in-twelve, exactly as Batch 03 predicted.
+
+*Standing warning, now with three batches of instances.* `confirmed` does not
+mean catalogable. Batch 01: of 20 candidates all 20 confirmed, only 13 resolved
+to a usable Wikidata item. Batch 03: all 12 resolved, and **three carried a wrong
 dimension and one a wrong date** — a framed measurement filed as the canvas, a
 millimetre figure, a measurement of a cropped derivative file, and 1810 for an
-1814 painting. All four passed the existing `ARTWORK_SCHEMA` §7.1 checks. Only
-comparison with the holding institution caught them; §7.1 gained a fourth
-dimension rule because of it.
+1814 painting. All four passed the existing `ARTWORK_SCHEMA` §7.1 checks; §7.1
+gained a fourth dimension rule because of it. Batch 04: **five of twelve** needed
+arbitration, including one case where **Wikidata and English Wikipedia agree with
+each other and both differ from the Musée d'Orsay**. Two aggregators agreeing is
+one source, not two checks.
+
+*And one image was simply wrong.* Batch 04's Signac shipped a Commons filename
+that does not exist, because an empty wikitext fetch was read as "no template"
+rather than "no file". `tools/audit_artwork_rights.py` caught it: the census
+reported the entry `missing` and its `used_in` as `js/catalog-7.js` **alone**.
+**A catalog image the artist's own gallery does not also carry is an invented
+URL** — a batch drawn from the pool can only ever re-use one. Reusable check.
 
 **E2 · The influence graph has no sources.** 238 edges, zero citations. And **not
 one edge connects two different non-Western traditions** — no China→Korea, no

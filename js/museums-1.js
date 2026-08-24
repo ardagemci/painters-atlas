@@ -9,6 +9,20 @@
    Enforced by tools/validate.jxa.js. */
 window.MUSEUM_NOTES = {
 
+"wallace-collection": {
+  hook: "A townhouse full of France, and nothing may leave it",
+  founded: "1897",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg/960px-Hertford_House%2C_Manchester_Square%2C_Marylebone_-_geograph.org.uk_-_7235353.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Hertford_House,_Manchester_Square,_Marylebone_-_geograph.org.uk_-_7235353.jpg" },
+  essay: "Four Marquesses of Hertford and then Sir Richard Wallace spent the nineteenth century buying French eighteenth-century art, much of it cheap, from families selling after the Revolution. What they assembled is the reason you can see Boucher, Fragonard and Watteau properly without going to Paris — along with armour, Sèvres porcelain, and Frans Hals's Laughing Cavalier.\n\nWallace's widow left the whole thing to the nation in 1897 on one condition: nothing in it may ever leave the house, not even on loan. For more than a century that was absolute. In 2019 the trustees obtained a Charity Commission order allowing temporary loans for the first time, which was news. Twenty-five galleries in a Marylebone townhouse, still free to walk into." },
+
+"vancouver-art-gallery": {
+  hook: "A courthouse that changed its mind, and Emily Carr's home",
+  founded: "1931",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg/960px-Vancouver_%28BC%2C_Canada%29%2C_Art_Gallery_--_2022_--_1923.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Art_Gallery_--_2022_--_1923.jpg" },
+  essay: "It opened in 1931 in a purpose-built gallery and moved in 1983 into the old provincial law courts, a Francis Rattenbury building of 1911 that is now itself a National Historic Site. The columns and the pediment are the courthouse's; the plaza in front of them has been the city's protest ground for decades, which makes the entrance more interesting than most.\n\nThe collection runs to some twelve thousand works and its centre of gravity is Emily Carr — the Emily Carr Trust came here, and the forests she painted on Vancouver Island are twenty minutes and one ferry away. It is the largest art museum in western Canada, and it has been trying to move to a new building in Larwill Park for most of two decades." },
+
 "kunstmuseum-den-haag": {
   hook: "Berlage's last building, and every Mondrian you can name",
   founded: "1866",
@@ -617,5 +631,13 @@ window.MUSEUM_NOTES = {
 "moa-museum-of-art":      {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
            page:"https://commons.wikimedia.org/wiki/File:231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg" },
-  hook: "A hillside above Atami, entered by escalator" }
+  hook: "A hillside above Atami, entered by escalator" },
+"palazzo-colonna":        {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Palazzo_Colonna_-_panoramio.jpg/960px-Palazzo_Colonna_-_panoramio.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Palazzo_Colonna_-_panoramio.jpg" },
+  hook: "One family, twenty generations, one Roman block" },
+"transfiguration-ilyina-novgorod": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg" },
+  hook: "Built 1374, painted 1378, and the date is written down" }
 };

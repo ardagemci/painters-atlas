@@ -7,8 +7,8 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 116
-     entries, 98 of which carry a licence requiring attribution; the
+     (js/venues.js). One entry per photograph in js/museums-1.js. 120
+     entries, 102 of which carry a licence requiring attribution; the
      other 18 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
@@ -111,6 +111,7 @@ window.PHOTO_CREDITS = {
 "orangerie": { author:"Homonihilis", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG", required:true },
 "oslo-university-aula": { author:"Riksarkivet (National Archives of Norway) from Oslo, Norway", license:"No restrictions", licenseUrl:"https://www.flickr.com/commons/usage/", page:"https://commons.wikimedia.org/wiki/File:Festakt._Universitetets_aula._(8612632859).jpg" },
 "palazzo-barberini": { author:"PubblicUsername", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Palazzo_Barberini_-_esterno.jpg", required:true },
+"palazzo-colonna": { author:"Vadim Zhivotovsky", license:"CC BY 3.0", licenseUrl:"https://creativecommons.org/licenses/by/3.0", page:"https://commons.wikimedia.org/wiki/File:Palazzo_Colonna_-_panoramio.jpg", required:true },
 "pera-museum": { author:"Tatiana Matlina", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Istanbul_Beyoglu_Pera_museum.jpg", required:true },
 "philadelphia-museum-of-art": { author:"User:Rgordon6~commonswiki", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Philadelphia_Museum_of_Art_2005.jpg" },
 "phoenix-art-museum": { author:"Chanel Wheeler", license:"CC BY-SA 2.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/2.0", page:"https://commons.wikimedia.org/wiki/File:Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg", required:true },
@@ -143,11 +144,14 @@ window.PHOTO_CREDITS = {
 "thyssen-bornemisza": { author:"Kyle Magnuson from Los Angeles, United States", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Site_of_the_Retiro_and_the_Prado_in_Madrid_49_(29684554308).jpg", required:true },
 "tokyo-national-museum": { author:"Wiiii", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg", required:true },
 "toledo-cathedral": { author:"Fernando", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:FP_Toledo_Cathedral_2025_-_West_fa%C3%A7ade.jpg", required:true },
+"transfiguration-ilyina-novgorod": { author:"Катерина Фёдорова", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg", required:true },
 "tretyakov": { author:"A.Savin", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Moscow_05-2012_TretyakovGallery.jpg", required:true },
 "uffizi": { author:"Verum3414", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Piazzale_degli_Uffizi_perspective_view,_Florence,_Italy,_August_2025.jpg", required:true },
 "van-gogh-museum": { author:"C messier", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Van_Gogh_Museum_7206_rt_HDR.jpg", required:true },
+"vancouver-art-gallery": { author:"Dietmar Rabich", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Art_Gallery_--_2022_--_1923.jpg", required:true },
 "vatican-museums": { author:"Américo Toledano", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Museos_Vaticanos_-_Entrada_-_001.jpg", required:true },
 "villa-farnesina": { author:"Jean-Pierre Dalbéra from Paris, France", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:La_villa_Farnesina_(Rome)_(34029492720).jpg", required:true },
+"wallace-collection": { author:"Dylan Moore", license:"CC BY-SA 2.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/2.0", page:"https://commons.wikimedia.org/wiki/File:Hertford_House,_Manchester_Square,_Marylebone_-_geograph.org.uk_-_7235353.jpg", required:true },
 "whitney": { author:"Jim.henderson", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Gansevoort_Whitney_April_2013_jeh.jpg" },
 "wien-museum": { author:"Christine Koblitz", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_Museum_Neu.jpg" },
 "yale-university-art-gallery": { author:"Ragesoss", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:Yale_University_Art_Gallery_exterior.jpg" }
