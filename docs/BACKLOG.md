@@ -503,11 +503,43 @@ knowingly, not forgotten:
 
 # E. The large threads
 
-**E1 · The atlas is still mostly inert.** 22 catalog records exist against a pool
-of ~413 audited images across 141 artists who have none. The Curator's working
-ratio: `confirmed` does not mean catalogable — of 20 candidates all 20 confirmed
-but only 13 resolved to a Wikidata item carrying collection, date and dimensions.
-Several more batches of exactly the work that just succeeded.
+**E1 · The atlas is still mostly inert — one batch less so. Batch 03 shipped
+2026-08-24 (`docs/CATALOG_BATCH_03.md`, `js/catalog-6.js`): 12 records, 12
+painters, `js/venues.js` +2.**
+
+Re-measured before the batch, sharper than this entry used to read: **194 of 266
+painters (73%) had no catalog record**, and **125 of them carried 370 audited
+gallery images** already rendering on their artist pages. That pool is the work.
+
+Batch 03's cut was **inbound gravity** — influence-graph degree ×3, mentions by
+name in other painters' prose ×2, taxonomy-copy mentions ×1 — which asks what
+the atlas leans on and cannot show, and is reproducible from the repository
+without judgement. **The measure has one known blind spot, recorded rather than
+patched:** Vasari ranked third on ten prose mentions that are all citations of
+*the Lives*. Bibliographic gravity, not painterly. He was excluded by hand.
+
+**The economics are the reason to keep going.** Twelve records added **no new
+image asset to the tree** — every one was already an audited gallery image, so
+`catalog_gallery_overlap` moved 116 → 128 while `total_unique` did not move for
+any of them. A catalog batch is the cheapest honest growth available.
+
+**What it costs is venues.** Two of twelve were held by museums the registry did
+not contain (Phoenix Art Museum; Kunstmuseum Den Haag) — the **E3** gap arriving
+inside an E1 batch. Each needs a venue row, a museum note with a hook, and a
+verified building photograph. Expect the ratio to rise as batches move away from
+the Louvre.
+
+**Still open: 182 painters with no record, 113 of them holding audited images.**
+Run the ranking again and take the next twelve.
+
+*Standing warning, now with four instances.* `confirmed` does not mean
+catalogable. Batch 01: of 20 candidates all 20 confirmed, only 13 resolved to a
+usable Wikidata item. Batch 03: all 12 resolved, and **three carried a wrong
+dimension and one a wrong date** — a framed measurement filed as the canvas, a
+millimetre figure, a measurement of a cropped derivative file, and 1810 for an
+1814 painting. All four passed the existing `ARTWORK_SCHEMA` §7.1 checks. Only
+comparison with the holding institution caught them; §7.1 gained a fourth
+dimension rule because of it.
 
 **E2 · The influence graph has no sources.** 238 edges, zero citations. And **not
 one edge connects two different non-Western traditions** — no China→Korea, no

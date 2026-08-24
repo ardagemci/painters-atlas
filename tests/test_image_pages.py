@@ -28,13 +28,33 @@ class CensusTest(unittest.TestCase):
     def setUp(self):
         self.pd = [r for r in checker.records() if r["status"] == "pd"]
 
+    #: Catalog records added since the W-003 register was frozen. The register is
+    #: a RUN ARTIFACT — a dated record of what a specific run saw — so it is never
+    #: rewritten to match a later tree. Growth is declared here instead, by id,
+    #: which is a stronger check than bumping the number would be: the parser has
+    #: to find exactly these and nothing else.
+    SINCE_REGISTER = {
+        # Catalog Batch 03, js/catalog-6.js, 2026-08-24 (docs/CATALOG_BATCH_03.md)
+        "liberty-leading-the-people", "the-garden-of-love", "grande-odalisque",
+        "pollice-verso", "charles-i-at-the-hunt", "madame-x",
+        "the-fate-of-the-animals", "the-boulevard-montmartre-at-night",
+        "gray-tree", "et-in-arcadia-ego", "the-hay-wain", "at-the-moulin-rouge",
+    }
+
     def test_it_finds_every_public_domain_record(self):
         """Cross-checked against a register built by a completely different
         method — rights_register.py evaluates the JS, this parses text. A
         parser that silently reads fewer records reports a falsely clean
-        census, and agreeing with an independent count is what rules that out."""
-        expected = json.loads(REGISTER.read_text())["summary"]["entries"]
-        self.assertEqual(len(self.pd), expected)
+        census, and agreeing with an independent count is what rules that out.
+
+        The register is frozen at its run date, so the comparison is against
+        that count plus the records declared in SINCE_REGISTER — and the extra
+        records must be exactly those, not merely as many."""
+        frozen = json.loads(REGISTER.read_text())["summary"]["entries"]
+        self.assertEqual(len(self.pd), frozen + len(self.SINCE_REGISTER))
+        ids = {r["id"] for r in self.pd}
+        self.assertTrue(self.SINCE_REGISTER <= ids,
+                        "declared post-register records are missing from the census")
 
     def test_ids_are_artworks_not_museums(self):
         """`museum:{ id:"san-luigi-dei-francesi" }` sits between a record's id

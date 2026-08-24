@@ -9,6 +9,20 @@
    Enforced by tools/validate.jxa.js. */
 window.MUSEUM_NOTES = {
 
+"kunstmuseum-den-haag": {
+  hook: "Berlage's last building, and every Mondrian you can name",
+  founded: "1866",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kunstmuseum_Den_Haag.jpg/960px-Kunstmuseum_Den_Haag.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Kunstmuseum_Den_Haag.jpg" },
+  essay: "Hendrik Petrus Berlage designed it and did not live to see it open. The Hague's museum was founded in 1866 and spent seventy years in borrowed rooms before Berlage — the architect who taught Dutch modernism to build in brick — gave it a low ochre complex of courtyards around a reflecting pool. He died in 1934. The doors opened the year after.\n\nInside is the largest Mondrian holding anywhere, which means you can walk the whole distance from a recognisable tree to a grid of primary colour in one afternoon, in order, and watch it happen. Victory Boogie Woogie — unfinished on the easel when he died in New York — arrived in 1998 amid a national argument about the price. The name changed in 2019, from Gemeentemuseum to Kunstmuseum, and half the city still uses the old one." },
+
+"phoenix-art-museum": {
+  hook: "The southwest's largest — and where Gladiator began",
+  founded: "1959",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg/960px-Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Main_entrance_to_Phoenix_Art_Museum_-_19_June_2008.jpg" },
+  essay: "The largest visual-art museum in the American southwest, which in practice obliges it to be everything at once: American, Asian, European, Latin American, western American, modern, contemporary, and one of the few serious fashion collections in the country. Eighteen thousand works, a sculpture garden, and a long approach that keeps the sun off you.\n\nIt has also had an outsized effect on how the world pictures ancient Rome, and nobody planned that. Gérôme's Pollice Verso has hung here since 1968. When the producers of Gladiator wanted to explain the film to Ridley Scott, they put a reproduction of it in front of him before he had read the script, and he has said that settled it. Every thumbs-down in every Roman arena on film descends from a painting in Phoenix." },
+
 "prado": {
   hook: "Goya's workplace, Spain's fever dream",
   founded: "1819",
