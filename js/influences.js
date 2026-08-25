@@ -1,11 +1,36 @@
 /* PIGMENT — the influence graph.
-   Edge: [from, to, type]. Types:
+
+   Edge: [from, to, type] — or [from, to, type, source]. Types:
      taught      — from was to's teacher or formal mentor (directed)
      influenced  — from's work demonstrably shaped to's (directed)
      befriended  — friends, close colleagues, collaborators (symmetric)
      rivaled     — documented rivalry or feud (symmetric)
      partners    — partners in life and art (symmetric)
-   Every relationship is grounded in the artist bios elsewhere in the atlas. */
+
+   THIS HEADER USED TO SAY "Every relationship is grounded in the artist bios
+   elsewhere in the atlas." That was measured on 2026-08-24 (backlog E2,
+   docs/INFLUENCE_SOURCING.md) and it was FALSE for 107 of 246 edges — 43%.
+   Caravaggio shaped Velázquez and Rembrandt, and Giotto shaped Masaccio, but
+   none of those three painters' prose in this atlas says so. The claims are
+   sound art history; the stated grounding was not there.
+
+   What is true now, and what tools/validate.jxa.js enforces:
+
+     · An edge is GROUNDED if either endpoint's own prose in js/artists-*.js
+       names the other painter, OR the edge carries a fourth element, a source
+       string of at least 20 characters saying where the relationship is
+       attested.
+     · The validator counts the ungrounded edges on every run and FAILS if the
+       count rises above the recorded ceiling. The number can fall; it cannot
+       grow. A new edge must therefore be grounded one way or the other.
+
+   Grounding by prose is preferred over a source string, because prose is the
+   product: a reader learns the relationship, and the graph stops asserting
+   something the site never tells them. A source string is the honest fallback,
+   not the goal.
+
+   OD-5: a source records where a relationship is ATTESTED. It is not a finding
+   by this project, and "sourced" does not mean "verified true". */
 window.INFLUENCES = [
   /* ---- teachers & students ---- */
   ["theophanes-the-greek","andrei-rublev","taught"],
@@ -282,5 +307,25 @@ window.INFLUENCES = [
      and Gérôme, per the standard biography. */
   ["jean-leon-gerome","seker-ahmed-pasha","taught"],
   ["john-frederick-lewis","jean-leon-gerome","influenced"],
-  ["michelangelo","giorgio-vasari","influenced"]
+  ["michelangelo","giorgio-vasari","influenced"],
+
+  /* ---- added 2026-08-24 with the E2 sourcing pass ---- */
+
+  /* THE ATLAS'S FIRST EDGE BETWEEN TWO NON-WESTERN TRADITIONS. Before this line
+     the graph had 246 edges and NOT ONE joined two different non-Western
+     nations — measured, not assumed. See docs/INFLUENCE_SOURCING.md §4 for why
+     the rest of that gap is downstream of E3 rather than of this file: you
+     cannot draw Persia→Mughal without a Mughal painter in the roster. */
+  ["tsuguharu-foujita","diego-rivera","befriended",
+   "Foujita visited Rivera's studio soon after reaching Paris, and Rivera painted him in 'Portrait of Mr Kawashima and Foujita' (1914). Foujita's seven-month Mexican stay from November 1932 was drawn by the mural movement 'led by Diego Rivera, whom he had befriended in Paris'. en.wikipedia.org/wiki/Tsuguharu_Foujita, citing Lamia 2018 p.136 and Ikeda 2018 p.90."],
+
+  /* Three relationships THIS ATLAS ALREADY TELLS ITS READERS and the graph did
+     not carry. Masaccio's own record says Michelangelo, Leonardo and Raphael
+     "all sketched there as students" in the Brancacci Chapel; only the
+     Michelangelo edge existed. Bellini's record and Mantegna's each name the
+     other. All three are grounded by prose and need no source string — which is
+     the point of preferring prose. */
+  ["masaccio","leonardo-da-vinci","influenced"],
+  ["masaccio","raphael","influenced"],
+  ["andrea-mantegna","giovanni-bellini","influenced"]
 ];
