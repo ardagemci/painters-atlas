@@ -404,6 +404,7 @@ Object.keys(T1).forEach(function(aid){
   }
 });
 
+var infGrounding = { ungrounded: 0, sourced: 0 };
 // influence graph integrity
 try { eval(read(base + "js/influences.js")); } catch(e){ loadFail("influences.js ERROR: " + e.message); }
 const aIds = ids(A), EDGE_TYPES = { taught:1, influenced:1, befriended:1, rivaled:1, partners:1 };
@@ -417,6 +418,75 @@ const seenEdges = {};
   if(seenEdges[key]) errs.push("influence " + i + ": duplicate pair " + key);
   seenEdges[key] = 1;
 });
+
+/* E2 — every edge must be GROUNDED, and the ungrounded count may only fall.
+
+   js/influences.js used to claim in its header that "every relationship is
+   grounded in the artist bios elsewhere in the atlas". Measured on 2026-08-24
+   that was false for 107 of 246 edges. The claim is now enforced instead of
+   asserted: an edge is grounded if either endpoint's own prose names the other
+   painter, or the edge carries a fourth element — a source string.
+
+   This is a RATCHET, not a pass/fail. 107 edges are ungrounded today and
+   failing the build on them would block every unrelated change until a research
+   project finishes. What the ceiling stops is the thing that actually costs
+   something: a NEW edge asserted with nothing behind it. The number can fall
+   and the ceiling should be lowered when it does.
+
+   The name matcher is deliberately strict — word-boundary, accent-folded, and
+   with given names and ordinary words removed from the token set, because
+   "David" matches three painters and "Still" is a word. A false negative here
+   only asks for a source string, which is the safe direction to be wrong in. */
+const INF_UNGROUNDED_CEILING = 107;
+(function(){
+  const STOP = {};
+  ("della delle dalla van von der den del dei the and still young white black green " +
+   "paul jean john hans carl karl anna maria pierre henri louis frans juan luis jose david thomas james " +
+   "william george peter mary jacob joseph francis charles albert edward robert richard michael andrea " +
+   "antonio giovanni pietro alfaro clemente auguste marie").split(" ").forEach(function(w){ STOP[w] = 1; });
+
+  function fold(s){
+    return String(s == null ? "" : s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+  const tokens = {}, prose = {};
+  A.forEach(function(a){
+    const ts = {};
+    [a.name, a.id.replace(/-/g, " ")].forEach(function(src){
+      fold(src).split(/[\s.\-]+/).forEach(function(t){
+        if(t.length > 3 && !STOP[t]) ts[t] = 1;
+      });
+    });
+    tokens[a.id] = Object.keys(ts);
+    prose[a.id] = fold([a.tagline, a.life, a.career, a.outside].concat(a.facts || []).join(" "));
+    if(!tokens[a.id].length)
+      warns.push("influence grounding: artist " + a.id + " has no distinctive name token, so no edge of theirs can be attested by prose");
+  });
+  function names(text, aid){
+    return (tokens[aid] || []).some(function(t){
+      return new RegExp("\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(text);
+    });
+  }
+  let ungrounded = 0, sourced = 0;
+  (window.INFLUENCES || []).forEach(function(e, i){
+    const tag = "influence " + i + " (" + e[0] + " -> " + e[1] + ")";
+    const src = e[3];
+    if(src !== undefined){
+      if(typeof src !== "string") { errs.push(tag + ": source must be a string"); return; }
+      if(src.length < 20) { errs.push(tag + ": source is " + src.length + " chars — a stub source is worse than none"); return; }
+      sourced++;
+      return;                                   // a real source grounds the edge
+    }
+    if(!prose[e[0]] || !prose[e[1]]) return;    // unknown artist: already an error above
+    if(!names(prose[e[0]], e[1]) && !names(prose[e[1]], e[0])) ungrounded++;
+  });
+  infGrounding = { ungrounded: ungrounded, sourced: sourced };
+  if(ungrounded > INF_UNGROUNDED_CEILING)
+    errs.push("influence graph: " + ungrounded + " edges are neither attested in artist prose nor sourced, above the ceiling of " +
+              INF_UNGROUNDED_CEILING + ". A new edge must name its ground — write the relationship into a bio, or give the edge a source string.");
+  else if(ungrounded < INF_UNGROUNDED_CEILING)
+    warns.push("influence graph: ungrounded edges down to " + ungrounded + " from a ceiling of " + INF_UNGROUNDED_CEILING +
+               " — lower INF_UNGROUNDED_CEILING in tools/validate.jxa.js to keep the ratchet tight");
+})();
 M.forEach(x => { if(!A.some(a => a.movements.includes(x.id)) && !M.some(c => c.parent === x.id)) warns.push("movement " + x.id + " has no artists"); });
 T.forEach(x => { if(!A.some(a => a.techniques.includes(x.id)) && !T.some(c => c.parent === x.id)) warns.push("technique " + x.id + " has no artists"); });
 N.forEach(x => { if(!A.some(a => a.nation === x.id)) warns.push("nation " + x.id + " has no artists"); });
@@ -425,6 +495,7 @@ E.forEach(x => { if(!A.some(a => a.eras.includes(x.id))) warns.push("era " + x.i
 out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " + T.length +
   ", eras: " + E.length + ", nations: " + N.length + ", painter styles: " + Object.keys(styleNames).length +
   ", influence edges: " + (window.INFLUENCES || []).length +
+  " (ungrounded: " + infGrounding.ungrounded + ", sourced: " + infGrounding.sourced + ")" +
   ", venues: " + VEN.length + ", catalog: " + CAT.length + " (tier1: " + CAT.filter(function(w){ return w.tier === 1; }).length + ")" +
   ", daily pool: " + DAILY.length +
   ", museum notes: " + Object.keys(window.MUSEUM_NOTES || {}).length +

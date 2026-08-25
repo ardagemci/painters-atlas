@@ -566,10 +566,67 @@ reported the entry `missing` and its `used_in` as `js/catalog-7.js` **alone**.
 **A catalog image the artist's own gallery does not also carry is an invented
 URL** — a batch drawn from the pool can only ever re-use one. Reusable check.
 
-**E2 · The influence graph has no sources.** 238 edges, zero citations. And **not
-one edge connects two different non-Western traditions** — no China→Korea, no
-Persia→Ottoman, no Persia→Mughal, despite these being among the best-documented
-transmissions in world art.
+**E2 · MEASURED 2026-08-24 — `docs/INFLUENCE_SOURCING.md`. The file's own claim
+was the finding.**
+
+`js/influences.js` asserted in its header that *"every relationship is grounded
+in the artist bios elsewhere in the atlas"*. That is checkable, nobody had
+checked it, and it was **false for 107 of 246 edges — 43%**. The edges are not
+wrong: Caravaggio did shape Velázquez and Rembrandt, Giotto did shape Masaccio.
+**Not one of those three painters' records in this atlas says so.** By type the
+unattested edges are `influenced` 71, `befriended` 29, `rivaled` 5, `taught` 2 —
+teaching survives because a teacher is a biographical fact and the bios state it.
+
+**The measure was wrong twice before it was right, in both directions.**
+Surname-only matching read "Leonardo da Vinci" as "vinci" and scored every bio
+saying *Leonardo* as silent (117, false negatives). All-token matching let
+"David" match three painters and "Still" match the ordinary word (103, false
+positives — the dangerous direction). Word-boundary matching with given names
+and common words removed gives **107**, and names the one painter left with no
+distinctive token instead of failing on him silently. A fourth measure — the
+inverse question, what does the prose attest that the graph omits — returned 517
+pairs, was found to be the false-positive problem at scale, and **was thrown away
+rather than reported.**
+
+**Shipped: an optional fourth element and a ratchet.** An edge is now
+`[from, to, type]` or `[from, to, type, source]`; every `js/app.js` consumer
+destructures positionally, so nothing downstream sees it. An edge is **grounded**
+if either endpoint's prose names the other painter or it carries a source string
+≥20 chars. `tools/validate.jxa.js` counts the ungrounded on every run, prints
+`(ungrounded: N, sourced: M)`, and **fails if N rises above 107**. A ratchet, not
+a pass/fail: 107 exist, and failing the build on them would block every unrelated
+change until a research project finishes — which is how a guard gets deleted.
+What the ceiling stops is a **new** edge asserted with nothing behind it. Proved
+non-vacuous four ways, and the Python measure and the JXA implementation, written
+separately, agree exactly at 250 / 107 / 1.
+
+**Prose beats a source string, and that is a product argument.** If the
+relationship is in the bio a reader learns it; if it is only in a citation the
+graph asserts something the site never tells anyone. Three relationships **the
+atlas already tells its readers** were missing from the graph and were added free:
+Masaccio's record says Michelangelo, Leonardo and Raphael all sketched in the
+Brancacci Chapel and only the Michelangelo edge existed; Bellini's and Mantegna's
+records name each other.
+
+**The cross-tradition gap: confirmed at zero, and it is E3's, not this file's.**
+Over 246 edges, edges joining two *different* non-Western nations: **none**. (An
+earlier crude scan suggested two; they were Ukraine→Belarus and Armenia→Ukraine.)
+**One closes** — `tsuguharu-foujita ↔ diego-rivera`, japan ↔ mexico, the atlas's
+first: Foujita visited Rivera's Paris studio, Rivera painted him in 1914, and
+Foujita's 1932 Mexican stay followed the mural movement "led by Diego Rivera,
+whom he had befriended in Paris". **The rest cannot be drawn because the
+endpoints are absent**: 5 Chinese painters and 2 Korean with no documented link
+between any pair, one Iranian painter who postdates the Ottoman he would connect
+to, and **no Mughal painter at all**. Two candidates were researched and
+**rejected on evidence** (Lam↔Kahlo/Rivera: lead-only and date-unstable, 1938 vs
+1942; Botero↔the muralists: unsupported). Sesshū's 1468 voyage to Ming China is
+real and undrawable — the graph joins painters, and his counterpart is not in the
+roster. **The gap is a roster gap wearing a graph's clothes.**
+
+**Next:** lower `INF_UNGROUNDED_CEILING` whenever the number falls, and prefer
+writing the missing sentence into a bio over adding a citation — better content
+and better grounding in the same edit. That is a real Content Editor commission,
+not a chore.
 
 **E3 · Whole traditions absent, not thin** (grep-verified): Song and Yuan China,
 Mughal painting, Behzād, Joseon before Kim Hong-do, Momoyama/Edo beyond ukiyo-e
