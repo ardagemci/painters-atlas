@@ -46,6 +46,11 @@ class CensusTest(unittest.TestCase):
         "portrait-of-doge-leonardo-loredan", "madame-de-pompadour",
         "the-embarkation-for-cythera", "forest-british-columbia",
         "the-papal-palace-avignon", "the-beaneater",
+        # Catalog Batch 05, js/catalog-8.js, 2026-08-24 (docs/CATALOG_BATCH_05.md)
+        "portrait-of-omai", "the-third-class-carriage", "beata-beatrix",
+        "the-bridge-at-narni", "reclining-nude-modigliani", "surname-i-humayun",
+        "early-spring", "the-ninth-wave", "the-ambassadors", "the-city-leger",
+        "the-cradle", "the-cheat-with-the-ace-of-diamonds",
     }
 
     def test_it_finds_every_public_domain_record(self):

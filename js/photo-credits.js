@@ -7,9 +7,9 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 120
-     entries, 102 of which carry a licence requiring attribution; the
-     other 18 carry a Commons public-domain or CC0 assertion instead,
+     (js/venues.js). One entry per photograph in js/museums-1.js. 123
+     entries, 104 of which carry a licence requiring attribution; the
+     other 19 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
@@ -105,6 +105,8 @@ window.PHOTO_CREDITS = {
 "national-gallery-london": { author:"Diego Delso", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Galer%C3%ADa_Nacional,_Londres,_Inglaterra,_2014-08-07,_DD_036.JPG", required:true },
 "national-museum-korea": { author:"Jinah78", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Front_view_of_national_museum_of_korea.jpg", required:true },
 "national-museum-warsaw": { author:"Wistula", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:WarsawNationalMuseumDSC_2528.JPG", required:true },
+"national-palace-museum-taipei": { author:"Jason Zhang", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:National_Palace_Museum,_Taipei.jpg" },
+"national-portrait-gallery-london": { author:"Grahamrob", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:National_Portrait_Gallery,_north_front.JPG", required:true },
 "neue-galerie": { author:"Gryffindor", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:1048_5th_Avenue_001.JPG", required:true },
 "ngma-new-delhi": { author:"Gryffindor", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Jaipur_House_2019_(2).jpg" },
 "ny-carlsberg-glyptotek": { author:"kallerna", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Ny_Carlsberg_Glyptotek_winter_garden_1.jpg", required:true },
@@ -144,6 +146,7 @@ window.PHOTO_CREDITS = {
 "thyssen-bornemisza": { author:"Kyle Magnuson from Los Angeles, United States", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Site_of_the_Retiro_and_the_Prado_in_Madrid_49_(29684554308).jpg", required:true },
 "tokyo-national-museum": { author:"Wiiii", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg", required:true },
 "toledo-cathedral": { author:"Fernando", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:FP_Toledo_Cathedral_2025_-_West_fa%C3%A7ade.jpg", required:true },
+"topkapi-palace-museum": { author:"Sahar.Ahmed", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_Main_Entrance.jpg", required:true },
 "transfiguration-ilyina-novgorod": { author:"Катерина Фёдорова", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg", required:true },
 "tretyakov": { author:"A.Savin", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Moscow_05-2012_TretyakovGallery.jpg", required:true },
 "uffizi": { author:"Verum3414", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:Piazzale_degli_Uffizi_perspective_view,_Florence,_Italy,_August_2025.jpg", required:true },
