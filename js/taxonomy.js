@@ -245,6 +245,31 @@ window.MOVEMENTS = [
     desc:"Coined by Murakami in 2001, Superflat links Edo-period flatness, anime and otaku culture, and consumer society into one lineage — then erases the wall between fine art and merchandise on purpose. Smiling flowers on museum walls and handbags alike: that's the argument." },
 
   // ---- expansion: new schools & branches ----
+  /* Five nodes added 2026-08-24 with backlog E3. Each existed as a hole rather
+     than an omission: the atlas held Chinese, Korean, Japanese, Persian and
+     Latin American painters with no movement that described what they were
+     doing, so they had been filed under whichever European-shaped label was
+     least wrong, or not filed at all. */
+  { id:"song-landscape", name:"Song Landscape", parent:null, period:"c. 950–1279", style:"tonal",
+    palette:["#3e3a36","#7a7264","#b8ac94","#4a5a50","#e8e2d4"],
+    blurb:"The mountain as the subject — monumental landscape, five centuries early.",
+    desc:"Northern Song painters made landscape the most serious thing a picture could be, and built a grammar for it: a foreground you stand in, a middle ground of mist that hides the joins, and a far peak that dwarfs everything human in the frame. Fan Kuan's travellers are four inches of a two-metre scroll. Guo Xi wrote the manual, and it is still the clearest account anyone has given of how to move a viewer's eye through a painted world." },
+  { id:"mughal-painting", name:"Mughal Painting", parent:null, period:"c. 1560–1800", style:"ornament",
+    palette:["#1f6e8a","#c4302a","#caa43e","#2e7a52","#e8dcc0"],
+    blurb:"A workshop of hundreds, painting an empire's biography one page at a time.",
+    desc:"Akbar's atelier put Persian miniaturists, Hindu painters and European engravings in one room and got a style that belongs to none of them: modelled faces, receding space, and an appetite for the observed world that runs from battle scenes to a single bird. Pages were often made by two or three hands — one for the composition, one for the faces — and signed accordingly, which is why Mughal painting is one of the few pre-modern traditions where individual artists can be named at all." },
+  { id:"joseon-painting", name:"Joseon Painting", parent:null, period:"c. 1400–1900", style:"tonal",
+    palette:["#e8e4d8","#3e4a44","#8a7a5e","#2e50c4","#c4302a"],
+    blurb:"Five centuries of court brushwork, ending in landscapes of actual Korea.",
+    desc:"The Joseon court kept a bureau of painters, the Dohwaseo, and for three hundred years they painted an idealised China nobody had visited. Then Jeong Seon walked to the mountains and painted what was in front of him — jingyeong sansuhwa, 'true-view' landscape — and Korean painting acquired a country. Kim Hong-do's wrestling crowds are the next step: not the landscape but the people in it." },
+  { id:"momoyama-painting", name:"Momoyama Screens", parent:null, period:"c. 1573–1615", style:"ornament",
+    palette:["#caa43e","#2a2c30","#2e6e5a","#e8cd7a","#8a2620"],
+    blurb:"Gold-ground screens for warlords — the loudest and the quietest painting Japan made.",
+    desc:"Japan's brief unification age wanted castles decorated at speed and at scale, and the Kanō workshop supplied them: pine and cypress and lions on gold leaf, visible across a dark audience hall. The counter-argument arrived from the same decades — Hasegawa Tōhaku's pine trees in nothing but ink and fog, a screen with more absence than paint. Both are National Treasures and they disagree completely." },
+  { id:"viceregal-painting", name:"Viceregal Painting", parent:null, period:"c. 1550–1820", style:"baroque",
+    palette:["#8a2620","#caa43e","#2e4a8a","#e8dcc0","#3e3a2e"],
+    blurb:"Spanish Baroque remade in the Americas, by workshops Europe never credited.",
+    desc:"Three centuries of painting in New Spain and Peru, made for churches, convents and colonial households: European engravings arrived by ship and were rebuilt locally in gold, local pigment and local faces. It produced the casta paintings — the viceroyalty's own anxious taxonomy of ancestry — and painters like Miguel Cabrera who ran large workshops and were famous in their lifetimes. Art history filed it as provincial for most of the twentieth century and has been retracting that ever since." },
   { id:"ottoman-miniature", name:"Ottoman Miniature", parent:null, period:"c. 1450–1800", style:"ornament",
     palette:["#1f6e8a","#c4302a","#caa43e","#2e4a3e","#e8dcc0"],
     blurb:"The sultan's picture-workshops — history, festivals and cities painted jewel-bright on paper.",
@@ -550,6 +575,19 @@ window.TECHNIQUES = [
 ];
 
 window.ERAS = [
+  /* Added 2026-08-24 with backlog E3. The era vocabulary began at 1300, which
+     meant Song China — the tradition E3 names first — had nowhere to live: Fan
+     Kuan and Guo Xi were painting monumental landscape three centuries before
+     Giotto, and the atlas literally had no century to file them in. That is a
+     taxonomy telling you where its author's attention was. */
+  { id:"before-1200", name:"Before 1200", range:"c. 900–1199", start:900, end:1199, style:"tonal",
+    palette:["#3e3a36","#7a7264","#c4b8a0","#5e6e5a","#e8e2d4"],
+    blurb:"Painting's other summit — Song China builds the mountain before Europe builds the wall.",
+    desc:"Two hundred years before Giotto, painters of the Northern Song had already made landscape the highest subject in art rather than a backdrop for it. Fan Kuan's cliff fills nine-tenths of the silk and reduces a packhorse train to a rumour; Guo Xi wrote down the theory, and taught a way of moving the eye through a picture that Europe would not attempt for centuries. Nothing in this era is a precursor to anything European. It is a parallel civilisation of painting, arriving first." },
+  { id:"13th-century", name:"13th Century", range:"1200–1299", start:1200, end:1299, style:"tonal",
+    palette:["#2e4a44","#8a7a5e","#c4b49a","#5e4a3e","#e8e2d4"],
+    blurb:"The scholar takes the brush — Yuan China turns painting into private handwriting.",
+    desc:"As the Mongol conquest closes the civil service to China's educated class, painting stops being a court profession and becomes a scholar's diary: dry brush, no colour, a poem in the corner, made for three friends rather than an emperor. Huang Gongwang begins the scroll that will occupy him for years. The century that looks empty from Europe is where the world's longest continuous art conversation changes hands." },
   { id:"14th-century", name:"14th Century", range:"1300–1399", start:1300, end:1399, style:"renaissance",
     palette:["#2e4a8a","#caa43e","#8a2620","#e8d9b4","#3e3a30"],
     blurb:"Painting wakes up — Giotto gives figures weight, Siena gives gold a soul.",
@@ -625,6 +663,8 @@ window.NATIONS = [
     blurb:"From Whistler's nocturnes to Pollock's drips and Warhol's Factory — the 20th century's centre of gravity." },
   { id:"colombia", name:"Colombia", flag:"🇨🇴", palette:["#f0c82e","#2e50c4","#c4302a","#e8c8a8","#8a4a42"],
     blurb:"Botero's rounded world — volume as joy, satire and national style in one inflatable package." },
+  { id:"indonesia", name:"Indonesia", flag:"🇮🇩", palette:["#c4302a","#e8e4d8","#2e6e5a","#caa43e","#3e3a2e"],
+    blurb:"Raden Saleh painted a Javanese prince's arrest as a European history picture, and made the form accuse itself." },
   { id:"india", name:"India", flag:"🇮🇳", palette:["#e8a85e","#e8e4d8","#2e7a52","#b0502e","#2e4a3e"],
     blurb:"Amrita Sher-Gil fused Paris training with Indian light and made modern Indian painting possible." },
   { id:"nigeria", name:"Nigeria", flag:"🇳🇬", palette:["#2e8a5e","#e8e4d8","#b0703a","#8a3a4e","#3e3a30"],

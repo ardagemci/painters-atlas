@@ -450,13 +450,24 @@ const INF_UNGROUNDED_CEILING = 107;
   }
   const tokens = {}, prose = {};
   A.forEach(function(a){
-    const ts = {};
-    [a.name, a.id.replace(/-/g, " ")].forEach(function(src){
-      fold(src).split(/[\s.\-]+/).forEach(function(t){
-        if(t.length > 3 && !STOP[t]) ts[t] = 1;
+    /* Minimum token length is 4 because "van", "der" and "del" are everywhere.
+       That rule has a failure mode and this guard found it on its first real
+       use: Guo Xi's name has no token longer than three characters, so NO edge
+       of his could ever be attested by prose — including the Guo Xi → An Gyeon
+       edge that closes E3's China→Korea gap. Short East Asian names will keep
+       arriving, so the threshold drops to 3 only for painters who would
+       otherwise have no token at all, rather than for everyone. */
+    function build(minLen){
+      const ts = {};
+      [a.name, a.id.replace(/-/g, " ")].forEach(function(src){
+        fold(src).split(/[\s.\-]+/).forEach(function(t){
+          if(t.length > minLen && !STOP[t]) ts[t] = 1;
+        });
       });
-    });
-    tokens[a.id] = Object.keys(ts);
+      return Object.keys(ts);
+    }
+    tokens[a.id] = build(3);
+    if(!tokens[a.id].length) tokens[a.id] = build(2);
     prose[a.id] = fold([a.tagline, a.life, a.career, a.outside].concat(a.facts || []).join(" "));
     if(!tokens[a.id].length)
       warns.push("influence grounding: artist " + a.id + " has no distinctive name token, so no edge of theirs can be attested by prose");

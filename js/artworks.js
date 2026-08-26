@@ -2580,5 +2580,139 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg/500px-Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Deutsch_-_The_Girl_with_the_Buffalo.jpg"
   }
+ },
+ "fan-kuan": {
+  "Travelers among Mountains and Streams": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg/500px-Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg"
+  },
+  "Sitting Alone by a Stream": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Fan_Kuan-Sitting_Alone_by_a_Stream.jpg/500px-Fan_Kuan-Sitting_Alone_by_a_Stream.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fan_Kuan-Sitting_Alone_by_a_Stream.jpg"
+  }
+ },
+ "guo-xi": {
+  "Early Spring": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/500px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
+   "page": "https://en.wikipedia.org/wiki/Early_Spring_(painting)"
+  },
+  "Old Trees, Level Distance": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/%E5%8C%97%E5%AE%8B_%E9%83%AD%E7%86%99_%E6%A8%B9%E8%89%B2%E5%B9%B3%E9%81%A0%E5%9C%96_%E5%8D%B7_-Old_Trees%2C_Level_Distance_MET_DP167812_CRD.jpg/500px-%E5%8C%97%E5%AE%8B_%E9%83%AD%E7%86%99_%E6%A8%B9%E8%89%B2%E5%B9%B3%E9%81%A0%E5%9C%96_%E5%8D%B7_-Old_Trees%2C_Level_Distance_MET_DP167812_CRD.jpg",
+   "page": "https://en.wikipedia.org/wiki/Old_Trees%2C_Level_Distance"
+  },
+  "Deep Valley": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/8/80/Deep_Valley.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Deep_Valley.jpg"
+  }
+ },
+ "huang-gongwang": {
+  "Dwelling in the Fuchun Mountains": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG/500px-Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG",
+   "page": "https://en.wikipedia.org/wiki/Dwelling_in_the_Fuchun_Mountains"
+  },
+  "Stone Cliff at the Pond of Heaven": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Huang_Gongwang._Stone_Cliff_at_the_Pond_of_Heaven.1341._139%2C4x57%2C3._Palace_Museum%2C_Beijing.jpg/500px-Huang_Gongwang._Stone_Cliff_at_the_Pond_of_Heaven.1341._139%2C4x57%2C3._Palace_Museum%2C_Beijing.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Huang_Gongwang._Stone_Cliff_at_the_Pond_of_Heaven.1341._139,4x57,3._Palace_Museum,_Beijing.jpg"
+  }
+ },
+ "kamal-ud-din-behzad": {
+  "The Seduction of Yusuf": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yusuf_fleeing_the_Advances_of_Zulaikha.jpg/500px-Yusuf_fleeing_the_Advances_of_Zulaikha.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Yusuf_fleeing_the_Advances_of_Zulaikha.jpg"
+  },
+  "Construction of the Castle of Khawarnaq": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Kamal-ud-din_Bihzad_-_Construction_of_the_fort_of_Kharnaq.jpg/500px-Kamal-ud-din_Bihzad_-_Construction_of_the_fort_of_Kharnaq.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Kamal-ud-din_Bihzad_-_Construction_of_the_fort_of_Kharnaq.jpg"
+  }
+ },
+ "abd-al-samad": {
+  "Akbar Presents a Painting to His Father Humayun": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg/500px-%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal,_probably_Kabul,_c._1550%E2%80%931556._Golestan_Palace_Library,_Tehran.jpg"
+  },
+  "Princes of the House of Timur": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Princes_of_the_House_of_Timur.jpg/500px-Princes_of_the_House_of_Timur.jpg",
+   "page": "https://en.wikipedia.org/wiki/Princes_of_the_House_of_Timur"
+  }
+ },
+ "basawan": {
+  "Akbarnama illustrations": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg/500px-Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Basawan._Battle_of_rival_ascetics._Akbarnama,_ca._1590,_V%26A_Museum.jpg"
+  }
+ },
+ "ustad-mansur": {
+  "Turkey Cock": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/5/52/Turkey_Cock%2C_by_Mansur%2C_opaque_watercolour_and_gold_on_paper%2C_Mughal%2C_ca._1612.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Turkey_Cock,_by_Mansur,_opaque_watercolour_and_gold_on_paper,_Mughal,_ca._1612.jpg"
+  },
+  "Chameleon": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/A_chameleon_by_Ustad_Mansur.jpg/500px-A_chameleon_by_Ustad_Mansur.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_chameleon_by_Ustad_Mansur.jpg"
+  }
+ },
+ "an-gyeon": {
+  "Dream Journey to the Peach Blossom Land": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Dream_Journey_to_the_Peach_Blossom_Land.jpg/500px-Dream_Journey_to_the_Peach_Blossom_Land.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Dream_Journey_to_the_Peach_Blossom_Land.jpg"
+  }
+ },
+ "jeong-seon": {
+  "Inwangjesaekdo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Inwangjesaekdo.jpg/500px-Inwangjesaekdo.jpg",
+   "page": "https://en.wikipedia.org/wiki/Inwang_jesaekdo"
+  },
+  "Geumgang jeondo": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Geumgangjeondo.jpg/500px-Geumgangjeondo.jpg",
+   "page": "https://en.wikipedia.org/wiki/Geumgang_jeondo"
+  }
+ },
+ "kano-eitoku": {
+  "Cypress Trees": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kano_Eitoku_-_Cypress_Trees.jpg/500px-Kano_Eitoku_-_Cypress_Trees.jpg",
+   "page": "https://en.wikipedia.org/wiki/Cypress_Trees"
+  },
+  "Chinese Lions": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Kano_Eitoku_002.jpg/500px-Kano_Eitoku_002.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Kano_Eitoku_002.jpg"
+  }
+ },
+ "hasegawa-tohaku": {
+  "Pine Trees": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg/500px-Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hasegawa_Tohaku_-_Pine_Trees_(Sh%C5%8Drin-zu_by%C5%8Dbu)_-_left_hand_screen.jpg"
+  },
+  "Pine Tree and Flowering Plants": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pine_tree_Flowering_plants_Chishakuin_Tohaku.JPG/500px-Pine_tree_Flowering_plants_Chishakuin_Tohaku.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Pine_tree_Flowering_plants_Chishakuin_Tohaku.JPG"
+  }
+ },
+ "raden-saleh": {
+  "The Arrest of Prince Diponegoro": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/500px-Raden_Saleh_-_Diponegoro_arrest.jpg",
+   "page": "https://en.wikipedia.org/wiki/The_Arrest_of_Pangeran_Diponegoro"
+  },
+  "Boschbrand": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Forest_fire%2C_by_Raden_Saleh.jpg/500px-Forest_fire%2C_by_Raden_Saleh.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Forest_fire,_by_Raden_Saleh.jpg"
+  },
+  "Lion Hunt": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Raden_Saleh_-_The_Lion_hunt_%281841%29.jpg/500px-Raden_Saleh_-_The_Lion_hunt_%281841%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Raden_Saleh_-_The_Lion_hunt_(1841).jpg"
+  }
+ },
+ "miguel-cabrera": {
+  "Portrait of Sor Juana Inés de la Cruz": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Retrato_de_Sor_Juana_In%C3%A9s_de_la_Cruz_%28Miguel_Cabrera%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Retrato_de_Sor_Juana_In%C3%A9s_de_la_Cruz_(Miguel_Cabrera).jpg"
+  },
+  "Casta painting": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/De_espa%C3%B1ol_y_negra%2C_mulata.jpg/500px-De_espa%C3%B1ol_y_negra%2C_mulata.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:De_espa%C3%B1ol_y_negra,_mulata.jpg"
+  },
+  "Virgin of Guadalupe": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg/500px-Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist,_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg"
+  }
  }
 };
