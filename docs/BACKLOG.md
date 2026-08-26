@@ -544,9 +544,28 @@ it settled that Batch 03 left open:
   it. *Six Tuscan Poets* is filed as an editorial-list idea instead, which is the
   honest route to Tier 1 under `ARTWORK_SCHEMA` §8.
 
-**Still open: 170 painters with no record, 101 of them holding audited images.**
-Run the ranking again and take the next twelve. Budget **five** new venues: the
-cost went two-in-twelve, then four-in-twelve, exactly as Batch 03 predicted.
+**Batch 05 shipped the same day** (`docs/CATALOG_BATCH_05.md`, `js/catalog-8.js`):
+twelve more records, three new venues.
+
+- **The cut needed no tie-break** — the whole 11-band (seven) plus the whole
+  10-band (five) is exactly twelve, so the boundary fell on a score change. Batch
+  04's second-order tie-break stands unused, for next time.
+- **The E3 roster entered the ranking on its own merit.** Guo Xi arrived at 11
+  points, level with Corot and Daumier, on taxonomy mentions and edges the E3
+  batch had created hours earlier. Nothing was pushed. **Widening the roster fed
+  the measure that selects what to catalogue** — the first time these threads
+  closed a loop — and `early-spring` is the atlas's first Song record.
+- **Eleven of twelve image URLs were wrong when first written**, composed from
+  memory of Commons conventions; every one 404'd. The Signac failure at scale.
+  A HEAD check on every src caught it before anything shipped, and the fix was to
+  stop authoring URLs: all twelve now come straight out of `js/artworks.js`, and
+  each was checked for a 200 **and** for membership of the audited pool.
+  **Standing rule: a catalog batch never authors an image URL.** If the work is
+  in the pool the URL exists; if it is not, the batch is adding an asset and must
+  say so.
+- Venue cost went two, four, **three** — Batch 04 predicted five.
+
+**Still open: 171 painters with no record.** Run the ranking again.
 
 *Standing warning, now with three batches of instances.* `confirmed` does not
 mean catalogable. Batch 01: of 20 candidates all 20 confirmed, only 13 resolved

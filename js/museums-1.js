@@ -9,6 +9,20 @@
    Enforced by tools/validate.jxa.js. */
 window.MUSEUM_NOTES = {
 
+"national-palace-museum-taipei": {
+  hook: "The imperial collection that left the mainland in crates",
+  founded: "1965",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/National_Palace_Museum%2C_Taipei.jpg/960px-National_Palace_Museum%2C_Taipei.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:National_Palace_Museum,_Taipei.jpg" },
+  essay: "Nearly seven hundred thousand objects from the Chinese imperial collection, moved out of Beijing ahead of the Japanese advance in 1933, carried around the country through a war, and shipped to Taiwan in 1948 and 1949. Almost nothing was lost. It is the strangest provenance story in the museum world and it is why the greatest surviving Song paintings are on an island.\n\nThe building above Taipei opened in 1965 with green-tiled roofs quoting the palace the collection came from. Only a fraction is out at a time — the Song and Yuan scrolls are shown in short rotations because silk and ink cannot take the light. Fan Kuan's Travelers among Mountains and Streams and Guo Xi's Early Spring are here, and seeing either is a matter of being in Taipei in the right month." },
+
+"topkapi-palace-museum": {
+  hook: "Four courtyards, four centuries of sultans, one nakkaşhane",
+  founded: "1924",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Topkap%C4%B1_Main_Entrance.jpg/960px-Topkap%C4%B1_Main_Entrance.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_Main_Entrance.jpg" },
+  essay: "Mehmed II began it in the 1460s, a decade after taking Constantinople, and the Ottoman court ran from it for close to four hundred years — not one palace but a walled city of courtyards, kitchens, treasuries and a harem, each gate admitting fewer people than the last. It became a museum in 1924, by order of the new republic.\n\nFor this atlas the important room is the nakkaşhane, the palace painting workshop, where teams of miniaturists illustrated campaigns, festivals and dynastic portraits for the turning page rather than the wall. Nakkaş Osman ran it, and the manuscripts he made are still here — along with the imperial treasury, which is what most of the queue is for." },
+
 "wallace-collection": {
   hook: "A townhouse full of France, and nothing may leave it",
   founded: "1897",
@@ -636,6 +650,10 @@ window.MUSEUM_NOTES = {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Palazzo_Colonna_-_panoramio.jpg/960px-Palazzo_Colonna_-_panoramio.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Palazzo_Colonna_-_panoramio.jpg" },
   hook: "One family, twenty generations, one Roman block" },
+"national-portrait-gallery-london": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/National_Portrait_Gallery%2C_north_front.JPG/960px-National_Portrait_Gallery%2C_north_front.JPG",
+           page:"https://commons.wikimedia.org/wiki/File:National_Portrait_Gallery,_north_front.JPG" },
+  hook: "A gallery that collects the sitter, not the painter" },
 "transfiguration-ilyina-novgorod": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
            page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg" },

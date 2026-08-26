@@ -992,6 +992,68 @@ E3_ABSENT_TRADITIONS = {
 }
 
 
+#: Catalog Batch 05 (docs/CATALOG_BATCH_05.md), 2026-08-24 — js/catalog-8.js.
+#: The gravity ranking re-run a third time. Two things worth keeping:
+#:
+#: THE CUT NEEDED NO TIE-BREAK. The whole 11-point band (seven painters) and the
+#: whole 10-point band (five) come to exactly twelve, so the boundary falls on a
+#: score change rather than inside one. Batch 04's second-order tie-break stands
+#: unused, for next time.
+#:
+#: THE E3 ROSTER ENTERED THE RANKING ON ITS OWN MERIT. Guo Xi arrives at 11
+#: points, level with Corot and Daumier — not pushed, but because the E3 records
+#: gave him three taxonomy mentions and edges to Fan Kuan and An Gyeon. This is
+#: the first time widening the roster fed the measure that selects what to
+#: catalogue, and `early-spring` is the atlas's first Song catalog record.
+#:
+#: ELEVEN OF THESE TWELVE IMAGE URLS WERE WRONG WHEN FIRST WRITTEN. They were
+#: composed from memory of Commons naming conventions and every one 404'd — the
+#: Batch 04 Signac failure, at scale. A HEAD check on every src caught it before
+#: anything shipped, and the fix was to stop writing URLs at all: all twelve are
+#: now read straight out of js/artworks.js, which is where a catalog batch
+#: should take them anyway, and each was re-checked for a 200 AND for membership
+#: of the audited gallery pool. Both conditions, all twelve.
+#:
+#: Two pairings came back `unconfirmed` and were resolved by looking, not by
+#: overriding: The Cradle's file is titled "Le berceau" — which is the exact
+#: example match_verdict's own docstring gives for a foreign-language file page —
+#: and the Surname-i Hümayun folio is a mosque model being carried in procession,
+#: so the record's description was rewritten to describe THAT page rather than
+#: the glassblowers' folio it originally named.
+#:
+#: Economics unchanged for the third batch running: twelve works, no new artwork
+#: asset (catalog_gallery_overlap 140 -> 152, total_unique moves only by the
+#: three museum photographs, 868 -> 871).
+CATALOG_BATCH_05 = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            U + "0/0d/Amedeo_Modigliani_Reclining_Nude_The_Metropolitan_Museum_of_Art.jpg/500px-Amedeo_Modigliani_Reclining_Nude_The_Metropolitan_Museum_of_Art.jpg",
+            U + "0/0d/Le_pont_de_Narni_-_Jean-Baptiste_Camille_Corot_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1613_-_photo_2.jpg/500px-Le_pont_de_Narni_-_Jean-Baptiste_Camille_Corot_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1613_-_photo_2.jpg",
+            U + "1/13/Sueleymaniye_painting_by_Osman.jpg/500px-Sueleymaniye_painting_by_Osman.jpg",
+            U + "4/43/Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg/500px-Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg",
+            U + "4/4a/Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg/500px-Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg",
+            U + "7/74/Georges_de_La_Tour_-_Cheater_with_the_Ace_of_Diamonds_-_WGA12334.jpg/960px-Georges_de_La_Tour_-_Cheater_with_the_Ace_of_Diamonds_-_WGA12334.jpg",
+            U + "8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/500px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
+            U + "8/88/Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg/500px-Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg",
+            U + "8/8a/Fernand_L%C3%A9ger%2C_1919%2C_The_City_%28La_Ville%29%2C_oil_on_canvas%2C_231.1_x_298.4_cm%2C_Philadelphia_Museum_of_Art.jpg/500px-Fernand_L%C3%A9ger%2C_1919%2C_The_City_%28La_Ville%29%2C_oil_on_canvas%2C_231.1_x_298.4_cm%2C_Philadelphia_Museum_of_Art.jpg",
+            U + "9/96/Joshua_Reynolds_-_Portrait_of_Omai.jpg/500px-Joshua_Reynolds_-_Portrait_of_Omai.jpg",
+            U + "a/ac/Berthe_Morisot_008.jpg/500px-Berthe_Morisot_008.jpg",
+            U + "c/cf/Dante_Gabriel_Rossetti_-_Beata_Beatrix%2C_1864-1870.jpg/500px-Dante_Gabriel_Rossetti_-_Beata_Beatrix%2C_1864-1870.jpg",
+        ] },
+    "museum_photos_rendered": { "removed": [], "added": [
+            U + "1/1f/National_Portrait_Gallery%2C_north_front.JPG/960px-National_Portrait_Gallery%2C_north_front.JPG",
+            U + "c/c5/National_Palace_Museum%2C_Taipei.jpg/960px-National_Palace_Museum%2C_Taipei.jpg",
+            U + "c/ce/Topkap%C4%B1_Main_Entrance.jpg/960px-Topkap%C4%B1_Main_Entrance.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "1/1f/National_Portrait_Gallery%2C_north_front.JPG/960px-National_Portrait_Gallery%2C_north_front.JPG",
+            U + "4/43/Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg/500px-Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg",
+            U + "7/74/Georges_de_La_Tour_-_Cheater_with_the_Ace_of_Diamonds_-_WGA12334.jpg/960px-Georges_de_La_Tour_-_Cheater_with_the_Ace_of_Diamonds_-_WGA12334.jpg",
+            U + "c/c5/National_Palace_Museum%2C_Taipei.jpg/960px-National_Palace_Museum%2C_Taipei.jpg",
+            U + "c/ce/Topkap%C4%B1_Main_Entrance.jpg/960px-Topkap%C4%B1_Main_Entrance.jpg",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -1010,7 +1072,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1053,13 +1115,16 @@ class TestAssetInventory(unittest.TestCase):
         # 841 -> 868 and 840 -> 867: the E3 roster batch. Twenty-seven images
         # for thirteen painters the atlas did not hold, which is the FIRST
         # movement in these numbers that is not a rearrangement of the pool.
-        self.assertEqual(c["total_unique"], 868)   # +27: E3's thirteen painters
-        self.assertEqual(c["rendered_unique"], 867)   # +27: the same, all rendered
+        # 868 -> 871: Batch 05's three new museum photographs (National Palace
+        # Museum Taipei, Topkapı, National Portrait Gallery). Its twelve artworks
+        # again added nothing — they were read straight out of the gallery pool.
+        self.assertEqual(c["total_unique"], 871)   # +3: Batch 05's museum photographs
+        self.assertEqual(c["rendered_unique"], 870)   # +3: the same, all rendered
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 140)   # +12 again: Catalog Batch 04
+        self.assertEqual(c["catalog_gallery_overlap"], 152)   # +12 a third time: Batch 05
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -1135,11 +1200,11 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 306)   # +12 again: Catalog Batch 04
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 318)   # +12 a third time: Batch 05
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 120)   # +4: Batch 04's venues
+        self.assertEqual(len(rr.SURFACES["museum"]()), 123)   # +3: Batch 05's venues
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 581)   # +27: E3
