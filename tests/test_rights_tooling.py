@@ -1054,6 +1054,68 @@ CATALOG_BATCH_05 = {
 }
 
 
+#: Catalog Batch 06 (docs/CATALOG_BATCH_06.md), 2026-08-24 — js/catalog-9.js.
+#: THE LAST RUN OF INBOUND GRAVITY, on the Curator's judgement: the measure has
+#: COMPLETED rather than failed. Three batches drained the painters the atlas
+#: leans on hard and the ranking flattened to where a 9 and an 8 differ by one
+#: prose mention — at that resolution it measures paragraph length. The successor
+#: rule is named in the batch doc.
+#:
+#: THE SIGNAL IS PARTLY ENDOGENOUS AND THE BATCH DOC SAYS SO. Four of the twelve
+#: (fan-kuan, shen-zhou, hasegawa-tohaku, abd-al-samad) were added by the E3
+#: roster pass days earlier, two of them scoring partly on edges that same pass
+#: drew. Batch 05's "nothing was pushed" was true about intent and false about
+#: independence. They ship because the works stand on the literature, not on our
+#: edge count, and because a tradition with a painter page and no work page is
+#: the worse error.
+#:
+#: FOUR museum photographs, not three: the validator caught that `sakip-sabanci`
+#: was already in the venue registry with NO museum note, so filing Şeker Ahmed
+#: Paşa's Forest there tripped "venue holds works but has no museum note". The
+#: guard did exactly what it exists for.
+#:
+#: Photograph hunting for the two Polish museums produced FIVE consecutive
+#: architectural details and wrong subjects — a sgraffito frieze, a roofline, a
+#: watch-shop window, a wall sign, a logo — before each museum's own Wikipedia
+#: lead image gave a usable building. Every one was opened before it was used.
+#:
+#: Economics unchanged for a fourth batch: twelve works, no new artwork asset
+#: (catalog_gallery_overlap 152 -> 164; total_unique 871 -> 875, all four of the
+#: increase being museum photographs).
+CATALOG_BATCH_06 = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            U + "0/0a/Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg/500px-Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg",
+            U + "3/32/Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg/500px-Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg",
+            U + "3/3c/The_Chess_Game_%28Sofonisba_Anguissola%29_1555_%284096x3236px%29.jpg/500px-The_Chess_Game_%28Sofonisba_Anguissola%29_1555_%284096x3236px%29.jpg",
+            U + "5/58/Stanis%C5%82aw_Wyspia%C5%84ski%2C_Macierzy%C5%84stwo.jpg/500px-Stanis%C5%82aw_Wyspia%C5%84ski%2C_Macierzy%C5%84stwo.jpg",
+            U + "7/7d/Princes_of_the_House_of_Timur.jpg/500px-Princes_of_the_House_of_Timur.jpg",
+            U + "8/81/Claude_Lorrain_008.jpg/500px-Claude_Lorrain_008.jpg",
+            U + "9/94/La_Raie_-_Jean_Baptiste_Sim%C3%A9on_Chardin_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3197.jpg/500px-La_Raie_-_Jean_Baptiste_Sim%C3%A9on_Chardin_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3197.jpg",
+            U + "9/97/Cavalier_soldier_Hals-1624x.jpg/500px-Cavalier_soldier_Hals-1624x.jpg",
+            U + "a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg/960px-Lofty_Mt.Lu_by_Shen_Zhou.jpg",
+            U + "c/c2/Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg/500px-Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg",
+            U + "d/db/Ahmed-Forest.jpg/500px-Ahmed-Forest.jpg",
+            U + "e/e9/Tintoretto_-_Miracle_of_the_Slave.jpg/500px-Tintoretto_-_Miracle_of_the_Slave.jpg",
+        ] },
+    "museum_photos_rendered": { "removed": [], "added": [
+            U + "0/00/National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg/960px-National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg",
+            U + "8/86/British_Museum_%28aerial%29.jpg/960px-British_Museum_%28aerial%29.jpg",
+            U + "8/89/Sakip-Sabanci-Museum.jpg/960px-Sakip-Sabanci-Museum.jpg",
+            U + "b/b6/Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg/960px-Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "0/00/National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg/960px-National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg",
+            U + "0/0a/Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg/500px-Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg",
+            U + "5/58/Stanis%C5%82aw_Wyspia%C5%84ski%2C_Macierzy%C5%84stwo.jpg/500px-Stanis%C5%82aw_Wyspia%C5%84ski%2C_Macierzy%C5%84stwo.jpg",
+            U + "7/7d/Princes_of_the_House_of_Timur.jpg/500px-Princes_of_the_House_of_Timur.jpg",
+            U + "8/86/British_Museum_%28aerial%29.jpg/960px-British_Museum_%28aerial%29.jpg",
+            U + "8/89/Sakip-Sabanci-Museum.jpg/960px-Sakip-Sabanci-Museum.jpg",
+            U + "b/b6/Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg/960px-Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg",
+            U + "d/db/Ahmed-Forest.jpg/500px-Ahmed-Forest.jpg",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -1072,7 +1134,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1118,13 +1180,13 @@ class TestAssetInventory(unittest.TestCase):
         # 868 -> 871: Batch 05's three new museum photographs (National Palace
         # Museum Taipei, Topkapı, National Portrait Gallery). Its twelve artworks
         # again added nothing — they were read straight out of the gallery pool.
-        self.assertEqual(c["total_unique"], 871)   # +3: Batch 05's museum photographs
-        self.assertEqual(c["rendered_unique"], 870)   # +3: the same, all rendered
+        self.assertEqual(c["total_unique"], 875)   # +4: Batch 06's museum photographs
+        self.assertEqual(c["rendered_unique"], 874)   # +4: the same, all rendered
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 152)   # +12 a third time: Batch 05
+        self.assertEqual(c["catalog_gallery_overlap"], 164)   # +12 a fourth time: Batch 06
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -1200,11 +1262,11 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 318)   # +12 a third time: Batch 05
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 330)   # +12 a fourth time: Batch 06
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 123)   # +3: Batch 05's venues
+        self.assertEqual(len(rr.SURFACES["museum"]()), 127)   # +4: Batch 06's venues
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 581)   # +27: E3

@@ -7,8 +7,8 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 123
-     entries, 104 of which carry a licence requiring attribution; the
+     (js/venues.js). One entry per photograph in js/museums-1.js. 127
+     entries, 108 of which carry a licence requiring attribution; the
      other 19 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
@@ -45,6 +45,7 @@ window.PHOTO_CREDITS = {
 "barnes-foundation": { author:"ajay_suresh", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Barnes_Foundation_(53574516274).jpg", required:true },
 "belvedere": { author:"Diego Delso", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Palacio_Belvedere,_Viena,_Austria,_2020-02-01,_DD_93-95_HDR.jpg", required:true },
 "brera": { author:"Jean-Christophe BENOIST", license:"CC BY 3.0", licenseUrl:"https://creativecommons.org/licenses/by/3.0", page:"https://commons.wikimedia.org/wiki/File:Milan_-_Pinacoth%C3%A8que_de_Brera_-_Cour_int%C3%A9rieure.jpg", required:true },
+"british-museum": { author:"Luke Massey & the Greater London National Park City Initiative", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:British_Museum_(aerial).jpg", required:true },
 "buffalo-akg": { author:"BuffaloAKG14222", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:2024.10.10_AKGCampusExteriorDronePhotos-1001.jpg", required:true },
 "capodimonte": { author:"IlSistemone", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:ReggiaCapodimonte.JPG", required:true },
 "centre-pompidou": { author:"Stefan Drößler", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:L%C3%BCftungsrohre_Place_George_Pompidou_Paris.jpg", required:true },
@@ -99,6 +100,8 @@ window.PHOTO_CREDITS = {
 "museo-frida-kahlo": { author:"Nachtwächter", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Museo_Frida_Kahlo.JPG", required:true },
 "museu-picasso-barcelona": { author:"uayebt", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona.jpg", required:true },
 "museum-ludwig": { author:"Thomas Robbin", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Museum_Ludwig_002.jpg", required:true },
+"muzeum-narodowe-krakow": { author:"Zygmunt Put", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:National_Museum,_Main_Building,_1_May,_3_Avenue,_Krak%C3%B3w,_Poland.jpg", required:true },
+"muzeum-narodowe-poznan": { author:"Diego Delso", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Museo_Nacional,_Poznan,_Polonia,_2014-09-18,_DD_46.jpg", required:true },
 "nasjonalmuseet-oslo": { author:"Premeditated", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Nye_Nasjonalmuseet_(2022)_(2).jpg", required:true },
 "national-gallery-australia": { author:"Thennicke", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:National_Gallery_from_SW,_Canberra_Australia.jpg", required:true },
 "national-gallery-dc": { author:"ajay_suresh", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:National_Gallery_of_Art_-_2026_(55255088792).jpg", required:true },
@@ -126,6 +129,7 @@ window.PHOTO_CREDITS = {
 "royal-collection": { author:"Diliff", license:"CC BY 2.5", licenseUrl:"https://creativecommons.org/licenses/by/2.5", page:"https://commons.wikimedia.org/wiki/File:Windsor_Castle_at_Sunset_-_Nov_2006.jpg", required:true },
 "royal-museums-brussels": { author:"Michel wal", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9es_Royaux_des_Beaux-Arts_Belgique_1101.jpg", required:true },
 "russian-museum": { author:"Екатерина Борисова", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80%D0%B5%D1%86,_%D0%B4%D0%B2%D0%BE%D1%8003.jpg", required:true },
+"sakip-sabanci": { author:"Edal", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Sakip-Sabanci-Museum.jpg", required:true },
 "san-luigi-dei-francesi": { author:"Chabe01", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%C3%89glise_San_Luigi_Francesi_-_Rome_(IT62)_-_2021-08-28_-_2.jpg", required:true },
 "santa-maria-delle-grazie": { author:"Marcin Białek", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_delle_Grazie_Milan_2013.jpg", required:true },
 "santa-maria-novella": { author:"Joseolgon", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_Novella_(Florence)_-_Facade_(3).jpg", required:true },

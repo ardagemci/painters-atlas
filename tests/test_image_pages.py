@@ -51,6 +51,12 @@ class CensusTest(unittest.TestCase):
         "the-bridge-at-narni", "reclining-nude-modigliani", "surname-i-humayun",
         "early-spring", "the-ninth-wave", "the-ambassadors", "the-city-leger",
         "the-cradle", "the-cheat-with-the-ace-of-diamonds",
+        # Catalog Batch 06, js/catalog-9.js, 2026-08-24 (docs/CATALOG_BATCH_06.md)
+        "the-chess-game", "the-miracle-of-the-slave", "the-forest-seker-ahmed",
+        "the-ray", "death-and-the-maiden", "lofty-mount-lu", "pine-trees-tohaku",
+        "seaport-with-the-embarkation-of-the-queen-of-sheba",
+        "princes-of-the-house-of-timur", "motherhood-wyspianski",
+        "the-laughing-cavalier", "travelers-among-mountains-and-streams",
     }
 
     def test_it_finds_every_public_domain_record(self):
