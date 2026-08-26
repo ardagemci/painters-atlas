@@ -2,7 +2,7 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-08-24
+   Generated: 2026-08-26
 
    Two registries, both read by js/app.js:
 

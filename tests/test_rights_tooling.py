@@ -918,6 +918,80 @@ CATALOG_BATCH_04 = {
 }
 
 
+#: E3 roster batch (js/artists-19.js), 2026-08-24 — the absent traditions.
+#: Thirteen painters: Song and Yuan China, Behzād, two Mughal masters and the
+#: Persian who carried the tradition to India, two Joseon Koreans, two Momoyama
+#: Japanese, Java and New Spain.
+#:
+#: THIS BATCH IS THE OPPOSITE OF A CATALOG BATCH and the inventory says so.
+#: Batches 03 and 04 added no assets because every image was already in the
+#: pool; these are painters the atlas never held, so all 27 images are NEW:
+#: total_unique 841 -> 868, gallery_rendered +27, catalog_gallery_overlap
+#: unmoved at 140. That is the price of widening the roster rather than
+#: cataloguing it, and it is worth paying.
+#:
+#: FIVE RESOLVED IMAGES WERE REJECTED BEFORE THIS LANDED, and two of them were
+#: `confirmed` by tools/audit_artworks.py:match_verdict:
+#:   · fan-kuan :: Travelers among Mountains and Streams — a CROP OF THE
+#:     SIGNATURE with a red annotation box drawn on it. Commons' ObjectName
+#:     reads "Travelers Among Mountains and Streams Signature", so the artist
+#:     ties and the work ties and the verdict is `confirmed`. Replaced by hand
+#:     with the Google Art Project scan of the whole scroll.
+#:   · ustad-mansur :: Siberian Crane — a photograph of the MUSEUM WALL LABEL.
+#:     The label names the artist, the work, the medium and the date, so it
+#:     confirms on every axis match_verdict tests. It is a picture of a caption.
+#: match_verdict asks "does this file depict this artist's work"; it cannot ask
+#: "is this file the work, or a picture ABOUT the work". Recorded as a gap.
+#: The other three were caught normally: an Oxford museum dodo display, a
+#: different painter's scroll, and a duplicate of one already in the batch.
+E3_ABSENT_TRADITIONS = {
+    "gallery_rendered": { "removed": [], "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/3/3d/Retrato_de_Sor_Juana_In%C3%A9s_de_la_Cruz_%28Miguel_Cabrera%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/5/52/Turkey_Cock%2C_by_Mansur%2C_opaque_watercolour_and_gold_on_paper%2C_Mughal%2C_ca._1612.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/8/80/Deep_Valley.jpg",
+            U + "1/17/Yusuf_fleeing_the_Advances_of_Zulaikha.jpg/500px-Yusuf_fleeing_the_Advances_of_Zulaikha.jpg",
+            U + "2/2c/Forest_fire%2C_by_Raden_Saleh.jpg/500px-Forest_fire%2C_by_Raden_Saleh.jpg",
+            U + "3/32/Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg/500px-Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg",
+            U + "4/43/Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg/500px-Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg",
+            U + "4/44/De_espa%C3%B1ol_y_negra%2C_mulata.jpg/500px-De_espa%C3%B1ol_y_negra%2C_mulata.jpg",
+            U + "4/47/Kano_Eitoku_-_Cypress_Trees.jpg/500px-Kano_Eitoku_-_Cypress_Trees.jpg",
+            U + "4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/500px-Raden_Saleh_-_Diponegoro_arrest.jpg",
+            U + "7/7c/%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg/500px-%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg",
+            U + "7/7d/Princes_of_the_House_of_Timur.jpg/500px-Princes_of_the_House_of_Timur.jpg",
+            U + "8/82/A_chameleon_by_Ustad_Mansur.jpg/500px-A_chameleon_by_Ustad_Mansur.jpg",
+            U + "8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/500px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
+            U + "8/89/Kamal-ud-din_Bihzad_-_Construction_of_the_fort_of_Kharnaq.jpg/500px-Kamal-ud-din_Bihzad_-_Construction_of_the_fort_of_Kharnaq.jpg",
+            U + "9/90/Fan_Kuan-Sitting_Alone_by_a_Stream.jpg/500px-Fan_Kuan-Sitting_Alone_by_a_Stream.jpg",
+            U + "9/93/Dream_Journey_to_the_Peach_Blossom_Land.jpg/500px-Dream_Journey_to_the_Peach_Blossom_Land.jpg",
+            U + "9/99/Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg/500px-Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg",
+            U + "a/a7/Inwangjesaekdo.jpg/500px-Inwangjesaekdo.jpg",
+            U + "a/ac/Kano_Eitoku_002.jpg/500px-Kano_Eitoku_002.jpg",
+            U + "c/c2/Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg/500px-Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg",
+            U + "c/c2/Geumgangjeondo.jpg/500px-Geumgangjeondo.jpg",
+            U + "c/c7/Raden_Saleh_-_The_Lion_hunt_%281841%29.jpg/500px-Raden_Saleh_-_The_Lion_hunt_%281841%29.jpg",
+            U + "c/cd/Pine_tree_Flowering_plants_Chishakuin_Tohaku.JPG/500px-Pine_tree_Flowering_plants_Chishakuin_Tohaku.JPG",
+            U + "d/d2/Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG/500px-Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG",
+            U + "e/e5/Huang_Gongwang._Stone_Cliff_at_the_Pond_of_Heaven.1341._139%2C4x57%2C3._Palace_Museum%2C_Beijing.jpg/500px-Huang_Gongwang._Stone_Cliff_at_the_Pond_of_Heaven.1341._139%2C4x57%2C3._Palace_Museum%2C_Beijing.jpg",
+            U + "f/fc/%E5%8C%97%E5%AE%8B_%E9%83%AD%E7%86%99_%E6%A8%B9%E8%89%B2%E5%B9%B3%E9%81%A0%E5%9C%96_%E5%8D%B7_-Old_Trees%2C_Level_Distance_MET_DP167812_CRD.jpg/500px-%E5%8C%97%E5%AE%8B_%E9%83%AD%E7%86%99_%E6%A8%B9%E8%89%B2%E5%B9%B3%E9%81%A0%E5%9C%96_%E5%8D%B7_-Old_Trees%2C_Level_Distance_MET_DP167812_CRD.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            "https://upload.wikimedia.org/wikipedia/commons/3/3d/Retrato_de_Sor_Juana_In%C3%A9s_de_la_Cruz_%28Miguel_Cabrera%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/5/52/Turkey_Cock%2C_by_Mansur%2C_opaque_watercolour_and_gold_on_paper%2C_Mughal%2C_ca._1612.jpg",
+            U + "1/17/Yusuf_fleeing_the_Advances_of_Zulaikha.jpg/500px-Yusuf_fleeing_the_Advances_of_Zulaikha.jpg",
+            U + "3/32/Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg/500px-Hasegawa_Tohaku_-_Pine_Trees_%28Sh%C5%8Drin-zu_by%C5%8Dbu%29_-_left_hand_screen.jpg",
+            U + "4/43/Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg/500px-Basawan._Battle_of_rival_ascetics._Akbarnama%2C_ca._1590%2C_V%26A_Museum.jpg",
+            U + "4/47/Kano_Eitoku_-_Cypress_Trees.jpg/500px-Kano_Eitoku_-_Cypress_Trees.jpg",
+            U + "4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/500px-Raden_Saleh_-_Diponegoro_arrest.jpg",
+            U + "7/7c/%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg/500px-%E2%80%98Abd_al-Samad._Akbar_Presents_a_Painting_to_His_Father_Humayun._Mughal%2C_probably_Kabul%2C_c._1550%E2%80%931556._Golestan_Palace_Library%2C_Tehran.jpg",
+            U + "8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/500px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
+            U + "9/93/Dream_Journey_to_the_Peach_Blossom_Land.jpg/500px-Dream_Journey_to_the_Peach_Blossom_Land.jpg",
+            U + "a/a7/Inwangjesaekdo.jpg/500px-Inwangjesaekdo.jpg",
+            U + "c/c2/Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg/500px-Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg",
+            U + "d/d2/Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG/500px-Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -936,7 +1010,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -976,8 +1050,11 @@ class TestAssetInventory(unittest.TestCase):
         # (Wallace Collection, Vancouver Art Gallery, Palazzo Colonna, and the
         # Church of the Transfiguration on Ilyina Street). Their photographs are
         # again the only new assets; the twelve artworks moved no total.
-        self.assertEqual(c["total_unique"], 841)   # +4: Batch 04's museum photographs
-        self.assertEqual(c["rendered_unique"], 840)   # +4: the same, all rendered
+        # 841 -> 868 and 840 -> 867: the E3 roster batch. Twenty-seven images
+        # for thirteen painters the atlas did not hold, which is the FIRST
+        # movement in these numbers that is not a rearrangement of the pool.
+        self.assertEqual(c["total_unique"], 868)   # +27: E3's thirteen painters
+        self.assertEqual(c["rendered_unique"], 867)   # +27: the same, all rendered
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
@@ -1065,7 +1142,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 120)   # +4: Batch 04's venues
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 554)
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 581)   # +27: E3
 
 
 class TestSuppression(unittest.TestCase):

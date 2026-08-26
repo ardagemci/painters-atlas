@@ -628,10 +628,56 @@ writing the missing sentence into a bio over adding a citation — better conten
 and better grounding in the same edit. That is a real Content Editor commission,
 not a chore.
 
-**E3 · Whole traditions absent, not thin** (grep-verified): Song and Yuan China,
-Mughal painting, Behzād, Joseon before Kim Hong-do, Momoyama/Edo beyond ukiyo-e
-and Rinpa, historic Africa, Southeast Asia, colonial Latin America. The holding
-institutions are simply not in the venue registry.
+**E3 · LARGELY ADDRESSED 2026-08-24 — `docs/ROSTER_E3.md`, `js/artists-19.js`.**
+
+**The measurement was sharper than the entry.** Of the 27 painters born before
+1500, **fifteen were Italian and three were not European** — and the era
+vocabulary *began at 1300*, so Song China had no century to be filed in. The
+problem was not a missing painter; **the taxonomy could not hold one.**
+
+**Added:** two eras (`before-1200`, `13th-century`), the nation `indonesia`, and
+five movements (`song-landscape`, `mughal-painting`, `joseon-painting`,
+`momoyama-painting`, `viceregal-painting`). `persian-miniature` already existed
+and was empty of its greatest name. Then **thirteen painters**: Fan Kuan, Guo Xi,
+Huang Gongwang, Behzād, Abd al-Samad, Basawan, Ustad Mansur, An Gyeon, Jeong
+Seon, Kanō Eitoku, Hasegawa Tōhaku, Raden Saleh, Miguel Cabrera. Pre-1500 goes
+27 → 32; Italy's share of it falls from 56% to 47%.
+
+**Two of E2's three named transmissions close**, which was the point rather than
+a side effect: `guo-xi → an-gyeon` (China → Korea) and
+`behzad → abd-al-samad → basawan` (Persia → Mughal). Cross-tradition edges **0 →
+3**. Persia → Ottoman stays open deliberately — no painter-to-painter link
+survives a source. All eight new edges are **prose-grounded**, so the ungrounded
+count held at 107 while the graph grew 250 → 258.
+
+**E2's guard caught a defect in E3 on its first live use.** The grounding matcher
+needs a name token over three characters and **Guo Xi has none**, so no edge of
+his could ever be attested — including the one closing China→Korea. It warned by
+name. The threshold now drops to three characters only for painters who would
+otherwise have no token, because short East Asian names will keep arriving.
+
+**FIVE IMAGES WERE REJECTED, AND TWO PASSED `match_verdict` AS `confirmed`.**
+Fan Kuan's *Travelers* resolved to **a crop of the signature with a red
+annotation box drawn on it** — Commons' ObjectName ends in "Signature", so
+artist and work both tie. Ustad Mansur's *Siberian Crane* resolved to **a
+photograph of the museum wall label**, which names artist, work, medium and date
+and therefore confirms on every axis the check tests. **`match_verdict` asks
+whether a file depicts this artist's work; it cannot ask whether the file is the
+work or a picture ABOUT the work.** A signature crop, a caption card, a museum
+vitrine and a postage stamp all pass. Recorded as a finding, not patched — the
+fix is a judgement about image content the tool cannot make, and **looking is
+the control**. Every hero image in this batch was opened.
+
+**The merge did not churn the pool.** `tools/fetch_artworks.py` rewrites
+`js/artworks.js` from every artist and would have re-resolved the twenty images
+hand-corrected in A2, so images were resolved for the thirteen new ids only and
+merged by parse-and-re-serialise. **134 lines added, zero removed, no existing
+artist changed.**
+
+**Still open:** historic Africa (hard rather than overlooked — most surviving
+traditions are anonymous and an attributed name is required), Southeast Asia
+beyond Raden Saleh, and more of colonial Latin America. And **these thirteen are
+now E1's pool** — thirteen painters, 27 audited images, no catalog record.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.

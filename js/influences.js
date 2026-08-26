@@ -327,5 +327,28 @@ window.INFLUENCES = [
      the point of preferring prose. */
   ["masaccio","leonardo-da-vinci","influenced"],
   ["masaccio","raphael","influenced"],
-  ["andrea-mantegna","giovanni-bellini","influenced"]
+  ["andrea-mantegna","giovanni-bellini","influenced"],
+
+  /* ---- added 2026-08-24 with the E3 roster batch (js/artists-19.js) ---- */
+
+  /* TWO OF E3'S THREE NAMED TRANSMISSIONS. E2 measured this graph and found no
+     edge joining two different non-Western traditions, and found that most of
+     the gap could not be drawn because the endpoints were not in the atlas.
+     They are now, and these are the edges. Both are grounded in prose — the new
+     records name the painters they descend from, so a reader meets the
+     transmission rather than only the graph asserting it. */
+  ["guo-xi","an-gyeon","influenced"],                    /* China → Korea  */
+  ["kamal-ud-din-behzad","abd-al-samad","influenced"],   /* Persia → Mughal, 1 of 2 */
+  ["abd-al-samad","basawan","influenced"],               /* Persia → Mughal, 2 of 2 */
+
+  /* Persia → Ottoman stays open, deliberately. The influence is real and
+     general and no painter-to-painter link between Reza Abbasi and the atlas's
+     Ottoman miniaturists survives a source, so none is drawn here. */
+
+  /* ---- and the lineages inside the new traditions ---- */
+  ["fan-kuan","guo-xi","influenced"],
+  ["huang-gongwang","shen-zhou","influenced"],
+  ["jeong-seon","kim-hong-do","influenced"],
+  ["sesshu-toyo","hasegawa-tohaku","influenced"],
+  ["kano-eitoku","hasegawa-tohaku","rivaled"]
 ];
