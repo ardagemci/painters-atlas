@@ -9,6 +9,13 @@
    Enforced by tools/validate.jxa.js. */
 window.MUSEUM_NOTES = {
 
+"british-museum": {
+  hook: "Eight million objects, and an argument about a good many",
+  founded: "1753",
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/British_Museum_%28aerial%29.jpg/960px-British_Museum_%28aerial%29.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:British_Museum_(aerial).jpg" },
+  essay: "Founded in 1753 on the collection of Sir Hans Sloane, whose fortune came in part from Jamaican sugar plantations, and opened free to 'all studious and curious persons' — which it still is. The Great Court, roofed by Norman Foster in 2000 around the old Reading Room, is the largest covered square in Europe and was for two centuries an open courtyard nobody could cross.\n\nWhat it holds and what it should hold are not the same conversation. The Parthenon sculptures, the Benin bronzes and a long list besides are the subject of restitution claims the museum has spent decades declining, and the argument is now part of the institution's identity rather than a footnote to it. For this atlas it is where Abd al-Samad's Princes of the House of Timur is — a Mughal painting on cloth, damaged, and one of the earliest things the Mughal workshop made." },
+
 "national-palace-museum-taipei": {
   hook: "The imperial collection that left the mainland in crates",
   founded: "1965",
@@ -646,6 +653,18 @@ window.MUSEUM_NOTES = {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg/960px-231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg",
            page:"https://commons.wikimedia.org/wiki/File:231007_MOA_Museum_of_Art_Atami_Japan09s3.jpg" },
   hook: "A hillside above Atami, entered by escalator" },
+"sakip-sabanci":          {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Sakip-Sabanci-Museum.jpg/960px-Sakip-Sabanci-Museum.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Sakip-Sabanci-Museum.jpg" },
+  hook: "A Bosphorus villa, Ottoman calligraphy and a bronze horse" },
+"muzeum-narodowe-poznan": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg/960px-Museo_Nacional%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_46.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Museo_Nacional,_Poznan,_Polonia,_2014-09-18,_DD_46.jpg" },
+  hook: "Where Anguissola's sisters have been playing chess since 1932" },
+"muzeum-narodowe-krakow": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg/960px-National_Museum%2C_Main_Building%2C_1_May%2C_3_Avenue%2C_Krak%C3%B3w%2C_Poland.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:National_Museum,_Main_Building,_1_May,_3_Avenue,_Krak%C3%B3w,_Poland.jpg" },
+  hook: "Founded in 1879, when Poland was not on the map" },
 "palazzo-colonna":        {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Palazzo_Colonna_-_panoramio.jpg/960px-Palazzo_Colonna_-_panoramio.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Palazzo_Colonna_-_panoramio.jpg" },

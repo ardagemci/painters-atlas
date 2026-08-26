@@ -565,7 +565,33 @@ twelve more records, three new venues.
   say so.
 - Venue cost went two, four, **three** — Batch 04 predicted five.
 
-**Still open: 171 painters with no record.** Run the ranking again.
+**Batch 06 shipped, and RETIRES THE RULE** (`docs/CATALOG_BATCH_06.md`,
+`js/catalog-9.js`): twelve records, four museum notes. Reviewed by the Curator
+before selection.
+
+- **Inbound gravity has COMPLETED, not failed.** Top score fell 28 → 9 across
+  four runs, and a 9 against an 8 is one prose mention — at that resolution it
+  measures paragraph length, not significance. Ship on it, retire it in the same
+  document; a fifth flat band would be an arbitrary cut dressed as a
+  reproducible one.
+- **Successor named: outbound absence.** Rank uncatalogued PD painters by
+  *(tradition's catalog-record count, ascending)* × *(audited images held)*, with
+  a floor requiring an opened, verified hero image. Asks what a visitor can
+  **see** rather than what the prose **mentions**, and cannot flatten because the
+  tradition counts are integers far apart (Song 2, Mughal 1, Joseon 0).
+- **The signal was partly endogenous and Batch 05 understated it.** Four of the
+  twelve were added by the E3 pass days earlier, two scoring partly on edges that
+  same pass drew. "Nothing was pushed" is true about intent, false about
+  independence. They ship disclosed: **selected on our signal, admitted on
+  external grounds.**
+- **§8 stays.** Only one uncatalogued PD painter is genuinely abstract, so the
+  abstract painters are already in and already catalogued — their works have
+  simply passed through none of §8's four doors. Relaxing it would admit orphan
+  pages and add no abstract work. **The honest route is door 1: an editorial list
+  on abstraction before 1955** (new item, below).
+
+**Still open: 159 painters with no catalog record.** Next batch runs on outbound
+absence, not on gravity.
 
 *Standing warning, now with three batches of instances.* `confirmed` does not
 mean catalogable. Batch 01: of 20 candidates all 20 confirmed, only 13 resolved
@@ -697,6 +723,19 @@ artist changed.**
 traditions are anonymous and an attributed name is required), Southeast Asia
 beyond Raden Saleh, and more of colonial Latin America. And **these thirteen are
 now E1's pool** — thirteen painters, 27 audited images, no catalog record.
+
+**E5 · An editorial list on abstraction before 1955 — the honest route to a
+deeper deck.** Raised by the Curator during Batch 06 and adopted. `ARTWORK_SCHEMA`
+§8 admits a work to Tier 1 through four doors, and door 1 is an editorial list.
+**Only one uncatalogued public-domain painter is genuinely abstract** (Popova),
+which means Kandinsky, Malevich, Mondrian, Klee and af Klint are already in the
+atlas and already catalogued — their works are not in the deck because they have
+passed through no door, not because the doors are narrow. A list is therefore a
+list commission plus coordinate work on records that already exist: **no schema
+change, no new records, and the only move that can deepen the F+ side of the
+deck.** Separately, E4's finding that two of four F×D quadrants rest on a single
+work each means many users see the identical opening card — a product defect
+worth its own fix, and it is E4's, not E1's.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.
