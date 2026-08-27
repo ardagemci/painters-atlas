@@ -1206,7 +1206,12 @@ class TestSampleBasis(unittest.TestCase):
         sample = rr.sample_records()
         self.assertGreaterEqual(len(sample), 100)
         tier1 = [r for r in sample if r["surface"] == "catalog"]
-        self.assertEqual(len(tier1), 75, "Tier 1 ∪ daily pool is 75 works")
+        # 75 -> 84 with E5: nine works were promoted through ARTWORK_SCHEMA §8's
+        # FIRST DOOR, which had been open and unused for months — 64 of the 102
+        # works appearing in editorial lists were still Tier 2. Four Kandinsky/
+        # Turner records were authored up to standard and five that were already
+        # complete had only the tier flag missing. docs/DECK_DOOR_ONE.md.
+        self.assertEqual(len(tier1), 84, "Tier 1 ∪ daily pool is 84 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1223,9 +1228,9 @@ class TestSampleBasis(unittest.TestCase):
     def test_the_tier1_record_with_no_asset_is_dispositioned_not_counted_away(self):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
-        The validator reports `tier1: 76`; the rights sample reports 75 catalog
-        records. Both are right, and the gap is not an error to be closed by
-        changing a number. `_catalog_records()` deliberately admits only records
+        The validator reports one more Tier 1 record than the rights sample
+        counts (85 against 84 after E5). Both are right, and the gap is not an
+        error to be closed by changing a number. `_catalog_records()` deliberately admits only records
         carrying a Commons URL, so it counts *Tier 1 works that have an asset*.
         Exactly one Tier 1 work has none.
 
@@ -1239,12 +1244,12 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 75)
+        self.assertEqual(len(tier1_with_asset), 84)   # +9: E5, §8 door 1
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',
                         src, re.S | re.M)
-        self.assertIsNotNone(rec, "the 76th Tier 1 record must still exist")
+        self.assertIsNotNone(rec, "the asset-less Tier 1 record must still exist")
         img = re.search(r"image:\s*\{(.*?)\}", rec.group(0), re.S).group(1)
         self.assertIn('status:"copyright"', img.replace(" ", ""))
         self.assertNotIn("upload.wikimedia.org", img,

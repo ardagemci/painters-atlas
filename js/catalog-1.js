@@ -1009,7 +1009,7 @@ window.CATALOG = (window.CATALOG || []).concat([
 
 /* ——— The Kandinsky wing ——— */
 
-{ id:"blue-mountain", tier:2,
+{ id:"blue-mountain", tier:1,
   title:"The Blue Mountain",
   artistId:"wassily-kandinsky", year:{ display:"1908–09", sort:1908 },
   movements:["expressionism","der-blaue-reiter"], techniques:["oil-painting"], nation:"russia",
@@ -1017,9 +1017,14 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"106 × 96.6 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Blue_Mountain_by_Vasily_Kandinsky%2C_1908-09.JPG/500px-Blue_Mountain_by_Vasily_Kandinsky%2C_1908-09.JPG",
           page:"https://commons.wikimedia.org/wiki/File:Blue_Mountain_by_Vasily_Kandinsky,_1908-09.JPG", status:"pd" },
+  coords:{ F:20, D:45, E:60, C:5, M:20 }, coordsSource:"override",
+  description:"A blue mountain between a yellow tree and a red one, with riders crossing the bottom of the canvas. Everything is still nameable and nothing is the colour it should be — the colour has come loose from the job of describing and started doing something else. Kandinsky painted it around 1909, four years before he could do without the mountain altogether. This is the step immediately before the step.",
+  notice:["The trees are yellow and red; the mountain is blue",
+          "Riders cross the bottom — his lifelong motif",
+          "Colour has stopped describing and not yet left"],
   tags:["landscape","storm","would-hang"] },
 
-{ id:"first-abstract-watercolor", tier:2,
+{ id:"first-abstract-watercolor", tier:1,
   title:"Untitled (First Abstract Watercolor)",
   artistId:"wassily-kandinsky", year:{ display:"1910 (dated) / c. 1913", sort:1910 },
   movements:["abstract-art","der-blaue-reiter"], techniques:["watercolor"], nation:"russia",
@@ -1027,9 +1032,14 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"49.6 × 64.8 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Untitled_%28First_Abstract_Watercolor%29_by_Wassily_Kandinsky.jpg/500px-Untitled_%28First_Abstract_Watercolor%29_by_Wassily_Kandinsky.jpg",
           page:"https://commons.wikimedia.org/wiki/File:Untitled_(First_Abstract_Watercolor)_by_Wassily_Kandinsky.jpg", status:"pd" },
+  coords:{ F:90, D:40, E:90, C:30, M:-45 }, coordsSource:"override",
+  description:"Marks on white paper with nothing underneath them: no ground, no horizon, no thing depicted. Kandinsky signed and dated it 1910, which would make it the first fully abstract picture in Western art, and most scholars now read the date as written later than the sheet. The claim is part of the object. Whatever year it was made, this is what the arrival of abstraction actually looked like — small, on paper, and provisional.",
+  notice:["The paper is bare — there is no ground behind the marks",
+          "He dated it 1910; scholarship reads the date as later",
+          "A sheet you could carry, not a manifesto-sized canvas"],
   tags:["pattern","quiet","historical"] },
 
-{ id:"improvisation-28", tier:2,
+{ id:"improvisation-28", tier:1,
   title:"Improvisation 28 (Second Version)", worksKey:"Improvisation 28",
   artistId:"wassily-kandinsky", year:{ display:"1912", sort:1912 },
   movements:["der-blaue-reiter","abstract-art"], techniques:["oil-painting"], nation:"russia",
@@ -1037,6 +1047,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"111.4 × 162.1 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Vasily_Kandinsky_Improvisation_28_%28second_version%29.jpg/500px-Vasily_Kandinsky_Improvisation_28_%28second_version%29.jpg",
           page:"https://commons.wikimedia.org/wiki/File:Vasily_Kandinsky_Improvisation_28_(second_version).jpg", status:"pd" },
+  coords:{ F:75, D:70, E:80, C:35, M:25 }, coordsSource:"override",
+  description:"Black lines slice the canvas like rigging, and either side of them the forms are almost, but never quite, things — a boat, a cannon, towers on a hill at the top right. Kandinsky called the numbered Improvisations largely unconscious, as against the Compositions he planned; this is 1912, and he is painting the end of one world and the start of another with the hardware still half visible.",
+  notice:["Black diagonals cut across everything, like rigging",
+          "Towers on a hill, top right — the last legible thing",
+          "Improvisations were unplanned; Compositions were not"],
   tags:["storm","red","pattern"] },
 
 { id:"composition-viii", tier:1,
@@ -1377,7 +1392,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway", status:"pd" },
   tags:["storm","historical","golden"] },
 
-{ id:"norham-castle-sunrise", tier:2,
+{ id:"norham-castle-sunrise", tier:1,
   title:"Norham Castle, Sunrise",
   artistId:"jmw-turner", year:{ display:"c. 1845", sort:1845 },
   movements:["romanticism"], techniques:["oil-painting"], nation:"britain",
@@ -1385,6 +1400,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"90.8 × 121.9 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Joseph_Mallord_William_Turner_-_Norham_Castle%2C_Sunrise_-_WGA23182.jpg/500px-Joseph_Mallord_William_Turner_-_Norham_Castle%2C_Sunrise_-_WGA23182.jpg",
           page:"https://en.wikipedia.org/wiki/Norham_Castle,_Sunrise", status:"pd" },
+  coords:{ F:10, D:-50, E:70, C:-40, M:10 }, coordsSource:"override",
+  description:"Turner painted Norham Castle over and over from 1797 onward; this is the last version and the one he never finished or showed. The castle has become a blue wedge, the river a sheet of light, the sun a soft disc with no edge anywhere in the picture. Then you find the cow — brown, standing in the water, entirely solid. One animal holding a whole dissolved world in place.",
+  notice:["There is a cow standing in the river. Find it first.",
+          "No line anywhere: the castle is a wedge of blue",
+          "Unfinished and never exhibited — it stayed in his studio"],
   tags:["landscape","quiet","golden"] },
 
 /* ——— The Hokusai wing ——— */

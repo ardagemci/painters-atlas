@@ -125,7 +125,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "The scandal drove Sargent out of Paris for good"],
   tags:["portrait","quiet","theatrical"] },
 
-{ id:"the-fate-of-the-animals", tier:2,
+{ id:"the-fate-of-the-animals", tier:1,
   title:"The Fate of the Animals",
   artistId:"franz-marc", year:{ display:"1913", sort:1913 },
   movements:["expressionism","der-blaue-reiter"], techniques:["oil-painting"], nation:"germany",
@@ -155,7 +155,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "Unsigned and unexhibited in his lifetime"],
   tags:["nocturne","rain-mood","texture"] },
 
-{ id:"gray-tree", tier:2,
+{ id:"gray-tree", tier:1,
   title:"Gray Tree", worksKey:"The Gray Tree",
   artistId:"piet-mondrian", year:{ display:"1911", sort:1911 },
   movements:["cubism"], techniques:["oil-painting"], nation:"netherlands",
