@@ -1211,7 +1211,12 @@ class TestSampleBasis(unittest.TestCase):
         # works appearing in editorial lists were still Tier 2. Four Kandinsky/
         # Turner records were authored up to standard and five that were already
         # complete had only the tier flag missing. docs/DECK_DOOR_ONE.md.
-        self.assertEqual(len(tier1), 84, "Tier 1 ∪ daily pool is 84 works")
+        # 84 -> 96 with the list-backlog tranche: ten records authored up to Tier 1
+        # standard (four Vermeers, four Rembrandts, two Hokusai prints) and three
+        # that were already complete and only needed the flag. §8 door-1 backlog
+        # 60 -> 47. The sample counts Tier 1 works CARRYING AN ASSET, so `abaporu`
+        # — promoted, image:{status:"copyright"} — is Tier 1 and not counted here.
+        self.assertEqual(len(tier1), 96, "Tier 1 ∪ daily pool is 96 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1228,9 +1233,11 @@ class TestSampleBasis(unittest.TestCase):
     def test_the_tier1_record_with_no_asset_is_dispositioned_not_counted_away(self):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
-        The validator reports one more Tier 1 record than the rights sample
-        counts (85 against 84 after E5). Both are right, and the gap is not an
-        error to be closed by changing a number. `_catalog_records()` deliberately admits only records
+        The validator reports more Tier 1 records than the rights sample counts
+        (97 against 96). Both are right, and the gap is not an error to be closed
+        by changing a number. Two records now sit in it: `beginning-noland`,
+        described below, and `abaporu`, promoted with the list backlog and also
+        carrying image:{status:"copyright"} with no src. `_catalog_records()` deliberately admits only records
         carrying a Commons URL, so it counts *Tier 1 works that have an asset*.
         Exactly one Tier 1 work has none.
 
@@ -1244,7 +1251,7 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 84)   # +9: E5, §8 door 1
+        self.assertEqual(len(tier1_with_asset), 96)   # +12 more: the list-backlog tranche
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',

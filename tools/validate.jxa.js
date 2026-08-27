@@ -262,7 +262,7 @@ var listDoor = { members: 0, below: 0 };
    the influence-grounding one — the count prints every run and may fall, never
    rise. Failing outright would block every unrelated change behind a content
    commission, which is how a guard gets deleted. */
-const LIST_TIER2_CEILING = 60;
+const LIST_TIER2_CEILING = 47;
 (function(){
   const inList = {};
   LST.forEach(function(l){ (l.works || []).forEach(function(e){ inList[e.id] = 1; }); });

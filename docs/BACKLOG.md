@@ -755,10 +755,28 @@ refusing.
 `list works below tier 1: N/M` every run, and fails above a ceiling of **60**. A
 ratchet, not a gate. Proved by demoting *Black Square* — exit 1 at 61.
 
-**Left: 60 list works below Tier 1**, 49 with PD images, each needing coords, a
-60–90 word description and three bullets. That is the largest remaining lever on
-the deck. And **F+D− is a product constraint, not a backlog item** — that opening
-card will be the same painting for every user, forever.
+**First tranche of the backlog done the same day: 60 → 47, deck pool 84 → 96.**
+Ten authored — four Vermeers (*The Milkmaid*, *The Lacemaker*, *Woman in Blue*,
+*The Concert*), four Rembrandts (*Danaë*, *Self-Portrait at 63*, *Self-Portrait
+with Two Circles*, *The Storm on the Sea of Galilee*) and two Hokusai prints —
+plus three that needed only the tier flag. Vermeer, the atlas's most underserved
+major painter, now has five full pages.
+
+**`match_verdict` produced a FALSE REJECTION**, the mirror of E3's false confirms:
+*The Amida Falls* was rejected because its Commons file carries the Rijksmuseum's
+Dutch title and inventory number, tying to neither the English title nor the
+artist's name. The file is genuine. **The check is a filter, not a verdict, in
+both directions.**
+
+**Nine back-link warnings fired and every one was real.** Promotion turns on §8's
+back-link check, which found Vermeer's record listing four works and not *The
+Lacemaker*, *The Concert* or *Woman in Blue*; Rembrandt's omitting three;
+Hokusai's omitting both prints. Fixed. The promotions did not create the gap,
+they revealed it.
+
+**Left: 47 list works below Tier 1**, most with PD images. And **F+D− is a
+product constraint, not a backlog item** — that opening card will be the same
+painting for every user, forever.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.

@@ -386,7 +386,7 @@ window.CATALOG = (window.CATALOG || []).concat([
    NB: this comment deliberately avoids writing that flag out as a literal
    key/value pair — tools/asset_inventory.py counts the string wherever it
    appears, so a comment quoting it inflates copyright_refs by one. */
-{ id:"the-dream-rousseau", tier:2,
+{ id:"the-dream-rousseau", tier:1,
   title:"The Dream", worksKey:"The Dream",
   artistId:"henri-rousseau", year:{ display:"1910", sort:1910 },
   movements:["naive-art","post-impressionism"], techniques:["oil-painting"], nation:"france",
@@ -401,8 +401,8 @@ window.CATALOG = (window.CATALOG || []).concat([
           "Finished months before his death in 1910"],
   tags:["landscape","unsettling","monumental-scale","nude"] },
 
-{ id:"tiger-in-a-tropical-storm", tier:2,
-  title:"Tiger in a Tropical Storm (Surprised!)", worksKey:"Tiger in a Tropical Storm",
+{ id:"tiger-in-a-tropical-storm", tier:1,
+  title:"Tiger in a Tropical Storm (Surprised!)", worksKey:"Tiger in a Tropical Storm (Surprised!)",
   artistId:"henri-rousseau", year:{ display:"1891", sort:1891 },
   movements:["naive-art","post-impressionism"], techniques:["oil-painting"], nation:"france",
   museum:{ id:"national-gallery-london", name:"The National Gallery", city:"London" },
@@ -416,7 +416,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "Nobody has agreed what surprised the tiger"],
   tags:["landscape","storm","unsettling"] },
 
-{ id:"abaporu", tier:2,
+{ id:"abaporu", tier:1,
   title:"Abaporu", worksKey:"Abaporu",
   artistId:"tarsila-do-amaral", year:{ display:"1928", sort:1928 },
   movements:["modernism"], techniques:["oil-painting"], nation:"brazil",
