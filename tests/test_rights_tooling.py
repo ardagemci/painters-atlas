@@ -1216,7 +1216,14 @@ class TestSampleBasis(unittest.TestCase):
         # that were already complete and only needed the flag. §8 door-1 backlog
         # 60 -> 47. The sample counts Tier 1 works CARRYING AN ASSET, so `abaporu`
         # — promoted, image:{status:"copyright"} — is Tier 1 and not counted here.
-        self.assertEqual(len(tier1), 96, "Tier 1 ∪ daily pool is 96 works")
+        # 96 -> 105 with the second tranche: twelve more records authored, chosen
+        # to FINISH whole editorial lists rather than by artist. Six of the fifteen
+        # lists are now entirely Tier 1, up from one. §8 door-1 backlog 47 -> 35.
+        # The validator reports 109 Tier 1; this counts the 105 carrying a pd
+        # asset. The four without one — full-fathom-five, autumn-rhythm,
+        # no-14-rothko, abaporu — are Tier 1 records with image:{status:"copyright"}
+        # and no src, which is the honest state for work still in copyright.
+        self.assertEqual(len(tier1), 105, "Tier 1 ∪ daily pool is 105 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1234,10 +1241,11 @@ class TestSampleBasis(unittest.TestCase):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
         The validator reports more Tier 1 records than the rights sample counts
-        (97 against 96). Both are right, and the gap is not an error to be closed
-        by changing a number. Two records now sit in it: `beginning-noland`,
-        described below, and `abaporu`, promoted with the list backlog and also
-        carrying image:{status:"copyright"} with no src. `_catalog_records()` deliberately admits only records
+        (109 against 105). Both are right, and the gap is not an error to be closed
+        by changing a number. Four records sit in it — full-fathom-five,
+        autumn-rhythm, no-14-rothko and abaporu — each promoted through §8 door 1
+        and each carrying image:{status:"copyright"} with no src. A Tier 1 record
+        may be written about without being displayable. `_catalog_records()` deliberately admits only records
         carrying a Commons URL, so it counts *Tier 1 works that have an asset*.
         Exactly one Tier 1 work has none.
 
@@ -1251,7 +1259,7 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 96)   # +12 more: the list-backlog tranche
+        self.assertEqual(len(tier1_with_asset), 105)   # +9 more with a pd asset
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',

@@ -161,7 +161,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","gold-leaf"], style:"ornament",
   palette:["#caa43e","#e8cd7a","#8a5e2e","#3e3a30","#a83a4e"],
   tagline:"Vienna gilded — desire wrapped in gold leaf",
-  works:[{t:"The Kiss",y:"1907–08"},{t:"Portrait of Adele Bloch-Bauer I",y:"1907"},{t:"The Tree of Life",y:"1905–09"}],
+  works:[{t:"The Kiss",y:"1907–08"},{t:"Portrait of Adele Bloch-Bauer I",y:"1907"},{t:"The Tree of Life",y:"1905–09"},{t:"Judith and the Head of Holofernes (Judith I)",y:"1901"}],
   life:"Son of a Viennese gold engraver, Klimt rose painting theatre ceilings before leading the 1897 Secession revolt under the motto 'To every age its art, to art its freedom.' He never married, living with his mother and sisters while sustaining a lifelong bond with designer Emilie Flöge; paternity claims after his death (stroke and influenza, 1918) numbered around fourteen.",
   career:"His University ceiling paintings were condemned as pornography and 'perverted excess' — Klimt returned the fee and never accepted a public commission again. The Golden Phase answered with armour of ornament: Adele Bloch-Bauer dissolved into Byzantine mosaic, The Kiss making desire sacred. His landscapes, painted on Attersee holidays through a telescope-like viewfinder, are mosaics of another kind.",
   outside:"He worked in a blue painter's smock with (Vienna swore) nothing beneath, surrounded by cats and unfinished canvases. Mentor and protector to the young Schiele, he answered demands for a self-portrait: 'There is nothing special about me. Whoever wants to know something about me ought to look carefully at my pictures.'",

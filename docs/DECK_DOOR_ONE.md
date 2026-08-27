@@ -141,10 +141,49 @@ revealed it.**
 
 `LIST_TIER2_CEILING` lowered **60 → 47**.
 
+## 6b. Second tranche — 47 → 35, and six lists finished
+
+*Same day.* Twelve more, and the organising principle changed: instead of
+grouping by artist, **the tranche was chosen to finish whole lists.** Twelve
+works completed five of them outright.
+
+| list | what it needed |
+| --- | --- |
+| `judith-one-story-many-knives` | Caravaggio, Artemisia and Klimt's three Judiths |
+| `ways-of-water` | Monet's *La Grenouillère* and *Bridge over a Pond*, Turner's *Fishermen at Sea* |
+| `doorways-into-abstraction` | Pollock's *Autumn Rhythm*, Rothko's *No. 14* |
+| `paint-you-can-touch` | Turner's *Snow Storm*, Pollock's *Full Fathom Five* |
+| `the-forest-that-stopped-shrinking` | af Klint's *Tree of Knowledge*, Klimt's *Tree of Life* |
+
+**Six of the fifteen lists are now entirely Tier 1, up from one.** Deck pool
+**96 → 105**.
+
+**Four of the twelve are in copyright** — the two Pollocks, the Rothko, and
+`abaporu` from the first tranche — and they are Tier 1 all the same, carrying
+`image:{status:"copyright"}` with no `src`. **A record may be written about
+without being displayable**, and the rights sample counts 105 against the
+validator's 109 for exactly that reason.
+
+**Three of the three Pollock/Rothko records already carried hand-scored
+coordinates**, in `js/catalog-2.js`'s compact record shape. Those were left
+alone and only `description` and `notice` were added — rescoring existing
+coordinates to fit a new author's taste is not a promotion, it is a silent edit.
+
+**`match_verdict` false-rejected twice more**, both on filename words rather than
+content: Klimt's *Judith I* on `(cropped)` — the file is the complete painting
+including its inscribed frame — and the Stoclet *Tree of Life* on `Part of`,
+where the file is an honestly-labelled section of the full-size cartoon and the
+record already says so. With *The Amida Falls*, that is **three false rejections
+against E3's two false confirms.** The pattern is now clear enough to state: the
+check reads filenames and titles, so it fails on foreign-language pages,
+inventory numbers, and the words *cropped* and *part of* — in both directions.
+
+`LIST_TIER2_CEILING` lowered **47 → 35**.
+
 ## 7. What is left
 
-1. **Forty-seven list works still below Tier 1**, most carrying public-domain
-   images. Same shape of work: coordinates, description, three bullets.
+1. **Thirty-five list works still below Tier 1.** Nine lists remain incomplete;
+   `the-king-goes-to-philadelphia` alone accounts for eight of the thirty-five.
 2. **Lower `LIST_TIER2_CEILING`** whenever the number falls.
 3. **F+D− is unfixable from the public domain** and should be treated as a
    product constraint, not a backlog item — the deck's opening card in that

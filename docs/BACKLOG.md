@@ -774,9 +774,32 @@ Lacemaker*, *The Concert* or *Woman in Blue*; Rembrandt's omitting three;
 Hokusai's omitting both prints. Fixed. The promotions did not create the gap,
 they revealed it.
 
-**Left: 47 list works below Tier 1**, most with PD images. And **F+D− is a
-product constraint, not a backlog item** — that opening card will be the same
-painting for every user, forever.
+**Second tranche, same day: 47 → 35, deck pool 96 → 105.** Organising principle
+changed — chosen to **finish whole lists** rather than to group by artist, and
+twelve works completed five of them: `judith-one-story-many-knives`,
+`ways-of-water`, `doorways-into-abstraction`, `paint-you-can-touch` and
+`the-forest-that-stopped-shrinking`. **Six of fifteen lists are now entirely
+Tier 1, up from one.**
+
+Four of the twelve are in copyright (two Pollocks, a Rothko, and `abaporu`) and
+are Tier 1 anyway, carrying `image:{status:"copyright"}` with no `src` — **a
+record may be written about without being displayable**, which is why the rights
+sample counts 105 against the validator's 109. Three of them already carried
+hand-scored coords in `js/catalog-2.js`; those were left untouched and only
+`description` and `notice` added.
+
+**`match_verdict` false-rejected twice more** — Klimt's *Judith I* on `(cropped)`
+(the file is the whole painting, frame included) and the Stoclet *Tree of Life*
+on `Part of` (an honestly-labelled cartoon section the record already describes
+as one). That is **three false rejections against E3's two false confirms**, and
+the pattern is now stateable: the check reads filenames and titles, so it
+misfires on foreign-language pages, inventory numbers, and the words *cropped*
+and *part of* — in both directions.
+
+**Left: 35 list works below Tier 1**; nine lists incomplete, and
+`the-king-goes-to-philadelphia` alone holds eight of the thirty-five. And **F+D−
+is a product constraint, not a backlog item** — that opening card will be the
+same painting for every user, forever.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.

@@ -295,7 +295,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Paintings_for_the_Temple", status:"pd" },
   tags:["pattern","golden","monumental-scale"] },
 
-{ id:"tree-of-knowledge-no-1", tier:2,
+{ id:"tree-of-knowledge-no-1", tier:1,
   title:"Tree of Knowledge, No. 1",
   artistId:"hilma-af-klint", year:{ display:"1913–15", sort:1913 },
   movements:["abstract-art","symbolism"], techniques:["watercolor"], nation:"sweden",
@@ -303,6 +303,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"45.7 × 29.5 cm (watercolour)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Tree_of_Knowledge_No._1%2C_Hilma_af_Klint%2C_1913-1915%2C_Glenstone_2023.jpg/500px-Tree_of_Knowledge_No._1%2C_Hilma_af_Klint%2C_1913-1915%2C_Glenstone_2023.jpg",
           page:"https://en.wikipedia.org/wiki/Tree_of_Knowledge_(af_Klint)", status:"pd" },
+  coords:{ F:55, D:-20, E:85, C:65, M:-55 }, coordsSource:"override",
+  description:"A tree drawn as a diagram: a trunk of interlocking forms, two birds facing each other across it, fields of flat colour above and below. Hilma af Klint made hundreds of works like this years before Kandinsky or Malevich, then left instructions that none of them be exhibited until twenty years after her death, because she thought nobody was ready. The instruction was obeyed.",
+  notice:["Painted years before the men credited with abstraction",
+          "She forbade exhibition until twenty years after her death",
+          "The tree is a diagram, not a picture of a tree"],
   tags:["pattern","tender","quiet"] },
 
 /* ——— The Cassatt wing ——— */

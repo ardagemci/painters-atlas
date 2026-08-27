@@ -70,7 +70,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","watercolor","tempera","automatism"], style:"abstract",
   palette:["#e8b4c8","#9ab8d9","#f0e0a8","#caa45c","#5e5648"],
   tagline:"Abstraction's secret first mover — sealed by her own will for decades",
-  works:[{t:"The Ten Largest",y:"1907"},{t:"Paintings for the Temple",y:"1906–15"},{t:"The Swan series",y:"1914–15"}],
+  works:[{t:"The Ten Largest",y:"1907"},{t:"Paintings for the Temple",y:"1906–15"},{t:"The Swan series",y:"1914–15"},{t:"Tree of Knowledge, No. 1",y:"1913–15"}],
   life:"A Swedish naval officer's daughter and academy-trained portraitist, af Klint supported herself with conventional botanical and landscape work while conducting, with four women friends — 'The Five' — séances that she said commissioned her true art. She never married, cared for her blind mother for years, and died after a tram accident at eighty-one.",
   career:"From 1906 — years before Kandinsky or Mondrian — she painted monumental abstractions: the ten-foot Ten Largest swirl with spirals, letters and biomorphic blooms charting life's ages. The 193-work Paintings for the Temple cycle was, she believed, dictated through her. Convinced the world wasn't ready, she barred exhibition until twenty years after her death; the 2018 Guggenheim show became the museum's most-visited ever.",
   outside:"Her notebooks — tens of thousands of pages — map a private cosmology of theosophy, Rosicrucianism and Rudolf Steiner, whose lukewarm reaction to the paintings reportedly wounded her deeply. She willed everything to a nephew with instructions to keep the boxes shut.",
