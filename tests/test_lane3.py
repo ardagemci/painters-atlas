@@ -591,16 +591,16 @@ class WritFourTest(unittest.TestCase):
                         "tools/**", "docs/**"):
             self.assertIn(guarded, self.fields["may_not"])
 
-    def test_its_success_is_decided_by_a_gate_that_fails_today(self):
-        """A writ whose verifier already passes cannot tell you it worked."""
+    def test_its_success_is_decided_by_a_gate(self):
+        """A writ whose correctness nothing can test is not a writ. This once
+        also asserted the gate was failing right now, which stopped being true
+        the moment W-004 succeeded -- the assertion was measuring the defect
+        rather than the check. tests/test_image_pages.py proves the gate can
+        still fail, on synthetic data that no repair can take away."""
         self.assertTrue(any("check_image_pages" in v and "--require-commons" in v
                             for v in self.fields["verifier"]),
                         "the gate must be one of its verifiers")
-        result = subprocess.run(
-            [sys.executable, str(ROOT / "tools" / "check_image_pages.py"),
-             "--require-commons"], capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(result.returncode, 1,
-                         "if this passes before W-004 runs, the gate is vacuous")
+        self.assertTrue((ROOT / "tools" / "check_image_pages.py").exists())
 
     def test_changing_anything_but_the_page_field_aborts(self):
         aborts = " ".join(self.fields["abort_if"]).lower()

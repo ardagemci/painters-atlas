@@ -103,13 +103,23 @@ class GateTest(unittest.TestCase):
         """Report-only by default: knowing the number is not a build break."""
         self.assertEqual(self.run_checker().returncode, 0)
 
-    def test_the_gate_fails_while_the_work_is_undone(self):
-        """Non-vacuity, and it is the point of the tool: 257 records still cite
-        a Wikipedia article, so --require-commons must refuse today. If this
-        ever passes without W-004 having run, the check has stopped checking."""
-        result = self.run_checker("--require-commons")
-        self.assertEqual(result.returncode, 1)
-        self.assertIn("still cite a page that is not a Commons file page", result.stderr)
+    def test_the_gate_can_still_fail(self):
+        """Non-vacuity, on synthetic data rather than on production being
+        broken. This used to assert the real catalog had offenders, which was
+        true for 293 records until W-004 fixed them -- at which point the test
+        failed because the thing it guarded had been repaired. A guard whose
+        proof of life is a live defect stops working the moment you succeed."""
+        bad = [{"id": "x", "file": "f", "status": "pd",
+                "page": "https://en.wikipedia.org/wiki/The_Starry_Night"}]
+        original, checker.records = checker.records, lambda: iter(bad)
+        try:
+            self.assertEqual(checker.main(["--require-commons"]), 1)
+        finally:
+            checker.records = original
+
+    def test_the_real_catalog_is_migrated(self):
+        """The state W-004 achieved, asserted so a regression is visible."""
+        self.assertEqual(self.run_checker("--require-commons").returncode, 0)
 
     def test_the_gate_passes_when_every_page_is_a_commons_file_page(self):
         """The other direction, on synthetic data — a gate that only ever
