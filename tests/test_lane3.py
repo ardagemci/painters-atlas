@@ -573,8 +573,20 @@ class WritFourTest(unittest.TestCase):
 
     def test_it_may_touch_only_the_catalog_and_its_own_report(self):
         allowed = set(self.fields["may_write"])
-        self.assertEqual(allowed - {"protocol/runs/**"},
-                         {"js/catalog-%d.js" % n for n in range(1, 6)})
+        self.assertEqual(allowed - {"protocol/runs/**"}, {"js/catalog-*.js"})
+
+    def test_it_names_the_catalog_by_glob_not_by_number(self):
+        """C2, the rule the validator already learned and this writ broke:
+        numbered data families are discovered, never listed. Written as
+        catalog-1..5 and wrong four files later — catalog-6 through 9 exist,
+        and a run confined to the named five would leave their records unfixed
+        while its own verifier still failed."""
+        for name in self.fields["may_write"]:
+            self.assertNotRegex(name, r"catalog-\d+\.js",
+                                "a numbered catalog file is named explicitly")
+        on_disk = sorted((ROOT / "js").glob("catalog-*.js"))
+        self.assertGreater(len(on_disk), 5,
+                           "if this ever drops to 5 the regression is invisible")
         for guarded in ("js/artworks.js", "js/taxonomy.js", "js/app.js",
                         "tools/**", "docs/**"):
             self.assertIn(guarded, self.fields["may_not"])
