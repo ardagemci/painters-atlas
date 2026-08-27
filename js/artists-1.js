@@ -110,7 +110,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","tempera"], style:"renaissance",
   palette:["#aeb9b4","#5b6e5a","#8a5a32","#32433f","#e8e3d3"],
   tagline:"Peasant weddings, proverb worlds and the first great snow in art",
-  works:[{t:"Hunters in the Snow",y:"1565"},{t:"Netherlandish Proverbs",y:"1559"},{t:"The Tower of Babel",y:"1563"}],
+  works:[{t:"Hunters in the Snow",y:"1565"},{t:"Netherlandish Proverbs",y:"1559"},{t:"The Tower of Babel",y:"1563"},{t:"Landscape with the Fall of Icarus",y:"c. 1560"}],
   life:"Little is certain about Bruegel's origins; he emerges in Antwerp's painters' guild in 1551, travelled over the Alps to Italy — returning with mountains in his imagination rather than Roman statues — and settled in Brussels, where he married his teacher's daughter and died young, around forty-four.",
   career:"In barely forty surviving panels Bruegel built a complete world: seasons turning over village life, children's games catalogued by the hundred, proverbs literalised into absurdist theatre, and Babel rising like a doomed termite mound. He painted peasants without mockery or sentimentality at a time when they were considered comedy — and his Hunters in the Snow practically invented winter as a subject.",
   outside:"His friend the cartographer Ortelius eulogised him as 'the most perfect painter of his century.' An early biographer claims he disguised himself as a peasant to crash village weddings, earning the nickname 'Peasant Bruegel' — gossip, perhaps, but in the pictures it rings true.",

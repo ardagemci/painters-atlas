@@ -731,7 +731,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/The_Sleep_of_Reason_Produces_Monsters", status:"pd" },
   tags:["unsettling","nocturne","lonely"] },
 
-{ id:"charles-iv-of-spain-and-his-family", tier:2,
+{ id:"charles-iv-of-spain-and-his-family", tier:1,
   title:"Charles IV of Spain and His Family",
   artistId:"francisco-goya", year:{ display:"1800–01", sort:1800 },
   movements:["romanticism"], techniques:["oil-painting"], nation:"spain",
@@ -739,6 +739,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"280 × 336 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/La_familia_de_Carlos_IV.jpg/500px-La_familia_de_Carlos_IV.jpg",
           page:"https://en.wikipedia.org/wiki/Charles_IV_of_Spain_and_His_Family", status:"pd" },
+  coords:{ F:-88, D:10, E:30, C:40, M:70 }, coordsSource:"override",
+  description:"Thirteen members of the Spanish royal family lined up in medals and silk, painted with a candour people have argued about ever since: the queen at the centre, the king slightly apart, and nobody made better-looking than they were. Goya put himself at the back left, at a canvas, in shadow — exactly where Velázquez stands in Las Meninas. Whether the flattery is missing on purpose is the whole question.",
+  notice:["Goya stands at a canvas in the shadows, back left",
+          "The arrangement quotes Las Meninas directly",
+          "Nobody in it has been made better-looking"],
   tags:["portrait","historical","golden"] },
 
 { id:"the-clothed-maja", tier:2,
@@ -954,7 +959,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   tags:["landscape","quiet","golden","would-hang"],
   related:["impression-sunrise","water-lilies-grandes-decorations"] },
 
-{ id:"rouen-cathedral-full-sunlight", tier:2,
+{ id:"rouen-cathedral-full-sunlight", tier:1,
   title:"Rouen Cathedral, Full Sunlight (Harmony in Blue and Gold)", worksKey:"Rouen Cathedral series",
   artistId:"claude-monet", year:{ display:"1893", sort:1893 },
   movements:["impressionism"], techniques:["oil-painting","broken-color"], nation:"france",
@@ -962,6 +967,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"107 × 73.5 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue_et_or.jpg/500px-Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue_et_or.jpg",
           page:"https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)", status:"pd" },
+  coords:{ F:-55, D:15, E:70, C:35, M:40 }, coordsSource:"override",
+  description:"Monet rented rooms opposite the cathedral and worked on more than thirty canvases at once, swapping between them as the light moved, then finished them all in the studio at Giverny. The subject is not the building. The stone here has become a crust of blue, gold and pink, laid on thickly enough to have its own weather, and the facade is barely architecture at all.",
+  notice:["He worked thirty-odd canvases at once as the light moved",
+          "The paint surface is as rough as the stone it shows",
+          "Finished at Giverny, not in front of the cathedral"],
   tags:["golden","monumental-scale","quiet"] },
 
 /* ——— The Klimt wing ——— */
@@ -1400,7 +1410,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Snow_Storm%3A_Hannibal_and_his_Army_Crossing_the_Alps", status:"pd" },
   tags:["storm","historical","monumental-scale"] },
 
-{ id:"the-burning-of-the-houses", tier:2,
+{ id:"the-burning-of-the-houses", tier:1,
   title:"The Burning of the Houses of Lords and Commons",
   artistId:"jmw-turner", year:{ display:"1835", sort:1835 },
   movements:["romanticism"], techniques:["oil-painting"], nation:"britain",
@@ -1408,6 +1418,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"92 × 123 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons", status:"pd" },
+  coords:{ F:-45, D:90, E:65, C:5, M:55 }, coordsSource:"override",
+  description:"Parliament burned on the night of 16 October 1834 and Turner was among the thousands who watched it from the river. He made sketches on the spot and two oil paintings afterwards. The fire is the light source for the whole canvas — it lights the crowd, the bridge and the water — and the building actually being destroyed is the least distinct thing in the picture.",
+  notice:["He watched it burn from the Thames, 16 October 1834",
+          "The fire lights everything; the building is vaguest",
+          "He painted the same night twice"],
   tags:["historical","red","nocturne"] },
 
 { id:"the-fighting-temeraire", tier:1,
@@ -2047,7 +2062,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Still_Life_with_Plaster_Cupid", status:"pd" },
   tags:["interior","pattern","quiet"] },
 
-{ id:"the-large-bathers", tier:2,
+{ id:"the-large-bathers", tier:1,
   title:"The Large Bathers", worksKey:"The Large Bathers",
   artistId:"paul-cezanne", year:{ display:"1898–1905", sort:1898 },
   movements:["post-impressionism"], techniques:["oil-painting"], nation:"france",
@@ -2055,6 +2070,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"210.5 × 250.8 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Paul_C%C3%A9zanne%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg/500px-Paul_C%C3%A9zanne%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Bathers_(C%C3%A9zanne)", status:"pd" },
+  coords:{ F:-55, D:-25, E:80, C:45, M:70 }, coordsSource:"override",
+  description:"Cézanne worked at this for seven years and left it unfinished, which was normal for him. The bathers are less nudes than structure: bodies flattened into the same planes as the trees, and the trees leaning inward to close the composition like a pediment. Both Picasso and Matisse saw it. Cubism begins here about as much as it begins anywhere.",
+  notice:["The trees lean in to arch over the whole group",
+          "Bodies and landscape are built from the same planes",
+          "Seven years of work, left unfinished"],
   tags:["nude","monumental-scale","quiet"] },
 
 { id:"self-portrait-as-the-allegory-of-painting", tier:1,

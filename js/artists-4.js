@@ -44,7 +44,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","pastel","etching"], style:"impressionist",
   palette:["#e8c8b0","#a8c4b8","#d9a8a0","#f0e6d4","#5e6e6a"],
   tagline:"Pittsburgh's gift to Paris — mothers, children, and the modern print",
-  works:[{t:"The Child's Bath",y:"1893"},{t:"Little Girl in a Blue Armchair",y:"1878"},{t:"The Boating Party",y:"1893–94"}],
+  works:[{t:"The Child's Bath",y:"1893"},{t:"Little Girl in a Blue Armchair",y:"1878"},{t:"The Boating Party",y:"1893–94"},{t:"Woman with a Pearl Necklace in a Loge",y:"1879"}],
   life:"Daughter of a Pittsburgh banker who declared he would 'almost rather see her dead' than an artist abroad, Cassatt moved to Paris anyway, the family eventually following her. She never married — 'a woman artist must be capable of making the primary sacrifices' — and painted until cataracts stopped her around 1914, dying at her château at eighty-two.",
   career:"Degas saw her Salon entry and recruited her: 'Here is someone who feels as I do.' The only American in the Impressionist exhibitions, she made the mother-and-child her laboratory — tender in subject, steely in design. Her 1891 colour-print series, fusing drypoint and aquatint with Japanese flatness, is one of printmaking's summits.",
   outside:"She steered America's great collectors — above all her friend Louisine Havemeyer — toward Degas, Manet and El Greco; the Havemeyer bequest seeded the Met's modern French holdings. A committed suffragist, she sold work to fund the cause when her family disapproved.",

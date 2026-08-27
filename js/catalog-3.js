@@ -255,7 +255,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/The_Peasant_Wedding", status:"pd" },
   tags:["everyday-life","interior","tender"] },
 
-{ id:"fall-of-icarus", tier:2,
+{ id:"fall-of-icarus", tier:1,
   title:"Landscape with the Fall of Icarus",
   artistId:"pieter-bruegel", year:{ display:"c. 1560", sort:1560 },
   movements:["northern-renaissance"], techniques:["oil-painting"], nation:"belgium",
@@ -263,6 +263,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"73.5 × 112 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels%2C_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_%26_Culture.jpg/500px-Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels%2C_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_%26_Culture.jpg",
           page:"https://en.wikipedia.org/wiki/Landscape_with_the_Fall_of_Icarus", status:"pd" },
+  coords:{ F:-80, D:-30, E:55, C:65, M:20 }, coordsSource:"override",
+  description:"A ploughman works, a shepherd stares up at nothing in particular, a ship sails on — and in the bottom right corner two legs disappear into the water. That is Icarus. The proportion is the entire argument: the myth takes up about one per cent of the picture and not one person in it has noticed. Whether Bruegel painted this actual panel is now disputed.",
+  notice:["Icarus is two legs, bottom right, already going under",
+          "Nobody in the painting has noticed him",
+          "Bruegel's authorship of this panel is now disputed"],
   tags:["landscape","everyday-life","lonely"] },
 
 { id:"triumph-of-death", tier:2,

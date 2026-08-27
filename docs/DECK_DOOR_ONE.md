@@ -180,11 +180,54 @@ inventory numbers, and the words *cropped* and *part of* — in both directions.
 
 `LIST_TIER2_CEILING` lowered **47 → 35**.
 
+## 6c. Third tranche — 35 → 24, and both Actuality lists finished
+
+Eleven more, again chosen to finish lists. **Eight of fifteen are now entirely
+Tier 1.**
+
+- **`the-king-goes-to-philadelphia`** (eight works: Cassatt ×2, Cézanne, Turner,
+  Degas, Goya, Bruegel, Enwonwu) — and with `the-forest-that-stopped-shrinking`
+  already done, **both Actuality lists are now complete**. The monthly ritual's
+  own pages are Tier 1 the whole way down.
+- **`the-same-thing-obsessively`** (Monet's *Rouen Cathedral*, Warhol's *Marilyn
+  Diptych* and *Campbell's Soup Cans*).
+
+### A defect the tranche surfaced: the `pd` token on credit-required files
+
+Promoting `little-dancer-aged-fourteen` showed that its image is a **CC BY 2.0
+photograph of the sculpture** while the record carries `image.status:"pd"`.
+**Seven records do.** Six of them are photographs of three-dimensional or
+physically-sited works — Michelangelo's *David* and *Pietà*, the Degas — where
+the Commons file page asserts a licence for the *photograph* though the work
+beneath it is centuries old.
+
+**It is not a licence breach, and the finding says so rather than implying one.**
+All seven are registered in `js/photo-credits.js` and render their credit, so the
+attribution obligation is met. The defect is that `pd` is doing two jobs:
+`ARTWORK_SCHEMA` §3 defines `status` as a *rendering* flag, and `pd` also reads
+as a claim about legal status — which `CATALOG_BATCH_02` constraint 5 explicitly
+forbids for CC BY files.
+
+Recorded and ratcheted at seven in `tests/test_rights_tooling.py`, **not silently
+edited**: changing `status` could suppress rendering, and the schema has no value
+meaning "licensed photograph of an old work", so choosing one is a schema
+decision rather than a test's to make. A second test asserts the obligation that
+*does* bind — every attribution-required image has a credit record.
+
+**The repository's own OD-5 language guard then caught the docstring I wrote for
+that test**, because I had stated a file's legal status directly instead of
+saying what Commons asserts. Reworded. The guard works on its authors.
+
+`LIST_TIER2_CEILING` lowered **35 → 24**.
+
 ## 7. What is left
 
-1. **Thirty-five list works still below Tier 1.** Nine lists remain incomplete;
-   `the-king-goes-to-philadelphia` alone accounts for eight of the thirty-five.
-2. **Lower `LIST_TIER2_CEILING`** whenever the number falls.
-3. **F+D− is unfixable from the public domain** and should be treated as a
+1. **Twenty-four list works still below Tier 1**, across seven lists. Roughly
+   two more tranches clears the backlog entirely.
+2. **Seven records carry `pd` on a credit-required file.** Deciding what token a
+   licensed photograph of an out-of-copyright work should carry is a schema
+   question for the owner, not a silent edit.
+3. **Lower `LIST_TIER2_CEILING`** whenever the number falls.
+4. **F+D− is unfixable from the public domain** and should be treated as a
    product constraint, not a backlog item — the deck's opening card in that
    quadrant will be the same painting for every user, forever.
