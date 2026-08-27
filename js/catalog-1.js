@@ -482,7 +482,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Bacchus_(Caravaggio)", status:"pd" },
   tags:["portrait","everyday-life","would-hang"] },
 
-{ id:"judith-beheading-holofernes", tier:2,
+{ id:"judith-beheading-holofernes", tier:1,
   title:"Judith Beheading Holofernes", worksKey:"Judith Beheading Holofernes",
   artistId:"caravaggio", year:{ display:"c. 1599–1602", sort:1599 },
   movements:["baroque"], techniques:["oil-painting","tenebrism"], nation:"italy",
@@ -490,6 +490,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"145 × 195 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Judith_Beheading_Holofernes-Caravaggio_%28c.1598-9%29.jpg/500px-Judith_Beheading_Holofernes-Caravaggio_%28c.1598-9%29.jpg",
           page:"https://en.wikipedia.org/wiki/Judith_Beheading_Holofernes_(Caravaggio)", status:"pd" },
+  coords:{ F:-88, D:95, E:15, C:-10, M:40 }, coordsSource:"override",
+  description:"Caravaggio paints the cut itself: the blade already in the neck, three jets of blood, and Judith leaning back from her own work with an expression nearer distaste than triumph. Beside her an old servant waits with a cloth, and it is the servant's face, not Judith's, that has fully decided. It is the least heroic beheading in painting, and being unheroic is what it was for.",
+  notice:["The blade is mid-cut and she is leaning away from it",
+          "The servant's face has decided; Judith's has not",
+          "Three jets of blood, and no decorous trickle"],
   tags:["historical","unsettling","nocturne"] },
 
 { id:"the-entombment-of-christ", tier:2,
@@ -898,7 +903,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/The_Magpie_(Monet)", status:"pd" },
   tags:["landscape","quiet","would-hang"] },
 
-{ id:"la-grenouillere", tier:2,
+{ id:"la-grenouillere", tier:1,
   title:"Bain à la Grenouillère",
   artistId:"claude-monet", year:{ display:"1869", sort:1869 },
   movements:["impressionism"], techniques:["oil-painting","broken-color"], nation:"france",
@@ -906,6 +911,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"74.6 × 99.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Claude_Monet_La_Grenouill%C3%A9re.jpg/500px-Claude_Monet_La_Grenouill%C3%A9re.jpg",
           page:"https://en.wikipedia.org/wiki/La_Grenouill%C3%A8re_(Monet)", status:"pd" },
+  coords:{ F:-70, D:-10, E:65, C:-30, M:-20 }, coordsSource:"override",
+  description:"Monet and Renoir set up their easels side by side at a bathing place on the Seine in the summer of 1869 and painted the same view. This is roughly where Impressionism begins to work: the water is horizontal dashes of unmixed colour, the bathers are shorthand, and nothing is finished in any way a Salon jury would have recognised. Monet described it to a friend as a bad sketch.",
+  notice:["Renoir painted this same spot standing next to him",
+          "The water is flat horizontal dashes, unblended",
+          "Monet himself called it a bad sketch"],
   tags:["landscape","everyday-life","quiet"] },
 
 { id:"woman-with-a-parasol", tier:2,
@@ -956,7 +966,7 @@ window.CATALOG = (window.CATALOG || []).concat([
 
 /* ——— The Klimt wing ——— */
 
-{ id:"judith-i", tier:2,
+{ id:"judith-i", tier:1,
   title:"Judith and the Head of Holofernes (Judith I)",
   artistId:"gustav-klimt", year:{ display:"1901", sort:1901 },
   movements:["vienna-secession","symbolism"], techniques:["oil-painting","gold-leaf"], nation:"austria",
@@ -964,6 +974,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"84 × 42 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Judith_1_%28cropped%29.jpg/500px-Judith_1_%28cropped%29.jpg",
           page:"https://en.wikipedia.org/wiki/Judith_and_the_Head_of_Holofernes", status:"pd" },
+  coords:{ F:-65, D:35, E:55, C:30, M:-25 }, coordsSource:"override",
+  description:"Klimt's Judith holds the severed head at the bottom right of the frame, mostly cropped out of sight, and looks out with her eyes half shut and her mouth open. The gold continues onto the frame, which Klimt's brother Georg made and lettered JUDITH UND HOLOFERNES across the top — because viewers kept insisting the painting was Salome. It is not Salome. He had it engraved to stop them.",
+  notice:["The severed head is bottom right, almost cropped away",
+          "The frame is lettered because viewers kept saying Salome",
+          "Klimt's brother Georg made and inscribed the frame"],
   tags:["portrait","golden","unsettling"] },
 
 { id:"beethoven-frieze", tier:2,
@@ -986,7 +1001,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Portrait_of_Emilie_Fl%C3%B6ge", status:"pd" },
   tags:["portrait","pattern","tender"] },
 
-{ id:"tree-of-life-stoclet", tier:2,
+{ id:"tree-of-life-stoclet", tier:1,
   title:"The Tree of Life (Stoclet Frieze)", worksKey:"The Tree of Life",
   artistId:"gustav-klimt", year:{ display:"c. 1905–09", sort:1905 },
   movements:["vienna-secession","art-nouveau"], techniques:["gold-leaf"], nation:"austria",
@@ -994,6 +1009,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"cartoon section, c. 195 × 102 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Klimt_-_Nine_Cartoons_for_the_Stoclet_Frieze-_Part_4%2C_Part_of_the_tree_of_life_%281910-11%29.jpg/500px-Klimt_-_Nine_Cartoons_for_the_Stoclet_Frieze-_Part_4%2C_Part_of_the_tree_of_life_%281910-11%29.jpg",
           page:"https://en.wikipedia.org/wiki/Stoclet_Palace", status:"pd" },
+  coords:{ F:45, D:10, E:60, C:40, M:35 }, coordsSource:"override",
+  description:"This is the working cartoon, not the finished wall. Klimt drew the design at full size on paper and craftsmen executed it in marble, gold, enamel and coral in a Brussels dining room that almost nobody will ever enter. The branches spiral until they stop behaving like branches at all. A black bird sits among them, and Klimt's pencil instructions to the workshop are still legible across the surface.",
+  notice:["This is the cartoon; the frieze itself is in Brussels",
+          "His pencil notes to the craftsmen are still visible",
+          "The spirals stop being branches about halfway up"],
   tags:["pattern","golden","would-hang"] },
 
 { id:"danae-klimt", tier:2,
@@ -1135,7 +1155,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Composition_X", status:"pd" },
   tags:["nocturne","pattern","unsettling"] },
 
-{ id:"bridge-over-a-pond-of-water-lilies", tier:2,
+{ id:"bridge-over-a-pond-of-water-lilies", tier:1,
   title:"Bridge over a Pond of Water Lilies",
   artistId:"claude-monet", year:{ display:"1899", sort:1899 },
   movements:["impressionism"], techniques:["oil-painting"], nation:"france",
@@ -1143,6 +1163,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"92.7 × 73.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Bridge_over_a_Pond_of_Water_Lilies_MET_DT1854.jpg/500px-Bridge_over_a_Pond_of_Water_Lilies_MET_DT1854.jpg",
           page:"https://en.wikipedia.org/wiki/Water_Lilies_(Monet_series)", status:"pd" },
+  coords:{ F:-55, D:-40, E:55, C:-25, M:-5 }, coordsSource:"override",
+  description:"The Japanese footbridge Monet built over the pond he had dug at Giverny, painted in the first of the water-lily years — while the horizon is still there and the bridge still reads as carpentry. He would come back to this pond for another twenty-seven years and gradually lose the bank, then the bridge, then the sky, and finally the edges. This is the version where you can still stand somewhere.",
+  notice:["He dug the pond and built the bridge, then painted it",
+          "The horizon is still present here; later it goes",
+          "Twenty-seven more years of this same pond followed"],
   tags:["landscape","quiet","would-hang"] },
 
 /* ——— The Vermeer wing ——— */
@@ -1350,7 +1375,7 @@ window.CATALOG = (window.CATALOG || []).concat([
 
 /* ——— The Turner wing ——— */
 
-{ id:"fishermen-at-sea", tier:2,
+{ id:"fishermen-at-sea", tier:1,
   title:"Fishermen at Sea",
   artistId:"jmw-turner", year:{ display:"1796", sort:1796 },
   movements:["romanticism"], techniques:["oil-painting"], nation:"britain",
@@ -1358,6 +1383,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"91.4 × 122.2 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Joseph_Mallord_William_Turner_-_Fishermen_at_Sea_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Fishermen_at_Sea_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/Fishermen_at_Sea", status:"pd" },
+  coords:{ F:-80, D:70, E:30, C:-20, M:30 }, coordsSource:"override",
+  description:"Turner's first oil shown in public, at twenty-one. A boat rides a swell off the Needles with a lantern hanging at its bow while the moon sits behind cloud above — two light sources, one cold and impossibly far, one warm and about six feet from the men who are depending on it. Almost everything he did over the next fifty years is a variation on the argument between those two.",
+  notice:["His first exhibited oil painting, made at twenty-one",
+          "Two light sources: a bow lantern and a hidden moon",
+          "The lantern outshines the moon, and that is the point"],
   tags:["nocturne","storm","lonely"] },
 
 { id:"hannibal-crossing-the-alps", tier:2,
@@ -1412,7 +1442,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   tags:["storm","unsettling","historical","red"],
   related:["snow-storm-steamboat","the-third-of-may-1808"] },
 
-{ id:"snow-storm-steamboat", tier:2,
+{ id:"snow-storm-steamboat", tier:1,
   title:"Snow Storm: Steam-Boat off a Harbour's Mouth", worksKey:"Snow Storm — Steam-Boat off a Harbour's Mouth",
   artistId:"jmw-turner", year:{ display:"1842", sort:1842 },
   movements:["romanticism"], techniques:["oil-painting","impasto"], nation:"britain",
@@ -1420,6 +1450,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"91.4 × 121.9 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg/500px-Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg",
           page:"https://en.wikipedia.org/wiki/Snow_Storm:_Steam-Boat_off_a_Harbour%27s_Mouth", status:"pd" },
+  coords:{ F:-25, D:95, E:75, C:5, M:45 }, coordsSource:"override",
+  description:"A steamboat somewhere inside a vortex of snow, spray and smoke, and almost nothing else you can name. Turner claimed he had himself lashed to a mast for four hours in the storm to see it, which is very likely a story he enjoyed telling. A critic called the result soapsuds and whitewash. Turner's reported reply was to wonder what they thought the sea looked like.",
+  notice:["Critics called it soapsuds and whitewash",
+          "He claimed he was lashed to a mast to watch it",
+          "The steamboat is the only nameable thing in it"],
   tags:["storm","unsettling","monumental-scale"] },
 
 { id:"rain-steam-and-speed", tier:2,
@@ -1547,7 +1582,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Susanna_and_the_Elders_(Artemisia_Gentileschi,_Pommersfelden)", status:"pd" },
   tags:["historical","unsettling","nude"] },
 
-{ id:"judith-beheading-holofernes-naples", tier:2,
+{ id:"judith-beheading-holofernes-naples", tier:1,
   title:"Judith Beheading Holofernes (first version)",
   artistId:"artemisia-gentileschi", year:{ display:"c. 1612–13", sort:1612 },
   movements:["baroque"], techniques:["oil-painting","tenebrism"], nation:"italy",
@@ -1555,6 +1590,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"159 × 126 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/500px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg",
           page:"https://en.wikipedia.org/wiki/Judith_Slaying_Holofernes_(Artemisia_Gentileschi,_Naples)", status:"pd" },
+  coords:{ F:-88, D:95, E:20, C:0, M:40 }, coordsSource:"override",
+  description:"Artemisia's first version of the subject, painted at around nineteen, and the difference from Caravaggio's is a matter of physics. Her Judith does not lean away. She braces, sleeves pushed back, and the maid pins Holofernes to the bed instead of standing by with a cloth. Two women doing a heavy job together. The larger Uffizi version came later; this is the argument being made for the first time.",
+  notice:["Her Judith leans in. Caravaggio's leans away.",
+          "The maid holds him down instead of watching",
+          "Painted around nineteen; a second version followed"],
   tags:["historical","unsettling","nocturne"] },
 
 { id:"self-portrait-as-saint-catherine", tier:2,

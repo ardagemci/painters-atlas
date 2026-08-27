@@ -188,7 +188,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","tenebrism","chiaroscuro"], style:"baroque",
   palette:["#161210","#6e1f26","#c98a3e","#d9c49a","#324a3e"],
   tagline:"'I will show Your Lordship what a woman can do'",
-  works:[{t:"Judith Slaying Holofernes",y:"c. 1614–20"},{t:"Self-Portrait as the Allegory of Painting",y:"1638–39"},{t:"Judith and her Maidservant",y:"c. 1625"}],
+  works:[{t:"Judith Slaying Holofernes",y:"c. 1614–20"},{t:"Self-Portrait as the Allegory of Painting",y:"1638–39"},{t:"Judith and her Maidservant",y:"c. 1625"},{t:"Judith Beheading Holofernes (first version)",y:"c. 1612–13"}],
   life:"Daughter of the Caravaggesque painter Orazio Gentileschi, Artemisia was raped at seventeen by her tutor Agostino Tassi. At the 1612 trial she was tortured with thumbscrews to 'verify' her testimony — repeating 'it is true, it is true' as the cords tightened. She rebuilt her life in Florence, Naples, Venice and London, running her own workshop until her death around sixty-three.",
   career:"She took Caravaggio's darkness and gave it muscle and fury: her Judiths don't shrink from the beheading, they brace into it, sleeves rolled, blood arcing. The first woman admitted to Florence's Accademia del Disegno, she counted Galileo among her correspondents and the Medici, Philip IV and Charles I among her patrons — negotiating fees with the confidence her letters still radiate.",
   outside:"Her surviving letters are masterpieces of self-possession: 'You will find the spirit of Caesar in this soul of a woman,' she warned a slow-paying patron. In London she worked alongside her aging father on a royal ceiling — a reconciliation after decades of distance.",
