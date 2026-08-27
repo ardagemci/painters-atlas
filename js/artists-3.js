@@ -122,7 +122,7 @@ window.ARTISTS.push(
   techniques:["woodblock"], style:"ukiyoe",
   palette:["#1f3a5f","#5e8ab0","#e8e0c8","#b0b8b4","#2a2c30"],
   tagline:"Old Man Mad About Painting — and one immortal wave",
-  works:[{t:"The Great Wave off Kanagawa",y:"c. 1831"},{t:"Fine Wind, Clear Morning (Red Fuji)",y:"c. 1830–32"},{t:"Hokusai Manga",y:"1814–78"}],
+  works:[{t:"The Great Wave off Kanagawa",y:"c. 1831"},{t:"Fine Wind, Clear Morning (Red Fuji)",y:"c. 1830–32"},{t:"Hokusai Manga",y:"1814–78"},{t:"The Amida Falls in the Far Reaches of the Kisokaidō",y:"c. 1832–33"},{t:"Thunderstorm Beneath the Summit",y:"c. 1830–32"}],
   life:"Born in Edo (Tokyo), Hokusai changed his name some thirty times and his address over ninety — when a house grew too cluttered, he reportedly just moved. Widowed twice, bailing out a gambler grandson, he worked into his ninetieth year, signing late works 'Old Man Mad About Painting' and wishing aloud for just ten more years — 'even five' — to become a true artist.",
   career:"His Thirty-six Views of Mount Fuji, produced in his seventies, gave the world the Great Wave: claw-crested water dwarfing boats while Fuji sits tiny and eternal — printed in the new imported Prussian blue. His fifteen-volume Manga sketchbooks catalogued everything that moves: wrestlers, ghosts, waterfalls, cats. When his prints reached Paris, Monet, Degas and Van Gogh collected them like relics; the wave now rides emojis and passports alike.",
   outside:"A showman, he painted a colossal Daruma with a broom-sized brush before crowds, and sparrows on a single grain of rice. His daughter Katsushika Ōi, a formidable painter of nocturnes, ran the studio and likely worked on his late masterpieces.",

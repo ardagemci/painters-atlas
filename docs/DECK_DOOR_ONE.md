@@ -106,12 +106,45 @@ thing that costs something: **adding a work to a list and never authoring it.**
 Proved non-vacuous by demoting *Black Square* to Tier 2 — `61 editorial-list
 works are still Tier 2, above the ceiling of 60`, exit 1.
 
-## 6. What is left
+## 6. The first tranche of the backlog — 60 → 47
 
-1. **Sixty list works still below Tier 1**, 49 of them carrying public-domain
-   images. Each needs coordinates, a 60–90 word description and three notice
-   bullets. That is a real content commission and the single largest remaining
-   lever on the deck.
+*Same day.* Thirteen more works brought up to Tier 1. **Deck pool 84 → 96.**
+
+**Ten were authored** — coordinates, a 60–90 word description and three notice
+bullets each, and each verified against Commons before a word was written:
+
+- **Four Vermeers**: *The Milkmaid*, *The Lacemaker*, *Woman in Blue Reading a
+  Letter*, *The Concert*. Vermeer was the atlas's most underserved major painter;
+  he now has five full pages.
+- **Four Rembrandts**: *Danaë*, *Self-Portrait at the Age of 63*, *Self-Portrait
+  with Two Circles*, *The Storm on the Sea of Galilee*.
+- **Two Hokusai prints**: *The Amida Falls*, *Thunderstorm Beneath the Summit*.
+
+**Three needed only the flag** — Rousseau's *The Dream* and *Tiger in a Tropical
+Storm*, and Tarsila do Amaral's *Abaporu*, all already complete to standard.
+
+**`match_verdict` produced a FALSE REJECTION**, the mirror of the false confirms
+E3 found. *The Amida Falls* was `rejected` because its Commons file carries the
+Rijksmuseum's Dutch title and an inventory number — *"De Amida waterval langs de
+Kisokaido, AK-MAK-904"* — which ties to neither the English title nor the
+artist's name. The file is a genuine impression of the print. Opening it settled
+it in seconds. Recorded beside E3's two false confirms: the check is a filter,
+not a verdict, in both directions.
+
+**Nine back-link warnings fired and all nine were real.** Promoting a work to
+Tier 1 turns on §8's back-link check, and it found that Vermeer's record listed
+four works and not *The Lacemaker*, *The Concert* or *Woman in Blue*; Rembrandt's
+omitted *Danaë*, *Self-Portrait at 63* and *The Storm*; Hokusai's omitted both
+prints. Those artist records now list them, so the pages are reachable from the
+artist page as §8 promises. **The promotions did not create the gap — they
+revealed it.**
+
+`LIST_TIER2_CEILING` lowered **60 → 47**.
+
+## 7. What is left
+
+1. **Forty-seven list works still below Tier 1**, most carrying public-domain
+   images. Same shape of work: coordinates, description, three bullets.
 2. **Lower `LIST_TIER2_CEILING`** whenever the number falls.
 3. **F+D− is unfixable from the public domain** and should be treated as a
    product constraint, not a backlog item — the deck's opening card in that
