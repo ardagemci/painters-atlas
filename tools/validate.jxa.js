@@ -246,6 +246,41 @@ LST.forEach(function(l){
   });
   if(!l.cover || !seenW[l.cover]) errs.push(tag + ": cover must be one of the list's own works");
 });
+
+var listDoor = { members: 0, below: 0 };
+/* E5 — §8's first door, which was open and unused for months.
+
+   ARTWORK_SCHEMA §8 says an artwork enters Tier 1 through one of four routes,
+   and the first is "an editorial list". Measured 2026-08-24: of 102 works
+   appearing in the editorial lists, SIXTY-FOUR were still Tier 2. The rule was
+   stated, normative, and enforced by nothing — which is why the deck pool sat at
+   75 for months while the works to fill it were already written, already
+   featured on the site, and already carrying public-domain images.
+
+   §8 is a work list, not an invariant: a list member below Tier 1 is a record
+   nobody has finished authoring yet, not a corruption. So this is a ratchet like
+   the influence-grounding one — the count prints every run and may fall, never
+   rise. Failing outright would block every unrelated change behind a content
+   commission, which is how a guard gets deleted. */
+const LIST_TIER2_CEILING = 60;
+(function(){
+  const inList = {};
+  LST.forEach(function(l){ (l.works || []).forEach(function(e){ inList[e.id] = 1; }); });
+  const members = Object.keys(inList);
+  const below = members.filter(function(id){
+    const w = CAT.filter(function(x){ return x.id === id; })[0];
+    return w && w.tier !== 1;
+  });
+  listDoor.members = members.length; listDoor.below = below.length;
+  if(below.length > LIST_TIER2_CEILING)
+    errs.push("§8 door 1: " + below.length + " editorial-list works are still Tier 2, above the ceiling of " +
+              LIST_TIER2_CEILING + ". Adding a work to a list is a commitment to author it — finish the record, " +
+              "or lower the ceiling deliberately.");
+  else if(below.length < LIST_TIER2_CEILING)
+    warns.push("§8 door 1: list works below Tier 1 down to " + below.length + " from a ceiling of " +
+               LIST_TIER2_CEILING + " — lower LIST_TIER2_CEILING to keep the ratchet tight");
+})();
+
 if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
   warns.push("fewer than 3 featured lists for the homepage");
 
@@ -515,6 +550,7 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   "), artwork image credits: " + Object.keys(window.IMAGE_CREDITS || {}).length +
   ", personas: " + (window.PERSONAS || []).length +
   ", lists: " + (window.EDITORIAL_LISTS || []).length +
+  " (list works below tier 1: " + listDoor.below + "/" + listDoor.members + ")" +
   " (featured: " + (window.EDITORIAL_LISTS || []).filter(function(l){ return l.featured; }).length + ")" +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
   " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");

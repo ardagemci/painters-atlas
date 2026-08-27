@@ -165,7 +165,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "The instruments are set to a real date: 11 April 1533"],
   tags:["portrait","interior","monumental-scale","unsettling"] },
 
-{ id:"the-city-leger", tier:2,
+{ id:"the-city-leger", tier:1,
   title:"The City", worksKey:"The City",
   artistId:"fernand-leger", year:{ display:"1919", sort:1919 },
   movements:["cubism"], techniques:["oil-painting","flat-color"], nation:"france",

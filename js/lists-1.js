@@ -82,6 +82,20 @@ window.EDITORIAL_LISTS = [
     { id:"campbells-soup-cans", note:"Thirty-two flavors, one shelf, no comment." },
     { id:"mont-sainte-victoire", note:"Cézanne climbed the same mountain some eighty times in paint." }] },
 
+{ id:"the-last-recognisable-thing", featured:true,
+  title:"The Last Recognisable Thing",
+  lede:"Not abstraction — the moment before it. In each of these you can still name what you are looking at: a tree, a head, a forest, a city. It is the last time you can. Painters rarely photograph themselves letting go; these are the pictures where it happened.",
+  cover:"gray-tree",
+  works:[
+    { id:"gray-tree", note:"A tree. Branch and background painted at the same depth, and after this, no tree." },
+    { id:"norham-castle-sunrise", note:"A castle, a river, a cow. Everything dissolved except the cow." },
+    { id:"blue-mountain", note:"A mountain, still a mountain — but yellow trees, red trees, and colour off its leash." },
+    { id:"senecio", note:"A head, built from squares and wedges, still looking straight back at you." },
+    { id:"the-fate-of-the-animals", note:"Animals, in a forest, coming apart along red diagonals as you watch." },
+    { id:"forest-british-columbia", note:"A forest whose trunks have turned into folds of heavy cloth." },
+    { id:"the-city-leger", note:"A city reduced to signage and scaffolding, flat as the poster it predicts." },
+    { id:"water-lilies-grandes-decorations", note:"A pond that lost its horizon, its bank, and finally its edges." }] },
+
 { id:"doorways-into-abstraction", featured:true,
   title:"Doorways into Abstraction",
   lede:"Nobody wakes up loving squares. Abstraction has staircases — a castle dissolving into sunrise, a pond losing its horizon, a mountain becoming a chord — and if you climb them in order, the top floor feels inevitable.",

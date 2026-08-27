@@ -47,7 +47,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "He has read the dispatch; the dancers haven't"],
   tags:["historical","interior","lonely","red"] },
 
-{ id:"senecio", tier:2,
+{ id:"senecio", tier:1,
   title:"Senecio",
   artistId:"paul-klee", year:{ display:"1922", sort:1922 },
   movements:["expressionism","abstract-art"], techniques:["oil-painting"], nation:"switzerland",

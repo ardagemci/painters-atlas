@@ -175,7 +175,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           "A garlanded Venus watches the couples decide"],
   tags:["group-scene","landscape","tender","golden"] },
 
-{ id:"forest-british-columbia", tier:2,
+{ id:"forest-british-columbia", tier:1,
   title:"Forest, British Columbia",
   artistId:"emily-carr", year:{ display:"1931–1932", sort:1931 },
   movements:["expressionism"], techniques:["oil-painting"], nation:"canada",

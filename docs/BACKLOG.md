@@ -724,18 +724,41 @@ traditions are anonymous and an attributed name is required), Southeast Asia
 beyond Raden Saleh, and more of colonial Latin America. And **these thirteen are
 now E1's pool** — thirteen painters, 27 audited images, no catalog record.
 
-**E5 · An editorial list on abstraction before 1955 — the honest route to a
-deeper deck.** Raised by the Curator during Batch 06 and adopted. `ARTWORK_SCHEMA`
-§8 admits a work to Tier 1 through four doors, and door 1 is an editorial list.
-**Only one uncatalogued public-domain painter is genuinely abstract** (Popova),
-which means Kandinsky, Malevich, Mondrian, Klee and af Klint are already in the
-atlas and already catalogued — their works are not in the deck because they have
-passed through no door, not because the doors are narrow. A list is therefore a
-list commission plus coordinate work on records that already exist: **no schema
-change, no new records, and the only move that can deepen the F+ side of the
-deck.** Separately, E4's finding that two of four F×D quadrants rest on a single
-work each means many users see the identical opening card — a product defect
-worth its own fix, and it is E4's, not E1's.
+**E5 · DONE 2026-08-27 — `docs/DECK_DOOR_ONE.md`. The route was right and the
+door was already open.** The Curator's advice was to reach Tier 1 through §8's
+first door, an editorial list. Measuring first found something better: of the
+**102 works appearing in the editorial lists, 64 were still Tier 2.** §8 is
+stated, normative and **was enforced by nothing** — the deck sat at 75 for months
+while the works to fill it were already written, already featured, and already
+carrying PD images. `doorways-into-abstraction`, a featured list on exactly the
+subject the deck is starved of, held **four Tier 2 works with no coords at all**.
+
+**Nine promoted; deck pool 75 → 84.** Four needed real authoring (Turner's
+*Norham Castle, Sunrise*; Kandinsky's *Blue Mountain*, *First Abstract
+Watercolor*, *Improvisation 28*) — each opened and looked at before writing.
+Five needed only the tier flag: Klee, Mondrian, Marc, Carr and Léger records were
+already complete to Tier 1 standard and were Tier 2 only because nothing had put
+them in a list. So a list was written — **"The Last Recognisable Thing"**, the
+mid-F band `TASTE_AUDIT` measured as nearly empty — and Turner's and Kandinsky's
+artist records gained the works they were missing, so the promoted pages are not
+orphans.
+
+**F+D+ went 1 → 6 and that warning clears. F+D− stays at 1 and cannot move.**
+Kandinsky's *Composition VIII* is the only atlas work at F ≥ 25 and D ≤ −25, and
+no public-domain candidate exists to join it — calm abstraction is Rothko,
+Newman, Martin, Frankenthaler, all in copyright. Norham Castle was scored **F +10,
+not the F +30 that would have closed the quadrant**: the castle, river and cow
+are all nameable, and scoring to satisfy a guard is the failure E4 opened by
+refusing.
+
+**Guard shipped:** the validator counts list works below Tier 1, prints
+`list works below tier 1: N/M` every run, and fails above a ceiling of **60**. A
+ratchet, not a gate. Proved by demoting *Black Square* — exit 1 at 61.
+
+**Left: 60 list works below Tier 1**, 49 with PD images, each needing coords, a
+60–90 word description and three bullets. That is the largest remaining lever on
+the deck. And **F+D− is a product constraint, not a backlog item** — that opening
+card will be the same painting for every user, forever.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.
