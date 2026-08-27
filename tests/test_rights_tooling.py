@@ -1201,6 +1201,75 @@ class TestAssetInventory(unittest.TestCase):
         self.assertEqual(c["copyright_refs"], 68)
 
 
+class TestPdTokenAccuracy(unittest.TestCase):
+    """`image.status:"pd"` on a file that REQUIRES ATTRIBUTION.
+
+    Found 2026-08-27 while promoting `little-dancer-aged-fourteen`: its image is
+    a CC BY 2.0 photograph of the sculpture, and the record carries the `pd`
+    token. Seven records do.
+
+    This is NOT a licence breach and the test says so rather than implying one:
+    all seven are registered in `js/photo-credits.js` IMAGE_CREDITS and render
+    their credit, so the attribution obligation is met. The defect is that the
+    token is doing two jobs — ARTWORK_SCHEMA §3 defines `status` as a *rendering*
+    flag ("this may be displayed"), and `pd` also reads as a claim about the
+    file's legal status. `docs/CATALOG_BATCH_02.md` constraint 5 says outright
+    that CC BY / CC BY-SA files do not take the `pd` token.
+
+    Six of the seven are photographs of three-dimensional or physically-sited
+    works — Michelangelo's David and Pietà, Degas's Little Dancer — where the
+    Commons file page asserts a licence for the PHOTOGRAPH while the work beneath
+    it is centuries old. That is a category the schema
+    has no value for, which is why this is a ratchet and a recorded finding
+    rather than a silent status edit: changing `status` could suppress rendering,
+    and choosing a new value is a schema decision, not a test's to make."""
+
+    CEILING = 7
+
+    def test_the_pd_token_is_not_spreading_to_credit_required_files(self):
+        catalog = rr.SURFACES["catalog"]() + rr.SURFACES["catalog_tier2"]() \
+            if "catalog_tier2" in rr.SURFACES else rr.SURFACES["catalog"]()
+        census = {e["src"]: e for e in json.loads(
+            (ROOT / "protocol" / "tasks" / "PIG-001" / "evidence"
+             / "artwork-image-rights.json").read_text(encoding="utf-8"))["entries"]}
+        offenders = []
+        for path in sorted((ROOT / "js").glob("catalog-*.js")):
+            src = path.read_text(encoding="utf-8")
+            for rec in re.finditer(r'\{\s*id:"([a-z0-9-]+)",.*?(?=\n\{\s*id:"|\Z)', src, re.S):
+                body = rec.group(0)
+                if 'status:"pd"' not in body.replace(" ", ""):
+                    continue
+                m = re.search(r'src:"(https://[^"]+)"', body)
+                if not m:
+                    continue
+                e = census.get(m.group(1))
+                if e and e.get("credit_required"):
+                    offenders.append(rec.group(1))
+        self.assertLessEqual(
+            len(offenders), self.CEILING,
+            "records carrying the pd token on a credit-required file rose to "
+            "%d (ceiling %d): %s. A CC BY / CC BY-SA file does not take `pd` — "
+            "see CATALOG_BATCH_02 constraint 5." % (len(offenders), self.CEILING,
+                                                    sorted(offenders)))
+
+    def test_every_such_record_is_actually_credited(self):
+        """The obligation that DOES bind: whatever the token says, an
+        attribution-required image must carry a credit the page can render."""
+        credits = set(re.findall(r'"(File:[^"]+)"',
+                                 (ROOT / "js" / "photo-credits.js").read_text(encoding="utf-8")))
+        census = {e["src"]: e for e in json.loads(
+            (ROOT / "protocol" / "tasks" / "PIG-001" / "evidence"
+             / "artwork-image-rights.json").read_text(encoding="utf-8"))["entries"]}
+        missing = []
+        for src, e in census.items():
+            if not e.get("credit_required"):
+                continue
+            title = e.get("commons_title")
+            if title and title not in credits:
+                missing.append(title)
+        self.assertEqual(missing, [], "attribution-required images with no credit record")
+
+
 class TestSampleBasis(unittest.TestCase):
     def test_sample_matches_the_ac11_basis(self):
         sample = rr.sample_records()
@@ -1223,7 +1292,11 @@ class TestSampleBasis(unittest.TestCase):
         # asset. The four without one — full-fathom-five, autumn-rhythm,
         # no-14-rothko, abaporu — are Tier 1 records with image:{status:"copyright"}
         # and no src, which is the honest state for work still in copyright.
-        self.assertEqual(len(tier1), 105, "Tier 1 ∪ daily pool is 105 works")
+        # 105 -> 113 with the third tranche: eleven more, chosen to finish two
+        # more lists — the-king-goes-to-philadelphia (an Actuality list) and
+        # the-same-thing-obsessively. Eight of fifteen lists are now entirely
+        # Tier 1. §8 door-1 backlog 35 -> 24.
+        self.assertEqual(len(tier1), 113, "Tier 1 ∪ daily pool is 113 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1241,11 +1314,12 @@ class TestSampleBasis(unittest.TestCase):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
         The validator reports more Tier 1 records than the rights sample counts
-        (109 against 105). Both are right, and the gap is not an error to be closed
-        by changing a number. Four records sit in it — full-fathom-five,
-        autumn-rhythm, no-14-rothko and abaporu — each promoted through §8 door 1
-        and each carrying image:{status:"copyright"} with no src. A Tier 1 record
-        may be written about without being displayable. `_catalog_records()` deliberately admits only records
+        (120 against 113). Both are right, and the gap is not an error to be closed
+        by changing a number. Seven records sit in it — full-fathom-five,
+        autumn-rhythm, no-14-rothko, abaporu, marilyn-diptych, campbells-soup-cans
+        and tutu-enwonwu — each promoted through §8 door 1 and each carrying
+        image:{status:"copyright"} with no src. A Tier 1 record may be written
+        about without being displayable. `_catalog_records()` deliberately admits only records
         carrying a Commons URL, so it counts *Tier 1 works that have an asset*.
         Exactly one Tier 1 work has none.
 
@@ -1259,7 +1333,7 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 105)   # +9 more with a pd asset
+        self.assertEqual(len(tier1_with_asset), 113)   # +8 more with a pd asset
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',

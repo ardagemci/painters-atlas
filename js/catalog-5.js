@@ -365,7 +365,7 @@ window.CATALOG = (window.CATALOG || []).concat([
    1994, so the work is in copyright: image.status "copyright" with no src, and
    the page carries a generative cover. It is also the catalog's FIRST African
    record — the artists were here, the works were not. */
-{ id:"tutu-enwonwu", tier:2,
+{ id:"tutu-enwonwu", tier:1,
   title:"Tutu", worksKey:"Tutu",
   artistId:"ben-enwonwu", year:{ display:"1973", sort:1973 },
   movements:["contemporary-art"], techniques:["oil-painting"], nation:"nigeria",

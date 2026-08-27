@@ -86,7 +86,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Miss_La_La_at_the_Cirque_Fernando", status:"pd" },
   tags:["portrait","monumental-scale","golden"] },
 
-{ id:"little-dancer-aged-fourteen", tier:2,
+{ id:"little-dancer-aged-fourteen", tier:1,
   title:"Little Dancer Aged Fourteen", worksKey:"Little Dancer Aged Fourteen",
   artistId:"edgar-degas", year:{ display:"1878–81", sort:1880 },
   movements:["impressionism"], nation:"france",
@@ -94,6 +94,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"98 cm (bronze cast; wax original in Washington)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Degas_Little_Dancer_PMA%2805c%29_%2815675423180%29.jpg/500px-Degas_Little_Dancer_PMA%2805c%29_%2815675423180%29.jpg",
           page:"https://en.wikipedia.org/wiki/Little_Dancer_of_Fourteen_Years", status:"pd" },
+  coords:{ F:-85, D:5, E:85, C:25, M:-15 }, coordsSource:"override",
+  description:"Degas showed the wax original in 1881 dressed in a real bodice, tutu and slippers, with human hair and a satin ribbon, standing inside a glass case like a specimen. Critics were appalled: they called her a monkey and read her face as evidence of criminality. She was Marie van Goethem, fourteen, a dancer at the Paris Opéra. The bronzes were cast after his death — he never sold one.",
+  notice:["Real fabric, real hair, shown inside a glass case",
+          "Critics in 1881 read her face as criminal",
+          "She was Marie van Goethem, of the Paris Opéra"],
   tags:["portrait","historical","unsettling"] },
 
 { id:"women-ironing", tier:2,
@@ -322,7 +327,7 @@ window.CATALOG = (window.CATALOG || []).concat([
           page:"https://en.wikipedia.org/wiki/Little_Girl_in_a_Blue_Armchair", status:"pd" },
   tags:["portrait","interior","tender"] },
 
-{ id:"woman-with-a-pearl-necklace", tier:2,
+{ id:"woman-with-a-pearl-necklace", tier:1,
   title:"Woman with a Pearl Necklace in a Loge",
   artistId:"mary-cassatt", year:{ display:"1879", sort:1879 },
   movements:["impressionism"], techniques:["oil-painting"], nation:"usa",
@@ -330,6 +335,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"81.3 × 59.7 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mary_Cassatt_-_Woman_with_a_Pearl_Necklace.jpg/500px-Mary_Cassatt_-_Woman_with_a_Pearl_Necklace.jpg",
           page:"https://en.wikipedia.org/wiki/Woman_with_a_Pearl_Necklace_in_a_Loge", status:"pd" },
+  coords:{ F:-85, D:-20, E:40, C:-20, M:-25 }, coordsSource:"override",
+  description:"A young woman in a theatre box, set against a mirror that hands back the whole gilded auditorium behind her in soft focus. She is not watching the stage. She is being looked at, and she knows it, and Cassatt makes that the subject rather than the decor. It was painted for the fourth Impressionist exhibition of 1879, the first she showed in after Degas invited her to join.",
+  notice:["The mirror behind her returns the whole auditorium",
+          "She is not watching the stage; she is being watched",
+          "Shown at the fourth Impressionist exhibition, 1879"],
   tags:["portrait","golden","everyday-life"] },
 
 { id:"the-cup-of-tea", tier:2,
@@ -378,7 +388,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   tags:["tender","interior","pattern","would-hang"],
   related:["the-dance-class","the-milkmaid"] },
 
-{ id:"the-boating-party", tier:2,
+{ id:"the-boating-party", tier:1,
   title:"The Boating Party", worksKey:"The Boating Party",
   artistId:"mary-cassatt", year:{ display:"1893–94", sort:1893 },
   movements:["impressionism"], techniques:["oil-painting","flat-color"], nation:"usa",
@@ -386,6 +396,11 @@ window.CATALOG = (window.CATALOG || []).concat([
   dims:"90 × 117.3 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg/500px-Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg",
           page:"https://en.wikipedia.org/wiki/The_Boating_Party", status:"pd" },
+  coords:{ F:-80, D:10, E:55, C:-5, M:25 }, coordsSource:"override",
+  description:"A man rows with his back to us, filling the lower left as a flat dark mass, while a mother and a heavy, sprawling baby sit facing him in the light. The design is Japanese — flat colour, a tipped-up horizon, a figure cropped hard by the frame — and the diagonal of his oar organises the whole thing. Cassatt painted it in the south of France, and it is the largest picture she ever finished.",
+  notice:["The rower is a flat dark shape, cropped, back turned",
+          "A tipped-up horizon and flat colour, learned from Japan",
+          "The largest painting Cassatt ever completed"],
   tags:["everyday-life","tender","would-hang"] },
 
 /* ——— The Repin wing ——— */

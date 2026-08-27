@@ -796,10 +796,33 @@ the pattern is now stateable: the check reads filenames and titles, so it
 misfires on foreign-language pages, inventory numbers, and the words *cropped*
 and *part of* — in both directions.
 
-**Left: 35 list works below Tier 1**; nine lists incomplete, and
-`the-king-goes-to-philadelphia` alone holds eight of the thirty-five. And **F+D−
-is a product constraint, not a backlog item** — that opening card will be the
-same painting for every user, forever.
+**Third tranche, same day: 35 → 24, deck pool 105 → 113.** Eleven more, again
+chosen to finish lists. **Eight of fifteen lists are now entirely Tier 1** — and
+with `the-king-goes-to-philadelphia` done alongside
+`the-forest-that-stopped-shrinking`, **both Actuality lists are complete**, so
+the monthly ritual's own pages are Tier 1 the whole way down.
+
+**A defect surfaced: the `pd` token on credit-required files.** Promoting
+`little-dancer-aged-fourteen` showed its image is a CC BY 2.0 photograph of the
+sculpture while the record carries `image.status:"pd"`. **Seven records do**, six
+of them photographs of three-dimensional or sited works (Michelangelo's *David*
+and *Pietà*, the Degas) where Commons asserts a licence for the *photograph*
+though the work beneath is centuries old. **Not a licence breach** — all seven
+are registered in `js/photo-credits.js` and render their credit. The defect is
+that `pd` does two jobs: §3 defines `status` as a *rendering* flag, and `pd` also
+reads as a claim about legal status, which `CATALOG_BATCH_02` constraint 5
+forbids for CC BY files. **Ratcheted at seven and recorded rather than silently
+edited** — changing `status` could suppress rendering, and the schema has no
+value meaning "licensed photograph of an old work". *Deciding what that value
+should be is an owner/schema question.*
+
+**The repo's own OD-5 language guard then failed the docstring I wrote for that
+test**, because I had stated a file's legal status directly instead of saying
+what Commons asserts. Reworded. The guard works on its authors.
+
+**Left: 24 list works below Tier 1**, across seven lists — roughly two more
+tranches. And **F+D− is a product constraint, not a backlog item** — that opening
+card will be the same painting for every user, forever.
 
 **E4 · MEASURED 2026-08-22 — `docs/TASTE_AUDIT.md`. No score changed; no
 framework proposed.** The instruction was measurement first, and this is it.
