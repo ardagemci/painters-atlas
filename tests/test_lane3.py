@@ -620,9 +620,17 @@ class WritFourTest(unittest.TestCase):
         self.assertIn("do not reformat", self.prose.lower())
         self.assertIn("A2", self.prose)
 
-    def test_it_stays_ungranted_until_a_person_signs(self):
-        self.assertEqual(self.fields["status"], "proposed")
-        self.assertFalse(self.fields.get("granted_by"))
+    def test_its_signature_matches_its_status(self):
+        """Not pinned to "proposed" -- `status` is the one field designed to
+        change, and asserting it stays put fails the moment the writ is granted,
+        which is the mechanism working. The invariant is that a granted writ
+        carries a signature and an ungranted one does not. This is the second
+        time I pinned a status in this suite; the first was W-001's."""
+        signed = bool(self.fields.get("granted_by")) and bool(self.fields.get("granted_at"))
+        if self.fields["status"] == "granted":
+            self.assertTrue(signed, "a granted writ must record who and when")
+        else:
+            self.assertFalse(signed, "an ungranted writ must carry no signature")
 
 
 class SealedHookTest(unittest.TestCase):
