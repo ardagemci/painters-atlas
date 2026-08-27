@@ -187,7 +187,7 @@ window.ARTISTS.push(
   techniques:["oil-painting","flat-color","collage"], style:"fauvist",
   palette:["#c4302a","#2e5eaa","#2e8a5e","#e8c43e","#f2e8d8"],
   tagline:"King of the wild beasts — and, in the end, of scissors",
-  works:[{t:"The Dance",y:"1910"},{t:"Woman with a Hat",y:"1905"},{t:"The Red Studio",y:"1911"},{t:"The Snail",y:"1953"}],
+  works:[{t:"The Dance",y:"1910"},{t:"Woman with a Hat",y:"1905"},{t:"The Joy of Life",y:"1905–06"},{t:"Open Window, Collioure",y:"1905"},{t:"The Red Studio",y:"1911"},{t:"Goldfish",y:"1912"},{t:"The Piano Lesson",y:"1916"},{t:"The Snail",y:"1953"}],
   life:"A grain merchant's son from the grey north of France, Matisse discovered painting at twenty during an appendicitis convalescence when his mother gave him a paint box: 'a kind of paradise.' Abandoning law, he weathered poverty with his formidable wife Amélie, became Picasso's great rival-friend, and after 1941 cancer surgery worked from bed and wheelchair in Nice until eighty-four.",
   career:"The 1905 Salon's 'cage of wild beasts' (fauves) made him notorious: a green stripe down his wife's face, colour freed from fact for what he called expression. The Dance — five vermilion figures wheeling on blue-green — distilled painting to colour, rhythm, joy. Bedridden, he invented a final medium, 'drawing with scissors': painted-paper cut-outs like Jazz and The Snail that are among the most radical works of his century.",
   outside:"He designed the Vence chapel complete — stained glass, vestments, altar — calling it his masterpiece despite lifelong agnosticism. His correspondence-duel with Picasso ('only one of us can have the North Pole') hid deep mutual dependence: after Matisse died, Picasso said simply, 'All things considered, there is only Matisse.'",
