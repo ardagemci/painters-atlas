@@ -104,6 +104,7 @@ the invocation and file infrastructure and never change.
 | **Seurat** | `claude-data-steward` | Data integrity + copyright compliance (optional specialist) | Data records only |
 | **Duchamp** | `claude-synthesis-liaison` | Liaison analyst: audits incoming theory and outgoing Claude artifacts for the Coordinator Kernel | No (analysis only) |
 | **Vasari** | `claude-curator` | Art-historical research and curatorial judgement: what belongs in the atlas, taxonomic coherence, influence attestation, coverage honesty | Data records only |
+| **Hogarth** | `claude-rights-analyst` | Explains the legal frameworks the project operates inside and frames them as owner decisions; assembles evidence and drafts counsel briefs. **States no legal conclusion and decides nothing** — OD-5 binds absolutely | No (analysis and `docs/` only) |
 
 The main Claude session acts as Synthesis Lead. It creates an agent team only
 when genuine inter-agent discussion is valuable, waits for required specialist
