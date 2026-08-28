@@ -160,6 +160,39 @@ Build on an isolated branch or worktree, never directly on `main` for feature
 work. Keep changes scoped and reviewable. Partition file ownership when
 teammates work concurrently.
 
+**One worktree per session — required, not preferred (owner's instruction,
+2026-08-27).** More than one Claude session works in this repository, and on
+2026-08-27 two of them shared the primary checkout. Nothing was lost, but `main`
+went red for twenty minutes: one session set the asset-ledger constants, the
+other promoted seven Matisse records an hour later, and neither was wrong. The
+constants were simply stale by exactly seven, and the session that noticed had
+to reconstruct why from commit archaeology.
+
+The rule that prevents it:
+
+- **Each session works in `.claude/worktrees/<name>`**, on its own branch. The
+  directory is excluded in `.git/info/exclude`, so worktrees never appear as
+  untracked noise.
+- **The primary checkout is the integration point**, not a workspace. Merge
+  there; do not author there.
+- **Ledger and count constants in `tests/` are the collision surface.** They are
+  shared state that every content change touches. A session about to move one
+  should expect another session to have moved it first, and reconcile by
+  *attributing* the change — naming the commit and the session that caused it —
+  rather than absorbing it into its own totals.
+- **`git worktree prune` before creating one.** Two abandoned worktrees sat here
+  for three weeks, one holding 389 lines of uncommitted work that had long since
+  been superseded on `main`. Check `rev-list --count main..HEAD` and the diff
+  against `main` before removing any worktree: a stale tree is not the same as
+  an empty one.
+
+**A worktree must be able to run the suite.** Only tracked files come along, so
+any file the tests read must be committed. This rule was written because it was
+broken: `protocol/tasks/PIG-001/evidence/artwork-image-rights.json` and the two
+museum-photo rights files were untracked while `asset-inventory-effa805.json`
+beside them was tracked, and two tests read all four. The suite could not run in
+a fresh worktree — or in a fresh clone by anyone. They are tracked now.
+
 ## 4. Communication Protocol
 
 All cross-team artifacts follow `protocol/PROTOCOL.md` and validate against
