@@ -92,6 +92,20 @@ class ValidatorFailureSignalTest(unittest.TestCase):
             "a run on incomplete data is inconclusive, never valid",
         )
 
+    def test_a_wikipedia_article_as_image_page_is_refused(self):
+        """An en.wikipedia.org article carries no licence statement, so a record
+        citing one asserts a public-domain basis it cannot show (PIGMENT.md §14,
+        OD-5). 293 records did exactly that until W-004 migrated them, and the
+        count had grown from 257 in two days because new records kept arriving
+        the same way. This check is why that was the last migration."""
+        self.patch("catalog-1.js",
+                   'page:"https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"',
+                   'page:"https://en.wikipedia.org/wiki/The_Starry_Night"')
+        code, stdout = self.run_validator()
+        self.assertEqual(code, 1, "a Wikipedia article must fail the build:\n" + stdout)
+        self.assertIn("image.page is not a Commons file page", stdout)
+        self.assertIn("the-starry-night", stdout)
+
     def test_report_survives_failure(self):
         """Failing must not cost the diagnostics. Exiting early before the
         report is written would swap one broken gate for another."""

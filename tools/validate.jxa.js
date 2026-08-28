@@ -149,6 +149,20 @@ CAT.forEach(function(w){
   });
   if(w.image && w.image.status === "pd" && (w.image.src || "").indexOf("/wikipedia/commons/") === -1)
     errs.push(tag + ": pd image not Commons-hosted");
+  /* The page must be the file's own Commons page, not an article about the
+     painting. An en.wikipedia.org article carries no licence statement at all,
+     so a record citing one asserts a public-domain basis it cannot show —
+     PIGMENT.md §14, and OD-5's rule that the basis is recorded rather than
+     assumed.
+
+     293 records cited articles before W-004 migrated them, and the count had
+     grown from 257 in two days because new records kept arriving the same way.
+     This exists so that was the last migration rather than a recurring chore:
+     a wrong page now fails the commit that introduces it. */
+  if(w.image && w.image.status === "pd" &&
+     !/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(w.image.page || ""))
+    errs.push(tag + ": image.page is not a Commons file page (" +
+      String(w.image.page || "missing").slice(0, 70) + ")");
   if(w.image && ["pd","copyright","none"].indexOf(w.image.status) === -1)
     errs.push(tag + ": bad image status " + w.image.status);
   if(w.tier === 1){
