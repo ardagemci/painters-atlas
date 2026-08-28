@@ -1116,6 +1116,50 @@ CATALOG_BATCH_06 = {
 }
 
 
+#: Matisse, 2026-08-27 — commit 8502b08, written by a DIFFERENT SESSION working
+#: in this same tree. Recorded here by the session that happened to be at the
+#: keyboard when the suite went red, on the owner's instruction, and attributed
+#: rather than absorbed.
+#:
+#: Seven records moved from image:{status:"copyright"} with a generative cover to
+#: real images: woman-with-a-hat, the-joy-of-life, open-window-collioure,
+#: the-dance-matisse, the-red-studio, goldfish-matisse, the-piano-lesson. Basis
+#: per file in docs/corrections/matisse-public-domain.md. blue-nude-ii and
+#: the-snail stay walled — that commit's own reasoning is that the wall runs per
+#: WORK, not per artist.
+#:
+#: The drift is exactly these seven, on both surfaces, and nothing else. That is
+#: worth stating because the first attempt to attribute it reported sixteen
+#: changed prerender refs and nine unexplained ones: the throwaway script had
+#: collected the ledger set by scanning module globals instead of using the
+#: tuple the test actually uses, so it compared against the wrong baseline. The
+#: alarm was raised on a bad measurement. Re-run against the real ledger tuple,
+#: +7 and +7.
+#:
+#: copyright_refs falls 68 -> 61 for the same seven records, which is the number
+#: moving in the direction it should when a walled record gains a picture.
+MATISSE_PUBLIC_DOMAIN = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            U + "1/11/Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg/500px-Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg",
+            U + "3/3a/La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg/500px-La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg",
+            U + "5/59/Matisse-Open-Window.jpg/500px-Matisse-Open-Window.jpg",
+            U + "7/70/I_pesci_rossi.jpg/500px-I_pesci_rossi.jpg",
+            U + "8/8a/La_Danse_II%2C_par_Henri_Matisse.jpg/500px-La_Danse_II%2C_par_Henri_Matisse.jpg",
+            U + "e/ef/L%27Atelier_rouge%2C_par_Henri_Matisse.jpg/500px-L%27Atelier_rouge%2C_par_Henri_Matisse.jpg",
+            U + "f/fb/Matisse-Woman-with-a-Hat.jpg/500px-Matisse-Woman-with-a-Hat.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "1/11/Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg/500px-Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg",
+            U + "3/3a/La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg/500px-La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg",
+            U + "5/59/Matisse-Open-Window.jpg/500px-Matisse-Open-Window.jpg",
+            U + "7/70/I_pesci_rossi.jpg/500px-I_pesci_rossi.jpg",
+            U + "8/8a/La_Danse_II%2C_par_Henri_Matisse.jpg/500px-La_Danse_II%2C_par_Henri_Matisse.jpg",
+            U + "e/ef/L%27Atelier_rouge%2C_par_Henri_Matisse.jpg/500px-L%27Atelier_rouge%2C_par_Henri_Matisse.jpg",
+            U + "f/fb/Matisse-Woman-with-a-Hat.jpg/500px-Matisse-Woman-with-a-Hat.jpg",
+        ] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -1134,7 +1178,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1180,13 +1224,15 @@ class TestAssetInventory(unittest.TestCase):
         # 868 -> 871: Batch 05's three new museum photographs (National Palace
         # Museum Taipei, Topkapı, National Portrait Gallery). Its twelve artworks
         # again added nothing — they were read straight out of the gallery pool.
-        self.assertEqual(c["total_unique"], 875)   # +4: Batch 06's museum photographs
-        self.assertEqual(c["rendered_unique"], 874)   # +4: the same, all rendered
+        # 875 -> 880 and 874 -> 879: the seven Matisse images of commit 8502b08,
+        # two of which were already gallery entries (hence +5 unique, not +7).
+        self.assertEqual(c["total_unique"], 880)   # +5 net: Matisse
+        self.assertEqual(c["rendered_unique"], 879)   # +5 net: the same
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 164)   # +12 a fourth time: Batch 06
+        self.assertEqual(c["catalog_gallery_overlap"], 166)   # +2: two Matisse works already in the pool
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -1198,7 +1244,10 @@ class TestAssetInventory(unittest.TestCase):
         # image:{status:"copyright"} with no src — which is why this number moves
         # and total_unique/rendered_unique do not. A record that added a picture
         # would have moved those too.
-        self.assertEqual(c["copyright_refs"], 68)
+        # 68 -> 61: the seven Matisse records left image:{status:"copyright"}
+        # for a real picture. This number falling is the correct direction — it
+        # means walled records gained images, not that a check was loosened.
+        self.assertEqual(c["copyright_refs"], 61)
 
 
 class TestPdTokenAccuracy(unittest.TestCase):
@@ -1296,7 +1345,7 @@ class TestSampleBasis(unittest.TestCase):
         # more lists — the-king-goes-to-philadelphia (an Actuality list) and
         # the-same-thing-obsessively. Eight of fifteen lists are now entirely
         # Tier 1. §8 door-1 backlog 35 -> 24.
-        self.assertEqual(len(tier1), 113, "Tier 1 ∪ daily pool is 113 works")
+        self.assertEqual(len(tier1), 120, "Tier 1 ∪ daily pool is 120 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1314,7 +1363,7 @@ class TestSampleBasis(unittest.TestCase):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
         The validator reports more Tier 1 records than the rights sample counts
-        (120 against 113). Both are right, and the gap is not an error to be closed
+        (127 against 120). Both are right, and the gap is not an error to be closed
         by changing a number. Seven records sit in it — full-fathom-five,
         autumn-rhythm, no-14-rothko, abaporu, marilyn-diptych, campbells-soup-cans
         and tutu-enwonwu — each promoted through §8 door 1 and each carrying
@@ -1333,7 +1382,7 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 113)   # +8 more with a pd asset
+        self.assertEqual(len(tier1_with_asset), 120)   # +7: Matisse (8502b08)
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',
@@ -1356,7 +1405,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 330)   # +12 a fourth time: Batch 06
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 337)   # +7: Matisse (8502b08)
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.

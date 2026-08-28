@@ -51,6 +51,13 @@ class CensusTest(unittest.TestCase):
         "the-bridge-at-narni", "reclining-nude-modigliani", "surname-i-humayun",
         "early-spring", "the-ninth-wave", "the-ambassadors", "the-city-leger",
         "the-cradle", "the-cheat-with-the-ace-of-diamonds",
+        # Matisse, 2026-08-27, commit 8502b08 — a DIFFERENT SESSION in this same
+        # tree moved seven records off image:{status:"copyright"} onto real
+        # images. Declared here by id like every other post-register addition,
+        # and attributed rather than absorbed.
+        "woman-with-a-hat", "the-joy-of-life", "open-window-collioure",
+        "the-dance-matisse", "the-red-studio", "goldfish-matisse",
+        "the-piano-lesson",
         # Catalog Batch 06, js/catalog-9.js, 2026-08-24 (docs/CATALOG_BATCH_06.md)
         "the-chess-game", "the-miracle-of-the-slave", "the-forest-seker-ahmed",
         "the-ray", "death-and-the-maiden", "lofty-mount-lu", "pine-trees-tohaku",
