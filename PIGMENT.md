@@ -364,25 +364,25 @@ stale the moment someone adds a painter, so treat any figure here as
 "true on the date stamped below, and nowhere else." The validator is the only
 current source: `osascript -l JavaScript tools/validate.jxa.js`.
 
-**Snapshot taken 2026-07-25** on branch `pig-001-stabilization`, from validator
-output (the previous snapshot in this file was dated 2026-07-16 and had drifted
-by up to 12 records):
+**Snapshot taken 2026-08-27** on branch `main`, from validator output (the
+previous snapshot was dated 2026-07-25 and had drifted by up to 81 records —
+the catalogue nearly doubled underneath it):
 
-- 247 artists
-- 317 canonical artworks
-- 75 Tier 1 artworks
+- 279 artists
+- 398 canonical artworks
+- 127 Tier 1 artworks
 - 36 Tier 1 exhibition artist profiles, all with career arcs
-- 75 movements
-- 39 techniques
-- 8 eras, from the 14th century to today
-- 37 nations
-- 115 registered venues
-- 103 museum notes/pages represented in the current museum index
-- 12 editorial lists (4 featured)
+- 85 movements
+- 40 techniques
+- 10 eras, from before 1200 to today
+- 38 nations
+- 137 registered venues
+- 127 museum notes/pages represented in the current museum index
+- 15 editorial lists (5 featured)
 - 15 provisional Personas
-- 225 influence relationships
+- 258 influence relationships (107 ungrounded, against a ratchet of 107)
 - 27 generative painter styles
-- 75 eligible Painting-of-the-Day works
+- 120 eligible Painting-of-the-Day works
 
 Implemented routes include:
 

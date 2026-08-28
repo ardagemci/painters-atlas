@@ -1490,8 +1490,8 @@ function dailyHome(daily){
 }
 
 /* ---------- photo credit (TASL — title, author, source, licence) ----------
-   Attribution is a licence term, not decoration. 87 of the 103 museum building
-   photographs and 28 shipped artwork images carry Creative Commons licences
+   Attribution is a licence term, not decoration. 108 of the 127 museum building
+   photographs and 24 shipped artwork images carry Creative Commons licences
    whose one operative obligation is: name the author, name the licence, link
    both the licence deed and the source file. The registries are generated into
    js/photo-credits.js from the rights evidence (tools/build_photo_credits.py);
@@ -1571,7 +1571,7 @@ function viewMuseum(id){
   const kindred = VEN.filter(o => o.id !== id && !VENUE_SENTINELS[o.id] && (catByVenue[o.id] || []).length &&
     (o.city === v.city || o.country === v.country)).slice(0, 6);
   /* the building photograph's credit. It is rendered on every museum page that
-     has a photograph, not only the ones whose hero shows it: 82 of the 103 heroes
+     has a photograph, not only the ones whose hero shows it: 109 of the 127 heroes
      are given over to a collage of the works instead, but the same photograph is
      still this venue's cover everywhere else in the atlas. */
   const photoCredit = note && note.photo ? creditLine(PCREDITS[id], "Photograph") : "";
@@ -2991,7 +2991,7 @@ function srRank(it, q){
   return best;
 }
 /* Type-fair fill. Inside one tier the matching types take turns, so a crowded type
-   (247 artists) can never consume the whole cap and starve a matching artwork,
+   (279 artists) can never consume the whole cap and starve a matching artwork,
    museum or movement. Tiers are never crossed for fairness — a prefix match always
    outranks a substring match, whichever types they belong to. */
 function srSelect(scored, max){
