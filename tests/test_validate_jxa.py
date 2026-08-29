@@ -106,6 +106,33 @@ class ValidatorFailureSignalTest(unittest.TestCase):
         self.assertIn("image.page is not a Commons file page", stdout)
         self.assertIn("the-starry-night", stdout)
 
+    def test_notice_budget_warns_without_blocking(self):
+        """A1: the owner set the work-level notice budget at 12 words on
+        2026-08-17, and the backlog recorded that until a check existed it was
+        "enforced by nobody". 30 bullets already exceed it, so this warns rather
+        than fails -- an error would lock the repository, including against the
+        commit adding the check. Promote to errs.push when the count is zero."""
+        code, stdout = self.run_validator()
+        self.assertEqual(code, 0, "an existing-violation warning must not block")
+        self.assertIn("A1:", stdout)
+        self.assertIn("word budget", stdout)
+
+    def test_the_budget_warning_counts_real_words(self):
+        """Non-vacuity from the other side: a bullet pushed over the limit must
+        appear, so the check is measuring length rather than always printing a
+        fixed list."""
+        # Replace a bullet, never add one: a separate rule requires exactly 3,
+        # so appending tests that rule instead of this one. The first draft of
+        # this test did exactly that and failed for the wrong reason.
+        long_line = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen"
+        self.patch("catalog-1.js",
+                   "Christ's languid hand quotes Adam's from the Sistine ceiling",
+                   long_line)
+        code, stdout = self.run_validator()
+        self.assertEqual(code, 0)
+        self.assertIn("(14 words)", stdout,
+                      "a 14-word bullet must be counted and named")
+
     def test_report_survives_failure(self):
         """Failing must not cost the diagnostics. Exiting early before the
         report is written would swap one broken gate for another."""
