@@ -19,10 +19,22 @@ work-specific field by accident, so 12 is the correct rule rather than a
 competing one. The 21 bullets sitting at 9–12 need no revision, and the `†`
 markers in `CATALOG_BATCH_COPY.md` are no longer load-bearing.
 
-Two things must ship together for this to be real, both Phase 0 of the build-
-lane work: `STYLE_GUIDE` §4.3 narrows explicitly to artist and movement traits,
-and the validator gains the check it has never had. Until that check exists the
-budget is still enforced by nobody.
+**The check exists as of 2026-08-29** — `tools/validate.jxa.js` counts every
+work-level `notice` bullet and reports those over 12. It is a **warning, not an
+error**, deliberately: **30 of 582 bullets already exceed the budget**, so
+failing the build would lock the repository, including against the commit that
+added the check.
+
+It also cannot be auto-fixed, which is why no writ covers it. *Melencolia I*'s
+17-word bullet is "The magic square's every row sums to 34 — and its bottom row
+dates the print: 1514"; cutting it to 12 loses either the 34 or the 1514, and
+both are the line's reason for existing. Shortening these is editorial
+judgement — Van Gogh's work, or the owner's.
+
+**Remaining:** `STYLE_GUIDE` §4.3 still needs narrowing explicitly to artist and
+movement traits, and the 30 bullets need an editorial pass. Promote the warning
+to an error once the count reaches zero; the check is written so that is a
+one-word change.
 
 **A2 · RESOLVED 2026-08-12. All 20 confirmed mismatches are cleared.**
 

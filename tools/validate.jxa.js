@@ -120,6 +120,24 @@ A.forEach(a => {
 
 const warns = [];
 
+/* A1, decided by the owner 2026-08-17: a work-level `notice` bullet is ≤12
+   words (ARTWORK_SCHEMA §3). STYLE_GUIDE §4.3's ≤8 governs artist and movement
+   traits and was inherited into this work-specific field by accident.
+
+   A WARNING, not an error, and deliberately. 30 bullets already exceed it, so
+   failing the build would lock the repository — including against the commit
+   that adds this check. It also cannot be auto-fixed: Melencolia I's 17-word
+   bullet is "The magic square's every row sums to 34 — and its bottom row dates
+   the print: 1514", and cutting it to 12 loses either the 34 or the 1514, both
+   of which are the line's reason for existing. Shortening these is editorial
+   judgement — Van Gogh's work, or the owner's, in Lane II.
+
+   Promote to errs.push once the count reaches zero. Until then this is the
+   difference between a budget nobody enforces and one everybody can see. */
+function noticeWords(s){ return String(s).trim().split(/\s+/).filter(Boolean).length; }
+const NOTICE_MAX = 12;
+var noticeOver = [];
+
 // venue registry + artwork catalog integrity (ARTWORK_SCHEMA v1)
 try { eval(read(base + "js/venues.js")); } catch(e){ loadFail("venues.js ERROR: " + e.message); }
 familyFiles("catalog").forEach(function(f){
@@ -159,6 +177,10 @@ CAT.forEach(function(w){
      grown from 257 in two days because new records kept arriving the same way.
      This exists so that was the last migration rather than a recurring chore:
      a wrong page now fails the commit that introduces it. */
+  (w.notice || []).forEach(function(line){
+    const n = noticeWords(line);
+    if(n > NOTICE_MAX) noticeOver.push(w.id + " (" + n + " words): " + String(line).slice(0, 52));
+  });
   if(w.image && w.image.status === "pd" &&
      !/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(w.image.page || ""))
     errs.push(tag + ": image.page is not a Commons file page (" +
@@ -568,6 +590,9 @@ out.push("artists: " + A.length + ", movements: " + M.length + ", techniques: " 
   " (featured: " + (window.EDITORIAL_LISTS || []).filter(function(l){ return l.featured; }).length + ")" +
   ", tier1 artists: " + Object.keys(window.TIER1 || {}).length +
   " (arcs: " + Object.keys(window.TIER1 || {}).filter(function(k){ return window.TIER1[k].arc; }).length + ")");
+if(noticeOver.length)
+  warns.push("A1: " + noticeOver.length + " notice bullet(s) over the " + NOTICE_MAX +
+    "-word budget — editorial, not mechanical:\n    " + noticeOver.join("\n    "));
 if(warns.length) out.push("WARNINGS:\n  " + warns.join("\n  "));
 if(loadErrs.length) out.push("LOAD FAILURES — a data file did not parse, so every check above ran on incomplete data:\n  " + loadErrs.join("\n  "));
 /* "ALL REFERENCES VALID" is the clean-run string other tools match on; it is
