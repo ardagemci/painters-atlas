@@ -276,8 +276,8 @@ window.CATALOG = (window.CATALOG || []).concat([
   movements:["northern-renaissance"], techniques:["oil-painting"], nation:"belgium",
   museum:{ id:"prado", name:"Museo del Prado", city:"Madrid" },
   dims:"117 × 162 cm",
-  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Triumph_of_Death_Brueghel.jpg/500px-Triumph_of_Death_Brueghel.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:Triumph_of_Death_Brueghel.jpg", status:"pd" },
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg/500px-The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg", status:"pd" },
   tags:["unsettling","storm","historical"] },
 
 { id:"childrens-games", tier:2,

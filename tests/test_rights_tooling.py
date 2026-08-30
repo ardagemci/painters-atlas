@@ -1160,6 +1160,41 @@ MATISSE_PUBLIC_DOMAIN = {
 }
 
 
+#: 2026-08-30. ONE record re-sourced: `triumph-of-death` moved off
+#: File:Triumph_of_Death_Brueghel.jpg, whose Commons page carried a bare
+#: {{cc-by-sa-4.0}} naming `author=Pieter Brueghel` — a man dead in 1569, and so
+#: not a party who could have offered that licence — over a file whose stated
+#: source is the Prado's own website. The replacement's page asserts a
+#: public-domain basis ({{PD-Art|PD-old-100-1923|deathyear=1569}}) and the
+#: regenerated census records attribution_required false, which is why
+#: js/photo-credits.js loses an entry (24 -> 23) and TestPdTokenAccuracy's
+#: ceiling falls 7 -> 6. See that class's docstring for the full split.
+#:
+#: The trap for anyone repeating this: the LARGEST file in
+#: Category:The_Triumph_of_Death_by_Pieter_Bruegel_(I) is 5200x3697 and tagged
+#: {{superseded}}, pointing at this very file. Ranking candidates by resolution
+#: picks the superseded one.
+#:
+#: No count moves. total_unique holds at 880 and metadata_only_unique at 1 —
+#: but only because the stub page was re-emitted in the same commit. Before
+#: `tools/build_seo.jxa.js` was re-run they read 881 and 2, the old URL having
+#: become metadata-only: p/artwork/triumph-of-death.html still served it in
+#: og:image, twitter:image and the JSON-LD `image`. That is this ledger's own
+#: warning working as designed — the data moved and the public metadata lagged,
+#: which is precisely the state test_prerender_refs_track_the_corrections
+#: exists to refuse.
+BRUEGEL_PD_ART = {
+    "catalog_pd_rendered": {
+        "removed": [U + "8/8b/Triumph_of_Death_Brueghel.jpg/500px-Triumph_of_Death_Brueghel.jpg"],
+        "added": [U + "b/b3/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg/"
+                      "500px-The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg"] },
+    "prerender_metadata_refs": {
+        "removed": [U + "8/8b/Triumph_of_Death_Brueghel.jpg/500px-Triumph_of_Death_Brueghel.jpg"],
+        "added": [U + "b/b3/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg/"
+                      "500px-The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg"] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -1178,7 +1213,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1255,25 +1290,52 @@ class TestPdTokenAccuracy(unittest.TestCase):
 
     Found 2026-08-27 while promoting `little-dancer-aged-fourteen`: its image is
     a CC BY 2.0 photograph of the sculpture, and the record carries the `pd`
-    token. Seven records do.
+    token. Seven records did.
 
     This is NOT a licence breach and the test says so rather than implying one:
-    all seven are registered in `js/photo-credits.js` IMAGE_CREDITS and render
+    all of them are registered in `js/photo-credits.js` IMAGE_CREDITS and render
     their credit, so the attribution obligation is met. The defect is that the
     token is doing two jobs — ARTWORK_SCHEMA §3 defines `status` as a *rendering*
     flag ("this may be displayed"), and `pd` also reads as a claim about the
     file's legal status. `docs/CATALOG_BATCH_02.md` constraint 5 says outright
     that CC BY / CC BY-SA files do not take the `pd` token.
 
-    Six of the seven are photographs of three-dimensional or physically-sited
-    works — Michelangelo's David and Pietà, Degas's Little Dancer — where the
-    Commons file page asserts a licence for the PHOTOGRAPH while the work beneath
-    it is centuries old. That is a category the schema
-    has no value for, which is why this is a ratchet and a recorded finding
-    rather than a silent status edit: changing `status` could suppress rendering,
-    and choosing a new value is a schema decision, not a test's to make."""
+    2026-08-30, ceiling 7 -> 6. Reading the seven Commons file pages (rather
+    than the census summary of them) split them somewhere other than where the
+    finding above guessed. The line is not flat-work versus three-dimensional
+    work; it is whether a named living photographer asserted authorship:
 
-    CEILING = 7
+      * FIVE carry `{{self|...}}` — David, Pieta, Little Dancer, black-fuji,
+        vahine-no-te-tiare. A person says they made the image and licensed it.
+        Coherent, and the credit they ask for is rendered.
+      * TWO carried a bare CC tag naming no licensor at all. triumph-of-death
+        gave `author=Pieter Brueghel` — dead 1569, so not a licensor — over a
+        file sourced from the Prado's own site. the-ten-largest-no-9 is a
+        127-byte page: an empty `{{Artwork}}` and a bare `{{cc-by-sa-4.0}}`,
+        naming nobody.
+
+    triumph-of-death left this set by re-sourcing, not by reinterpretation. It
+    now points at File:The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg,
+    whose Commons metadata asserts a public-domain basis
+    (`{{PD-Art|PD-old-100-1923|deathyear=1569}}`, attribution_required false in
+    the regenerated census), so its `pd` token is no longer borrowed. Note for
+    anyone repeating this: the LARGEST file in that Commons category is tagged
+    `{{superseded}}` and points here, so sorting candidates by resolution picks
+    the wrong one.
+
+    the-ten-largest-no-9 is the residue and stays. This audit's searches of
+    Category:The_Ten_Largest_(Hilma_af_Klint) did not locate a replacement it
+    could take without a new question: the largest candidate carries `{{self}}`
+    with no licence parameter beside a bare `{{PD-old}}` while claiming `{{own}}`
+    of a 1907 painting, and the one tagged `{{PD-Art|PD-old-70}}` carries
+    "(c) Stiftelsen Hilma af Klints Verk" inside its own description field. A
+    conflict on the face of a file page is not this test's to resolve (OD-5).
+
+    Six remain. This stays a ratchet and a recorded finding rather than a silent
+    status edit: changing `status` could suppress rendering, and choosing a new
+    value is a schema decision, not a test's to make."""
+
+    CEILING = 6
 
     def test_the_pd_token_is_not_spreading_to_credit_required_files(self):
         catalog = rr.SURFACES["catalog"]() + rr.SURFACES["catalog_tier2"]() \
