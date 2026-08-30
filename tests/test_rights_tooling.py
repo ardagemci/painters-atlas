@@ -1631,6 +1631,7 @@ class TestProseLanguage(unittest.TestCase):
         ROOT / "protocol" / "tasks" / "PIG-001" / "build-evidence-report.md",
         ROOT / "protocol" / "tasks" / "PIG-001" / "evidence",
         ROOT / "docs",
+        ROOT / "protocol" / "oriented",   # OP definitions: same discipline as docs/
         ROOT / "tools",
         ROOT / "tests",
         ROOT / "README.md",
