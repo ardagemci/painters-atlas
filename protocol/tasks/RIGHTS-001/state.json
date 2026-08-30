@@ -1,0 +1,36 @@
+{
+  "adopted": {
+    "baseline": "dd87ad209de516677e67de8f507320c783e173d5",
+    "preserved_unrouted": []
+  },
+  "analyst_count": 0,
+  "build_authorized": false,
+  "created_at": "2026-08-30T18:14:57Z",
+  "events": [
+    {
+      "at": "2026-08-30T18:14:57Z",
+      "detail": {
+        "baseline": "dd87ad209de516677e67de8f507320c783e173d5",
+        "note": "Awaiting theory_brief. No build authorization; Gate 1 unmet by design.",
+        "objective": "Establish the basis on which Pigment renders each image, and convert the open rights questions into owner decisions: the six records carrying the `pd` token on credit-required files, the conflicted af Klint file, the generative covers standing in for copyright-walled works, and the jurisdiction question underlying all of them.",
+        "opened_by": "owner instruction, Lane II",
+        "oriented_protocol": "OP-RIGHTS"
+      },
+      "type": "task_opened"
+    }
+  ],
+  "human_decision": null,
+  "last_message_type": null,
+  "max_provider_calls": 20,
+  "max_rounds": 3,
+  "message_count": 0,
+  "objective": "Establish the basis on which Pigment renders each image, and convert the open rights questions into owner decisions: the six records carrying the `pd` token on credit-required files, the conflicted af Klint file, the generative covers standing in for copyright-walled works, and the jurisdiction question underlying all of them.",
+  "oriented_protocol": "OP-RIGHTS",
+  "project": "pigment",
+  "provider_calls": 0,
+  "round": 0,
+  "task_id": "RIGHTS-001",
+  "updated_at": "2026-08-30T18:14:57Z",
+  "version": 1,
+  "workflow_state": "intake"
+}

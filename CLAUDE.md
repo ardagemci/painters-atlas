@@ -117,6 +117,25 @@ grant its own. The rule that the Quality Reviewer never approves its own
 implementation is what makes the lane's two-tier verification real — Dürer
 implements, Van Eyck reviews a diff it did not write.
 
+## 2b. Oriented Protocols
+
+An **Oriented Protocol (OP)** runs the deliberation cycle of
+`protocol/PROTOCOL.md` against one domain. It changes nothing in that protocol:
+the cycle, the envelope, the convergence standard, Gates 1-4, the Lane
+discipline and the sealed set all hold unchanged. What it adds is a **write
+scope**, a matched **agent set**, and **acceptance criteria** that fit the
+domain. An OP's write scope is only ever a subset of what its lane already
+permits.
+
+Definitions and the index live in `protocol/oriented/`:
+`OP-RIGHTS` (prefix `RIGHTS-`), `OP-INTERFACE` (`IFACE-`), `OP-CONTENT`
+(`CONTENT-`), `OP-PLATFORM` (`PLATFORM-`, not yet staffed). `PIG-NNN` remains
+the prefix for genuinely cross-cutting objectives.
+
+Before working a task under an OP, read that OP's file and confirm the paths you
+intend to touch are inside its scope. Needing another OP's scope is a dependency
+to record, not a scope to widen.
+
 ## 3. Workflow States and Hard Gates
 
 States: `intake → theory → challenge → theory_revision → final_synthesis →
