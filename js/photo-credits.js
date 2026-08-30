@@ -2,7 +2,7 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-08-26
+   Generated: 2026-08-30
 
    Two registries, both read by js/app.js:
 
@@ -14,7 +14,7 @@
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
      Commons file title as derived from the image URL (see commonsTitle() in
-     js/app.js). 24 entries. Files whose Commons metadata asserts a
+     js/app.js). 23 entries. Files whose Commons metadata asserts a
      public-domain or CC0 basis are deliberately absent: that assertion carries
      no attribution obligation, and the existing "image via Wikimedia Commons"
      source link already names their origin.
@@ -187,6 +187,5 @@ window.IMAGE_CREDITS = {
 "File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg": { author:"carulmare", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:ROUSSEAU,_Henri_Sleeping_Gypsy_(detail)_1897.jpg", required:true },
 "File:Stubbs_Anatomy_of_the_Horse_2.JPG": { author:"Warburg1866", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Stubbs_Anatomy_of_the_Horse_2.JPG", required:true },
 "File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg": { author:"GoldenArtists", license:"CC BY 4.0", licenseUrl:"https://creativecommons.org/licenses/by/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Felicity_of_the_Regency_(Skizze_zum_Medici-Zyklus)_-_Peter_Paul_Rubens.jpg", required:true },
-"File:The_Swing_(P430).jpg": { author:"Ajc994", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Swing_(P430).jpg", required:true },
-"File:Triumph_of_Death_Brueghel.jpg": { author:"Pieter Brueghel the Elder", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Triumph_of_Death_Brueghel.jpg", required:true }
+"File:The_Swing_(P430).jpg": { author:"Ajc994", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:The_Swing_(P430).jpg", required:true }
 };

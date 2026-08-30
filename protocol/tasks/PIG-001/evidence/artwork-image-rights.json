@@ -1,25 +1,25 @@
 {
- "generated": "2026-08-26",
+ "generated": "2026-08-30",
  "author": "Durer (claude-implementation-lead), PIG-001 build unit 24",
  "source": "js/catalog-{1..5}.js image{src,status:pd} + js/artworks.js img",
  "method": "Commons API extmetadata via tools/commons_rights.py; deduplicated by underlying Commons file; a transient failure is recorded as unverified and never as a clean result",
  "scope_note": "Census of every renderable shipped artwork image, not a sample. Supersedes the coverage (not the conclusions) of the 122-record sample in rights-register.json for the question 'what still needs credit?'",
  "legal_conclusion": "none",
  "totals": {
-  "images": 747,
-  "resolved_ok": 747,
+  "images": 752,
+  "resolved_ok": 752,
   "unverified": 0,
-  "credit_required": 25,
-  "no_obligation": 722,
+  "credit_required": 24,
+  "no_obligation": 728,
   "by_licence": {
    "CC BY 2.0": 6,
    "CC BY 2.5": 1,
    "CC BY 3.0": 3,
    "CC BY 4.0": 1,
    "CC BY-SA 3.0": 2,
-   "CC BY-SA 4.0": 12,
+   "CC BY-SA 4.0": 11,
    "CC0": 19,
-   "Public domain": 703
+   "Public domain": 709
   }
  },
  "entries": [
@@ -3142,6 +3142,141 @@
    "credit_required": false
   },
   {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Matisse-Woman-with-a-Hat.jpg/500px-Matisse-Woman-with-a-Hat.jpg",
+   "used_in": [
+    "js/catalog-2.js",
+    "js/artworks.js"
+   ],
+   "commons_title": "File:Matisse-Woman-with-a-Hat.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Matisse-Woman-with-a-Hat.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "http://www.sfmoma.org/explore/collection/artwork/213",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg/500px-Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg",
+   "used_in": [
+    "js/catalog-2.js"
+   ],
+   "commons_title": "File:Le_Bonheur_de_vivre_Barnes_(01c)_-_Flickr_-_rverc.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Le_Bonheur_de_vivre_Barnes_(01c)_-_Flickr_-_rverc.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "Barnes Collection Online: https://collection.barnesfoundation.org/objects/7199/Le-Bonheur-de-vivre-also-called-The-Joy-of-Life/",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Matisse-Open-Window.jpg/500px-Matisse-Open-Window.jpg",
+   "used_in": [
+    "js/catalog-2.js"
+   ],
+   "commons_title": "File:Matisse-Open-Window.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Matisse-Open-Window.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "Retrieved from National Gallery of Art, USA, 25 December 2007.",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/La_Danse_II%2C_par_Henri_Matisse.jpg/500px-La_Danse_II%2C_par_Henri_Matisse.jpg",
+   "used_in": [
+    "js/catalog-2.js"
+   ],
+   "commons_title": "File:La_Danse_II,_par_Henri_Matisse.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:La_Danse_II,_par_Henri_Matisse.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "https://www.cineclubdecaen.com/peinture/peintres/matisse/danse.jpg",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/L%27Atelier_rouge%2C_par_Henri_Matisse.jpg/500px-L%27Atelier_rouge%2C_par_Henri_Matisse.jpg",
+   "used_in": [
+    "js/catalog-2.js",
+    "js/artworks.js"
+   ],
+   "commons_title": "File:L'Atelier_rouge,_par_Henri_Matisse.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:L%27Atelier_rouge,_par_Henri_Matisse.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "https://www.moma.org/media/W1siZiIsIjQ5OTUxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=04d9823c81d93765",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/I_pesci_rossi.jpg/500px-I_pesci_rossi.jpg",
+   "used_in": [
+    "js/catalog-2.js"
+   ],
+   "commons_title": "File:I_pesci_rossi.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:I_pesci_rossi.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "http://www.arte-e-pensiero-in-liberta.com/2010/06/henri-matisse-pesci-rossi.html",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg/500px-La_Le%C3%A7on_de_piano%2C_par_Henri_Matisse.jpg",
+   "used_in": [
+    "js/catalog-2.js"
+   ],
+   "commons_title": "File:La_Leçon_de_piano,_par_Henri_Matisse.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:La_Le%C3%A7on_de_piano,_par_Henri_Matisse.jpg",
+   "fetch_status": "ok",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
+   "author": "Henri Matisse",
+   "credit": "Washington Post",
+   "attribution": "",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
+   "legal_conclusion": "none",
+   "credit_required": false
+  },
+  {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/500px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
    "used_in": [
     "js/catalog-3.js",
@@ -3570,23 +3705,23 @@
    "credit_required": false
   },
   {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Triumph_of_Death_Brueghel.jpg/500px-Triumph_of_Death_Brueghel.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg/500px-The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg",
    "used_in": [
     "js/catalog-3.js"
    ],
-   "commons_title": "File:Triumph_of_Death_Brueghel.jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Triumph_of_Death_Brueghel.jpg",
+   "commons_title": "File:The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg",
    "fetch_status": "ok",
-   "license_short": "CC BY-SA 4.0",
-   "license_tpl": "cc-by-sa-4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
    "author": "Pieter Brueghel the Elder",
-   "credit": "https://www.museodelprado.es/coleccion/obra-de-arte/el-triunfo-de-la-muerte/d3d82b0b-9bf2-4082-ab04-66ed53196ccc",
+   "credit": "Museo del Prado",
    "attribution": "",
-   "attribution_required": "true",
-   "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
    "legal_conclusion": "none",
-   "credit_required": true
+   "credit_required": false
   },
   {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Pieter_Bruegel_the_Elder_-_Children%E2%80%99s_Games_-_Google_Art_Project.jpg/500px-Pieter_Bruegel_the_Elder_-_Children%E2%80%99s_Games_-_Google_Art_Project.jpg",
@@ -8085,44 +8220,6 @@
    "license_url": "",
    "author": "Henri Matisse",
    "credit": "State Hermitage Museum",
-   "attribution": "",
-   "attribution_required": "false",
-   "usage_terms": "Public domain",
-   "legal_conclusion": "none",
-   "credit_required": false
-  },
-  {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Matisse-Woman-with-a-Hat.jpg/500px-Matisse-Woman-with-a-Hat.jpg",
-   "used_in": [
-    "js/artworks.js"
-   ],
-   "commons_title": "File:Matisse-Woman-with-a-Hat.jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Matisse-Woman-with-a-Hat.jpg",
-   "fetch_status": "ok",
-   "license_short": "Public domain",
-   "license_tpl": "pd",
-   "license_url": "",
-   "author": "Henri Matisse",
-   "credit": "http://www.sfmoma.org/explore/collection/artwork/213",
-   "attribution": "",
-   "attribution_required": "false",
-   "usage_terms": "Public domain",
-   "legal_conclusion": "none",
-   "credit_required": false
-  },
-  {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/L%27Atelier_rouge%2C_par_Henri_Matisse.jpg/500px-L%27Atelier_rouge%2C_par_Henri_Matisse.jpg",
-   "used_in": [
-    "js/artworks.js"
-   ],
-   "commons_title": "File:L'Atelier_rouge,_par_Henri_Matisse.jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:L%27Atelier_rouge,_par_Henri_Matisse.jpg",
-   "fetch_status": "ok",
-   "license_short": "Public domain",
-   "license_tpl": "pd",
-   "license_url": "",
-   "author": "Henri Matisse",
-   "credit": "https://www.moma.org/media/W1siZiIsIjQ5OTUxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=04d9823c81d93765",
    "attribution": "",
    "attribution_required": "false",
    "usage_terms": "Public domain",
