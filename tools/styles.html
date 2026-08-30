@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pigment — generative cover contact sheet</title>
+<!--
+  A development harness, not a shipped page. It is not linked from anywhere in
+  the atlas and index.html does not load it.
+
+  Pigment has 27 painter algorithms crossed with 279 artist palettes, and until
+  now the only way to look at one was to find a page that happened to use it.
+  This renders all 27 at once, at the real pixel geometries the atlas asks of
+  them, so a blank, muddy or illegible cover is caught here rather than by a
+  visitor.
+
+  It reuses the real painters instead of copying them. js/app.js is a
+  strict-mode IIFE, so nothing inside it is reachable from another script; the
+  three regions the painters need are sliced out of the source text by their
+  column-anchored opening lines and evaluated here. If any anchor moves, the
+  page fails loudly at load rather than drawing something subtly different from
+  what the atlas draws. That is deliberate: a harness that silently diverges
+  from production is worse than no harness.
+-->
+<style>
+:root{
+  --bg:#12100d; --panel:#1b1815; --ink:#efe9dc; --muted:#a49b8a; --line:#2f2a24; --gold:#c9a45c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;padding:22px 26px 60px}
+h1{font-size:1.3rem;margin:0 0 4px;font-weight:600;letter-spacing:.01em}
+p.sub{margin:0 0 18px;color:var(--muted);max-width:70ch}
+.bar{display:flex;gap:22px;align-items:center;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:22px}
+.bar label{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:.85rem}
+select,input,button{background:#0d0b09;color:var(--ink);border:1px solid var(--line);
+  border-radius:6px;padding:5px 9px;font:inherit;font-size:.85rem}
+button{cursor:pointer;border-color:var(--gold);color:var(--gold)}
+button:hover{background:#1f1a12}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.cell canvas{display:block;width:100%;height:auto;background:#000}
+.cap{padding:8px 11px 10px}
+.cap b{font-weight:600;font-size:.9rem}
+.cap .m{color:var(--muted);font-size:.74rem;margin-top:3px;font-variant-numeric:tabular-nums}
+.flag{color:#e0a03a}
+.bad{color:#e06a4a}
+table{border-collapse:collapse;width:100%;margin-top:10px;font-size:.82rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:5px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500}
+#err{color:#e06a4a;white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:.8rem}
+</style>
+</head>
+<body>
+<h1>Generative cover contact sheet</h1>
+<p class="sub">All 27 painter algorithms, rendered with the atlas's own code at the real pixel
+geometries it uses. Switch geometry to see how a style behaves at card size versus the
+1080&times;1350 passport card. <b>Audit</b> renders every style at both and reports whether its
+mark density survives the change of scale.</p>
+
+<div class="bar">
+  <label>Palette
+    <select id="pal"></select>
+  </label>
+  <label>Geometry
+    <select id="geo"></select>
+  </label>
+  <label>Seed
+    <input id="seed" value="pigment" size="12">
+  </label>
+  <button id="go">Redraw</button>
+  <button id="audit">Run resolution audit</button>
+  <span id="status" style="color:var(--muted);font-size:.85rem"></span>
+</div>
+
+<div id="err"></div>
+<div id="out"></div>
+
+<script>
+/* ---------- geometries the atlas actually asks the painters for ----------
+   card    — artist/artwork/museum cards (.cards grid, 16:10)
+   wide    — taxonomy cards and museum heroes at the paintCanvas() 1000px clamp
+   passport— paintPassportCard(), which calls the painter directly at 1080x1350
+             and so bypasses that clamp entirely. Portrait, and 3.6x the card's
+             width: the one geometry no painter was authored against. */
+const GEOMETRIES = {
+  card:     { w: 300,  h: 188,  label: "card 300×188" },
+  wide:     { w: 1000, h: 437,  label: "wide 1000×437" },
+  passport: { w: 1080, h: 1350, label: "passport 1080×1350" }
+};
+
+/* Real artist palettes from js/artists-*.js, chosen to span the range the
+   painters must survive: near-monochrome, gold, saturated, cool, pale. */
+const PALETTES = {
+  "Klimt (gold)":      ["#c9a227","#7b3b43","#2e4a52","#d9c9a0","#1a1712"],
+  "Kline (near-mono)": ["#0f0f0f","#f2efe8","#4a4a48","#d8d2c4","#1d1d1c"],
+  "Rothko (saturated)":["#8a2a1e","#c4562a","#2a1a16","#d98d3a","#1b1210"],
+  "Vermeer (cool)":    ["#2f5d8a","#d9b45c","#e8dcc4","#7a3b2e","#1d2430"],
+  "Hokusai (blue)":    ["#1d3f6e","#5e8ab4","#e8e2d0","#c4a45c","#2a2a24"],
+  "Noland (bright)":   ["#2f6fb0","#e0533a","#f0c33c","#1a1a1a","#f3efe6"]
+};
+
+const $ = s => document.querySelector(s);
+let PAINTERS = null, hashStr = null, mulberry = null;
+
+/* ---------- pull the real painters out of js/app.js ----------
+   Sliced by column-anchored opening lines: every region below starts at column
+   0 and ends at a line that is exactly "}" or "};". Anything else throws. */
+function sliceRegion(lines, startsWith, endLine){
+  const i = lines.findIndex(l => l.startsWith(startsWith));
+  if(i < 0) throw new Error('anchor not found in js/app.js: "' + startsWith + '"');
+  for(let j = i + 1; j < lines.length; j++){
+    if(lines[j] === endLine) return lines.slice(i, j + 1).join("\n");
+  }
+  throw new Error('no closing "' + endLine + '" after "' + startsWith + '"');
+}
+/* dot .. blob .. vignette are contiguous, but only the last of them closes on a
+   line that is exactly "}" — dot is a one-liner and blob closes before vignette
+   opens. So the end is found from the LAST function's opening line, not the first. */
+function sliceThrough(lines, firstStartsWith, lastStartsWith, endLine){
+  const i = lines.findIndex(l => l.startsWith(firstStartsWith));
+  const k = lines.findIndex(l => l.startsWith(lastStartsWith));
+  if(i < 0 || k < 0 || k < i) throw new Error("shape anchors not found in js/app.js");
+  for(let j = k + 1; j < lines.length; j++){
+    if(lines[j] === endLine) return lines.slice(i, j + 1).join("\n");
+  }
+  throw new Error('no closing "' + endLine + '" after "' + lastStartsWith + '"');
+}
+function sliceLines(lines, firstStartsWith, lastStartsWith){
+  const i = lines.findIndex(l => l.startsWith(firstStartsWith));
+  const j = lines.findIndex(l => l.startsWith(lastStartsWith));
+  if(i < 0 || j < 0 || j < i) throw new Error("helper anchors not found in js/app.js");
+  return lines.slice(i, j + 1).join("\n");
+}
+
+async function loadPainters(){
+  const src = await (await fetch("../js/app.js")).text();
+  const lines = src.split("\n");
+  const helpers = sliceLines(lines, "function hashStr(", "function shade(");
+  const shapes  = sliceThrough(lines, "function dot(", "function vignette(", "}");
+  const painters = sliceRegion(lines, "const PAINTERS = {", "};");
+  const factory = new Function(helpers + "\n" + shapes + "\n" + painters +
+                               "\nreturn { PAINTERS, hashStr, mulberry };");
+  const mod = factory();
+  const n = Object.keys(mod.PAINTERS).length;
+  if(n !== 27) throw new Error("expected 27 painters, extracted " + n +
+                               " — js/app.js changed shape; fix the anchors in tools/styles.html");
+  return mod;
+}
+
+/* ---------- measurement ----------
+   coverage:  share of pixels that differ from the corner background colour.
+   edges:     share of pixels whose luminance jumps against the pixel to the
+              right. This is the scale-sensitive one — a painter whose marks are
+              sized in absolute pixels loses edge density as the canvas grows,
+              because the same marks cover proportionally less of it. */
+function measure(ctx, w, h){
+  const d = ctx.getImageData(0, 0, w, h).data;
+  const lum = i => 0.2126*d[i] + 0.7152*d[i+1] + 0.0722*d[i+2];
+  const bg = [d[0], d[1], d[2]];
+  let covered = 0, edges = 0, total = w*h, sum = 0;
+  for(let y = 0; y < h; y++){
+    for(let x = 0; x < w; x++){
+      const i = (y*w + x)*4;
+      const L = lum(i); sum += L;
+      if(Math.abs(d[i]-bg[0]) + Math.abs(d[i+1]-bg[1]) + Math.abs(d[i+2]-bg[2]) > 26) covered++;
+      if(x < w-1 && Math.abs(L - lum(i+4)) > 12) edges++;
+    }
+  }
+  return { coverage: covered/total, edges: edges/total, lum: sum/total };
+}
+
+function paint(style, geo, palette, seedStr){
+  const cv = document.createElement("canvas");
+  cv.width = geo.w; cv.height = geo.h;
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
+  const R = mulberry(hashStr(seedStr + ":" + style));
+  PAINTERS[style](ctx, geo.w, geo.h, palette, R);
+  return { cv, ctx };
+}
+
+function renderSheet(){
+  const geo = GEOMETRIES[$("#geo").value];
+  const palette = PALETTES[$("#pal").value];
+  const seed = $("#seed").value || "pigment";
+  const out = $("#out");
+  out.innerHTML = '<div class="grid">' + Object.keys(PAINTERS).map(s =>
+    '<div class="cell" data-style="' + s + '"><div class="slot"></div>' +
+    '<div class="cap"><b>' + s + '</b><div class="m"></div></div></div>').join("") + '</div>';
+  out.querySelectorAll(".cell").forEach(cell => {
+    const style = cell.dataset.style;
+    let r;
+    try { r = paint(style, geo, palette, seed); }
+    catch(e){ cell.querySelector(".m").innerHTML = '<span class="bad">threw: ' + e.message + '</span>'; return; }
+    cell.querySelector(".slot").replaceWith(r.cv);
+    const m = measure(r.ctx, geo.w, geo.h);
+    const warn = m.coverage < 0.02 ? ' <span class="bad">near-blank</span>' : "";
+    cell.querySelector(".m").innerHTML =
+      "ink " + (m.coverage*100).toFixed(1) + "% · detail " + (m.edges*100).toFixed(1) +
+      "% · lum " + m.lum.toFixed(0) + warn;
+  });
+  $("#status").textContent = geo.label + " · " + Object.keys(PAINTERS).length + " styles";
+}
+
+/* Card versus passport, per style.
+
+   The obvious measure is a trap. Edge pixels track the *boundary length* of a
+   composition, which grows linearly, while the denominator is area, which grows
+   as the square — so a perfectly scale-invariant design still loses edge-density
+   by the linear scale factor (5.08x between these two geometries). Reading that
+   as failure would condemn every painter in the set. So texture is normalised by
+   that factor, and the verdict leans on ink coverage, which really is
+   scale-invariant: the share of the canvas the painter covers should not depend
+   on how big the canvas is.
+
+   A style that "empties out" is drawing a fixed number of absolute-sized marks:
+   fine on a 300px card, lost on a 1080x1350 passport with 26x the area. */
+function runAudit(){
+  const palette = PALETTES[$("#pal").value];
+  const seed = $("#seed").value || "pigment";
+  const C = GEOMETRIES.card, P = GEOMETRIES.passport;
+  const linear = Math.sqrt((P.w*P.h)/(C.w*C.h));
+  const rows = Object.keys(PAINTERS).map(style => {
+    let card, pass;
+    try {
+      card = measure(paint(style, C, palette, seed).ctx, C.w, C.h);
+      pass = measure(paint(style, P, palette, seed).ctx, P.w, P.h);
+    } catch(e){ return { style, err: e.message }; }
+    return { style, card, pass,
+             ink: card.coverage > 0.01 ? pass.coverage / card.coverage : null,
+             tex: card.edges > 0.0005 ? (pass.edges / card.edges) * linear : null };
+  });
+  rows.sort((a, b) => (a.ink == null ? 9 : a.ink) - (b.ink == null ? 9 : b.ink));
+  $("#out").innerHTML =
+    "<p class='sub'>Texture is normalised by the " + linear.toFixed(2) +
+    "&times; linear scale factor, so 1.00 means density held. Ink is the share of canvas covered — " +
+    "it should not move with canvas size at all.</p>" +
+    "<table><tr><th>style</th><th>ink @card</th><th>ink @passport</th><th>ink kept</th>" +
+    "<th>texture (norm.)</th><th>verdict</th></tr>" +
+    rows.map(r => {
+      if(r.err) return "<tr><td>" + r.style + "</td><td colspan=5 class='bad'>threw: " + r.err + "</td></tr>";
+      const v = r.ink == null ? "—"
+        : r.ink < 0.35 ? "<span class='bad'>empties out</span>"
+        : r.ink < 0.70 ? "<span class='flag'>thins</span>"
+        : r.tex != null && r.tex < 0.55 ? "<span class='flag'>holds ink, loses texture</span>"
+        : "holds";
+      return "<tr><td><b>" + r.style + "</b></td>" +
+        "<td>" + (r.card.coverage*100).toFixed(0) + "%</td>" +
+        "<td>" + (r.pass.coverage*100).toFixed(0) + "%</td>" +
+        "<td>" + (r.ink == null ? "—" : r.ink.toFixed(2)) + "</td>" +
+        "<td>" + (r.tex == null ? "—" : r.tex.toFixed(2)) + "</td>" +
+        "<td>" + v + "</td></tr>";
+    }).join("") + "</table>";
+  $("#status").textContent = "audit · card vs passport · palette " + $("#pal").value;
+}
+
+(async function init(){
+  try {
+    const mod = await loadPainters();
+    PAINTERS = mod.PAINTERS; hashStr = mod.hashStr; mulberry = mod.mulberry;
+    $("#pal").innerHTML = Object.keys(PALETTES).map(k => "<option>" + k + "</option>").join("");
+    $("#geo").innerHTML = Object.keys(GEOMETRIES).map(k =>
+      '<option value="' + k + '">' + GEOMETRIES[k].label + "</option>").join("");
+    $("#go").onclick = renderSheet;
+    $("#audit").onclick = runAudit;
+    renderSheet();
+  } catch(e){
+    $("#err").textContent = "Harness failed to load the atlas's painters:\n" + e.message;
+  }
+})();
+</script>
+</body>
+</html>
