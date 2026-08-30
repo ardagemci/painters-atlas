@@ -135,9 +135,12 @@ function sliceLines(lines, firstStartsWith, lastStartsWith){
 }
 
 async function loadPainters(){
-  const src = await (await fetch("../js/app.js")).text();
+  /* cache-busted: a harness that reads a stale app.js reports on code that is no
+     longer there, which is worse than not reporting at all */
+  const src = await (await fetch("../js/app.js?t=" + Date.now(), { cache: "no-store" })).text();
   const lines = src.split("\n");
-  const helpers = sliceLines(lines, "function hashStr(", "function shade(");
+  const helpers = sliceLines(lines, "function hashStr(", "function shade(") + "\n" +
+                  sliceLines(lines, "const COVER_REF_AREA", "function coverScale(");
   const shapes  = sliceThrough(lines, "function dot(", "function vignette(", "}");
   const painters = sliceRegion(lines, "const PAINTERS = {", "};");
   const factory = new Function(helpers + "\n" + shapes + "\n" + painters +

@@ -186,6 +186,28 @@ function passportActions(w){
    GENERATIVE COVER PAINTERS — one per style family
    each: (ctx, w, h, P[5 colours], R rng)
    ============================================================ */
+/* Cover geometry runs from a 300x188 card to the 1080x1350 passport — 26x the
+   area — and paintCanvas() doubles the backing store again on a retina screen.
+   A painter drawing a fixed number of fixed-size marks fills a card and
+   scatters across a passport, which is what nine of them did: the passport card
+   people download was arriving at 2-9% ink where the card sits at 39-96%.
+
+   The fix is a proportional zoom: mark SIZES scale with the linear dimension and
+   mark COUNTS stay put. That keeps ink coverage — count x mark area / canvas
+   area — constant, because both mark area and canvas area then scale as the
+   square. Scaling counts as well was the first attempt and it overshot by k^2,
+   filling the passport to 96% while emptying the card to 9%. Positions were
+   always w/h-relative and are untouched.
+
+   The reference is the 300x188 card, so a 1x screen renders exactly what it
+   rendered before this change, a 2x screen finally renders the same picture
+   rather than a sparser one, and the passport is that same picture enlarged.
+
+   tools/styles.html renders every painter at all three geometries and reports
+   the ink each one keeps; that is the check this constant exists to pass. */
+const COVER_REF_AREA = 300 * 188;
+function coverScale(w, h){ return Math.sqrt((w*h) / COVER_REF_AREA); }
+
 const PAINTERS = {
 
 renaissance(ctx,w,h,P,R){
@@ -249,17 +271,19 @@ baroque(ctx,w,h,P,R){
 },
 
 rococo(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = P[4]; ctx.fillRect(0,0,w,h);
-  for(let i=0;i<16;i++){
-    const c = P[i%4]; ctx.strokeStyle = rgba(c, 0.30 + R()*0.3); ctx.lineWidth = 7 + R()*16;
+  const nCurl = 16, nDot = 40;
+  for(let i=0;i<nCurl;i++){
+    const c = P[i%4]; ctx.strokeStyle = rgba(c, 0.30 + R()*0.3); ctx.lineWidth = (7 + R()*16)*sc;
     ctx.lineCap = "round"; ctx.beginPath();
     const x = R()*w, y = R()*h;
     ctx.moveTo(x,y);
-    ctx.bezierCurveTo(x+(R()-0.5)*220, y-(R())*130, x+(R()-0.5)*220, y+(R())*130, x+(R()-0.5)*260, y+(R()-0.5)*80);
+    ctx.bezierCurveTo(x+(R()-0.5)*220*sc, y-(R())*130*sc, x+(R()-0.5)*220*sc, y+(R())*130*sc, x+(R()-0.5)*260*sc, y+(R()-0.5)*80*sc);
     ctx.stroke();
   }
-  for(let i=0;i<40;i++){ ctx.fillStyle = rgba(P[i%4], 0.5+R()*0.4);
-    dot(ctx, R()*w, R()*h, 1.5+R()*3.5); }
+  for(let i=0;i<nDot;i++){ ctx.fillStyle = rgba(P[i%4], 0.5+R()*0.4);
+    dot(ctx, R()*w, R()*h, (1.5+R()*3.5)*sc); }
 },
 
 neoclassical(ctx,w,h,P,R){
@@ -340,12 +364,13 @@ tonal(ctx,w,h,P,R){
 },
 
 impressionist(ctx,w,h,P,R){
+  const sc = coverScale(w,h), n = 420;
   ctx.fillStyle = shade(P[3],1.04); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<420;i++){
+  for(let i=0;i<n;i++){
     const c = P[Math.floor(R()*5)];
     ctx.save(); ctx.translate(R()*w, R()*h); ctx.rotate((R()-0.5)*1.4);
     ctx.fillStyle = rgba(c, 0.45+R()*0.45);
-    ctx.fillRect(0,0, 7+R()*13, 3+R()*5); ctx.restore();
+    ctx.fillRect(0,0, (7+R()*13)*sc, (3+R()*5)*sc); ctx.restore();
   }
 },
 
@@ -361,21 +386,25 @@ pointillist(ctx,w,h,P,R){
 },
 
 postimpressionist(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = shade(P[0],0.85); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<330;i++){
+  const nStroke = 330, nStar = 6;
+  for(let i=0;i<nStroke;i++){
     const x = R()*w, y = R()*h;
-    const ang = Math.sin(x*0.008)*1.8 + Math.cos(y*0.011)*1.8;
+    /* the flow field is part of the composition, so its wavelength scales with
+       the canvas too — otherwise the swirl tightens into noise on a big one */
+    const ang = Math.sin(x*0.008/sc)*1.8 + Math.cos(y*0.011/sc)*1.8;
     const c = P[Math.floor(R()*5)];
-    ctx.strokeStyle = rgba(c, 0.55+R()*0.4); ctx.lineWidth = 3+R()*4; ctx.lineCap = "round";
+    ctx.strokeStyle = rgba(c, 0.55+R()*0.4); ctx.lineWidth = (3+R()*4)*sc; ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x,y);
-    ctx.quadraticCurveTo(x+Math.cos(ang)*16, y+Math.sin(ang)*16, x+Math.cos(ang+0.7)*30, y+Math.sin(ang+0.7)*30);
+    ctx.quadraticCurveTo(x+Math.cos(ang)*16*sc, y+Math.sin(ang)*16*sc, x+Math.cos(ang+0.7)*30*sc, y+Math.sin(ang+0.7)*30*sc);
     ctx.stroke();
   }
-  for(let i=0;i<6;i++){                                              /* spiral stars */
+  for(let i=0;i<nStar;i++){                                          /* spiral stars */
     const cx=R()*w, cy=R()*h*0.6;
-    ctx.strokeStyle = rgba(P[1],0.8); ctx.lineWidth=2.5;
+    ctx.strokeStyle = rgba(P[1],0.8); ctx.lineWidth=2.5*sc;
     ctx.beginPath();
-    for(let a=0;a<Math.PI*4;a+=0.25){ const r=2+a*3.2;
+    for(let a=0;a<Math.PI*4;a+=0.25){ const r=(2+a*3.2)*sc;
       const px=cx+Math.cos(a)*r, py=cy+Math.sin(a)*r*0.8;
       a===0?ctx.moveTo(px,py):ctx.lineTo(px,py); }
     ctx.stroke();
@@ -383,23 +412,25 @@ postimpressionist(ctx,w,h,P,R){
 },
 
 expressionist(ctx,w,h,P,R){
+  const sc = coverScale(w,h), n = 26;
   ctx.fillStyle = shade(P[4],0.85); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<26;i++){
+  for(let i=0;i<n;i++){
     const c = P[i%4]; ctx.strokeStyle = rgba(c, 0.6+R()*0.4);
-    ctx.lineWidth = 6+R()*16; ctx.lineCap = "square";
+    ctx.lineWidth = (6+R()*16)*sc; ctx.lineCap = "square";
     ctx.beginPath();
     let x = R()*w, y = R()*h; ctx.moveTo(x,y);
     for(let j=0;j<3+Math.floor(R()*3);j++){ x += (R()-0.5)*w*0.4; y += (R()-0.5)*h*0.55; ctx.lineTo(x,y); }
     ctx.stroke();
   }
-  ctx.fillStyle = rgba(P[0],0.55); blob(ctx, w*0.5+(R()-0.5)*80, h*0.45, 46+R()*30, R);
+  ctx.fillStyle = rgba(P[0],0.55); blob(ctx, w*0.5+(R()-0.5)*80*sc, h*0.45, (46+R()*30)*sc, R);
 },
 
 fauvist(ctx,w,h,P,R){
+  const sc = coverScale(w,h), n = 30;
   ctx.fillStyle = shade(P[4]||P[3],1.0); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<30;i++){
+  for(let i=0;i<n;i++){
     const c = P[i%4]; ctx.fillStyle = rgba(c, 0.78+R()*0.22);
-    const cx = R()*w, cy = R()*h, r = 26+R()*64;
+    const cx = R()*w, cy = R()*h, r = (26+R()*64)*sc;
     ctx.beginPath();
     for(let a=0;a<=Math.PI*2+0.01;a+=Math.PI/4){
       const rr = r*(0.62+R()*0.66);
@@ -430,21 +461,23 @@ cubist(ctx,w,h,P,R){
 },
 
 abstract(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = shade(P[4],1.55); ctx.fillRect(0,0,w,h);
   ctx.fillStyle = rgba(P[4],0.12); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<7;i++){
-    const c = P[i%4], x = R()*w, y = R()*h, r = 14+R()*52;
+  const nDot = 7, nLine = 6, nTri = 4;
+  for(let i=0;i<nDot;i++){
+    const c = P[i%4], x = R()*w, y = R()*h, r = (14+R()*52)*sc;
     ctx.fillStyle = rgba(c, 0.8); dot(ctx,x,y,r);
-    if(R()<0.7){ ctx.strokeStyle = rgba(P[(i+2)%5],0.9); ctx.lineWidth = 2.5+R()*3; ctx.beginPath(); ctx.arc(x,y,r+6+R()*12,0,Math.PI*2); ctx.stroke(); }
+    if(R()<0.7){ ctx.strokeStyle = rgba(P[(i+2)%5],0.9); ctx.lineWidth = (2.5+R()*3)*sc; ctx.beginPath(); ctx.arc(x,y,r+(6+R()*12)*sc,0,Math.PI*2); ctx.stroke(); }
   }
-  for(let i=0;i<6;i++){
-    ctx.strokeStyle = rgba(P[(i+1)%5],0.85); ctx.lineWidth = 2+R()*4;
+  for(let i=0;i<nLine;i++){
+    ctx.strokeStyle = rgba(P[(i+1)%5],0.85); ctx.lineWidth = (2+R()*4)*sc;
     ctx.beginPath(); ctx.moveTo(R()*w,R()*h); ctx.lineTo(R()*w,R()*h); ctx.stroke();
   }
-  for(let i=0;i<4;i++){
+  for(let i=0;i<nTri;i++){
     ctx.fillStyle = rgba(P[i%5],0.85);
-    const x=R()*w,y=R()*h,s=10+R()*26;
-    ctx.beginPath(); ctx.moveTo(x,y-s); ctx.lineTo(x+s,y+s); ctx.lineTo(x-s,y+s); ctx.closePath(); ctx.fill();
+    const x=R()*w, y=R()*h, t=(10+R()*26)*sc;
+    ctx.beginPath(); ctx.moveTo(x,y-t); ctx.lineTo(x+t,y+t); ctx.lineTo(x-t,y+t); ctx.closePath(); ctx.fill();
   }
 },
 
@@ -580,41 +613,45 @@ colorfield(ctx,w,h,P,R){
 },
 
 drip(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = shade(P[1],1.0); ctx.fillRect(0,0,w,h);
   const layers = [P[4],P[3],P[2],P[0]];
+  const nDot = 6;
   layers.forEach((c, li) => {
     const n = 5 + Math.floor(R()*3);
     for(let i=0;i<n;i++){
       ctx.strokeStyle = rgba(c, 0.75+R()*0.25);
-      ctx.lineWidth = (li===layers.length-1 ? 2.6 : 1.4) + R()*3; ctx.lineCap = "round";
+      ctx.lineWidth = ((li===layers.length-1 ? 2.6 : 1.4) + R()*3)*sc; ctx.lineCap = "round";
       ctx.beginPath();
       let x = R()*w, y = R()*h; ctx.moveTo(x,y);
       const segs = 14+Math.floor(R()*14);
       for(let s=0;s<segs;s++){
         x += (R()-0.5)*w*0.22; y += (R()-0.5)*h*0.3;
-        ctx.quadraticCurveTo(x+(R()-0.5)*40, y+(R()-0.5)*40, x, y);
+        ctx.quadraticCurveTo(x+(R()-0.5)*40*sc, y+(R()-0.5)*40*sc, x, y);
       }
       ctx.stroke();
-      for(let d=0;d<6;d++){ ctx.fillStyle = rgba(c,0.85); dot(ctx, R()*w, R()*h, 1+R()*3.4); }
+      for(let d=0;d<nDot;d++){ ctx.fillStyle = rgba(c,0.85); dot(ctx, R()*w, R()*h, (1+R()*3.4)*sc); }
     }
   });
 },
 
 gestural(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = shade(P[1]||P[4],1.02); ctx.fillRect(0,0,w,h);
-  for(let i=0;i<13;i++){
+  const nStroke = 13, nScrape = 4;
+  for(let i=0;i<nStroke;i++){
     const c = P[i%5];
     ctx.strokeStyle = rgba(c, 0.62+R()*0.38);
-    ctx.lineWidth = 14+R()*26; ctx.lineCap = "round";
+    ctx.lineWidth = (14+R()*26)*sc; ctx.lineCap = "round";
     ctx.beginPath();
     const x = R()*w, y = R()*h;
     ctx.moveTo(x,y);
     ctx.bezierCurveTo(x+(R()-0.5)*w*0.7, y+(R()-0.5)*h*0.9, x+(R()-0.5)*w*0.7, y+(R()-0.5)*h*0.9, x+(R()-0.5)*w*0.9, y+(R()-0.5)*h*0.7);
     ctx.stroke();
   }
-  for(let i=0;i<4;i++){                                               /* scrape-back */
+  for(let i=0;i<nScrape;i++){                                         /* scrape-back */
     ctx.strokeStyle = rgba(shade(P[1]||P[4],1.05), 0.5);
-    ctx.lineWidth = 10+R()*16; ctx.beginPath();
+    ctx.lineWidth = (10+R()*16)*sc; ctx.beginPath();
     const y = R()*h; ctx.moveTo(0,y); ctx.lineTo(w, y+(R()-0.5)*h*0.3); ctx.stroke();
   }
 },
@@ -714,21 +751,23 @@ artdeco(ctx,w,h,P,R){
 },
 
 street(ctx,w,h,P,R){
+  const sc = coverScale(w,h);
   ctx.fillStyle = shade(P[3],0.92); ctx.fillRect(0,0,w,h);
   ctx.fillStyle = "rgba(0,0,0,0.07)";
-  for(let i=0;i<240;i++) ctx.fillRect(R()*w, R()*h, 1.6, 1.6);        /* concrete grain */
+  const nGrain = 240, nSpray = 140;
+  for(let i=0;i<nGrain;i++) ctx.fillRect(R()*w, R()*h, 1.6*sc, 1.6*sc);   /* concrete grain */
   for(let i=0;i<4;i++){                                               /* spray clusters */
     const c = P[i%3===0 ? 1 : (i%3===1 ? 2 : 0)], cx = R()*w, cy = R()*h*0.7;
-    for(let d=0;d<140;d++){
-      const a = R()*Math.PI*2, r = Math.pow(R(),0.5)*40;
+    for(let d=0;d<nSpray;d++){
+      const a = R()*Math.PI*2, r = Math.pow(R(),0.5)*40*sc;
       ctx.fillStyle = rgba(c, 0.16+R()*0.3);
-      dot(ctx, cx+Math.cos(a)*r, cy+Math.sin(a)*r*0.8, 0.8+R()*2);
+      dot(ctx, cx+Math.cos(a)*r, cy+Math.sin(a)*r*0.8, (0.8+R()*2)*sc);
     }
     ctx.fillStyle = rgba(c,0.75);                                     /* drips */
-    for(let d=0;d<3;d++){ const dx = cx+(R()-0.5)*36;
-      ctx.fillRect(dx, cy, 2.2, 18+R()*46); dot(ctx, dx+1, cy+20+R()*46, 2.4); }
+    for(let d=0;d<3;d++){ const dx = cx+(R()-0.5)*36*sc;
+      ctx.fillRect(dx, cy, 2.2*sc, (18+R()*46)*sc); dot(ctx, dx+sc, cy+(20+R()*46)*sc, 2.4*sc); }
   }
-  ctx.strokeStyle = rgba(P[0],0.92); ctx.lineWidth = 9; ctx.lineCap="round"; /* tag */
+  ctx.strokeStyle = rgba(P[0],0.92); ctx.lineWidth = 9*sc; ctx.lineCap="round"; /* tag */
   ctx.beginPath(); ctx.moveTo(w*0.14,h*0.74);
   ctx.bezierCurveTo(w*0.3,h*0.5, w*0.42,h*0.95, w*0.56,h*0.66);
   ctx.bezierCurveTo(w*0.66,h*0.46, w*0.78,h*0.8, w*0.88,h*0.6);
