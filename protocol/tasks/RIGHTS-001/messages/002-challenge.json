@@ -1,0 +1,64 @@
+{
+  "task_id": "RIGHTS-001",
+  "project": "pigment",
+  "round": 1,
+  "sender": "claude-synthesis-lead",
+  "recipient": "coordinator",
+  "message_type": "challenge",
+  "workflow_state": "challenge",
+  "summary": "Five objections to the round-one theory brief. Two are structural: decisions B and C are coupled because the product has no blank state, so A3 and B1 are not implementable as written; and acceptance criterion 5 can be satisfied under A1 by a token migration that resolves nothing. Three are corrections: the five named-photographer files split 3+2 on the brief's own axis, the procedural-cover assumption is now a measured finding that narrows C, and five references to the task-id conflict are stale.",
+  "assumptions": [
+    "Measurements in this report were taken at fa102fc against the working tree; js/app.js line numbers refer to that commit.",
+    "The brief's A/B/C/D structure is accepted; these objections concern implementability and evidence, not the owner's authority to choose.",
+    "No legal conclusion is stated or implied by any objection here."
+  ],
+  "accepted_points": [
+    "The four-decision A/B/C/D structure, each option carrying an explicit consequence.",
+    "The scope boundary excluding architecture-document sections 1, 3, 6 and 7 to a future PLATFORM objective.",
+    "Dropping the unverified GESAM reference and requiring organisation-level verification before any future licensing route relies on it.",
+    "Preserving exact CC licence family and version rather than one conditional tier.",
+    "Holding named-photographer assertions apart from the unnamed-media case.",
+    "Display permission and model-training permission are separate; RIGHTS-001 authorises no training use.",
+    "Treating C as the highest-uncertainty question.",
+    "Gate 1 remains in force: this round authorises no production edit, implementation, merge or deployment."
+  ],
+  "disputed_points": [
+    "CH-1: A3 and B1 are not implementable in the current product. js/app.js:2190 gates on image.src && status=='pd', and the else branch at 2204 renders canvasTag unconditionally, so withholding an image yields the artist-associated procedural cover rather than no image. A3's own escape clause concedes this. D2 therefore offers as three independent conservative choices a package that reduces to one, C3.",
+    "CH-2: acceptance criterion 5 is satisfiable under A1 without resolving anything. TestPdTokenAccuracy skips any record not carrying the literal status:\"pd\", so migrating the five to a new basis token drops the count 6 to 1 through a declared record change while the files, assertions and unknown jurisdiction are unchanged.",
+    "CH-3: the five named-photographer files are themselves an undifferentiated bucket. Three are photographs of three-dimensional works; black-fuji and vahine-no-te-tiare are photographs of flat works by the same Commons contributor. That is the axis the brief applies everywhere else, and A2's cost profile differs because re-sourcing both replaces one person's work twice.",
+    "CH-4: the assumption that no artwork pixels feed the covers is now measured — 279 hand-authored palettes, no pixel sampling in the paint path — which removes derivation as a live possibility and makes C2 a larger product change than stated, since it removes an authored curatorial judgement rather than a derivation.",
+    "CH-5: five references to the task-id contract conflict are stale, resolved at 18e35b6 which is in this brief's own ancestry."
+  ],
+  "proposal": "See protocol/tasks/RIGHTS-001/challenge-adaptation-report.md. Return the smallest revision that (a) declares the B-C coupling and either conditions A3/B1 on C3 or funds a genuine no-image surface as a deliverable, (b) rewrites criterion 5 so a token migration carries the ratchet with it or explicitly retires and replaces the count, (c) splits Decision A into 3+2 or states why the flat/three-dimensional axis does not govern there, (d) promotes the procedural-cover assumption to a finding and restates C2's consequence, and (e) strikes the five stale task-id references.",
+  "rationale": "The brief's structure is sound and is not relitigated. The two structural objections would each let an owner select an option believing it does something it does not do: A3 and B1 read as withholding but render a cover, and criterion 5 reads as measuring resolution but measures the presence of a string. Both are the failure this project names as a proxy checked for the thing, and both are cheap to fix before specification freeze and expensive after.",
+  "evidence": [
+    "js/app.js:2190 (hasImg gate), js/app.js:2201-2206 (unconditional canvasTag fallback)",
+    "tests/test_rights_tooling.py TestPdTokenAccuracy (literal status:\"pd\" filter, continue on absence)",
+    "js/artists-*.js (279 hand-authored palettes); js/app.js:815-850 (paint path, no getImageData or drawImage of a source)",
+    "Commons file pages for black-fuji ({{art photo}}, {{self|cc-by-3.0}}, Sailko) and vahine-no-te-tiare ({{Information}}, {{self|cc-by-sa-4.0}}, Francesco Bini)",
+    "18e35b6 and tests/test_protocol_ids.py (task-id contract resolved; envelope validates with zero violations, unrenamed)",
+    "protocol/tasks/RIGHTS-001/messages/001-theory_brief.json (the artifact challenged)"
+  ],
+  "requested_actions": [
+    "Revise the brief per CH-1 through CH-5, or defend each objection on the evidence cited.",
+    "Do not widen scope: the objections require no backend, database, runtime policy engine or new source.",
+    "State whether a genuine no-image artwork surface is to be funded by an option, and if so which.",
+    "Preserve the 3+2 distinction in Decision A if it is accepted, so a later specification cannot re-merge it."
+  ],
+  "acceptance_criteria": [
+    "Every objection is either adopted in the revised brief or answered with reasoning against the specific evidence cited.",
+    "The revised brief states, for each of A, B, C and D, whether the option set depends on another decision, and names the dependency.",
+    "No revision introduces a backend, database, scheduled job, private asset store or runtime territorial evaluation.",
+    "No revision asserts a legal conclusion, and the prohibited-language guard reports no new assertion of legal status.",
+    "The five stale task-id references are removed."
+  ],
+  "risks": [
+    "If the B-C coupling stays undeclared, an owner may select the D2 conservative package believing it is three independent choices when it reduces to C3.",
+    "If criterion 5 stands, A1 produces a green ratchet and an unresolved question, weakening the guard for every future rights finding.",
+    "If Decision A keeps the five as one class, a later specification may treat photographs of flat and three-dimensional works identically, which is the R1 defect the brief was written to avoid.",
+    "Challenging structure rather than substance could be read as delay; it is not, and the report accepts eight of the brief's positions without qualification."
+  ],
+  "confidence": "high: every objection rests on a line of code, a test filter, a file page or a commit read this round; low only on whether the owner will judge the missing no-image surface worth funding",
+  "next_state": "theory_revision",
+  "created_at": "2026-08-31T12:36:59Z"
+}
