@@ -8,7 +8,11 @@ from pathlib import Path
 from typing import Any, Dict
 
 
-TASK_ID_RE = re.compile(r"^PIG-[0-9]{3,}$")
+# Prefix names the Oriented Protocol that owns the task; PIG- is cross-cutting
+# or predates them. Enumerated, not open-ended: adding an OP must be a
+# deliberate act here and in protocol/oriented/README.md, which
+# TestOrientedProtocols ties together.
+TASK_ID_RE = re.compile(r"^(PIG|RIGHTS|IFACE|CONTENT|PLATFORM)-[0-9]{3,}$")
 
 
 def utc_now() -> str:

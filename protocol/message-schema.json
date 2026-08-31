@@ -13,7 +13,7 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "task_id": { "type": "string", "pattern": "^PIG-[0-9]{3,}$", "description": "Stable objective id, e.g. PIG-001" },
+    "task_id": { "type": "string", "pattern": "^(PIG|RIGHTS|IFACE|CONTENT|PLATFORM)-[0-9]{3,}$", "description": "Stable objective id. Prefix names the Oriented Protocol (protocol/oriented/README.md); PIG- is cross-cutting. e.g. PIG-001, RIGHTS-001" },
     "project": { "const": "pigment" },
     "round": { "type": "integer", "minimum": 1 },
     "sender": { "type": "string", "enum": ["chatgpt-theory", "claude-synthesis-lead", "coordinator"] },

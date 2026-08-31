@@ -132,7 +132,18 @@ hold:
 
 When a real objective starts, create `protocol/tasks/<task_id>/` at
 runtime (do not pre-create; do not hand-edit Claude's runtime team-state or
-mailbox directories — reusable roles live only in `.claude/agents/`):
+mailbox directories — reusable roles live only in `.claude/agents/`).
+
+A `task_id` matches `^(PIG|RIGHTS|IFACE|CONTENT|PLATFORM)-[0-9]{3,}$`. The
+prefix names the Oriented Protocol that owns the objective — see
+`protocol/oriented/README.md` — and `PIG-` covers objectives that are
+cross-cutting or that predate that file. The prefix is inert to the
+Coordinator, which treats the id as an opaque directory name; it exists so that
+a message, a filename and a directory each say which protocol they belong to.
+The list is enumerated in three places (both schemas and
+`pigment_coordinator/util.py`) and tied to the OP index by
+`TestOrientedProtocols`, so adding an OP is a deliberate act rather than a
+silent new namespace:
 
 ```
 protocol/tasks/PIG-001/
