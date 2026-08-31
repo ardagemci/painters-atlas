@@ -16,21 +16,44 @@
         "opened_by": "owner instruction, Lane II",
         "oriented_protocol": "OP-RIGHTS"
       },
+      "sequence": 1,
       "type": "task_opened"
+    },
+    {
+      "at": "2026-08-31T13:10:47Z",
+      "detail": {
+        "from": {
+          "last_message_type": null,
+          "message_count": 0,
+          "round": 0,
+          "workflow_state": "intake"
+        },
+        "method": "Replayed the state writes engine.ingest performs, in message order, over 001-theory_brief.json and 002-challenge.json. No analyst packet was fabricated; analyst_count stays 0, which is the divergence D-001 records.",
+        "not_performed": "engine._refresh_decision_record; the decision record was written by hand this session.",
+        "reason": "Two messages were authored and merged without Coordinator ingest (decision record D-001, owner-instructed skip of the liaison packet). state.json still read intake / round 0 / message_count 0 while messages/ held a theory_brief and a challenge.",
+        "to": {
+          "last_message_type": "challenge",
+          "message_count": 2,
+          "round": 1,
+          "workflow_state": "theory_revision"
+        }
+      },
+      "sequence": 2,
+      "type": "state_reconciled"
     }
   ],
   "human_decision": null,
-  "last_message_type": null,
+  "last_message_type": "challenge",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 0,
+  "message_count": 2,
   "objective": "Establish the basis on which Pigment renders each image, and convert the open rights questions into owner decisions: the six records carrying the `pd` token on credit-required files, the conflicted af Klint file, the generative covers standing in for copyright-walled works, and the jurisdiction question underlying all of them.",
   "oriented_protocol": "OP-RIGHTS",
   "project": "pigment",
   "provider_calls": 0,
-  "round": 0,
+  "round": 1,
   "task_id": "RIGHTS-001",
-  "updated_at": "2026-08-30T18:14:57Z",
+  "updated_at": "2026-08-31T13:10:47Z",
   "version": 1,
-  "workflow_state": "intake"
+  "workflow_state": "theory_revision"
 }

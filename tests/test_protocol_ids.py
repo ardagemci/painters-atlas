@@ -128,3 +128,71 @@ class TestTheGuardActuallyFails(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTaskStateMatchesTheMessageLog(unittest.TestCase):
+    """`state.json` and `messages/` must describe the same task.
+
+    RIGHTS-001 drifted: two messages were authored and merged while the
+    Coordinator was out of the loop (the liaison packet was skipped by owner
+    instruction, decision record D-001), so state.json still read `intake` /
+    round 0 / message_count 0 while messages/ held a theory_brief and a
+    challenge. Nothing detected it — the Coordinator's next ingest would have
+    acted on a stale state and re-run a round that had already happened.
+
+    These invariants are derived from what `engine.ingest` actually writes, and
+    they hold for PIG-001, which was driven entirely through the Coordinator.
+    `analyst_count` is checked against `analyses/` rather than against
+    `message_count`: PIG-001 legitimately carries 5 messages and 4 packets.
+    """
+
+    TASKS = sorted(p for p in (ROOT / "protocol" / "tasks").iterdir()
+                   if p.is_dir() and (p / "state.json").is_file())
+
+    def _load(self, task):
+        state = json.loads((task / "state.json").read_text(encoding="utf-8"))
+        msgs = sorted((task / "messages").glob("*.json")) if (task / "messages").is_dir() else []
+        return state, msgs
+
+    def test_message_count_matches_the_files(self):
+        for task in self.TASKS:
+            state, msgs = self._load(task)
+            with self.subTest(task=task.name):
+                self.assertEqual(state["message_count"], len(msgs))
+
+    def test_analyst_count_matches_the_packets(self):
+        for task in self.TASKS:
+            state, _ = self._load(task)
+            n = len(sorted((task / "analyses").glob("*.json"))) if (task / "analyses").is_dir() else 0
+            with self.subTest(task=task.name):
+                self.assertEqual(state.get("analyst_count", 0), n)
+
+    def test_a_task_with_messages_is_not_still_at_intake(self):
+        """The exact RIGHTS-001 defect."""
+        for task in self.TASKS:
+            state, msgs = self._load(task)
+            if not msgs:
+                continue
+            with self.subTest(task=task.name):
+                self.assertNotEqual(state["workflow_state"], "intake",
+                                    "%s holds %d message(s) but state reads intake"
+                                    % (task.name, len(msgs)))
+
+    def test_last_message_type_and_round_agree(self):
+        for task in self.TASKS:
+            state, msgs = self._load(task)
+            if not msgs:
+                continue
+            last = json.loads(msgs[-1].read_text(encoding="utf-8"))
+            with self.subTest(task=task.name):
+                self.assertEqual(state["last_message_type"], last["message_type"])
+                self.assertGreaterEqual(state["round"], last["round"])
+
+    def test_events_are_sequenced(self):
+        """record_event stamps a contiguous sequence; a hand-written event that
+        omits it leaves a log that cannot be ordered."""
+        for task in self.TASKS:
+            state, _ = self._load(task)
+            with self.subTest(task=task.name):
+                self.assertEqual([e.get("sequence") for e in state["events"]],
+                                 list(range(1, len(state["events"]) + 1)))

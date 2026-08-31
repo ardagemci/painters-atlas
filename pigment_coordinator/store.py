@@ -12,7 +12,9 @@ class TaskStore:
 
     def task_dir(self, task_id: str) -> Path:
         if not TASK_ID_RE.match(task_id):
-            raise ConfigurationError("task_id must match PIG- followed by at least three digits")
+            raise ConfigurationError(
+                "task_id must be an Oriented Protocol prefix (PIG, RIGHTS, IFACE, "
+                "CONTENT or PLATFORM) followed by at least three digits")
         return self.tasks_root / task_id
 
     def create(self, task_id: str, objective: str, max_rounds: int, max_provider_calls: int) -> Dict[str, Any]:

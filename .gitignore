@@ -4,3 +4,4 @@
 !.env.pigment.example
 __pycache__/
 *.pyc
+passport-test.html
