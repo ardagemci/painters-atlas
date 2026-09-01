@@ -170,6 +170,12 @@ second E-002 without checking. Hogarth caught the collision in synthesis review.
   display name, or record both is a schema and tooling question for the
   specification. Whether crediting one person under two names satisfies the
   licence is a question for counsel, not for either pole.
+- **Amended 2026-09-02 (Seurat):** the collision is **four files, not two**.
+  `User:Sailko` is recorded as `Sailko` on the Soutine, `black-fuji` and Rubens
+  *Descent from the Cross* files, and as `Francesco Bini` on `vahine`. Two
+  further account/display divergences are latent and non-colliding today
+  (`User:MiguelHermoso` → "Miguel Hermoso Cuesta"; `User:Glimz` → "original
+  file by Stanislav Traykov", a fragment rather than a name).
 - **Status:** accept as finding. A and B remain open.
 
 
@@ -277,3 +283,37 @@ second E-002 without checking. Hogarth caught the collision in synthesis review.
   existing definitions already contradict each other. This is repaired first or
   the migration inherits the contradiction.
 - **Status:** accept as finding. Repair is specification work, not this round's.
+
+
+## E-010 — Three credits name the painter, not the photographer (Seurat)
+
+- **Found by:** Seurat, data-integrity audit of all 23 attribution-required
+  files. Verified independently against the Commons API before filing.
+- **What.** Pigment's `author` comes from extmetadata's `Artist` field, which for
+  some files resolves to the **depicted work's creator** rather than the
+  photographer. On two files the page's own wikitext names a photographer and
+  Pigment credits the painter instead:
+
+  | file | licence | Pigment credits | page's wikitext author |
+  |---|---|---|---|
+  | `Mrs._Siddons_as_the_Tragic_Muse_(3051182537).jpg` | CC BY 2.0 | `Joshua Reynolds` (d. 1792) | `Rennett Stowe` (Flickr) |
+  | `Max_Beckmann,_Departure.jpg` | CC BY 2.0 | `Max Beckmann` (d. 1950) | `Allie_Caulfield` |
+
+  A third, `4_hilma_af_klint,_the_ten_largest,_no_9.jpg`, records `Hilma af
+  Klint` (d. 1944) where the wikitext names nobody at all. A fourth,
+  `Osman_I_miniature_by_Nakkaş_Osman.jpg`, records a 16th-century miniaturist
+  because the page itself writes that as bare text — there Pigment copied the
+  page faithfully.
+- **Why it matters.** Both CC BY 2.0 files require attribution, and the rendered
+  credit names a party the file page does not name as the photographer. This is
+  distinct from E-006: there the right person is named under two labels; here a
+  different person is named.
+- **Not concluded here.** Whether a notice naming the depicted work's creator
+  rather than the photographer satisfies CC BY 2.0's attribution term is a
+  question for counsel under the jurisdiction Decision D fixes. Neither pole
+  states it.
+- **Same root cause as E-006.** `tools/commons_rights.py:118`
+  (`re.sub(r"<[^>]+>", "", s)`) discards the anchor `href` that distinguishes a
+  `/wiki/User:` account from an `en.wikipedia.org` biography, so nothing
+  downstream can tell a photographer's credit from a painter's.
+- **Status:** accept as finding. It enlarges A and it is not confined to the six.
