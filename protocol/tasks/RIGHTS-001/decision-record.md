@@ -137,7 +137,11 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
 - **Status:** accept as correction. Not an owner selection.
 
 
-## E-002 — One photographer, credited as two people (evidence, not a decision)
+## E-006 — One photographer, credited as two people (evidence, not a decision)
+
+*Renumbered from E-002 on 2026-08-31. The round-two revision merge introduced
+E-002 through E-005 for its own adaptations, and this entry was appended as a
+second E-002 without checking. Hogarth caught the collision in synthesis review.*
 
 - **Found by:** the round-two revision disputing CH-3. It held that the
   shared-contributor claim "is contradicted by the current generated registry
@@ -204,3 +208,32 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
   which came from `js/photo-credits.js` rather than the file page, which names
   nobody. Corrected in the intake baseline; the reasoning does not depend on it.
 - **Status:** accept as evidence, not as protocol artifacts.
+
+
+## E-007 — `image.status` gates one of two image registries
+
+- **Found by:** Hogarth, synthesis review, and verified independently before
+  filing. Neither pole had it across two rounds.
+- **What.** `image.status` exists only on `js/catalog-*.js` records. A second
+  registry, `window.ARTWORKS` in `js/artworks.js`, holds **581 image entries and
+  contains no `status` field anywhere** — measured: zero occurrences of the
+  string in the file. It is loaded by `index.html` and rendered on artist pages
+  by `js/app.js`.
+- **The measurement.** Of the 23 attribution-required files in
+  `js/photo-credits.js`, **19 also appear in `js/artworks.js`** — including
+  `File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg`, the file Decision B is
+  entirely about, and `File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg` from
+  Decision A. (Hogarth reported 15; the measured figure is 19.)
+- **Consequence for the owner's options.** **B1 — "metadata-only, no image-like
+  substitute" — does not remove the af Klint image from the site.** It would
+  still render on the artist page through the ungated registry. **A3 does not
+  remove the Degas photograph** for the same reason. Both options are scoped to
+  one of two registries and do not produce the outcome their text describes.
+- **Distinct from CH-1.** CH-1 found that withholding yields a procedural cover
+  rather than nothing. This is a second and independent defect: withholding does
+  not take effect at all on the artist-page surface.
+- **What is not broken.** `creditUsage()` in `js/app.js` already walks both
+  registries, so attribution renders for images reached either way. Only the
+  gate is single-registry.
+- **Status:** accept as finding. It reopens the option text for A and B; it
+  decides nothing.
