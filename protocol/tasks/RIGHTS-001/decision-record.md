@@ -237,3 +237,43 @@ second E-002 without checking. Hogarth caught the collision in synthesis review.
   gate is single-registry.
 - **Status:** accept as finding. It reopens the option text for A and B; it
   decides nothing.
+
+
+## E-008 — A1, executed alone, REMOVES attribution from the five files (Dürer)
+
+- **Found by:** Dürer, feasibility assessment. Verified independently before
+  filing.
+- **What.** The inline credit is gated on `hasImg`:
+  `js/app.js:2228` renders `<p class="img-credit">` only inside
+  `${hasImg && imageCredit(w.image.src) ? … : ""}`, and `hasImg`
+  (`js/app.js:2190`) requires `status === "pd"`. The credits index does the same:
+  `creditUsage()` at `js/app.js:2495` opens
+  `if(!(w.image && w.image.src && w.image.status === "pd")) return;`
+- **Consequence.** Migrate the five named-photographer records to a new basis
+  token with no other change and the images stop rendering, **their inline
+  credits vanish, and they drop off `#/credits`**. The site would carry *less*
+  attribution after a change made in the name of attribution accuracy.
+- **Why this matters to the deliberation.** Round one, the challenge and the
+  revision all treat A1 as vocabulary hygiene with a migration cost. It is not.
+  A1 is only safe bundled with the render and credits path, and `js/app.js`
+  rendering logic is outside OP-RIGHTS' write scope
+  (`protocol/oriented/OP-RIGHTS.md`). **A1 must be specified as one bundle with
+  the credits path, or not selected.**
+- **Status:** accept as finding. It changes A1's consequence line; it does not
+  decide A.
+
+## E-009 — The documented status enum and the enforced one disagree
+
+- **Found by:** Dürer, in passing. Verified.
+- **What.** `docs/ARTWORK_SCHEMA.md:50` documents the vocabulary as
+  `"pd" | "generative" | "none"`, and §127 describes `status:"generative"`
+  rendering "the artist-style canvas seeded by artwork id, honestly captioned".
+  `tools/validate.jxa.js:188` enforces `["pd","copyright","none"]`.
+- **So:** `"generative"` is documented, described in a rendering rule, and
+  **rejected by the validator**. `"copyright"` is enforced and carried by 61
+  live records and **absent from the documented enum**. A record authored to the
+  schema would fail the build.
+- **Bearing on A1.** Any new basis token has to land in a vocabulary whose two
+  existing definitions already contradict each other. This is repaired first or
+  the migration inherits the contradiction.
+- **Status:** accept as finding. Repair is specification work, not this round's.
