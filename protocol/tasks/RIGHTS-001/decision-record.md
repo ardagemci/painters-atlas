@@ -167,3 +167,40 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
   specification. Whether crediting one person under two names satisfies the
   licence is a question for counsel, not for either pole.
 - **Status:** accept as finding. A and B remain open.
+
+
+## D-002 — Rounds one and two ran with no specialist input
+
+- **What:** RIGHTS-001 reached `final_synthesis` with `analyst_count: 0`, an
+  empty `analyses/`, an empty `analyst-reports/`, and no report from any roster
+  specialist. PIG-001 by contrast carries a Caravaggio challenge analysis, a
+  Dürer feasibility assessment, Mondrian UX requirements, a Seurat data-integrity
+  report, Vermeer browser evidence, and four liaison packets.
+- **Why:** the session did not spawn agents, because it does not do so unless the
+  owner asks, and the owner had not. Recorded as a deviation rather than left to
+  be inferred from an empty directory.
+- **Effect:** OP-RIGHTS names Hogarth as lead; the Synthesis Lead did his job
+  through two rounds. E-002 — verifying a claimed basis against the file that
+  asserts it — is Seurat's declared remit and was done by the Synthesis Lead. No
+  Implementation Lead has confirmed feasibility, which `PROTOCOL.md` §5 criterion
+  5 requires before convergence can be recommended, so **no specification may be
+  frozen on the current record.**
+- **Remedy:** the owner authorised Hogarth, Seurat and Dürer for the synthesis
+  round. Their reports attach here.
+- **Status:** accept, remedied prospectively. The challenge and revision rounds
+  stand as written; they are not re-run.
+
+## D-003 — Hogarth's pre-task briefs filed as evidence
+
+- **What:** two briefs produced before RIGHTS-001 existed —
+  `evidence/hogarth-01-pd-token.md` and
+  `evidence/hogarth-02-architecture-review.md` — filed unaltered.
+- **Why:** the intake baseline's open questions A–D and the round-two request's
+  five enumerated weaknesses both derive from them. A record that cites findings
+  it does not contain cannot be checked.
+- **Caveat carried with them:** both predate the task, were not routed through
+  the Coordinator, carry no envelope and had no liaison audit. Brief 01 was given
+  one incorrect input — that the af Klint file credits the painter as author,
+  which came from `js/photo-credits.js` rather than the file page, which names
+  nobody. Corrected in the intake baseline; the reasoning does not depend on it.
+- **Status:** accept as evidence, not as protocol artifacts.
