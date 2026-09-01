@@ -62,20 +62,43 @@
       },
       "sequence": 3,
       "type": "state_reconciled"
+    },
+    {
+      "at": "2026-09-01T23:38:18Z",
+      "detail": {
+        "analyst_count": 0,
+        "from": {
+          "last_message_type": "revision",
+          "message_count": 3,
+          "round": 2,
+          "workflow_state": "final_synthesis"
+        },
+        "method": "Replayed engine.ingest's final_synthesis transition after validating the envelope against the expected tuple (final_synthesis, claude-synthesis-lead, round 2, final_synthesis -> awaiting_build_approval).",
+        "note": "awaiting_build_approval is where convergence is evaluated. The synthesis explicitly does NOT recommend it: PROTOCOL.md \u00a75 criteria 4 and 6 do not hold. build_authorized stays false.",
+        "reason": "Final synthesis (004) authored and merged without Coordinator ingest; liaison packet still skipped per D-001.",
+        "to": {
+          "last_message_type": "final_synthesis",
+          "message_count": 4,
+          "round": 2,
+          "workflow_state": "awaiting_build_approval"
+        }
+      },
+      "sequence": 4,
+      "type": "state_reconciled"
     }
   ],
   "human_decision": null,
-  "last_message_type": "revision",
+  "last_message_type": "final_synthesis",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 3,
+  "message_count": 4,
   "objective": "Establish the basis on which Pigment renders each image, and convert the open rights questions into owner decisions: the six records carrying the `pd` token on credit-required files, the conflicted af Klint file, the generative covers standing in for copyright-walled works, and the jurisdiction question underlying all of them.",
   "oriented_protocol": "OP-RIGHTS",
   "project": "pigment",
   "provider_calls": 0,
   "round": 2,
   "task_id": "RIGHTS-001",
-  "updated_at": "2026-09-01T16:17:45Z",
+  "updated_at": "2026-09-01T23:38:18Z",
   "version": 1,
-  "workflow_state": "final_synthesis"
+  "workflow_state": "awaiting_build_approval"
 }

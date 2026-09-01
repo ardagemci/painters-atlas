@@ -1,0 +1,61 @@
+{
+  "task_id": "RIGHTS-001",
+  "project": "pigment",
+  "round": 2,
+  "sender": "claude-synthesis-lead",
+  "recipient": "coordinator",
+  "message_type": "final_synthesis",
+  "workflow_state": "final_synthesis",
+  "summary": "Final synthesis. Convergence is NOT recommended: three of PROTOCOL.md §5's nine criteria do not hold. A specialist round found that A1 executed alone removes attribution from the five files it was meant to describe accurately, and that B1 and A3 do not take effect at all because image.status gates only one of two image registries. Both options are restated truthfully. One new decision, E, is proposed for attribution accuracy beyond the six records.",
+  "assumptions": [
+    "Measured at 43b43ea. Nothing in this round edited a production file; build_authorized remains false.",
+    "The owner decides A, B, C, D and the proposed E. This synthesis restates consequences and recommends sequencing only.",
+    "No legal conclusion is stated by either pole. OD-5 binds."
+  ],
+  "accepted_points": [
+    "The A/B/C/D decision architecture from round one, and the owner's authority over each.",
+    "The revision's refusal to couple A3/B1 to global C3; one record-scoped state serves both, which Dürer's scoping confirms.",
+    "The revision's narrowing of CH-3 to an analytical grouping rather than a legal distinction, and of CH-4 to the observed runtime path — Hogarth holds CH-4 overclaimed and that the narrowing was correct.",
+    "The scope boundary excluding architecture-document §§1,3,6,7 to a future PLATFORM objective.",
+    "The revision's rejection of the Synthesis Lead's proposed successor count as one proxy for another; Dürer supplies a design that is neither."
+  ],
+  "disputed_points": [
+    "Round one, the challenge and the revision all treat A1 as vocabulary hygiene. E-008: js/app.js:2228 gates the inline credit on hasImg and js/app.js:2495 filters creditUsage on status=='pd', so A1 alone removes attribution from five files that require it. A1 must be specified as one bundle with the credits path or not selected.",
+    "B1 and A3 do not produce the outcome their text describes. E-007: js/artworks.js holds 581 image entries and zero status fields, and 19 of the 23 credit-required files also live there, including the af Klint file Decision B concerns.",
+    "E-006 and E-010 belong to no existing decision and are not confined to the six records. Proposed as Decision E.",
+    "Convergence: §5 criteria 4 and 6 do not hold, and 5 holds only with named exceptions. No specification should be frozen on this record."
+  ],
+  "proposal": "See protocol/tasks/RIGHTS-001/final-synthesis.md. Decisions A-D restated with corrected consequences; Decision E proposed; convergence assessed criterion by criterion and not recommended; a five-step closing sequence given in cost order, cheapest first.",
+  "rationale": "Every round argued about which token a record should carry. Nobody checked what the token was wired to. It gates the credit, gates the credits index, and does not gate the second registry at all — so the vocabulary debate was about a proxy while the thing itself was three functions away. Restating A and B truthfully is worth more than closing the loop on options that do not mean what they say.",
+  "evidence": [
+    "protocol/tasks/RIGHTS-001/evidence/durer-01-feasibility.md (E-008, E-009, the successor-guard design, §5 criterion 5 verdict)",
+    "protocol/tasks/RIGHTS-001/evidence/hogarth-03-synthesis-review.md (E-007, the three narrowings, jurisdiction as cheapest move)",
+    "protocol/tasks/RIGHTS-001/evidence/seurat-01-credit-integrity.md (E-006 amended to four files, E-010, root cause at commons_rights.py:118)",
+    "protocol/tasks/RIGHTS-001/decision-record.md D-000..D-003, E-001..E-010",
+    "js/app.js:2190, 2204, 2228, 2495; js/artworks.js; tools/validate.jxa.js:188; docs/ARTWORK_SCHEMA.md:50",
+    "messages/001-theory_brief.json, 002-challenge.json, 003-revision.json"
+  ],
+  "requested_actions": [
+    "Do not freeze a specification on this record; §5 criteria 4 and 6 do not hold.",
+    "Put A, B, C, D and proposed E to the owner as decisions, with the corrected consequences.",
+    "Escalate the jurisdiction input: the owner's country and legal operating form is essential information that cannot be responsibly inferred, and it gates precise answers to A, B and C.",
+    "File the OP-INTERFACE dependency for the record-scoped no-image state, and the tools/ scope dependency for Decision E."
+  ],
+  "acceptance_criteria": [
+    "The owner records an explicit selection or explicit deferral for A, B, C, D and E, with the consequence accepted for each.",
+    "No option is presented to the owner with a consequence the current build does not produce.",
+    "A1 is not implementable until the credits path is specified with it; an attribution-continuity guard fails the build if any credit-required rendered file loses its credit.",
+    "The successor guard is a named deliverable of any specification, not an assumption in it, and is proved non-vacuous by recorded negative controls.",
+    "No RIGHTS-001 artifact asserts a legal conclusion; the prohibited-language guard reports no new assertion of legal status."
+  ],
+  "risks": [
+    "If A1 is selected as vocabulary work, the site loses attribution on five files that require it — the opposite of the task's purpose.",
+    "If B1 is selected believing it withholds the af Klint image, the image continues to render on the artist page and the owner believes a decision took effect that did not.",
+    "The successor guard exists as a design only; a specification that assumes it would rest on unbuilt work.",
+    "Decision E's fix touches tools/, outside OP-RIGHTS' write scope; proceeding without filing that dependency repeats the scope error this OP was created to prevent.",
+    "Rounds one and two carry no liaison audit and no specialist input; the corrections in this round were found late, and nothing guarantees the set is complete."
+  ],
+  "confidence": "high: on the repository findings — every one rests on a cited line verified this round, and the three that change an option's meaning were re-verified independently after the specialists reported; low on anything jurisdictional, which neither pole may determine",
+  "next_state": "awaiting_build_approval",
+  "created_at": "2026-09-01T23:37:55Z"
+}
