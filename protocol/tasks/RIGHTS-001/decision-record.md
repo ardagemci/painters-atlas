@@ -317,3 +317,39 @@ second E-002 without checking. Hogarth caught the collision in synthesis review.
   `/wiki/User:` account from an `en.wikipedia.org` biography, so nothing
   downstream can tell a photographer's credit from a painter's.
 - **Status:** accept as finding. It enlarges A and it is not confined to the six.
+
+
+## D-004 — RIGHTS-001 split; two tasks opened
+
+- **What:** `RIGHTS-002` (OP-RIGHTS) and `IFACE-001` (OP-INTERFACE) opened at
+  baseline `8354de3`, both at `intake`, both `build_authorized: false`.
+- **Why:** the final synthesis declined convergence — `PROTOCOL.md` §5 criteria
+  4 and 6 do not hold. The evidence separates this task's work into parts with
+  **different blockers**, and holding them in one task means the fastest work
+  waits on the slowest:
+
+  | part | blocked on | now |
+  |---|---|---|
+  | attribution accuracy (E-006, E-010) | nothing | **RIGHTS-002** |
+  | the record-scoped no-image state (CH-1, E-007) | nothing but scope — it is not OP-RIGHTS' to write | **IFACE-001** |
+  | Decisions A, B, C | Decision D, which only the owner can supply | stays here |
+
+- **What stays in RIGHTS-001:** Decisions A, B, C and D, and the proposed
+  Decision E's *owner question* — whether a credit should name the display text,
+  the account, or both. RIGHTS-002 does the measurement and the tooling; the
+  choice remains an owner decision on this task.
+- **Constraint honoured:** `OP-INTERFACE.md` already claims "the walled record
+  that has no image to show." The dependency was filed to the OP that owns it
+  rather than resolved by widening OP-RIGHTS' scope — which is the discipline
+  `protocol/oriented/README.md` states: *needing another OP's scope is a
+  dependency to record, not a scope to widen.*
+- **Open scope question carried into RIGHTS-002:** `tools/` is not in
+  OP-RIGHTS' may-write table, and the E-006/E-010 fix edits
+  `tools/commons_rights.py`. The owner widens the scope or the dependency is
+  filed. It is the first thing that task settles.
+- **Not done:** RIGHTS-001 is neither cancelled nor restarted. Its record —
+  including D-001 through D-003, which document a skipped liaison audit and two
+  rounds without specialists — stands as written. A restart would have produced a
+  cleaner record that was less true, and the ten findings exist *because* the
+  flaws were recorded rather than tidied away.
+- **Status:** accept.

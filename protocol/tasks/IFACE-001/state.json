@@ -1,0 +1,40 @@
+{
+  "analyst_count": 0,
+  "build_authorized": false,
+  "created_at": "2026-09-01T23:47:19Z",
+  "events": [
+    {
+      "at": "2026-09-01T23:47:19Z",
+      "detail": {
+        "objective": "A record-scoped metadata-only presentation state: an artwork surface showing no image and no artist-associated procedural cover. RIGHTS-001 established the product has no blank state (js/app.js:2190 gates, 2204 falls through to canvasTag unconditionally), which makes options A3, B1, C3 and C4 unselectable and A1 unsafe. Scoped by Durer at 10 render sites, 4 pools, one prerender path and new CSS box states. Also in scope: image.status gates js/catalog-*.js only, while js/artworks.js holds 581 image entries and no status field at all (E-007)."
+      },
+      "sequence": 1,
+      "type": "task_created"
+    },
+    {
+      "at": "2026-09-01T23:47:19Z",
+      "detail": {
+        "opened_by": "owner instruction, Lane II \u2014 split of RIGHTS-001",
+        "oriented_protocol": "OP-INTERFACE",
+        "parent_task": "RIGHTS-001",
+        "reason": "RIGHTS-001's final synthesis did not recommend convergence: PROTOCOL.md \u00a75 criteria 4 and 6 do not hold. The evidence separates the work into parts with different blockers; this task carries one of them."
+      },
+      "sequence": 2,
+      "type": "task_opened"
+    }
+  ],
+  "human_decision": null,
+  "last_message_type": null,
+  "max_provider_calls": 20,
+  "max_rounds": 3,
+  "message_count": 0,
+  "objective": "A record-scoped metadata-only presentation state: an artwork surface showing no image and no artist-associated procedural cover. RIGHTS-001 established the product has no blank state (js/app.js:2190 gates, 2204 falls through to canvasTag unconditionally), which makes options A3, B1, C3 and C4 unselectable and A1 unsafe. Scoped by Durer at 10 render sites, 4 pools, one prerender path and new CSS box states. Also in scope: image.status gates js/catalog-*.js only, while js/artworks.js holds 581 image entries and no status field at all (E-007).",
+  "oriented_protocol": "OP-INTERFACE",
+  "project": "pigment",
+  "provider_calls": 0,
+  "round": 1,
+  "task_id": "IFACE-001",
+  "updated_at": "2026-09-01T23:47:19Z",
+  "version": 1,
+  "workflow_state": "intake"
+}
