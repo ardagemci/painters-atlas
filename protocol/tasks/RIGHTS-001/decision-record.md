@@ -137,7 +137,11 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
 - **Status:** accept as correction. Not an owner selection.
 
 
-## E-002 — One photographer, credited as two people (evidence, not a decision)
+## E-006 — One photographer, credited as two people (evidence, not a decision)
+
+*Renumbered from E-002 on 2026-08-31. The round-two revision merge introduced
+E-002 through E-005 for its own adaptations, and this entry was appended as a
+second E-002 without checking. Hogarth caught the collision in synthesis review.*
 
 - **Found by:** the round-two revision disputing CH-3. It held that the
   shared-contributor claim "is contradicted by the current generated registry
@@ -166,6 +170,12 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
   display name, or record both is a schema and tooling question for the
   specification. Whether crediting one person under two names satisfies the
   licence is a question for counsel, not for either pole.
+- **Amended 2026-09-02 (Seurat):** the collision is **four files, not two**.
+  `User:Sailko` is recorded as `Sailko` on the Soutine, `black-fuji` and Rubens
+  *Descent from the Cross* files, and as `Francesco Bini` on `vahine`. Two
+  further account/display divergences are latent and non-colliding today
+  (`User:MiguelHermoso` → "Miguel Hermoso Cuesta"; `User:Glimz` → "original
+  file by Stanislav Traykov", a fragment rather than a name).
 - **Status:** accept as finding. A and B remain open.
 
 
@@ -204,3 +214,106 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
   which came from `js/photo-credits.js` rather than the file page, which names
   nobody. Corrected in the intake baseline; the reasoning does not depend on it.
 - **Status:** accept as evidence, not as protocol artifacts.
+
+
+## E-007 — `image.status` gates one of two image registries
+
+- **Found by:** Hogarth, synthesis review, and verified independently before
+  filing. Neither pole had it across two rounds.
+- **What.** `image.status` exists only on `js/catalog-*.js` records. A second
+  registry, `window.ARTWORKS` in `js/artworks.js`, holds **581 image entries and
+  contains no `status` field anywhere** — measured: zero occurrences of the
+  string in the file. It is loaded by `index.html` and rendered on artist pages
+  by `js/app.js`.
+- **The measurement.** Of the 23 attribution-required files in
+  `js/photo-credits.js`, **19 also appear in `js/artworks.js`** — including
+  `File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg`, the file Decision B is
+  entirely about, and `File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg` from
+  Decision A. (Hogarth reported 15; the measured figure is 19.)
+- **Consequence for the owner's options.** **B1 — "metadata-only, no image-like
+  substitute" — does not remove the af Klint image from the site.** It would
+  still render on the artist page through the ungated registry. **A3 does not
+  remove the Degas photograph** for the same reason. Both options are scoped to
+  one of two registries and do not produce the outcome their text describes.
+- **Distinct from CH-1.** CH-1 found that withholding yields a procedural cover
+  rather than nothing. This is a second and independent defect: withholding does
+  not take effect at all on the artist-page surface.
+- **What is not broken.** `creditUsage()` in `js/app.js` already walks both
+  registries, so attribution renders for images reached either way. Only the
+  gate is single-registry.
+- **Status:** accept as finding. It reopens the option text for A and B; it
+  decides nothing.
+
+
+## E-008 — A1, executed alone, REMOVES attribution from the five files (Dürer)
+
+- **Found by:** Dürer, feasibility assessment. Verified independently before
+  filing.
+- **What.** The inline credit is gated on `hasImg`:
+  `js/app.js:2228` renders `<p class="img-credit">` only inside
+  `${hasImg && imageCredit(w.image.src) ? … : ""}`, and `hasImg`
+  (`js/app.js:2190`) requires `status === "pd"`. The credits index does the same:
+  `creditUsage()` at `js/app.js:2495` opens
+  `if(!(w.image && w.image.src && w.image.status === "pd")) return;`
+- **Consequence.** Migrate the five named-photographer records to a new basis
+  token with no other change and the images stop rendering, **their inline
+  credits vanish, and they drop off `#/credits`**. The site would carry *less*
+  attribution after a change made in the name of attribution accuracy.
+- **Why this matters to the deliberation.** Round one, the challenge and the
+  revision all treat A1 as vocabulary hygiene with a migration cost. It is not.
+  A1 is only safe bundled with the render and credits path, and `js/app.js`
+  rendering logic is outside OP-RIGHTS' write scope
+  (`protocol/oriented/OP-RIGHTS.md`). **A1 must be specified as one bundle with
+  the credits path, or not selected.**
+- **Status:** accept as finding. It changes A1's consequence line; it does not
+  decide A.
+
+## E-009 — The documented status enum and the enforced one disagree
+
+- **Found by:** Dürer, in passing. Verified.
+- **What.** `docs/ARTWORK_SCHEMA.md:50` documents the vocabulary as
+  `"pd" | "generative" | "none"`, and §127 describes `status:"generative"`
+  rendering "the artist-style canvas seeded by artwork id, honestly captioned".
+  `tools/validate.jxa.js:188` enforces `["pd","copyright","none"]`.
+- **So:** `"generative"` is documented, described in a rendering rule, and
+  **rejected by the validator**. `"copyright"` is enforced and carried by 61
+  live records and **absent from the documented enum**. A record authored to the
+  schema would fail the build.
+- **Bearing on A1.** Any new basis token has to land in a vocabulary whose two
+  existing definitions already contradict each other. This is repaired first or
+  the migration inherits the contradiction.
+- **Status:** accept as finding. Repair is specification work, not this round's.
+
+
+## E-010 — Three credits name the painter, not the photographer (Seurat)
+
+- **Found by:** Seurat, data-integrity audit of all 23 attribution-required
+  files. Verified independently against the Commons API before filing.
+- **What.** Pigment's `author` comes from extmetadata's `Artist` field, which for
+  some files resolves to the **depicted work's creator** rather than the
+  photographer. On two files the page's own wikitext names a photographer and
+  Pigment credits the painter instead:
+
+  | file | licence | Pigment credits | page's wikitext author |
+  |---|---|---|---|
+  | `Mrs._Siddons_as_the_Tragic_Muse_(3051182537).jpg` | CC BY 2.0 | `Joshua Reynolds` (d. 1792) | `Rennett Stowe` (Flickr) |
+  | `Max_Beckmann,_Departure.jpg` | CC BY 2.0 | `Max Beckmann` (d. 1950) | `Allie_Caulfield` |
+
+  A third, `4_hilma_af_klint,_the_ten_largest,_no_9.jpg`, records `Hilma af
+  Klint` (d. 1944) where the wikitext names nobody at all. A fourth,
+  `Osman_I_miniature_by_Nakkaş_Osman.jpg`, records a 16th-century miniaturist
+  because the page itself writes that as bare text — there Pigment copied the
+  page faithfully.
+- **Why it matters.** Both CC BY 2.0 files require attribution, and the rendered
+  credit names a party the file page does not name as the photographer. This is
+  distinct from E-006: there the right person is named under two labels; here a
+  different person is named.
+- **Not concluded here.** Whether a notice naming the depicted work's creator
+  rather than the photographer satisfies CC BY 2.0's attribution term is a
+  question for counsel under the jurisdiction Decision D fixes. Neither pole
+  states it.
+- **Same root cause as E-006.** `tools/commons_rights.py:118`
+  (`re.sub(r"<[^>]+>", "", s)`) discards the anchor `href` that distinguishes a
+  `/wiki/User:` account from an `en.wikipedia.org` biography, so nothing
+  downstream can tell a photographer's credit from a painter's.
+- **Status:** accept as finding. It enlarges A and it is not confined to the six.
