@@ -1,0 +1,40 @@
+{
+  "analyst_count": 0,
+  "build_authorized": false,
+  "created_at": "2026-09-01T23:47:19Z",
+  "events": [
+    {
+      "at": "2026-09-01T23:47:19Z",
+      "detail": {
+        "objective": "Attribution accuracy across the whole credit-required set, independent of jurisdiction. Pigment records the Commons wikilink display text as author, so one account appears under two names across four files (E-006) and two CC BY 2.0 files credit the depicted work's painter rather than the photographer their own page names (E-010). Root cause is a single regex at tools/commons_rights.py:118 discarding the anchor href. Carries a scope dependency: tools/ is outside OP-RIGHTS' may-write table."
+      },
+      "sequence": 1,
+      "type": "task_created"
+    },
+    {
+      "at": "2026-09-01T23:47:19Z",
+      "detail": {
+        "opened_by": "owner instruction, Lane II \u2014 split of RIGHTS-001",
+        "oriented_protocol": "OP-RIGHTS",
+        "parent_task": "RIGHTS-001",
+        "reason": "RIGHTS-001's final synthesis did not recommend convergence: PROTOCOL.md \u00a75 criteria 4 and 6 do not hold. The evidence separates the work into parts with different blockers; this task carries one of them."
+      },
+      "sequence": 2,
+      "type": "task_opened"
+    }
+  ],
+  "human_decision": null,
+  "last_message_type": null,
+  "max_provider_calls": 20,
+  "max_rounds": 3,
+  "message_count": 0,
+  "objective": "Attribution accuracy across the whole credit-required set, independent of jurisdiction. Pigment records the Commons wikilink display text as author, so one account appears under two names across four files (E-006) and two CC BY 2.0 files credit the depicted work's painter rather than the photographer their own page names (E-010). Root cause is a single regex at tools/commons_rights.py:118 discarding the anchor href. Carries a scope dependency: tools/ is outside OP-RIGHTS' may-write table.",
+  "oriented_protocol": "OP-RIGHTS",
+  "project": "pigment",
+  "provider_calls": 0,
+  "round": 1,
+  "task_id": "RIGHTS-002",
+  "updated_at": "2026-09-01T23:47:19Z",
+  "version": 1,
+  "workflow_state": "intake"
+}
