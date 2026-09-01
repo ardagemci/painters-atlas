@@ -135,3 +135,35 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
   messages 001, 002, and 003.
 - **Effect:** The revision no longer treats a resolved protocol defect as open.
 - **Status:** accept as correction. Not an owner selection.
+
+
+## E-002 — One photographer, credited as two people (evidence, not a decision)
+
+- **Found by:** the round-two revision disputing CH-3. It held that the
+  shared-contributor claim "is contradicted by the current generated registry
+  and census, which identify different source-asserted contributors." Both poles
+  were right about different objects, and checking which settled it produced a
+  finding neither had.
+- **What the sources say.** Queried live against the Commons API:
+
+  | file | `photographer`/`author` field | `[[User:…]]` link | uploader |
+  |---|---|---|---|
+  | `black-fuji` | `[[User:Sailko\|Sailko]]` | `Sailko` | `Sailko` |
+  | `vahine-no-te-tiare` | `[[User:Sailko\|Francesco Bini]]` | `Sailko` | `Sailko` |
+
+  One Commons account uploaded both and is named in both. The two differ only in
+  the wikilink's **display text**.
+- **What Pigment records.** `js/photo-credits.js` and the census capture the
+  display string, not the account: `author:"Sailko"` for one and
+  `author:"Francesco Bini"` for the other. The rendered credits therefore name
+  **two different people for one photographer**.
+- **Why it matters beyond CH-3.** This is the mechanism by which Pigment
+  discharges the attribution obligation on CC BY and CC BY-SA files. It cannot
+  currently tell two display names for one account apart, so it cannot detect
+  that one contributor's work appears twice — which is what made the round-one
+  brief's per-record framing of option A2 read as cheaper than it is.
+- **Not decided here.** Whether the extraction should prefer the account, the
+  display name, or record both is a schema and tooling question for the
+  specification. Whether crediting one person under two names satisfies the
+  licence is a question for counsel, not for either pole.
+- **Status:** accept as finding. A and B remain open.

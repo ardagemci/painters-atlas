@@ -40,20 +40,42 @@
       },
       "sequence": 2,
       "type": "state_reconciled"
+    },
+    {
+      "at": "2026-09-01T16:17:45Z",
+      "detail": {
+        "analyst_count": 0,
+        "from": {
+          "last_message_type": "challenge",
+          "message_count": 2,
+          "round": 1,
+          "workflow_state": "theory_revision"
+        },
+        "method": "Replayed engine.ingest's state writes for the theory_revision transition after validating the envelope against the expected tuple (revision, chatgpt-theory, round 2, theory_revision -> final_synthesis) and the round budget.",
+        "reason": "Round-two revision (003-revision.json) merged without Coordinator ingest; liaison packet still skipped per decision record D-001. TestTaskStateMatchesTheMessageLog caught the divergence on merge.",
+        "to": {
+          "last_message_type": "revision",
+          "message_count": 3,
+          "round": 2,
+          "workflow_state": "final_synthesis"
+        }
+      },
+      "sequence": 3,
+      "type": "state_reconciled"
     }
   ],
   "human_decision": null,
-  "last_message_type": "challenge",
+  "last_message_type": "revision",
   "max_provider_calls": 20,
   "max_rounds": 3,
-  "message_count": 2,
+  "message_count": 3,
   "objective": "Establish the basis on which Pigment renders each image, and convert the open rights questions into owner decisions: the six records carrying the `pd` token on credit-required files, the conflicted af Klint file, the generative covers standing in for copyright-walled works, and the jurisdiction question underlying all of them.",
   "oriented_protocol": "OP-RIGHTS",
   "project": "pigment",
   "provider_calls": 0,
-  "round": 1,
+  "round": 2,
   "task_id": "RIGHTS-001",
-  "updated_at": "2026-08-31T13:10:47Z",
+  "updated_at": "2026-09-01T16:17:45Z",
   "version": 1,
-  "workflow_state": "theory_revision"
+  "workflow_state": "final_synthesis"
 }
