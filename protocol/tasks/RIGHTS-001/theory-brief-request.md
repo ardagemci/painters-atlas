@@ -5,6 +5,12 @@ Workflow state on issue: `intake` → requesting `theory`.
 
 ---
 
+> **CORRECTION, 2026-09-02 — §4 of this request was wrong.** It asked the Theory
+> Team to "verify or withdraw" GESAM. GESAM is real: Türkiye Güzel Sanat Eseri
+> Sahipleri Meslek Birliği, Ankara, founded 1986, `gesam.org.tr`. The Theory Team
+> withdrew it on our instruction and should be told. See decision record E-011.
+
+
 You are the ChatGPT Theory Team for **Pigment**, an art atlas. We are opening
 `RIGHTS-001`, the first task under a new **Oriented Protocol** called OP-RIGHTS.
 The deliberation cycle is unchanged (`protocol/PROTOCOL.md`): you produce a

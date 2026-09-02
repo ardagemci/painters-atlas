@@ -7,6 +7,13 @@ audit. Filed here unaltered because the round-two request to the Theory Team
 enumerates five weaknesses drawn from it, and the task record should contain the
 analysis it acts on.
 
+**CORRECTION, 2026-09-02:** §4's GESAM finding is **withdrawn**. GESAM is real —
+Türkiye Güzel Sanat Eseri Sahipleri Meslek Birliği, Ankara, founded 1986,
+`gesam.org.tr`, under FSEK art. 42. Hogarth searched European societies for a
+Turkish body and reported it unplaceable; this project then struck a correct
+entry from the architecture document and instructed the Theory Team to withdraw
+it. See decision record E-011. The body below is left unedited.
+
 **Two claims in it were checked afterwards and both held.** The GESAM reference
 could not be located in a search of visual-arts collecting societies, and the
 generative covers were confirmed present in `js/app.js` (`canvasTag`) — see
