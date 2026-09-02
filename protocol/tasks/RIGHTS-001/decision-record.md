@@ -22,7 +22,7 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
 | A | Six records on a `pd` token over CC-asserted files | open — schema value undecided |
 | B | `the-ten-largest-no-9`: bare CC tag, no licensor; alternative carries © | open — no clean basis located |
 | C | Procedural covers on 61 walled records, drawn from Pigment's own palette assignment for the artist | open — see E-001; no artwork pixels involved |
-| D | Jurisdiction | **decided — see D-005.** France; individual; no company; no revenue |
+| D | Jurisdiction | **partly decided — D-005 as amended by D-006.** Individual, no company, no revenue; residence undetermined between **France and Turkey** |
 
 ## Decisions
 
@@ -390,4 +390,41 @@ process; this one supplies evidence only the owner had.
   an outcome for any Pigment file is exactly what a qualified French practitioner
   would answer, and the census is already assembled so that costs an hour rather
   than five.
-- **Status:** accept (owner). D is closed as an input; A, B and C remain open.
+- **Status:** accept (owner), **amended by D-006 the same day** — residence is not
+  settled. The operating-form and revenue facts stand unchanged.
+
+
+## D-006 — AMENDS D-005: residence is undetermined between France and Turkey
+
+- **What changed.** D-005 recorded "France" as the residence fact. On being told
+  what France implied, the owner clarified: *"run it on France and Turkey (as my
+  future is undetermined yet)."* Residence is **not settled**. Two candidate
+  jurisdictions, either of which may become the operative one.
+- **What still stands from D-005:** private individual, no legal entity, no
+  revenue, US host, readers anywhere. Only the residence fact moved.
+- **Why this is not a small amendment.** The two are structurally different for
+  the questions on this task. **France is an EU member state and Turkey is not**,
+  so Article 14 of Directive (EU) 2019/790 — the provision aimed squarely at
+  whether a faithful reproduction of a public-domain visual work attracts new
+  protection — reaches one through national transposition and does not reach the
+  other at all. That provision governs precisely the flat-reproduction question
+  behind `black-fuji` and `vahine-no-te-tiare`. Both are authors'-rights systems
+  with moral rights, and both are Berne members, so they are not opposites; but
+  they are not interchangeable either.
+- **The consequence for how this task proceeds.** A brief that answers "under
+  French law…" is now half an answer. The useful question becomes:
+
+  > **Which decisions are robust to the residence uncertainty, and which turn on
+  > it?**
+
+  A decision that comes out the same under both can be taken now. One that
+  genuinely diverges must either wait, or be settled by choosing an option that
+  is safe under both. That framing is what the comparative brief was commissioned
+  to produce.
+- **Correction of my own record-keeping.** D-005 was filed as though residence
+  were settled, on one word from the owner, before asking whether it was
+  provisional. The amendment is same-day and the original entry stands unedited
+  above rather than being rewritten — the record should show that the question
+  was closed too early and reopened, not that it was always open.
+- **Status:** accept (owner). D remains open as to residence; A, B and C are
+  answerable comparatively but not yet answered.
