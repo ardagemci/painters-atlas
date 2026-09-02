@@ -7,6 +7,12 @@ Coordinator is used on this task again.
 
 ---
 
+> **CORRECTION, 2026-09-02.** This request praises "dropping the unverified GESAM
+> reference" and instructs "Do not revive GESAM." Both are wrong — GESAM is a real
+> Turkish collecting society and may be the owner's own national body. See decision
+> record E-011.
+
+
 Round one of `RIGHTS-001` is challenged. Your theory brief
 (`messages/001-theory_brief.json`) was accepted in structure and disputed in
 five places. The full report is

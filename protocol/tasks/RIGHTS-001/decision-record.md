@@ -428,3 +428,53 @@ process; this one supplies evidence only the owner had.
   was closed too early and reopened, not that it was always open.
 - **Status:** accept (owner). D remains open as to residence; A, B and C are
   answerable comparatively but not yet answered.
+
+
+## E-011 — Three corrections to the record, two of them mine (verified)
+
+The France/Turkey brief corrected three statements this project had committed.
+All three were checked independently before filing. The erroneous text is left in
+place above and below; this entry is the correction.
+
+**1. GESAM is real, and the record called it a fabrication.**
+Türkiye Güzel Sanat Eseri Sahipleri Meslek Birliği — Ankara, founded 1986,
+Turkey's professional body for fine-art rights holders, `gesam.org.tr`, operating
+under FSEK art. 42. **[verified this session by independent search.]**
+
+Hogarth's `hogarth-02-architecture-review.md` said he "could not place it among
+collecting societies" — he had searched European societies for a Turkish body.
+The Synthesis Lead then propagated that into
+`theory-brief-request.md` §4 ("We could not locate GESAM. Please verify or
+withdraw it"), into `round-two-request.md` ("Do not revive GESAM"), into
+`messages/002-challenge.json`, and into D-005 ("the unverifiable GESAM"). **The
+Theory Team dropped it on our instruction** and recorded the withdrawal in
+`messages/001-theory_brief.json` and `003-revision.json`.
+
+So `docs/ARTWORK_SOURCES_COPYRIGHT_ARCHITECTURE.md` was **right** to list GESAM
+beside ADAGP, ARS and DACS, and this project was wrong to strike it. The entry we
+flagged as likely invented is, if the owner becomes resident in Turkey, **his own
+national society for exactly the 61 in-copyright artists** the atlas cannot
+currently show. The immutable message envelopes are not edited; this entry
+records the correction, and the Theory Team must be told.
+
+**2. D-005 is wrong that Article 14 reaches France "through French
+transposition."** France is reported among the member states that **declined to
+transpose Article 14 separately**, on the view that existing French law already
+produces the result. There is no separate French provision to read. **[verified
+this session: Europeana PRO survey and Kluwer Copyright Blog, via search.]** The
+flat-reproduction question behind `black-fuji` and `vahine-no-te-tiare` is
+therefore an ordinary originality question in France, not an Article 14 one.
+
+**3. `docs/RIGHTS_PRIMER.md` overstates France's wartime extensions.**
+Cass. 1re civ., 27 Feb 2007 (n° 04-12.138) is reported to hold that the
+harmonised 70-year term absorbs them, with a musical-works carve-out and an
+unresolved "mort pour la France" +30. **[general — Hogarth marks this as
+recollection to check, not fetched.]** For a painters' roster the practical
+effect is that the primer's caution was larger than the facts support.
+
+**Consequence for the term convention:** Turkey is life+70 running from 1 January
+following death (WIPO Lex, Law 5846) **[fetched]** — the same arithmetic as
+France. Pigment's "died 1955 or earlier" convention holds under **both**, and the
+13 artists in the 1946–1955 band all died postwar.
+
+**Status:** accept as corrections. Nothing here decides A, B or C.
