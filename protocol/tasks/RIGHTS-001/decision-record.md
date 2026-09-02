@@ -22,7 +22,7 @@ as **evidence**. OD-5 binds: nothing in this file states a clearance.
 | A | Six records on a `pd` token over CC-asserted files | open — schema value undecided |
 | B | `the-ten-largest-no-9`: bare CC tag, no licensor; alternative carries © | open — no clean basis located |
 | C | Procedural covers on 61 walled records, drawn from Pigment's own palette assignment for the artist | open — see E-001; no artwork pixels involved |
-| D | Jurisdiction | open — blocks precise answers to A, B and C |
+| D | Jurisdiction | **decided — see D-005.** France; individual; no company; no revenue |
 
 ## Decisions
 
@@ -353,3 +353,41 @@ second E-002 without checking. Hogarth caught the collision in synthesis review.
   cleaner record that was less true, and the ten findings exist *because* the
   flaws were recorded rather than tidied away.
 - **Status:** accept.
+
+
+## D-005 — OWNER DECISION: the jurisdiction facts
+
+**The first substantive owner decision on this task.** D-000 through D-004 are
+process; this one supplies evidence only the owner had.
+
+- **Decision, in the owner's words:** *"France, individual, no company, no
+  revenue."*
+- **Read as the four facts the analysis needs:** habitual residence **France**;
+  legal operating form **private individual, no entity**; **no revenue** from
+  Pigment; site hosted in the **United States** (GitHub Pages) and read
+  anywhere. The owner's country of origin and family location are separate
+  facts and, per `docs/RIGHTS_PRIMER.md`, are not the ones that bear here.
+- **What it unblocks.** Decision D was gating precise answers to A, B and C
+  because no question could be posed under a named law. It can now be. This does
+  not decide A, B or C; it makes them answerable.
+- **What the filed evidence already flags about France specifically**, recorded
+  here so the next brief starts from it rather than rediscovering it:
+  - **Moral rights are perpetual in France** (`docs/RIGHTS_PRIMER.md`). That
+    reaches Decision C — the 61 procedural covers on named, protected artists —
+    and the attribution questions in RIGHTS-002, by a route entirely separate
+    from the economic term.
+  - **France applies wartime extensions** to terms (same source), so
+    "life plus seventy" arithmetic is not the whole rule for the older records.
+  - **France is an EU member state**, so Article 14 of Directive (EU) 2019/790
+    reaches the flat-reproduction question **through French transposition** —
+    which is the specific thing Hogarth said could not be assessed while the
+    member state was unnamed (`hogarth-02-architecture-review.md`).
+  - **ADAGP is the French collecting society** and was correctly named in the
+    architecture document, unlike the unverifiable GESAM. Relevant to the 61
+    walled artists if a licensing route is ever opened — a PLATFORM question,
+    not this task's.
+- **Not concluded.** Nothing above is a determination. Whether any of it changes
+  an outcome for any Pigment file is exactly what a qualified French practitioner
+  would answer, and the census is already assembled so that costs an hour rather
+  than five.
+- **Status:** accept (owner). D is closed as an input; A, B and C remain open.
