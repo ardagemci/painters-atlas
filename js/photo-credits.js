@@ -2,7 +2,7 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-08-30
+   Generated: 2026-09-03
 
    Two registries, both read by js/app.js:
 
@@ -14,7 +14,7 @@
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
      Commons file title as derived from the image URL (see commonsTitle() in
-     js/app.js). 23 entries. Files whose Commons metadata asserts a
+     js/app.js). 22 entries. Files whose Commons metadata asserts a
      public-domain or CC0 basis are deliberately absent: that assertion carries
      no attribution obligation, and the existing "image via Wikimedia Commons"
      source link already names their origin.
@@ -166,7 +166,6 @@ window.PHOTO_CREDITS = {
 
 window.IMAGE_CREDITS = {
 "File:'David'_by_Michelangelo_Fir_JBU004.jpg": { author:"Jörg Bittner Unna", license:"CC BY 3.0", licenseUrl:"https://creativecommons.org/licenses/by/3.0", page:"https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.jpg", required:true },
-"File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg": { author:"Hilma af Klint", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg", required:true },
 "File:Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_(1st_Floor)_-_The_Windmill_at_Wijk_bij_Duurstede_c._1670_by_Jacob_van_Ruisdael.png": { author:"Txllxt TxllxT", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_(1st_Floor)_-_The_Windmill_at_Wijk_bij_Duurstede_c._1670_by_Jacob_van_Ruisdael.png", required:true },
 "File:Arezzo_Piero_general_04.JPG": { author:"Miguel Hermoso Cuesta", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Arezzo_Piero_general_04.JPG", required:true },
 "File:Chaïm_soutine,_il_piccolo_pasticcere,_1922-23_ca..JPG": { author:"Sailko", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Cha%C3%AFm_soutine,_il_piccolo_pasticcere,_1922-23_ca..JPG", required:true },

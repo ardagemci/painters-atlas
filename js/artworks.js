@@ -931,8 +931,8 @@ window.ARTWORKS = {
  },
  "hilma-af-klint": {
   "The Ten Largest": {
-   "img": "https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
-   "page": "https://commons.wikimedia.org/wiki/File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg"
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg"
   },
   "Paintings for the Temple": {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Hilma_af_Klint_-_Altarpiece_No._1_Group_X_%2813919%29.jpg/500px-Hilma_af_Klint_-_Altarpiece_No._1_Group_X_%2813919%29.jpg",

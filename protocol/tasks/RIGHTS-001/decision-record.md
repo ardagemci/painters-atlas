@@ -478,3 +478,89 @@ France. Pigment's "died 1955 or earlier" convention holds under **both**, and th
 13 artists in the 1946–1955 band all died postwar.
 
 **Status:** accept as corrections. Nothing here decides A, B or C.
+
+
+## D-007 — OWNER DECISION A: defer until IFACE-001
+
+- **Decision:** neither A2 nor A4. Wait for the record-scoped no-image state, then
+  revisit with A1 or A3 available.
+- **What this accepts:** the five records keep the `pd` token and keep rendering
+  their credits. The ratchet holds them at five and the contradiction stays
+  documented and counted. Nothing about them is resolved meanwhile.
+- **Why it is coherent:** A1 and A3 are the options that actually change what the
+  token asserts, and both are blocked on IFACE-001 rather than on any unknown
+  (E-008, `durer-01-feasibility.md` §5). Choosing A2 or A4 now would spend effort
+  on the two options that do not.
+- **Consequence to watch:** RIGHTS-001 cannot converge on A until IFACE-001 lands.
+  That task is open and blocked on nothing.
+- **Status:** accept (owner).
+
+## D-008 — OWNER DECISION B: re-source `the-ten-largest-no-9` — EXECUTED
+
+- **Decision:** re-source, taken knowing both alternatives had been characterised
+  as compromised.
+- **Chosen:** `File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg` —
+  `{{PD-Art|PD-old-70}}`, 1353×1800 against 662×900. Verified live before the
+  swap; the image was read and confirmed to be the correct work, full bleed, no
+  frame, wall or label.
+- **Not chosen:** the 6501×8856 file, whose page carries `{{self}}` with no
+  licence parameter beside a bare `{{PD-old}}` while claiming `{{own}}` of a 1907
+  painting. Incoherent in a way the chosen file is not.
+- **Executed in both registries.** The file was in `js/catalog-4.js` as a 500px
+  thumb *and* in `js/artworks.js` as the original URL. **Editing only the catalog
+  would have left the artist page serving the CC BY-SA file** — shipping the
+  exact defect E-007 describes. The gallery entry also moves to the thumb form,
+  which `js/app.js`'s lightbox upgrade regex can match and the original could not.
+- **Measured effects:** census 24 → 22 credit-required, `IMAGE_CREDITS` 23 → 22,
+  the pd-token ratchet 6 → 5, `total_unique` 880 → 879 and `rendered_unique`
+  879 → 878 (the old file was counted once per URL form),
+  `catalog_gallery_overlap` 166 → 167 (both registries now share one URL). That
+  three-way movement is the signature of a dedup, not of a lost asset.
+- **Status:** accept (owner), executed and verified. B is closed.
+
+## D-009 — OWNER DECISION: the `tools/` scope question
+
+- **Decision:** treat the RIGHTS-002 fix as **Lane II** — the owner is present,
+  and Lane II authorisation is exactly that presence (`CLAUDE.md` §0).
+- **What it costs, stated rather than glossed:** OP-RIGHTS' write scope is not
+  widened and no cross-OP dependency is filed. The OP boundary is bypassed the
+  first time it became inconvenient, which is the ordinary way such boundaries
+  decay. Recorded here so that the next bypass is visible as the second, not the
+  first.
+- **What it does not authorise:** anything beyond the E-006/E-010 fix in
+  `tools/commons_rights.py` and its carrier fields. A different tools change
+  needs its own authorisation.
+- **Status:** accept (owner).
+
+## E-012 — The af Klint "©" was a transcribed caption, not a conflict
+
+- **What this project said, twice:** that
+  `File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg` "carries
+  © Stiftelsen Hilma af Klints Verk inside a file tagged PD-Art", framed as two
+  assertions in conflict on the face of one page. It went into the intake
+  baseline, both of Hogarth's briefs, the theory-brief request and the final
+  synthesis.
+- **What the wikitext actually shows**, read in full this session:
+
+  ```
+  |description={{sv|1=Grupp IV, nr 9. De tio största,<br/>
+  Ålderdomen, 1907<br/>
+  Tempera på papper uppfodrad<br/>
+  på duk<br/>
+  320 × 238 cm<br/>
+  HAK110<br/>
+
+  © Stiftelsen Hilma af Klints Verk}}
+  ```
+
+  The © line is the last line of a **transcribed museum caption** inside the
+  description field — group number, title, year, medium, dimensions, inventory
+  number `HAK110`, then the credit line. A wall label copied verbatim. The
+  licence header is separately `{{PD-Art|PD-old-70}}`.
+- **Why the error happened:** the first read grepped for `©` and found it in the
+  same file as a PD-Art tag. Nobody read the field it sat in. A proxy checked for
+  the thing, again — this time the proxy was a substring search.
+- **Not concluded:** what the foundation asserts about the work is still not
+  known, and a transcribed caption is not evidence that it asserts nothing. The
+  correction is narrower: this is not a conflict *on the file page*.
+- **Status:** accept as correction. It is why D-008 could be executed on that file.

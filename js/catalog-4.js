@@ -270,8 +270,8 @@ window.CATALOG = (window.CATALOG || []).concat([
   movements:["abstract-art","symbolism"], techniques:["tempera"], nation:"sweden",
   museum:{ id:"moderna-museet", name:"Moderna Museet", city:"Stockholm" },
   dims:"328 × 240 cm",
-  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg/500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg", status:"pd" },
+  image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg",
+          page:"https://commons.wikimedia.org/wiki/File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg", status:"pd" },
   tags:["pattern","quiet","monumental-scale"] },
 
 { id:"swan-no-17", tier:1,
