@@ -1195,6 +1195,40 @@ BRUEGEL_PD_ART = {
 }
 
 
+#: 2026-09-03. OWNER DECISION B (decision record D-008): `the-ten-largest-no-9`
+#: re-sourced off the bare `{{cc-by-sa-4.0}}` file that named no licensor, onto
+#: File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg, whose licence header
+#: is `{{PD-Art|PD-old-70}}` and whose census entry records
+#: attribution_required false. 1353x1800, against 662x900 before.
+#:
+#: The "© Stiftelsen Hilma af Klints Verk" this project twice called a conflict
+#: on the face of the page is the last line of a transcribed museum caption
+#: inside `|description={{sv|1=...}}` — group number, title, year, medium,
+#: dimensions, inventory number HAK110, then the credit line. It is a wall label
+#: copied verbatim, not an assertion about the Commons file. See E-012.
+#:
+#: THE SWAP TOUCHED TWO REGISTRIES, which is E-007 made concrete. The file was
+#: in `js/catalog-4.js` as a 500px thumb AND in `js/artworks.js` as the original
+#: URL. Editing only the catalog would have left the artist page serving the
+#: CC BY-SA file — shipping the exact defect the finding describes.
+#:
+#: total_unique falls 880 -> 879 and rendered_unique 879 -> 878 because the old
+#: file was counted twice, once per URL form; catalog_gallery_overlap rises
+#: 166 -> 167 for the same reason, both registries now sharing one URL. That
+#: three-way movement is the signature of a dedup, not of a lost asset.
+#: ORDER MATTERS: this ledger is applied LAST in the tuple. ARTIST_HEROES adds
+#: the original-form af Klint URL to prerender_metadata_refs, so a KLINT_PD_ART
+#: placed before it has its removal undone and the suite fails on that surface
+#: alone. The ledgers are a replay, not a set of independent facts.
+KLINT_PD_ART = {
+    "catalog_pd_rendered": { "removed": [U + "d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg/500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg"], "added": [U + "d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg"] },
+    "gallery_rendered":    { "removed": ["https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg"],     "added": [U + "d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg"] },
+    "prerender_metadata_refs": {
+        "removed": [U + "d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg/500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg", "https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg"],
+        "added": [U + "d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg"] },
+}
+
+
 
 class TestAssetInventory(unittest.TestCase):
     FROZEN = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "asset-inventory-effa805.json"
@@ -1213,7 +1247,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES, KLINT_PD_ART):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1261,13 +1295,13 @@ class TestAssetInventory(unittest.TestCase):
         # again added nothing — they were read straight out of the gallery pool.
         # 875 -> 880 and 874 -> 879: the seven Matisse images of commit 8502b08,
         # two of which were already gallery entries (hence +5 unique, not +7).
-        self.assertEqual(c["total_unique"], 880)   # +5 net: Matisse
-        self.assertEqual(c["rendered_unique"], 879)   # +5 net: the same
+        self.assertEqual(c["total_unique"], 879)   # -1: the af Klint dedup (D-008)
+        self.assertEqual(c["rendered_unique"], 878)   # -1: the same dedup
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 166)   # +2: two Matisse works already in the pool
+        self.assertEqual(c["catalog_gallery_overlap"], 167)   # +1: both registries now share one af Klint URL
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -1335,7 +1369,17 @@ class TestPdTokenAccuracy(unittest.TestCase):
     status edit: changing `status` could suppress rendering, and choosing a new
     value is a schema decision, not a test's to make."""
 
-    CEILING = 6
+    #: NEGATIVE CONTROLS AND STALE BYTECODE. Proving this ratchet non-vacuous
+    #: means editing the ceiling, running, and restoring. On macOS the system
+    #: Python sets sys.pycache_prefix to ~/Library/Caches/com.apple.python, so
+    #: .pyc files live OUTSIDE the repository and `find . -name "*.pyc"` reports
+    #: none. A one-character ceiling edit and restore inside the same second
+    #: leaves source mtime and size unchanged, so the cache is considered valid
+    #: and the RESTORED file keeps behaving like the broken one. Observed
+    #: 2026-09-03, with stale entries in that cache from earlier sessions
+    #: (tmp/vaneyck-u35, private/tmp/ve-4266804). If a restored guard still
+    #: reports the value you reverted, clear that directory before believing it.
+    CEILING = 5
 
     def test_the_pd_token_is_not_spreading_to_credit_required_files(self):
         catalog = rr.SURFACES["catalog"]() + rr.SURFACES["catalog_tier2"]() \

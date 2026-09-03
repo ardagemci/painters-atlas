@@ -1,25 +1,25 @@
 {
- "generated": "2026-08-30",
+ "generated": "2026-09-03",
  "author": "Durer (claude-implementation-lead), PIG-001 build unit 24",
  "source": "js/catalog-{1..5}.js image{src,status:pd} + js/artworks.js img",
  "method": "Commons API extmetadata via tools/commons_rights.py; deduplicated by underlying Commons file; a transient failure is recorded as unverified and never as a clean result",
  "scope_note": "Census of every renderable shipped artwork image, not a sample. Supersedes the coverage (not the conclusions) of the 122-record sample in rights-register.json for the question 'what still needs credit?'",
  "legal_conclusion": "none",
  "totals": {
-  "images": 752,
-  "resolved_ok": 752,
+  "images": 751,
+  "resolved_ok": 751,
   "unverified": 0,
-  "credit_required": 24,
-  "no_obligation": 728,
+  "credit_required": 22,
+  "no_obligation": 729,
   "by_licence": {
    "CC BY 2.0": 6,
    "CC BY 2.5": 1,
    "CC BY 3.0": 3,
    "CC BY 4.0": 1,
    "CC BY-SA 3.0": 2,
-   "CC BY-SA 4.0": 11,
+   "CC BY-SA 4.0": 9,
    "CC0": 19,
-   "Public domain": 709
+   "Public domain": 710
   }
  },
  "entries": [
@@ -4708,23 +4708,24 @@
    "credit_required": false
   },
   {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg/500px-4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg/500px-Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg",
    "used_in": [
-    "js/catalog-4.js"
+    "js/catalog-4.js",
+    "js/artworks.js"
    ],
-   "commons_title": "File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg",
+   "commons_title": "File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg",
+   "commons_file_page": "https://commons.wikimedia.org/wiki/File:Hilma_af_Klint_-_The_Ten_Largest_No._9_-_1907.jpg",
    "fetch_status": "ok",
-   "license_short": "CC BY-SA 4.0",
-   "license_tpl": "cc-by-sa-4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "license_short": "Public domain",
+   "license_tpl": "pd",
+   "license_url": "",
    "author": "Hilma af Klint",
-   "credit": "http://www.arteidolia.com/spiritualism-aesthetics/",
+   "credit": "https://artblart.com/2020/07/17/exhibition-hilma-af-klint-artist-researcher-medium-at-moderna-museet-malmo/",
    "attribution": "",
-   "attribution_required": "true",
-   "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
+   "attribution_required": "false",
+   "usage_terms": "Public domain",
    "legal_conclusion": "none",
-   "credit_required": true
+   "credit_required": false
   },
   {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Hilma_af_Klint%2C_1915%2C_Svanen%2C_No._17.jpg/500px-Hilma_af_Klint%2C_1915%2C_Svanen%2C_No._17.jpg",
@@ -8339,25 +8340,6 @@
    "usage_terms": "Public domain",
    "legal_conclusion": "none",
    "credit_required": false
-  },
-  {
-   "src": "https://upload.wikimedia.org/wikipedia/commons/d/d7/4_hilma_af_klint%2C_the_ten_largest%2C_no_9.jpg",
-   "used_in": [
-    "js/artworks.js"
-   ],
-   "commons_title": "File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg",
-   "commons_file_page": "https://commons.wikimedia.org/wiki/File:4_hilma_af_klint,_the_ten_largest,_no_9.jpg",
-   "fetch_status": "ok",
-   "license_short": "CC BY-SA 4.0",
-   "license_tpl": "cc-by-sa-4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "author": "Hilma af Klint",
-   "credit": "http://www.arteidolia.com/spiritualism-aesthetics/",
-   "attribution": "",
-   "attribution_required": "true",
-   "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
-   "legal_conclusion": "none",
-   "credit_required": true
   },
   {
    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/The_Swan%2C_No._22%2C_SUW_UW_series_by_Hilma_af_Klint.jpg/960px-The_Swan%2C_No._22%2C_SUW_UW_series_by_Hilma_af_Klint.jpg",
