@@ -120,7 +120,13 @@ def main():
             "license_tpl": rec.get("license", ""),
             "license_url": rec.get("license_url", ""),
             "author": cr.strip_html(rec.get("artist", "")),
+            # The identity behind the display name. One Commons account can
+            # supply several files under different display strings, and an
+            # author field can name the depicted work's painter rather than a
+            # photographer; neither is visible in "author" alone. RIGHTS-002.
+            "author_href": rec.get("artist_href", ""),
             "credit": cr.strip_html(rec.get("credit", "")),
+            "credit_href": rec.get("credit_href", ""),
             "attribution": cr.strip_html(rec.get("attribution", "")),
             "attribution_required": rec.get("attribution_required", ""),
             "usage_terms": rec.get("usage_terms", ""),

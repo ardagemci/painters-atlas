@@ -1764,3 +1764,87 @@ class TestProseLanguage(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestAuthorIdentity(unittest.TestCase):
+    """Who a credit names, checked against who the file page identifies.
+
+    `js/photo-credits.js` renders the `author` string Commons displays. That
+    string is the text node of an anchor, and RIGHTS-001 found two ways it
+    misleads:
+
+      E-006  One Commons account supplies several files under different display
+             names. `User:Sailko` is recorded as "Sailko" on three files and as
+             "Francesco Bini" on a fourth, so the site credits one photographer
+             as two people and nothing could detect it.
+      E-010  An `author` field can name the *depicted work's painter* rather
+             than a photographer. `Mrs. Siddons` (CC BY 2.0) credits Joshua
+             Reynolds, dead 1792, where the page's own wikitext names Rennett
+             Stowe; `Max Beckmann, Departure` (CC BY 2.0) credits Beckmann,
+             dead 1950, where the page names Allie_Caulfield.
+
+    Both were invisible because `tools/commons_rights.py` stripped the anchor
+    and kept only the text. `author_href` now carries the target, and the
+    difference between the two cases is legible in it: a `/wiki/User:` account
+    against an `en.wikipedia.org` biography.
+
+    Ratchets, not gates. Neither number may rise. Falling requires re-sourcing a
+    file or a licensor changing their own page — never a change of vocabulary,
+    because both count what the SOURCE asserts, not what Pigment labels it.
+
+    Nothing here states a legal conclusion. Whether a notice naming one party
+    rather than another satisfies a given licence version is for counsel; this
+    only reports that Pigment's credit and the file page disagree about who.
+    """
+
+    CENSUS = ROOT / "protocol" / "tasks" / "PIG-001" / "evidence" / "artwork-image-rights.json"
+
+    #: One account recorded under more than one display name. Today: User:Sailko.
+    SPLIT_ACCOUNT_CEILING = 1
+    #: Credit-required files whose author anchor is a biography, not an account.
+    #: Today: Mrs. Siddons (Reynolds) and Max Beckmann, Departure.
+    PAINTER_AS_AUTHOR_CEILING = 2
+
+    def _entries(self):
+        return json.loads(self.CENSUS.read_text(encoding="utf-8"))["entries"]
+
+    def test_one_account_is_not_credited_under_two_names(self):
+        by = {}
+        for e in self._entries():
+            href = e.get("author_href") or ""
+            if "/wiki/User:" not in href:
+                continue
+            by.setdefault(href, set()).add(e.get("author", ""))
+        split = {h: sorted(n) for h, n in by.items() if len(n) > 1}
+        print("split accounts: %d (ceiling %d)" % (len(split), self.SPLIT_ACCOUNT_CEILING))
+        self.assertLessEqual(
+            len(split), self.SPLIT_ACCOUNT_CEILING,
+            "one Commons account is credited under more than one name, so the "
+            "site names one person as several: %s" % split)
+
+    def test_a_credit_required_author_is_not_a_dead_painter(self):
+        offenders = []
+        for e in self._entries():
+            if not e.get("credit_required"):
+                continue
+            href = e.get("author_href") or ""
+            if "wikipedia.org" in href:
+                offenders.append((e.get("commons_title", "")[:48], e.get("author", "")))
+        print("painter-as-author: %d (ceiling %d)"
+              % (len(offenders), self.PAINTER_AS_AUTHOR_CEILING))
+        self.assertLessEqual(
+            len(offenders), self.PAINTER_AS_AUTHOR_CEILING,
+            "an attribution-required file credits a party its own page links to "
+            "as the depicted work's creator rather than as a photographer: %s"
+            % sorted(offenders))
+
+    def test_the_carrier_field_exists(self):
+        """A guard that reads a field the tool stopped writing would pass
+        vacuously and report nothing. Assert the field is actually populated."""
+        entries = self._entries()
+        with_href = [e for e in entries if e.get("author_href")]
+        self.assertGreater(
+            len(with_href), 0,
+            "no entry carries author_href; tools/commons_rights.py first_href() "
+            "or the audit's carrier line has regressed and both ratchets above "
+            "are now vacuous")

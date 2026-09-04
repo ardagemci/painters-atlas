@@ -110,6 +110,37 @@ def api_get_json(url, attempts=4):
     raise Unverified(last or "unknown failure")
 
 
+#: The first anchor target inside an extmetadata value. ``Artist`` arrives as
+#: HTML, and the anchor is the only place the *identity* behind a display name
+#: is recorded:
+#:
+#:   <a href="//commons.wikimedia.org/wiki/User:Sailko" ...>Sailko</a>
+#:   <a href="//commons.wikimedia.org/wiki/User:Sailko" ...>Francesco Bini</a>
+#:
+#: Those two differ only in the text node. ``strip_html`` keeps the text and
+#: discards the href, so downstream nothing can tell that one Commons account
+#: supplied both files — the defect recorded as RIGHTS-001 E-006, which put one
+#: photographer into js/photo-credits.js under two names. The same loss hides
+#: the en.wikipedia hrefs that mark an author field naming the *depicted work's
+#: painter* rather than a photographer (E-010).
+#:
+#: This captures the target and changes nothing else. The rendered author string
+#: is deliberately left exactly as the file page displays it: overriding what a
+#: licensor asked to be called is an owner decision, not a tool's.
+ANCHOR_HREF = re.compile(r'<a[^>]+href="([^"]+)"', re.I)
+
+
+def first_href(s):
+    """The first anchor target in an extmetadata value, or ""."""
+    if not s:
+        return ""
+    m = ANCHOR_HREF.search(s)
+    if not m:
+        return ""
+    href = html.unescape(m.group(1)).strip()
+    return ("https:" + href) if href.startswith("//") else href
+
+
 def strip_html(s):
     """extmetadata values arrive as HTML fragments; render them as plain text."""
     if not s:
@@ -200,7 +231,12 @@ def rights_from_imageinfo(ii):
     }
     for key, field in EXTMETA_FIELDS:
         raw = (ext.get(key) or {}).get("value", "")
-        rec[field] = strip_html(raw if isinstance(raw, str) else str(raw))
+        raw = raw if isinstance(raw, str) else str(raw)
+        rec[field] = strip_html(raw)
+        # Carry the identity the display text hides. Sibling field, never a
+        # replacement: see ANCHOR_HREF above and RIGHTS-001 E-006/E-010.
+        if key in ("Artist", "Credit"):
+            rec[field + "_href"] = first_href(raw)
     return rec
 
 
