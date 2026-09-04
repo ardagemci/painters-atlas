@@ -350,5 +350,6 @@ window.INFLUENCES = [
   ["huang-gongwang","shen-zhou","influenced"],
   ["jeong-seon","kim-hong-do","influenced"],
   ["sesshu-toyo","hasegawa-tohaku","influenced"],
-  ["kano-eitoku","hasegawa-tohaku","rivaled"]
+  ["kano-eitoku","hasegawa-tohaku","rivaled"],
+  ["vincent-van-gogh","felix-de-boeck","influenced"]
 ];
