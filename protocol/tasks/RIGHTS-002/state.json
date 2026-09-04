@@ -21,9 +21,28 @@
       },
       "sequence": 2,
       "type": "task_opened"
+    },
+    {
+      "at": "2026-09-04T00:56:35Z",
+      "detail": {
+        "authorised_by": "owner presence; RIGHTS-001 D-009",
+        "deliberation": "none \u2014 see human_decision note",
+        "not_changed": "js/photo-credits.js rendered author strings",
+        "produced": [
+          "tools/commons_rights.py first_href + ANCHOR_HREF",
+          "tools/audit_artwork_rights.py author_href/credit_href carriers",
+          "tests/test_rights_tooling.py TestAuthorIdentity (2 ratchets + vacuity check)"
+        ]
+      },
+      "sequence": 3,
+      "type": "lane_ii_execution"
     }
   ],
-  "human_decision": null,
+  "human_decision": {
+    "at": "2026-09-04T00:00:00Z",
+    "decision": "approved",
+    "note": "Executed in Lane II under RIGHTS-001 D-009, with the owner present. No deliberation round ran: no theory brief, challenge, synthesis, specification or liaison packet, and messages/ and analyses/ are empty. The state reads approved because the work is done and verified, not because the protocol cycle produced it. tools/ was written outside OP-RIGHTS' declared scope, by owner decision, recorded in this task's D-000."
+  },
   "last_message_type": null,
   "max_provider_calls": 20,
   "max_rounds": 3,
@@ -34,7 +53,7 @@
   "provider_calls": 0,
   "round": 1,
   "task_id": "RIGHTS-002",
-  "updated_at": "2026-09-01T23:47:19Z",
+  "updated_at": "2026-09-04T00:56:35Z",
   "version": 1,
-  "workflow_state": "intake"
+  "workflow_state": "approved"
 }

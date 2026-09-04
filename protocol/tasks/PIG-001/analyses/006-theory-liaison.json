@@ -1,0 +1,224 @@
+{
+  "accepted_counterpole_points": [
+    "Passport conflict handling and five-checkpoint onboarding recovery close the two principal Taste-continuity blockers.",
+    "The validator is green with zero deck warnings and all references valid.",
+    "Route focus, skip navigation, state semantics, search, graph keyboard access, canvas naming, Explore alignment, and storage recovery materially improve the product.",
+    "The rights census found and corrected depicted-work errors and expanded visible attribution.",
+    "Self-hosted fonts and measured runtime disclosure improve accountless-product privacy.",
+    "The implementation report correctly states that Gate 2 is blocked and that no merge, deployment, or clearance has occurred.",
+    "Routing to response_to_review is the correct protocol state for measured implementation corrections under an unchanged specification."
+  ],
+  "adaptations": [
+    {
+      "change": "Accept the implementation's Taste continuity, orientation, search, rights, privacy, and documentation achievements as intent-preserving progress.",
+      "constraint": "Acceptance of progress is not Gate 2 certification or release approval.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/messages/006-implementation_report.json",
+        "protocol/tasks/PIG-001/build-evidence-report.md"
+      ],
+      "intent_preserved": true,
+      "reason": "The build supplies behavioral and file-level evidence for material improvements under the frozen specification.",
+      "user_consequence": "The response keeps successful work intact and concentrates effort on verified residual failures."
+    },
+    {
+      "change": "Return the build through response_to_review without reopening the frozen specification.",
+      "constraint": "The theory pole may defend outcomes and evidence thresholds but may not select implementation methods.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/messages/005-specification.json",
+        "protocol/tasks/PIG-001/state.json"
+      ],
+      "intent_preserved": true,
+      "reason": "Every identified blocker is an implementation, evidence, quality, or governance defect under an unchanged intended outcome.",
+      "user_consequence": "The team can correct the candidate without another product-theory debate or scope expansion."
+    },
+    {
+      "change": "Elevate the six V32 findings, mobile search obstruction, named unmeasured siblings, focus states, and post-veil zoom checks into the response acceptance boundary.",
+      "constraint": "Pre-existing status and incomplete enumeration do not weaken frozen accessibility criteria.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/build-evidence-report.md",
+        "protocol/tasks/PIG-001/evidence/browser-evidence-enumeration.md",
+        "protocol/tasks/PIG-001/evidence/harness/durer-u31/n31-2-nav-overlaps-search-390-light.png"
+      ],
+      "intent_preserved": true,
+      "reason": "The report and independent enumeration directly show unreadable primary-path text and incomplete AC19 evidence.",
+      "user_consequence": "Search, influence, timeline, list, hover, and focus information must become perceivable before human review."
+    },
+    {
+      "change": "Add the independently reproduced five rights-test failures and candidate inventory drift to the required response.",
+      "constraint": "Changing expected integers alone cannot disposition unexplained asset or metadata changes.",
+      "disposition": "accept",
+      "evidence": [
+        "tests/test_rights_tooling.py",
+        "independent unittest run 2026-07-30: 41 tests, 5 failures",
+        "independent asset_inventory.py comparison at 55fb166"
+      ],
+      "intent_preserved": true,
+      "reason": "Current HEAD does not regenerate the expected corrected inventory even though the general validator passes.",
+      "user_consequence": "Rights, credits, and public metadata evidence become reproducible against the actual candidate rather than a stale denominator."
+    },
+    {
+      "change": "Require a denominator glossary and bounded rights language.",
+      "constraint": "Every number must carry its commit, date, surface, and status; product evidence reaches no legal conclusion.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/evidence/asset-inventory-effa805.json",
+        "protocol/tasks/PIG-001/evidence/rights-register.json",
+        "protocol/tasks/PIG-001/evidence/rights-remediation.md",
+        "protocol/tasks/PIG-001/messages/006-implementation_report.json"
+      ],
+      "intent_preserved": true,
+      "reason": "The artifacts use 799/798/797, 694/693, 104/103, 29/28/27, 695/679, and 66/60 across different moments and surfaces, while some prose exceeds the legal force of Commons metadata.",
+      "user_consequence": "Reviewers can distinguish historical freeze, candidate exposure, visible credits, and unresolved legal risk."
+    },
+    {
+      "change": "Require one named real assistive-technology and browser transcript for the principal frozen paths.",
+      "constraint": "The review does not prescribe the AT product or technical test method.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/messages/005-specification.json acceptance criterion 15",
+        "protocol/tasks/PIG-001/quality-review.md"
+      ],
+      "intent_preserved": true,
+      "reason": "AC15 explicitly names a tested assistive-technology setup, while current evidence is DOM and browser-state inspection.",
+      "user_consequence": "Orientation, state, recovery, search, and graph-bypass claims are grounded in observed user-facing output."
+    },
+    {
+      "change": "Consolidate the F-1 role disagreement by requiring its bounded correction without reopening AC18 or navigation architecture.",
+      "constraint": "The correction may not become a pretext for broader responsive redesign.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/quality-review.md finding F-1",
+        "/Users/ardagemci/Claude/PIG-001-theory-transmission/PIG-001-theoretical-review.json proposal scope rulings"
+      ],
+      "intent_preserved": true,
+      "reason": "The width band was not frozen, but the reproduced overflow affects common responsive use and is adjacent to the accepted containment outcome.",
+      "user_consequence": "A known ordinary-width defect is not hidden by the finite fixture while product scope stays stable."
+    },
+    {
+      "change": "Accept current internal-review routing while requiring independent D-017 governance and exact-SHA operative-verdict safeguards before human review or merge.",
+      "constraint": "Product-quality certification and governance authority must remain independent.",
+      "disposition": "accept",
+      "evidence": [
+        "protocol/tasks/PIG-001/unrouted/decision-record.md D-017",
+        "pigment_coordinator/gates.py",
+        "protocol/tasks/PIG-001/analyses/005-synthesis-liaison.json"
+      ],
+      "intent_preserved": true,
+      "reason": "The gate path appears structurally sound, but the building pole authored it, disclosed it late, and its current checks do not fully bind evidence to the operative candidate.",
+      "user_consequence": "The response can proceed without treating a self-authored routing mechanism as self-ratifying or silently mergeable."
+    }
+  ],
+  "analysis_mode": "build_review",
+  "analyst_id": "theory-liaison",
+  "artifact_reviewed": [
+    "review"
+  ],
+  "confidence": {
+    "basis": "The review validates structurally and its load-bearing findings are independently reproduced or directly visible: current workflow state, branch ancestry, validator result, five test failures, six AC19 majors, blocked quality gate, stale review composition, report contradictions, and D-017 code semantics. Confidence is intentionally lower only for the untested AT, browser, legal, and deployed outcomes the review withholds.",
+    "level": "high"
+  },
+  "constraints_or_principles_to_defend": [
+    "Do not represent AC19 or AC21 as passing while mobile search grouping and influence labels remain effectively unreadable.",
+    "Do not represent AC10-AC12 as reproducible while five tests fail and candidate denominators are unsynchronized.",
+    "Do not accept DOM inference as the complete AC15 evidence when the criterion requires a tested assistive-technology setup.",
+    "Do not update expected rights numbers without explaining and dispositioning each legitimate candidate delta.",
+    "Do not erase or rewrite the effa805 inventory as though it described current HEAD; preserve it as historical evidence and publish candidate deltas separately.",
+    "Do not use verified-PD, genuinely PD, exhaustive absence, or jurisdictional language where the evidence establishes only Commons assertions and bounded audit results.",
+    "Do not let historical verdict strings or branch movement satisfy a current quality gate without an exact-SHA operative verdict.",
+    "Do not silently include D-017 in a future user-approved product merge.",
+    "Do not reopen product hierarchy, deferred features, or broad IA work during this bounded response."
+  ],
+  "convergence_recommended": false,
+  "created_at": "2026-07-30T10:26:06Z",
+  "critical_issues": [
+    "Gate 2 remains blocked because AC19 has six open major findings and additional named unmeasured surfaces.",
+    "Current candidate rights and inventory evidence is not reproducible: five of 41 tests fail and further stale denominator assertions remain.",
+    "No current independent Quality Review certifies final HEAD with zero open critical and major findings."
+  ],
+  "essential_principles": [
+    "Preserve the frozen Taste Continuity and Access Stabilization outcome and the existing Atlas-first information architecture.",
+    "Recognize the substantial implementation achievements without converting known failures into acceptance.",
+    "Require the implementation candidate, validator, tests, inventories, screenshots, report, and Quality Review to bind to one exact final SHA and corpus.",
+    "Keep unreadable search and relationship text, stale rights evidence, and untested assistive-technology behavior as blockers until directly resolved or evidenced.",
+    "Keep Commons metadata, exact-work matching, and audit search results distinct from legal conclusions.",
+    "Keep the Coordinator-kernel deviation separate from product-quality certification and future merge approval.",
+    "Preserve the user's exclusive authority over main merge and production deployment.",
+    "Keep ChatGPT theory-only: no production implementation, repository modification, merge, deployment, or legal determination."
+  ],
+  "evidence_gaps": [
+    "Independent remeasurement after correction of all six V32 findings and every named unmeasured sibling or focus state.",
+    "A green complete repository test run and regenerated candidate rights or inventory evidence.",
+    "A named real assistive-technology and browser transcript for the principal frozen paths.",
+    "Post-fix 900 and 1024 pixel, frozen viewport, and 200 percent zoom evidence.",
+    "A screenshot pack captured after the last production commit and Matisse N-8 review against it.",
+    "A fresh independent Quality Review bound to final HEAD with all 29 criteria and current evidence.",
+    "Independent governance disposition of D-017 and exact-SHA or operative-verdict gate semantics.",
+    "Deployed identity, which cannot be established before the user's deployment approval."
+  ],
+  "feasibility_supported": true,
+  "human_escalation": {
+    "decision_required": "None before the bounded response_to_review. The user will later decide main merge, production deployment, and whether an independently audited Coordinator-kernel change belongs in the merge.",
+    "reason_category": "no immediate constitutional exception requested",
+    "recommended": false,
+    "why_the_teams_cannot_resolve_it": "The teams can correct and re-evidence the build without changing identity, scope, law, privacy posture, paid infrastructure, or schedule. User authority becomes necessary only for a requested exception, kernel inclusion, merge, or deployment."
+  },
+  "intended_user_outcome": "A first-time visitor can discover art, admire works, form and recover a local Taste Passport, understand action consequences, and continue through Pigment's connected Atlas without silent state loss, inaccessible or obscured paths, misleading evidence claims, or unexplained transitions.",
+  "intent_preserved": true,
+  "noncritical_issues": [
+    "AC23's three concerns remain valid human-review context but do not authorize new hierarchy work.",
+    "Non-Chrome, high-DPR, touch, multi-tab, and deployed-origin behavior remain proportionally disclosed residual risks unless later support claims expand.",
+    "The final screenshot pack and N-8 review remain pending until after the last production commit.",
+    "The build report's five-versus-six and build-versus-report commit counts require textual reconciliation."
+  ],
+  "optional_forms": [
+    "Claude may choose any feasible correction method for the six V32 findings and named responsive defects that preserves the frozen user outcome.",
+    "Claude may choose the evidence and tooling architecture used to keep candidate inventory, rights records, visible credits, and tests synchronized.",
+    "A supported-platform matrix may disclose non-Chrome limitations rather than expanding the build, provided no unsupported readiness claim is made.",
+    "The Coordinator-kernel change may be excluded from the eventual product merge or proposed separately after independent governance review.",
+    "The artist-first hierarchy remains ratified with reservation; AC23 concerns may remain owner-visible without redesign in PIG-001."
+  ],
+  "owner_report": {
+    "markdown": "**Verdict:** Route the theoretical review to Claude for `response_to_review`.\n\nThe build preserves Pigment's direction and closes the principal Taste blockers, but Gate 2 is correctly blocked. Six AC19 majors remain; five current rights-tooling tests fail; candidate rights denominators and legal language need reconciliation; real AT evidence is absent; and D-017 needs independent governance disposition. The frozen specification remains intact, so the correct next state is `revision`, not re-specification or human review.\n\nNo human decision is required for the bounded response. This audit grants no merge, deployment, legal-clearance, or human-review authority.",
+    "title": "PIG-001 Round 3 theoretical build review audit",
+    "visibility": "audit_only"
+  },
+  "pole": "chatgpt-theory",
+  "project": "pigment",
+  "quality_evidence_appears_sufficient": false,
+  "rationale": "Route the review because it performs the constitutional theoretical-review function without rewriting the product or selecting implementation methods. It credits the build where evidence supports it, identifies where frozen outcomes remain unmet, incorporates independent checks absent from the implementation report, preserves the user's authority, and gives Claude finite response conditions. The required work is feasible and bounded, but current quality evidence is insufficient and convergence is false. Routing authorizes only Claude's response_to_review work; it does not authorize merge, deployment, legal clearance, human-review readiness, or a Coordinator-kernel merge.",
+  "recommended_action": "route_to_claude",
+  "recommended_next_state": "revision",
+  "resolved_issues": [
+    "The review uses the correct Round 3 review envelope from internal_review to revision.",
+    "The review recognizes successful implementation without claiming convergence, certification, merge approval, deployment approval, or legal clearance.",
+    "The six V32 findings and wider named AC19 perimeter are carried explicitly.",
+    "The independently reproduced rights-test failures and current validator counts are recorded.",
+    "The frozen effa805 inventory is preserved as historical while candidate reconciliation is required separately.",
+    "AC15's real assistive-technology evidence gap is no longer hidden behind DOM inspection.",
+    "AC23 passes as frozen and its concerns remain owner-visible without hierarchy redesign.",
+    "F-1 and F-2 are bounded response corrections rather than specification reopening.",
+    "D-017 is separated from product quality and future merge authority.",
+    "A current independent Quality Review with an exact-SHA operative verdict is required before human_review_ready."
+  ],
+  "round": 3,
+  "semantic_validity": "valid",
+  "specialists_recommended": [
+    "Claude Implementation Lead for bounded correction and final evidence synchronization",
+    "Independent Accessibility Reviewer using a named assistive-technology and browser setup",
+    "Provenance and image-rights specialist for candidate inventory, denominator chronology, rights language, and credit synchronization",
+    "Independent Quality Reviewer for all 29 criteria and Gate 2 certification at final HEAD",
+    "Neutral Coordinator or independent governance reviewer for D-017 and exact-SHA gate semantics",
+    "Matisse product adjudicator for the final N-8 visual check only"
+  ],
+  "summary": "The Round 3 Theoretical Review is schema-valid, evidence-grounded, and appropriate for routing to Claude response_to_review. It preserves the frozen product theory while refusing premature convergence: six AC19 majors remain, five current rights tests fail, candidate evidence denominators drift, real AT evidence is absent, and D-017 requires independent governance disposition. The requested response is bounded and grants no merge or deployment authority.",
+  "task_id": "PIG-001",
+  "unsupported_claims": [
+    "Any current claim that AC10-AC12 evidence is reproducible or that Gate 2 is certified.",
+    "Any current claim that AC15's tested-assistive-technology clause is satisfied by DOM inspection alone.",
+    "Any unqualified verified-PD, genuinely public-domain, exhaustive-unavailability, or jurisdictional legal statement.",
+    "Any implication that the current quality gate proves its verdict is operative for one exact final SHA."
+  ]
+}

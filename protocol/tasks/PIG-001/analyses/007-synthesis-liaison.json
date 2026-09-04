@@ -1,0 +1,150 @@
+{
+  "accepted_counterpole_points": [
+    "The theory pole's advancement rule - that candidate, evidence, tests, screenshots, implementation report and Quality Review all identify the same HEAD - is a fair standard, and it is the standard the screenshot omission fails.",
+    "The theory pole's requested action 9 was worded 'refresh screenshots only after the final production commit'; that wording is exact and the response should be measured against it rather than against a looser reading.",
+    "The theory pole's 66-vs-60 item was a genuine stale test expectation, correctly re-frozen to 66; the response's 'latent, not live' correction narrows the diagnosis without denying the finding, which is the right posture.",
+    "The theory pole's report-integrity concern about commit counts was well founded, and the response reproduces an off-by-one commit count of its own."
+  ],
+  "adaptations": [
+    {
+      "change": "The screenshot pack is carried at a71e2c5 rather than recaptured at the certified SHA fb8ba6e; 47 mobile shots pre-date the last production commit (unit 37).",
+      "constraint": "Substantial cost against no gain in truth; the reviewer ruled recapture would be ceremony. This is a legitimate cost/benefit adaptation, not a technical impossibility.",
+      "disposition": "escalate",
+      "evidence": [
+        "protocol/tasks/PIG-001/quality-review.md R5.3 (lines 159-197) and R5.5 'N-1 - RE-OPENED as a scoped note'",
+        "operative verdict residual list, line 3114: 'N-1 (47 mobile shots, header strip, 1.32 px)'",
+        "108 PNGs in protocol/tasks/PIG-001/evidence/, of which 47 are mobile - counted on disk, matching the reviewer's figures"
+      ],
+      "intent_preserved": true,
+      "reason": "The Quality Reviewer measured the rendered delta rather than reasoning about the category and found it to be 1.32 px on a gradient ramp, with first link x, last link right, header height and nav top pixel-identical.",
+      "user_consequence": "None to a visitor. To the owner, it is the difference between believing the evidence pack is current at the certified SHA and knowing that its mobile half is one production commit behind by a measured 1.32 px."
+    },
+    {
+      "change": "Focus-ring contrast (WCAG 1.4.11) is not measured; a real-keyboard ring visibility and clipping pass is substituted for it.",
+      "constraint": "Genuine instrument limitation, correctly classified. The substitute measurement is stronger than what it replaces.",
+      "disposition": "accept",
+      "evidence": [
+        "quality-review.md R5.2 and R5.4: :focus-visible matched 24/24, worst intoFade 0.0, worst clipping -1.0 px",
+        "browser-evidence-certification.md section 9 item 9: 'Focus-ring contrast (WCAG 1.4.11)' listed NOT TESTED"
+      ],
+      "intent_preserved": true,
+      "reason": "A glyph-differential instrument structurally cannot measure a ring, as the response says; the reviewer instead drove real Tab through all eight nav links in three cells.",
+      "user_consequence": "The ring is proved present, full and unclipped under real keyboard focus; its contrast ratio against the surfaces behind it remains unmeasured."
+    },
+    {
+      "change": "The Coordinator's quality gate is reclassified from authoritative to advisory by this response.",
+      "constraint": "Demonstrated defect in code this pole wrote mid-build. Verified: pigment_coordinator/gates.py:42-44 runs three separate case-insensitive regexes over the whole file text.",
+      "disposition": "accept",
+      "evidence": [
+        "quality-review.md R5.6 and the operative verdict warning (lines 3105-3109)",
+        "pigment_coordinator/gates.py lines 31-47"
+      ],
+      "intent_preserved": true,
+      "reason": "The gate greps an append-only file for three independent verdict strings; writing the certification marker into that file arms the defect for every future revision, including one that blocks.",
+      "user_consequence": "The automated check that guards the advance to human_review_ready cannot be relied on. Consumers must read the operative verdict block by eye."
+    }
+  ],
+  "analysis_mode": "build_review",
+  "analyst_id": "synthesis-liaison",
+  "artifact_reviewed": [
+    "response_to_review"
+  ],
+  "confidence": {
+    "basis": "Every finding is derived from the repository rather than from the message: the reviewer's operative residual sentence read line by line against the response's residual list; the three disputes re-derived from data-reconciliation.md and from my own run of tests/test_rights_tooling.py (33 tests OK); the four self-criticisms located verbatim in data-reconciliation.md, js/app.js:2393, build-log-unit-34.md and implementation-report-audit.json; the suite re-run at HEAD (46 tests OK); the commit count, the 695 prerendered files and the 64/108/47 screenshot figures counted on disk. Lower confidence on nothing material - the one place I am relying on the reviewer rather than measuring is the 1.32 px geometry delta itself, which does not bear on the finding.",
+    "level": "high"
+  },
+  "constraints_or_principles_to_defend": [
+    "The scope clause on the zero counts: OPEN CRITICAL 0 and OPEN MAJOR 0 refer to the product build at fb8ba6e only. F-10 remains open against the excluded kernel and is not counted.",
+    "The gate warning: the reviewer wrote 'non-functional' and 'the gate's grep is no longer capable of telling anyone anything'. Do not settle on 'advisory' as the operative word.",
+    "The three disputes should be transmitted as written. They are correct, and softening them now would misstate the record in the other direction.",
+    "The four self-criticisms should be transmitted as written. They are accurate and unsoftened, and the OD-5 shipping breach in particular belongs in front of the owner."
+  ],
+  "convergence_recommended": false,
+  "created_at": "2026-08-06T02:18:40Z",
+  "critical_issues": [
+    "OMISSION, material: N-1 is absent from the response entirely, and N-1 was RE-OPENED by the Quality Reviewer in this very revision. quality-review.md R5.3 rules on it at length, R5.5 records 'N-1 - RE-OPENED as a scoped note', and the operative verdict names it in the residual list at line 3114: 47 mobile shots, header strip, 1.32 px. The response's residual list has seven bullets and none of them is N-1.",
+    "OVERSTATEMENT, material: requested action 9 is reported as 'Done. 64 recaptured' with no qualification. At the certified SHA that is no longer true of the mobile half of the pack - the pack was captured at a71e2c5 and fb8ba6e (unit 37) is a production commit after it, which is precisely why the reviewer re-opened N-1 rather than letting his own R4 closure stand. The theory pole's action was worded 'refresh screenshots only after the final production commit' and its advancement rule requires screenshots and Quality Review to identify the same HEAD. This is the one place in the message where something the reviewer left open is presented as closed.",
+    "SUPPRESSED OWNER DECISION: R5.3 routes N-1 to the product owner in terms - 'Either recapture before the Human Review Package or carry it as a stated limitation - the owner's call, and either is defensible.' This message is the last artifact before the Human Review Package and the deliberation budget is exhausted. An owner decision dropped here is an owner decision lost, and the response's own acceptance criterion 3 ('Residual risks are recorded as residuals') is not met.",
+    "PATTERN, and the reason these three are critical rather than tidy-ups: the reviewer's operative residual sentence names nine items - F-10, F-11, V-M1, AT-5, N-1, N-9, N-6, N-3, F-6 - plus the structural engine gap. The response carries F-10, F-11, V-M1, AT-5 and the engine gap, and drops the other five from the same sentence of the same document. This is the identical shape to the defect returned last round, when the implementation report understated its open set by one major while carrying that finding's sibling from the same section. It has recurred at five items instead of one."
+  ],
+  "essential_principles": [
+    "A residual the independent reviewer recorded as open must appear in the outgoing message as open, in the reviewer's own terms.",
+    "A requested action may only be reported as discharged if it is discharged at the certified SHA, not at the SHA where the work was done.",
+    "A decision the reviewer routes to the product owner must survive into the last artifact before the Human Review Package; the budget is exhausted and there is no later exchange to carry it.",
+    "Certification is bound to fb8ba6e and its zero counts apply only to the product build, with pigment_coordinator/ excluded from the certified scope and from the merge set.",
+    "A defect in the gate that guards human review, written by this pole, must be reported at full strength and in the reviewer's own words rather than downgraded.",
+    "Disputes against the counterpole in a final message must be correct and no stronger than the evidence supports."
+  ],
+  "evidence_gaps": [
+    "Focus-ring contrast (WCAG 1.4.11) is unmeasured and not disclosed as unmeasured; browser-evidence-certification.md section 9 item 9.",
+    "The sixteen-item NOT TESTED perimeter, including forced-colors / high-contrast, print, reduced-transparency, HiDPI, the deployed origin, and the onboarding-deck and passport journeys, is not carried into the message.",
+    "F-6: no evidence exists about what a deployed GitHub Pages build serves; the response invites a deployment decision without naming this.",
+    "Rights coverage rests on record identity with licence assertions dated 2026-07-25; the response does disclose this, and it remains a real gap requiring network access to close.",
+    "Assistive-technology evidence is one operator, one screen reader, one browser; disclosed and structural."
+  ],
+  "feasibility_supported": true,
+  "human_escalation": {
+    "decision_required": "",
+    "reason_category": "",
+    "recommended": false,
+    "why_the_teams_cannot_resolve_it": ""
+  },
+  "intended_user_outcome": "The product owner receives an honest, self-sufficient account of a certified build: what passes, at exactly which commit, what remains open, what he must decide before or at merge, and where the evidence does not reach - so that he can approve, defer or refuse a merge and a deployment on a complete picture rather than a flattering one.",
+  "intent_preserved": true,
+  "noncritical_issues": [
+    "N-9 omitted. New note this revision: index.html:27 carries css/styles.css?v=20260806-pig001-u36 for a stylesheet changed in unit 37. Cache-busting still functions and AC26 holds, but the reviewer asked for it explicitly - 'worth one character before the Human Review Package so the version string does not mislead the next author'. A one-character pre-transmission fix would close it outright.",
+    "N-3 omitted, and it is specifically an instruction about the artifact the response asks the Coordinator to prepare: the frozen specification assumed 247 artists / 75 movements / 317 catalog / 225 edges and HEAD reports 256 / 76 / 323 / 238, from D-016 landing mid-build. The reviewer flagged it 'only so the Human Review Package does not present the spec's assumption line as current'.",
+    "F-6 omitted while the response invites a deployment decision. AC25 passes on disclosure against a locally served build; nothing in the review proves what a deployed GitHub Pages build serves. If the owner is being asked to approve a deployment, the deployment-gated condition belongs in the risks list.",
+    "N-6 omitted. Dark --gold2 at 4.31 against the absolute canvas ceiling, reproduced again this revision, geometrically unreachable. Lowest weight of the five, but it is in the reviewer's residual sentence.",
+    "'97 commits off effa805' is wrong by one. git rev-list --count effa805..fb8ba6e returns 98, with zero merge commits and git log --oneline confirming 98 lines. The figure is inherited from the Quality Review's own header, but the response asserts it in its own voice in evidence[9], in a message whose counterpole raised a commit-count discrepancy as a report-integrity finding and whose own denominator glossary says a commit count is only meaningful beside the SHA it was computed against.",
+    "'Advisory' softens the reviewer on the gate. The response's residual heading says 'not functional', but assumptions[1], risks[0] and requested_actions[0] all settle on 'advisory'. The reviewer wrote 'must be treated as non-functional' and 'the gate's grep is no longer capable of telling anyone anything'. An advisory signal still carries information; his point is that this one carries none.",
+    "The headline states 'OPEN CRITICAL 0 - OPEN MAJOR 0' without the scope clause attached. The reviewer attaches it inline: the counts refer to the product build, pigment_coordinator/ is excluded, F-10 remains open and is not counted. The response does state the exclusion four times elsewhere, so this is presentation rather than concealment, but the headline is the sentence most likely to be quoted onward.",
+    "Vermeer's NOT TESTED perimeter is never surfaced as a perimeter. browser-evidence-certification.md section 9 lists sixteen items, including forced-colors / high-contrast mode, the print stylesheet, reduced-transparency, deviceScaleFactor != 1, the deployed origin, the onboarding deck and passport journeys, p/artwork SEO pages, and second-and-later ids for parameterised routes. The response names only the engine gap and the single-operator limit. One sentence pointing at section 9 would close this for the Human Review Package.",
+    "'Every nav ring measured 100% visible, 0px clipped' restates rather than quotes. The reviewer reported worst intoFade 0.0 / -0.8 and clipping values all at or below -1.0 px; the '100% visible' figure appears in his text as a before-the-fix measurement (Explore at 0%, Nations at 25%/0%). The substance is supported; quoting his figures would be exact.",
+    "Focus-ring contrast is described as structurally unmeasurable by the glyph instrument and a keyboard pass is substituted, which is honest - but the response never says that focus-ring contrast therefore remains unmeasured. It sits at item 9 of the NOT TESTED list."
+  ],
+  "optional_forms": [
+    "Whether the 47 mobile screenshots are recaptured at fb8ba6e or carried as a stated limitation - the reviewer ruled both defensible and made it the owner's call. Only the disclosure is mandatory.",
+    "Whether N-9's version string is corrected before the Human Review Package or simply disclosed as a labelling note.",
+    "The order and prose of the residual list; the completeness of it is not optional."
+  ],
+  "owner_report": {
+    "markdown": "# Synthesis Liaison Report\n\n## Current Position\n\nThe build is certified. An independent reviewer who had blocked it four times and wrote none of its code passed all twenty-nine acceptance criteria at commit `fb8ba6e`, with zero failures and nothing unsupported. The team has drafted its final reply to the theory pole. I audited that reply before it is sent, and I am asking for four small corrections first.\n\n## Feasibility\n\nNo feasibility question remains open. Every constraint the reply claims is genuine: the contrast instrument really cannot measure a focus ring, the two evidence bases really do sit in different browser engines, and re-verifying image rights really would need network access. Each is correctly labelled a limit rather than a result.\n\n## Adaptations Made\n\nThree material ones. The screenshot pack was kept as captured rather than recaptured after the last code change, because the reviewer measured the visual difference at 1.32 pixels on a soft gradient. Focus-ring contrast was replaced by a stronger measurement of a different thing - a real keyboard pass proving every ring is present and unclipped. And the automated quality check the Coordinator runs was downgraded, because it can be fooled; the team wrote that code themselves and says so.\n\n## Product Intent\n\nPreserved. Nothing in the reply trades the intended outcome for convenience, and the two places where the team broke a rule of yours - the wording about public-domain images, including one line that was live on the credits page - are reported plainly and already fixed.\n\n## Evidence\n\nStrongest: 2,626 measured text samples across twelve screen-and-theme combinations with none below the readability floor; the full test suite passing, which I re-ran myself; the horizontal-overflow defect measured at zero across eight widths; and three real VoiceOver sessions you ran, which found seven problems no automated tool had found. I re-derived every load-bearing number and they hold, with one exception: the reply says 97 commits and the true figure is 98.\n\nGaps, all disclosed except where noted below: everything visual was measured in Chrome and everything audible was confirmed in Safari, so the two never corroborate each other; the screen-reader evidence is one person on one setup; and there is a stated list of sixteen things nobody tested, which the reply does not mention.\n\n## Remaining Problems\n\nThe reviewer's verdict ends by naming nine leftover items. The reply carries four of them and drops five. One of those five matters: the reviewer had closed the screenshot question and then deliberately re-opened it, because the last code change came after the screenshots were taken. He left you a choice - retake 47 mobile screenshots before the review package, or note the limitation and move on - and said either was defensible. The reply does not mention it at all, and instead reports the screenshot task as finished. That choice is yours to make, and as drafted it would never reach you.\n\nThe four dropped alongside it are smaller: a version label naming the wrong unit, a note that the specification's corpus figures are out of date, an untested condition about what the deployed site will request, and a colour contrast margin that cannot be improved.\n\n## Synthesis Assessment\n\nThe quality evidence is sufficient and the certification is sound. The problem is in the reply's account of it, not in the work. On the parts that usually go wrong this draft is unusually good: its three corrections to the theory pole are all correct and none is overstated, and its four admissions of its own failures are accurate and not softened.\n\n## What Happens Next\n\nI have asked the team to make four bounded corrections before sending: restore the screenshot item and your choice about it; qualify the screenshot task as partly discharged; add the four other leftover items; and fix the commit count and one softened word. None requires new work, and none costs a round of deliberation.\n\n## Attention Required\n\nHold for final Human Review Package.",
+    "title": "Synthesis Liaison Report - PIG-001 response to review, pre-transmission audit",
+    "visibility": "audit_only"
+  },
+  "pole": "claude-synthesis-build",
+  "project": "pigment",
+  "quality_evidence_appears_sufficient": true,
+  "rationale": "I was asked to assume this artifact has a defect and go looking, and it does. It is not in the disputes, which are correct; not in the self-criticism, which is accurate and unsoftened; not in the numbers, which re-derive; and not in the scope statement, which names the kernel exclusion plainly four times. It is in the residual list. The Quality Reviewer's operative verdict closes with a single sentence naming nine residuals and one structural limit. The response carries four of the nine and the structural one, and drops five. That is the same failure the implementation report committed last round at a scale of one, and this time the item dropped is the one the reviewer re-opened in this revision, after ruling on it at length, precisely because he refused to let a closure of his own stand that the facts had overtaken. The response then goes further and reports the corresponding requested action as discharged - which at fb8ba6e it is not, on the theory pole's own advancement rule that every artifact identify the same HEAD. And with it goes an owner decision the reviewer routed to the owner in terms.\n\nI am not recommending revision because the build is unsound. The evidence base is sufficient and the certification is real; quality_evidence_appears_sufficient is true because the defect is in the message's account of the evidence, not in the evidence. I am recommending revision because this is the last artifact of the task, nothing it gets wrong can be corrected later, and all four repairs are bounded edits to text that is already substantially right. Repair is internal to this pole and consumes no deliberation round; transmitting as written spends the only remaining chance to say these things.\n\nThe four repairs, exactly:\n(1) Add N-1 to the residual list in the reviewer's terms - 47 mobile screenshots, header strip, 1.32 px measured, stale because unit 37 is a production commit after the pack - and carry his disposition to the owner: recapture before the Human Review Package or carry it as a stated limitation, either defensible, the owner's call.\n(2) Qualify requested action 9. It is discharged for the 64-file pack as recaptured at a71e2c5 and for the visual ruling; it is not discharged for the mobile half at the certified SHA. Say so.\n(3) Add N-9, N-3 and F-6 to the residuals - N-9 and N-3 because the reviewer tied both explicitly to the Human Review Package, F-6 because the message invites a deployment decision. N-6 is optional and I would include it for completeness of the reviewer's own sentence.\n(4) Correct '97 commits' to 98, and change 'advisory' to 'non-functional' where the gate is described, matching the reviewer's word.\n\nOptionally, and I would: attach the scope clause to the headline zeros, and add one sentence pointing at the sixteen-item NOT TESTED perimeter so the owner knows a stated perimeter exists.\n\nOwner report visibility is audit_only, deliberately. The N-1 decision must reach the owner, but it must reach him inside the repaired response, which is what this packet requires - routing it through my report instead would let the response ship incomplete and would put an internal quality note into a package the response is supposed to carry on its own. If the pole transmits without repair (1), the Coordinator must carry the N-1 owner decision into the Human Review Package directly, because at that point nothing else will.",
+  "recommended_action": "return_for_revision",
+  "recommended_next_state": "revision",
+  "resolved_issues": [
+    "Verdict and counts verified verbatim: quality-review.md revision 5 is operative at fb8ba6e and reads GATE 2: CERTIFIED, PASS 29 FAIL 0 UNSUPPORTED 0, OPEN CRITICAL 0, OPEN MAJOR 0. The response quotes them correctly and binds them to that SHA and no other.",
+    "The reviewer's independence is stated accurately: he blocked four times (R1-R4 in the revision table) and wrote none of the code.",
+    "The pigment_coordinator/ exclusion is stated plainly, not buried - it appears in assumptions[2], in bold in requested action 12, in the residual list, and in risks[1]. This check passes cleanly.",
+    "Dispute 1 (76-vs-75) is fair and correct. beginning-noland carries image:{status:'copyright'} with no src; the register admits only Commons-URL-bearing records, so 75 is the right count. I ran tests/test_rights_tooling.py: 33 tests OK, including the 75 assertions at lines 348 and 381 and test_the_tier1_record_with_no_asset_is_dispositioned_not_counted_away. The claim that the test passes and was never among the five failures holds.",
+    "Dispute 2 (66-vs-60) is fair and correct, and correctly stated as latent rather than denied. data-reconciliation.md section 1.7 confirms the stale expectation sat behind an earlier assertion that aborted first, and was re-frozen to 66 in the same pass.",
+    "Dispute 3 (denominators) is fair and not overstated. Of the six families the theory pole listed (799/798/797, 694/693, 104/103, 29/28/27, 695/679, 66/60), five are different quantities at different commits and surfaces per data-reconciliation.md sections 1.1-1.7; the response concedes the one genuinely wrong figure (694 in the present tense) and concedes the Hirshhorn/Guggenheim error as belonging to both poles. 'Most' is the right word.",
+    "Self-criticism 1 verified: 'verified-PD' and 'genuinely PD' are recorded as struck OD-5 breaches at data-reconciliation.md lines 212-213 and 218.",
+    "Self-criticism 2 verified: the credits lede was shipping (data-reconciliation.md section 5 item 1, js/app.js:2393) and the replacement text quoted in the response is present verbatim in js/app.js:2393 today.",
+    "Self-criticism 3 verified: build-log-unit-34.md lines 19 and 35-36 carry the diagnosis in the same words - the fix covered every arrow JavaScript emits and none that CSS emits, and no aria-hidden span can reach a pseudo-element. voiceover-transcript.md 'Still open' confirms unit 33 recorded it closed when it was not.",
+    "Self-criticism 4 verified: the understated major is real and correctly described - a text surface at 1.00:1 on search-result headings at mobile width, recorded in implementation-report-audit.json.",
+    "The gate defect is carried at the right weight: first residual, named as this pole's own defect in code written mid-build, with the operative instruction to read the verdict block rather than grep for it. I confirmed the mechanism in pigment_coordinator/gates.py:42-44.",
+    "Figures re-derived independently and correct: 2,626 glyph rows across 12 cells with 0 below floor (browser-evidence-certification.md lines 73, 107); 46 tests OK (my own run at HEAD, 1.49s); F-1 zero at all eight widths including 821/900/1024/1100 (line 180); the 6.26-not-6.50 correction to .le-meta light, made against interest by the reviewer (lines 118, 128); 695 prerendered files across four families, counted on disk as 256 artist + 323 artwork + 12 list + 104 museum.",
+    "The 64-versus-108 question resolves in the response's favour: 64 is the recaptured pack (16 routes x 2 viewports x 2 themes, browser-evidence-certification.md line 215); 108 is every PNG in evidence/, which is the figure the reviewer used in R5.3; 47 of those 108 are mobile. I counted all three on disk. The response's 'refresh... 64 recaptured' uses the right number - the defect is what it omits about that pack, not the number itself."
+  ],
+  "round": 3,
+  "semantic_validity": "repairable",
+  "specialists_recommended": [
+    "claude-synthesis-lead (Rubens) - make the four named pre-transmission repairs to the response; no new specialist analysis is required for any of them.",
+    "claude-browser-reviewer (Vermeer) - only if the pole elects to recapture the 47 mobile shots at fb8ba6e rather than carry N-1 as a stated limitation. The reviewer ruled either defensible and made it the owner's call, so this is optional and should not delay transmission."
+  ],
+  "summary": "The response is substantially accurate and, on the checks that usually fail, unusually strong: the verdict, counts and SHA are quoted correctly, the pigment_coordinator/ exclusion is stated plainly in four places rather than buried, all three disputes of the theory pole's claims are fair and correct, all four self-criticisms are real and unsoftened, and every load-bearing figure I could re-derive holds. It has one material defect, and it is the same shape as the one caught last round. The Quality Reviewer's operative residual sentence names nine items; the response carries four of them plus the engine gap and drops five from that same sentence - N-1, N-9, N-6, N-3 and F-6. N-1 is the one that matters: it was RE-OPENED in this very revision because unit 37 is a production commit after the screenshot pack, the response instead reports requested action 9 as discharged without qualification, and in doing so it drops an owner decision the reviewer explicitly routed to the owner. Four bounded repairs and this message is ready; transmitted as written, it is the last chance to say those things and it does not say them.",
+  "task_id": "PIG-001",
+  "unsupported_claims": [
+    "'97 commits off effa805' - measured 98 at fb8ba6e (git rev-list --count effa805..fb8ba6e, no merges).",
+    "'every nav ring measured 100% visible' - the reviewer's after-state evidence is geometric (intoFade and clipping deltas), not a percentage; the percentages in R5.2 are the before-the-fix figures.",
+    "Requested action 9 reported as discharged - unsupported at fb8ba6e for the 47 mobile captures, per the reviewer's own re-opening of N-1."
+  ]
+}
