@@ -93,7 +93,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   museum:{ id:"philadelphia-museum-of-art", name:"Philadelphia Museum of Art", city:"Philadelphia" },
   dims:"98 cm (bronze cast; wax original in Washington)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Degas_Little_Dancer_PMA%2805c%29_%2815675423180%29.jpg/500px-Degas_Little_Dancer_PMA%2805c%29_%2815675423180%29.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg", status:"pd" },
+          page:"https://commons.wikimedia.org/wiki/File:Degas_Little_Dancer_PMA(05c)_(15675423180).jpg", status:"licensed" },
   coords:{ F:-85, D:5, E:85, C:25, M:-15 }, coordsSource:"override",
   description:"Degas showed the wax original in 1881 dressed in a real bodice, tutu and slippers, with human hair and a satin ribbon, standing inside a glass case like a specimen. Critics were appalled: they called her a monkey and read her face as evidence of criminality. She was Marie van Goethem, fourteen, a dancer at the Paris Opéra. The bronzes were cast after his death — he never sold one.",
   notice:["Real fabric, real hair, shown inside a glass case",
@@ -176,7 +176,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   museum:{ id:"ny-carlsberg-glyptotek", name:"Ny Carlsberg Glyptotek", city:"Copenhagen" },
   dims:"70.5 × 46.5 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Paul_gauguin%2C_vahine_no_te_tiare_%28la_donna_coi_fiori%29%2C_1891%2C_MIN_1828%2C_02.jpg/500px-Paul_gauguin%2C_vahine_no_te_tiare_%28la_donna_coi_fiori%29%2C_1891%2C_MIN_1828%2C_02.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:Paul_gauguin,_vahine_no_te_tiare_(la_donna_coi_fiori),_1891,_MIN_1828,_02.jpg", status:"pd" },
+          page:"https://commons.wikimedia.org/wiki/File:Paul_gauguin,_vahine_no_te_tiare_(la_donna_coi_fiori),_1891,_MIN_1828,_02.jpg", status:"licensed" },
   tags:["portrait","quiet","tender"] },
 
 { id:"tahitian-women-on-the-beach", tier:2,

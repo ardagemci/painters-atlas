@@ -85,6 +85,12 @@ function artistShortName(a){
   return parts.slice(i).join(" ");
 }
 function hashStr(s){ let h = 2166136261; for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+// "pd" and "licensed" both render the same way — the difference is the
+// asserted basis (a public-domain claim vs. a named photographer's own CC
+// licence), not whether the image shows. Only "licensed" makes the credit
+// tests/test_rights_tooling.py checks mandatory rather than incidental.
+// RIGHTS-001 Decision A, resolved 2026-09-08: docs/RIGHTS_PD_TOKEN_BRIEF_2026-09-07.md
+function isRenderable(img){ return !!(img && (img.status === "pd" || img.status === "licensed")); }
 function mulberry(seed){ let a = seed; return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 function hex2rgb(hx){ const v = hx.replace("#",""); return [parseInt(v.slice(0,2),16), parseInt(v.slice(2,4),16), parseInt(v.slice(4,6),16)]; }
 function rgba(hx, a){ const [r,g,b] = hex2rgb(hx); return `rgba(${r},${g},${b},${a})`; }
@@ -872,7 +878,7 @@ function artistCard(a){
 
 function artworkCard(w){
   const a = Ax[w.artistId];
-  const img = w.image && w.image.src && w.image.status === "pd";
+  const img = w.image && w.image.src && isRenderable(w.image);
   return `<article class="card aw-card" data-href="#/artwork/${w.id}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)} by ${esc(a.name)}">`
@@ -1482,7 +1488,7 @@ function worldMapView(){
 
 /* ---------- Painting of the Day ---------- */
 const DAILY_POOL = CAT.filter(w => w.tier === 1 && w.description && w.notice && w.notice.length &&
-    w.image && w.image.status === "pd" && w.image.src && Ax[w.artistId])
+    w.image && isRenderable(w.image) && w.image.src && Ax[w.artistId])
   .slice().sort((a, b) => a.id.localeCompare(b.id));
 
 function gcd(a, b){
@@ -1571,7 +1577,7 @@ function creditLine(c, label){
 /* ---------- museums ---------- */
 function museumCard(v){
   const works = catByVenue[v.id] || [];
-  const cw = works.find(w => w.image && w.image.src && w.image.status === "pd");
+  const cw = works.find(w => w.image && w.image.src && isRenderable(w.image));
   const fa = works[0] && Ax[works[0].artistId];
   const note = MNOTES[v.id];
   return `<article class="card list-card mu-card" data-href="#/museum/${v.id}">
@@ -1606,7 +1612,7 @@ function viewMuseum(id){
   const works = (catByVenue[id] || []).slice().sort((x, y) => x.year.sort - y.year.sort);
   const note = MNOTES[id];
   const artists = [...new Set(works.map(w => w.artistId))].map(aid => Ax[aid]).filter(Boolean);
-  const collage = works.filter(w => w.image && w.image.src && w.image.status === "pd").slice(0, 6);
+  const collage = works.filter(w => w.image && w.image.src && isRenderable(w.image)).slice(0, 6);
   const kindred = VEN.filter(o => o.id !== id && !VENUE_SENTINELS[o.id] && (catByVenue[o.id] || []).length &&
     (o.city === v.city || o.country === v.country)).slice(0, 6);
   /* the building photograph's credit. It is rendered on every museum page that
@@ -1711,7 +1717,7 @@ function actualityCard(e){
   const t = actualityTarget(e); if(!t) return "";
   const styleArtist = e.coverStyle ? Ax[e.coverStyle] : null;
   const cw = t.cover, ca = cw && Ax[cw.artistId];
-  const img = !styleArtist && cw && cw.image && cw.image.src && cw.image.status === "pd";
+  const img = !styleArtist && cw && cw.image && cw.image.src && isRenderable(cw.image);
   return `<article class="card list-card" data-href="${t.href}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(t.title)}">`
@@ -1766,7 +1772,7 @@ function viewActuality(){
 /* ---------- editorial lists ---------- */
 function listCard(l){
   const cw = CatX[l.cover], ca = cw && Ax[cw.artistId];
-  const img = cw && cw.image && cw.image.src && cw.image.status === "pd";
+  const img = cw && cw.image && cw.image.src && isRenderable(cw.image);
   return `<article class="card list-card" data-href="#/list/${l.id}">
     <div class="card-art">${img
       ? `<img loading="lazy" src="${cw.image.src}" alt="${esc(l.title)}">`
@@ -1800,7 +1806,7 @@ function viewList(id){
      card and the page it opens show two different pictures. */
   const act = ACT.find(e => e.listId === l.id);
   const styleArtist = act && act.coverStyle ? Ax[act.coverStyle] : null;
-  const cimg = !styleArtist && cw && cw.image && cw.image.src && cw.image.status === "pd";
+  const cimg = !styleArtist && cw && cw.image && cw.image.src && isRenderable(cw.image);
   const others = LISTS.filter(o => o.id !== l.id).sort(() => Math.random() - 0.5).slice(0, 3);
   return `
   <div class="list-hero">
@@ -1822,7 +1828,7 @@ function viewList(id){
     ${l.works.map((e, i) => {
       const w = CatX[e.id]; if(!w) return "";
       const a = Ax[w.artistId];
-      const img = w.image && w.image.src && w.image.status === "pd";
+      const img = w.image && w.image.src && isRenderable(w.image);
       const on = passportHas("admirations", w.id);
       return `<li class="list-entry">
         <span class="le-num">${i + 1}</span>
@@ -2031,7 +2037,7 @@ function arcWorkChips(ids){
   if(!items.length) return "";
   return `<div class="arc-works">${items.map(w => {
     const artist = Ax[w.artistId];
-    const img = w.image && w.image.src && w.image.status === "pd";
+    const img = w.image && w.image.src && isRenderable(w.image);
     return `<a class="arc-work" href="#/artwork/${w.id}">${img
       ? `<img loading="lazy" src="${w.image.src}" alt="${esc(w.title)}" onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">`
       : `<span class="arc-work-gen">${canvasTag(artist.style, artist.palette, w.id, coverLabel(w.title + " by " + artist.name))}</span>`}
@@ -2187,7 +2193,7 @@ function viewArtwork(id){
   document.title = `${w.title} — ${a.name} — Pigment`;
   const venue = w.museum || null;
   const venueEntry = venue && venue.id ? Vx[venue.id] : null;
-  const hasImg = w.image && w.image.src && w.image.status === "pd";
+  const hasImg = w.image && w.image.src && isRenderable(w.image);
   const held = w.image && w.image.status === "copyright";
 
   const moreBy = (catByArtist[a.id] || []).filter(o => o.id !== w.id);
@@ -2473,7 +2479,7 @@ function viewPrivacy(){
 function shippedImageTitles(){
   const seen = {};
   CAT.forEach(w => {
-    if(!(w.image && w.image.src && w.image.status === "pd")) return;
+    if(!(w.image && w.image.src && isRenderable(w.image))) return;
     const t = commonsTitle(w.image.src); if(t) seen[t] = 1;
   });
   const G = window.ARTWORKS || {};
@@ -2492,7 +2498,7 @@ function creditUsage(){
     if(!list.some(u => u.label === label)) list.push({ label, href });
   };
   CAT.forEach(w => {
-    if(!(w.image && w.image.src && w.image.status === "pd")) return;
+    if(!(w.image && w.image.src && isRenderable(w.image))) return;
     const a = Ax[w.artistId];
     add(w.image.src, w.title + (a ? " — " + a.name : ""), "#/artwork/" + w.id);
   });
@@ -3360,7 +3366,7 @@ function personaCandidates(st){
 
 /* ---------- adaptive deck (§6 + ADMIRE_SPEC §6.2 constraints) ---------- */
 function deckPool(){
-  return CAT.filter(w => w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src);
+  return CAT.filter(w => w.tier === 1 && w.coords && w.image && isRenderable(w.image) && w.image.src);
 }
 const NON_EURO = { japan:1, usa:1, mexico:1 };
 function buildDeck(seed){

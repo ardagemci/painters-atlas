@@ -1522,7 +1522,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   museum:{ id:"met", name:"The Metropolitan Museum of Art", city:"New York" },
   dims:"25.7 × 38 cm (ōban print)",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Katsushika_Hokusai%2C_tempesta_sotto_la_vetta%2C_dalla_serie_delle_36_vedute_del_monte_fuji%2C_1831_ca.jpg/500px-Katsushika_Hokusai%2C_tempesta_sotto_la_vetta%2C_dalla_serie_delle_36_vedute_del_monte_fuji%2C_1831_ca.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai,_tempesta_sotto_la_vetta,_dalla_serie_delle_36_vedute_del_monte_fuji,_1831_ca.jpg", status:"pd" },
+          page:"https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai,_tempesta_sotto_la_vetta,_dalla_serie_delle_36_vedute_del_monte_fuji,_1831_ca.jpg", status:"licensed" },
   coords:{ F:-55, D:75, E:50, C:15, M:55 }, coordsSource:"override",
   description:"Fuji seen from below in a storm: the mountain printed a dark red-brown, lightning forking in pale gold across its lower slopes, and the summit standing in clear air above all the weather. It is the dark twin of the Great Wave from the same series of thirty-six views, and the joke is structural — the entire storm is happening beneath the mountain.",
   notice:["The lightning is below the summit, which stays clear",
@@ -1771,7 +1771,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   museum:{ id:"st-peters-basilica", name:"St Peter's Basilica", city:"Vatican City" },
   dims:"marble, 174 × 195 cm",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Pieta_de_Michelangelo_-_Vaticano.jpg/500px-Pieta_de_Michelangelo_-_Vaticano.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:Pieta_de_Michelangelo_-_Vaticano.jpg", status:"pd" },
+          page:"https://commons.wikimedia.org/wiki/File:Pieta_de_Michelangelo_-_Vaticano.jpg", status:"licensed" },
   tags:["sacred","tender","mourning"] },
 
 { id:"entombment-michelangelo", tier:2,
@@ -1791,7 +1791,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   museum:{ id:"accademia-florence", name:"Galleria dell'Accademia", city:"Florence" },
   dims:"marble, 517 cm tall",
   image:{ src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/%27David%27_by_Michelangelo_Fir_JBU004.jpg/500px-%27David%27_by_Michelangelo_Fir_JBU004.jpg",
-          page:"https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.jpg", status:"pd" },
+          page:"https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.jpg", status:"licensed" },
   tags:["historical","monumental-scale","nude"] },
 
 { id:"doni-tondo", tier:2,

@@ -564,3 +564,108 @@ France. Pigment's "died 1955 or earlier" convention holds under **both**, and th
   known, and a transcribed caption is not evidence that it asserts nothing. The
   correction is narrower: this is not a conflict *on the file page*.
 - **Status:** accept as correction. It is why D-008 could be executed on that file.
+
+## D-010 — AMENDS D-006: residence resolved to Türkiye
+
+- **What changed.** D-006 left residence undetermined between France and
+  Turkey, and commissioned a comparative brief specifically to find out which
+  decisions were robust to that uncertainty and which turned on it
+  (`docs/RIGHTS_BRIEF_FRANCE_TURKEY.md`). The owner has now settled it:
+  **Türkiye.**
+- **What the comparative brief already told us, now applicable rather than
+  conditional:** Decision A (the pd-token records, D-011 below) was found
+  **"robust"** — its options are about vocabulary and attribution plumbing
+  identical in both countries, and the obligation comes from a licence, not a
+  national statute. Decision B (`the-ten-largest-no-9`) was likewise robust,
+  and is moot regardless — already executed (D-008). Decision C (the 61
+  covers, D-012 below) was found **"divergent, in exposure rather than in the
+  option set"**: C1 and C2 remain available either way; what differs is the
+  counterparty. With residence now Turkish, that counterparty is FSEK's
+  successor regime and Article 19's Ministry-of-Culture power over works
+  significant to Turkish culture — and **none of the 15 artists behind the 61
+  records is Turkish** (Picasso, Kahlo, Dalí, Pollock, Rothko, Warhol, Matisse,
+  and eight more), so that specific state power's own stated reach does not
+  obviously extend to them. Not a determination — the brief's own "I don't
+  know" list (§7) stands unchanged, and a Turkish practitioner is still the
+  named next step for Article 84's exact scope.
+- **Status:** accept (owner). D is now closed as to residence.
+
+## D-011 — AMENDS D-007: Decision A resolved to A1, "licensed" — EXECUTED
+
+- **What changed.** D-007 deferred Decision A, choosing neither A2 nor A4 and
+  waiting "for the record-scoped no-image state, then revisit with A1 or A3
+  available." The owner has now chosen directly: **A1**, add a fourth
+  `image.status` value. Implemented as `"licensed"` (docs/
+  RIGHTS_PD_TOKEN_BRIEF_2026-09-07.md's own local option lettering called this
+  "B" — same option, Hogarth's brief used a different, informal A–D scheme for
+  the four options within the pd-token question specifically, distinct from
+  this task's tracked Decision-A/B/C/D/E scheme they sit inside).
+- **Why this did not have to wait for IFACE-001, on inspection of what D-007
+  actually deferred on.** The "record-scoped no-image state" capability is
+  **A3's blocker, not A1's** — the final synthesis and E-007 say so explicitly:
+  A3 "requires the record-scoped metadata-only capability"; A1's stated
+  blockers are E-008 (must be bundled with the render/credit path, or attributed
+  images lose their attribution) and E-009 (the schema/validator enum
+  disagreement). D-007's phrasing bundled "A1 or A3" together for the purpose
+  of deferring a decision, not because they share a technical dependency.
+  Neither of A1's real blockers needed IFACE-001:
+  - **E-008, addressed:** `isRenderable()` (`js/app.js`) treats `"pd"` and
+    `"licensed"` identically everywhere rendering and credit are gated —
+    `hasImg`, `creditUsage()`, and eleven other call sites, all moved together
+    in one change. A `"licensed"` record cannot render without its credit; the
+    exact failure mode E-008 named cannot occur by construction.
+  - **E-009, fixed as part of the same change:** `docs/ARTWORK_SCHEMA.md` now
+    documents `"pd" | "licensed" | "copyright" | "none"`, matching
+    `tools/validate.jxa.js`'s enforced set exactly. `"generative"` — never a
+    live value — is removed from the documented enum.
+  - **Scope:** `js/app.js` is outside `OP-RIGHTS`' write scope (E-008 said so
+    directly). Executed in **Lane II**, the owner present and directing this
+    exact change — the same basis D-009 already used for the same kind of
+    scope departure, recorded the same way here rather than assumed.
+- **What actually changed, all in this session:** `docs/ARTWORK_SCHEMA.md`,
+  `tools/validate.jxa.js`, `js/app.js` (13 call sites via one `isRenderable()`
+  helper), `tools/build_seo.jxa.js`, `tools/audit_artwork_rights.py`,
+  `tools/asset_inventory.py`, `tools/rights_register.py` (the last three were
+  not anticipated by any prior brief — found by running the full test suite
+  and fixing what broke, rather than by predicting every call site in advance),
+  and the five records themselves: `black-fuji`, `david`, `pieta`,
+  `little-dancer-aged-fourteen`, `vahine-no-te-tiare`.
+- **Measured effects:** the pd-token ratchet (`tests/test_rights_tooling.py::
+  TestPdTokenAccuracy`) tightens 5 → 0, proved non-vacuous (set to −1, observed
+  the failure and its reported true count, restored). `total_unique`,
+  `rendered_unique`, `catalog_gallery_overlap` and the `TestSampleBasis`
+  Tier-1/AC11 counts are **unchanged** — `asset_inventory.py` and
+  `rights_register.py` were widened to treat `"licensed"` as rendered, so
+  nothing that actually ships moved, only the label describing five files'
+  basis. Full suite: 186/186. Validator: `ALL REFERENCES VALID`, zero new
+  warnings (confirmed against a `git stash` baseline — the one pre-existing
+  warning, `deck quadrant F+D- rests on a single work`, predates this change).
+- **What this does not do:** does not touch A2, A3 or A4 for any record;
+  does not reopen `the-ten-largest-no-9` or `triumph-of-death` (already
+  resolved, D-008 and the original brief's provenance note respectively); does
+  not license any of the 61 in-copyright artists' work (a separate question,
+  D-012).
+- **Status:** accept (owner), executed and verified. A is closed.
+
+## D-012 — OWNER DECISION: Decision C (the 61 covers) = C1 — retain
+
+- **Decision:** **C1** — retain the current artist-associated generative
+  covers, pending review. No code changes; the current treatment continues.
+- **What this accepts, stated plainly:** the covers keep their per-artist
+  style/palette association. The exposure D-010 just named (Turkish successor
+  rights and Article 19's Ministry power, bearing on none of the 15 artists by
+  the brief's own reading) is accepted rather than reduced by switching to
+  C2's artist-neutral treatment. E-001 remains the operative finding
+  underneath this choice either way: no artwork pixels enter these covers, so
+  a moral right — a right in a work — has no object here regardless of which
+  of C1–C4 is chosen.
+- **What this does not close:** the *separate* standing question of whether
+  Pigment could ever license the real image for the six highest-count artists
+  (Picasso, Kahlo, Warhol, Pollock, Rothko, Dalí — 84% of the 61 records) —
+  see `docs/RIGHTS_ACTION_PLAN_2026-09-07.md` §3 for the licensing routes
+  identified (Picasso Administration/ARS, Andy Warhol Foundation, the
+  Pollock-Krasner Foundation, etc.) and its own note that no comparable public
+  tariff was found for a use like Pigment's. C1 leaves that question open on
+  its own terms, not resolved by implication.
+- **Status:** accept (owner). C is closed at C1; may be reopened if the
+  licensing question above is later pursued and changes what there is to show.

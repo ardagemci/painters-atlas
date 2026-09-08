@@ -100,7 +100,8 @@ function artistImage(a){
   if(a.hero && aw && aw[a.hero]) return aw[a.hero].img;
   if(aw && a.works) for(const w of a.works){ if(w && aw[w.t]) return aw[w.t].img; }
   if(aw) for(const k in aw) return aw[k].img;
-  const pd = (catByArtist[a.id] || []).find(w => w.image && w.image.src && w.image.status === "pd");
+  const pd = (catByArtist[a.id] || []).find(w => w.image && w.image.src &&
+    (w.image.status === "pd" || w.image.status === "licensed"));
   return pd ? pd.image.src : null;
 }
 
@@ -174,7 +175,7 @@ function emit(path, html){
 /* ---- artworks ---- */
 CAT.forEach(w => {
   const a = Ax[w.artistId]; if(!a) return;
-  const img = w.image && w.image.status === "pd" && w.image.src || null;
+  const img = w.image && (w.image.status === "pd" || w.image.status === "licensed") && w.image.src || null;
   const venue = w.museum && w.museum.id && Vx[w.museum.id] && !SENTINELS[w.museum.id] ? Vx[w.museum.id] : null;
   const desc = trim160(w.description ||
     `${w.title} (${w.year.display}) by ${a.name}${venue ? ", in the " + venue.name + ", " + venue.city : ""}. ${a.tagline}.`);

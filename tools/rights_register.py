@@ -50,7 +50,9 @@ ROOT = ai.ROOT
 # ---------------------------------------------------------------- surfaces
 
 def _catalog_records():
-    """[{id, artist_id, title, src, page, status}] for status:"pd" catalog works."""
+    """[{id, artist_id, title, src, page, status}] for status:"pd" or
+    "licensed" catalog works — the two rendered statuses (RIGHTS-001
+    Decision A, 2026-09-08; see asset_inventory.catalog_images)."""
     out = []
     for path in sorted(glob.glob(os.path.join(ROOT, "js", "catalog-*.js"))):
         src = ai.read(path)
@@ -67,7 +69,7 @@ def _catalog_records():
             block = img_block.group(1)
             status = re.search(r'status:\s*"([a-z]+)"', block)
             m_src = re.search(r'src:\s*"(%s)"' % ai.URL, block)
-            if not m_src or not status or status.group(1) != "pd":
+            if not m_src or not status or status.group(1) not in ("pd", "licensed"):
                 continue
             page = re.search(r'page:\s*"([^"]*)"', block)
             aid = re.search(r'artistId:\s*"([^"]+)"', body)

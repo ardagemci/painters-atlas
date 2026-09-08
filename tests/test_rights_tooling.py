@@ -1367,7 +1367,22 @@ class TestPdTokenAccuracy(unittest.TestCase):
 
     Six remain. This stays a ratchet and a recorded finding rather than a silent
     status edit: changing `status` could suppress rendering, and choosing a new
-    value is a schema decision, not a test's to make."""
+    value is a schema decision, not a test's to make.
+
+    2026-09-08, ceiling 5 -> 0. The schema decision named above as not this
+    test's to make was made: RIGHTS-001 Decision A resolved to option B, a
+    fourth `image.status` value, `"licensed"` — docs/RIGHTS_PD_TOKEN_BRIEF_
+    2026-09-07.md, decided by the owner after a Lane IV session verified
+    every citation the brief had flagged as unfetched. All five remaining
+    records (black-fuji, david, pieta, little-dancer-aged-fourteen,
+    vahine-no-te-tiare — the-ten-largest-no-9 and triumph-of-death had
+    already left by re-sourcing, see KLINT_PD_ART and BRUEGEL_PD_ART above)
+    now carry `status:"licensed"` instead of a borrowed `"pd"`. They still
+    render — `isRenderable()` in js/app.js treats the two identically — and
+    still carry their rendered credit, but the token no longer claims a
+    public-domain basis none of them had. Zero records should carry `"pd"`
+    on a credit-required file from here on; the ceiling says so rather than
+    assuming it."""
 
     #: NEGATIVE CONTROLS AND STALE BYTECODE. Proving this ratchet non-vacuous
     #: means editing the ceiling, running, and restoring. On macOS the system
@@ -1379,7 +1394,9 @@ class TestPdTokenAccuracy(unittest.TestCase):
     #: 2026-09-03, with stale entries in that cache from earlier sessions
     #: (tmp/vaneyck-u35, private/tmp/ve-4266804). If a restored guard still
     #: reports the value you reverted, clear that directory before believing it.
-    CEILING = 5
+    #: Re-proved 2026-09-08 at the new ceiling: set to -1, confirmed the
+    #: assertion fails and reports the true count (0), then restored.
+    CEILING = 0
 
     def test_the_pd_token_is_not_spreading_to_credit_required_files(self):
         catalog = rr.SURFACES["catalog"]() + rr.SURFACES["catalog_tier2"]() \
