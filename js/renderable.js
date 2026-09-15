@@ -9,12 +9,14 @@
    Why it lives in its own file and checks src as well as status. Until
    2026-09-15 the rule was spelled out at each call site: sixteen sites wrote
    `w.image && w.image.src && isRenderable(w.image)`, where isRenderable checked
-   status alone — and three sites (the homepage strip and the two mini-card
-   rails on the artwork page) tested `w.image && w.image.src` with no status
-   check at all. Those three were correct only because every
-   status:"copyright" record happens to carry no src. A record withheld by
-   moving its token while keeping its src would have leaked into them. That is
-   the defect class recorded in IFACE-001 (REQ-P1/P2) and RIGHTS-001 E-007.
+   status alone — and FIVE sites checked no status at all: in js/app.js the
+   homepage strip and the two mini-card rails on the artwork page, and in
+   tools/build_seo.jxa.js the og:image of museum stubs (when a venue has no
+   photograph) and of list stubs (the list's cover). All five were correct only
+   because every status:"copyright" record happens to carry no src. A record
+   withheld by moving its token while keeping its src would have leaked into
+   them — two of them into public share metadata. That is the defect class
+   recorded in IFACE-001 (REQ-P1/P2) and RIGHTS-001 E-007.
 
    "pd" and "licensed" render identically — the difference is the asserted
    basis (a public-domain claim vs. a named photographer's own CC licence), not
