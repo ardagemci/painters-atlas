@@ -107,6 +107,7 @@ class TestPredicateOutcomes(unittest.TestCase):
     def test_fixture_matrix(self):
         body = "JSON.stringify([" + ",".join("isRenderable(%s)" % src for _, src, _ in self.MATRIX) + "]);"
         got = jxa(JXA_PRELUDE + body)
+        self.assertEqual(len(got), len(self.MATRIX), "JXA must return one result per fixture")
         for (label, _, want), actual in zip(self.MATRIX, got):
             with self.subTest(case=label):
                 self.assertIs(actual, want)
@@ -200,6 +201,7 @@ class TestPythonToolsOnFixtures(unittest.TestCase):
             img = block[len("image:"):] if block else "undefined"
             parts.append('[%s, isRenderable(%s)]' % (json.dumps(rid), img))
         got = jxa(JXA_PRELUDE + "JSON.stringify([" + ",".join(parts) + "]);")
+        self.assertEqual(len(got), len(self.FIXTURES), "JXA must return one result per fixture")
         self.assertEqual({rid for rid, ok in got if ok}, self._expected())
 
 
@@ -326,6 +328,8 @@ class TestSinglePredicate(unittest.TestCase):
                    'if(w.image.status === "pd") return;',
                    '(w.image.status === "pd" || w.image.status === "licensed")',
                    'return img.status === "licensed";']
+        self.assertEqual(len(samples), len(self.FORBIDDEN),
+                         "every forbidden pattern needs a sample, or zip() skips it untested")
         for pattern, sample in zip(self.FORBIDDEN, samples):
             with self.subTest(pattern=pattern):
                 self.assertRegex(sample, pattern)
