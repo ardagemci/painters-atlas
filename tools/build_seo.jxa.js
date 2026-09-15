@@ -228,7 +228,7 @@ VEN.forEach(v => {
   const works = catByVenue[v.id] || [];
   if(!works.length) return;
   const note = MN[v.id];
-  const img = (note && note.photo && note.photo.src) || (works.find(w => w.image && w.image.src) || {}).image?.src || null;
+  const img = (note && note.photo && note.photo.src) || (works.find(w => isRenderable(w.image)) || {}).image?.src || null;   /* js/renderable.js */
   const desc = trim160((note && note.essay ? firstSentence(note.essay) : "") ||
     `${v.name}, ${v.city} — ${works.length} work${works.length === 1 ? "" : "s"} in the Pigment atlas${note ? ": " + note.hook : ""}.`);
   const rel = works.slice(0, 8).map(o => `<a href="${SITE}p/artwork/${o.id}.html">${esc(o.title)}</a>`).join("");
@@ -248,7 +248,7 @@ ${rel ? `<div class="rel"><span class="k">In the collection</span><br>${rel}</di
 /* ---- lists ---- */
 LISTS.forEach(l => {
   const cover = CAT.find(w => w.id === l.cover);
-  const img = cover && cover.image && cover.image.src || null;
+  const img = cover && isRenderable(cover.image) ? cover.image.src : null;   /* js/renderable.js */
   const rel = l.works.slice(0, 10).map(e => {
     const w = CAT.find(x => x.id === e.id);
     return w ? `<a href="${SITE}p/artwork/${w.id}.html">${esc(w.title)}</a>` : "";
