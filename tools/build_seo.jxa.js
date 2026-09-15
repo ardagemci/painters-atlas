@@ -31,11 +31,12 @@ function familyFiles(prefix){
     .sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0]));
 }
 
-["taxonomy.js","artworks.js","venues.js","tier1-artists.js","lists-1.js","actuality-1.js",
+["renderable.js","taxonomy.js","artworks.js","venues.js","tier1-artists.js","lists-1.js","actuality-1.js",
  "museums-1.js","photo-credits.js"]
   .concat(familyFiles("catalog"))
   .concat(familyFiles("artists"))
   .forEach(f => eval(read(base + "js/" + f)));
+const isRenderable = window.isRenderable;     /* published by js/renderable.js */
 
 const SITE = "https://ardagemci.github.io/painters-atlas/";
 const A = window.ARTISTS, CAT = window.CATALOG, VEN = window.VENUES,
@@ -100,8 +101,7 @@ function artistImage(a){
   if(a.hero && aw && aw[a.hero]) return aw[a.hero].img;
   if(aw && a.works) for(const w of a.works){ if(w && aw[w.t]) return aw[w.t].img; }
   if(aw) for(const k in aw) return aw[k].img;
-  const pd = (catByArtist[a.id] || []).find(w => w.image && w.image.src &&
-    (w.image.status === "pd" || w.image.status === "licensed"));
+  const pd = (catByArtist[a.id] || []).find(w => isRenderable(w.image));   /* js/renderable.js */
   return pd ? pd.image.src : null;
 }
 
@@ -175,7 +175,7 @@ function emit(path, html){
 /* ---- artworks ---- */
 CAT.forEach(w => {
   const a = Ax[w.artistId]; if(!a) return;
-  const img = w.image && (w.image.status === "pd" || w.image.status === "licensed") && w.image.src || null;
+  const img = isRenderable(w.image) ? w.image.src : null;                   /* js/renderable.js */
   const venue = w.museum && w.museum.id && Vx[w.museum.id] && !SENTINELS[w.museum.id] ? Vx[w.museum.id] : null;
   const desc = trim160(w.description ||
     `${w.title} (${w.year.display}) by ${a.name}${venue ? ", in the " + venue.name + ", " + venue.city : ""}. ${a.tagline}.`);
