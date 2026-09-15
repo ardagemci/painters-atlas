@@ -250,7 +250,15 @@ class TestValidatorAgreement(unittest.TestCase):
     The validator's E4 block reports the onboarding deck's F×D quadrant depth. Its
     eligibility rule is spelled out inline (sealed set, not edited here). The deck
     pool below is built with the executed js/renderable.js; the quadrant thresholds
-    are the validator's own (|F|, |D| >= 25 on the named signs)."""
+    are the validator's own (|F|, |D| >= 25 on the named signs).
+
+    LIMIT, MEASURED — do not over-read a pass. The validator prints a quadrant only
+    when it holds fewer than two works, so this test can only see a disagreement
+    that moves a quadrant across that line. Negative control, 2026-09-15: making
+    the predicate stop rendering "licensed" removed black-fuji from F-D+ (47 -> 46
+    works) and this test stayed GREEN, while four other tests in this file failed.
+    Full coverage needs the validator to consume js/renderable.js or report counts;
+    both are edits to a sealed verifier and belong to the owner (CLAUDE.md §0)."""
 
     QUADRANTS = [("F+D+", 1, 1), ("F+D-", 1, -1), ("F-D+", -1, 1), ("F-D-", -1, -1)]
 
