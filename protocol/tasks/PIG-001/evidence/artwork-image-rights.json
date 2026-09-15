@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04",
+ "generated": "2026-09-08",
  "author": "Durer (claude-implementation-lead), PIG-001 build unit 24",
  "source": "js/catalog-{1..5}.js image{src,status:pd} + js/artworks.js img",
  "method": "Commons API extmetadata via tools/commons_rights.py; deduplicated by underlying Commons file; a transient failure is recorded as unverified and never as a clean result",
@@ -15722,8 +15722,8 @@
    "license_url": "",
    "author": "Ahn Gyeon",
    "author_href": "https://en.wikipedia.org/wiki/Ahn_Gyeon",
-   "credit": "http://www.britannica.com/EBchecked/topic-art/171213/2854/Dream-Journey-to-the-Peach-Blossom-Land-slight-colours-on",
-   "credit_href": "http://www.britannica.com/EBchecked/topic-art/171213/2854/Dream-Journey-to-the-Peach-Blossom-Land-slight-colours-on",
+   "credit": "https://www.britannica.com/art/Korean-art/Painting",
+   "credit_href": "https://www.britannica.com/art/Korean-art/Painting",
    "attribution": "",
    "attribution_required": "false",
    "usage_terms": "Public domain",

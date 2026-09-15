@@ -41,9 +41,15 @@ def read(path):
 def catalog_images():
     """(pd_urls, copyright_records_with_url) from js/catalog-*.js.
 
-    Each catalog work carries image:{ src, page, status }. status "pd" renders
-    in the app (js/app.js gates on status === "pd"); status "copyright" is
-    suppressed. Copyright records are counted so leakage can be measured.
+    Each catalog work carries image:{ src, page, status }. status "pd" or
+    "licensed" renders in the app (js/app.js gates on isRenderable(w.image),
+    RIGHTS-001 Decision A, 2026-09-08 — "licensed" means the same URL renders
+    but the asserted basis is a named photographer's own CC licence rather
+    than a public-domain claim); status "copyright" is suppressed. The
+    variable name `pd` below is retained even though it now also holds
+    "licensed" records, so as not to touch every call site's naming for a
+    rename — both are members of the *rendered* set this function returns.
+    Copyright records are counted so leakage can be measured.
     """
     pd, cw, copyright_refs = [], [], 0
     for path in sorted(glob.glob(os.path.join(ROOT, "js", "catalog-*.js"))):
@@ -52,7 +58,7 @@ def catalog_images():
             m_src = re.search(r'src:\s*"(%s)"' % URL, block)
             m_status = re.search(r'status:\s*"([a-z]+)"', block)
             status = m_status.group(1) if m_status else ""
-            if status == "pd" and m_src:
+            if status in ("pd", "licensed") and m_src:
                 pd.append(m_src.group(1))
             elif status == "copyright":
                 copyright_refs += 1

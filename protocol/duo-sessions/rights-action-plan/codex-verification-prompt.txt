@@ -1,0 +1,7 @@
+Verification task for a rights action plan under Pigment's OD-5 (never state a legal conclusion; name asserted basis and residual uncertainty only). Read protocol/tasks/RIGHTS-001/evidence/ and CLAUDE.md if useful for context.
+
+I found: 61 catalog records across exactly 15 artists carry image:{status:"copyright"} (no image shown, a generative placeholder used instead). Artist record counts: picasso 10, kahlo 9, warhol 8, pollock 8, rothko 8, dali 8, matisse 2, and 8 more artists at 1 record each (thomas, enwonwu, kline, hofmann, noland, guston, motherwell, tarsila-do-amaral).
+
+Verify via web search, don't reason from memory: for the six highest-count artists (Picasso, Kahlo, Warhol, Pollock, Rothko, Dali), which organizations actually manage image/reproduction licensing for their estates today (e.g. Artists Rights Society, Picasso Administration, the Andy Warhol Foundation, Pollock-Krasner Foundation, the Frida Kahlo Corporation, the Gala-Salvador Dalí Foundation, or successors)? Is there real evidence any of these routinely license editorial/informational (non-commercial-print) web use, and does typical practice suggest per-image licensing or blanket/institutional deals? Do NOT invent specific dollar figures if you can't find real ones - say if pricing isn't publicly disclosed, which is itself useful information.
+
+Report what's verifiable and what isn't. Under 300 words.

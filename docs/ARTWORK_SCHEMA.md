@@ -47,13 +47,30 @@
   image: {                                  // from the existing artworks pipeline
     src: "https://upload.wikimedia.org/...500px-...jpg",   // Commons bucket URL only
     page: "https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew",
-    status: "pd"                            // "pd" | "generative" | "none"
+    status: "pd"                            // "pd" | "licensed" | "copyright" | "none"
   },
   // `status:"pd"` is a *rendering* token, not a legal finding. It means only:
   // this record carries a Commons URL whose file page asserts a public-domain
-  // basis, and js/app.js may therefore render it. `status:"copyright"`
-  // suppresses rendering. Neither value records a determination by this
-  // project, and neither may be described as cleared or verified (OD-5, AC12).
+  // basis, and js/app.js may therefore render it. `status:"licensed"` means the
+  // same URL renders, but the asserted basis is a named photographer's own
+  // licence (CC BY / CC BY-SA), not a public-domain claim — the credit that
+  // licence requires is mandatory and machine-checked (tests/test_rights_
+  // tooling.py), not optional the way an incidental "pd" credit is. It exists
+  // because "pd" was being asked to describe a fact — public-domain basis —
+  // for five records where that fact doesn't hold (RIGHTS-001 Decision A,
+  // resolved 2026-09-08: docs/RIGHTS_PD_TOKEN_BRIEF_2026-09-07.md). Neither
+  // "pd" nor "licensed" nor `status:"copyright"` (which suppresses rendering)
+  // records a determination by this project, and none may be described as
+  // cleared or verified (OD-5, AC12).
+  //
+  // This corrects a documentation defect (RIGHTS-001 E-009): this section
+  // previously listed the enum as `"pd" | "generative" | "none"`, but
+  // `tools/validate.jxa.js` has only ever enforced `["pd","copyright","none"]`
+  // — "generative" was never a live value (a generative cover is what renders
+  // when `status:"copyright"` and there is no image src, a UI fallback, not a
+  // data value) and "copyright" was undocumented. The validator's enforced
+  // set was and remains the real one; the documentation is now corrected to
+  // match it rather than the other way around.
 
   coords: { F: -85, D: 92, E: -30, C: -20, M: 55 },  // TASTE_MATH §1; Tier 1 = explicit
   coordsSource: "override",                 // "inherited" | "override"
@@ -89,7 +106,7 @@
 | Field | Tier 1 (full page) | Tier 2 (thin page) |
 |---|---|---|
 | id, title, artistId, year | required | required |
-| image | required (`pd` or explicit `generative`) | required (may be `none` → generative hero) |
+| image | required (`pd`, `licensed`, or explicit `copyright`) | required (may be `none`/`copyright` → generative hero) |
 | coords | **explicit** (validator-enforced) | inherited allowed |
 | description + notice | required, on-budget | absent → empty-state line |
 | museum, dims | required-if-known | optional |
@@ -124,7 +141,7 @@ Tags power: list assembly, mood search (medium backlog), deck bucket seasoning, 
 
 Order fixed; sections marked with their phase.
 
-1. **Hero** *(P1)* — the image, full-bleed, click = lightbox (existing component). `status:"generative"` renders the artist-style canvas seeded by artwork id, honestly captioned.
+1. **Hero** *(P1)* — the image, full-bleed, click = lightbox (existing component). `status:"copyright"` with no `src` renders the artist-style generative canvas seeded by artwork id, honestly captioned, in place of the image.
 2. **Identity line** *(P1)* — Title · artist link · year · chips: movement / technique / nation / museum-name (chip becomes a link when Museums land).
 3. **Action bar** *(P1, passport-wired)* — **Admire** (primary) · Seen in person · Save for later. States read/write `pigment.taste.v1`. Graceful first-run: no passport → create skeleton on first action.
 4. **Description** *(P1)* — the 50–80 words.
