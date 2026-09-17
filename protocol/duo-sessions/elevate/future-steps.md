@@ -1,5 +1,9 @@
 # Future steps toward the north star
 
+> **Superseded 2026-09-17** by `../unsolved/roadmap.md` and `../unsolved/decision-register.md`.
+> Kept unedited below as dated history. One claim here was wrong when written: it lists
+> Taste in the header nav as open, but `index.html:59` already had it.
+
 **Duo session `elevate`, 2026-09-15. Claude, after a three-round debate with Codex.**
 Decision inputs for the owner, not a roadmap anyone may execute without him. Every
 claim below is something measured on this branch or cited to a file.
