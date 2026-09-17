@@ -2066,6 +2066,8 @@ function viewArtist(id){
   const nation = Nx[a.nation];
   const t1 = window.TIER1 && window.TIER1[a.id];
   const arc = (t1 && t1.arc) || null;
+  /* js/majorworks.js — gallery art respects catalog withholding (IFACE-001). */
+  const majorWorks = majorWorksPanel(a, catByArtist[a.id] || [], window.ARTWORKS && window.ARTWORKS[a.id], esc);
   const galleryWorks = arc ? (catByArtist[a.id] || []).slice().sort((x,y) => x.year.sort - y.year.sort) : [];
   return `
   ${hero({
@@ -2111,24 +2113,8 @@ function viewArtist(id){
     <aside class="side-panel">
       ${arc ? "" : `<div class="panel">
         <h3>Major works</h3>
-        ${(() => {
-          const catFor = {};
-          (catByArtist[a.id] || []).forEach(cw => { catFor[cw.worksKey || cw.title] = cw.id; });
-          return a.works.map(wk => {
-            const art = window.ARTWORKS && window.ARTWORKS[a.id] && window.ARTWORKS[a.id][wk.t];
-            const cid = catFor[wk.t];
-            const titleHtml = cid ? `<a href="#/artwork/${cid}">${esc(wk.t)}</a>` : esc(wk.t);
-            return art
-              ? `<div class="work has-img" data-lb-img="${art.img}" data-lb-cap="${esc(wk.t)} (${esc(wk.y)}) — ${esc(a.name)}" data-lb-link="${art.page}">
-                   <img class="w-thumb" loading="lazy" src="${art.img}" alt="${esc(wk.t)} by ${esc(a.name)}"
-                        onerror="this.onerror=null;this.src=this.src.replace(/\\d+px-/,'330px-')">
-                   <div><span class="w-year">${esc(wk.y)}</span><span class="w-title">${titleHtml}</span></div>
-                 </div>`
-              : `<div class="work"><span class="w-year">${esc(wk.y)}</span><span class="w-title">${titleHtml}</span></div>`;
-          }).join("");
-        })()}
-        ${window.ARTWORKS && window.ARTWORKS[a.id]
-          ? `<div class="chip-label" style="margin-top:12px">tap a work to enlarge · images via Wikimedia Commons</div>` : ""}
+        ${majorWorks.items}
+        ${majorWorks.hint}
       </div>`}
       ${kindred.length ? `<div class="panel">
         <h3>Kindred spirits</h3>
@@ -2189,7 +2175,7 @@ function viewArtwork(id){
   const venue = w.museum || null;
   const venueEntry = venue && venue.id ? Vx[venue.id] : null;
   const hasImg = isRenderable(w.image);
-  const held = w.image && w.image.status === "copyright";
+  const held = isWithheld(w.image);                     /* js/renderable.js */
 
   const moreBy = (catByArtist[a.id] || []).filter(o => o.id !== w.id);
   const near = w.coords

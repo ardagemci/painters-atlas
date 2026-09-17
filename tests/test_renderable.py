@@ -39,8 +39,11 @@ errors on any pd/licensed image not Commons-hosted (`tools/validate.jxa.js`,
 "image not Commons-hosted"). TestKnownDivergence records it so it is a stated
 boundary rather than a surprise.
 
-Scope: catalog records only. `window.ARTWORKS` carries no status and is not gated
-by this predicate — see protocol/tasks/IFACE-001/evidence/cross-registry-identity.md.
+Scope: isRenderable gates catalog records. `window.ARTWORKS` carries no status.
+Since 2026-09-17 a gallery entry that MATCHES a catalog record inherits that record's
+explicit withholding (js/renderable.js galleryThumbFor; tests/test_majorworks.py).
+Unmatched gallery entries remain ungated — an open IFACE-001 question; see
+protocol/tasks/IFACE-001/evidence/cross-registry-identity.md.
 """
 import contextlib
 import json

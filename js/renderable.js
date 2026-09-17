@@ -24,13 +24,42 @@
    tests/test_rights_tooling.py checks mandatory rather than incidental.
    RIGHTS-001 Decision A, resolved 2026-09-08 (D-011).
 
-   Scope, stated so nobody over-reads it: this gates js/catalog-*.js records.
-   window.ARTWORKS (js/artworks.js) carries no status field and is not gated
-   here — that is an open design question for IFACE-001, not a solved one. */
+   Scope, stated so nobody over-reads it: isRenderable gates js/catalog-*.js
+   records. window.ARTWORKS (js/artworks.js) carries no status field. Since
+   2026-09-17 a gallery entry that MATCHES a catalog record inherits that
+   record's explicit withholding (galleryThumbFor, below). A gallery entry with
+   no catalog match is still ungated — that remains an open IFACE-001 design
+   question, not a solved one. */
 function isRenderable(img){
   return !!(img
     && typeof img.src === "string" && img.src !== ""
     && (img.status === "pd" || img.status === "licensed"));
+}
+
+/* isWithheld — the catalog has explicitly decided NOT to show this work.
+
+   Deliberately narrower than !isRenderable. docs/ARTWORK_SCHEMA.md §3 defines
+   status:"copyright" as the value that suppresses rendering; that is a rights
+   decision. A "pd" record that merely lacks a src is missing data, not a
+   decision, and "none" is enforced by the validator but used by no record and
+   never defined as withholding. Treating either as withheld would hide gallery
+   art that nothing has ruled out. */
+function isWithheld(img){
+  return !!(img && img.status === "copyright");
+}
+
+/* galleryThumbFor — may a gallery image stand in for this work?
+
+   catRecord is the catalog record matching the work (or undefined), galleryEntry
+   its window.ARTWORKS entry (or undefined). The gallery has no status of its
+   own, so where the two describe the same work the catalog's withholding wins:
+   before 2026-09-17 the artist page's Major works panel showed the gallery image
+   regardless, which put a withheld work's picture on screen whenever its artist
+   had no Tier-1 arc (RIGHTS-001 E-007; IFACE-001 cross-registry evidence). */
+function galleryThumbFor(catRecord, galleryEntry){
+  if(!galleryEntry || typeof galleryEntry.img !== "string" || galleryEntry.img === "") return null;
+  if(catRecord && isWithheld(catRecord.image)) return null;
+  return galleryEntry;
 }
 
 /* Publish it the way every data file here publishes its globals. In the browser
@@ -38,3 +67,5 @@ function isRenderable(img){
    inside a loader callback, where a bare declaration would stay local — which is
    how the first wiring failed with "Can't find variable: isRenderable". */
 window.isRenderable = isRenderable;
+window.isWithheld = isWithheld;
+window.galleryThumbFor = galleryThumbFor;
