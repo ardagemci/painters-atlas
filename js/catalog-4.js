@@ -516,7 +516,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   coords:{ F:-85, D:-75, E:-15, C:-45, M:-15 }, coordsSource:"override",
   description:"Two schooners stand loaded with lumber in a bay gone perfectly still, the evening banded rose and amber behind their rigging. Nothing moves; nothing needs to. Lane hid every brushstroke — the paint is as calm as the water — and let measured light do all the speaking. Made two years before his death, by a man who had never walked unaided, it is American painting's deepest breath: the school later named Luminism, holding perfectly still.",
   notice:["No visible brushwork anywhere — the calm is engineered",
-          "The masts rule the sky into intervals; the light is banded rose to amber",
+          "Masts rule the sky into intervals; light is banded rose to amber",
           "One rowboat crosses the stillness — the only motion permitted"],
   tags:["landscape","quiet","golden","would-hang"],
   related:["view-of-delft","the-fighting-temeraire"] },
@@ -563,7 +563,7 @@ window.CATALOG = (window.CATALOG || []).concat([
   description:"Rings of colour, roughly brushed at the edges, sitting dead centre on raw canvas that has been left to show. It is one of the first targets Noland painted, five years after Frankenthaler's studio taught him to stain rather than cover, and the title is not modest — this was the beginning. The question it opens occupied him for fifty years: where should an image sit inside its edges? Here the answer is the simplest one available. In the middle, and breathing.",
   notice:["The canvas between the rings is bare cotton, not white paint",
           "Edges are hand-brushed, not taped — the geometry is warm, not machined",
-          "Colour sits in the cloth rather than on it, so nothing casts a shadow"],
+          "Colour sits within, not atop, the cloth, so nothing casts a shadow"],
   tags:["abstract","geometry","quiet","experimental"],
   related:["composition-vii"] },
 
