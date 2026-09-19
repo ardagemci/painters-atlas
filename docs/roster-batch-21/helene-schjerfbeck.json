@@ -1,0 +1,233 @@
+{
+ "id": "helene-schjerfbeck",
+ "name": "Helene Schjerfbeck",
+ "wikidata": "wd:Q236985",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "The Convalescent",
+   "y": "1888",
+   "work_id": "wd:Q5478273",
+   "holding": "Finnish National Gallery",
+   "image": {
+    "commons_file": "Helene Schjerfbeck (1862-1946)- The Convalescent - Toipilas - Konvalescenten (32721924996).jpg",
+    "license_short_name": "CC0",
+    "commons_artist": "Helene Schjerfbeck",
+    "commons_object_name": "The Convalescent",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg/500px-Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Wounded Warrior in the Snow",
+   "y": "1880",
+   "work_id": "wd:Q18689608",
+   "holding": "Finnish National Gallery",
+   "image": {
+    "commons_file": "Helene Schjerfbeck - Wounded Warrior in the Snow.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Helene Schjerfbeck",
+    "commons_object_name": "Wounded Warrior in the Snow",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg/500px-Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Self-Portrait with Black Background",
+   "y": "1915",
+   "work_id": "wd:Q11883548",
+   "holding": "Finnish National Gallery",
+   "image": {
+    "commons_file": "Helene Schjerfbeck, Self-Portrait, Black Background, 1915.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Helene Schjerfbeck",
+    "commons_object_name": "Swedish: Självporträtt. Bröstbild Self-Portrait with Black Background title QS:P1476,sv:\"Självporträtt. Bröstbild \" labe",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg/500px-Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Girl with Blonde Hair",
+   "y": "1916",
+   "work_id": "wd:Q21285711",
+   "holding": "Städel Museum",
+   "image": {
+    "commons_file": "Girl with Blonde Hair (SM 2463).png",
+    "license_short_name": "PDM-owner",
+    "commons_artist": "Helene Schjerfbeck",
+    "commons_object_name": "Girl with Blonde Hair",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Girl_with_Blonde_Hair_%28SM_2463%29.png/500px-Girl_with_Blonde_Hair_%28SM_2463%29.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Girl_with_Blonde_Hair_%28SM_2463%29.png",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "The face stays — the paint learns how much it can leave out",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “distilled, nearly abstract images”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Helsinki in 1862, Schjerfbeck injured her hip in a childhood fall and…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “born on July 10, 1862, in Helsinki”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Helsinki in 1862, Schjerfbeck injured her hip in a childhood fall and…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “left her with a limp for the rest of her life”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She entered the Finnish Art Society's drawing school at eleven, with fees paid by…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “at eleven years old in 1873”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She entered the Finnish Art Society's drawing school at eleven, with fees paid by…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “Her fees were paid by Adolf von Becker”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "A travel grant took her to Paris in 1880.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “set off to Paris after receiving a travel grant”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She later painted in Brittany and Cornwall; The Convalescent, made at St Ives, won…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “painted again in Brittany”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She later painted in Brittany and Cornwall; The Convalescent, made at St Ives, won…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “winning the bronze medal at the 1889 Paris World Fair”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She later painted in Brittany and Cornwall; The Convalescent, made at St Ives, won…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “she travelled to St Ives, Cornwall”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her early history pictures gave way to portraits and still lifes, with description gradually…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “At the beginning of her career she often produced historical paintings”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her early history pictures gave way to portraits and still lifes, with description gradually…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “distilled, nearly abstract images”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "After illness ended her teaching, she moved with her mother to Hyvinkää in 1902.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “in 1902 she resigned from her post”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "After illness ended her teaching, she moved with her mother to Hyvinkää in 1902.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “she moved with her mother to Hyvinkää”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "There she painted her mother, schoolgirls and women workers, while friends sent books and…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “local school girls and women workers”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "There she painted her mother, schoolgirls and women workers, while friends sent books and…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “magazines and books sent by friends”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Girl with Blonde Hair depicts Impi Tamlander, one of the neighbours who helped with…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “Here the sitter is Impi”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Girl with Blonde Hair depicts Impi Tamlander, one of the neighbours who helped with…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “helped look after the family home”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Gösta Stenman sought her out in 1913 and organised her first solo exhibition in…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “In 1913 Schjerfbeck was sought out by the art dealer”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Gösta Stenman sought her out in 1913 and organised her first solo exhibition in…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “In 1917 Stenman organised her first solo exhibition”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "That year her friend Einar Reuter published the first monograph on her work under…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “published the first monograph on her work under the pseudonym”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "War cancelled a planned American retrospective in 1939.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “in 1939 had to be cancelled owing to the outbreak”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "With Stenman's help she moved to Sweden in 1944, continuing her late self-portraits at…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “In February 1944, with Stenman's help”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "With Stenman's help she moved to Sweden in 1944, continuing her late self-portraits at…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “Saltsjöbaden spa hotel”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "With Stenman's help she moved to Sweden in 1944, continuing her late self-portraits at…",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “including the series of late self-portraits”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "She enrolled in drawing school at eleven.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “at eleven years old in 1873”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "The Convalescent won a bronze medal at the 1889 Paris World Fair.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “winning the bronze medal at the 1889 Paris World Fair”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Books and magazines helped her follow contemporary art from Hyvinkää.",
+   "source_url": "https://en.wikipedia.org/wiki/Helene_Schjerfbeck",
+   "note": "Source states “magazines and books sent by friends”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": []
+}

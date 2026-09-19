@@ -1,0 +1,160 @@
+{
+ "id": "alphonse-mucha",
+ "name": "Alphonse Mucha",
+ "wikidata": "wd:Q146691",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Gismonda",
+   "y": "1894",
+   "work_id": "wd:Q3107798",
+   "holding": "National Gallery Prague",
+   "image": {
+    "commons_file": "Alfons Mucha - 1894 - Gismonda.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Alphonse Mucha",
+    "commons_object_name": "Poster for Victorien Sardou's Gismonda starring Sarah Bernhardt at the Théâtre de la Renaissance in Paris.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Alfons_Mucha_-_1894_-_Gismonda.jpg/500px-Alfons_Mucha_-_1894_-_Gismonda.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Alfons_Mucha_-_1894_-_Gismonda.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Job",
+   "y": "1896",
+   "work_id": "fallback:mucha-job-poster-1896",
+   "image": {
+    "commons_file": "Alphonse Mucha - Advertisment for Job cigarettes, 1896.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Alphonse Mucha",
+    "commons_object_name": "Advertisement for Job cigarettes. label QS:Len,\"Advertisement for Job cigarettes.\" label QS:Lfr,\"Publicité pour les ciga",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg/500px-Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Seasons",
+   "y": "1896",
+   "work_id": "wd:Q60593243",
+   "holding": "Sakai",
+   "image": {
+    "commons_file": "Alfons Mucha - The Seasons, 1896.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Alphonse Mucha",
+    "commons_object_name": "The Seasons (series) label QS:Len,\"The Seasons (series)\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Alfons_Mucha_-_The_Seasons%2C_1896.jpg/500px-Alfons_Mucha_-_The_Seasons%2C_1896.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Alfons_Mucha_-_The_Seasons%2C_1896.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Slav Epic",
+   "y": "1910–28",
+   "work_id": "wd:Q499643",
+   "holding": "museum collection of the Prague City Gallery",
+   "image": {
+    "commons_file": "Apotheosis of the Slavs history - Alfons Mucha.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Alphonse Mucha",
+    "commons_object_name": "Czech: Apotheosa z dějin Slovanstva Apotheosis of the Slavs title QS:P1476,cs:\"Apotheosa z dějin Slovanstva \" label QS:L",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg/500px-Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born 1860 Ivančice, court usher's son",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"his father Ondřej was a court usher\""
+  },
+  {
+   "field": "life",
+   "claim": "chorister in Brno funded studies",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"admitted him as a chorister and funded his studies\""
+  },
+  {
+   "field": "life",
+   "claim": "Prague Academy rejected 1878",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"was rejected and advised to \"find a different career\"\""
+  },
+  {
+   "field": "life",
+   "claim": "Vienna scenery painter",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"found employment as an apprentice scenery painter\""
+  },
+  {
+   "field": "life",
+   "claim": "count's murals, Munich tuition",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"paid his tuition fees and living expenses at the Munich Academy\""
+  },
+  {
+   "field": "life",
+   "claim": "Paris",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"Living in Paris during the Art Nouveau period\""
+  },
+  {
+   "field": "life",
+   "claim": "arrested, interrogated, pneumonia, died July 1939",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"He was arrested, interrogated for several days, and released\""
+  },
+  {
+   "field": "career",
+   "claim": "Bernhardt ordered new Gismonda poster; Mucha at printer",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"ordering a new poster for the continuation of the play Gismonda\""
+  },
+  {
+   "field": "career",
+   "claim": "over two metres; rainbow arch halo",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"the ornate rainbow-shaped arch behind the head, almost like a halo\""
+  },
+  {
+   "field": "career",
+   "claim": "arch in all future theatre posters",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"this feature appeared in all of Mucha's future theatre posters\""
+  },
+  {
+   "field": "career",
+   "claim": "decorative panel, no text, large runs; Seasons 1896 first",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"The first series was The Seasons (1896)\""
+  },
+  {
+   "field": "outside",
+   "claim": "Slav Epic twenty canvases 1912–1926",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"a series of twenty monumental symbolist canvases known as The Slav Epic\""
+  },
+  {
+   "field": "outside",
+   "claim": "1928 presented to nation",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"he presented the series to the Czech nation\""
+  },
+  {
+   "field": "outside",
+   "claim": "most important work",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"He considered it his most important work\""
+  },
+  {
+   "field": "facts",
+   "claim": "poster over two metres",
+   "source_url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+   "note": "Source: \"more than two meters high\""
+  }
+ ],
+ "edges": []
+}

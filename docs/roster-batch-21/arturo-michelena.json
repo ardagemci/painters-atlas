@@ -1,0 +1,214 @@
+{
+ "id": "arturo-michelena",
+ "name": "Arturo Michelena",
+ "wikidata": "wd:Q715363",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Miranda in La Carraca",
+   "y": "1896",
+   "work_id": "wd:Q6018086",
+   "holding": "Galería de Arte Nacional, Caracas",
+   "image": {
+    "commons_file": "Miranda en la Carraca by Arturo Michelena.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arturo Michelena",
+    "commons_object_name": "Spanish: Miranda en La Carraca Miranda in La Carraca title QS:P1476,es:\" Miranda en La Carraca \" label QS:Les,\" Miranda ",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Miranda_en_la_Carraca_by_Arturo_Michelena.jpg/500px-Miranda_en_la_Carraca_by_Arturo_Michelena.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Miranda_en_la_Carraca_by_Arturo_Michelena.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Young Mother",
+   "y": "1889",
+   "work_id": "wd:Q28529765",
+   "holding": "Galería de Arte Nacional, Caracas",
+   "image": {
+    "commons_file": "La Joven Madre 1889 by Arturo Michelena.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arturo Michelena",
+    "commons_object_name": "The Young Mother label QS:Lde,\"Die junge Mutter\" label QS:Len,\"The Young Mother\" label QS:Leu,\"Ama gaztea\" label QS:Luk,",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/La_Joven_Madre_1889_by_Arturo_Michelena.jpg/500px-La_Joven_Madre_1889_by_Arturo_Michelena.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Joven_Madre_1889_by_Arturo_Michelena.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Charlotte Corday",
+   "y": "1889",
+   "work_id": "wd:Q130564397",
+   "holding": "Galería de Arte Nacional, Caracas",
+   "image": {
+    "commons_file": "Arturo Michelena 03.JPG",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arturo Michelena",
+    "commons_object_name": "Carlota Corday. label QS:Len,\"Carlota Corday.\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Arturo_Michelena_03.JPG/500px-Arturo_Michelena_03.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Arturo_Michelena_03.JPG",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Penthesilea",
+   "y": "1891",
+   "work_id": "fallback:michelena-penthesilea-1891",
+   "image": {
+    "commons_file": "Arturo Michelena, Penthesilea, 1891.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arturo Michelena",
+    "commons_object_name": "Spanish: Pentesilea title QS:P1476,es:\"Pentesilea\" label QS:Les,\"Pentesilea\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Arturo_Michelena%2C_Penthesilea%2C_1891.jpg/500px-Arturo_Michelena%2C_Penthesilea%2C_1891.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arturo_Michelena%2C_Penthesilea%2C_1891.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "From Valencia's workshop to the Paris Salon — history on a larger stage",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “entered the Salon of 1887”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Valencia in 1863, Michelena learned painting from his father, Juan Antonio; his…",
+   "source_url": "https://es.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “Valencia, 16 de junio de 1863”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Valencia in 1863, Michelena learned painting from his father, Juan Antonio; his…",
+   "source_url": "https://es.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “hija del pintor y muralista Pedro Castillo”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Valencia in 1863, Michelena learned painting from his father, Juan Antonio; his…",
+   "source_url": "https://es.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “bajo el mandato de su padre, Juan Antonio Michelena”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "At eleven he illustrated Costumbres venezolanas for the writer Francisco de Sales Pérez, who…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “In 1874, aged only eleven”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "At eleven he illustrated Costumbres venezolanas for the writer Francisco de Sales Pérez, who…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “who became his sponsor”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "From 1879 to 1882 father and son ran a private academy in Valencia, taking…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “From 1879 to 1882”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "From 1879 to 1882 father and son ran a private academy in Valencia, taking…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “portraits, wall paintings and copies of the Old Masters”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "A government grant took him to Paris in 1885.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “a government grant to study in Europe”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "At the Académie Julian he studied with Jean-Paul Laurens, who encouraged him to enter…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “enrolled at the Académie Julian”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "At the Académie Julian he studied with Jean-Paul Laurens, who encouraged him to enter…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “Encouraged by Laurens, he entered the Salon”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "The Sick Child received a second-class gold medal there in 1887.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “which was awarded a gold medal in the second class”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Charlotte Corday, showing her on the way to execution, won another gold medal at…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “for his depiction of Charlotte Corday headed to the gallows”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Returning to Venezuela after contracting tuberculosis in 1892, he became a sought-after portraitist and…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “He contracted tuberculosis in 1892”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Returning to Venezuela after contracting tuberculosis in 1892, he became a sought-after portraitist and…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “named the official painter to President Joaquín Crespo”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Michelena married the collector Lastenia Tello Mendoza after returning to Venezuela in 1889, then…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “married Lastenia Tello Mendoza, a well known art collector”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Michelena married the collector Lastenia Tello Mendoza after returning to Venezuela in 1889, then…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “he and his bride returned to Paris”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "In 1890 he was commissioned to illustrate Victor Hugo's Hernani.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “In 1890, he was hired to provide illustrations for Hernani”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He also painted Vuelvan Caras as a Venezuelan gift to New York, thanking the…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “would be presented to the city of New York”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He also painted Vuelvan Caras as a Venezuelan gift to New York, thanking the…",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “hospitality shown to General José Antonio Páez”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He died in 1898 at thirty-five, leaving numerous pictures unfinished.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “aged only thirty-five, leaving numerous works unfinished”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "He illustrated Costumbres venezolanas at eleven.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “In 1874, aged only eleven”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "He and his father ran a painting academy in Valencia.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “he and his father operated a private painting academy in Valencia”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "A commission in 1890 put his illustrations into Hugo's Hernani.",
+   "source_url": "https://en.wikipedia.org/wiki/Arturo_Michelena",
+   "note": "Source states “In 1890, he was hired to provide illustrations for Hernani”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": []
+}

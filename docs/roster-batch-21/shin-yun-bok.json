@@ -1,0 +1,206 @@
+{
+ "id": "shin-yun-bok",
+ "name": "Shin Yun-bok",
+ "wikidata": "wd:Q484262",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Portrait of a Beauty",
+   "y": "c. 1805",
+   "work_id": "fallback:kansong-miindo",
+   "image": {
+    "commons_file": "Shin Yun-bok - A Beautiful Woman - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Shin Yun-bok",
+    "commons_object_name": "A Beautiful Woman",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg/500px-Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Dano Day",
+   "y": "c. 1805",
+   "work_id": "fallback:kansong-hyewon-album:dano",
+   "image": {
+    "commons_file": "Hyewon-Dano.pungjeong.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Shin Yunbok or Hyewon , his pen name (1758- early 19c)",
+    "commons_object_name": "Hyewon-Dano.pungjeong",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Hyewon-Dano.pungjeong.jpg/500px-Hyewon-Dano.pungjeong.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Dano.pungjeong.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Lovers under the Moon",
+   "y": "c. 1805",
+   "work_id": "fallback:kansong-hyewon-album:wolha-jeongin",
+   "image": {
+    "commons_file": "Hyewon-Wolha.jeongin-3.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Shin Yun-bok",
+    "commons_object_name": "Hyewon-Wolha.jeongin-3",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hyewon-Wolha.jeongin-3.jpg/500px-Hyewon-Wolha.jeongin-3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Wolha.jeongin-3.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Sword Dance",
+   "y": "c. 1805",
+   "work_id": "fallback:kansong-hyewon-album:ssanggeom-daemu",
+   "image": {
+    "commons_file": "Hyewon-Ssanggeomdaemu.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Shin Yun-bok",
+    "commons_object_name": "Hyewon-Ssanggeomdaemu",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Hyewon-Ssanggeomdaemu.jpg/500px-Hyewon-Ssanggeomdaemu.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Ssanggeomdaemu.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "A red skirt swings — two monks are watching",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “two young monks peek in the background”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Shin Yun-bok, known as Hyewon, came from a family of painters; his father Hanpyeong…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “better known by his art name Hyewŏn”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Shin Yun-bok, known as Hyewon, came from a family of painters; his father Hanpyeong…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “son of royal court painter Hanpyeong”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "His own biography is less secure, including whether he belonged to the royal painting…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “may not have ever been a member of the Tohwasŏ”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "The Korean account records work as late as 1813, while leaving his exact death…",
+   "source_url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9C%A4%EB%B3%B5",
+   "note": "Source states “정확한 사망일과 사망지는 알려져 있지 않다”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Kim Hong-do influenced him, but Shin's townspeople and kisaeng occupy a different world from…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “despite being greatly influenced and overshadowed by Kim Hongdo”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Kim Hong-do influenced him, but Shin's townspeople and kisaeng occupy a different world from…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “Sin showed glimpses of eroticism”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He used bright colour and delicate strokes to make scenes of urban life, courtship…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “use of bright colors and delicate paint strokes”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He used bright colour and delicate strokes to make scenes of urban life, courtship…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “He also painted scenes of shamanism and townlife”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Dano Day sets bathers in a stream, a woman in a red hanbok on…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “semi-nudes bathing in the stream”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Dano Day sets bathers in a stream, a woman in a red hanbok on…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “a woman in a bright red hanbok rides a swing”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Dano Day sets bathers in a stream, a woman in a red hanbok on…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “two young monks peek in the background”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Portrait of a Beauty turns the same precision towards the details of a figure's…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “Realistic details of the hanbok are notable”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Many paintings carry a short verse and a seal but no date, making a…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “he placed short verse and his seal on most”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Many paintings carry a short verse and a seal but no date, making a…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “it is difficult to define the progression of his painting style”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "His Hyewon album gathers thirty paintings and was designated a Korean National Treasure in…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “contains 30 of his paintings”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "His Hyewon album gathers thirty paintings and was designated a Korean National Treasure in…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “designated the 135th National Treasure of South Korea in 1970”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He also painted landscapes and animals, beyond the social encounters for which he is…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “genre, landscape, and animals”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The later novel Painter of the Wind recasts him as a woman disguised as…",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “Sin is portrayed as a woman disguised as a man”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Hyewon was his art name.",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “better known by his art name Hyewŏn”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "The Hyewon album contains thirty paintings.",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “contains 30 of his paintings”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Two young monks spy on the scene in Dano Day.",
+   "source_url": "https://en.wikipedia.org/wiki/Sin_Yunbok",
+   "note": "Source states “two young monks peek in the background”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "shin-yun-bok",
+   "basis": "Kim Hong-do influenced him, but Shin's townspeople and kisaeng occupy a different world from Kim's peasants.",
+   "from": "kim-hong-do",
+   "type": "influenced"
+  }
+ ]
+}

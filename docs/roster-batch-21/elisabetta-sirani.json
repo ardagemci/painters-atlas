@@ -1,0 +1,240 @@
+{
+ "id": "elisabetta-sirani",
+ "name": "Elisabetta Sirani",
+ "wikidata": "wd:Q271475",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Timoclea Kills the Captain of Alexander the Great",
+   "y": "1659",
+   "work_id": "wd:Q56818977",
+   "holding": "Museo di Capodimonte",
+   "image": {
+    "commons_file": "Sirani, Elisabetta - Timoclea uccide il capitano di Alessandro Magno - 1659.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Elisabetta Sirani",
+    "commons_object_name": "Italian: Timoclea uccide il capitano di Alessandro Magno Timoclea Kills the Captain of Alexander the Great title QS:P147",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg/500px-Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portia Wounding Her Thigh",
+   "y": "1664",
+   "work_id": "wd:Q58083055",
+   "holding": "Fondazione Carisbo",
+   "image": {
+    "commons_file": "Elisabetta Sirani - Portia wounding her thigh.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Elisabetta Sirani",
+    "commons_object_name": "Italian: Porcia ferendo la coscia Portia wounding her thigh title QS:P1476,it:\"Porcia ferendo la coscia\" label QS:Lit,\"P",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg/500px-Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Virgin and Child",
+   "y": "1663",
+   "work_id": "wd:Q61996489",
+   "holding": "National Museum of Women in the Arts",
+   "image": {
+    "commons_file": "Sirani Virgin and Child.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "-",
+    "commons_object_name": "Sirani Virgin and Child",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sirani_Virgin_and_Child.jpg/500px-Sirani_Virgin_and_Child.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sirani_Virgin_and_Child.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of Vincenzo Ferdinando Ranuzzi as Cupid",
+   "y": "c. 1663",
+   "work_id": "wd:Q3937671",
+   "holding": "National Museum in Warsaw",
+   "image": {
+    "commons_file": "Sirani Vincenzo Ferdinando Ranuzzi.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Elisabetta Sirani",
+    "commons_object_name": "Portrait of Vincenzo Ferdinando Ranuzzi as Amor. label QS:Lfr,\"Portrait de Vincenzo Ferdinando Ranuzzi en Amour.\" label ",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg/500px-Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "They doubted her speed — she invited them to watch her paint",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “watch her paint a portrait in one sitting”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Bologna in 1638, Elisabetta trained in the studio of her father, Giovanni…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “born in Bologna on 8 January 1638”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Born in Bologna in 1638, Elisabetta trained in the studio of her father, Giovanni…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “first trained as a painter in her father's studio”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "When gout incapacitated him in 1654, she began running the family workshop.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “By 1654, Giovanni Andrea Sirani became incapacitated by gout”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Portrait commissions and teaching fees made her the household's principal earner.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “supporting the family with her teaching fees and portrait commissions”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Malvasia later claimed credit for persuading her father to teach her; his account gives…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “persuading her father to train her as a painter”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Malvasia later claimed credit for persuading her father to teach her; his account gives…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “although this was likely self-aggrandizing”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Sirani painted more than 200 pictures and kept a list of commissions from 1655.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “produced over 200 paintings”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Sirani painted more than 200 pictures and kept a list of commissions from 1655.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “records of her paintings and who commissioned them beginning in 1655”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "She studied Annibale Carracci's work, while Guido Reni's example remained close to her style.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “studied the works of Annibale Carracci”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "She studied Annibale Carracci's work, while Guido Reni's example remained close to her style.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “Sirani's style is close to that of her father's teacher”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her own pictures heighten the contrasts of light and dark and brighten the colour.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “more dramatic contrasts of light and shade”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her own pictures heighten the contrasts of light and dark and brighten the colour.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “more brilliant color”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In Portia Wounding Her Thigh, the heroine raises a small knife above an already…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “she holds a small knife”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In Portia Wounding Her Thigh, the heroine raises a small knife above an already…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “frame her three female attendants weaving silk”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In Portia Wounding Her Thigh, the heroine raises a small knife above an already…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “three puncture wounds already self inflicted”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Her workshop was also a classroom: she taught her sisters Barbara and Anna Maria…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “including her younger sisters Barbara and Anna Maria”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Her workshop was also a classroom: she taught her sisters Barbara and Anna Maria…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “at least twelve other young women”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Doubters of her output were invited to watch her complete a portrait in one…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “watch her paint a portrait in one sitting”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "She died suddenly the next year, aged 27.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “died suddenly in August 1665”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "She died suddenly the next year, aged 27.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “at the age of 27”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "A servant was accused of poisoning her, but her father withdrew the charges; the…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “was charged with poisoning the artist”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "A servant was accused of poisoning her, but her father withdrew the charges; the…",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “withdrew the charges soon after the trial”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "She recorded her paintings and their commissioners from 1655.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “records of her paintings and who commissioned them beginning in 1655”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Her pupils included both her younger sisters.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “including her younger sisters Barbara and Anna Maria”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "She was buried in the same tomb as Guido Reni.",
+   "source_url": "https://en.wikipedia.org/wiki/Elisabetta_Sirani",
+   "note": "Source states “in the same tomb as her father's teacher, Guido Reni”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "elisabetta-sirani",
+   "basis": "She studied Annibale Carracci's work, while Guido Reni's example remained close to her style.",
+   "from": "annibale-carracci",
+   "type": "influenced"
+  },
+  {
+   "to": "elisabetta-sirani",
+   "basis": "She studied Annibale Carracci's work, while Guido Reni's example remained close to her style.",
+   "from": "guido-reni",
+   "type": "influenced"
+  }
+ ]
+}

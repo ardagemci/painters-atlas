@@ -1,0 +1,231 @@
+{
+ "id": "joaquin-torres-garcia",
+ "name": "Joaquín Torres-García",
+ "wikidata": "wd:Q520713",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Inverted America",
+   "y": "1943",
+   "work_id": "wd:Q30675079",
+   "holding": "National Museum of Visual Arts",
+   "image": {
+    "commons_file": "Joaquín Torres García - América Invertida.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Joaquín Torres García (1878–1949)",
+    "commons_object_name": "Joaquín Torres García - América Invertida",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg/500px-Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Two Figures",
+   "y": "1930",
+   "work_id": "wd:Q137322967",
+   "holding": "San Francisco Museum of Modern Art",
+   "image": null,
+   "no_image_reason": "The only Commons file is a CC BY-SA 4.0 gallery photograph (uploader GualdimG); this batch admits only files whose Commons page asserts a public-domain or CC0 basis, so no attribution duty is created."
+  },
+  {
+   "t": "Constructive Clock",
+   "y": "1936",
+   "work_id": "fallback:tg-constructive-clock-1936",
+   "image": {
+    "commons_file": "'Constructive Clock' by Joaquín Torres García , 1936. oil on canvas.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Joaquín Torres-García",
+    "commons_object_name": "Constructive Clock label QS:Les,\"Constructivo con Reloj\" label QS:Len,\"Constructive Clock\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg/500px-%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of Josep Pijoan",
+   "y": "c. 1910",
+   "work_id": "wd:Q23933238",
+   "holding": "Museu Nacional d'Art de Catalunya",
+   "image": {
+    "commons_file": "(Barcelona) Retrat de Josep Pijoan - Joaquim Torres-Garcia - Museu Nacional d'Art de Catalunya.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Didier Descouens",
+    "commons_object_name": "(Barcelona) Retrat de Josep Pijoan - Joaquim Torres-Garcia - Museu Nacional d'Art de Catalunya",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg/500px-%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "South America turns upside down — the compass becomes an argument",
+   "source_url": "https://es.wikipedia.org/wiki/Am%C3%A9rica_invertida",
+   "note": "Source states “está orientada con el sur en la parte superior”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Torres-García was born in Montevideo in 1874, the son of a Catalan shopkeeper and…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “born on July 28, 1874, in Montevideo”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Torres-García was born in Montevideo in 1874, the son of a Catalan shopkeeper and…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “an immigrant from Mataró, Spain”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He spent much of his childhood in his father's general store, drawing and examining…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “preferring to read, draw and to work in his father's store”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He spent much of his childhood in his father's general store, drawing and examining…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “inspecting all the merchandise arriving from abroad”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "The family moved to Spain in 1891, and he studied art in Barcelona.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “In 1891, Torres-García's father returned with the family to Spain”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "The family moved to Spain in 1891, and he studied art in Barcelona.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “School of Fine Arts (Escuela de Bellas Artes de Barcelona)”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He married Manolita Piña in 1909; their four children also became artists.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “married Manolita Piña i Rubíes in 1909”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He married Manolita Piña in 1909; their four children also became artists.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “four children who were also notable artists”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "His father was Catalan and his mother Uruguayan",
+   "source_url": "https://es.wikipedia.org/wiki/Joaqu%C3%ADn_Torres_Garc%C3%ADa",
+   "note": "“Su padre era catalán” and “Su madre era uruguaya” identify both parents’ origins."
+  },
+  {
+   "field": "career",
+   "claim": "His mature paintings place simplified figures and signs inside a geometric structure, holding representation…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “His pictograms, figures reduced to signs”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "His mature paintings place simplified figures and signs inside a geometric structure, holding representation…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “were embedded within a geometric composition”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He called this language Universal Constructivism, treating geometry as something cultures could share.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “what became known as Universal Constructivism”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He called this language Universal Constructivism, treating geometry as something cultures could share.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “geometry constitutes a universal visual language”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Earlier he designed stained glass for Gaudí and painted monumental frescoes for the Catalan…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “Antoni Gaudí commissioned Torres-García to design stained-glass windows”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Earlier he designed stained glass for Gaudí and painted monumental frescoes for the Catalan…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “the fifteenth-century Gothic seat of the Catalan government”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Teaching at the experimental Mont d'Or school meant drawing leaves, fruit and animals from…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “teaching in the experimental school Colegio Mont d'Or”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Teaching at the experimental Mont d'Or school meant drawing leaves, fruit and animals from…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “everyday objects like leaves, fruit, fish, flowers, and animals”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He returned to Montevideo in 1934 after forty-three years away and founded the Taller…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “returned to Montevideo in April 1934”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He returned to Montevideo in 1934 after forty-three years away and founded the Taller…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “He founded the Taller Torres-García”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "His 1943 ink drawing Inverted America puts south at the top of the continent.",
+   "source_url": "https://es.wikipedia.org/wiki/Am%C3%A9rica_invertida",
+   "note": "Source states “dibujo a pluma y tinta de 1943”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "His 1943 ink drawing Inverted America puts south at the top of the continent.",
+   "source_url": "https://es.wikipedia.org/wiki/Am%C3%A9rica_invertida",
+   "note": "Source states “está orientada con el sur en la parte superior”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The reversal argues for an autonomous Latin American art, connected to his School of…",
+   "source_url": "https://es.wikipedia.org/wiki/Am%C3%A9rica_invertida",
+   "note": "Source states “creación de un movimiento artístico latinoamericano autónomo”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He had also designed toys whose coloured parts could combine into dogs, cars or…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “The toys teach children which are the correct colors”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He had also designed toys whose coloured parts could combine into dogs, cars or…",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “a dog, a car, a city”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "He returned to Montevideo after forty-three years abroad.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “for the first time after forty-three years”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Inverted America puts south at the top.",
+   "source_url": "https://es.wikipedia.org/wiki/Am%C3%A9rica_invertida",
+   "note": "Source states “está orientada con el sur en la parte superior”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "His toys could assemble colour and shape into a dog, car or city.",
+   "source_url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Torres-Garc%C3%ADa",
+   "note": "Source states “a dog, a car, a city”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": []
+}

@@ -1,0 +1,237 @@
+{
+ "id": "gwen-john",
+ "name": "Gwen John",
+ "wikidata": "wd:Q274339",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Self-Portrait",
+   "y": "1902",
+   "work_id": "fallback:tate-N05366",
+   "image": {
+    "commons_file": "Gwen John - Self-portrait (1902).jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Gwen John",
+    "commons_object_name": "Self-portrait",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gwen_John_-_Self-portrait_%281902%29.jpg/500px-Gwen_John_-_Self-portrait_%281902%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Self-portrait_%281902%29.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "A Corner of the Artist's Room in Paris",
+   "y": "1907–09",
+   "work_id": "fallback:museums-sheffield-VIS.2576",
+   "image": {
+    "commons_file": "Gwen John - A Corner of the Artist's Room in Paris, 1907–1909, VIS.2576, Museums Sheffield.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Gwen John",
+    "commons_object_name": "Gwen John - A Corner of the Artist's Room in Paris, 1907–1909, VIS.2576, Museums Sheffield",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg/500px-Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Nude Girl",
+   "y": "1909–10",
+   "work_id": "fallback:tate-nude-girl",
+   "image": {
+    "commons_file": "Gwen John - Nude Girl.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Gwen John",
+    "commons_object_name": "Nude Girl label QS:Len,\"Nude Girl (Fenella Lovell)\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Gwen_John_-_Nude_Girl.jpg/500px-Gwen_John_-_Nude_Girl.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Nude_Girl.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Girl Reading at the Window",
+   "y": "1911",
+   "work_id": "wd:Q19883597",
+   "holding": "Museum of Modern Art",
+   "image": {
+    "commons_file": "Gwen John - Girl Reading at a Window, 1911, 421.1971.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Gwen John",
+    "commons_object_name": "Girl Reading at a Window label QS:Len,\"Girl Reading at a Window\" label QS:Lcy,\"Merch yn Darllen Wrth Ffenestr\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg/500px-Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "Hands in laps, colours close together — a room for looking slowly",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “with their hands in their laps”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Gwen John was born in Haverfordwest in 1876 and grew up sketching on the…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “Gwen John was born in Haverfordwest, Wales”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Gwen John was born in Haverfordwest in 1876 and grew up sketching on the…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “The siblings often went to the coast of Tenby to sketch”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She studied at the Slade from 1895 to 1898, then with James McNeill Whistler…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “From 1895 to 1898, John studied at the Slade”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "She studied at the Slade from 1895 to 1898, then with James McNeill Whistler…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “studied under James McNeill Whistler”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "In 1903 she and Dorelia McNeill set out to walk from Bordeaux to Rome…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “intending to reach Rome”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "In 1903 she and Dorelia McNeill set out to walk from Bordeaux to Rome…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “selling portrait sketches”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "They reached Toulouse; John settled in Paris the following year, finding work as an…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “they made it as far as Toulouse”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "They reached Toulouse; John settled in Paris the following year, finding work as an…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “In 1904, the two went to Paris”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her portraits bring closely related tones around a seated woman, often with hands resting…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “rendered in a range of closely related tones”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Her portraits bring closely related tones around a seated woman, often with hands resting…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “with their hands in their laps”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Early thin glazes gave way to small, thicker touches of paint in the Mère…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “thin glazes in the traditional manner”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Early thin glazes gave way to small, thicker touches of paint in the Mère…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “thicker paint applied in small, mosaic-like touches”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Those portraits of the religious order's founder were based on a prayer card.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “These paintings, based on a prayer card”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "The collector John Quinn bought most of the works she sold between 1910 and…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “from 1910 until his death in 1924”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "The collector John Quinn bought most of the works she sold between 1910 and…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “freed John from having to work as a model”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "John moved to Meudon in 1910 and entered the Catholic Church around 1913.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “In 1910, she found living quarters in Meudon”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "John moved to Meudon in 1910 and entered the Catholic Church around 1913.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “around 1913 she was received into the Church”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Alongside the oils, she made thousands of drawings: cats, and women and children seen…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “John created thousands of drawings”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Alongside the oils, she made thousands of drawings: cats, and women and children seen…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “frequently depict subjects from behind and in groups”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Alongside the oils, she made thousands of drawings: cats, and women and children seen…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “John also made many sketches of her cats”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Her notebooks numbered colours and set down personal rules for observing and painting, retaining…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “designating colours by a system of numbers”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Her notebooks numbered colours and set down personal rules for observing and painting, retaining…",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “Whistler, whose teaching emphasised systematic preparation”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "She had just one solo exhibition during her lifetime, in London in 1926.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “only one solo exhibition in her lifetime”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Her portraits of Mère Poussepin began with a prayer card.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “These paintings, based on a prayer card”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Her surviving oils rarely exceed 61 centimetres in either dimension.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “rarely exceed 24 inches (61 cm) in height or width”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "The attempted walk to Rome ended in Toulouse.",
+   "source_url": "https://en.wikipedia.org/wiki/Gwen_John",
+   "note": "Source states “they made it as far as Toulouse”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "gwen-john",
+   "basis": "She studied at the Slade from 1895 to 1898, then with James McNeill Whistler in Paris.",
+   "from": "james-whistler",
+   "type": "taught"
+  }
+ ]
+}

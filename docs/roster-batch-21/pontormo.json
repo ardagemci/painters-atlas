@@ -1,0 +1,180 @@
+{
+ "id": "pontormo",
+ "name": "Pontormo",
+ "wikidata": "wd:Q207929",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Deposition from the Cross",
+   "y": "1525–28",
+   "work_id": "wd:Q3705703",
+   "holding": "Santa Felicita",
+   "image": {
+    "commons_file": "Jacopo Pontormo - Kreuzabnahme Christi.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Pontormo",
+    "commons_object_name": "German: Altargemälde der Capponi-Kapelle in Santa Felicita in Florenz, Szene: Kreuzabnahme Christi The Deposition from t",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg/500px-Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Visitation",
+   "y": "1528–29",
+   "work_id": "wd:Q1109475",
+   "holding": "Rectory of Saints Michael and Francis",
+   "image": {
+    "commons_file": "Pontormo-visitation-after-restorationRGB.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Pontormo",
+    "commons_object_name": "Visitation of Carmignano title QS:P1476,en:\"Visitation of Carmignano \" label QS:Len,\"Visitation of Carmignano \" label QS",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Pontormo-visitation-after-restorationRGB.jpg/500px-Pontormo-visitation-after-restorationRGB.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pontormo-visitation-after-restorationRGB.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of a Halberdier",
+   "y": "1529–30",
+   "work_id": "wd:Q3607621",
+   "holding": "J. Paul Getty Museum",
+   "image": {
+    "commons_file": "Pontormo (Jacopo Carucci) (Italian, Florentine) - Portrait of a Halberdier (Francesco Guardi?) - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Pontormo",
+    "commons_object_name": "Portrait of a Halberdier (Francesco Guardi?) title QS:P1476,en:\"Portrait of a Halberdier (Francesco Guardi?)\" label QS:L",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg/500px-Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Joseph in Egypt",
+   "y": "1517–18",
+   "work_id": "wd:Q1706136",
+   "holding": "National Gallery",
+   "image": {
+    "commons_file": "Jacopo Pontormo - Joseph in Egypt - WGA18079.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Pontormo",
+    "commons_object_name": "Joseph in Egypt",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg/500px-Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born 1494 at Pontorme near Empoli",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"was born at Pontorme (then known as Pontormo or Puntormo), near Empoli\""
+  },
+  {
+   "field": "life",
+   "claim": "young, solitary, melancholy",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"\"young, solitary, and melancholy\"\""
+  },
+  {
+   "field": "life",
+   "claim": "Leonardo, Albertinelli, Piero di Cosimo, Andrea del Sarto 1512",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"finally, in 1512, with Andrea del Sarto\""
+  },
+  {
+   "field": "life",
+   "claim": "del Sarto bore no good will",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"it does not seem that Andrea bore him any good will\""
+  },
+  {
+   "field": "life",
+   "claim": "1522 plague, Certosa di Galluzzo, silence",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"where the monks followed vows of silence\""
+  },
+  {
+   "field": "life",
+   "claim": "died 1557",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"May 24, 1494 – January 2, 1557\""
+  },
+  {
+   "field": "career",
+   "claim": "Medici patronage",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"often supported by Medici patronage\""
+  },
+  {
+   "field": "career",
+   "claim": "Visitation 1514–16 vs Carmignano",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"drift toward each other in clouds of drapery\""
+  },
+  {
+   "field": "career",
+   "claim": "Bronzino the boy on the step (Vasari)",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"the sitter for the boy seated on a step is his young\""
+  },
+  {
+   "field": "career",
+   "claim": "Deposition 1528 Capponi Chapel masterpiece",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"is generally considered to be Pontormo's surviving masterpiece\""
+  },
+  {
+   "field": "career",
+   "claim": "brilliant colours, flattened space",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"housed by a shallow, somewhat flattened space\""
+  },
+  {
+   "field": "outside",
+   "claim": "Certosa frescoes damaged; Dürer",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"reveal especially strongly the influence of Albrecht Dürer's engravings\""
+  },
+  {
+   "field": "outside",
+   "claim": "Rome trip for Michelangelo; haunted faces",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"Haunted faces and elongated bodies are characteristic of his work\""
+  },
+  {
+   "field": "outside",
+   "claim": "twining poses, float, break with Florentine calm",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"his figures often seem to float in an uncertain environment\""
+  },
+  {
+   "field": "facts",
+   "claim": "no cross in Deposition",
+   "source_url": "https://en.wikipedia.org/wiki/Pontormo",
+   "note": "Source: \"there is no actual cross in the picture\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "pontormo",
+   "to": "bronzino",
+   "type": "taught",
+   "basis": "career: 'his apprentice Bronzino'"
+  },
+  {
+   "from": "albrecht-durer",
+   "to": "pontormo",
+   "type": "influenced",
+   "basis": "outside: 'drawing openly on Albrecht Dürer's engravings'"
+  },
+  {
+   "from": "michelangelo",
+   "to": "pontormo",
+   "type": "influenced",
+   "basis": "outside: 'A trip to Rome, largely to see Michelangelo'"
+  }
+ ]
+}

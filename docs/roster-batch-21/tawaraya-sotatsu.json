@@ -1,0 +1,208 @@
+{
+ "id": "tawaraya-sotatsu",
+ "name": "Tawaraya Sōtatsu",
+ "wikidata": "wd:Q1281252",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Wind God and Thunder God",
+   "y": "17th century",
+   "work_id": "wd:Q105086910",
+   "image": {
+    "commons_file": "Wind God and Thunder God Screens by Tawaraya Sotatsu hi-res.png",
+    "license_short_name": "Public domain",
+    "commons_artist": "俵屋宗達 (Tawaraya Sotatsu) (1570-1643)",
+    "commons_object_name": "風神雷神図屏風 (Wind God and Thunder God Screens)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png/500px-Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Waves at Matsushima",
+   "y": "17th century",
+   "work_id": "wd:Q18689364",
+   "holding": "Freer Gallery of Art",
+   "image": {
+    "commons_file": "俵屋宗達《松島図》17世紀、フリーア美術館.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Tawara Sōtatsu",
+    "commons_object_name": "Waves at Matsushima title QS:P1476,en:\"Waves at Matsushima \" label QS:Len,\"Waves at Matsushima \" label QS:Lja,\"松島図屏風\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg/500px-%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Sekiya and Miotsukushi Screens",
+   "y": "1631",
+   "work_id": "wd:Q107045339",
+   "holding": "Seikadō Bunko Library",
+   "image": {
+    "commons_file": "Genji screen 1.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Tawara Sōtatsu",
+    "commons_object_name": "Scenes from Sekiya (The Barrier Gate) and Miotsukushi (Channel Markers) chapters of The Tale of Genji label QS:Len,\"Scen",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Genji_screen_1.jpg/500px-Genji_screen_1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Genji_screen_1.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Deer Scroll",
+   "y": "c. 1610",
+   "work_id": "wd:Q112114267",
+   "holding": "Gotoh Museum; MOA Museum of Art; Seattle Art Museum; Sunritz Hattori Museum of Arts; Suntory Museum of Art; Yamatane Museum of Art",
+   "image": null,
+   "no_image_reason": "The Commons file is 3814x85 px, a whole handscroll as a 45:1 strip; at the 500px thumbnail the gallery uses it would be 11px tall and show nothing."
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "Gold, cranes and gathering clouds — wet paint meets wetter paint",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “a second layer of paint is applied”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Sōtatsu's birth date and birthplace are unknown; around 1570 is the usual estimate.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “probably around 1570, remains unknown”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "In Kyoto he opened Tawaraya, a shop selling fans, lantern paper, screens, dolls and…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “opened a shop in Kyoto, named Tawaraya”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "In Kyoto he opened Tawaraya, a shop selling fans, lantern paper, screens, dolls and…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “including fans, lantern paper, screens, dolls and patterns for kimono”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He also accepted commissions to decorate interiors.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “took commissions for decorating interiors”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "In 1602 he was hired to repair the Heike nōkyō sutra scrolls at Itsukushima…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “repair the 12th-century sutra scrolls Heike nōkyō”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He collaborated with the calligrapher Hon'ami Kōetsu on decorated books and scrolls.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “Sōtatsu created the designs for the covers and paper”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He collaborated with the calligrapher Hon'ami Kōetsu on decorated books and scrolls.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “with calligraphy by Hon'ami Kōetsu”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In the crane scroll, gold and silver birds stand or fly beneath a gathering…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “using silver and gold pigment”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In the crane scroll, gold and silver birds stand or fly beneath a gathering…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “cranes, which stand or fly in flocks”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In the crane scroll, gold and silver birds stand or fly beneath a gathering…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “a compilation of waka poems”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He popularised tarashikomi, applying another layer of paint before the first had dried.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “a second layer of paint is applied”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "In Dragons and Clouds, pooled ink becomes cloud.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “ink is artfully pooled to create features such as the clouds”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "The method makes the behaviour of wet material part of the image itself.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “tarashikomi wet-on-wet technique”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Sōtatsu and Kōetsu are credited with founding Rinpa, a tradition connected by influence rather…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “Rinpa was not strictly a school”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Ogata Kōrin later copied Wind God and Thunder God in homage.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “replicated the painting in homage”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The Wind God and Thunder God screens carry neither inscription nor seal.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “The screens have no inscription or seal”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He decorated Yōgen-in's doors and screens in 1621 and received the Buddhist artists' rank…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “decorated the doors and screens of the Yōgen-in temple”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He decorated Yōgen-in's doors and screens in 1621 and received the Buddhist artists' rank…",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “in 1630 he was given the title of hokkyō”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "His death, probably around 1640, is poorly documented.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “circumstances of Sōtatsu's death are not known”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Tawaraya sold kimono patterns as well as screens and fans.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “including fans, lantern paper, screens, dolls and patterns for kimono”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Tarashikomi adds paint before the previous layer dries.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “before the first layer is dry”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Wind God and Thunder God has no inscription or seal.",
+   "source_url": "https://en.wikipedia.org/wiki/Tawaraya_S%C5%8Dtatsu",
+   "note": "Source states “The screens have no inscription or seal”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "ogata-korin",
+   "basis": "Ogata Kōrin later copied Wind God and Thunder God in homage.",
+   "from": "tawaraya-sotatsu",
+   "type": "influenced"
+  }
+ ]
+}

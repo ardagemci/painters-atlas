@@ -1,0 +1,234 @@
+{
+ "id": "antonello-da-messina",
+ "name": "Antonello da Messina",
+ "wikidata": "wd:Q5594",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Saint Jerome in His Study",
+   "y": "c. 1475",
+   "work_id": "wd:Q2715353",
+   "holding": "National Gallery",
+   "image": {
+    "commons_file": "Antonello da Messina - St Jerome in his study - National Gallery London.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Antonello da Messina",
+    "commons_object_name": "Saint Jerome in his Study label QS:Lit,\"San Girolamo nel suo studio\" label QS:Lde,\"Der heilige Hieronymus im Gehäus\" lab",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Virgin Annunciate",
+   "y": "c. 1476",
+   "work_id": "wd:Q3332564",
+   "holding": "Galleria Regionale della Sicilia",
+   "image": {
+    "commons_file": "Antonello da Messina, Annunciata di Palermo, circa 1475-77 -FG2.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Antonello da Messina",
+    "commons_object_name": "Polish: Zwiastowanie dziewicy Virgin Annunciate title QS:P1476,pl:\"Zwiastowanie dziewicy \" label QS:Lpl,\"Zwiastowanie dz",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg/500px-Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Saint Sebastian",
+   "y": "1478",
+   "work_id": "wd:Q444078",
+   "holding": "Staatliche Kunstsammlungen Dresden",
+   "image": {
+    "commons_file": "Antonello da Messina - St. Sebastian - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Antonello da Messina",
+    "commons_object_name": "German: Hl. Sebastian title QS:P1476,de:\"Hl. Sebastian\" label QS:Lde,\"Hl. Sebastian\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg/500px-Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of a Man",
+   "y": "c. 1475",
+   "work_id": "wd:Q3937397",
+   "holding": "National Gallery",
+   "image": {
+    "commons_file": "Antonello da Messina - Portrait of a Man - National Gallery London.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Antonello da Messina",
+    "commons_object_name": "Portrait of a Man label QS:Lit,\"Ritratto di un uomo\" label QS:Lhu,\"Férfi portré\" label QS:Let,\"Mehe portree\" label QS:Lc",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "A face turns out of darkness — Sicily learns to look north",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “against a dark background”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "tagline",
+   "claim": "A face turns out of darkness — Sicily learns to look north",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “strong influences from Early Netherlandish painting”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Antonello came from Messina, the son of a sculptor who gave him his first…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “born at Messina”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Antonello came from Messina, the son of a sculptor who gave him his first…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “a sculptor who trained him early on”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "A letter written in 1524 places him in the workshop of Colantonio in Naples…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “a letter written in 1524”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "A letter written in 1524 places him in the workshop of Colantonio in Naples…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “a pupil of the painter Niccolò Colantonio in Naples”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "By his first documented commission in 1457, for a confraternity's banner, he was married…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “earliest documented commission, in 1457, was for a banner”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "By his first documented commission in 1457, for a confraternity's banner, he was married…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “he was already married, and his son Jacobello had been born”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Paintings by Jan van Eyck and Rogier van der Weyden helped shape his early…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “paintings by Rogier van der Weyden and Jan van Eyck”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "His portraits turn a bust-length sitter towards us against darkness, replacing the profile familiar…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “the subject being shown bust-length, against a dark background”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "His portraits turn a bust-length sitter towards us against darkness, replacing the profile familiar…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “most previous Italian painters had adopted the medal-style profile pose”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He worked in Venice in 1475–76, where his San Cassiano Altarpiece influenced Venetian painters.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “went to Venice in 1475”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He worked in Venice in 1475–76, where his San Cassiano Altarpiece influenced Venetian painters.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “San Cassiano Altarpiece was especially influential on Venetian painters”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Giovanni Bellini, in turn, helped sharpen Antonello's attention to anatomy and expression.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “regarding both anatomy and expressivity”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Giovanni Bellini, in turn, helped sharpen Antonello's attention to anatomy and expression.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “influence of Piero della Francesca and Giovanni Bellini”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Vasari claims Antonello introduced oil painting to Italy; that account is now rejected.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “although this is now regarded as wrong”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The northern connection does not establish a northern journey: no documentary evidence places him…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “no documentary evidence that he ever travelled beyond Italy”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "While in Venice he declined an offer to become the Duke of Milan's court…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “offered, but did not accept, the opportunity”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He returned to Sicily by September 1476 and died in Messina in 1479; Jacobello…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “returned to Sicily by September 1476”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He returned to Sicily by September 1476 and died in Messina in 1479; Jacobello…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “He died at Messina in 1479”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "He returned to Sicily by September 1476 and died in Messina in 1479; Jacobello…",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “were completed by his son Jacobello”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "His first recorded commission was a banner, in 1457.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “earliest documented commission, in 1457, was for a banner”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "The San Cassiano Altarpiece survives only as a fragment.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “only a fragment of a much larger original”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Vasari's story that he introduced oil painting to Italy is rejected.",
+   "source_url": "https://en.wikipedia.org/wiki/Antonello_da_Messina",
+   "note": "Source states “although this is now regarded as wrong”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "antonello-da-messina",
+   "basis": "Paintings by Jan van Eyck and Rogier van der Weyden helped shape his early work.",
+   "from": "jan-van-eyck",
+   "type": "influenced"
+  },
+  {
+   "to": "antonello-da-messina",
+   "basis": "Paintings by Jan van Eyck and Rogier van der Weyden helped shape his early work.",
+   "from": "rogier-van-der-weyden",
+   "type": "influenced"
+  },
+  {
+   "to": "antonello-da-messina",
+   "basis": "Giovanni Bellini, in turn, helped sharpen Antonello's attention to anatomy and expression.",
+   "from": "giovanni-bellini",
+   "type": "influenced"
+  }
+ ]
+}

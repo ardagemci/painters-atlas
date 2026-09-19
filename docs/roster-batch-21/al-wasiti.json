@@ -1,0 +1,187 @@
+{
+ "id": "al-wasiti",
+ "name": "Yahya ibn Mahmud al-Wasiti",
+ "wikidata": "wd:Q472751",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Abu Zayd before the Governor of Rahba",
+   "y": "1237",
+   "work_id": "bnf:arabe-5847:maqama-10",
+   "image": {
+    "commons_file": "Yahyâ ibn Mahmûd al-Wâsitî 001.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "al-Wâsitî, Yahyâ ibn Mahmûd",
+    "commons_object_name": "Maqâmât (Versammlungen) des al-Harîrî, Szene: Abû Zayd vor dem Statthalter von Rahba (10. Maqâmât)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Pilgrims' Caravan",
+   "y": "1237",
+   "work_id": "bnf:arabe-5847:maqama-31",
+   "image": {
+    "commons_file": "Yahyâ ibn Mahmûd al-Wâsitî 005.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Yahya ibn Mahmud al-Wasiti",
+    "commons_object_name": "Caravan of pilgrims in Ramleh (31st Maqamat)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "A Village",
+   "y": "1237",
+   "work_id": "bnf:arabe-5847:maqama-43",
+   "image": {
+    "commons_file": "Yahyâ ibn Mahmûd al-Wâsitî 007.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Yahya ibn Mahmud al-Wasiti",
+    "commons_object_name": "Maqâmât (Versammlungen) des al-Harîrî, Szene: Unterredung bei einem Dorfe (43. Maqâmât)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Eastern Island",
+   "y": "1237",
+   "work_id": "bnf:arabe-5847:maqama-39",
+   "image": {
+    "commons_file": "Yahyâ ibn Mahmûd al-Wâsitî 002.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "al-Wâsitî, Yahyâ ibn Mahmûd",
+    "commons_object_name": "Maqâmât (Versammlungen) des al-Harîrî, Szene: Das östliche Eiland (39. Maqâmât)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "A rogue talks his way through town — the manuscript watches everyone",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “adventures of the fictional character Abū Zayd”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Almost nothing is known about al-Wasiti's life; he was probably born in Wasit, south…",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “Very little is known about his life”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Almost nothing is known about al-Wasiti's life; he was probably born in Wasit, south…",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “probably born in Wasit, south of Baghdad”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "What survives is a double achievement: in 1237 he copied and illustrated al-Hariri's Maqamat.",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “In 1237 he transcribed and illustrated a copy”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "The manuscript is associated with Baghdad, but that place of production remains conjectural.",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “but this attribution remains quite conjectural”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Its colophon fixes the copying to 634 AH, or 1237 CE; the book supplies…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “634 AH (1237 CE)”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Red and black writing shares the page with miniatures, many decorated with gold.",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “written in red and black ink”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Red and black writing shares the page with miniatures, many decorated with gold.",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “Most are decorated with gold”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Al-Hariri's fifty tales follow Abu Zayd, a traveller who uses his command of language…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “a collection of fifty tales”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Al-Hariri's fifty tales follow Abu Zayd, a traveller who uses his command of language…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “deceives those around him with his skill in the Arabic language”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Al-Wasiti gives this social satire expressive figures and carefully controlled colour.",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “expressive figures, and vivid but controlled colours”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Clothing does some of the storytelling: military figures wear boots and distinctive headgear, while…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “Officials and \"men of the sword\" wear the sharbush hat”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Clothing does some of the storytelling: military figures wear boots and distinctive headgear, while…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “judges, literary figures, musicians or merchants wear turbans”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The manuscript belongs to the Bibliothèque nationale de France, where it is catalogued as…",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “Bibliothèque Nationale de France, Arabe 5847”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "It is also known as the Schefer Hariri, one copy in a much wider…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “Arabe 5847, also known as the Schefer Ḥarīrī”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "More than a hundred manuscripts of al-Hariri's text are known, though only thirteen are…",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “more than a hundred manuscripts of the work are known, but only thirteen are illustrated” (quoted phrase: “but only thirteen are illustrated”)."
+  },
+  {
+   "field": "outside",
+   "claim": "Al-Wasiti's pictures later inspired the modern Baghdad art movement: this thirteenth-century cast of characters…",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “inspiration for the modern Baghdad art movement in the 20th-century”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "He copied the text as well as illustrating it.",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “In 1237 he transcribed and illustrated a copy”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "His birthplace is probable, not securely documented.",
+   "source_url": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+   "note": "Source states “probably born in Wasit”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Only thirteen of the hundred-plus known Maqamat manuscripts are illustrated.",
+   "source_url": "https://en.wikipedia.org/wiki/Maqamat_al-Hariri",
+   "note": "Source states “more than a hundred manuscripts of the work are known, but only thirteen are illustrated” (quoted phrase: “but only thirteen are illustrated”)."
+  }
+ ],
+ "edges": []
+}
