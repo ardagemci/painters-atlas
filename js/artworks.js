@@ -2714,5 +2714,357 @@ window.ARTWORKS = {
    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg/500px-Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist%2C_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg",
    "page": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Altarpiece_of_the_Virgin_of_Guadalupe_with_Saint_John_the_Baptist,_Fray_Juan_de_Zum%C3%A1rraga_and_Juan_Diego_-_Google_Art_Project.jpg"
   }
+ },
+ "al-wasiti": {
+  "Abu Zayd before the Governor of Rahba": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg"
+  },
+  "The Pilgrims' Caravan": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg"
+  },
+  "A Village": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg"
+  },
+  "The Eastern Island": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg"
+  }
+ },
+ "alphonse-mucha": {
+  "Gismonda": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Alfons_Mucha_-_1894_-_Gismonda.jpg/500px-Alfons_Mucha_-_1894_-_Gismonda.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Alfons_Mucha_-_1894_-_Gismonda.jpg"
+  },
+  "Job": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg/500px-Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg"
+  },
+  "The Seasons": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Alfons_Mucha_-_The_Seasons%2C_1896.jpg/500px-Alfons_Mucha_-_The_Seasons%2C_1896.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Alfons_Mucha_-_The_Seasons%2C_1896.jpg"
+  },
+  "The Slav Epic": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg/500px-Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg"
+  }
+ },
+ "ambrogio-lorenzetti": {
+  "Effects of Good Government in the City": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg"
+  },
+  "Presentation in the Temple": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg"
+  },
+  "Annunciation": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ambrogio_Lorenzetti_Annunciation.jpg/500px-Ambrogio_Lorenzetti_Annunciation.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_Annunciation.jpg"
+  },
+  "Maestà of Massa Marittima": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg/500px-Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg"
+  }
+ },
+ "antonello-da-messina": {
+  "Saint Jerome in His Study": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg"
+  },
+  "Virgin Annunciate": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg/500px-Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg"
+  },
+  "Saint Sebastian": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg/500px-Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg"
+  },
+  "Portrait of a Man": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg"
+  }
+ },
+ "arnold-bocklin": {
+  "Isle of the Dead": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg"
+  },
+  "Self-Portrait with Death Playing the Fiddle": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Arnold_Boecklin-fiedelnder_Tod.jpg/500px-Arnold_Boecklin-fiedelnder_Tod.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arnold_Boecklin-fiedelnder_Tod.jpg"
+  },
+  "The Plague": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Arnold_B%C3%B6cklin_-_Die_Pest.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Pest.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Pest.jpg"
+  },
+  "War": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Arnold_B%C3%B6cklin_-_Der_Krieg.jpg/500px-Arnold_B%C3%B6cklin_-_Der_Krieg.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Der_Krieg.jpg"
+  }
+ },
+ "arturo-michelena": {
+  "Miranda in La Carraca": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Miranda_en_la_Carraca_by_Arturo_Michelena.jpg/500px-Miranda_en_la_Carraca_by_Arturo_Michelena.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Miranda_en_la_Carraca_by_Arturo_Michelena.jpg"
+  },
+  "The Young Mother": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/La_Joven_Madre_1889_by_Arturo_Michelena.jpg/500px-La_Joven_Madre_1889_by_Arturo_Michelena.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:La_Joven_Madre_1889_by_Arturo_Michelena.jpg"
+  },
+  "Charlotte Corday": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Arturo_Michelena_03.JPG/500px-Arturo_Michelena_03.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Arturo_Michelena_03.JPG"
+  },
+  "Penthesilea": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Arturo_Michelena%2C_Penthesilea%2C_1891.jpg/500px-Arturo_Michelena%2C_Penthesilea%2C_1891.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arturo_Michelena%2C_Penthesilea%2C_1891.jpg"
+  }
+ },
+ "cimabue": {
+  "Santa Trinita Maestà": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg/500px-Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg"
+  },
+  "Crucifix of Santa Croce": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Cimabue_025.jpg/500px-Cimabue_025.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cimabue_025.jpg"
+  },
+  "The Mocking of Christ": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg/500px-La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg"
+  },
+  "Maestà of the Louvre": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg/500px-La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg"
+  }
+ },
+ "domenico-ghirlandaio": {
+  "An Old Man and His Grandson": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg/500px-Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg"
+  },
+  "Portrait of Giovanna Tornabuoni": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg/500px-Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg"
+  },
+  "Calling of the First Apostles": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg/500px-Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg"
+  },
+  "Adoration of the Magi": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg/500px-Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg"
+  }
+ },
+ "elisabetta-sirani": {
+  "Timoclea Kills the Captain of Alexander the Great": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg/500px-Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg"
+  },
+  "Portia Wounding Her Thigh": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg/500px-Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg"
+  },
+  "Virgin and Child": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sirani_Virgin_and_Child.jpg/500px-Sirani_Virgin_and_Child.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sirani_Virgin_and_Child.jpg"
+  },
+  "Portrait of Vincenzo Ferdinando Ranuzzi as Cupid": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg/500px-Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg"
+  }
+ },
+ "filippo-lippi": {
+  "Madonna and Child with Two Angels": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg/500px-Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg"
+  },
+  "Adoration in the Forest": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Maria%2C_das_Kind_verehrend%2C_mit_dem_Johannesknaben_und_dem_Heiligen_Bernhard_-_Die_Anbetung_im_Walde%2C_Die_Anbetung_im_Walde_-_Gem%C3%A4ldegalerie_Berlin_-_5223451.jpg/500px-thumbnail.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Maria%2C_das_Kind_verehrend%2C_mit_dem_Johannesknaben_und_dem_Heiligen_Bernhard_-_Die_Anbetung_im_Walde%2C_Die_Anbetung_im_Walde_-_Gem%C3%A4ldegalerie_Berlin_-_5223451.jpg"
+  },
+  "Coronation of the Virgin": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Fra_Filippo_Lippi_007.jpg/500px-Fra_Filippo_Lippi_007.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fra_Filippo_Lippi_007.jpg"
+  },
+  "Barbadori Altarpiece": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg/500px-Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg"
+  }
+ },
+ "gwen-john": {
+  "Self-Portrait": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gwen_John_-_Self-portrait_%281902%29.jpg/500px-Gwen_John_-_Self-portrait_%281902%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Self-portrait_%281902%29.jpg"
+  },
+  "A Corner of the Artist's Room in Paris": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg/500px-Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg"
+  },
+  "Nude Girl": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Gwen_John_-_Nude_Girl.jpg/500px-Gwen_John_-_Nude_Girl.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Nude_Girl.jpg"
+  },
+  "Girl Reading at the Window": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg/500px-Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg"
+  }
+ },
+ "helene-schjerfbeck": {
+  "The Convalescent": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg/500px-Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg"
+  },
+  "Wounded Warrior in the Snow": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg/500px-Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg"
+  },
+  "Self-Portrait with Black Background": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg/500px-Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg"
+  },
+  "Girl with Blonde Hair": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Girl_with_Blonde_Hair_%28SM_2463%29.png/500px-Girl_with_Blonde_Hair_%28SM_2463%29.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Girl_with_Blonde_Hair_%28SM_2463%29.png"
+  }
+ },
+ "joaquin-torres-garcia": {
+  "Inverted America": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg/500px-Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg"
+  },
+  "Constructive Clock": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg/500px-%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg"
+  },
+  "Portrait of Josep Pijoan": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg/500px-%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg"
+  }
+ },
+ "melchor-perez-de-holguin": {
+  "Entry of Viceroy Morcillo into Potosí": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Entrada_Virrey_Arzobispo_Morcillo.jpg/500px-Entrada_Virrey_Arzobispo_Morcillo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Entrada_Virrey_Arzobispo_Morcillo.jpg"
+  },
+  "Saint Christopher": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg"
+  },
+  "Saint Peter of Alcántara and Saint Teresa": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg"
+  },
+  "Virgin of the Rosary": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg"
+  }
+ },
+ "paolo-uccello": {
+  "The Battle of San Romano": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg/500px-Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg"
+  },
+  "Saint George and the Dragon": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg/500px-Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg"
+  },
+  "The Hunt in the Forest": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hunt_in_the_forest_by_paolo_uccello.jpg/500px-Hunt_in_the_forest_by_paolo_uccello.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hunt_in_the_forest_by_paolo_uccello.jpg"
+  },
+  "Monument to Sir John Hawkwood": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Paolo_Uccello_044.jpg/500px-Paolo_Uccello_044.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Paolo_Uccello_044.jpg"
+  }
+ },
+ "pontormo": {
+  "Deposition from the Cross": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg/500px-Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg"
+  },
+  "Visitation": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Pontormo-visitation-after-restorationRGB.jpg/500px-Pontormo-visitation-after-restorationRGB.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pontormo-visitation-after-restorationRGB.jpg"
+  },
+  "Portrait of a Halberdier": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg/500px-Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg"
+  },
+  "Joseph in Egypt": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg/500px-Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg"
+  }
+ },
+ "robert-campin": {
+  "Werl Triptych": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Werl-Triptychons.jpg/500px-Werl-Triptychons.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Werl-Triptychons.jpg"
+  },
+  "Nativity": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/La_Nativit%C3%A9%2C_par_Robert_Campin.jpg/500px-La_Nativit%C3%A9%2C_par_Robert_Campin.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9%2C_par_Robert_Campin.jpg"
+  },
+  "Portrait of a Woman": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Robert_Campin_012.jpg/500px-Robert_Campin_012.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Robert_Campin_012.jpg"
+  },
+  "Seilern Triptych": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Triptych-with-the-entombment-of-christ-1822.jpg/500px-Triptych-with-the-entombment-of-christ-1822.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Triptych-with-the-entombment-of-christ-1822.jpg"
+  }
+ },
+ "shin-yun-bok": {
+  "Portrait of a Beauty": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg/500px-Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg"
+  },
+  "Dano Day": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Hyewon-Dano.pungjeong.jpg/500px-Hyewon-Dano.pungjeong.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Dano.pungjeong.jpg"
+  },
+  "Lovers under the Moon": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hyewon-Wolha.jeongin-3.jpg/500px-Hyewon-Wolha.jeongin-3.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Wolha.jeongin-3.jpg"
+  },
+  "Sword Dance": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Hyewon-Ssanggeomdaemu.jpg/500px-Hyewon-Ssanggeomdaemu.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hyewon-Ssanggeomdaemu.jpg"
+  }
+ },
+ "simone-martini": {
+  "Annunciation with Saints Margaret and Ansanus": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg/500px-Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg"
+  },
+  "Saint Louis of Toulouse Crowning Robert of Anjou": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Simone_Martini_013.jpg/500px-Simone_Martini_013.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Simone_Martini_013.jpg"
+  },
+  "Maestà": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg/500px-Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg"
+  },
+  "Orsini Polyptych": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg/500px-Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg"
+  }
+ },
+ "tawaraya-sotatsu": {
+  "Wind God and Thunder God": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png/500px-Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png"
+  },
+  "Waves at Matsushima": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg/500px-%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg"
+  },
+  "Sekiya and Miotsukushi Screens": {
+   "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Genji_screen_1.jpg/500px-Genji_screen_1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Genji_screen_1.jpg"
+  }
  }
 };

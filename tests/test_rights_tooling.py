@@ -992,6 +992,120 @@ E3_ABSENT_TRADITIONS = {
 }
 
 
+#: Batch 21 (js/artists-21.js; docs/roster-batch-21/, duo session 2026-09-19).
+#: Twenty painters the atlas did not hold, all dead by 1955 — the second
+#: movement in these numbers, after E3, that is not a rearrangement of the pool.
+#: 78 gallery images for 80 listed works: two works carry a recorded reason for
+#: having none (a CC BY-SA gallery photograph refused; a 45:1 handscroll strip
+#: unreadable at thumbnail size). Every image was opened on a contact sheet and
+#: its Commons metadata is kept, per work, in the artist's evidence sheet. Each
+#: new stub page adds exactly one og:image, which is one of the gallery images.
+ARTIST_BATCH_21 = {
+    "gallery_rendered": { "removed": [], "added": [
+            U + "0/09/Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg/500px-Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg",
+            U + "0/09/Hyewon-Wolha.jeongin-3.jpg/500px-Hyewon-Wolha.jeongin-3.jpg",
+            U + "0/0a/Simone_Martini_013.jpg/500px-Simone_Martini_013.jpg",
+            U + "0/0d/Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg/500px-Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg",
+            U + "0/0e/%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg/500px-%28Barcelona%29_Retrat_de_Josep_Pijoan_-_Joaquim_Torres-Garcia_-_Museu_Nacional_d%27Art_de_Catalunya.jpg",
+            U + "1/11/Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg",
+            U + "1/11/Miranda_en_la_Carraca_by_Arturo_Michelena.jpg/500px-Miranda_en_la_Carraca_by_Arturo_Michelena.jpg",
+            U + "1/13/Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg/500px-Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg",
+            U + "1/18/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_007.jpg",
+            U + "1/19/Cimabue_025.jpg/500px-Cimabue_025.jpg",
+            U + "1/19/Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg/500px-Elisabetta_Sirani_-_Portia_wounding_her_thigh.jpg",
+            U + "2/20/%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg/500px-%27Constructive_Clock%27_by_Joaqu%C3%ADn_Torres_Garc%C3%ADa_%2C_1936._oil_on_canvas.jpg",
+            U + "2/21/Arturo_Michelena_03.JPG/500px-Arturo_Michelena_03.JPG",
+            U + "2/2f/Alfons_Mucha_-_1894_-_Gismonda.jpg/500px-Alfons_Mucha_-_1894_-_Gismonda.jpg",
+            U + "2/2f/Robert_Campin_012.jpg/500px-Robert_Campin_012.jpg",
+            U + "3/30/Girl_with_Blonde_Hair_%28SM_2463%29.png/500px-Girl_with_Blonde_Hair_%28SM_2463%29.png",
+            U + "3/30/Pontormo-visitation-after-restorationRGB.jpg/500px-Pontormo-visitation-after-restorationRGB.jpg",
+            U + "3/37/Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png/500px-Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png",
+            U + "3/38/Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg/500px-Antonello_da_Messina%2C_Annunciata_di_Palermo%2C_circa_1475-77_-FG2.jpg",
+            U + "3/3a/Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg/500px-Apotheosis_of_the_Slavs_history_-_Alfons_Mucha.jpg",
+            U + "3/3a/Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg/500px-Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg",
+            U + "3/3b/Gwen_John_-_Nude_Girl.jpg/500px-Gwen_John_-_Nude_Girl.jpg",
+            U + "3/3c/Paolo_Uccello_044.jpg/500px-Paolo_Uccello_044.jpg",
+            U + "3/3d/Hyewon-Ssanggeomdaemu.jpg/500px-Hyewon-Ssanggeomdaemu.jpg",
+            U + "4/42/Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg/500px-Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg",
+            U + "4/45/Gwen_John_-_Self-portrait_%281902%29.jpg/500px-Gwen_John_-_Self-portrait_%281902%29.jpg",
+            U + "4/46/Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg/500px-Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg",
+            U + "4/46/Maria%2C_das_Kind_verehrend%2C_mit_dem_Johannesknaben_und_dem_Heiligen_Bernhard_-_Die_Anbetung_im_Walde%2C_Die_Anbetung_im_Walde_-_Gem%C3%A4ldegalerie_Berlin_-_5223451.jpg/500px-thumbnail.jpg",
+            U + "4/4a/Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg/500px-Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+            U + "5/50/Entrada_Virrey_Arzobispo_Morcillo.jpg/500px-Entrada_Virrey_Arzobispo_Morcillo.jpg",
+            U + "5/53/Ambrogio_Lorenzetti_Annunciation.jpg/500px-Ambrogio_Lorenzetti_Annunciation.jpg",
+            U + "5/53/Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg/500px-Sirani_Vincenzo_Ferdinando_Ranuzzi.jpg",
+            U + "5/55/Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg/500px-Gwen_John_-_Girl_Reading_at_a_Window%2C_1911%2C_421.1971.jpg",
+            U + "5/58/Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg/500px-Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg",
+            U + "5/5d/La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg/500px-La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg",
+            U + "5/5f/Fra_Filippo_Lippi_007.jpg/500px-Fra_Filippo_Lippi_007.jpg",
+            U + "6/60/Alfons_Mucha_-_The_Seasons%2C_1896.jpg/500px-Alfons_Mucha_-_The_Seasons%2C_1896.jpg",
+            U + "6/61/Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg/500px-Helene_Schjerfbeck_-_Wounded_Warrior_in_the_Snow.jpg",
+            U + "6/62/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg",
+            U + "6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
+            U + "6/6d/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg",
+            U + "6/6e/Werl-Triptychons.jpg/500px-Werl-Triptychons.jpg",
+            U + "6/6f/Arnold_B%C3%B6cklin_-_Der_Krieg.jpg/500px-Arnold_B%C3%B6cklin_-_Der_Krieg.jpg",
+            U + "7/7b/Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg/500px-Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg",
+            U + "7/7c/Sirani_Virgin_and_Child.jpg/500px-Sirani_Virgin_and_Child.jpg",
+            U + "8/81/%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg/500px-%E4%BF%B5%E5%B1%8B%E5%AE%97%E9%81%94%E3%80%8A%E6%9D%BE%E5%B3%B6%E5%9B%B3%E3%80%8B17%E4%B8%96%E7%B4%80%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg",
+            U + "8/86/Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg/500px-Gwen_John_-_A_Corner_of_the_Artist%27s_Room_in_Paris%2C_1907%E2%80%931909%2C_VIS.2576%2C_Museums_Sheffield.jpg",
+            U + "8/86/Hyewon-Dano.pungjeong.jpg/500px-Hyewon-Dano.pungjeong.jpg",
+            U + "8/87/Triptych-with-the-entombment-of-christ-1822.jpg/500px-Triptych-with-the-entombment-of-christ-1822.jpg",
+            U + "8/8e/Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg/500px-Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg",
+            U + "9/98/Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg/500px-Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+            U + "9/9a/Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg/500px-Alphonse_Mucha_-_Advertisment_for_Job_cigarettes%2C_1896.jpg",
+            U + "9/9a/La_Joven_Madre_1889_by_Arturo_Michelena.jpg/500px-La_Joven_Madre_1889_by_Arturo_Michelena.jpg",
+            U + "a/a0/Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg/500px-Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg",
+            U + "a/a1/Genji_screen_1.jpg/500px-Genji_screen_1.jpg",
+            U + "a/a5/Arturo_Michelena%2C_Penthesilea%2C_1891.jpg/500px-Arturo_Michelena%2C_Penthesilea%2C_1891.jpg",
+            U + "a/aa/La_Nativit%C3%A9%2C_par_Robert_Campin.jpg/500px-La_Nativit%C3%A9%2C_par_Robert_Campin.jpg",
+            U + "a/ac/Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg/500px-Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg",
+            U + "b/b1/Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+            U + "b/b5/Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+            U + "b/ba/Arnold_B%C3%B6cklin_-_Die_Pest.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Pest.jpg",
+            U + "b/bd/Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg/500px-Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg",
+            U + "b/bf/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_002.jpg",
+            U + "c/c0/Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg/500px-Jacopo_Pontormo_-_Joseph_in_Egypt_-_WGA18079.jpg",
+            U + "c/c3/La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg/500px-La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg",
+            U + "c/c4/Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg/500px-Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+            U + "c/c8/Hunt_in_the_forest_by_paolo_uccello.jpg/500px-Hunt_in_the_forest_by_paolo_uccello.jpg",
+            U + "c/ce/Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg/500px-Antonello_da_Messina_-_St._Sebastian_-_Google_Art_Project.jpg",
+            U + "d/d1/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_005.jpg",
+            U + "d/d3/Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg/500px-Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg",
+            U + "d/db/Arnold_Boecklin-fiedelnder_Tod.jpg/500px-Arnold_Boecklin-fiedelnder_Tod.jpg",
+            U + "d/df/Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg/500px-Helene_Schjerfbeck%2C_Self-Portrait%2C_Black_Background%2C_1915.jpg",
+            U + "e/e3/Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg/500px-Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+            U + "e/ec/Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg/500px-Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg",
+            U + "e/ed/Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_Portrait_of_a_Man_-_National_Gallery_London.jpg",
+            U + "f/f3/Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg/500px-Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg",
+            U + "f/f6/Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg",
+            U + "f/fe/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "0/09/Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg/500px-Helene_Schjerfbeck_%281862-1946%29-_The_Convalescent_-_Toipilas_-_Konvalescenten_%2832721924996%29.jpg",
+            U + "0/0d/Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg/500px-Joaqu%C3%ADn_Torres_Garc%C3%ADa_-_Am%C3%A9rica_Invertida.jpg",
+            U + "1/11/Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg",
+            U + "1/11/Miranda_en_la_Carraca_by_Arturo_Michelena.jpg/500px-Miranda_en_la_Carraca_by_Arturo_Michelena.jpg",
+            U + "2/2f/Alfons_Mucha_-_1894_-_Gismonda.jpg/500px-Alfons_Mucha_-_1894_-_Gismonda.jpg",
+            U + "3/37/Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png/500px-Wind_God_and_Thunder_God_Screens_by_Tawaraya_Sotatsu_hi-res.png",
+            U + "4/42/Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg/500px-Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg",
+            U + "4/45/Gwen_John_-_Self-portrait_%281902%29.jpg/500px-Gwen_John_-_Self-portrait_%281902%29.jpg",
+            U + "4/4a/Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg/500px-Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+            U + "5/50/Entrada_Virrey_Arzobispo_Morcillo.jpg/500px-Entrada_Virrey_Arzobispo_Morcillo.jpg",
+            U + "5/58/Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg/500px-Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg",
+            U + "6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
+            U + "6/6d/Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg/500px-Yahy%C3%A2_ibn_Mahm%C3%BBd_al-W%C3%A2sit%C3%AE_001.jpg",
+            U + "6/6e/Werl-Triptychons.jpg/500px-Werl-Triptychons.jpg",
+            U + "8/8e/Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg/500px-Shin_Yun-bok_-_A_Beautiful_Woman_-_Google_Art_Project.jpg",
+            U + "9/98/Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg/500px-Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+            U + "b/b1/Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+            U + "c/c4/Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg/500px-Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+            U + "d/d3/Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg/500px-Sirani%2C_Elisabetta_-_Timoclea_uccide_il_capitano_di_Alessandro_Magno_-_1659.jpg",
+            U + "e/e3/Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg/500px-Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+        ] },
+}
+
+
 #: Catalog Batch 05 (docs/CATALOG_BATCH_05.md), 2026-08-24 — js/catalog-8.js.
 #: The gravity ranking re-run a third time. Two things worth keeping:
 #:
@@ -1247,7 +1361,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES, KLINT_PD_ART):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, ARTIST_BATCH_21, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES, KLINT_PD_ART):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1295,8 +1409,10 @@ class TestAssetInventory(unittest.TestCase):
         # again added nothing — they were read straight out of the gallery pool.
         # 875 -> 880 and 874 -> 879: the seven Matisse images of commit 8502b08,
         # two of which were already gallery entries (hence +5 unique, not +7).
-        self.assertEqual(c["total_unique"], 879)   # -1: the af Klint dedup (D-008)
-        self.assertEqual(c["rendered_unique"], 878)   # -1: the same dedup
+        # 879 -> 957 and 878 -> 956: batch 21's 78 gallery images, all new files
+        # (ARTIST_BATCH_21 above). Its 20 stub og:images are among the 78.
+        self.assertEqual(c["total_unique"], 957)   # -1 earlier: the af Klint dedup (D-008)
+        self.assertEqual(c["rendered_unique"], 956)   # +78 batch 21; -1 earlier: the same dedup
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
@@ -1535,7 +1651,7 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(len(rr.SURFACES["museum"]()), 127)   # +4: Batch 06's venues
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
-        self.assertEqual(len(rr.SURFACES["gallery"]()), 581)   # +27: E3
+        self.assertEqual(len(rr.SURFACES["gallery"]()), 659)   # +27: E3; +78: batch 21
 
 
 class TestSuppression(unittest.TestCase):
