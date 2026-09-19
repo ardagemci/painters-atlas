@@ -254,6 +254,10 @@ window.MOVEMENTS = [
     palette:["#3e3a36","#7a7264","#b8ac94","#4a5a50","#e8e2d4"],
     blurb:"The mountain as the subject — monumental landscape, five centuries early.",
     desc:"Northern Song painters made landscape the most serious thing a picture could be, and built a grammar for it: a foreground you stand in, a middle ground of mist that hides the joins, and a far peak that dwarfs everything human in the frame. Fan Kuan's travellers are four inches of a two-metre scroll. Guo Xi wrote the manual, and it is still the clearest account anyone has given of how to move a viewer's eye through a painted world." },
+  { id:"baghdad-school", name:"Baghdad School", parent:null, period:"c. 1180–1258", style:"ornament",
+    palette:["#caa43e","#c4302a","#2e6e8a","#3e3a2e","#ece2c8"],
+    blurb:"Arabic book painting before the Mongols came — the Abbasid city, drawn from life.",
+    desc:"In the last decades of the Abbasid caliphate, Iraqi workshops illustrated scientific treatises, fables and above all al-Hariri's Maqamat, the picaresque tales of a silver-tongued rogue. The pictures set plain ground lines, bold outlines and flat colour against the page and fill them with the observed city: mosques, caravans, libraries, taverns, a village with its goats. The Baghdad workshops did not survive the Mongol sack of the city in 1258." },
   { id:"mughal-painting", name:"Mughal Painting", parent:null, period:"c. 1560–1800", style:"ornament",
     palette:["#1f6e8a","#c4302a","#caa43e","#2e7a52","#e8dcc0"],
     blurb:"A workshop of hundreds, painting an empire's biography one page at a time.",
@@ -700,7 +704,15 @@ window.NATIONS = [
   { id:"korea", name:"Korea", flag:"🇰🇷", palette:["#e8e4d8","#c4302a","#2e50c4","#3e3a36","#caa45c"],
     blurb:"From Kim Hong-do's wrestling matches to Park Soo-keun's granite-textured streets — Joseon wit and modern grit." },
   { id:"iran", name:"Iran (Persia)", flag:"🇮🇷", palette:["#1f6e8a","#c4663a","#caa43e","#2e6e5a","#e8dcc0"],
-    blurb:"The Persian miniature's garden of kings and dervishes — Reza Abbasi drew its dreamers one album page at a time." }
+    blurb:"The Persian miniature's garden of kings and dervishes — Reza Abbasi drew its dreamers one album page at a time." },
+  { id:"iraq", name:"Iraq", flag:"🇮🇶", palette:["#caa43e","#2e6e5a","#c4302a","#1f4e8a","#e8dcc0"],
+    blurb:"Baghdad, 1237: al-Wasiti signed a book of rogues and filled its margins with the whole Abbasid street." },
+  { id:"bolivia", name:"Bolivia", flag:"🇧🇴", palette:["#c4302a","#caa43e","#2e6e4a","#5a3e2e","#e8dcc0"],
+    blurb:"Silver-rich Potosí paid for its churches, and Melchor Pérez de Holguín painted their gaunt, human saints." },
+  { id:"uruguay", name:"Uruguay", flag:"🇺🇾", palette:["#e8e4d8","#2e50a4","#c4302a","#caa43e","#1a1a1a"],
+    blurb:"Torres-García came home to Montevideo and turned the map upside down: our north is the south." },
+  { id:"venezuela", name:"Venezuela", flag:"🇻🇪", palette:["#caa43e","#1f4e8a","#c4302a","#e8dcc0","#3e3a36"],
+    blurb:"Arturo Michelena took a Paris Salon medal in 1887, then brought history painting home to Caracas." }
 ];
 
 /* approximate [lat, lon] anchors for the world map */
@@ -714,5 +726,6 @@ window.NATION_COORDS = {
   turkey:[39.0,35.2], denmark:[56.0,9.5], finland:[62.9,26.0], brazil:[-10.8,-52.9],
   cuba:[21.5,-79.5], china:[35.0,103.0], canada:[56.1,-106.3], armenia:[40.3,45.0],
   czechia:[49.8,15.5], hungary:[47.2,19.5], australia:[-25.3,133.8],
-  korea:[36.5,127.8], iran:[32.5,53.5]
+  korea:[36.5,127.8], iran:[32.5,53.5],
+  iraq:[33.2,43.7], bolivia:[-16.3,-63.6], uruguay:[-32.5,-55.8], venezuela:[7.1,-66.2]
 };
