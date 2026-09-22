@@ -1,0 +1,184 @@
+{
+ "id": "cimabue",
+ "name": "Cimabue",
+ "wikidata": "wd:Q15790",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Santa Trinita Maestà",
+   "y": "c. 1290–1300",
+   "work_id": "wd:Q1569622",
+   "holding": "Uffizi Gallery",
+   "image": {
+    "commons_file": "Cimabue - Maestà di Santa Trinita - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Cimabue",
+    "commons_object_name": "Polish: Tronująca Madonna z Dzieciątkiem, ośmioma aniołami i czterema prorokami Madonna and Child Enthroned with Angels ",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg/500px-Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Crucifix of Santa Croce",
+   "y": "after 1272",
+   "work_id": "wd:Q3698260",
+   "holding": "Museo dell'Opera di Santa Croce",
+   "image": {
+    "commons_file": "Cimabue 025.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Cimabue",
+    "commons_object_name": "Kreuzigung aus Santa Croce in Florenz, Zustand vor 1966",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Cimabue_025.jpg/500px-Cimabue_025.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cimabue_025.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   },
+   "y_source": {
+    "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+    "note": "The Santa Croce article dates it c. 1265; the Cimabue article places it after his documented Rome stay of about 1272. The later, documented bound is used. Quoted: \"a little later he made another Crucifix for the Florentine church of Santa Croce\"."
+   }
+  },
+  {
+   "t": "The Mocking of Christ",
+   "y": "c. 1280",
+   "work_id": "wd:Q68496636",
+   "holding": "Department of Paintings of the Louvre",
+   "image": {
+    "commons_file": "La Dérision du Christ - Cimabue - Musée du Louvre Peintures RFML.PE.2023.33.1 - après restauration.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Shonagon",
+    "commons_object_name": "La Dérision du Christ - Cimabue - Musée du Louvre Peintures RFML.PE.2023.33.1 - après restauration",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg/500px-La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9rision_du_Christ_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_RFML.PE.2023.33.1_-_apr%C3%A8s_restauration.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Maestà of the Louvre",
+   "y": "c. 1280",
+   "work_id": "wd:Q1608116",
+   "holding": "Department of Paintings of the Louvre",
+   "image": {
+    "commons_file": "La Vierge et l'Enfant en majesté entourés de six anges - Cimabue - Musée du Louvre Peintures INV 254 ; MR 159.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Cimabue",
+    "commons_object_name": "French: La Vierge et l'Enfant en majesté entourés de six anges (Maestà) The Madonna and Child in Majesty Surrounded by A",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg/500px-La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Vierge_et_l%27Enfant_en_majest%C3%A9_entour%C3%A9s_de_six_anges_-_Cimabue_-_Mus%C3%A9e_du_Louvre_Peintures_INV_254_%3B_MR_159.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born Florence, died Pisa",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"He was born in Florence and died in Pisa.\""
+  },
+  {
+   "field": "life",
+   "claim": "birth c. 1240",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"c. 1240 – 1302\""
+  },
+  {
+   "field": "life",
+   "claim": "nickname meanings",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"translates as \"ox-head\" but also possibly as \"one who crushes\""
+  },
+  {
+   "field": "life",
+   "claim": "destroyed work when criticised",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"he would immediately destroy the work, no matter how precious\""
+  },
+  {
+   "field": "career",
+   "claim": "broke from Byzantine style: proportions, shading",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"more lifelike figural proportions and a more sophisticated use of shading\""
+  },
+  {
+   "field": "career",
+   "claim": "documented in Rome c. 1272, then Santa Croce Crucifix",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"Around 1272, Cimabue is documented as being present in Rome\""
+  },
+  {
+   "field": "career",
+   "claim": "Louvre Maestà c. 1280 followed by Duccio and Giotto",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"followed subsequently by numerous artists, including Duccio di Buoninsegna\""
+  },
+  {
+   "field": "career",
+   "claim": "worked at Assisi",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"the first Franciscan pope, Cimabue worked in Assisi\""
+  },
+  {
+   "field": "career",
+   "claim": "Pisa mosaic St John sole documented surviving work",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"remains the sole surviving work documented as being by the artist\""
+  },
+  {
+   "field": "outside",
+   "claim": "Vasari: sheep drawing and fly anecdote",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"painted a fly on the nose of a portrait Cimabue was working\""
+  },
+  {
+   "field": "outside",
+   "claim": "scholars discount apprenticeship",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"Many scholars now discount Vasari's claim that he took Giotto as his\""
+  },
+  {
+   "field": "outside",
+   "claim": "Dante: fleeting fame",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"Dante laments the quick loss of public interest in Cimabue\""
+  },
+  {
+   "field": "outside",
+   "claim": "2019 kitchen find, €24m",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"The picture had been located in the kitchen of a home in\""
+  },
+  {
+   "field": "facts",
+   "claim": "no signed or securely dated works",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"none of Cimabue’s works are signed or securely dated\""
+  },
+  {
+   "field": "facts",
+   "claim": "Santa Croce crucifix flood damage",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"damaged by the 1966 Arno River flood\""
+  },
+  {
+   "field": "facts",
+   "claim": "Rucellai Madonna misattributed",
+   "source_url": "https://en.wikipedia.org/wiki/Cimabue",
+   "note": "Source: \"in the past, wrongly attributed to Cimabue\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "cimabue",
+   "to": "giotto",
+   "type": "influenced",
+   "basis": "career: 'set a type that Duccio and Giotto both followed'"
+  },
+  {
+   "from": "cimabue",
+   "to": "duccio",
+   "type": "influenced",
+   "basis": "career: 'set a type that Duccio and Giotto both followed'"
+  }
+ ]
+}

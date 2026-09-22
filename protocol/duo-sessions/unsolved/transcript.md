@@ -1,0 +1,70 @@
+# Duo transcript — task: "Improve the still unsolved issues of the website and also provide a future plan to match the vision and the ultimate goal of the website."
+
+## Facts established before round 1 (measured on this branch)
+- Pigment: zero-dependency static art atlas (plain HTML/CSS/JS, hash router, GitHub Pages). Tests `python3 -m unittest discover -s tests -q`; validator `osascript -l JavaScript tools/validate.jxa.js`. No Node in the toolchain by project rule.
+- Branch `duo/unsolved-1229` is stacked on `duo/elevate-1629` (last duo session; unmerged; green: 202 tests, validator 0). origin/main unchanged at 352b276 for two days. `duo/elevate-1629` added js/renderable.js (single isRenderable predicate shared by app.js and build_seo), tests/test_renderable.py, IFACE-001 cross-registry evidence, docs/LOOP_STUDY_PROTOCOL.md, protocol/duo-sessions/elevate/{future-steps.md,branch-assessments.md}.
+- North star (PIGMENT.md §1): "a social atlas where people discover, understand, and express their taste in art." Phases §11: 1 Atlas 2.0 → 1.5 accountless Taste prototype → 2 profiles/accounts → 3 learning → 4 community. §16: prove Discover→Admire→Map→Become is enjoyable before accounts.
+- Validator warnings: (a) deck quadrant F+D− rests on a single work — recorded product constraint (docs/BACKLOG.md:758, calm abstraction is in copyright); (b) A1: 30 notice bullets over the 12-word budget (18 at 13 words, 8 at 14, 2 at 15, 2 at 17) — "editorial, not mechanical". Stats: influence edges 259 (ungrounded 107, sourced 1); list works below tier 1: 23/107.
+- PIGMENT.md "Last updated: 2026-07-16". §15 Known Gaps lists 9; §19 Deferred-Promise Register D-1..D-7: D-1 response-adaptive onboarding deck (not implemented; buildDeck stratified upfront), D-2 museum one-hour routes (not implemented), D-3 Taste absent from primary header nav (IA decision, needs Mondrian+Matisse), D-4 Passport collections (Phase 2), D-5 uncertainty interfaces, D-6 instrumentation (owner decision; zero third-party requests today), D-7 fifth axis M not surfaced.
+- Staleness measured: §15.6 "static metadata behind the product" — index.html meta description now states "280 artists, 398 catalogued works, 127 museums and churches" (closed). §15.8 "share graphics and real SEO pages incomplete" — 820 prerendered stubs with og:image now ship, plus a painted shareable Passport PNG card. §12 snapshot says 279 artists (now 280).
+- Checked and NOT issues: generative artwork hero already sets cursor:default; Minneapolis venue photo lacks an author because it is public domain.
+- Open owner decisions from earlier sessions: RIGHTS-001 Decision C (61 procedural covers) and the credit-naming question (E-006/E-010); IFACE-001 (no-image state; window.ARTWORKS ungated — the artist page "Major works" panel renders gallery art with no status gate for 166 of 196 gallery artists, hidden only when the artist has a Tier-1 arc); validator not on the shared predicate (sealed file, owner edit); unmerged branches duo/lane-iv-and-fixes-0236 (constitution) and codex/moderna (design study).
+- Lanes (CLAUDE.md §0): Lane I protocol for changes to what Pigment is/promises; Lane II owner present, judgement; Lane III autonomous only for verifier-decided work with a granted writ. Sealed set for Lane III: tools/validate*, tools/audit_*.py, tools/lane3*, CLAUDE.md, PIGMENT.md, protocol/, .claude/.
+
+## Claude — round 1
+Most still-unsolved issues are unsolved for a reason: they're gated on an owner decision or on editorial/art-historical judgement, not on engineering. An autonomous pair shouldn't make taste decisions (adaptive deck design, Taste in the header nav, Persona names), legal ones (Decision C, credit override), or constitutional ones (validator, Lane IV). So I'd split the work:
+
+1. Fix what is objectively decidable. PIGMENT.md is the "primary orientation document," last updated 07-16, and its status sections are wrong: §15.6 lists a closed gap (index.html already states 280/398/127), §15.8 calls SEO incomplete while 820 stubs ship. Correct §12/§15/§19 with measured facts only; leave vision §1–§11 untouched. And the 30 notice bullets over the 12-word budget — 18 are one word over. Draft ≤12-word versions that keep every fact, for owner review on the branch.
+
+2. Make gated issues cheap to decide: one decision register — each open owner decision, options, cost, what it unblocks (D-1 adaptivity, D-3 nav, D-6 instrumentation, RIGHTS C/E, ARTWORKS gate, Lane IV, moderna, validator edit).
+
+3. A roadmap to the vision — Phase 1.5→2→3→4 with evidence gates and measurable exit criteria, superseding last session's future-steps.md rather than duplicating it.
+
+Not building: adaptive deck, nav changes, museum one-hour routes (truth about real works needs Vasari), ARTWORKS gating, the 107 ungrounded influence edges.
+
+## Codex — round 1
+I'd change four things. 1. D-3 is already implemented. Contrary to the transcript's baseline, index.html:59 places Taste directly inside .main-nav. Remove "decide whether to add Taste" from the proposed decision register; reconcile §19 with the implementation through Lane I. 2. "Objectively decidable" does not authorize these edits. CLAUDE.md §0 seals all of PIGMENT.md against Lane III and explicitly routes anything touching §19 through Lane I. Separate factual §12/§15 corrections, handled owner-present, from deferred-promise changes. Also, §12 is explicitly an August 27 snapshot: replace its date and provenance when refreshing counts, rather than treating historical numbers as incorrect. 3. Resolve the writing contract before shortening copy. docs/BACKLOG.md A1 already records the owner's 12-word decision. STYLE_GUIDE.md §4.4 still inherits §4.3's eight-word rules. Make that distinction explicit, then review the 30 bullets editorially. tools/validate.jxa.js deliberately warns; preserving meaning matters more than clearing warnings. 4. The roadmap should produce evidence, not another planning layer. Preserve the dated elevate/future-steps.md as session history and link a successor. Its first action remains strongest: run the existing five-session loop study, rank observed obstacles, then fix those. Five sessions identify usability problems; they do not establish enjoyment or justify accounts. Keep IFACE-001 prominent: js/app.js:2118 still renders gallery images without the catalog predicate.
+
+## Facts checked between rounds (by Claude)
+- index.html:59 `<a href="#/taste" data-nav="taste">Taste</a>` is inside `.main-nav` — PIGMENT.md §19 D-3 is stale.
+- PIGMENT.md §12 states "Snapshot taken 2026-08-27" — a dated snapshot, correct as of its date. But the file header says "Last updated: 2026-07-16", which contradicts its own §12.
+- docs/STYLE_GUIDE.md §4.4 "What to notice: 3 bullets, same rules as Look-for" → §4.3 "each ≤ 8 words". docs/BACKLOG.md:15 "A1 · RESOLVED 2026-08-17 — owner: 12 words. ARTWORK_SCHEMA §3 governs the work-level notice… §4.3's ≤8 was written for artist and movement traits and was inherited into a work-specific field by accident." So STYLE_GUIDE contradicts an owner decision already made.
+
+## Claude — round 2
+Accepted, all four. D-3 moves from "decision needed" to "drift." The Lane objection is correct and it changes what I'd build: this run should not edit PIGMENT.md at all. Instead a measured reconciliation table — claim, current fact, file:line, which lane — for the owner to apply. Drift so far: §15.6 closed, §15.8 largely shipped, §19 D-3 implemented, header date contradicting §12.
+
+Contract first is right, and here it's already decided: A1 was resolved by the owner on 08-17. Aligning STYLE_GUIDE §4.4 to ARTWORK_SCHEMA §3's 12-word rule records his decision; it makes no taste call.
+
+One sharpening on the 30 bullets: apply them on the branch rather than table them — a diff is easier to review — but each shortening must keep every fact, with a before/after table, and any bullet that cannot reach 12 words without losing meaning stays as written with the reason recorded.
+
+On IFACE-001 there's one fix that decides no new policy. The Major works panel (app.js:2118) already computes the matching catalog id (`cid`). If that catalog record is withheld, the panel must not show the gallery image of the same work. That enforces an existing catalog decision — it does not gate the 402 unmatched gallery entries — and is invisible today (the one such pair, The Snail, is on an arc artist). Proposed build: (a) STYLE_GUIDE §4.4 aligned to A1; (b) the 30 bullets, facts preserved, with table; (c) panel respects catalog withholding, behaviour-tested; (d) docs: PIGMENT reconciliation table, decision register, roadmap successor linked from future-steps.md, loop study as step one.
+
+## Codex — round 2
+The narrower IFACE-001 fix is defensible, with three implementation requirements. 1. Define "withheld" precisely. catByArtist includes all catalog records, but catFor currently retains only IDs. Retain the matched record and consult isRenderable(cw.image) rather than introducing another status check. However, that predicate also rejects missing sources: explicitly document whether the change suppresses every non-renderable catalog match or only explicit withholding. Those scopes differ. 2. Suppress the entire image interaction. At app.js:2118–2134, withheld matches must emit neither <img> nor data-lb-img/data-lb-link, while retaining the work title and catalog link. Derive "tap a work to enlarge" from actually displayed thumbnails; its current registry-presence condition becomes misleading when all matches are suppressed. Keep unmatched entries unchanged and IFACE-001 open. 3. Test the reachable panel. The Snail's real artist has an arc, so that case alone cannot exercise this branch. Use a non-arc fixture with a withheld catalog match and a populated gallery URL. Assert absent image/lightbox attributes, preserved text/link, and unchanged allowed and unmatched cases. Run through JXA/Python, consistent with the toolchain. I accept the style-contract correction and reviewed editorial diffs. "Every fact" should include uncertainty and visual specificity, not merely nouns. Finally, designate this implementation Lane II explicitly. Avoiding PIGMENT.md alone does not establish Lane III eligibility: editing protocol/.../future-steps.md also touches the sealed set. Keep roadmap gates as proposed evidence requirements, not new product promises.
+
+## Facts checked between rounds (by Claude)
+- docs/ARTWORK_SCHEMA.md §3: `status:"copyright"` is the value that "suppresses rendering". `"none"` is enforced by the validator but used by zero catalog records and is not defined as a withholding. Catalog records today: 332 pd with src, 5 licensed with src, 61 copyright without src, 0 pd/licensed without src.
+
+## Claude — round 3
+Accepted, all three requirements and the Lane point: this run is Lane II (owner-invoked; it writes protocol/ and docs/, and none of it is Lane III eligible). Roadmap gates are evidence requirements, not promises.
+
+On (1) I checked ARTWORK_SCHEMA §3 rather than guess: only "copyright" suppresses rendering; "none" is enforced but unused and undefined as withholding; a pd record without src is missing data, not a rights decision. So "withheld" = status "copyright", and using isRenderable there would wrongly hide gallery art whenever a catalog src is merely absent. To keep rules defined in one place, add a second named predicate `isWithheld(img)` to js/renderable.js, and route the existing `held` label (app.js:2197) through it.
+
+On (3), same approach as last session: extract the panel's decision into a pure function `galleryThumbFor(catalogRecord, galleryEntry)` in renderable.js, executed under JXA against a fixture matrix (withheld match → null; renderable match, missing-src match, unmatched → the gallery entry; no gallery entry → null), plus a guard that the panel calls it. That exercises the reachable branch without needing a live non-arc artist. The "tap to enlarge" hint becomes conditional on at least one displayed thumbnail.
+
+Final build: (a) STYLE_GUIDE §4.4 aligned to A1; (b) 30 bullets, every fact kept including uncertainty and visual specificity, with table; (c) the panel change + tests; (d) PIGMENT reconciliation table, decision register, roadmap succeeding future-steps.md.
+
+## Codex — round 3
+I accept `isWithheld(img)` for the explicitly bounded copyright rule. Keep `isRenderable` unchanged and update the scope comments in `js/renderable.js` and `tests/test_renderable.py`: matched gallery entries will now inherit catalog withholding; unmatched entries remain unresolved.
+
+One substantive gap remains: **testing `galleryThumbFor` plus checking that the panel calls it does not test the rendered behavior.** At `js/app.js:2118–2140`, catalog lookup, image markup, lightbox attributes, title links, and the enlargement hint are separate operations. A helper can return `null` correctly while the template still uses the original `art` or displays the unconditional hint. `tests/test_renderable.py` itself describes structural guards as supplements to behavioral tests.
+
+Execute the production panel renderer under JXA with a synthetic non-arc artist, or extract that renderer into a callable function. Assert:
+
+- A copyright match with a populated gallery URL emits no image or lightbox attributes, preserves title/catalog link, and shows no enlargement hint when alone.
+- Allowed, missing-source, and unmatched entries retain their intended behavior.
+- A mixed panel displays the hint and lightbox attributes only for eligible entries.
+
+Include copyright fixtures both with and without catalog `src`; explicitly record the intended behavior for `status:"none"`.
+
+The remaining scope is sound: apply the existing editorial contract, preserve meaning over word-count compliance, keep IFACE-001 open, and frame the roadmap as proposed evidence gates.

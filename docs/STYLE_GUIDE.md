@@ -83,7 +83,7 @@ Word budgets are targets, not laws — but a unit 2× over budget is a rewrite, 
 
 ### 4.4 Artwork page — short explanation *(new)*
 - **50–80 words.** What is happening, why it stopped traffic then, why it still does.
-- Follow with **"What to notice": 3 bullets**, same rules as Look-for but work-specific ("the dog nobody in the painting notices," "her sleeve takes more paint than her face").
+- Follow with **"What to notice": 3 bullets**, work-specific ("the dog nobody in the painting notices," "her sleeve takes more paint than her face"). Each is a thing the eye can find, like a Look-for bullet — but the budget is **≤ 12 words**, not §4.3's ≤ 8. §4.3's limit was written for *artist and movement* traits and reached this work-level field by accident; the owner resolved it on 2026-08-17 (`docs/BACKLOG.md` A1), and `docs/ARTWORK_SCHEMA.md` §3 is the governing contract. The validator reports overruns as warnings, because keeping a bullet's meaning matters more than its count.
 
 ### 4.5 Editorial lists
 - **The title is the product.** It must work as a text message. Mood-first, never taxonomic. ✅ *Paintings that look like they know your secret.* ❌ *Selected Symbolist works.*

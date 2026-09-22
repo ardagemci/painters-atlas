@@ -1,0 +1,168 @@
+{
+ "id": "simone-martini",
+ "name": "Simone Martini",
+ "wikidata": "wd:Q221043",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Annunciation with Saints Margaret and Ansanus",
+   "y": "1333",
+   "work_id": "wd:Q979440",
+   "holding": "Uffizi Gallery",
+   "image": {
+    "commons_file": "Simone Martini — Annunciation with St. Margaret and St. Ansanus.jpg",
+    "license_short_name": "CC0",
+    "commons_artist": "Gleb Simonov",
+    "commons_object_name": "Simone Martini — Annunciation with St. Margaret and St. Ansanus",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg/500px-Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Saint Louis of Toulouse Crowning Robert of Anjou",
+   "y": "1317",
+   "work_id": "wd:Q3947520",
+   "holding": "Museo di Capodimonte",
+   "image": {
+    "commons_file": "Simone Martini 013.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Simone Martini",
+    "commons_object_name": "Saint Louis of Toulouse crowns Robert of Anjou label QS:Les,\"San Luis de Tolosa coronando a Roberto de Anjou, rey de Náp",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Simone_Martini_013.jpg/500px-Simone_Martini_013.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Simone_Martini_013.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Maestà",
+   "y": "1315–21",
+   "work_id": "wd:Q3276413",
+   "holding": "Palazzo Pubblico",
+   "image": {
+    "commons_file": "Maestà di simone martini, siena palazzo pubblico 1315-1321.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Simone Martini",
+    "commons_object_name": "Maestà, Thronende Madonna als Stadtpatronin, umgeben von Heiligen, Fresko im Palazzo Pubblico in Siena",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg/500px-Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Maest%C3%A0_di_simone_martini%2C_siena_palazzo_pubblico_1315-1321.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Orsini Polyptych",
+   "y": "c. 1333",
+   "work_id": "wd:Q14790751",
+   "holding": "Department of Paintings of the Louvre; Gemäldegalerie Berlin; Royal Museum of Fine Arts Antwerp",
+   "image": {
+    "commons_file": "Orsini Polyptiek, Simone Martini, 14de eeuw, Koninklijk Museum voor Schone Kunsten Antwerpen, 257-260.jpg",
+    "license_short_name": "CC0",
+    "commons_artist": "Simone Martini",
+    "commons_object_name": "Dutch: Orsini Polyptiek Orsini Polyptych title QS:P1476,nl:\"Orsini Polyptiek \" label QS:Lnl,\"Orsini Polyptiek \" label QS",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg/500px-Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Orsini_Polyptiek%2C_Simone_Martini%2C_14de_eeuw%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_257-260.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born Siena c. 1284",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"Simone Martini (c. 1284 – July 1344) was an Italian painter born\""
+  },
+  {
+   "field": "life",
+   "claim": "little documentation survives",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"Very little documentation of Simone's life survives\""
+  },
+  {
+   "field": "life",
+   "claim": "thought Duccio's pupil; Vasari says Giotto",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"It is thought that Martini was a pupil of Duccio di Buoninsegna\""
+  },
+  {
+   "field": "life",
+   "claim": "brother-in-law Lippo Memmi",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"Martini's brother-in-law was the artist Lippo Memmi\""
+  },
+  {
+   "field": "life",
+   "claim": "moved to Avignon 1334/35, died 1344",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"having likely moved there in 1334 or 1335\""
+  },
+  {
+   "field": "career",
+   "claim": "Maestà 1315 in Palazzo Pubblico; enduring model",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"Among his first documented works is the Maestà of 1315\""
+  },
+  {
+   "field": "career",
+   "claim": "St Louis of Toulouse 1317 at king's request in Naples",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"painted during a stay in Naples at the request of the king\""
+  },
+  {
+   "field": "career",
+   "claim": "sinuous line, courtly elegance",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"sinuosity of line, and courtly elegance\""
+  },
+  {
+   "field": "career",
+   "claim": "French manuscripts and ivories via Via Francigena",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"owes much to French manuscript illumination and ivory carving\""
+  },
+  {
+   "field": "career",
+   "claim": "Uffizi Annunciation 1333",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"the Annunciation with St. Margaret and St. Ansanus at the Uffizi in\""
+  },
+  {
+   "field": "outside",
+   "claim": "friend of Petrarch; sonnets on Laura portrait",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"make reference to a portrait of Laura de Noves\""
+  },
+  {
+   "field": "outside",
+   "claim": "Avignon porch frescoes: sinopia only",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"of which only the faint sinopia outlines remain\""
+  },
+  {
+   "field": "outside",
+   "claim": "influenced International Gothic",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"greatly influenced the development of the International Gothic style\""
+  },
+  {
+   "field": "facts",
+   "claim": "Memmi's San Gimignano Maestà",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"Lippo Memmi painted a similar Maestà for the Palazzo Comunale in San\""
+  },
+  {
+   "field": "facts",
+   "claim": "died in service of papal court",
+   "source_url": "https://en.wikipedia.org/wiki/Simone_Martini",
+   "note": "Source: \"died while in the service of the Papal court at Avignon in\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "duccio",
+   "to": "simone-martini",
+   "type": "influenced",
+   "basis": "life: 'thought to have trained under Duccio'"
+  }
+ ]
+}

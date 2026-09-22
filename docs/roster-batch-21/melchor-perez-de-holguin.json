@@ -1,0 +1,228 @@
+{
+ "id": "melchor-perez-de-holguin",
+ "name": "Melchor Pérez de Holguín",
+ "wikidata": "wd:Q9031305",
+ "drafter": "codex",
+ "works": [
+  {
+   "t": "Entry of Viceroy Morcillo into Potosí",
+   "y": "1716",
+   "work_id": "wd:Q76754240",
+   "holding": "Museum of the Americas",
+   "image": {
+    "commons_file": "Entrada Virrey Arzobispo Morcillo.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Melchor Pérez de Holguín",
+    "commons_object_name": "Entrada del Virrey arzobispo Morcillo en Potosí label QS:Len,\"Entrada del Virrey arzobispo Morcillo en Potosí\" label QS:",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Entrada_Virrey_Arzobispo_Morcillo.jpg/500px-Entrada_Virrey_Arzobispo_Morcillo.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Entrada_Virrey_Arzobispo_Morcillo.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Saint Christopher",
+   "y": "c. 1710",
+   "work_id": "wd:Q104413131",
+   "holding": "Metropolitan Museum of Art",
+   "image": {
+    "commons_file": "Melchor Pérez Holguin - Saint Christopher - 2018.652.2 - Metropolitan Museum of Art.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Melchor Pérez de Holguín",
+    "commons_object_name": "Saint Christopher title QS:P1476,en:\"Saint Christopher \" label QS:Len,\"Saint Christopher \"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holguin_-_Saint_Christopher_-_2018.652.2_-_Metropolitan_Museum_of_Art.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Saint Peter of Alcántara and Saint Teresa",
+   "y": "1724",
+   "work_id": "wd:Q105611650",
+   "holding": "Hispanic Society of America",
+   "image": {
+    "commons_file": "Melchor Pérez Holguín - Saint Peter of Alcántara and Saint Teresa - A1837 - Hispanic Society of America.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Melchor Pérez de Holguín",
+    "commons_object_name": "Saint Peter of Alcántara and Saint Teresa title QS:P1476,en:\"Saint Peter of Alcántara and Saint Teresa \" label QS:Len,\"S",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Saint_Peter_of_Alc%C3%A1ntara_and_Saint_Teresa_-_A1837_-_Hispanic_Society_of_America.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Virgin of the Rosary",
+   "y": "c. 1700",
+   "work_id": "wd:Q79136024",
+   "holding": "Dallas Museum of Art",
+   "image": {
+    "commons_file": "Melchor Pérez Holguín - Virgin of the Rosary - 1994.37.3 - Dallas Museum of Art.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Melchor Pérez de Holguín",
+    "commons_object_name": "Virgin of the Rosary title QS:P1476,en:\"Virgin of the Rosary \" label QS:Len,\"Virgin of the Rosary \"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg/500px-Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Melchor_P%C3%A9rez_Holgu%C3%ADn_-_Virgin_of_the_Rosary_-_1994.37.3_-_Dallas_Museum_of_Art.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "tagline",
+   "claim": "Potosí's Golden Brush — dark tones give way to colour",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “later in his career, he used more color”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Holguín was born around 1660 in Cochabamba and made his career in Potosí, in…",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “born in Cochabamba around 1660”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Holguín was born around 1660 in Cochabamba and made his career in Potosí, in…",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Baroque artworks in Potosí”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "The dates at either end of his life remain approximate; accounts place his death…",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “his death in 1732”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "His teacher is unknown, though a 1678 contract already records an apprentice placed under…",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Se desconoce quién pudo ser su maestro”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "His teacher is unknown, though a 1678 contract already records an apprentice placed under…",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Un documento de 1678 refiere un contrato”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "He married Micaela del Castillo in Potosí in March 1695.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “se casó el 25 de marzo de 1695”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "life",
+   "claim": "Accounts also place his death around 1735",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "“Falleció hacia 1735” supplies the alternative approximate death date."
+  },
+  {
+   "field": "career",
+   "claim": "Religious orders supplied most of his commissions, with wealthy landowners also among his patrons.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Most of his paintings were done for monastic orders”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Religious orders supplied most of his commissions, with wealthy landowners also among his patrons.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “others were for wealthy landowners”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Francisco de Zurbarán and Bartolomé Esteban Murillo influenced his painting.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “painting influences included Bartolomé Esteban Murillo, Francisco de Zurbarán”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "His early pictures favour dark tones; later paintings open towards more colour.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “His earlier paintings were known for their dark tones”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "His early pictures favour dark tones; later paintings open towards more colour.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “later in his career, he used more color”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Flemish prints were another source, carried into a practice centred on Potosí and Chuquisaca.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “recibió gran influencia de los grabados flamencos y de Zurbarán”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "Flemish prints were another source, carried into a practice centred on Potosí and Chuquisaca.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “toda la obra de Pérez Holguín se realizó”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "career",
+   "claim": "He also painted the arrival of Viceroy Morcillo in Potosí in 1716.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Entrada del virrey Morcillo en Potosí (1716)”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Painting was not his only trade: he drew up plans for the church of…",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “created plans for the church of San Lorenzo de Potosí”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "After his lifetime he became known as Brocha de Oro, the Golden Brush.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “After his lifetime, he became known as the \"Brocha de Oro,\"”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The Casa Nacional de Moneda in Potosí holds a substantial group of his pictures…",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “El principal repositorio de obras de Pérez Holguín”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "The Casa Nacional de Moneda in Potosí holds a substantial group of his pictures…",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Serie de los Cuatro Evangelistas de cuerpo entero, firmada en 1724”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "outside",
+   "claim": "Its room devoted to him includes a life-size figure based on his self-portrait.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “una figura en tamaño real inspirada en su autorretrato”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "His teacher's identity is unknown.",
+   "source_url": "https://es.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “Se desconoce quién pudo ser su maestro”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "He made architectural plans for San Lorenzo in Potosí.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “created plans for the church of San Lorenzo de Potosí”; supports this sentence or its corresponding clause."
+  },
+  {
+   "field": "facts",
+   "claim": "Brocha de Oro means Golden Brush.",
+   "source_url": "https://en.wikipedia.org/wiki/Melchor_P%C3%A9rez_de_Holgu%C3%ADn",
+   "note": "Source states “\"Brocha de Oro,\" or Golden Brush”; supports this sentence or its corresponding clause."
+  }
+ ],
+ "edges": [
+  {
+   "to": "melchor-perez-de-holguin",
+   "basis": "Francisco de Zurbarán and Bartolomé Esteban Murillo influenced his painting.",
+   "from": "francisco-de-zurbaran",
+   "type": "influenced"
+  },
+  {
+   "to": "melchor-perez-de-holguin",
+   "basis": "Francisco de Zurbarán and Bartolomé Esteban Murillo influenced his painting.",
+   "from": "bartolome-murillo",
+   "type": "influenced"
+  }
+ ]
+}

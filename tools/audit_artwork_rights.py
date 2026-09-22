@@ -11,9 +11,12 @@ shipped data files actually contain, resolves each one to its Commons file,
 and records the licence Commons asserts.
 
 Scope, stated precisely:
-  * `js/catalog-{1..5}.js`  — `image:{ src, page, status }`; only `status:"pd"`
-    records are read, because `js/app.js` renders an artwork image only when
-    `w.image.status === "pd"`. A `status:"copyright"` record ships no image.
+  * `js/catalog-{1..5}.js`  — `image:{ src, page, status }`; only
+    `status:"pd"` and `status:"licensed"` records are read, because
+    `js/app.js` renders an artwork image only when `isRenderable(w.image)`
+    (RIGHTS-001 Decision A added `"licensed"` 2026-09-08 — a record whose
+    basis is a named photographer's own CC licence, not a public-domain
+    claim). A `status:"copyright"` record ships no image.
   * `js/artworks.js`        — `window.ARTWORKS[artistId][title].img`, the
     artist-page gallery registry.
 
@@ -80,7 +83,7 @@ def shipped_image_urls():
         if not os.path.exists(path):
             continue
         for src, status in CATALOG_RE.findall(read(path)):
-            if status == "pd":                     # the only status app.js renders
+            if status in ("pd", "licensed"):        # the only statuses app.js renders
                 add(src, "js/" + name)
 
     gallery = os.path.join(ROOT, "js", GALLERY_FILE)

@@ -1,0 +1,182 @@
+{
+ "id": "paolo-uccello",
+ "name": "Paolo Uccello",
+ "wikidata": "wd:Q192488",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "The Battle of San Romano",
+   "y": "c. 1438–40",
+   "work_id": "wd:Q2265370",
+   "image": {
+    "commons_file": "Uccello — the Battle of San Romano.jpg",
+    "license_short_name": "CC0",
+    "commons_artist": "Gleb Simonov",
+    "commons_object_name": "Uccello — the Battle of San Romano",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg/500px-Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   },
+   "y_source": {
+    "source_url": "https://www.nationalgallery.org.uk/paintings/paolo-uccello-the-battle-of-san-romano",
+    "note": "Wikidata's inception is 1456 (an older dating); the National Gallery, which holds the London panel, gives probably about 1438–40. Quoted: \"probably about 1438-40\"."
+   }
+  },
+  {
+   "t": "Saint George and the Dragon",
+   "y": "c. 1470",
+   "work_id": "wd:Q780466",
+   "holding": "National Gallery",
+   "image": {
+    "commons_file": "Paolo Uccello Heiliger Georg und der Drachen 1 470.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Paolo Uccello",
+    "commons_object_name": "Hl. Georg im Kampf mit dem Drachen",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg/500px-Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Paolo_Uccello_Heiliger_Georg_und_der_Drachen_1_470.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Hunt in the Forest",
+   "y": "c. 1470",
+   "work_id": "wd:Q3649296",
+   "holding": "Ashmolean Museum",
+   "image": {
+    "commons_file": "Hunt in the forest by paolo uccello.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Paolo Uccello",
+    "commons_object_name": "Italian: Caccia notturna The Hunt in the Forest title QS:P1476,it:\" Caccia notturna \" label QS:Lit,\" Caccia notturna \" l",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hunt_in_the_forest_by_paolo_uccello.jpg/500px-Hunt_in_the_forest_by_paolo_uccello.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hunt_in_the_forest_by_paolo_uccello.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Monument to Sir John Hawkwood",
+   "y": "1436",
+   "work_id": "wd:Q2604153",
+   "holding": "Florence Cathedral",
+   "image": {
+    "commons_file": "Paolo Uccello 044.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Paolo Uccello",
+    "commons_object_name": "Painted Equestrian statue Sir John Hawkwood label QS:Lde,\"Gemaltes Reiterstandbild des Sir John Hawkwood\" label QS:Len,\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Paolo_Uccello_044.jpg/500px-Paolo_Uccello_044.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Paolo_Uccello_044.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born 1397 probably Pratovecchio, barber-surgeon father",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"probably was born in 1397 in Pratovecchio\""
+  },
+  {
+   "field": "life",
+   "claim": "nickname little bird",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"His nickname Uccello (\"little bird\") came from his fondness for painting birds\""
+  },
+  {
+   "field": "life",
+   "claim": "apprenticed Ghiberti 1412–1416",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"From 1412 until 1416 he was apprenticed to the famous sculptor Lorenzo\""
+  },
+  {
+   "field": "life",
+   "claim": "friendship with Donatello",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"began his lifelong friendship with Donatello\""
+  },
+  {
+   "field": "life",
+   "claim": "married Tommasa Malifici; son Donato; daughter Antonia nun",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"Uccello was married to Tommasa Malifici\""
+  },
+  {
+   "field": "life",
+   "claim": "Vasari: daughter who knew how to draw",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"\"a daughter who knew how to draw.\"\""
+  },
+  {
+   "field": "life",
+   "claim": "died 1475",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"1397 – 10 December 1475\""
+  },
+  {
+   "field": "career",
+   "claim": "Vasari: up all night for vanishing point",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"stay up all night in his study trying to grasp\""
+  },
+  {
+   "field": "career",
+   "claim": "Santa Maria Maggiore Annunciation model",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"this work became a model for artists who wished to craft illusions\""
+  },
+  {
+   "field": "career",
+   "claim": "Late Gothic, colour and pageantry",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"emphasizing colour and pageantry rather than the classical realism\""
+  },
+  {
+   "field": "career",
+   "claim": "San Romano commemorates victory over Sienese 1432",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"commemorating the victory of the Florentine army over the Sienese in 1432\""
+  },
+  {
+   "field": "career",
+   "claim": "foreshortened in many planes",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"The extraordinarily foreshortened forms extending in many planes\""
+  },
+  {
+   "field": "career",
+   "claim": "1436 Hawkwood fresco commission",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"the commission for the monochromatic fresco of Sir John Hawkwood\""
+  },
+  {
+   "field": "outside",
+   "claim": "no school, idiosyncratic",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"His style is best described as idiosyncratic, and he left no school\""
+  },
+  {
+   "field": "outside",
+   "claim": "cheese pies and soup",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"the monotonous meals of cheese pies and cheese soup\""
+  },
+  {
+   "field": "outside",
+   "claim": "animal pictures, birds, at home",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"he kept a wide variety of pictures of animals, especially birds, at\""
+  },
+  {
+   "field": "outside",
+   "claim": "Schwob, Artaud",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"Vies imaginaires by Marcel Schwob, Uccello le poil by Antonin Artaud\""
+  },
+  {
+   "field": "facts",
+   "claim": "misnamed Sant'Egidio",
+   "source_url": "https://en.wikipedia.org/wiki/Paolo_Uccello",
+   "note": "Source: \"wrongly entitled the Battle of Sant'Egidio of 1416\""
+  }
+ ],
+ "edges": []
+}

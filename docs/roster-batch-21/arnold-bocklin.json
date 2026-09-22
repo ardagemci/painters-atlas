@@ -1,0 +1,192 @@
+{
+ "id": "arnold-bocklin",
+ "name": "Arnold Böcklin",
+ "wikidata": "wd:Q123071",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Isle of the Dead",
+   "y": "1880–86",
+   "work_id": "wd:Q669994",
+   "holding": "Alte Nationalgalerie; Berlin; Museum der bildenden Künste",
+   "image": {
+    "commons_file": "Arnold Böcklin - Die Toteninsel III (Alte Nationalgalerie, Berlin).jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arnold Böcklin",
+    "commons_object_name": "German: Die Toteninsel Isle of the Dead title QS:P1476,de:\"Die Toteninsel \" label QS:Lde,\"Die Toteninsel \" label QS:Lit,",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Self-Portrait with Death Playing the Fiddle",
+   "y": "1872",
+   "work_id": "wd:Q1523789",
+   "holding": "Alte Nationalgalerie",
+   "image": {
+    "commons_file": "Arnold Boecklin-fiedelnder Tod.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arnold Böcklin",
+    "commons_object_name": "Polish: Autoportret ze Śmiercią grającą na skrzypcach Self-Portrait with Death Playing the Fiddle title QS:P1476,pl:\"Aut",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Arnold_Boecklin-fiedelnder_Tod.jpg/500px-Arnold_Boecklin-fiedelnder_Tod.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arnold_Boecklin-fiedelnder_Tod.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "The Plague",
+   "y": "1898",
+   "work_id": "wd:Q7200559",
+   "holding": "Kunstmuseum Basel",
+   "image": {
+    "commons_file": "Arnold Böcklin - Die Pest.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arnold Böcklin",
+    "commons_object_name": "German: Die Pest The Plague title QS:P1476,de:\"Die Pest \" label QS:Lde,\"Die Pest \" label QS:Lit,\"La peste\" label QS:Lfr,",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Arnold_B%C3%B6cklin_-_Die_Pest.jpg/500px-Arnold_B%C3%B6cklin_-_Die_Pest.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Pest.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "War",
+   "y": "1896",
+   "work_id": "wd:Q1194961",
+   "holding": "Staatliche Kunstsammlungen Dresden",
+   "image": {
+    "commons_file": "Arnold Böcklin - Der Krieg.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Arnold Böcklin",
+    "commons_object_name": "German: Der Krieg The war title QS:P1476,de:\" Der Krieg \" label QS:Lde,\" Der Krieg \" label QS:Lfr,\" La Guerre \" label QS",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Arnold_B%C3%B6cklin_-_Der_Krieg.jpg/500px-Arnold_B%C3%B6cklin_-_Der_Krieg.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Der_Krieg.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born Basel 1827; father silk trade",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"Arnold Böcklin was born in Basel\""
+  },
+  {
+   "field": "life",
+   "claim": "Düsseldorf under Schirmer; Antwerp and Brussels",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"sent him to Antwerp and Brussels, where he copied the works\""
+  },
+  {
+   "field": "life",
+   "claim": "Rome 1850",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"Böcklin set out for Rome in March 1850\""
+  },
+  {
+   "field": "life",
+   "claim": "married Angela Pascucci 1853",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"he married Angela Rosa Lorenza Pascucci in 1853\""
+  },
+  {
+   "field": "life",
+   "claim": "fourteen children; deaths",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"The couple had fourteen children, but five died in childhood\""
+  },
+  {
+   "field": "life",
+   "claim": "typhoid 1859",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"He himself nearly succumbed to typhoid in 1859\""
+  },
+  {
+   "field": "life",
+   "claim": "died Fiesole 1901",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"Böcklin died on 16 January 1901 in Fiesole\""
+  },
+  {
+   "field": "career",
+   "claim": "mythological figures after Rome",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"brought allegorical and mythological figures into his compositions\""
+  },
+  {
+   "field": "career",
+   "claim": "death and mortality, classical architecture",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"often allegorically exploring death and mortality\""
+  },
+  {
+   "field": "career",
+   "claim": "Weimar professorship",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"gained him appointment as professor at the Weimar academy\""
+  },
+  {
+   "field": "career",
+   "claim": "five versions 1880–1886",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"five versions (painted 1880 to 1886) of the Isle of the Dead\""
+  },
+  {
+   "field": "career",
+   "claim": "widow's commission; dreamlike",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"a widow who wanted a painting with a dreamlike atmosphere\""
+  },
+  {
+   "field": "career",
+   "claim": "English Cemetery; daughter Maria",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"where his baby daughter Maria had been buried\""
+  },
+  {
+   "field": "outside",
+   "claim": "reputation declined after death",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"After his death in 1901 his reputation declined rapidly\""
+  },
+  {
+   "field": "outside",
+   "claim": "Greenberg 1947",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"Clement Greenberg wrote in 1947\""
+  },
+  {
+   "field": "outside",
+   "claim": "de Chirico quote",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"\"Each of Böcklin's works is a shock\"\""
+  },
+  {
+   "field": "outside",
+   "claim": "Ernst, Dalí admired; Giger homage",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"admired by Surrealist painters such as Max Ernst and Salvador Dalí\""
+  },
+  {
+   "field": "facts",
+   "claim": "Self-portrait with Death 1872",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"His Portrait of Myself, with Death playing a violin (1872)\""
+  },
+  {
+   "field": "facts",
+   "claim": "Duchamp, seriousness debated",
+   "source_url": "https://en.wikipedia.org/wiki/Arnold_B%C3%B6cklin",
+   "note": "Source: \"Whether Duchamp was serious in this assertion is still debated\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "arnold-bocklin",
+   "to": "giorgio-de-chirico",
+   "type": "influenced",
+   "basis": "outside: de Chirico quotation; source: 'a significant influence on Giorgio de Chirico'"
+  }
+ ]
+}

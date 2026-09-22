@@ -1,0 +1,181 @@
+{
+ "id": "robert-campin",
+ "name": "Robert Campin",
+ "wikidata": "wd:Q80442",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Werl Triptych",
+   "y": "1438",
+   "work_id": "wd:Q3136106",
+   "holding": "Museo del Prado",
+   "image": {
+    "commons_file": "Werl-Triptychons.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Robert Campin",
+    "commons_object_name": "Saint John the Baptist with Heinrich von Werl (left); Saint Barbara reading (right) title QS:P1476,en:\"Saint John the Ba",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Werl-Triptychons.jpg/500px-Werl-Triptychons.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Werl-Triptychons.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Nativity",
+   "y": "c. 1425",
+   "work_id": "wd:Q615851",
+   "holding": "Musée des Beaux-Arts de Dijon",
+   "image": {
+    "commons_file": "La Nativité, par Robert Campin.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Robert Campin",
+    "commons_object_name": "French: La Nativité Nativity title QS:P1476,fr:\"La Nativité \" label QS:Lfr,\"La Nativité \" label QS:Les,\"Natividad\" label",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/La_Nativit%C3%A9%2C_par_Robert_Campin.jpg/500px-La_Nativit%C3%A9%2C_par_Robert_Campin.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Nativit%C3%A9%2C_par_Robert_Campin.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of a Woman",
+   "y": "c. 1430–35",
+   "work_id": "wd:Q18508788",
+   "holding": "National Gallery, London (NG653.2)",
+   "image": {
+    "commons_file": "Robert Campin 012.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Robert Campin",
+    "commons_object_name": "French: Portrait de femme Portrait of a Woman",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Robert_Campin_012.jpg/500px-Robert_Campin_012.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Robert_Campin_012.jpg",
+    "viewed": "2026-09-19, by eye"
+   },
+   "swap_note": "Replaced Portrait of a Stout Man (Thyssen): the source's strictest core of Campin's own hand names the two London portraits of about 1430 and not the Thyssen panel."
+  },
+  {
+   "t": "Seilern Triptych",
+   "y": "c. 1425",
+   "work_id": "wd:Q18719519",
+   "holding": "Courtauld Institute of Art",
+   "image": {
+    "commons_file": "Triptych-with-the-entombment-of-christ-1822.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Robert Campin",
+    "commons_object_name": "Triptych with the Entombment of Christ label QS:Les,\"Tríptico del entierro de Cristo\" label QS:Lja,\"セイラーンの三連祭壇画\" label Q",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Triptych-with-the-entombment-of-christ-1822.jpg/500px-Triptych-with-the-entombment-of-christ-1822.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Triptych-with-the-entombment-of-christ-1822.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "Tournai 1405–06, free master of guild",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"as a free master of the guild of goldsmiths and painters\""
+  },
+  {
+   "field": "life",
+   "claim": "possibly born Valenciennes",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"he is sometimes listed as having been born in Valenciennes\""
+  },
+  {
+   "field": "life",
+   "claim": "citizenship 1410",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"In 1410, he bought full citizenship\""
+  },
+  {
+   "field": "life",
+   "claim": "houses, bonds",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"Campin owned several houses, purchased city bonds and invested in mortgages\""
+  },
+  {
+   "field": "life",
+   "claim": "1427 guild on city council",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"In 1427 he represented the guild on the city council\""
+  },
+  {
+   "field": "life",
+   "claim": "1432 affair, banishment, Margaret of Burgundy, fine",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"the penalty was reduced to a fine\""
+  },
+  {
+   "field": "life",
+   "claim": "died Tournai 1444, childless",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"The couple was childless\""
+  },
+  {
+   "field": "career",
+   "claim": "no signature or documentation",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"no works can be certainly identified as by him through a signature\""
+  },
+  {
+   "field": "career",
+   "claim": "Master of Flémalle same hand",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"It is now usually thought that both groupings are by Campin\""
+  },
+  {
+   "field": "career",
+   "claim": "with van Eyck initiated early Netherlandish",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"along with Jan van Eyck, initiated the development of early Netherlandish painting\""
+  },
+  {
+   "field": "career",
+   "claim": "realistic observation via oil paint",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"achieved through innovations in the use of oil paints\""
+  },
+  {
+   "field": "career",
+   "claim": "taught Rogier and Daret",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"Campin taught both Rogier van der Weyden\""
+  },
+  {
+   "field": "outside",
+   "claim": "leading painter 30 years",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"became that city's leading painter for 30 years\""
+  },
+  {
+   "field": "outside",
+   "claim": "met van Eyck 1427",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"they are recorded as meeting in 1427\""
+  },
+  {
+   "field": "outside",
+   "claim": "Werl 1438, wings Prado, centre lost",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"the two outer wings are in the Prado but the main panel\""
+  },
+  {
+   "field": "outside",
+   "claim": "strictest corpus: Dijon Nativity, London portraits",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"two portraits of a man and woman in London (of around 1430)\""
+  },
+  {
+   "field": "facts",
+   "claim": "Rogelet de la Pasture",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Campin",
+   "note": "Source: \"named in these early records as Rogelet de la Pasture\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "robert-campin",
+   "to": "rogier-van-der-weyden",
+   "type": "taught",
+   "basis": "career: 'His workshop trained Rogier van der Weyden'"
+  }
+ ]
+}

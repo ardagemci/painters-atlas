@@ -66,6 +66,20 @@ class CensusTest(unittest.TestCase):
         "the-laughing-cavalier", "travelers-among-mountains-and-streams",
     }
 
+    #: Records that carried `status:"pd"` at register time and no longer do —
+    #: declared by id, the same discipline as SINCE_REGISTER, for a shrink
+    #: instead of a growth. RIGHTS-001 Decision A (docs/RIGHTS_PD_TOKEN_BRIEF_
+    #: 2026-09-07.md), resolved 2026-09-08: these five borrowed "pd" while
+    #: actually resting on a named photographer's own CC licence — a real
+    #: `status` change to a new "licensed" value, not a re-sourcing (which
+    #: swaps the file and keeps `status:"pd"`, and so does not move this
+    #: count — see the-ten-largest-no-9 and triumph-of-death, neither of
+    #: which appears here).
+    REMOVED_SINCE_REGISTER = {
+        "black-fuji", "david", "pieta", "little-dancer-aged-fourteen",
+        "vahine-no-te-tiare",
+    }
+
     def test_it_finds_every_public_domain_record(self):
         """Cross-checked against a register built by a completely different
         method — rights_register.py evaluates the JS, this parses text. A
@@ -73,13 +87,17 @@ class CensusTest(unittest.TestCase):
         census, and agreeing with an independent count is what rules that out.
 
         The register is frozen at its run date, so the comparison is against
-        that count plus the records declared in SINCE_REGISTER — and the extra
-        records must be exactly those, not merely as many."""
+        that count plus the records declared in SINCE_REGISTER, minus the ones
+        declared in REMOVED_SINCE_REGISTER — and both sets must be exactly
+        those records, not merely as many."""
         frozen = json.loads(REGISTER.read_text())["summary"]["entries"]
-        self.assertEqual(len(self.pd), frozen + len(self.SINCE_REGISTER))
+        self.assertEqual(len(self.pd), frozen + len(self.SINCE_REGISTER)
+                          - len(self.REMOVED_SINCE_REGISTER))
         ids = {r["id"] for r in self.pd}
         self.assertTrue(self.SINCE_REGISTER <= ids,
                         "declared post-register records are missing from the census")
+        self.assertTrue(self.REMOVED_SINCE_REGISTER.isdisjoint(ids),
+                        "records declared removed from the pd set are still in it")
 
     def test_ids_are_artworks_not_museums(self):
         """`museum:{ id:"san-luigi-dei-francesi" }` sits between a record's id

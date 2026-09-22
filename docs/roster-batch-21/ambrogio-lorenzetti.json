@@ -1,0 +1,162 @@
+{
+ "id": "ambrogio-lorenzetti",
+ "name": "Ambrogio Lorenzetti",
+ "wikidata": "wd:Q211562",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Effects of Good Government in the City",
+   "y": "1338–39",
+   "work_id": "wd:Q2401235",
+   "holding": "Palazzo Pubblico",
+   "image": {
+    "commons_file": "Ambrogio Lorenzetti - Effects of Good Government in the city - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Ambrogio Lorenzetti",
+    "commons_object_name": "Effects of Good Government in the city title QS:P1476,en:\"Effects of Good Government in the city\" label QS:Len,\"Effects ",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_-_Effects_of_Good_Government_in_the_city_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Presentation in the Temple",
+   "y": "1342",
+   "work_id": "wd:Q3910903",
+   "holding": "Uffizi Gallery",
+   "image": {
+    "commons_file": "Ambrogio Lorenzetti - Presentazione di Gesù al tempio - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Ambrogio Lorenzetti",
+    "commons_object_name": "Italian: Presentazione di Gesù al tempio Presentation at the Temple title QS:P1476,it:\"Presentazione di Gesù al tempio \"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Annunciation",
+   "y": "1344",
+   "work_id": "wd:Q3618171",
+   "holding": "Pinacoteca Nazionale, Siena",
+   "image": {
+    "commons_file": "Ambrogio Lorenzetti Annunciation.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Gleb Simonov",
+    "commons_object_name": "Ambrogio Lorenzetti Annunciation",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ambrogio_Lorenzetti_Annunciation.jpg/500px-Ambrogio_Lorenzetti_Annunciation.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_Annunciation.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Maestà of Massa Marittima",
+   "y": "c. 1335",
+   "work_id": "wd:Q3843028",
+   "holding": "Museum of Religious Art",
+   "image": {
+    "commons_file": "Ambrogio lorenzetti, maestà di massa marittima.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Ambrogio Lorenzetti",
+    "commons_object_name": "Madonna with Angels and Saints (Maestà)",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg/500px-Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ambrogio_lorenzetti%2C_maest%C3%A0_di_massa_marittima.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born c. 1290, active c. 1317–48",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"He was active from approximately 1317 to 1348\""
+  },
+  {
+   "field": "life",
+   "claim": "elder brother Pietro, painter",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"His elder brother was the painter Pietro Lorenzetti\""
+  },
+  {
+   "field": "life",
+   "claim": "documented in Florence until 1321, returned",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"His presence in Florence was documented up until 1321\""
+  },
+  {
+   "field": "life",
+   "claim": "will 9 Aug 1348; plague",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"Both he and his brother are believed to have died of bubonic\""
+  },
+  {
+   "field": "life",
+   "claim": "Vasari: gentleman and philosopher",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"more those of a gentleman and philosopher than those of an artist\""
+  },
+  {
+   "field": "career",
+   "claim": "influence of Simone Martini, more naturalistic",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"His work, although more naturalistic, shows the influence of Simone Martini\""
+  },
+  {
+   "field": "career",
+   "claim": "perspective, physiognomy, antiquity",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"experimenting with perspective and physiognomy, and studying classical antiquity\""
+  },
+  {
+   "field": "career",
+   "claim": "Maestà 1335 maternal bond unusual",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"an intense maternal bonding scene to Maestà, which was unusual\""
+  },
+  {
+   "field": "career",
+   "claim": "Annunciation 1344 final work, linear perspective",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"contains one of the first uses of clear linear perspective\""
+  },
+  {
+   "field": "outside",
+   "claim": "Sala dei Nove, Palazzo Pubblico; the Nine governed",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"The \"Nine\" was the oligarchal assembly of guild and monetary interests\""
+  },
+  {
+   "field": "outside",
+   "claim": "encyclopedia of incidents",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"an unrivaled pictorial encyclopedia of incidents in a peaceful medieval \"borgo\"\""
+  },
+  {
+   "field": "outside",
+   "claim": "first landscape as subject since Classical period",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"the first to appear as a subject in Western art following the\""
+  },
+  {
+   "field": "facts",
+   "claim": "earliest dated work Madonna 1319",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"The earliest dated work of Lorenzetti is a Madonna and Child (1319\""
+  },
+  {
+   "field": "facts",
+   "claim": "hourglass",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrogio_Lorenzetti",
+   "note": "Source: \"The first evidence of the existence of the hourglass also may be\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "simone-martini",
+   "to": "ambrogio-lorenzetti",
+   "type": "influenced",
+   "basis": "career: 'shows the influence of Simone Martini'"
+  }
+ ]
+}

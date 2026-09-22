@@ -165,8 +165,9 @@ CAT.forEach(function(w){
     if(r === w.id) errs.push(tag + ": self-related");
     if(!catIds[r]) errs.push(tag + ": related id not in catalog: " + r);
   });
-  if(w.image && w.image.status === "pd" && (w.image.src || "").indexOf("/wikipedia/commons/") === -1)
-    errs.push(tag + ": pd image not Commons-hosted");
+  if(w.image && (w.image.status === "pd" || w.image.status === "licensed") &&
+     (w.image.src || "").indexOf("/wikipedia/commons/") === -1)
+    errs.push(tag + ": " + w.image.status + " image not Commons-hosted");
   /* The page must be the file's own Commons page, not an article about the
      painting. An en.wikipedia.org article carries no licence statement at all,
      so a record citing one asserts a public-domain basis it cannot show —
@@ -181,12 +182,19 @@ CAT.forEach(function(w){
     const n = noticeWords(line);
     if(n > NOTICE_MAX) noticeOver.push(w.id + " (" + n + " words): " + String(line).slice(0, 52));
   });
-  if(w.image && w.image.status === "pd" &&
+  if(w.image && (w.image.status === "pd" || w.image.status === "licensed") &&
      !/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(w.image.page || ""))
     errs.push(tag + ": image.page is not a Commons file page (" +
       String(w.image.page || "missing").slice(0, 70) + ")");
-  if(w.image && ["pd","copyright","none"].indexOf(w.image.status) === -1)
+  if(w.image && ["pd","licensed","copyright","none"].indexOf(w.image.status) === -1)
     errs.push(tag + ": bad image status " + w.image.status);
+  /* "licensed" renders on the strength of a named photographer's own CC
+     licence, not a public-domain claim — the credit tests/test_rights_
+     tooling.py checks for "pd" records is not optional here, it is the
+     licence's own condition. A licensed record with no rendered credit is a
+     licence violation waiting to be found, not a missing nicety. */
+  if(w.image && w.image.status === "licensed" && !w.image.page)
+    errs.push(tag + ": licensed image has no source page to credit from");
   if(w.tier === 1){
     const c = w.coords || {};
     ["F","D","E","C","M"].forEach(function(k){
@@ -210,7 +218,7 @@ CAT.forEach(function(w){
 // Painting of the Day must always have a deep, displayable pool.
 const DAILY = CAT.filter(function(w){
   return w.tier === 1 && w.description && w.notice && w.notice.length &&
-    w.image && w.image.status === "pd" && w.image.src && aIdsMap[w.artistId];
+    w.image && (w.image.status === "pd" || w.image.status === "licensed") && w.image.src && aIdsMap[w.artistId];
 });
 if(DAILY.length < 30) errs.push("daily pool too small: " + DAILY.length + " (needs at least 30)");
 DAILY.forEach(function(w){
@@ -331,7 +339,8 @@ if(LST.length && LST.filter(function(l){ return l.featured; }).length < 3)
    failing the build would block on a condition no data edit can clear. */
 (function(){
   const deck = CAT.filter(function(w){
-    return w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src;
+    return w.tier === 1 && w.coords && w.image &&
+      (w.image.status === "pd" || w.image.status === "licensed") && w.image.src;
   });
   [["F+D+",1,1],["F+D-",1,-1],["F-D+",-1,1],["F-D-",-1,-1]].forEach(function(q){
     const name = q[0], sf = q[1], sd = q[2];
@@ -422,7 +431,8 @@ if((window.TASTE_TONES || []).length < 16) errs.push("taste tones: need at least
 (window.TASTE_TONES || []).forEach(function(t){
   if(!/^#[0-9a-f]{6}$/i.test(t.hex || "")) errs.push("tone " + t.id + ": bad hex");
 });
-const POOL = CAT.filter(function(w){ return w.tier === 1 && w.coords && w.image && w.image.status === "pd" && w.image.src; });
+const POOL = CAT.filter(function(w){ return w.tier === 1 && w.coords && w.image &&
+  (w.image.status === "pd" || w.image.status === "licensed") && w.image.src; });
 const NONEU = { japan:1, usa:1, mexico:1 };
 if(POOL.filter(function(w){ return w.coords.F >= 30; }).length < 3) errs.push("deck pool: needs >=3 works with F>=+30");
 if(POOL.filter(function(w){ return NONEU[w.nation]; }).length < 2) errs.push("deck pool: needs >=2 non-European works");

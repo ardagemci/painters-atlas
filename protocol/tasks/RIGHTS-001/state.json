@@ -85,6 +85,25 @@
       },
       "sequence": 4,
       "type": "state_reconciled"
+    },
+    {
+      "at": "2026-09-08T00:00:00Z",
+      "detail": {
+        "authorised_by": "owner presence; decision-record D-011 (amends D-007)",
+        "deliberation": "Lane IV session (Opus 5 + Astra 6) verified the pd-token brief's citations before the owner decided; see protocol/duo-sessions/rights-pd-token/ and docs/RIGHTS_PD_TOKEN_BRIEF_2026-09-07.md",
+        "not_changed": "Decisions A2/A3/A4 untouched; the-ten-largest-no-9 and triumph-of-death untouched (already resolved); js/artworks.js's registry-level gating (E-007) untouched — a separate, larger fix",
+        "produced": [
+          "docs/ARTWORK_SCHEMA.md status enum corrected (E-009)",
+          "tools/validate.jxa.js: licensed accepted, Commons-integrity checks widened",
+          "js/app.js: isRenderable() helper, 13 call sites bundling render+credit (E-008)",
+          "tools/build_seo.jxa.js, tools/audit_artwork_rights.py, tools/asset_inventory.py, tools/rights_register.py widened to match",
+          "5 records (black-fuji, david, pieta, little-dancer-aged-fourteen, vahine-no-te-tiare) moved pd -> licensed",
+          "tests/test_rights_tooling.py::TestPdTokenAccuracy ratchet tightened 5 -> 0, proved non-vacuous",
+          "tests/test_image_pages.py REMOVED_SINCE_REGISTER declared"
+        ]
+      },
+      "sequence": 5,
+      "type": "lane_ii_execution"
     }
   ],
   "human_decision": null,
@@ -98,7 +117,7 @@
   "provider_calls": 0,
   "round": 2,
   "task_id": "RIGHTS-001",
-  "updated_at": "2026-09-01T23:38:18Z",
+  "updated_at": "2026-09-08T00:00:00Z",
   "version": 1,
   "workflow_state": "awaiting_build_approval"
 }

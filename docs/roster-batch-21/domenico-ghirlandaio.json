@@ -1,0 +1,168 @@
+{
+ "id": "domenico-ghirlandaio",
+ "name": "Domenico Ghirlandaio",
+ "wikidata": "wd:Q191423",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "An Old Man and His Grandson",
+   "y": "c. 1490",
+   "work_id": "wd:Q23915",
+   "holding": "Department of Paintings of the Louvre",
+   "image": {
+    "commons_file": "Ghirlandaio, Domenico - An Old Man and His Grandson - Louvre - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Domenico Ghirlandaio",
+    "commons_object_name": "An Old Man and his Grandson title QS:P1476,en:\"An Old Man and his Grandson \" label QS:Len,\"An Old Man and his Grandson \"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg/500px-Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Portrait of Giovanna Tornabuoni",
+   "y": "1488",
+   "work_id": "wd:Q2623789",
+   "holding": "Thyssen-Bornemisza Museum",
+   "image": {
+    "commons_file": "Domenico Ghirlandaio, 1489-1490 - Portrait of Giovanna Tornabuoni - Google Art Project.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Domenico Ghirlandaio",
+    "commons_object_name": "Portrait of Giovanna Tornabuoni label QS:Lit,\"Ritratto di Giovanna Tornabuoni\" label QS:Lfr,\"Portrait de Giovanna Tornab",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg/500px-Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Domenico_Ghirlandaio%2C_1489-1490_-_Portrait_of_Giovanna_Tornabuoni_-_Google_Art_Project.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Calling of the First Apostles",
+   "y": "1481",
+   "work_id": "wd:Q16170348",
+   "holding": "Sistine Chapel",
+   "image": {
+    "commons_file": "Ghirlandaio, Domenico - Calling of the Apostles - 1481.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Domenico Ghirlandaio",
+    "commons_object_name": "\"Calling of the First Apostles\"; also \"Calling of the Apostles\"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg/500px-Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ghirlandaio%2C_Domenico_-_Calling_of_the_Apostles_-_1481.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Adoration of the Magi",
+   "y": "1485–88",
+   "work_id": "wd:Q3201479",
+   "holding": "Museo degli Innocenti",
+   "image": {
+    "commons_file": "Adoration of the Magi Spedale degli Innocenti.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Domenico Ghirlandaio",
+    "commons_object_name": "Adoration of the Magi",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg/500px-Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_Magi_Spedale_degli_Innocenti.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born Florence 1448",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"2 June 1448 – 11 January 1494\""
+  },
+  {
+   "field": "life",
+   "claim": "garland-maker nickname from father's headdresses",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"The nickname \"Il Ghirlandaio\" (garland-maker) came to Domenico from his father\""
+  },
+  {
+   "field": "life",
+   "claim": "Vasari: captured likeness of passers-by",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"he immediately captured their likeness\""
+  },
+  {
+   "field": "life",
+   "claim": "apprenticed to Baldovinetti",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"He was eventually apprenticed to Alesso Baldovinetti\""
+  },
+  {
+   "field": "life",
+   "claim": "workshop with brothers Davide and Benedetto",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"included his brothers Davide Ghirlandaio and Benedetto Ghirlandaio\""
+  },
+  {
+   "field": "life",
+   "claim": "died Jan 1494 in 45th year",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"died in early January of his forty-fifth year\""
+  },
+  {
+   "field": "career",
+   "claim": "Sistine Chapel 1481, Vocation of the Apostles",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"In 1481, Ghirlandaio was summoned to Rome by Pope Sixtus IV\""
+  },
+  {
+   "field": "career",
+   "claim": "Sassetti Chapel for Medici bank director",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"the powerful director of the Medici bank\""
+  },
+  {
+   "field": "career",
+   "claim": "Tornabuoni Chapel 1485–1490",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"painted in four courses around the three walls between 1485 and 1490\""
+  },
+  {
+   "field": "career",
+   "claim": "contemporary life within religious narrative",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"portraits of contemporary people within the context of religious narratives\""
+  },
+  {
+   "field": "career",
+   "claim": "Medici Academy portraits",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"there are portraits of members of the Medici Academy\""
+  },
+  {
+   "field": "outside",
+   "claim": "Michelangelo apprentice",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"Many apprentices passed through Ghirlandaio's workshop, including Michelangelo\""
+  },
+  {
+   "field": "outside",
+   "claim": "Giovanna Tornabuoni 1488",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"his profile portrait of Giovanna Tornabuoni, commissioned in 1488\""
+  },
+  {
+   "field": "outside",
+   "claim": "Old Man and Grandson tenderness",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"remarkable for both the tenderness of expression\""
+  },
+  {
+   "field": "outside",
+   "claim": "1484 Milanese agent quote",
+   "source_url": "https://en.wikipedia.org/wiki/Domenico_Ghirlandaio",
+   "note": "Source: \"a good painter on panel and better in mural fresco\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "domenico-ghirlandaio",
+   "to": "michelangelo",
+   "type": "taught",
+   "basis": "outside/facts: 'Michelangelo trained in his workshop'"
+  }
+ ]
+}

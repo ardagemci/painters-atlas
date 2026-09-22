@@ -1,0 +1,186 @@
+{
+ "id": "filippo-lippi",
+ "name": "Filippo Lippi",
+ "wikidata": "wd:Q205148",
+ "drafter": "claude",
+ "works": [
+  {
+   "t": "Madonna and Child with Two Angels",
+   "y": "c. 1460–65",
+   "work_id": "wd:Q1055111",
+   "holding": "Uffizi Gallery",
+   "image": {
+    "commons_file": "Madonna and Child with two Angels (by Filippo Lippi) – Galleria degli Uffizi, Florence.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Filippo Lippi",
+    "commons_object_name": "Italian: Madonna col Bambino e due angeli Madonna and Child title QS:P1476,it:\"Madonna col Bambino e due angeli \" label ",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg/500px-Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Madonna_and_Child_with_two_Angels_%28by_Filippo_Lippi%29_%E2%80%93_Galleria_degli_Uffizi%2C_Florence.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Adoration in the Forest",
+   "y": "c. 1459",
+   "work_id": "wd:Q291189",
+   "holding": "Gemäldegalerie Berlin",
+   "image": {
+    "commons_file": "Maria, das Kind verehrend, mit dem Johannesknaben und dem Heiligen Bernhard - Die Anbetung im Walde, Die Anbetung im Walde - Gemäldegalerie Berlin - 5223451.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Filippo Lippi",
+    "commons_object_name": "The Adoration in the Forest title QS:P1476,en:\"The Adoration in the Forest \" label QS:Len,\"The Adoration in the Forest \"",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Maria%2C_das_Kind_verehrend%2C_mit_dem_Johannesknaben_und_dem_Heiligen_Bernhard_-_Die_Anbetung_im_Walde%2C_Die_Anbetung_im_Walde_-_Gem%C3%A4ldegalerie_Berlin_-_5223451.jpg/500px-thumbnail.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Maria%2C_das_Kind_verehrend%2C_mit_dem_Johannesknaben_und_dem_Heiligen_Bernhard_-_Die_Anbetung_im_Walde%2C_Die_Anbetung_im_Walde_-_Gem%C3%A4ldegalerie_Berlin_-_5223451.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Coronation of the Virgin",
+   "y": "1439–47",
+   "work_id": "wd:Q3797764",
+   "holding": "Uffizi Gallery",
+   "image": {
+    "commons_file": "Fra Filippo Lippi 007.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Filippo Lippi",
+    "commons_object_name": "Coronation of the Virgin label QS:Les,\"Coronación de la Virgen\" label QS:Lfr,\"Le Couronnement de la Vierge\" label QS:Lde",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Fra_Filippo_Lippi_007.jpg/500px-Fra_Filippo_Lippi_007.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Fra_Filippo_Lippi_007.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  },
+  {
+   "t": "Barbadori Altarpiece",
+   "y": "1437–38",
+   "work_id": "wd:Q3889196",
+   "holding": "Department of Paintings of the Louvre; Uffizi Gallery",
+   "image": {
+    "commons_file": "Pala Barbadori - Fra Filippo Lippi - Musée du Louvre Peintures INV 339.jpg",
+    "license_short_name": "Public domain",
+    "commons_artist": "Filippo Lippi",
+    "commons_object_name": "French: La Vierge et l'Enfant entourés d'anges, de saint Frediano et de saint Augustin, dit Pala Barbadori Madonna and C",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg/500px-Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pala_Barbadori_-_Fra_Filippo_Lippi_-_Mus%C3%A9e_du_Louvre_Peintures_INV_339.jpg",
+    "viewed": "2026-09-19, by eye, on a contact sheet"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "field": "life",
+   "claim": "born Florence 1406, butcher's son",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"Lippi was born in Florence in 1406 to Tommaso, a butcher\""
+  },
+  {
+   "field": "life",
+   "claim": "orphaned at two; convent at eight",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"He was orphaned when he was two years old\""
+  },
+  {
+   "field": "life",
+   "claim": "vows at sixteen; ordained c. 1425",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"He was ordained as a priest in approximately 1425\""
+  },
+  {
+   "field": "life",
+   "claim": "left monastery 1432, not released",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"In 1432, Filippo Lippi quit the monastery, although he was not released\""
+  },
+  {
+   "field": "life",
+   "claim": "Prato 1458, Lucrezia Buti, boarder or novice",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"Lucrezia Buti, a beautiful boarder or novice of the Order\""
+  },
+  {
+   "field": "life",
+   "claim": "son Filippino a painter",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"their son Filippino Lippi in 1457, who became a famous painter\""
+  },
+  {
+   "field": "life",
+   "claim": "died Spoleto 1469",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"Lippi died in Spoleto, on or about 8 October 1469\""
+  },
+  {
+   "field": "career",
+   "claim": "Masaccio's spirit (Vasari)",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"many said that the spirit of Masaccio had entered into Fra Filippo\""
+  },
+  {
+   "field": "career",
+   "claim": "Medici support, popular",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"his paintings had become popular, warranting the support of the Medici family\""
+  },
+  {
+   "field": "career",
+   "claim": "taught Botticelli",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"Sandro Botticelli and Francesco di Pesello (called Pesellino) were among\""
+  },
+  {
+   "field": "career",
+   "claim": "Prato and Spoleto frescoes",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"The close of Lippi's life was spent at Spoleto\""
+  },
+  {
+   "field": "outside",
+   "claim": "pirates story; 'nothing but a romance'",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"assuredly nothing but a romance\""
+  },
+  {
+   "field": "outside",
+   "claim": "Cosimo imprisoned him; rope of sheets",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"the painter escaped by a rope made of his sheets\""
+  },
+  {
+   "field": "outside",
+   "claim": "Browning's poem 1855",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"celebrated in Robert Browning's poem \"Fra Lippo Lippi\" (1855)\""
+  },
+  {
+   "field": "facts",
+   "claim": "Lucrezia model for Madonnas",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"Lucrezia is thought to be the model for many of Filippo Lippi's\""
+  },
+  {
+   "field": "facts",
+   "claim": "poorest friar 1439",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"he describes himself as the poorest friar of Florence\""
+  },
+  {
+   "field": "facts",
+   "claim": "death disputed, poison story",
+   "source_url": "https://en.wikipedia.org/wiki/Filippo_Lippi",
+   "note": "Source: \"The mode of his death is a matter of dispute\""
+  }
+ ],
+ "edges": [
+  {
+   "from": "masaccio",
+   "to": "filippo-lippi",
+   "type": "influenced",
+   "basis": "career: 'Masaccio's spirit had entered him'"
+  },
+  {
+   "from": "filippo-lippi",
+   "to": "sandro-botticelli",
+   "type": "taught",
+   "basis": "career: 'his workshop trained Sandro Botticelli'"
+  }
+ ]
+}
