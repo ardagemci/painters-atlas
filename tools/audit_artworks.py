@@ -123,7 +123,16 @@ OVERRIDES = {
 
 # artist-id::work-title -> exact Commons file, hand-curated; never re-searched
 PINNED = {
-    "michelangelo::Sistine Chapel Ceiling": "Sistine Chapel ceiling 02 (brightened).jpg",
+    # Hand-corrected 2026-09-23 (owner present). The pin named "Sistine Chapel
+    # ceiling 02 (brightened).jpg" while the gallery served this file, so the
+    # pin described no shipped image and a re-resolution run would have swapped
+    # one in unasked. The brightened file is a 2014 in-situ photograph of the
+    # chapel interior: the ceiling recedes in perspective, the side walls carry
+    # other painters' frescoes, and its lower half is The Last Judgment — this
+    # artist's sibling record below. This file is a rectified reproduction of
+    # the vault alone. Chosen on subject, not on rights: the two Commons pages
+    # assert different bases and this reaches no legal conclusion (OD-5, AC12).
+    "michelangelo::Sistine Chapel Ceiling": "Sistine ceiling.jpg",
     "michelangelo::The Last Judgment": "Last Judgement (Michelangelo).jpg",
     "claude-monet::Water Lilies (Grandes Décorations)": "Claude Monet - The Water Lilies - Setting Sun - Google Art Project.jpg",
     "jan-van-eyck::Man in a Red Turban": "Jan van Eyck - Portrait of a Man (Self Portrait?) 1433.jpg",
