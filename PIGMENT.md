@@ -1,6 +1,6 @@
 # Pigment: Product Vision and Builder Context
 
-Last updated: 2026-07-16
+Last updated: 2026-09-23 (§12 counts; see the snapshot line there for scope)
 
 This is the primary orientation document for humans and language models working on Pigment. It explains what the product is trying to become, what already exists, which decisions are durable, and which ideas are still provisional.
 
@@ -364,23 +364,24 @@ stale the moment someone adds a painter, so treat any figure here as
 "true on the date stamped below, and nowhere else." The validator is the only
 current source: `osascript -l JavaScript tools/validate.jxa.js`.
 
-**Snapshot taken 2026-08-27** on branch `main`, from validator output (the
-previous snapshot was dated 2026-07-25 and had drifted by up to 81 records —
-the catalogue nearly doubled underneath it):
+**Snapshot taken 2026-09-23** on branch `main`, from validator output. The
+previous snapshot was dated 2026-08-27; batch 21 (`docs/ROSTER_BATCH_21.md`)
+then added twenty painters, four nations and one movement, and the twenty-two
+influence edges their own prose attests:
 
-- 279 artists
+- 300 artists
 - 398 canonical artworks
 - 127 Tier 1 artworks
 - 36 Tier 1 exhibition artist profiles, all with career arcs
-- 85 movements
+- 86 movements
 - 40 techniques
 - 10 eras, from before 1200 to today
-- 38 nations
+- 42 nations
 - 137 registered venues
 - 127 museum notes/pages represented in the current museum index
 - 15 editorial lists (5 featured)
 - 15 provisional Personas
-- 258 influence relationships (107 ungrounded, against a ratchet of 107)
+- 281 influence relationships (107 ungrounded, against a ratchet of 107)
 - 27 generative painter styles
 - 120 eligible Painting-of-the-Day works
 
