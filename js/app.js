@@ -973,7 +973,21 @@ function treeView(list, type){
 /* ---------- the grand timeline ---------- */
 let tlZoom = 6;                                            /* pixels per year */
 let tlLegendAll = false;                                   /* legend collapsed to top 14 by default */
-const TL_Y0 = 1240;
+/* The axis starts at the earliest painter in the atlas, read from the data. It
+   was the constant 1240 until 2026-09-27, and so drew every painter born before
+   it off the left edge: Fan Kuan and Guo Xi were entirely invisible and al-Wasiti
+   a six-pixel sliver, while the page promised "every painter in the atlas" — and
+   the "Before" and "13th" jump buttons pointed at negative offsets and did
+   nothing. A constant cannot keep up with a roster; the data can. */
+const TL_Y0 = Math.floor((Math.min(...A.map(a => a.born)) - 20) / 50) * 50;
+/* Where the timeline opens. Before about 1230 the atlas holds only two Song
+   painters, so opening at TL_Y0 would start a phone on several screens of
+   near-empty decades. They are one scroll left, or one tap of "Before", away. */
+const TL_OPEN = 1230;
+function tlOpen(){
+  const w = document.getElementById("tl2");
+  if(w) w.scrollLeft = Math.max(0, (TL_OPEN - TL_Y0) * tlZoom);
+}
 
 function vivid(P){                                         /* pick the punchiest palette colour */
   let best = P[0], bs = -Infinity;
@@ -1062,7 +1076,7 @@ function viewTimeline(){
   const H = TOP + laneEnds.length * LANE + BOT;
 
   let grid = "";
-  for(let y = 1300; y <= 2000; y += 50){
+  for(let y = Math.floor(TL_Y0 / 50) * 50 + 50; y <= 2000; y += 50){
     const x = (y - TL_Y0) * pxy, cent = y % 100 === 0;
     grid += `<div class="tl2-grid ${cent ? "c" : ""}" style="left:${x}px"></div>`;
     if(cent) grid += `<div class="tl2-year t" style="left:${x}px">${y}</div><div class="tl2-year b" style="left:${x}px">${y}</div>`;
@@ -2637,6 +2651,7 @@ function route(){
   window.scrollTo(0, 0);
   de.style.scrollBehavior = "";
   paintAll(app);
+  if(nav && page === "timeline") tlOpen();  /* a fresh visit opens at TL_OPEN; zoom and legend keep their own scroll */
   mapDecollide();                          /* the world map, if this route carries one */
   animateCounters();
   setNav(page);

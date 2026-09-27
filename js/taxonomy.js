@@ -722,7 +722,7 @@ window.NATION_COORDS = {
   britain:[53.0,-1.5], greece:[39.0,22.0], norway:[61.0,9.0], sweden:[62.0,15.0],
   poland:[52.1,19.4], russia:[56.0,38.0], ukraine:[49.0,31.5], belarus:[53.7,27.9],
   japan:[36.2,138.2], mexico:[23.6,-102.5], usa:[39.8,-98.5], colombia:[4.6,-74.1],
-  india:[22.0,79.0], nigeria:[9.1,8.7], "south-africa":[-29.0,24.0], ethiopia:[9.1,40.5],
+  india:[22.0,79.0], indonesia:[-2.5,118.0], nigeria:[9.1,8.7], "south-africa":[-29.0,24.0], ethiopia:[9.1,40.5],
   turkey:[39.0,35.2], denmark:[56.0,9.5], finland:[62.9,26.0], brazil:[-10.8,-52.9],
   cuba:[21.5,-79.5], china:[35.0,103.0], canada:[56.1,-106.3], armenia:[40.3,45.0],
   czechia:[49.8,15.5], hungary:[47.2,19.5], australia:[-25.3,133.8],
