@@ -1108,7 +1108,7 @@ function viewTimeline(){
 
   return `
   <div class="page-head">
-    <div class="page-kicker">Eight centuries at a glance</div>
+    <div class="page-kicker">A thousand years at a glance</div>
     <h1 class="display">The grand timeline</h1>
     <p class="page-lede">Every painter in the atlas as a lifespan, coloured by movement. Picasso overlaps both Monet and Basquiat — see for yourself. Click any bar to visit; click a movement to isolate its painters.</p>
   </div>
@@ -1674,13 +1674,13 @@ function viewExplore(){
   <div class="page-head">
     <div class="page-kicker">The big pictures</div>
     <h1 class="display">Explore</h1>
-    <p class="page-lede">Four instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
+    <p class="page-lede">Four instruments for seeing the whole atlas at once — a thousand years laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
   </div>
   <div class="entry-cards">
     <a class="entry-card" href="#/timeline" style="--ec:var(--gold2)">
       <div class="ec-kicker">Time</div>
       <h3>The grand timeline</h3>
-      <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Giotto to Banksy and watch the centuries hand each other the brush.</p>
+      <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Fan Kuan to Banksy and watch the centuries hand each other the brush.</p>
       <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/influences" style="--ec:var(--teal)">
@@ -1877,7 +1877,7 @@ function viewHome(){
     <div class="home-hero-content">
       <div class="kicker">Pigment · a taste atlas of painting</div>
       <h1 class="home-title">Find your place in the history of art.</h1>
-      <p class="lede">Eight centuries of painters, the masterpieces between them, and every connection that made them. Explore the atlas, admire what speaks to you — and begin your map of taste.</p>
+      <p class="lede">A thousand years of painters, the masterpieces between them, and every connection that made them. Explore the atlas, admire what speaks to you — and begin your map of taste.</p>
       <p class="footer-note" style="margin-top:18px">Tonight's cover: mixed after <a href="#/artist/${muse.id}">${esc(muse.name)}</a></p>
     </div>
   </header>
@@ -1900,7 +1900,7 @@ function viewHome(){
     <a class="entry-card" href="#/explore" style="--ec:var(--wine)">
       <div class="ec-kicker">Wander</div>
       <h3>Explore the atlas</h3>
-      <p>Eight centuries on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
+      <p>A thousand years on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
       <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
   </div>
@@ -1946,7 +1946,7 @@ function viewHome(){
   </section>
 
   <div class="stats-row">
-    ${[[A.length,"Painters","artists"],[M.length,"Movements","movements"],[T.length,"Techniques","techniques"],[E.length,"Centuries","eras"],[N.length,"Nations","nations"]]
+    ${[[A.length,"Painters","artists"],[M.length,"Movements","movements"],[T.length,"Techniques","techniques"],[E.length,"Eras","eras"],[N.length,"Nations","nations"]]
       .map(([n,l,href]) => `<a class="stat" href="#/${href}"><div class="num" data-count="${n}">0</div><div class="lbl">${l}</div></a>`).join("")}
   </div>
 
@@ -2322,8 +2322,8 @@ function viewEras(){
   return `
   <div class="page-head">
     <div class="page-kicker">Time</div>
-    <h1 class="display">Eight centuries of painting</h1>
-    <p class="page-lede">From Giotto's Padua chapel to the studio livestream — each era gathers its painters, and every painter links onward.</p>
+    <h1 class="display">A thousand years of painting</h1>
+    <p class="page-lede">From Fan Kuan's mountain scroll to the studio livestream — each era gathers its painters, and every painter links onward.</p>
   </div>
   <div class="cards wide">
     ${E.map(e => {
@@ -3546,7 +3546,7 @@ function viewPalette(){
     <div class="ob-wrap">
       <div class="page-kicker">Onboarding · under four minutes</div>
       <h1 class="display">Find your palette.</h1>
-      <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among eight centuries of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
+      <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among a thousand years of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
       <button class="aw-btn primary ob-cta" data-tsx="start">Begin ${ARR}</button>
       ${getPassport() && getPassport().milestones && getPassport().milestones.onboarded
         ? `<a class="chip-label" style="display:block;margin-top:14px" href="#/taste">or return to your taste page ${ARR}</a>` : ""}
