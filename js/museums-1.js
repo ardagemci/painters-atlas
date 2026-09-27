@@ -680,5 +680,17 @@ window.MUSEUM_NOTES = {
 "museo-civico-sansepolcro": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Museo_civico_sansepolcro.jpg/960px-Museo_civico_sansepolcro.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Museo_civico_sansepolcro.jpg" },
-  hook: "A town hall that kept its Resurrection" }
+  hook: "A town hall that kept its Resurrection" },
+"leeum-museum": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Leeum,_Samsung_Museum_of_Art.jpg" },
+  hook: "Three architects, three buildings, one hill above Seoul" },
+"sannomaru-shozokan": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Sannomaru_Shozokan_20231103a1.jpg/960px-Sannomaru_Shozokan_20231103a1.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Sannomaru_Shozokan_20231103a1.jpg" },
+  hook: "The emperor's own collection, handed to the nation" },
+"ngv": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg/960px-Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg" },
+  hook: "Bluestone, a water wall, and a ceiling made of glass" }
 };

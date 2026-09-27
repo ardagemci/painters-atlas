@@ -156,5 +156,7 @@ window.VENUES = [
   { id:"national-museum-korea", name:"National Museum of Korea", city:"Seoul", country:"South Korea", type:"museum" },
   { id:"santa-maria-novella", name:"Basilica di Santa Maria Novella", city:"Florence", country:"Italy", type:"church" },
   { id:"tokyo-national-museum", name:"Tokyo National Museum", city:"Tokyo", country:"Japan", type:"museum" },
-  { id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami", country:"Japan", type:"museum" }
+  { id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami", country:"Japan", type:"museum" },
+  { id:"leeum-museum", name:"Leeum Museum of Art", city:"Seoul", country:"South Korea", type:"museum" },
+  { id:"sannomaru-shozokan", name:"Museum of the Imperial Collections", city:"Tokyo", country:"Japan", type:"museum" }
 ];

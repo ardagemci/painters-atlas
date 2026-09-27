@@ -7,9 +7,9 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 128
-     entries, 109 of which carry a licence requiring attribution; the
-     other 19 carry a Commons public-domain or CC0 assertion instead,
+     (js/venues.js). One entry per photograph in js/museums-1.js. 131
+     entries, 111 of which carry a licence requiring attribution; the
+     other 20 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
@@ -77,6 +77,7 @@ window.PHOTO_CREDITS = {
 "kunstmuseum-basel": { author:"Wladyslaw Sojka", license:"FAL", licenseUrl:"http://artlibre.org/licence/lal/en", page:"https://commons.wikimedia.org/wiki/File:Basel_-_2017_-_Kunstmuseum_Basel_-_Neubau.jpg", required:true },
 "kunstmuseum-den-haag": { author:"Choinowski", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Kunstmuseum_Den_Haag.jpg", required:true },
 "lazaro-galdiano": { author:"Luis García (Zaqarbal)", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Museo_L%C3%A1zaro_Galdiano_(Madrid)_02.jpg", required:true },
+"leeum-museum": { author:"takato marui", license:"CC BY-SA 2.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/2.0", page:"https://commons.wikimedia.org/wiki/File:Leeum,_Samsung_Museum_of_Art.jpg", required:true },
 "leopold-museum": { author:"Gugerell", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_07_Leopold_Museum_a.jpg" },
 "louvre": { author:"Benh LIEU SONG (Flickr)", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg", required:true },
 "mak-vienna": { author:"Gugerell", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Wien_01_Museum_f%C3%BCr_angewandte_Kunst_a.jpg" },
@@ -113,6 +114,7 @@ window.PHOTO_CREDITS = {
 "national-portrait-gallery-london": { author:"Grahamrob", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:National_Portrait_Gallery,_north_front.JPG", required:true },
 "neue-galerie": { author:"Gryffindor", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:1048_5th_Avenue_001.JPG", required:true },
 "ngma-new-delhi": { author:"Gryffindor", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Jaipur_House_2019_(2).jpg" },
+"ngv": { author:"Ymblanter", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg", required:true },
 "ny-carlsberg-glyptotek": { author:"kallerna", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Ny_Carlsberg_Glyptotek_winter_garden_1.jpg", required:true },
 "orangerie": { author:"Homonihilis", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG", required:true },
 "oslo-university-aula": { author:"Riksarkivet (National Archives of Norway) from Oslo, Norway", license:"No restrictions", licenseUrl:"https://www.flickr.com/commons/usage/", page:"https://commons.wikimedia.org/wiki/File:Festakt._Universitetets_aula._(8612632859).jpg" },
@@ -132,6 +134,7 @@ window.PHOTO_CREDITS = {
 "russian-museum": { author:"Екатерина Борисова", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80%D0%B5%D1%86,_%D0%B4%D0%B2%D0%BE%D1%8003.jpg", required:true },
 "sakip-sabanci": { author:"Edal", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Sakip-Sabanci-Museum.jpg", required:true },
 "san-luigi-dei-francesi": { author:"Chabe01", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:%C3%89glise_San_Luigi_Francesi_-_Rome_(IT62)_-_2021-08-28_-_2.jpg", required:true },
+"sannomaru-shozokan": { author:"江戸村のとくぞう", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Sannomaru_Shozokan_20231103a1.jpg" },
 "santa-maria-delle-grazie": { author:"Marcin Białek", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_delle_Grazie_Milan_2013.jpg", required:true },
 "santa-maria-novella": { author:"Joseolgon", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Santa_Maria_Novella_(Florence)_-_Facade_(3).jpg", required:true },
 "santo-tome": { author:"Jose Luis Filpo Cabana", license:"CC BY 3.0", licenseUrl:"https://creativecommons.org/licenses/by/3.0", page:"https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Tom%C3%A9_(Toledo)._Torre.jpg", required:true },
