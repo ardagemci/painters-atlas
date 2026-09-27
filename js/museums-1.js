@@ -676,5 +676,25 @@ window.MUSEUM_NOTES = {
 "transfiguration-ilyina-novgorod": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
            page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg" },
-  hook: "Built 1374, painted 1378, and the date is written down" }
+  hook: "Built 1374, painted 1378, and the date is written down" },
+"museo-civico-sansepolcro": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Museo_civico_sansepolcro.jpg/960px-Museo_civico_sansepolcro.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Museo_civico_sansepolcro.jpg" },
+  hook: "A town hall that kept its Resurrection" },
+"leeum-museum": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Leeum,_Samsung_Museum_of_Art.jpg" },
+  hook: "Three architects, three buildings, one hill above Seoul" },
+"sannomaru-shozokan": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Sannomaru_Shozokan_20231103a1.jpg/960px-Sannomaru_Shozokan_20231103a1.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Sannomaru_Shozokan_20231103a1.jpg" },
+  hook: "The emperor's own collection, handed to the nation" },
+"ngv": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg/960px-Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg" },
+  hook: "Bluestone, a water wall, and a ceiling made of glass" },
+"norton-simon": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif" },
+  hook: "Pasadena, and one businessman's astonishing eye" }
 };
