@@ -676,5 +676,9 @@ window.MUSEUM_NOTES = {
 "transfiguration-ilyina-novgorod": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg/960px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg",
            page:"https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg" },
-  hook: "Built 1374, painted 1378, and the date is written down" }
+  hook: "Built 1374, painted 1378, and the date is written down" },
+"museo-civico-sansepolcro": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Museo_civico_sansepolcro.jpg/960px-Museo_civico_sansepolcro.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:Museo_civico_sansepolcro.jpg" },
+  hook: "A town hall that kept its Resurrection" }
 };

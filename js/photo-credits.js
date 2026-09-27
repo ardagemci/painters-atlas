@@ -2,13 +2,13 @@
    Regenerate with:  python3 tools/build_photo_credits.py
    Sources: protocol/tasks/PIG-001/evidence/museum-photo-rights.json
             protocol/tasks/PIG-001/evidence/artwork-image-rights.json
-   Generated: 2026-09-03
+   Generated: 2026-09-28
 
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 127
-     entries, 108 of which carry a licence requiring attribution; the
+     (js/venues.js). One entry per photograph in js/museums-1.js. 128
+     entries, 109 of which carry a licence requiring attribution; the
      other 19 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
@@ -96,6 +96,7 @@ window.PHOTO_CREDITS = {
 "musee-pau": { author:"Patrice Bon", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_des_Beaux-Arts_de_Pau.jpg" },
 "musee-picasso-paris": { author:"LPLT", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Sal%C3%A9.JPG", required:true },
 "museo-arte-moderno-mexico": { author:"Gobierno CDMX", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Museo_de_Arte_Moderno_DSC0023_(35557149325).jpg" },
+"museo-civico-sansepolcro": { author:"TeKappa", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Museo_civico_sansepolcro.jpg", required:true },
 "museo-dolores-olmedo": { author:"Juan Carlos Fonseca Mata", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Museo_Dolores_Olmedo,_Xochimilco,_Ciudad_de_M%C3%A9xico_-_Entrada.jpg", required:true },
 "museo-frida-kahlo": { author:"Nachtwächter", license:"CC BY-SA 3.0", licenseUrl:"http://creativecommons.org/licenses/by-sa/3.0/", page:"https://commons.wikimedia.org/wiki/File:Museo_Frida_Kahlo.JPG", required:true },
 "museu-picasso-barcelona": { author:"uayebt", license:"CC BY 2.0", licenseUrl:"https://creativecommons.org/licenses/by/2.0", page:"https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona.jpg", required:true },
