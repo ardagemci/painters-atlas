@@ -2968,7 +2968,7 @@ const INDEX = [
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),
-  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, alt:n.name, meta:"" }))
+  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, alt:n.name, aka:n.id, meta:"" }))
 ];
 let selIdx = -1;
 
@@ -2981,16 +2981,19 @@ const SR_ARTICLE = /^(?:the|a|an|le|la|les|los|las|el|il|der|die|das)\s+(.+)$/;
 const SR_BOUNDARY = /[\s\-–—'’"“”()[\]/.,:;!?]/;
 /* every string an entry may be matched against: its display name, any explicit
    alternate name (a nation carries the bare country name behind its flag glyph),
-   and either of those without a leading article — display ornament is not identity */
+   and either of those without a leading article — display ornament is not identity.
+   Keys and query both pass through searchFold (js/searchfold.js), so accents and
+   letters like ı, ł, ø never decide whether a painter can be found. */
 function srKeys(it){
-  const keys = [it.name.toLowerCase()];
+  const keys = [searchFold(it.name)];
   const add = s => { if(s && keys.indexOf(s) < 0) keys.push(s); };
-  if(it.alt) add(it.alt.toLowerCase());
+  if(it.alt) add(searchFold(it.alt));
+  if(it.aka) add(searchFold(it.aka));            /* a nation's id is its English name: "turkey" finds Türkiye */
   keys.slice().forEach(k => { const m = k.match(SR_ARTICLE); if(m) add(m[1]); });
   return keys;
 }
 /* a list's meta is a count ("12 works"), not identity — it is displayed, never matched */
-INDEX.forEach(it => { it.keys = srKeys(it); it.metaKey = it.nometa ? "" : (it.meta || "").toLowerCase(); });
+INDEX.forEach(it => { it.keys = srKeys(it); it.metaKey = it.nometa ? "" : searchFold(it.meta || ""); });
 
 /* does q start a word inside hay (a surname, "du Louvre"), or merely fall inside
    one ("sTATE Hermitage")? */
@@ -3041,15 +3044,16 @@ function srSelect(scored, max){
   return out;
 }
 
-function runSearch(q){
-  q = q.trim().toLowerCase();
+function runSearch(raw){
+  raw = raw.trim();
+  const q = searchFold(raw).trim();
   if(!q){ hideSearch(); return; }
   const scored = [];
   INDEX.forEach(it => { const r = srRank(it, q); if(r < SR_NONE) scored.push({ it, r }); });
   const hits = srSelect(scored, SR_MAX);
   selIdx = -1;
   if(!hits.length){
-    searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(q)}”.</div>`;
+    searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(raw)}”.</div>`;
     searchResults.setAttribute("aria-label", "Search results — nothing matches");
   } else {
     /* listbox → group → option, so the type headings stay in the tree as group names (C3).
