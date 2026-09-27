@@ -4,11 +4,11 @@
   "method": "Commons API extmetadata via tools/commons_rights.py; >=0.25s spacing, 4 attempts, backoff; transient failure => unverified, never a negative finding",
   "legal_conclusion": "none",
   "totals": {
-    "photos": 107,
-    "resolved_ok": 107,
+    "photos": 108,
+    "resolved_ok": 108,
     "unverified": 0,
     "attribution_required": 90,
-    "no_obligation": 17
+    "no_obligation": 18
   },
   "entries": [
     {
@@ -2042,6 +2042,25 @@
       "license_tpl": "cc-by-sa-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "usage_terms": "Creative Commons Attribution-Share Alike 4.0",
+      "legal_conclusion": "none"
+    },
+    {
+      "venue_id": "norton-simon",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
+      "page": "https://en.wikipedia.org/wiki/Norton_Simon_Museum",
+      "commons_title": "File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif",
+      "commons_file_page": "https://commons.wikimedia.org/wiki/File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif",
+      "fetch_status": "ok",
+      "author": "Carol M. Highsmith",
+      "credit": "Library of Congress Catalog: http://lccn.loc.gov/2013631618 Image download: https://cdn.loc.gov/master/pnp/highsm/24400/24440a.tif Original url: https://hdl.loc.gov/loc.pnp/highsm.24440",
+      "attribution": "",
+      "attribution_required": "false",
+      "attribution_gap": false,
+      "classification": "pd",
+      "license_short": "Public domain",
+      "license_tpl": "pd",
+      "license_url": "",
+      "usage_terms": "Public domain",
       "legal_conclusion": "none"
     }
   ]

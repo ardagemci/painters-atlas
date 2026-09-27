@@ -7,9 +7,9 @@
    Two registries, both read by js/app.js:
 
    window.PHOTO_CREDITS — museum building photographs, keyed by venue id
-     (js/venues.js). One entry per photograph in js/museums-1.js. 131
+     (js/venues.js). One entry per photograph in js/museums-1.js. 132
      entries, 111 of which carry a licence requiring attribution; the
-     other 20 carry a Commons public-domain or CC0 assertion instead,
+     other 21 carry a Commons public-domain or CC0 assertion instead,
      and are credited as a courtesy.
 
    window.IMAGE_CREDITS — artwork images that require attribution, keyed by
@@ -115,6 +115,7 @@ window.PHOTO_CREDITS = {
 "neue-galerie": { author:"Gryffindor", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:1048_5th_Avenue_001.JPG", required:true },
 "ngma-new-delhi": { author:"Gryffindor", license:"CC0", licenseUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", page:"https://commons.wikimedia.org/wiki/File:Jaipur_House_2019_(2).jpg" },
 "ngv": { author:"Ymblanter", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg", required:true },
+"norton-simon": { author:"Carol M. Highsmith", license:"Public domain", page:"https://commons.wikimedia.org/wiki/File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif" },
 "ny-carlsberg-glyptotek": { author:"kallerna", license:"CC BY-SA 4.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/4.0", page:"https://commons.wikimedia.org/wiki/File:Ny_Carlsberg_Glyptotek_winter_garden_1.jpg", required:true },
 "orangerie": { author:"Homonihilis", license:"CC BY-SA 3.0", licenseUrl:"https://creativecommons.org/licenses/by-sa/3.0", page:"https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG", required:true },
 "oslo-university-aula": { author:"Riksarkivet (National Archives of Norway) from Oslo, Norway", license:"No restrictions", licenseUrl:"https://www.flickr.com/commons/usage/", page:"https://commons.wikimedia.org/wiki/File:Festakt._Universitetets_aula._(8612632859).jpg" },

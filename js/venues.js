@@ -158,5 +158,6 @@ window.VENUES = [
   { id:"tokyo-national-museum", name:"Tokyo National Museum", city:"Tokyo", country:"Japan", type:"museum" },
   { id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami", country:"Japan", type:"museum" },
   { id:"leeum-museum", name:"Leeum Museum of Art", city:"Seoul", country:"South Korea", type:"museum" },
-  { id:"sannomaru-shozokan", name:"Museum of the Imperial Collections", city:"Tokyo", country:"Japan", type:"museum" }
+  { id:"sannomaru-shozokan", name:"Museum of the Imperial Collections", city:"Tokyo", country:"Japan", type:"museum" },
+  { id:"norton-simon", name:"Norton Simon Museum", city:"Pasadena", country:"United States", type:"museum" }
 ];

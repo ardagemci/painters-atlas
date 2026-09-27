@@ -692,5 +692,9 @@ window.MUSEUM_NOTES = {
 "ngv": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg/960px-Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg",
            page:"https://commons.wikimedia.org/wiki/File:Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg" },
-  hook: "Bluestone, a water wall, and a ceiling made of glass" }
+  hook: "Bluestone, a water wall, and a ceiling made of glass" },
+"norton-simon": {
+  photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
+           page:"https://commons.wikimedia.org/wiki/File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif" },
+  hook: "Pasadena, and one businessman's astonishing eye" }
 };
