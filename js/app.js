@@ -973,7 +973,21 @@ function treeView(list, type){
 /* ---------- the grand timeline ---------- */
 let tlZoom = 6;                                            /* pixels per year */
 let tlLegendAll = false;                                   /* legend collapsed to top 14 by default */
-const TL_Y0 = 1240;
+/* The axis starts at the earliest painter in the atlas, read from the data. It
+   was the constant 1240 until 2026-09-27, and so drew every painter born before
+   it off the left edge: Fan Kuan and Guo Xi were entirely invisible and al-Wasiti
+   a six-pixel sliver, while the page promised "every painter in the atlas" — and
+   the "Before" and "13th" jump buttons pointed at negative offsets and did
+   nothing. A constant cannot keep up with a roster; the data can. */
+const TL_Y0 = Math.floor((Math.min(...A.map(a => a.born)) - 20) / 50) * 50;
+/* Where the timeline opens. Before about 1230 the atlas holds only two Song
+   painters, so opening at TL_Y0 would start a phone on several screens of
+   near-empty decades. They are one scroll left, or one tap of "Before", away. */
+const TL_OPEN = 1230;
+function tlOpen(){
+  const w = document.getElementById("tl2");
+  if(w) w.scrollLeft = Math.max(0, (TL_OPEN - TL_Y0) * tlZoom);
+}
 
 function vivid(P){                                         /* pick the punchiest palette colour */
   let best = P[0], bs = -Infinity;
@@ -1062,7 +1076,7 @@ function viewTimeline(){
   const H = TOP + laneEnds.length * LANE + BOT;
 
   let grid = "";
-  for(let y = 1300; y <= 2000; y += 50){
+  for(let y = Math.floor(TL_Y0 / 50) * 50 + 50; y <= 2000; y += 50){
     const x = (y - TL_Y0) * pxy, cent = y % 100 === 0;
     grid += `<div class="tl2-grid ${cent ? "c" : ""}" style="left:${x}px"></div>`;
     if(cent) grid += `<div class="tl2-year t" style="left:${x}px">${y}</div><div class="tl2-year b" style="left:${x}px">${y}</div>`;
@@ -1094,7 +1108,7 @@ function viewTimeline(){
 
   return `
   <div class="page-head">
-    <div class="page-kicker">Eight centuries at a glance</div>
+    <div class="page-kicker">A thousand years at a glance</div>
     <h1 class="display">The grand timeline</h1>
     <p class="page-lede">Every painter in the atlas as a lifespan, coloured by movement. Picasso overlaps both Monet and Basquiat — see for yourself. Click any bar to visit; click a movement to isolate its painters.</p>
   </div>
@@ -1660,13 +1674,13 @@ function viewExplore(){
   <div class="page-head">
     <div class="page-kicker">The big pictures</div>
     <h1 class="display">Explore</h1>
-    <p class="page-lede">Four instruments for seeing the whole atlas at once — eight centuries laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
+    <p class="page-lede">Four instruments for seeing the whole atlas at once — a thousand years laid out on a single scroll, the living web of who taught, rivaled, befriended and influenced whom, the family trees of movements, and a world map of where painters came from.</p>
   </div>
   <div class="entry-cards">
     <a class="entry-card" href="#/timeline" style="--ec:var(--gold2)">
       <div class="ec-kicker">Time</div>
       <h3>The grand timeline</h3>
-      <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Giotto to Banksy and watch the centuries hand each other the brush.</p>
+      <p>Every painter in the atlas as a lifespan bar, coloured by movement — zoom from Fan Kuan to Banksy and watch the centuries hand each other the brush.</p>
       <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
     <a class="entry-card" href="#/influences" style="--ec:var(--teal)">
@@ -1863,7 +1877,7 @@ function viewHome(){
     <div class="home-hero-content">
       <div class="kicker">Pigment · a taste atlas of painting</div>
       <h1 class="home-title">Find your place in the history of art.</h1>
-      <p class="lede">Eight centuries of painters, the masterpieces between them, and every connection that made them. Explore the atlas, admire what speaks to you — and begin your map of taste.</p>
+      <p class="lede">A thousand years of painters, the masterpieces between them, and every connection that made them. Explore the atlas, admire what speaks to you — and begin your map of taste.</p>
       <p class="footer-note" style="margin-top:18px">Tonight's cover: mixed after <a href="#/artist/${muse.id}">${esc(muse.name)}</a></p>
     </div>
   </header>
@@ -1886,7 +1900,7 @@ function viewHome(){
     <a class="entry-card" href="#/explore" style="--ec:var(--wine)">
       <div class="ec-kicker">Wander</div>
       <h3>Explore the atlas</h3>
-      <p>Eight centuries on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
+      <p>A thousand years on one timeline, an influence constellation, family trees of movements, and a world map of painters.</p>
       <span class="ec-arrow" aria-hidden="true">→</span>
     </a>
   </div>
@@ -1932,7 +1946,7 @@ function viewHome(){
   </section>
 
   <div class="stats-row">
-    ${[[A.length,"Painters","artists"],[M.length,"Movements","movements"],[T.length,"Techniques","techniques"],[E.length,"Centuries","eras"],[N.length,"Nations","nations"]]
+    ${[[A.length,"Painters","artists"],[M.length,"Movements","movements"],[T.length,"Techniques","techniques"],[E.length,"Eras","eras"],[N.length,"Nations","nations"]]
       .map(([n,l,href]) => `<a class="stat" href="#/${href}"><div class="num" data-count="${n}">0</div><div class="lbl">${l}</div></a>`).join("")}
   </div>
 
@@ -2308,8 +2322,8 @@ function viewEras(){
   return `
   <div class="page-head">
     <div class="page-kicker">Time</div>
-    <h1 class="display">Eight centuries of painting</h1>
-    <p class="page-lede">From Giotto's Padua chapel to the studio livestream — each era gathers its painters, and every painter links onward.</p>
+    <h1 class="display">A thousand years of painting</h1>
+    <p class="page-lede">From Fan Kuan's mountain scroll to the studio livestream — each era gathers its painters, and every painter links onward.</p>
   </div>
   <div class="cards wide">
     ${E.map(e => {
@@ -2637,6 +2651,7 @@ function route(){
   window.scrollTo(0, 0);
   de.style.scrollBehavior = "";
   paintAll(app);
+  if(nav && page === "timeline") tlOpen();  /* a fresh visit opens at TL_OPEN; zoom and legend keep their own scroll */
   mapDecollide();                          /* the world map, if this route carries one */
   animateCounters();
   setNav(page);
@@ -2968,7 +2983,7 @@ const INDEX = [
   ...M.map(m => ({ type:"Movements",  href:"movement/"+m.id,  name:m.name, meta:m.period || "" })),
   ...T.map(t => ({ type:"Techniques", href:"technique/"+t.id, name:t.name, meta:"" })),
   ...E.map(e => ({ type:"Eras",       href:"era/"+e.id,       name:e.name, meta:e.range })),
-  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, alt:n.name, meta:"" }))
+  ...N.map(n => ({ type:"Nations",    href:"nation/"+n.id,    name:n.flag+" "+n.name, alt:n.name, aka:n.id, meta:"" }))
 ];
 let selIdx = -1;
 
@@ -2981,16 +2996,19 @@ const SR_ARTICLE = /^(?:the|a|an|le|la|les|los|las|el|il|der|die|das)\s+(.+)$/;
 const SR_BOUNDARY = /[\s\-–—'’"“”()[\]/.,:;!?]/;
 /* every string an entry may be matched against: its display name, any explicit
    alternate name (a nation carries the bare country name behind its flag glyph),
-   and either of those without a leading article — display ornament is not identity */
+   and either of those without a leading article — display ornament is not identity.
+   Keys and query both pass through searchFold (js/searchfold.js), so accents and
+   letters like ı, ł, ø never decide whether a painter can be found. */
 function srKeys(it){
-  const keys = [it.name.toLowerCase()];
+  const keys = [searchFold(it.name)];
   const add = s => { if(s && keys.indexOf(s) < 0) keys.push(s); };
-  if(it.alt) add(it.alt.toLowerCase());
+  if(it.alt) add(searchFold(it.alt));
+  if(it.aka) add(searchFold(it.aka));            /* a nation's id is its English name: "turkey" finds Türkiye */
   keys.slice().forEach(k => { const m = k.match(SR_ARTICLE); if(m) add(m[1]); });
   return keys;
 }
 /* a list's meta is a count ("12 works"), not identity — it is displayed, never matched */
-INDEX.forEach(it => { it.keys = srKeys(it); it.metaKey = it.nometa ? "" : (it.meta || "").toLowerCase(); });
+INDEX.forEach(it => { it.keys = srKeys(it); it.metaKey = it.nometa ? "" : searchFold(it.meta || ""); });
 
 /* does q start a word inside hay (a surname, "du Louvre"), or merely fall inside
    one ("sTATE Hermitage")? */
@@ -3041,15 +3059,16 @@ function srSelect(scored, max){
   return out;
 }
 
-function runSearch(q){
-  q = q.trim().toLowerCase();
+function runSearch(raw){
+  raw = raw.trim();
+  const q = searchFold(raw).trim();
   if(!q){ hideSearch(); return; }
   const scored = [];
   INDEX.forEach(it => { const r = srRank(it, q); if(r < SR_NONE) scored.push({ it, r }); });
   const hits = srSelect(scored, SR_MAX);
   selIdx = -1;
   if(!hits.length){
-    searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(q)}”.</div>`;
+    searchResults.innerHTML = `<div class="sr-empty">Nothing in the atlas matches “${esc(raw)}”.</div>`;
     searchResults.setAttribute("aria-label", "Search results — nothing matches");
   } else {
     /* listbox → group → option, so the type headings stay in the tree as group names (C3).
@@ -3527,7 +3546,7 @@ function viewPalette(){
     <div class="ob-wrap">
       <div class="page-kicker">Onboarding · under four minutes</div>
       <h1 class="display">Find your palette.</h1>
-      <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among eight centuries of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
+      <p class="page-lede">Four tones, sixteen artworks, five questions — and Pigment sketches the first map of your taste: your position among a thousand years of painting, and a provisional Persona to argue with. It sharpens forever after; nothing here is a grade.</p>
       <button class="aw-btn primary ob-cta" data-tsx="start">Begin ${ARR}</button>
       ${getPassport() && getPassport().milestones && getPassport().milestones.onboarded
         ? `<a class="chip-label" style="display:block;margin-top:14px" href="#/taste">or return to your taste page ${ARR}</a>` : ""}
