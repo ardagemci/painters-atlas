@@ -64,6 +64,22 @@ class CensusTest(unittest.TestCase):
         "seaport-with-the-embarkation-of-the-queen-of-sheba",
         "princes-of-the-house-of-timur", "motherhood-wyspianski",
         "the-laughing-cavalier", "travelers-among-mountains-and-streams",
+        # Catalogue batch 10, the Italian spine, js/catalog-10.js, 7da57c8 (2026-09-28)
+        "santa-trinita-maesta", "rucellai-madonna",
+        "annunciation-simone-martini", "presentation-in-the-temple",
+        "battle-of-san-romano", "the-resurrection-piero",
+        "saint-jerome-in-his-study", "baptism-of-christ-verrocchio",
+        "old-man-and-his-grandson", "madonna-with-the-long-neck",
+        "allegory-venus-and-cupid", "the-wedding-at-cana",
+        # Catalogue batch 11, the eighteenth century, js/catalog-11.js, c32b0dd (2026-09-28)
+        "banquet-of-cleopatra", "the-stonemasons-yard", "carceri-dinvenzione",
+        "carriera-self-portrait-sister", "marriage-a-la-mode-settlement",
+        "whistlejacket", "self-portrait-straw-hat", "inwangjesaekdo",
+        "colorful-realm-of-living-beings",
+        # Catalogue batch 12, the seventeenth century, js/catalog-12.js, bad857d (2026-09-28)
+        "still-life-cheeses-almonds-pretzels", "feast-of-saint-nicholas",
+        "the-jewish-cemetery", "immaculate-conception-los-venerables",
+        "still-life-lemons-oranges-rose"
     }
 
     #: Records that carried `status:"pd"` at register time and no longer do —

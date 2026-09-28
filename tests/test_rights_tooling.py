@@ -1106,6 +1106,86 @@ ARTIST_BATCH_21 = {
 }
 
 
+#: Catalogue batches 10-12 (js/catalog-10.js .. catalog-12.js), the catalogue-
+#: depth session, 2026-09-28: 7da57c8 (the Italian spine, 12 records), c32b0dd
+#: (the eighteenth century, 9), bad857d (the seventeenth century, 5). Pushed to
+#: main without a ledger, so main failed this suite from 7da57c8 until this
+#: entry; recorded afterwards, attributed rather than absorbed.
+#:
+#: What moved, and why, checked against the three commit messages:
+#: - catalog_pd_rendered +26: one image per new record. 22 were already
+#:   js/artworks.js gallery images (the pool the batches set out to promote),
+#:   so they move catalog_gallery_overlap, not the totals. FOUR are new files,
+#:   and the commits name only one of them (Piero's Resurrection, replacing a
+#:   CC BY-SA detail crop). The other three are Rosalba Carriera's
+#:   Self-Portrait Holding a Portrait of Her Sister, Bronzino's Venus, Cupid,
+#:   Folly and Time, and Jakuchu's Fish in a Lotus Pond. All four Commons pages
+#:   assert a public-domain basis and name the right painter and work, and all
+#:   four were opened on 2026-09-28: each shows the whole work, the Resurrection
+#:   with its frame, none a detail, caption or installation shot.
+#: - museum_photos_rendered +5: exactly the five venues the commits name --
+#:   Museo Civico Sansepolcro (CC BY-SA, credited in js/photo-credits.js), Leeum,
+#:   the Museum of the Imperial Collections (Sannomaru Shozokan), the NGV and
+#:   the Norton Simon.
+#: - prerender_metadata_refs +14: the five new museum stubs' og:images and nine
+#:   artwork stubs whose image no other stub already referenced.
+#: No surface lost anything. total_unique +9 is the four new catalogue files
+#: plus the five photographs. Nothing here is a rights determination (OD-5).
+CATALOG_BATCHES_10_12 = {
+    "catalog_pd_rendered": { "removed": [], "added": [
+            U + "1/1d/Rosalba_Carriera_-_Self-Portrait_Holding_a_Portrait_of_Her_Sister_-_WGA4502.jpg/500px-Rosalba_Carriera_-_Self-Portrait_Holding_a_Portrait_of_Her_Sister_-_WGA4502.jpg",
+            U + "3/35/Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vig%C3%A9e-Lebrun.jpg/500px-Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vig%C3%A9e-Lebrun.jpg",
+            U + "4/45/Canaletto_-_The_Stonemason%27s_Yard.jpg/500px-Canaletto_-_The_Stonemason%27s_Yard.jpg",
+            U + "4/4a/Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg/500px-Cimabue_-_Maest%C3%A0_di_Santa_Trinita_-_Google_Art_Project.jpg",
+            U + "5/5e/Giambattista_Tiepolo_-_The_Banquet_of_Cleopatra_-_Google_Art_Project.jpg/500px-Giambattista_Tiepolo_-_The_Banquet_of_Cleopatra_-_Google_Art_Project.jpg",
+            U + "6/60/Whistlejacket_by_George_Stubbs_edit.jpg/500px-Whistlejacket_by_George_Stubbs_edit.jpg",
+            U + "6/61/Murillo_immaculate_conception.jpg/500px-Murillo_immaculate_conception.jpg",
+            U + "7/70/Parmigianino_-_Madonna_and_Child_with_Angels%2C_known_as_the_Madonna_with_the_Long_Neck.jpg/500px-Parmigianino_-_Madonna_and_Child_with_Angels%2C_known_as_the_Madonna_with_the_Long_Neck.jpg",
+            U + "7/7b/Jacob_Isaackszoon_van_Ruisdael_-_The_Jewish_Cemetery_%281654_or_1655%29.jpg/500px-Jacob_Isaackszoon_van_Ruisdael_-_The_Jewish_Cemetery_%281654_or_1655%29.jpg",
+            U + "8/83/Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg/500px-Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg",
+            U + "8/86/Jan_Havicksz._Steen_%E2%80%93_Het_Sint-Nicolaasfeest_%E2%80%93_Google_Art_Project.jpg/500px-Jan_Havicksz._Steen_%E2%80%93_Het_Sint-Nicolaasfeest_%E2%80%93_Google_Art_Project.jpg",
+            U + "9/91/It%C5%8D_Jakuch%C5%AB_-_Fish_in_a_lotus_pond_%28Colorful_Realm_of_Living_Beings%29.jpg/500px-It%C5%8D_Jakuch%C5%AB_-_Fish_in_a_lotus_pond_%28Colorful_Realm_of_Living_Beings%29.jpg",
+            U + "9/98/Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg/500px-Simone_Martini_%E2%80%94_Annunciation_with_St._Margaret_and_St._Ansanus.jpg",
+            U + "a/a7/Inwangjesaekdo.jpg/500px-Inwangjesaekdo.jpg",
+            U + "b/b1/Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg/500px-Antonello_da_Messina_-_St_Jerome_in_his_study_-_National_Gallery_London.jpg",
+            U + "b/b4/Clara_Peeters_-_Still_Life_with_Cheeses%2C_Almonds_and_Pretzels.jpg/500px-Clara_Peeters_-_Still_Life_with_Cheeses%2C_Almonds_and_Pretzels.jpg",
+            U + "b/b5/Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+            U + "b/bc/Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg/500px-Andrea_del_Verrocchio%2C_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
+            U + "c/c4/Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg/500px-Ghirlandaio%2C_Domenico_-_An_Old_Man_and_His_Grandson_-_Louvre_-_Google_Art_Project.jpg",
+            U + "c/ca/Francisco_de_Zurbar%C3%A1n_-_Still_Life_with_Lemons%2C_Oranges_and_a_Rose.jpg/500px-Francisco_de_Zurbar%C3%A1n_-_Still_Life_with_Lemons%2C_Oranges_and_a_Rose.jpg",
+            U + "e/e0/Paolo_Veronese_008.jpg/500px-Paolo_Veronese_008.jpg",
+            U + "e/e3/Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg/500px-Uccello_%E2%80%94_the_Battle_of_San_Romano.jpg",
+            U + "e/e7/Giovanni_Battista_Piranesi_-_Le_Carceri_d%27Invenzione_-_Second_Edition_-_1761_-_01_-_Title_Plate.jpg/500px-Giovanni_Battista_Piranesi_-_Le_Carceri_d%27Invenzione_-_Second_Edition_-_1761_-_01_-_Title_Plate.jpg",
+            U + "e/eb/Piero_della_Francesca_-_Resurrection_-_WGA17609.jpg/500px-Piero_della_Francesca_-_Resurrection_-_WGA17609.jpg",
+            U + "f/f0/Duccio_-_Rucellai_Madonna.jpg/500px-Duccio_-_Rucellai_Madonna.jpg",
+            U + "f/ff/Marriage_A-la-Mode_1%2C_The_Marriage_Settlement_-_William_Hogarth.jpg/500px-Marriage_A-la-Mode_1%2C_The_Marriage_Settlement_-_William_Hogarth.jpg",
+        ] },
+    "museum_photos_rendered": { "removed": [], "added": [
+            U + "1/1a/Sannomaru_Shozokan_20231103a1.jpg/960px-Sannomaru_Shozokan_20231103a1.jpg",
+            U + "2/2f/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg",
+            U + "4/46/Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg/960px-Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg",
+            U + "f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
+            U + "f/f5/Museo_civico_sansepolcro.jpg/960px-Museo_civico_sansepolcro.jpg",
+        ] },
+    "prerender_metadata_refs": { "removed": [], "added": [
+            U + "1/1a/Sannomaru_Shozokan_20231103a1.jpg/960px-Sannomaru_Shozokan_20231103a1.jpg",
+            U + "1/1d/Rosalba_Carriera_-_Self-Portrait_Holding_a_Portrait_of_Her_Sister_-_WGA4502.jpg/500px-Rosalba_Carriera_-_Self-Portrait_Holding_a_Portrait_of_Her_Sister_-_WGA4502.jpg",
+            U + "2/2f/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg",
+            U + "4/46/Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg/960px-Melbourne_National_Gallery_of_Victoria_seen_from_Sturt_Street.jpg",
+            U + "5/5e/Giambattista_Tiepolo_-_The_Banquet_of_Cleopatra_-_Google_Art_Project.jpg/500px-Giambattista_Tiepolo_-_The_Banquet_of_Cleopatra_-_Google_Art_Project.jpg",
+            U + "7/7b/Jacob_Isaackszoon_van_Ruisdael_-_The_Jewish_Cemetery_%281654_or_1655%29.jpg/500px-Jacob_Isaackszoon_van_Ruisdael_-_The_Jewish_Cemetery_%281654_or_1655%29.jpg",
+            U + "8/83/Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg/500px-Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg",
+            U + "9/91/It%C5%8D_Jakuch%C5%AB_-_Fish_in_a_lotus_pond_%28Colorful_Realm_of_Living_Beings%29.jpg/500px-It%C5%8D_Jakuch%C5%AB_-_Fish_in_a_lotus_pond_%28Colorful_Realm_of_Living_Beings%29.jpg",
+            U + "b/b5/Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg/500px-Ambrogio_Lorenzetti_-_Presentazione_di_Ges%C3%B9_al_tempio_-_Google_Art_Project.jpg",
+            U + "e/eb/Piero_della_Francesca_-_Resurrection_-_WGA17609.jpg/500px-Piero_della_Francesca_-_Resurrection_-_WGA17609.jpg",
+            U + "f/f0/Duccio_-_Rucellai_Madonna.jpg/500px-Duccio_-_Rucellai_Madonna.jpg",
+            U + "f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
+            U + "f/f5/Museo_civico_sansepolcro.jpg/960px-Museo_civico_sansepolcro.jpg",
+            U + "f/ff/Marriage_A-la-Mode_1%2C_The_Marriage_Settlement_-_William_Hogarth.jpg/500px-Marriage_A-la-Mode_1%2C_The_Marriage_Settlement_-_William_Hogarth.jpg",
+        ] },
+}
+
+
 #: Catalog Batch 05 (docs/CATALOG_BATCH_05.md), 2026-08-24 — js/catalog-8.js.
 #: The gravity ranking re-run a third time. Two things worth keeping:
 #:
@@ -1361,7 +1441,7 @@ class TestAssetInventory(unittest.TestCase):
         for key in sorted(set(frozen) | set(now)):
             with self.subTest(surface=key):
                 expected = set(frozen.get(key, []))
-                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, ARTIST_BATCH_21, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES, KLINT_PD_ART):
+                for ledger in (CORRECTIONS, CONTENT_LANE, CATALOG_BATCHES, CATALOG_BATCH_03, CATALOG_BATCH_04, CATALOG_BATCH_05, CATALOG_BATCH_06, E3_ABSENT_TRADITIONS, ARTIST_BATCH_21, CATALOG_BATCHES_10_12, MATISSE_PUBLIC_DOMAIN, BRUEGEL_PD_ART, MUSEUM_PHOTOGRAPHS, ARTIST_HEROES, B3_NAMED_PAINTERS, A3_ORIENTALISM, ACTUALITY_EXPANSION, A2_WRONG_ARTWORKS, A2_RETITLES, KLINT_PD_ART):
                     delta = ledger.get(key)
                     if delta:
                         expected -= set(delta["removed"])
@@ -1411,13 +1491,17 @@ class TestAssetInventory(unittest.TestCase):
         # two of which were already gallery entries (hence +5 unique, not +7).
         # 879 -> 957 and 878 -> 956: batch 21's 78 gallery images, all new files
         # (ARTIST_BATCH_21 above). Its 20 stub og:images are among the 78.
-        self.assertEqual(c["total_unique"], 957)   # -1 earlier: the af Klint dedup (D-008)
-        self.assertEqual(c["rendered_unique"], 956)   # +78 batch 21; -1 earlier: the same dedup
+        # 957 -> 966 and 956 -> 965: catalogue batches 10-12 (CATALOG_BATCHES_10_12
+        # above) -- four new catalogue files and five museum photographs.
+        self.assertEqual(c["total_unique"], 966)   # -1 earlier: the af Klint dedup (D-008)
+        self.assertEqual(c["rendered_unique"], 965)   # +9 batches 10-12; +78 batch 21; -1 earlier: the same dedup
         self.assertEqual(c["metadata_only_unique"], 1)   # unchanged: the homepage og:image
         # 116 -> 128: Batch 03's twelve records, each drawn from the gallery
         # pool. This number moving while total_unique holds is the signature of
         # a catalog batch done from the audited pool rather than from new images.
-        self.assertEqual(c["catalog_gallery_overlap"], 167)   # +1: both registries now share one af Klint URL
+        # 167 -> 189: batches 10-12 promoted 22 of their 26 records straight from
+        # the gallery pool -- the signature of a depth batch, as with Batch 03.
+        self.assertEqual(c["catalog_gallery_overlap"], 189)   # +1 earlier: both registries share one af Klint URL
         self.assertEqual(c["suppressed_leaking_into_metadata"], 0)  # unchanged, and must stay 0
         # 60 -> 66: ef8b2b3's six 20th-century works, all image:{status:"copyright"}
         # with no src — beginning-noland, chief-kline, city-limits-guston,
@@ -1584,7 +1668,9 @@ class TestSampleBasis(unittest.TestCase):
         # more lists — the-king-goes-to-philadelphia (an Actuality list) and
         # the-same-thing-obsessively. Eight of fifteen lists are now entirely
         # Tier 1. §8 door-1 backlog 35 -> 24.
-        self.assertEqual(len(tier1), 120, "Tier 1 ∪ daily pool is 120 works")
+        # 120 -> 146 with catalogue batches 10-12: all 26 new records are Tier 1
+        # and carry a public-domain asset (7da57c8, c32b0dd, bad857d).
+        self.assertEqual(len(tier1), 146, "Tier 1 ∪ daily pool is 146 works")
         # Every Matisse and Kahlo gallery record is mandatory in the sample.
         # Kahlo's three were removed as confirmed wrong-artwork images, so the
         # mandatory set is now exactly Matisse's — and "all of them" must still
@@ -1602,7 +1688,9 @@ class TestSampleBasis(unittest.TestCase):
         """AC11 no-asset disposition for the 76th Tier 1 work (unit 35, D-019).
 
         The validator reports more Tier 1 records than the rights sample counts
-        (127 against 120). Both are right, and the gap is not an error to be closed
+        (153 against 146; 127 against 120 before catalogue batches 10-12, whose 26
+        records are all Tier 1 with an asset and so move both sides equally). Both
+        are right, and the gap is not an error to be closed
         by changing a number. Seven records sit in it — full-fathom-five,
         autumn-rhythm, no-14-rothko, abaporu, marilyn-diptych, campbells-soup-cans
         and tutu-enwonwu — each promoted through §8 door 1 and each carrying
@@ -1621,7 +1709,7 @@ class TestSampleBasis(unittest.TestCase):
         inferred, and so a future silent addition of an image would fail here."""
         catalog = rr.SURFACES["catalog"]()
         tier1_with_asset = [r for r in catalog if r["tier"] == 1]
-        self.assertEqual(len(tier1_with_asset), 120)   # +7: Matisse (8502b08)
+        self.assertEqual(len(tier1_with_asset), 146)   # +26: batches 10-12; +7 earlier: Matisse (8502b08)
 
         src = (ROOT / "js" / "catalog-4.js").read_text(encoding="utf-8")
         rec = re.search(r'^\{\s*id:"beginning-noland".*?(?=^\{\s*id:"|\Z)',
@@ -1644,11 +1732,11 @@ class TestSampleBasis(unittest.TestCase):
         self.assertEqual(a, b)
 
     def test_catalog_surface_matches_the_corrected_pd_count(self):
-        self.assertEqual(len(rr.SURFACES["catalog"]()), 337)   # +7: Matisse (8502b08)
+        self.assertEqual(len(rr.SURFACES["catalog"]()), 363)   # +26: batches 10-12; +7 earlier: Matisse (8502b08)
         # 103 -> 104 at ef8b2b3: the Hirshhorn Museum and Sculpture Garden note,
         # which arrived with Noland's "Beginning". Credited in js/photo-credits.js
         # (Quadell, CC BY-SA 3.0, attribution required). Unit 35, D-019.
-        self.assertEqual(len(rr.SURFACES["museum"]()), 127)   # +4: Batch 06's venues
+        self.assertEqual(len(rr.SURFACES["museum"]()), 132)   # +5: batches 10-12's venues; +4 earlier: Batch 06's
         # 532 -> 528: the three Kahlo records and the duplicate Bada Shanren
         # "Two Birds" record were removed as confirmed wrong-artwork images.
         self.assertEqual(len(rr.SURFACES["gallery"]()), 659)   # +27: E3; +78: batch 21
