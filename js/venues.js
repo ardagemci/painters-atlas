@@ -159,5 +159,7 @@ window.VENUES = [
   { id:"moa-museum-of-art", name:"MOA Museum of Art", city:"Atami", country:"Japan", type:"museum" },
   { id:"leeum-museum", name:"Leeum Museum of Art", city:"Seoul", country:"South Korea", type:"museum" },
   { id:"sannomaru-shozokan", name:"Museum of the Imperial Collections", city:"Tokyo", country:"Japan", type:"museum" },
-  { id:"norton-simon", name:"Norton Simon Museum", city:"Pasadena", country:"United States", type:"museum" }
+  { id:"norton-simon", name:"Norton Simon Museum", city:"Pasadena", country:"United States", type:"museum" },
+  { id:"lacma", name:"Los Angeles County Museum of Art", city:"Los Angeles", country:"United States", type:"museum" },
+  { id:"lam-lille", name:"LaM — Lille Métropole Museum of Modern Art", city:"Villeneuve-d'Ascq", country:"France", type:"museum" }
 ];

@@ -1516,7 +1516,13 @@ class TestAssetInventory(unittest.TestCase):
         # 68 -> 61: the seven Matisse records left image:{status:"copyright"}
         # for a real picture. This number falling is the correct direction — it
         # means walled records gained images, not that a check was loosened.
-        self.assertEqual(c["copyright_refs"], 61)
+        # 61 -> 131: catalogue batch 13, the owner's decision of 2026-09-29 that
+        # every painter gets a work. Seventy painters had no catalogued work and
+        # all seventy died after 1955 or are living, so each new record carries
+        # image:{status:"copyright"} with no src. Exactly +70, and total_unique /
+        # rendered_unique do not move: the batch added no picture, only records
+        # that honestly say they may not show one.
+        self.assertEqual(c["copyright_refs"], 131)
 
 
 class TestPdTokenAccuracy(unittest.TestCase):

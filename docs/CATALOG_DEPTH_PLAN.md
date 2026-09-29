@@ -117,7 +117,19 @@ remaining 84 is six to eight more batches. A reasonable definition of done for
 the public-domain half of the atlas is **zero PD-eligible painters without a
 work**, which would put the catalogue near 510 and the daily pool near 230.
 
-The other 70 zero-work painters died after 1955. They cannot carry an image at
-all, and their records would be Tier 2 with generative covers, as the Abstract
-Expressionist batch did. That is a separate decision about whether a record
-with no picture earns its place.
+**The other 70 zero-work painters are done** (batch 13, 2026-09-29). They died
+after 1955 or are living, so they cannot carry an image; the owner decided they
+get Tier 2 records with generative covers, as Guernica and the Abstract
+Expressionists do. Catalogue 424 → 494. Every painter in the atlas who can
+never have a picture now has a work anyway; the only painters still without
+one are the 84 public-domain painters above, who can.
+
+Batch 13 filled the museum field for 23 of 70 and left the rest blank rather
+than fill it from memory. Its header in `js/catalog-13.js` records the method
+and three rejected venues. One method note belongs here, because it will bite
+the next batch too: **a Wikipedia infobox with no `museum =` line does not mean
+the museum is unknown.** The most famous pictures use `Infobox
+artwork/wikidata`, which carries no museum in the wikitext at all — Nighthawks
+was invisible to an infobox scrape. Reach the work's Wikidata item *through
+its article* (never by guessing a QID), check the creator, and read only the
+collection statement without an end date.

@@ -696,5 +696,9 @@ window.MUSEUM_NOTES = {
 "norton-simon": {
   photo: { src:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif/lossy-page1-960px-The_Norton_Simon_Museum%2C_a_private_art_museum_in_Pasadena%2C_California_LCCN2013631618.tif.jpg",
            page:"https://commons.wikimedia.org/wiki/File:The_Norton_Simon_Museum,_a_private_art_museum_in_Pasadena,_California_LCCN2013631618.tif" },
-  hook: "Pasadena, and one businessman's astonishing eye" }
+  hook: "Pasadena, and one businessman's astonishing eye" },
+"lacma": {
+  hook: "Urban Light out front, and a pipe that is not a pipe" },
+"lam-lille": {
+  hook: "Picasso, Braque and art brut, in a park outside Lille" }
 };
