@@ -2182,6 +2182,53 @@ function viewArtist(id){
   </div>`;
 }
 
+/* The line a work shows when nobody has written about it yet.
+
+   It used to be one sentence for every such page — "the image, meanwhile,
+   speaks for itself" — which was true under a real painting and false under a
+   generative cover, where the whole point is that the image is NOT the work.
+   123 pages said it about a picture they were forbidden to show.
+
+   So the line now knows which of three situations it is standing in, and
+   each work picks its sentence by its own id, the same way its cover picks its
+   brushstrokes: stable for that work, varied across the atlas. STYLE_GUIDE
+   §4.10 (one line, personality) and §5 (the joke carries information; it
+   punches at us or at the law, never at the painter). */
+const EMPTY_LINES = {
+  /* a real public-domain picture, not yet written up */
+  shown: [
+    "Not written about yet — the atlas is still being painted. The picture, meanwhile, speaks for itself.",
+    "No essay here yet. Think of it as a quiet room: you, the picture, and nobody talking over it.",
+    "We haven't written this one up. The painter already said it in paint; we're taking the long way round."
+  ],
+  /* under copyright, and we know where it hangs: {v} is the museum */
+  heldAt: [
+    "Not written about yet, and not shown either — copyright, not shyness. The cover is our paraphrase; the original is at {v}.",
+    "What you see is Pigment doing an impression of the painting. The real one is at {v}, and does itself better.",
+    "A cover version, strictly: the atlas humming the tune from memory. The original recording plays at {v}.",
+    "No essay yet, and no reproduction by law — consider the cover a postcard in the painter's colours, sent from {v}."
+  ],
+  /* under copyright, whereabouts private or unrecorded */
+  held: [
+    "Not written about yet, and not shown either — copyright, not shyness. The cover is our paraphrase, in the painter's own colours.",
+    "What you see is Pigment doing an impression of the painting. The original is still under copyright, and does itself better.",
+    "A cover version, strictly: the atlas humming the tune from memory. The original recording is still under copyright.",
+    "No essay yet, and no reproduction by law. Consider the cover a postcard written in the painter's palette."
+  ],
+  /* no photograph exists that we can use, for a reason other than copyright */
+  unseen: [
+    "Not written about and not yet photographed. The cover is a guess in the painter's colours; the real picture is on its way."
+  ]
+};
+function emptyLine(w, hasImg, held, venue){
+  const named = venue && venue.id && Vx[venue.id] && !VENUE_SENTINELS[venue.id];
+  const pool = hasImg ? EMPTY_LINES.shown
+    : held ? (named ? EMPTY_LINES.heldAt : EMPTY_LINES.held)
+    : EMPTY_LINES.unseen;
+  const line = pool[hashStr("empty:" + w.id) % pool.length];
+  return esc(line).replace("{v}", named ? `<a href="#/museum/${venue.id}">${esc(venue.name)}</a>` : "");
+}
+
 function viewArtwork(id){
   const w = CatX[id]; if(!w) return view404();
   const a = Ax[w.artistId]; if(!a) return view404();
@@ -2221,7 +2268,7 @@ function viewArtwork(id){
       ${w.description
         ? `<h2>The picture</h2><p>${esc(w.description)}</p>
            <h2>What to notice</h2><ul class="facts">${w.notice.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`
-        : `<p class="aw-empty">Not written about yet — the atlas is still being painted. The image, meanwhile, speaks for itself.</p>`}
+        : `<p class="aw-empty">${emptyLine(w, hasImg, held, venue)}</p>`}
       <p class="aw-provenance">${w.dims ? esc(w.dims) + " · " : ""}${venue ? (venue.id && Vx[venue.id] && !VENUE_SENTINELS[venue.id]
           ? `<a href="#/museum/${venue.id}">${esc(venue.name)}</a>` : esc(venue.name)) + (venue.city ? ", " + esc(venue.city) : "") + " · " : ""}${hasImg
         ? `<a href="${w.image.page}" target="_blank" rel="noopener">image via Wikimedia Commons</a>`
